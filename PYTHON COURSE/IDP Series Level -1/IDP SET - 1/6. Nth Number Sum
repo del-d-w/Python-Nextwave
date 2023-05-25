@@ -1,0 +1,60 @@
+Question: 
+Write a program that reads the numbers N, M space-separated numbers and prints the sum of numbers
+whose position is divisible by N . Consider that the positions of the numbers starts from 1 to M.
+
+Input:
+The first line of input contains the space-separated integers representing N and M.
+The second line of input contains M  space-separated integers representing the numbers.
+
+Output:
+The output should be a single line containing an integer that is the sum of all the numbers
+whose position is divisible by N
+
+Explanation:
+
+TestCase1: If the given N=1, M=7 and the numbers = 4 8 6 6 7 9 3 
+
+numbers     4 8 6 6 7 9 3 
+positions   1 2 3 4 5 6 7
+
+All the positions are divisible by 1
+4+8+6+6+7+9+3=43
+The should be 43
+
+TestCase2: If the given N=4, M=13 and the numbers = 7 3 10 4 5 8 4 9 6 9 10 1 4
+
+numbers     7 3 10 4 5 8 4 9 6 9  10  1   4
+positions   1 2  3 4 5 6 7 8 9 10 11  12 13 
+
+positions 4,8,2 are divisible by 4
+4+9+1 =14
+The should be 14
+
+Sample Input 1:
+1 7
+4 8 6 6 7 9 3
+Sample Output 1:
+43
+
+Sample Input 2:
+4 13
+7 3 10 4 5 8 4 9 6 9 10 1 4
+Sample Output 2:
+14
+
+Solution:
+
+def get_nth_number_sum(numbers, divisible_number):
+    sum_of_numbers = 0
+    for each_position in range(1, len(numbers) + 1):
+        if(each_position % divisible_number == 0):
+            sum_of_numbers += numbers[each_position - 1]
+    return sum_of_numbers
+
+def main():
+    divisible_number, numbers_length = map(int, input().split())
+    numbers = list(map(int, input().split()))
+    nth_number_sum = get_nth_number_sum(numbers, divisible_number)
+    print(nth_number_sum)
+
+main()
