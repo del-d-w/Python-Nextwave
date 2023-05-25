@@ -1,3 +1,35 @@
+Question: Arjun has two strings S and T. In order to equal them, he can select any two adjacent characters in S
+ and swap them only once.
+ Write a program that reads two strings and checks if Arjun can make the given two strings equal or not.
+ 
+Input:
+The first line of input contains a string representing S.
+The second line of input contains a string representing T.
+Output:
+The output should be a single line containing a string. Yes  should be printed if the given two strings are equal 
+after swapping any two adjacent characters in S, Otherwise No should be printed.
+
+Explanation:
+TestCase 1: If the given S=abc T=acb.
+Arjun can swap the 2nd and 3rd characters of the string S and equal the given two strings.
+The output should be Yes
+
+TestCase 2: If the given S=aabb T=bbaa.
+Arjun cannot equal the given two strings S amd T  by performing the operation at once.
+The output should be No.
+
+Sample Input 1:
+abc
+acb
+Sample Output 1:
+Yes
+
+Sample Input 2:
+aabb
+bbaa
+Sample Output 2:
+No
+
 def check_words_for_equality(first_word_list, second_word_list):
     if (first_word_list == second_word_list):
         return "Yes"
