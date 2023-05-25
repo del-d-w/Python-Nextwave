@@ -1,0 +1,23 @@
+def check_words_for_equality(first_word_list, second_word_list):
+    if (first_word_list == second_word_list):
+        return "Yes"
+    else:
+        return "No"
+
+def swap_characters_and_check_words_equality(first_word, second_word):
+    first_word_list, second_word_list = list(first_word), list(second_word)
+    for i in range(len(first_word_list) - 1):
+        if (first_word_list[i] != second_word_list[i]):
+            temp = first_word_list[i]
+            first_word_list[i] = first_word_list[i + 1]
+            first_word_list[i + 1] = temp
+            break
+    are_words_equal = check_words_for_equality(first_word_list, second_word_list)
+    return are_words_equal
+
+def main():
+    first_word, second_word = input(), input()
+    result = swap_characters_and_check_words_equality(first_word, second_word)
+    print(result)
+
+main()
