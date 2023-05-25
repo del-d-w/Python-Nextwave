@@ -1,0 +1,13 @@
+Solution:
+
+def get_number_appeared_exactly_once(numbers):
+    for number in numbers:
+        if(numbers.count(number) == 1):
+            return number
+
+def main():
+    numbers = input().split()
+    number_appeared_exactly_once = get_number_appeared_exactly_once(numbers)
+    print(number_appeared_exactly_once)
+
+main()
