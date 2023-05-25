@@ -1,0 +1,52 @@
+Question: 
+A shopkeeper records all purchases at the end of the day. He has prices for all the purchases 
+that happened at the shop today. He wants to know which item got sold only once and which item 
+got sold more than once.
+
+Write a program that reads the space-separated prices and prints the price of items that sold 
+only once and more than once.
+
+Note: In the case of ties, choose the price of the item that was sold earlier in the day.
+
+Input:
+The input will be a single line containing space-separated integers representing the prices of the purchases.
+
+Output:
+The first line of the output should contain an integer that is the price of an item that is sold only once.
+The second line of the output should contain an integer that is the price of an item that is sold more than once.
+Print None  if no purchase meets the given criteria.
+
+Explanation:
+
+TestCase: If the given puchases=5 5 4 7 4 1 11
+The price of the item that got sold only once earlier in the day is 7
+The price of the item that got sold more than once earlier in the day is 5
+
+The Otput should be
+7
+5
+
+Sample Input 1:
+6 4
+Sample Output 1:
+1024
+
+Sample Input 2:
+5 5
+Sample Output 2:
+1
+
+Solution:
+
+def get_the_amount_of_energy(magnitude_a, magnitude_b):
+    magnitudes_difference = magnitude_a - magnitude_b
+    amount_of_energy = 32 ** magnitudes_difference
+    return amount_of_energy
+
+def main():
+    magnitude_a, magnitude_b = input().split()
+    magnitude_a, magnitude_b = int(magnitude_a), int(magnitude_b)
+    amount_of_energy = get_the_amount_of_energy(magnitude_a, magnitude_b)
+    print(amount_of_energy)
+
+main()
