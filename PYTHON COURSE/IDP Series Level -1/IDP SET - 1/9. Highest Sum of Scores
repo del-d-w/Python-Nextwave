@@ -24,7 +24,7 @@ TestCase: If the given N=2 and the groups are
 
 In the above 2 groups, The second group (3, 1, 0) has the largest sum, 4.
 
-The should be 3 1 0
+The output should be 3 1 0
 
 Sample Input 1:
 2
