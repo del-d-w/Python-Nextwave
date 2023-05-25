@@ -23,12 +23,6 @@ In order to add 229+390, it must require a carry, which means the answer is Hard
     619
     ____________
 
-1, 2, 3, 4, 8, 12, 11, 10, 9, and 5 representing all the elements on the four edges of the matrix.
-Therefore, the perimeter of the matrix is
-1+2+3+4+8+12+11+10+9+5 = 65
-
-The output should be 65
-
 Sample Input 1:
 4 6
 Sample Output 1:
