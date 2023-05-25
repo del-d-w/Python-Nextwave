@@ -1,0 +1,23 @@
+def check_addition_involves_carry(first_number, second_number):
+    first_number_length, second_number_length = len(first_number), len(second_number)
+    greater_length = max(first_number_length, second_number_length)
+    if(len(first_number) < greater_length):
+        first_number = "0" * (greater_length - len(first_number)) + first_number
+    elif(len(second_number) < greater_length):
+        second_number = "0" *  (greater_length - len(second_number)) + second_number
+    is_carry_exist = False
+    for index in range(len(first_number)):
+        if(int(first_number[index]) + int(second_number[index]) > 9):
+            is_carry_exist = True
+            break
+    return is_carry_exist
+def main():
+    first_number, second_number = input().split()
+
+    is_carry_exist = check_addition_involves_carry(first_number, second_number)
+    if(is_carry_exist):
+        print("Hard")
+    else:
+        print("Easy")
+
+main()
