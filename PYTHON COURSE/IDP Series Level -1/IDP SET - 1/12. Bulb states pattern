@@ -1,0 +1,122 @@
+Question: 
+In a building, there are N rooms numbered from 1 to N. Each room has a bulb that is initially ON
+for even-numbered rooms and OFF for odd-numbered rooms.
+
+Your task is to note the status of the bulb after entering a room. When you leave a room, turn OFF
+the bulb if it is ON and turn ON  the bulb if it is OFF . Visit all rooms in the same order as they are numbered and 
+then return to the starting room and repeat the process N times.
+
+Write a program that reads the N rooms and prints the status of the bulb for each room after completing each visit.
+ 
+Note: Print 1 is bulb is ON, 0 otherwise
+
+Input:
+The input will be a single line containing a positive integer representing the number of rooms in the building N
+
+Output:
+The output should be N  lines containing space-separated integers that is the status of the bulb for each room after 
+completing each visit.
+
+Explanation:
+
+TestCase: If the given N=5
+Each room has a bulb that is initially ON  for even-numbered rooms and OFF for odd-numbered rooms. 
+0 1 0 1 0
+
+On the first visit, you have to turn OFF  the bulb if it is ON and turn ON the bulb if it is OFF
+0 1 0 1 0
+
+There are 5 rooms in the building. So, the above-mentioned process must be done five times.
+
+After 5 visits, the output should be 5  rows as shown below. Each row represents each visit.
+
+Sample Input 1:
+5
+Sample Output 1:
+1 0 1 0 1 
+0 1 0 1 0 
+1 0 1 0 1 
+0 1 0 1 0 
+1 0 1 0 1
+
+Sample Input 2:
+6
+Sample Output 2:
+1 0 1 0 1 0 
+0 1 0 1 0 1 
+1 0 1 0 1 0 
+0 1 0 1 0 1 
+1 0 1 0 1 0 
+0 1 0 1 0 1
+
+Solution:
+
+def get_initial_bulbs_on_off_status(no_of_rooms):
+    initial_bulbs_on_off_status = []
+    for i in range(no_of_rooms):
+        if(i % 2 == 0):
+            initial_bulbs_on_off_status.append(1)
+        else:
+            initial_bulbs_on_off_status.append(0)
+    return initial_bulbs_on_off_status
+def update_current_visit_bulbs_on_off_status(previous_visit_bulbs_on_off_status):
+    current_visit_bulbs_on_off_status = []
+    for each_bulb_status in previous_visit_bulbs_on_off_status:
+        if(each_bulb_status == 1):
+            current_visit_bulbs_on_off_status.append(0)
+        else:
+            current_visit_bulbs_on_off_status.append(1)
+    return current_visit_bulbs_on_off_status
+def get_rooms_bulbs_on_off_statuses(no_of_rooms):
+    bulbs_on_off_statuses = []
+    no_of_visits = no_of_rooms
+
+    initial_bulbs_on_off_status = get_initial_bulbs_on_off_status(no_of_rooms)
+    previous_visit_bulbs_on_off_status = initial_bulbs_on_off_status
+    bulbs_on_off_statuses.append(initial_bulbs_on_off_status)
+
+    for visit_no in range(1, no_of_visits):
+        current_visit_bulbs_on_off_status = update_current_visit_bulbs_on_off_status(previous_visit_bulbs_on_off_status)
+        bulbs_on_off_statuses.append(current_visit_bulbs_on_off_status)
+        previous_visit_bulbs_on_off_status = current_visit_bulbs_on_off_status
+
+    return bulbs_on_off_statuses
+def print_bulbs_on_off_status(rooms_bulbs_on_off_status):
+    for each_room_bulbs_on_off_status in rooms_bulbs_on_off_status:
+        bulbs_on_off_status = bulbs_on_off_status = list(map(str, each_room_bulbs_on_off_status))
+        print(*bulbs_on_off_status)
+def main():
+    no_of_rooms = int(input())
+    rooms_bulbs_on_off_statuses = get_rooms_bulbs_on_off_statuses(no_of_rooms)
+    print_bulbs_on_off_status(rooms_bulbs_on_off_statuses)
+
+main()
+
+
+___________________________________________________________________
+Another Method For a Solution
+___________________________________________________________________
+
+#odd number ON 
+#even number Off
+n=int(input())
+array=[]
+for i in range(n):
+    array.append([1]*n)
+for i in range(n):
+    for j in range(n):
+        if i%2==0:
+            if j%2==0:
+                array[i][j]=1 
+            else:
+                array[i][j]=0
+        else:
+            if j%2==0:
+                array[i][j]=0
+            else:
+                array[i][j]=1
+for i in range(n):
+    s=""
+    for j in range(n):
+        s+=str(array[i][j])+" "
+    print(s)
