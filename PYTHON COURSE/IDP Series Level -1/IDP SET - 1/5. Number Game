@@ -1,0 +1,58 @@
+Question: 
+A group of people are playing a game. Each person stands in a line and holds a card with a number on it.
+You will be given a random number S  and your task is to find
+
+The updated group of people after removing the S number of people from the left side of the group.
+The updated group of people after removing the S number of people from the right side of the group.
+
+Write a program that reads the card numbers and a random number S
+and prints the updated group of people in two lines after removing the S
+number of people from the left and right sides of the group.
+
+Input:
+The first line of input contains comma-separated integers representing the card numbers.
+The second line of input contains an integer representing the random number S
+
+Output:
+The first line of output contains space-separated integers that is the updated group of people after removing the S
+ number of people from the left side of the group.
+ The second line of output contains space-separated integers that is the updated group of people after removing the S
+ number of people from the right side of the group.
+
+Explanation:
+TestCase: If the given numbers=1,2,3 and S=1, 
+
+After removing 1  number from the left of the group, we will have: numbers= 2 3
+After removing 1  number from the right of the group, we will have: numbers= 1 2 
+
+The output should be
+2 3
+1 2
+
+Sample Input 1:
+1,2,3
+1
+Sample Output 1:
+2 3
+1 2
+
+Sample Input 2:
+0,12,4,3,4,12,0
+3
+Sample Output 2:
+3 4 12 0
+0 12 4 3
+
+Solution:
+
+def main():
+    card_numbers = list(map(int, input().split(',')))
+    random_number = int(input())
+
+    card_numbers_with_removed_left_numbers = card_numbers[random_number:]
+    card_numbers_with_removed_right_numbers = card_numbers[:len(card_numbers) - random_number]
+
+    print(*card_numbers_with_removed_left_numbers)
+    print(*card_numbers_with_removed_right_numbers)
+
+main()
