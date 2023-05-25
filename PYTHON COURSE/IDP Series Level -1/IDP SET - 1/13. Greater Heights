@@ -1,0 +1,99 @@
+Question: 
+In a building, there are N rooms numbered from 1 to N. Each room has a bulb that is initially ON
+for even-numbered rooms and OFF for odd-numbered rooms.
+
+Your task is to note the status of the bulb after entering a room. When you leave a room, turn OFF
+the bulb if it is ON and turn ON  the bulb if it is OFF . Visit all rooms in the same order as they are numbered and 
+then return to the starting room and repeat the process N times.
+
+Write a program that reads the N rooms and prints the status of the bulb for each room after completing each visit.
+ 
+Note: Print 1 is bulb is ON, 0 otherwise
+
+Input:
+The input will be a single line containing a positive integer representing the number of rooms in the building N
+
+Output:
+The output should be N  lines containing space-separated integers that is the status of the bulb for each room after 
+completing each visit.
+
+Explanation:
+
+TestCase: If the given N=5
+Each room has a bulb that is initially ON  for even-numbered rooms and OFF for odd-numbered rooms. 
+0 1 0 1 0
+
+On the first visit, you have to turn OFF  the bulb if it is ON and turn ON the bulb if it is OFF
+0 1 0 1 0
+
+There are 5 rooms in the building. So, the above-mentioned process must be done five times.
+
+After 5 visits, the output should be 5  rows as shown below. Each row represents each visit.
+
+Sample Input 1:
+5 5
+804289384 846930887 681692778 714636916 957747794
+424238336
+719885387
+649760493
+596516650
+189641422
+Sample Output 1:
+5
+3
+5
+5
+5
+
+Sample Input 2:
+6
+Sample Output 2:
+1 0 1 0 1 0 
+0 1 0 1 0 1 
+1 0 1 0 1 0 
+0 1 0 1 0 1 
+1 0 1 0 1 0 
+0 1 0 1 0 1
+
+Solution:
+
+def get_students_list(no_of_students):
+    students_heights_list = list(map(int, input().split()))
+    return students_heights_list
+def get_queries_list(no_of_queries):
+    queries_list = []
+    for i in range(no_of_queries):
+        query = int(input())
+        queries_list.append(query)
+    return queries_list
+def get_answer_to_the_query(students_heights_list, query):
+    answer = 0
+    for each_height in students_heights_list:
+        if(each_height >= query):
+            answer += 1
+    return answer
+def answer_the_queries(students_heights_list, queries_list):
+    for each_query in queries_list:
+        answer = get_answer_to_the_query(students_heights_list, each_query)
+        print(answer)
+def main():
+    no_of_students, no_of_queries = map(int, input().split())
+    students_heights_list = get_students_list(no_of_students)
+    queries_list = get_queries_list(no_of_queries)
+    answer_the_queries(students_heights_list, queries_list)
+
+main()
+
+___________________________________________________________________
+Another Method For a Solution
+___________________________________________________________________
+
+n,q=list(map(int,input().split()))
+listn=list(map(int,input().split()))
+for i in range(q):
+    count=0
+    a=int(input())
+    for j in listn:
+        if j>=a:
+            count+=1 
+    print(count)
