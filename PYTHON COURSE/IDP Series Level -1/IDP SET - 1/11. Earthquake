@@ -1,30 +1,31 @@
 Question: 
-A shopkeeper records all purchases at the end of the day. He has prices for all the purchases 
-that happened at the shop today. He wants to know which item got sold only once and which item 
-got sold more than once.
+Shreya has been given two different earthquake magnitudes A and B  and her task is to find how many times earthquake 
+A  is more powerful than earthquake B
 
-Write a program that reads the space-separated prices and prints the price of items that sold 
-only once and more than once.
+She knows that when the magnitude of an earthquake increases by 1, the amount of energy multiplies by 32. 
+Help Shreya in determining the intensity of earthquake A compared to earthquake B 
 
-Note: In the case of ties, choose the price of the item that was sold earlier in the day.
+Write a program that reads the magnitudes of earthquakes A and B  and prints the number of times earthquake A
+ is more powerful than earthquake B
 
 Input:
-The input will be a single line containing space-separated integers representing the prices of the purchases.
+The input will be a single line containing space-separated integers representing the magnitudes of the earthquakes A and B
 
 Output:
-The first line of the output should contain an integer that is the price of an item that is sold only once.
-The second line of the output should contain an integer that is the price of an item that is sold more than once.
-Print None  if no purchase meets the given criteria.
+The output should be a single line containing an integer obtained by calculating the number of times earthquake A
+ is more powerful than earthquake B
 
 Explanation:
 
-TestCase: If the given puchases=5 5 4 7 4 1 11
-The price of the item that got sold only once earlier in the day is 7
-The price of the item that got sold more than once earlier in the day is 5
+TestCase: If the given A=6 and B=4
+The difference between 6 and 4 is 2, Since, the magnitude of an earthquake increases by 2,
+the amount of energy multiplies by 32x32
 
-The Otput should be
-7
-5
+32x32=1024
+
+earthquake A is 1024  times more powerful than the earthquake B
+
+The Otput should be 1024
 
 Sample Input 1:
 6 4
