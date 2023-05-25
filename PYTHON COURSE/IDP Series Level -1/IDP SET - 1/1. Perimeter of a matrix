@@ -1,0 +1,88 @@
+Question: Write a program that reads an M X N matrix and prints the perimeter of the matrix
+Note: The perimeter of the matrix is defined as the sum of all the elements on the four edges of the matrix.
+Input:
+The first line of input contains space-separated integers representing M and N respectively
+The next M lines of input contain N  space-separated integers representing the matrix.
+Output:
+ The output should be a single line containing an integer obtained by adding all the elements on the four edges of the matrix.
+Explanation:
+TestCase: If the given M=3 and N=4, the matrix as follows
+1 2 3 4
+5 6 7 8
+9 10 11 12
+
+1, 2, 3, 4, 8, 12, 11, 10, 9, and 5 representing all the elements on the four edges of the matrix.
+Therefore, the perimeter of the matrix is
+1+2+3+4+8+12+11+10+9+5 = 65
+
+The output should be 65
+
+Sample Input 1:
+1 1
+1
+Sample Output 1:
+1
+
+Sample Input 2:
+2 2 
+1 2
+3 4
+Sample Output 2:
+10
+
+Sample Input 3:
+2 1
+1
+-1
+Sample Output 3:
+0
+
+
+Sample Input 4:
+2 3
+1 2 5
+3 4 6
+Sample Output 4:
+21
+
+Sample Input 5:
+5 6
+1 1 1 1 1 2
+1 1 2 1 1 1
+2 1 1 1 1 1
+1 1 1 1 1 2
+Sample Output 5:
+22
+
+
+Sample Input 6:
+4 5
+44 71 46 2 15
+97 21 41 69 18
+78 62 77 46 63
+16 92 86 21 52
+Sample Output 6:
+701
+
+def get_perimeter_of_matrix(matrix, rows, columns):
+    sum_of_perimeter = 0
+    for i in range(rows):
+        for j in range(columns):
+            if((i == 0) or (i == rows - 1) or (j == 0) or (j == columns - 1)):
+                sum_of_perimeter += matrix[i][j]
+    return sum_of_perimeter
+
+def read_matrix(rows):
+    matrix = []
+    for i in range(rows):
+        row = list(map(int, input().split()))
+        matrix.append(row)
+    return matrix
+
+def main():
+    rows, columns = map(int, input().split())
+    matrix = read_matrix(rows)
+    perimeter_of_matrix = get_perimeter_of_matrix(matrix, rows, columns)
+    print(perimeter_of_matrix)
+
+main()
