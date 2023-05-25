@@ -1,0 +1,61 @@
+Question: 
+Sophia is given a sentence and asked to make every word in the sentence start with a vowel.
+In order to do this, she can rotate the letters in the words from left to right. 
+Help Sophia update the words in the sentence.
+Write a program that reads the sentence and prints the updated sentence by performing the above operation.
+
+Note: If there is no vowel in word, then the letters will not rotate
+
+Input:
+The input will be a single line containing a string representing the sentence.
+
+Output:
+The output should be a single line containing a string that is updated by making every 
+word start with a vowel in the given sentence.
+
+Explanation:
+
+TestCase: If the given sentence= "A boy carrying bag slipped on floor"
+
+Original Word       Rotated Word
+  A                     A
+  boy                   oyb
+  carrying              arryingc 
+  bag                   agb
+  slipped               ippedsl
+  on                    on
+  floor                 oorfl
+
+The should be "A oyb arryingc agb ippedsl on oorfl"
+
+Sample Input:
+A boy carrying bag slipped on floor
+
+Sample Output:
+A oyb arryingc agb ippedsl on oorfl
+
+Solution:
+
+def get_new_word(word):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    new_word = word
+    word_length = len(word)
+    for i in range(word_length):
+        if word[i].lower() in vowels:
+            new_word = word[i:] + word[:i]
+            break
+    return new_word
+
+def get_new_sentence(sentence):
+    new_sentence = ""
+    for word in sentence:
+        new_word = get_new_word(word)
+        new_sentence += new_word + " "
+    return new_sentence
+
+def main():
+    sentence = input().split()
+    new_sentence = get_new_sentence(sentence)
+    print(new_sentence)
+    
+main()
