@@ -1,3 +1,36 @@
+Question:
+
+Riya participated in a math quiz competition. At the end of the contest,she had to solve a tricky question 
+to win the first prize
+
+She has been given a few numbers, M multiple ranges and her task is to add all the numbers in each corresponding range. 
+Help Riya to solve this question.
+
+Write a program that reads the space-separated numbers and M  multiple ranges and prints the sum of all
+the numbers in each range.
+
+Input
+
+The first line of input contains space-separated integers representing numbers.
+The second line of input contains an integer representing the multiple ranges M.
+The next M lines of input contain space-separated integers representing the each range.
+
+Output:
+The output should be M lines containing an integer that is the sum of all the numbers in the given range.
+
+Explanation:
+
+TestCase: If the given numbers 1 2 2 3 3 3 4 5 6 and M=2
+For range 0 2 , the numbers within the range of 0 to 2 are 1 2 2
+The sum of all the numbers in given range is, 1+2+2=5
+
+For range 1 4 , the numbers within the range of 1 to 4 are 1 2 2 3 3 3 4
+The sum of all the numbers in given range is, 1+2+2+3+3+3+4=18
+The output should be
+5
+18
+
+
 def get_the_sum_of_numbers(numbers, from_range, to_range):
     sum_of_numbers = 0
     for each_number in numbers:
