@@ -1,0 +1,66 @@
+Question: 
+A shopkeeper records all purchases at the end of the day. He has prices for all the purchases 
+that happened at the shop today. He wants to know which item got sold only once and which item 
+got sold more than once.
+
+Write a program that reads the space-separated prices and prints the price of items that sold 
+only once and more than once.
+
+Note: In the case of ties, choose the price of the item that was sold earlier in the day.
+
+Input:
+The input will be a single line containing space-separated integers representing the prices of the purchases.
+
+Output:
+The first line of the output should contain an integer that is the price of an item that is sold only once.
+The second line of the output should contain an integer that is the price of an item that is sold more than once.
+Print None  if no purchase meets the given criteria.
+
+Explanation:
+
+TestCase: If the given puchases=5 5 4 7 4 1 11
+The price of the item that got sold only once earlier in the day is 7
+The price of the item that got sold more than once earlier in the day is 5
+
+The Otput should be
+7
+5
+
+Sample Input 1:
+5 5 4 7 4 1 11
+Sample Output 1:
+7
+5
+
+Sample Input 2:
+1 2 3 4 5 6 7 8 9
+Sample Output 2:
+1
+None
+
+Solution:
+
+def get_item_sold_only_once(prices_list):
+    item_sold_only_once = None
+    for each_price in prices_list:
+        if (prices_list.count(each_price) == 1):
+            item_sold_only_once = each_price
+            break
+    return item_sold_only_once
+
+def get_item_sold_more_than_once(prices_list):
+    item_sold_more_than_once = None
+    for each_price in prices_list:
+        if (prices_list.count(each_price) > 1):
+            item_sold_more_than_once = each_price
+            break
+    return item_sold_more_than_once
+
+def main():
+    prices_list = input().split()
+    sold_only_once = get_item_sold_only_once(prices_list)
+    sold_more_than_once = get_item_sold_more_than_once(prices_list)
+    print(sold_only_once)
+    print(sold_more_than_once)
+
+main()
