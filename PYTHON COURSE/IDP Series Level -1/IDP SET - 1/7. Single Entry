@@ -1,3 +1,29 @@
+Question: 
+Akshay has been given a few numbers. In the given numbers, every number except one will appear twice.
+Your task is to identify the number that appears exactly once.
+Write a program that reads the space-separated numbers and prints the number that appears exactly once.
+
+Input:
+The input will be a single line containing space-separated integers representing numbers.
+
+Output:
+The output should be a single line containing an integer, which is a number that appears only once.
+
+Explanation:
+
+TestCase: If the given numbers = 2 2 1
+The should be 1
+
+Sample Input 1:
+2 2 1
+Sample Output 1:
+1
+
+Sample Input 2:
+8 9 2 8 9 2 5
+Sample Output 2:
+5
+
 Solution:
 
 def get_number_appeared_exactly_once(numbers):
