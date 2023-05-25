@@ -1,0 +1,18 @@
+def get_the_sum_of_numbers(numbers, from_range, to_range):
+    sum_of_numbers = 0
+    for each_number in numbers:
+        if each_number >= from_range and each_number <= to_range:
+            sum_of_numbers += each_number
+    return sum_of_numbers
+def print_sum_of_numbers_for_multiple_ranges(numbers, no_of_ranges):
+    for i in range(no_of_ranges):
+        from_range, to_range = map(int, input().split())
+        sum_of_numbers = get_the_sum_of_numbers(numbers, from_range, to_range)
+        print(sum_of_numbers)
+def main():
+    numbers = list(map(int, input().split()))
+    no_of_ranges = int(input())
+    print_sum_of_numbers_for_multiple_ranges(numbers, no_of_ranges)
+
+
+main()
