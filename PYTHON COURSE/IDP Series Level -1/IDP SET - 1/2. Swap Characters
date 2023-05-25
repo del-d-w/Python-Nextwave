@@ -30,6 +30,8 @@ bbaa
 Sample Output 2:
 No
 
+Solution:
+
 def check_words_for_equality(first_word_list, second_word_list):
     if (first_word_list == second_word_list):
         return "Yes"
