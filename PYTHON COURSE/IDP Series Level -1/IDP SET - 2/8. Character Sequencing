@@ -1,0 +1,29 @@
+Yash has a sequence of 26 distinct numbers P = (P1, P2, ..., P26), where the numbers from 1 to 26 are in random order.
+Ashok, one of Yash's friends, challenged him to construct a string S using the following table:
+
+Numbers   1 2 3 4 - - - 26
+Alphabets a b c d - - - z
+
+Every number from 1 to 26 represents an alphabet as shown in above table.
+Yash should construct a string based on the alphabet numbers. Help Yash construct the string S.
+
+Write a program that reads the space-separated numbers and prints the resultant string S.
+
+Input
+The input will be a single line containing space-separated integers representing the sequence of 26 distinct numbers P = (P1, P2, ..., P26).
+Output
+The output should be a single line containing a string obtained by constructing a string based on the alphabet numbers.
+Explanation
+Test Case: If the given P = 213 4 5 6 7 8 9 10 11 12 13 14 15 16
+17 18 19 20 21 22 23 24 25 26,
+
+The P1=2
+The number 2 is represented by alphabet b 
+so the second character of S is b.
+
+The P1=1
+The number 1 is represented by alphabet a
+so the second character of S is a.
+
+Using above procedure, we obtain the result
+bacdefghijklmnopqrstuvwxyz
