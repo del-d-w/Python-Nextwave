@@ -1,0 +1,123 @@
+In the World Boxing Championship, 14 matches will be held between Mary Kom and Amanda.
+
+Each match has three possible outcomes: Amanda can win, Mary Kom can win, or a draw can occur. 
+If Amanda wins, she gets 2 points and Mary Kom gets 0 points. If Mary Kom wins, she gets 2 points and Amanda gets 
+0 points. If it's a draw, both of the players get 1 point
+
+The total prize pool of the championship is 100*X
+
+After the 14  matches, the player who wins more matches than the other, will be declared as a champion
+and gets the prize money of 60*X, whereas the loser gets the prize money of 40*X
+
+If both the players win same number of matches, then the defending champion Mary Kom 
+is declared the winner and gets the prize money of 55*X , whereas the loser gets the prize money of 45*X
+
+Your friend wants to find the prize money of Mary Kom. Your task is to determine the prize money of Mary Kom 
+in the World Boxing Championship.
+
+Write a program that reads a number X representing the base prize pool and a string of length 14 
+consisting of the characters A,M and D, representing the result of 14 matches. A denotes Amanda won the match, 
+M denotes Mary Com won the match, and D denotes a draw and prints the total amount earned by Mary Kom.
+
+Input
+The first line of input contains an integer T representing the number of test cases.
+
+The next T lines of input contain 
+
+The first line of input contains an integer X representing the base prize pool.
+The second line of input contains a string representing the results of the 14 matches. A denotes Amanda won the match, 
+M denotes Mary Com won the match, and D denotes a draw and prints the total amount earned by Mary Kom.
+
+Output
+The output should be a T lines,  lines containing an integer representing the prize money received by Mary Kom.
+
+Explanation
+If the given test cases T=2
+
+TestCase1: If the given X=300, results= ADDAADDDAADADA
+
+The total prize pool is 30000 as 100*X
+Among 14 matches, 7 matches won by Amanda and 7 matches are draw, So Amanda is champion.
+So the Marycom is loser, She gets 40*X, i,e 12000
+
+The output should be 12000.
+
+TestCase2: If the given X=400, results= AMMMMAMDMADMAD
+
+The total prize pool is 40000 as 100*X
+Among 14 matches, Amanda has won 4 matches. Marycom has won 7 matches and 3 matches are draw, 
+So Marycom is champion.
+So the Marycom is winner, She gets 60*X, i,e 24000
+
+The output should be 24000.
+
+The output should be 1.
+
+Sample Input1
+2
+300
+ADDAADDDAADADA
+400
+AMMMMAMDMADMAD
+Sample Output1
+12000
+24000
+
+Sample Input2
+2
+30
+DMMMAAADDMMAAD
+50
+DAMMAADDAAMMDD
+Sample Output2
+1650
+2000
+
+Solution:
+
+def get_marykom_prize_money(match_results, prize_money):
+    no_of_marykom_wins = match_results.count("M")
+    no_of_amanda_wins = match_results.count("A")
+    
+    marykom_prize_money = None
+    if (no_of_marykom_wins > no_of_amanda_wins):
+        marykom_prize_money = prize_money * (60/100)
+    elif (no_of_marykom_wins < no_of_amanda_wins):
+        marykom_prize_money = prize_money * (40/100)
+    elif (no_of_marykom_wins == no_of_amanda_wins):
+        marykom_prize_money = prize_money * (55/100)
+    return marykom_prize_money
+
+def main():
+    t = int(input())
+    for i in range(t):
+        prize_money = int(input()) * 100
+        match_results = input()
+        marykom_prize_money = get_marykom_prize_money(match_results, prize_money)
+        print(int(marykom_prize_money))
+        
+main()
+            
+___________________________________________________________________
+Another Method For a Solution
+___________________________________________________________________
+
+n=int(input())
+a_score=0
+m_score=0
+for i in range(n):
+    score=int(input())
+    s=input()
+    a_score=0
+    m_score=0
+    for i in s:
+        if i=='A':
+            a_score+=1
+        elif i=='M':
+            m_score+=1
+    if m_score<a_score:
+        print(40*score)
+    if a_score<m_score:
+        print(60*score)
+    if a_score==m_score:
+        print(55*score)
