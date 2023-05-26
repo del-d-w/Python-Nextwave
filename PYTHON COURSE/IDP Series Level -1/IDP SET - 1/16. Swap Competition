@@ -34,5 +34,52 @@ So the condition for winning is satisfied. The result of this group is YES
 
 the output should be NO YES
 
+Sample Input 1:
+2
+noon moon
+part trap
+Sample Output 1:
+NO YES
 
+Sample Input 2:
+2
+car rac
+lock clock
+Sample Output 2:
+YES NO
+
+Solution:
+
+def check_for_rearrangement_of_letters(first_word, second_word):
+    if len(first_word) != len(second_word):
+        return "NO"
+    is_rearrangement_possible = "YES"
+    for each_letter in first_word:
+        if (first_word.count(each_letter) != second_word.count(each_letter)):
+            is_rearrangement_possible = "NO"
+            break
+    return is_rearrangement_possible
+    
+def main():
+    test_cases = int(input())
+    result = ""
+    for i in range(test_cases):
+        first_word, second_word = input().split()
+        is_rearrangement_possible = check_for_rearrangement_of_letters(first_word, second_word)
+        result += is_rearrangement_possible + " "
+    print(result)
+    
+main()
+___________________________________________________________________
+Another Method For a Solution
+___________________________________________________________________
+n=int(input())
+res=""
+for i in range(n):
+    a,b=input().split()
+    if a==b[::-1] or set(a)==set(b) and len(a)==len(b):
+        res+="YES"+" "
+    else:
+        res+="NO"+" "
+print(res)
 
