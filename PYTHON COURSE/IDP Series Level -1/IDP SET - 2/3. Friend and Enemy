@@ -1,0 +1,78 @@
+A group F friends visited a haunted house. Each member was wearing a shirt with a number on it ranging from 
+1 to F. As they entered the haunted house, one of them was kidnapped and an enemy replaced him.
+
+Rather than wearing the same shirt number as the kidnapped one, the enemy wore a shirt with the same number
+as another person among the remaining people.
+
+Write a program that reads the F space-separated numbers and prints the numbers on the shirt of the enemy 
+and the person who was kidnapped.
+
+Input
+The input will be a single line containing space-separated integers representing all the people 
+who are currently in the house, from 1 to F.
+
+Output
+The output should be a single line containing space-separated integers representing the numbers on 
+the shirt of the enemy and the person who was kidnapped.
+
+Explanation
+Test Case 1: If the given numbers = 3 1 5 2 1
+
+In the range from 1 to 5, the number 1 has occurred has occurred twice and the number 4 is missing.
+So, 1 is the enemy's shirt number, and 4  is the person's shirt number who was kidnapped.
+
+The output should be 1 4
+
+Sample Input1:
+3 1 5 2 1
+Sample Output1:
+1 4
+
+Sample Input2:
+1 2 2 4
+Sample Ouput2:
+2 3
+
+Solution:
+
+def get_enemy_and_kidnapped_person_shirt_numbers(shirt_numbers):
+    total_shirts = len(shirt_numbers)
+    kidnapped_person, enemy = None, None
+    
+    for each_shirt_number in range(1, total_shirts + 1):
+        if (shirt_numbers.count(each_shirt_number) == 2):
+            enemy = each_shirt_number
+            
+        if (shirt_numbers.count(each_shirt_number) == 0):
+            kidnapped_person = each_shirt_number
+        
+    return enemy, kidnapped_person
+
+def main():
+    shirt_numbers = list(map(int, input().split()))
+    
+    enemy, kidnapped_person = get_enemy_and_kidnapped_person_shirt_numbers(shirt_numbers)
+    enemy, kidnapped_person = str(enemy), str(kidnapped_person)
+    print(enemy + " " + kidnapped_person)
+    
+main()
+
+___________________________________________________________________
+Another Method For a Solution
+___________________________________________________________________
+
+n=list(map(int,input().split()))
+dicta={}
+for i in range(1,len(n)+1):
+    dicta[i]=n.count(i)
+max_ocu_value=max(dicta.values())
+missing_value=0
+s=''
+s1=''
+for key,value in dicta.items():
+    if max_ocu_value==value:
+        s+=str(key)
+    if missing_value==value:
+        s1+=str(key)
+print(s,s1)
+    
