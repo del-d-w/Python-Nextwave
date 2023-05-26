@@ -1,0 +1,125 @@
+Question: 
+You are given numbers. Each number is concatenated with its power and the power is a single-digit integer.
+
+Write a program that reads the space-separated numbers and calculates the powers of each number and prints its sum.
+
+Input:
+The input will be a single line containing space-separated integers representing the numbers.
+
+Output:
+The output should be a single line containing an integer obtained by adding each number multiplied by its power.
+
+Explanation:
+
+TestCase1: If the given numbers=25
+where x1=2 and pow1=5
+there sum of 2 Power 5=32
+
+The output should be 32.
+
+TestCase2: If the given numbers=132 301
+where x1=13 and pow1=2
+where x2=30 and pow2=1
+there sum of 13 Power 2 + 30 Power 1 =169+30 = 199
+
+The output should be 199.
+
+Sample Input 1:
+4
+Sample Output 1:
+0
+
+Sample Input 2:
+10 100 1000
+Sample Output 2:
+3
+
+Sample Input 3:
+95 99 1005 504
+Sample Output 3:
+10393729538
+
+Sample Input 4:
+100 4 2301 23 3871 8724
+Sample Output 4:
+578183828082
+
+Sample Input 5:
+1005 9873 2315 2341 2983 3002 3002
+Sample Output 5:
+668736698780
+
+Sample Input 6:
+10 101 202 303 404 505 606 707
+Sample Output 6:
+8282401087411
+
+Sample Input 7:
+72 47 29 36 28 39 47 2983 19 7822 8762 8762 7862 8761 61 7621
+Sample Output 7:
+29283306
+
+Sample Input 8:
+10 21 32 43 54 65 76 87 98 109 110 111 202 404 605 901 1301 4102 6103 9104 1415
+Sample Output 8:
+743533026432
+
+Sample Input 9:
+12 22 32 42 52 62 72 82 92 192 292 392 492 592 692 792 892 992 1002 2002 4002 5002 6002 7002 8002 9002
+Sample Output 9:
+2797614
+
+Sample Input 10:
+11 21 31 41 51 61 71 81 91 101 201 301 401 501 601 701 801 901 1001 1011 2021 9001 8001 7001 6001 5001 4001 3001 2001 1001
+Sample Output 10:
+5398
+
+Sample Input 11:
+861 7621 2113 4382 3923 382 8671 3281 8673 6762 19 29 39 48 57 47 29 36 28 39 47 2983 1982 3871 22 901 802 504 7112 3413 3421 8792 651 7673 761 6753
+Sample Output 11:
+1554669375
+
+Sample Input 12:
+1000 3332 9832 9781 2342 7682 9671 7562 8762 651 8652 38 39 20 39 350 241 7861 6752 8763 9882 1002 7612 4522 173 2352 7861 7861 7822 8762 8762 7862 8761 781 651 7651 45
+Sample Output 12:
+681132805
+
+Sample Input 13:
+100 202 901 802 504 7112 3413 3421 8792 651 7673 761 7061 761 981 7542 6753 8765 42 61 21 32 63 82 90 80 100 200 210 221 231 241 251 261 271 281 291 301 311 321 331 341 351 361 371 381 391 401 411 421 431 441 451 461 471 481 491 501 1
+Sample Output 13:
+515847357152029
+
+Solution:
+
+def get_the_sum_of_powers(intergers_list):
+    sum_of_powers = 0
+    for each_integer in intergers_list:
+        each_integer = int(each_integer)
+        quotient = each_integer // 10
+        power = each_integer % 10
+        sum_of_powers += quotient ** power
+    return sum_of_powers
+def main():
+    intergers_list = input().split()
+    sum_of_powers = get_the_sum_of_powers(intergers_list)
+    print(sum_of_powers)
+    
+main()
+___________________________________________________________________
+Another Method For a Solution
+___________________________________________________________________
+n=input().split()
+b=[]
+for i in n:
+    if len(i)==1:
+        c=i.replace(i,'0'+i)
+        b.append(c)
+    else:
+        c=i 
+        b.append(c)
+#print(b)
+sum=0
+for i in b:
+    a=int(i[-1])
+    sum+=(int(i[0:-1])**a)
+print(sum)
