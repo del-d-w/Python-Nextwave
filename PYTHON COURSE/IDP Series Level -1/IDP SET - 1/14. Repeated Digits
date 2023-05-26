@@ -1,0 +1,63 @@
+Question: 
+Edward has been given a number that he must decode to obtain a PIN. He is required to find the count of repeated 
+single-digit integers in the given number in order to decode it. Your task is to help Edward obtain a PIN.
+
+Write a program that reads the number and prints the count of repeated single-digit integers in the given number.
+
+Input:
+The input will be a single line containing an integer representing the number.
+
+Output:
+The output should be a single line containing an integer representing the count of
+repeated single-digit integers in the given number.
+
+Explanation:
+
+TestCase: If the given N=212311
+In this number, digits 1 and 2 are repeated single-digit integers. 
+The count of repeated single-digit integers in the given number is 2.
+
+The output should be 2.
+
+Sample Input 1:
+212311
+Sample Output 1:
+2
+
+Sample Input 2:
+111
+Sample Output 2:
+1
+
+Solution:
+
+def get_repeated_digits_count(number):
+    repeated_digits = []
+    for each_digit in number:
+        if number.count(each_digit) > 1 and each_digit not in repeated_digits:
+            repeated_digits.append(each_digit)
+    repeated_digits_count = len(repeated_digits)
+    return repeated_digits_count
+
+def main():
+    number = input()
+    repeated_digits_count = get_repeated_digits_count(number)
+    print(repeated_digits_count)
+
+main()
+
+___________________________________________________________________
+Another Method For a Solution
+___________________________________________________________________
+
+lista=input()
+b={}
+for i in lista:
+    b[i]=lista.count(i)
+#print(b)
+c=[]
+count=0
+for key,value in b.items():
+    if value>1:
+        count+=1
+print(count)
