@@ -1,1 +1,61 @@
+Write a program that reads the number N and prints the product of its digits.
 
+Input
+The input will be a single line containing an integer representing the number N
+
+Output
+The output should be a single line containing an integer obtained by the product of its digits.
+
+Explanation
+
+TestCase1: If the given number=1234
+product of its digits are
+1 x 2 x 3 x 4 = 24
+
+the output should be 24
+
+TestCase2: If the given number=02
+In this case, the leading 0 has no value in the number N
+
+the output should be 2
+
+Sample Input 1:
+1234
+Sample Output 1:
+24
+
+Sample Input 2:
+110
+Sample Output 2:
+0
+
+Sample Input 3:
+02
+Sample Output 3:
+2
+
+Solution:
+
+def get_product_of_digits(digits):
+    if(len(digits) == 0):
+        return 0
+    product = 1 
+    for each_digit in digits:
+        product *= each_digit 
+    return product
+        
+def main():
+    number = int(input())
+    digits = list(map(int, str(number)))
+    product = get_product_of_digits(digits)
+    print(product)
+    
+main()
+___________________________________________________________________
+Another Method For a Solution
+___________________________________________________________________
+n=int(input())
+p=1
+for i in str(n):
+    p*=int(i)
+print(p)
