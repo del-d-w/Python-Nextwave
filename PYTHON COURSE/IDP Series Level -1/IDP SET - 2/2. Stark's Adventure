@@ -1,0 +1,158 @@
+Mr Stark is facing the north. Peter is in trouble, and he is facing the south. 
+Stark being his mentor will protect him as soon as he sees that Peter is in trouble.
+
+Stark's suit is programmed to rotate automatically in the direction of most enemies. 
+By analyzing the direction in which most enemies are heading, the suit provides you 
+with the next set of suit instructions in the form of a string S.
+
+When Stark faces south, he ignores the rest of his suit instructions and immediately goes to rescue Peter.
+
+Write a program that reads the set of suit instructions S and determines whether Stark will be able to save Peter.
+
+Note: The string S contains either L o r R. The letter L indicates the Left and R indicates the Right 
+
+Input
+The first line of input contains an integer T representing the number of test cases.
+The next T lines of input contains a string representing the next set of suit instructions S.
+
+Output
+The output should be T lines containing a string. YES should be printed if the Stark will be able to save Peter,
+otherwise NO should be printed on each test case.
+
+Explanation
+If the given test cases T = 1.
+Test Case 1: If the given S = RLRLLLR, after following the given instructions,
+Initially Stark is facing North.
+
+Instruction                     Direction
+R: Turns right                  Faces east
+L: Turns left                   Faces north
+R: Turns right                  Faces east
+L: Turns left                   Faces north
+L: Turns left                   Faces west
+L: Turns left                   Faces south
+
+As Stark is facing the South, he rescues Peter, ignoring the rest of the instructions.
+The output should be YES.
+
+Sample Input1:
+4
+RLRLLLR
+LRLR
+LRRR
+RLL
+Sample Output1:
+YES
+NO
+YES
+NO
+
+Sample Input2:
+4
+LLLR
+RLRLL
+RRR
+RRRR
+Sample Ouput2:
+YES
+NO
+YES
+YES
+
+Solution:
+
+def get_changed_direction(current_facing_direction, direction):
+    updated_direction = None
+    if (current_facing_direction == "NORTH" and direction == "R"):
+        updated_direction = "EAST"
+    elif (current_facing_direction == "NORTH" and direction == "L"):
+        updated_direction = "WEST"
+    elif (current_facing_direction == "SOUTH" and direction == "R"):
+        updated_direction = "WEST"
+    elif (current_facing_direction == "SOUTH" and direction == "L"):
+        updated_direction = "EAST"
+    elif (current_facing_direction == "EAST" and direction == "R"):
+        updated_direction = "SOUTH"
+    elif (current_facing_direction == "EAST" and direction == "L"):
+        updated_direction = "NORTH"
+    elif (current_facing_direction == "WEST" and direction == "R"):
+        updated_direction = "NORTH"
+    else:
+        updated_direction = "SOUTH"
+    return updated_direction    
+    
+def check_stark_saved_peter(directions):
+    current_facing_direction = "NORTH"
+    for each_direction in directions:
+        updated_direction = get_changed_direction(current_facing_direction, each_direction)
+        if(updated_direction == "SOUTH"):
+            return "YES"
+        current_facing_direction = updated_direction
+    return "NO"
+
+def main():
+    test_cases = int(input())
+    for i in range(test_cases):
+        directions = input()
+        is_stark_saved_peter = check_stark_saved_peter(directions)
+        print(is_stark_saved_peter)
+        
+main()
+
+___________________________________________________________________
+Another Method For a Solution
+___________________________________________________________________
+n=int(input())
+L=-1
+R=1 
+for i in range(n):
+    steps=0
+    s=input()
+    for i in s:
+        if i=='R':
+            steps+=R 
+        else:
+            steps+=L
+        if steps==2 or steps==-2:
+            print("YES")
+            break
+    else:
+        print('NO')
+            
+ ___________________________________________________________________
+Another Method For a Solution
+___________________________________________________________________
+
+def check_stark_saved_peter(instructions):
+    direction = 'N'  # Stark's initial direction
+    for instruction in instructions:
+        if direction == 'N':
+            if instruction == 'R':
+                direction = 'E'
+            else:
+                direction = 'W'
+        elif direction == 'S':
+            if instruction == 'R':
+                direction = 'W'
+            else:
+                direction = 'E'
+        elif direction == 'E':
+            if instruction == 'R':
+                direction = 'S'
+            else:
+                direction = 'N'
+        elif direction == 'W':
+            if instruction == 'R':
+                direction = 'N'
+            else:
+                direction = 'S'
+
+        if direction == 'S':
+            return 'YES'
+    return 'NO'
+
+test_cases = int(input())
+for _ in range(test_cases):
+    instructions = input()
+    is_stark_saved_peter = check_stark_saved_peter(instructions)
+    print(is_stark_saved_peter)
