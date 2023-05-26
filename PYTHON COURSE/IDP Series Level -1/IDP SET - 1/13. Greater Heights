@@ -1,34 +1,29 @@
 Question: 
-In a building, there are N rooms numbered from 1 to N. Each room has a bulb that is initially ON
-for even-numbered rooms and OFF for odd-numbered rooms.
+Arun is in a class with N students. He has been assigned the responsibility of measuring the 
+height of each student in the class.
 
-Your task is to note the status of the bulb after entering a room. When you leave a room, turn OFF
-the bulb if it is ON and turn ON  the bulb if it is OFF . Visit all rooms in the same order as they are numbered and 
-then return to the starting room and repeat the process N times.
+After completing the above-mentioned task, the teacher asked him the Q  queries. In each query, he will be given a number X
+and his task is to find the number of students in the class who have a height of at least X.
+Help Arun by answering his teacher's queries.
 
-Write a program that reads the N rooms and prints the status of the bulb for each room after completing each visit.
- 
-Note: Print 1 is bulb is ON, 0 otherwise
+Write a program that reads N  students' heights and Q queries asked by the teacher and prints the answers to each query.
 
 Input:
-The input will be a single line containing a positive integer representing the number of rooms in the building N
+The first line of input contains space-separated integers representing number of students N and number of queries Q.
+The second line of input contains N  space-separated integers representing the heights of N students in the class.
+The next Q lines of input contain an integer value representing each query X asked by the teacher. 
 
 Output:
-The output should be N  lines containing space-separated integers that is the status of the bulb for each room after 
-completing each visit.
+The output should be Q lines containing an integer obtained by calculating the number of students in the class 
+who have a height of at least X on each line.
 
 Explanation:
 
-TestCase: If the given N=5
-Each room has a bulb that is initially ON  for even-numbered rooms and OFF for odd-numbered rooms. 
-0 1 0 1 0
+TestCase: If the given N=3, Q=1 and heights = 100 160 130
+In this example we have 3 students in the class and 1 query has been asked by the teacher
+For the given query 120, the number of students that have a height of at least 120 are 2.
 
-On the first visit, you have to turn OFF  the bulb if it is ON and turn ON the bulb if it is OFF
-0 1 0 1 0
-
-There are 5 rooms in the building. So, the above-mentioned process must be done five times.
-
-After 5 visits, the output should be 5  rows as shown below. Each row represents each visit.
+The output should be 2
 
 Sample Input 1:
 5 5
