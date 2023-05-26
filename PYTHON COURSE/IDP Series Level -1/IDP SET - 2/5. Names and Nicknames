@@ -1,0 +1,85 @@
+There are N people living in your village. You know the names and nicknames of all the people in the village.
+
+write a program that reads the N people names and nicknames and checks whether any two people have 
+the same name and nickname.
+
+
+
+Input
+The first line of the input contains an integer T representing the number of test cases.
+
+The next line of input contains
+The first line of the input contains an integer N  representing the number of people living in the village.
+The next N lines of input contains two space-separated strings representing the name and nickname of the person.
+
+Output
+The output should be a N lines containing a string. Yes should be printed if there is a pair of people 
+with the same name and nickname, otherwise No should be printed.
+
+Explanation
+If the given test cases T=1
+TestCase: If the given N=3
+Following are the 3 people in the village.
+
+stephen steve
+sato hanako
+stephen steve
+
+As person 1 and 3 have the same name and nickname
+
+The output should be Yes.
+
+Sample Input1
+2
+3
+stephen steve
+sato hanako
+stephen steve
+2
+conan kun
+subaro kun
+Sample Output1
+Yes
+No
+
+Sample Input2
+2
+3
+thomas cat
+jerry mouse
+johny bravo
+3
+nicolas tesla
+saito san
+nicolas tesla
+Sample Output2
+No
+Yes
+
+Solution:
+
+def check_name_and_nick_name_are_same(names, nick_names):
+    are_duplicates_exist = "No"
+    for i in range(len(names)):
+        for j in range(i + 1, len(names)):
+            if(names[i] == names[j] and nick_names[i] == nick_names[j]):
+                are_duplicates_exist = "Yes"
+    return are_duplicates_exist
+    
+def read_names_and_nick_names(no_of_persons):
+    names, nick_names = [], []
+    for i in range(no_of_persons):
+        name, nick_name = input().split()
+        names.append(name)
+        nick_names.append(nick_name)
+    return names, nick_names
+        
+def main():
+    test_cases = int(input())
+    for i in range(test_cases):
+        no_of_persons = int(input())
+        names, nick_names = read_names_and_nick_names(no_of_persons)
+        are_name_and_nick_name_same = check_name_and_nick_name_are_same(names, nick_names)
+        print(are_name_and_nick_name_same)
+        
+main()
