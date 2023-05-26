@@ -1,0 +1,38 @@
+There is an English competition in which players are divided into N groups, each group having 2 players. 
+
+As part of the competition, each player in a group selects a word. The group will be eligible for the
+next round if they are able to rearrange the letters in the first player's word to form the second player's word.
+Your task is to check whether the group is eligible for the next round or not.
+
+Write a program that reads the N groups of two space-separated words and checks if the players are able to rearrange 
+the letters in the first player's word to form the second player's word in each group.
+
+Note: All the characters in the input will be in lowercase
+
+Input
+The first line of input contains an integer representing the number of groups N
+The next N lines of input contain space-separated strings representing the player's words on each line.
+
+Output
+The output should be a single line containing space-separated strings. 
+YES  should be printed if the second player's word can be formed by rearranging the letters 
+in the first player's word otherwise, NO should be printed.
+
+Explanation
+
+TestCase: If the given N=2
+noon moon
+part trap
+
+noon moon the second player's word cannot be formed by rearranging the letters in the first player's word.
+
+So the condition for winning is not satisfied. The result of this group is NO
+
+part trap the second player's word can be formed by rearranging the letters in the first player's word in reverse order.
+
+So the condition for winning is satisfied. The result of this group is YES
+
+the output should be NO YES
+
+
+
