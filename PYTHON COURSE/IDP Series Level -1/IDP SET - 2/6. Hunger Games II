@@ -1,0 +1,91 @@
+Your friend is hosting a game with N players. The players are seated around a circular table in chairs numbered from 1 to N
+At the beginning of the game, the host randomly chooses a chair number S among the chairs numbered from 1 to N.
+Beginning with the player in chair S, one chocolate will be handed to each player sequentially around the table 
+until all of the M pieces of chocolates have been distributed.
+
+The player who receives the last chocolate wins this game. Help your friend to find who is going to win.
+
+Write a program that reads the N number of players, M pieces of chocolates and the randomly choosen chair number S
+and prints the chair number of the player who received the last chocolate.
+
+Input
+The first line of input contains an integer representing the number of test cases T.
+The next T lines of input contain three space-separated integers representing the N number of players, 
+M pieces of chocolates and the randomly choosen chair number S
+
+Output
+The output should be a T lines, each line containing an integer that is the chair number of the player 
+who received the last chocolate.
+
+Explanation
+If the given test cases T=2
+
+TestCase1: If the given N=4, M=6 and S=2 (4 players, 6 peices of chocolates and 2 is the randomly choosen chair number)
+
+There are 4 players seated around a circular table in chairs numbered from 1 to 4.
+Chocolate distribution starts from chair 2.
+One chocolate will be handed to each player sequentially around the table until all of the 6 chocolates have been distributed.
+The player seated in chair 3 receives the last chocolate and going to win this round.
+
+The output should be 3.
+
+TestCase2: If the given N=1, M=1 and S=1 (1 players, 1 peices of chocolates and 1 is the randomly choosen chair number)
+
+There are 1 players seated around a circular table in chairs numbered from 1.
+Chocolate distribution starts from chair 1.
+One chocolate will be handed to each player sequentially around the table until all of the 1 chocolates have been distributed.
+The player seated in chair 1 receives the last chocolate and going to win this round.
+
+The output should be 1.
+
+Sample Input1
+3
+4 6 2
+6 10 2
+5 2 1
+Sample Output1
+3
+5
+2
+
+Sample Input2
+2
+5 2 2
+10 10 1
+Sample Output2
+3
+10
+
+Solution:
+
+def get_winning_chair_number(no_of_players, chocolates, start_position):
+    current_chair_position = start_position
+    chocolates -= 1
+    while(chocolates != 0):
+        current_chair_position += 1
+        chocolates -= 1
+        if(current_chair_position > no_of_players):
+            current_chair_position %= no_of_players
+    return current_chair_position
+def main():
+    t=int(input())
+    for i in range(t):
+        no_of_players, chocolates, start_position = map(int, input().split())
+        winning_chair_number =  get_winning_chair_number(no_of_players, chocolates, start_position)
+        print(winning_chair_number)
+main()
+            
+
+___________________________________________________________________
+Another Method For a Solution
+___________________________________________________________________
+
+k=int(input())
+for i in range(k):
+    n,m,s=list(map(int,input().split()))
+    while m>1:
+        s+=1 
+        if s>n:
+            s=1 
+        m-=1
+    print(s)
