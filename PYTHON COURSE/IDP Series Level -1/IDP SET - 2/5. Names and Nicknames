@@ -83,3 +83,20 @@ def main():
         print(are_name_and_nick_name_same)
         
 main()
+
+___________________________________________________________________
+Another Method For a Solution
+___________________________________________________________________
+
+n=int(input())
+for i in range(n):
+    m=int(input())
+    lista=[]
+    for i in range(m):
+        s=input().split()
+        lista.append(tuple(s))
+    seta=set(lista)
+    if len(lista)==len(seta):
+        print("No")
+    else:
+        print("Yes")
