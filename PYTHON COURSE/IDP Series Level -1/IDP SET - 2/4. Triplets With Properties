@@ -8,3 +8,45 @@ Write a program that reads the two space-separated numbers S and T, and prints t
 triplets of non-negative integers (a,b,c) satisfying the above conditions.
 
 Note: A group of three, considered as a unit is known as triplet.
+
+Input
+The input will be a single line containing space-separated integers representing S and T.
+
+Output
+The output should be a single line containing an integer representing the count of triplets of non-negative integers 
+(a,b,c) satisfying the above conditions.
+
+Explanation
+TestCase: If the given S=1 and T=0
+
+Possible triplets which are satisfying the above given conditions are (0,0,0) (0,1,0) (0,0,1) (1,0,0)
+
+The output should be 4.
+
+Sample Input1
+1 0
+Sample Output1
+4
+
+Sample Input2
+2 5
+Sample Output2
+12
+
+Solution:
+
+def get_triples_count(s, t):
+    triples_count = 0 
+    for a in range(s + 1):
+        for b in range(s + 1):
+            for c in range(s + 1):
+                if (a + b + c <= s and a * b * c <= t):
+                    triples_count += 1  
+    return triples_count
+    
+def main():
+    s, t = map(int, input().split())
+    triples_count = get_triples_count(s, t)
+    print(triples_count)
+    
+main()
