@@ -1,0 +1,101 @@
+Write a program that reads the N x N matrix and checks if it is a unique matrix or not.
+
+Note: A unique matrix is matrix in which every row and column contains all integers from 1 to N.
+ 
+Input
+The first line of input contains an integer representing N.
+The next N lines of input contain N space-separated integers representing the matrix.
+
+Output
+The output should be single line containing a string, True should be print if the matrix is unique, 
+Otherwise False should be printed.
+ 
+Explanation
+ 
+Test Case: If the given N = 4, the matrix as is:
+1 2 3 4
+2 1 4 3 
+3 4 1 2
+4 3 2 1
+
+Every row and column of the matrix contains all the integers from 1 to 4
+So, the given matrix is a unique matrix.
+The output should be True.
+
+Sample Input1:
+5 4
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+17 18 19 20
+1
+Sample Output1:
+970200
+
+Sample Input2:
+4 4
+1 1 1 1
+1 1 1 1
+1 1 1 1
+1 1 1 1
+1
+Sample Output2:
+1
+   
+Solution:
+   
+def read_matrix(rows):
+    matrix = []
+    for i in range(rows):
+        row = list(map(int, input().split()))
+        matrix.append(row)
+    return matrix
+def get_matrix_product(matrix):
+    if len(matrix) == 0:
+        return 0
+    product = 1
+    rows = len(matrix)
+    columns = len(matrix[0])
+    for i in range(rows):
+        for j in range(columns):
+            product = product * matrix[i][j]
+    return product
+def get_sub_matrix(matrix, rows, columns, k):
+    new_sub_matrix = []
+    sub_matrix_rows = matrix[k:rows-k]
+    for each_row in sub_matrix_rows:
+        each_row = each_row[k:columns-k]
+        new_sub_matrix.append(each_row)
+    return new_sub_matrix
+def main():
+    rows, columns = map(int, input().split())
+    matrix = read_matrix(rows)
+    k = int(input())
+    resultant_matrix = get_sub_matrix(matrix, rows, columns, k)
+    product = get_matrix_product(resultant_matrix)
+    print(product)
+
+main()
+
+________________________________________
+Another Method
+_________________________________________
+
+m,n=list(map(int,input().split()))
+matrix=[]
+for i in range(m):
+    lista=list(map(int,input().split()))
+    matrix.append(lista)
+k=int(input())
+submatrix=matrix[k:m-k]
+for i in range(len(submatrix)):
+    submatrix[i]=submatrix[i][k:n-k]
+p=1
+if len(submatrix)==0:
+    print(0)
+else:
+    for i in submatrix:
+        for j in i:
+            p*=j 
+    print(p)
