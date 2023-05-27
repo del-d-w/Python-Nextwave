@@ -1,0 +1,92 @@
+Disha has been given three strings A, B, and C consisting of
+lowercase alphabets, and a number T consisting of digits 1, 2, and 3.
+
+The teacher asked Disha to concatenate the three strings A, B, and C based on the order of digits in the given number T.
+
+• The digit 1 represented the string A.
+• The digit 2 represented the string B.
+• The digit 3 represented the string C.
+
+Help Disha arrange the strings based on the order of digits in the given number T.
+
+Write a program that reads the strings A, B, C and a number T and prints the resultant string.
+
+﻿
+
+Input
+The first line of input contains a string representing A.
+The second line of input contains a string representing B.
+The third line of input contains a string representing C
+The fourth line of input contains an integer representing T.
+
+Output
+The output should be a single line containing a string obtained by concatenating the strings 
+A, B and C based on the order of digits in the given number T.
+
+Explanation
+Test Case: If the given A = mari, B = to, C=zzo and T = 1321
+
+Concatenate these in the order A+C+B+ A based on the order of digits in the given number T.
+
+So the resultant string is marizzotomari.
+
+The output should be marizzotomari
+
+Sample Input 1
+mari
+to
+zzo
+1321
+Sample Output 1
+marizzotomari
+
+Sample Input 1
+abra
+cad
+abra
+123
+Sample Output 1
+abracadabra
+
+Solution
+
+def get_concatinated_word(words, t):
+    concatinated_word = ""
+    for each_number in t:
+        index = int(each_number) - 1
+        concatinated_word += words[index]
+    return concatinated_word
+
+def read_words(no_of_inputs):
+    words = []
+    for i in range(no_of_inputs):
+        word = input()
+        words.append(word)
+    return words
+
+def main():
+    words = read_words(3)
+    t = input()
+    concatinated_word = get_concatinated_word(words, t)
+    print(concatinated_word)
+    
+main()
+
+__________________________________________________________
+Another Method
+__________________________________________________________
+
+a=input()
+b=input()
+c=input()
+t=input()
+s=''
+for i in t:
+    if i=='1':
+        s+=a 
+    elif i=='2':
+        s+=b 
+    elif i=='3':
+        s+=c 
+print(s)
+        
