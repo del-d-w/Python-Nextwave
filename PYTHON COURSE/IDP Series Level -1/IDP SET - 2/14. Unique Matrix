@@ -1,0 +1,113 @@
+Write a program that reads the N x N matrix and checks if it is a unique matrix or not.
+
+Note: A unique matrix is matrix in which every row and column contains all integers from 1 to N.
+ 
+Input
+The first line of input contains an integer representing N.
+The next N lines of input contain N space-separated integers representing the matrix.
+
+Output
+The output should be single line containing a string, True should be print if the matrix is unique, 
+Otherwise False should be printed.
+ 
+Explanation
+ 
+Test Case: If the given N = 4, the matrix as is:
+1 2 3 4
+2 1 4 3 
+3 4 1 2
+4 3 2 1
+
+Every row and column of the matrix contains all the integers from 1 to 4
+So, the given matrix is a unique matrix.
+The output should be True.
+
+Sample Input1:
+4
+1 2 3 4
+2 3 4 1
+3 4 1 2
+4 1 2 3
+Sample Output1:
+True
+
+Sample Input2:
+4
+1 2 3 3
+2 3 4 1
+3 4 1 2
+4 1 2 3
+Sample Output2:
+False
+   
+Solution:
+   
+def read_matrix(rows):
+    matrix = []
+    for i in range(rows):
+        row = list(map(int, input().split()))
+        matrix.append(row)
+    return matrix
+def get_expected_numbers_set(n):
+    expected_numbers_set = set()
+    for i in range(1, n+1):
+        expected_numbers_set.add(i)
+    return expected_numbers_set
+def check_for_unique_rows(matrix):
+    are_unique_rows = True
+    rows = len(matrix)
+    expected_numbers_set = get_expected_numbers_set(rows)
+    for row in matrix:
+        if(set(row) != expected_numbers_set):
+            are_unique_rows = False
+            break
+    return are_unique_rows
+def get_matrix_column(matrix, column_no):
+    column = []
+    for row in matrix:
+        column.append(row[column_no])
+    return column
+def check_for_unique_columns(matrix):
+    are_unique_columns = True
+    columns = len(matrix)
+    expected_numbers_set = get_expected_numbers_set(columns)
+    for column_no in range(columns):
+        column = get_matrix_column(matrix, column_no)
+        if(set(column) != expected_numbers_set):
+            are_unique_columns = False
+            break
+    return are_unique_columns
+def check_for_unique_matrix(matrix):
+    are_unique_rows = check_for_unique_rows(matrix)
+    are_unique_columns = check_for_unique_columns(matrix)
+    is_unique_matrix = are_unique_rows and are_unique_columns
+    return is_unique_matrix
+def main():
+    n = int(input())
+    matrix = read_matrix(n)
+    is_unique_matrix = check_for_unique_matrix(matrix)
+    print(is_unique_matrix)
+
+main()
+
+________________________________________
+Another Method
+_________________________________________
+
+n=int(input())
+lista=[]
+listb=[]
+is_unique=[]
+for i in range(1,n+1):
+    listb.append(i)
+    m=list(map(int,input().split()))
+    lista.append(m)
+for i in range(len(lista)):
+    if set(lista[i])==set(listb):
+        is_unique.append(True)
+    else:
+        is_unique.append(False)
+if False in is_unique:
+    print(False)
+else:
+    print(True)
