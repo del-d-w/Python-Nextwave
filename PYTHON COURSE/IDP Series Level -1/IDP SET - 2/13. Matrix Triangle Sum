@@ -1,0 +1,117 @@
+Yash is solving a matrix problem as part of his entrance exam preparation.
+
+In that matrix problem, there is a square matrix of size N x N. Yash needs to calculate the 
+sum of the upper and lower triangular elements of the matrix. Help Yash solve the given matrix problem.
+
+Write a program that reads the N x N matrix and prints the sum of the upper and lower triangular elements.
+
+Note: The upper triangle consists of elements on the anti- diagonal and above on it.
+      The upper triangle consists of elements on the anti- diagonal and below it.
+ 
+Input
+The first line of input contains an integer representing N.
+The next N lines of input contain N space-separated integers representing the matrix.
+
+Output
+The first line of output should contains an integer obtained by adding all elements in the upper triangle.
+The second line of output should contains an integer obtained by adding all elements in the lower triangle.
+ 
+Explanation
+ 
+Test Case: If the given N = 3, the matrix as follows:
+1 2 3
+4 5 6
+7 8 9
+
+The upper triangle consists of elements on the anti-diagonal and
+above on it.
+
+1 2 3
+4 5 
+7 
+
+The sum of the upper traingle elements is 1+2+3+4+5+7 = 22
+
+The upper triangle consists of elements on the anti-diagonal and
+below it.
+
+    3
+  5 6
+7 8 9 
+
+The sum of the upper traingle elements is 3+5+6+7+8+9 = 38
+
+Sample Input1:
+3
+1 2 3
+4 5 6
+7 8 9
+Sample Output1:
+22
+38
+
+Sample Input2:
+5
+6 7 5 1 4
+6 8 5 1 8
+1 1 1 2 1
+5 7 5 8 8
+8 3 5 8 8
+Sample Output2:
+66
+77
+   
+Solution:
+   
+def get_sum_of_lower_triangle(matrix):
+   sum_of_lower_triangle = 0 
+   for i in range(len(matrix)):
+       sum_of_lower_triangle += sum(matrix[i][-i-1:])
+   return sum_of_lower_triangle
+
+def get_sum_of_upper_triangle(matrix):
+    sum_of_upper_triangle = sum(matrix[0])
+    for i in range(len(matrix)):
+        sum_of_upper_triangle += sum(matrix[i][:-i])
+    return sum_of_upper_triangle
+
+def read_matrix(n):
+    matrix = []
+    for i in range(n):
+        row = list(map(int,input().split()))
+        matrix.append(row)
+    return matrix
+
+def main():
+    n = int(input())
+    matrix = read_matrix(n)
+    sum_of_upper_triangle = get_sum_of_upper_triangle(matrix)
+    sum_of_lower_triangle = get_sum_of_lower_triangle(matrix)
+    print(sum_of_upper_triangle)
+    print(sum_of_lower_triangle)
+
+main()
+
+________________________________________
+Another Method
+_________________________________________
+
+n=int(input())
+lista=[]
+for i in range(n):
+    m=list(map(int,input().split()))
+    lista.append(m)
+sum_lower=0
+sum_upper=0
+list_lower=[]
+for i in range(n):
+    for j in range(n-i):
+        sum_lower+=lista[i][j]
+for i in range(n):
+    for j in range(n):
+        if i+j<n-1:
+            pass
+        else:
+            sum_upper+=lista[i][j]
+print(sum_lower)
+print(sum_upper)
