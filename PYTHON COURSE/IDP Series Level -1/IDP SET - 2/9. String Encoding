@@ -1,0 +1,88 @@
+Aryan has two strings S and T containing lowercase alphabets. His student Ram has been asked
+to encode the string in the following manner.
+
+Ram should think a positive number K that may transform S into T by shifting each character of S to the right of K positions.
+
+For example, if K=1
+
+Alphabet                a b c d - - - y z
+Encoded Alphabet        b c d e - - - z a
+
+Similarly,
+
+• If K = 2 then a is shifted to the right of 2 positions, it will
+become c.
+• If K 3 then X is shifted to the right of 3 positions, it will become a.
+
+Your task is to help Aryan determine whether Ram can transform S into T after encoding.
+
+Write a program that reads the two strings S and T and checks if Ram can transform S into T by encoding the string.
+
+Input
+The first line of input contains a string representing S.
+The second line of input contains a string representing T.
+
+Output
+The output should be a single line containing a string. Yes should be printed if Ram can transform s into t
+ by encoding the string. Otherwise No should be printed.
+
+Explanation
+Test Case 1: If the given S = abc and T = ijk
+If Ram has considered a positive number K = 8 .
+Each character of s should be shifted to the right of 8 positions.
+a is shifted to the right of 8 positions, it will become i
+b is shifted to the right of 8 positions, it will become j
+cis shifted to the right of 8 positions, it will become k
+So, Ram can transforms into T
+
+The output should be Yes.
+
+Test Case 2: If the given S = ppq and T = qqp
+There is no possibility of a positive integer K that Ram can consider to transforms into T.
+So, Ram cannot be transformed s into T
+
+The output should be No.
+
+Sample Input 1
+abc 
+ijk
+Sample Output 1
+Yes
+
+Sample Input 1
+ppq
+qqp
+Sample Output 1
+No
+
+Solution
+
+def check_string_transformation(s, t):
+    expected_difference = (ord(t[0]) - ord(s[0])) % 26
+    can_transform_string = "Yes"
+    for i in range(len(s)):
+        current_difference = (ord(t[i]) - ord(s[i])) % 26
+        if (current_difference != expected_difference):
+            can_transform_string = "No"
+    return can_transform_string
+    
+def main():
+    s, t = input(), input()
+    can_transform_string = check_string_transformation(s, t)
+    print(can_transform_string)
+    
+main()
+
+__________________________________________________________
+Another Method
+__________________________________________________________
+
+a=input()
+b=input()
+res='Yes'
+ini_diff=(ord(a[0])-ord(b[0]))%26
+for i in range(len(a)):
+    final_diff=(ord(a[i])-ord(b[i]))%26
+    if ini_diff!=final_diff:
+        res='No'
+print(res)
