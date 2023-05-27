@@ -1,0 +1,65 @@
+There are N pyramids in a line. Given their heights, your task is to find the minimum absolute difference 
+between the heights of any two different pyramids.
+
+ Write a program that reads the N space-separated heights of the pyramids and prints the minimum absolute 
+ difference between the heights of any two different pyramids.
+ 
+ Input
+ The input will be a single line containing space-separated integers representing the heights of the N pyramids.
+ 
+ Output
+ The output should be a single line containing the minimum absolute difference between the heights 
+ of any two different pyramids.
+ 
+ Explanation
+ TestCase: If the given N = 7 1 5
+ The absolute difference between the heights of any two different pyramids are
+ 
+ Pyramid-A    Pyramid-B   Pyramid-C
+   7              1           6
+   7              5           2
+   1              5           4
+   
+   From the above table, the minimum absolute difference is 2.
+   
+   The output should be 2.
+   
+   Sample Input1:
+   7 5 1
+   Sample Output1:
+   2
+   
+   Sample Input2:
+   5 9 2 0 3
+   Sample Output2:
+   1
+   
+   Solution:
+   
+   def get_min_absolute_difference(pyramid_heights):
+    min_absolute_difference = abs(pyramid_heights[1] - pyramid_heights[0])
+    for i in range(len(pyramid_heights)):
+        for j in range(i + 1, len(pyramid_heights)):
+            difference = abs(pyramid_heights[i] - pyramid_heights[j])
+            if(difference < min_absolute_difference):
+                min_absolute_difference = difference
+    return min_absolute_difference
+
+def main():
+    pyramid_heights = list(map(int,input().split()))
+    min_absolute_difference = get_min_absolute_difference(pyramid_heights)
+    print(min_absolute_difference)
+
+main()
+
+________________________________________
+Another Method
+_________________________________________
+
+n=list(map(int,input().split()))
+min_diff=float('inf')
+for i in range(len(n)):
+    for j in range(i+1,len(n)):
+        diff=abs(n[i]-n[j])
+        min_diff=min(min_diff,diff)
+print(min_diff)
