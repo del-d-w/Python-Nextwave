@@ -1,0 +1,116 @@
+You are given the arrival and departure times of some trains in 24- hour format. 
+Your task is to determine the minimum number of platforms needed at a railway station 
+to accommodate all trains arriving and departing (i.e. ensuring that no two trains overlap 
+at a single platform and no train is left waiting).
+
+All trains arrive and depart on the same day, with distinct arrival and departure times. 
+To prevent conflicts, separate platforms are needed for trains whose arrival overlaps with 
+the departure of another train on the same platform.
+
+Write a program that reads the arrival and departure times of the trains in 24-hour format 
+and prints the minimum number of platforms needed at a railway station to accommodate all trains.
+
+Input
+The first line of input contains space-separated integers representing the arrival times of the trains in 24-hour format.
+The second line of input contains space-separated integers representing the departure times of the trains in 24-hour format.
+
+Output
+The output should be single line containing an integer representing the minimum number of platforms needed 
+to accommodate all arriving and departing trains without any overlap or delays.
+
+Explanation
+For example, consider the following arrival and departure times of 5 trains:
+
+trains arrival timings = 0900 0940 0950 1100 1500 
+trains departure timings = 0910 1200 1120 1130 1900
+
+To handle these 5 trains, let's start with platform 1:
+
+Train 1 arrives at 0900 and is accommodated on platform 1 . It departs at 0910.
+
+Train 2 arrives at 0940 and is accommodated on platform 1 . It departs at 1200.
+
+Train 3 arrives at 0950 and cannot be accommodated on platform 1 as Train 2 is already present. 
+Hence, an additional platform is needed and Train 3 is accommodated on platform 2 . It departs at 1120.
+
+Train 4 arrives at 1100 and cannot be accommodated on platform 1 and 2 as they are already is occupied. 
+Hence, an additional platform is needed and Train 4 is accommodated on platform 3 . It departs at 1130
+
+Train 5 arrives at 1500 and can easily be accommodated on platform 1 as it is now empty.
+
+Platform    Train arrival times     Train departure times
+1                 0900                      0910
+1                 0940                      1200
+1                 1500                      1900
+2                 0950                      1120
+3                 1100                      1130
+
+The output should be 3.
+
+Sample Input 1
+0900 1100 1235
+1000 1200 1240
+Sample Output 1
+1
+Sample Input 2
+0900 0940 0950 1100 1500
+0910 1200 1120 1130 1900
+Sample Output 2
+3
+
+Solution
+
+def get_number_of_platforms_required(train_arrival_times_list, train_depature_times_list, total_no_of_trains):
+    train_arrival_times_list.sort()
+    train_depature_times_list.sort()
+
+    platforms_required = 1
+    max_platforms_required = 1
+    i = 1
+    j = 0
+
+    while ((i < total_no_of_trains) and (j < total_no_of_trains)):
+        if (train_arrival_times_list[i] <= train_depature_times_list[j]):
+            platforms_required += 1
+            i += 1
+        else:
+            platforms_required -= 1
+            j += 1
+
+        if (platforms_required > max_platforms_required):
+            max_platforms_required = platforms_required
+
+    return max_platforms_required
+
+def main():
+    train_arrival_times_list = input().split()
+    train_depature_times_list = input().split()
+    total_no_of_trains= len(train_arrival_times_list)
+    result = get_number_of_platforms_required(train_arrival_times_list, train_depature_times_list, total_no_of_trains)
+    print(result)
+
+main()
+
+_________________________________
+Another Method
+_________________________________
+
+arrival=list(map(int,input().split()))
+departure=list(map(int,input().split()))
+arrival.sort()
+departure.sort()
+platfroms_needed=1
+current_platforms=1
+i=1
+j=0
+while i<len(arrival) and j<len(departure):
+    if arrival[i]<=departure[j]:
+        current_platforms+=1 
+        platfroms_needed=max(platfroms_needed,current_platforms)
+        i+=1 
+    else:
+        current_platforms-=1
+        j+=1
+print(platfroms_needed)
+Solution
+
