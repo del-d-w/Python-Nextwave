@@ -1,0 +1,113 @@
+Given an MXN matrix filled with X's and O's, find the largest rectangle containing only X's and return its area.
+If there are no X s in the entire matrix print 0.
+
+Input
+The first line of input will be containing two space-separated integers, denoting M and N.
+The next M lines will contain N space-separated integers, denoting the elements of the matrix.
+
+Output
+The output should be a single line containing the area of the maximum rectangle.
+
+Explanation
+For example, if the given M, N and elements of matrix are as the following
+4 5
+X O X O O
+X O X X X
+X X X X X
+X O O X O
+
+The matrix from indices (1, 2) to (2, 4) has the maximum rectangle with X. So the output should be the area of the maximum
+rectangle with X, which is 6.
+
+Sample Input 1
+4 5
+X O X O O
+X O X X X
+X X X X X 
+X O O X O
+Sample Output 1
+6
+Sample Input 2
+3 3 
+O X X
+O X X
+O O O
+Sample Output 2
+4
+
+def read_matrix(rows):
+    matrix = []
+    for i in range(rows):
+        row = input().split()
+        matrix.append(row)
+    return matrix
+
+def check_if_sub_matrix_contains_zero(matrix, i, j, k, l):
+    for m in range(0, k + 1):
+        for n in range(0, l + 1):
+            if (matrix[i + m][j + n] == "O"):
+                return True
+    return False
+    
+def get_max_sub_matrix_area(matrix, rows, columns, i, j):
+    max_sub_matrix_area = 0
+    for k in range(0, rows - i):
+        for l in range(0, columns - j):
+            is_sub_matrix_contains_zero = check_if_sub_matrix_contains_zero(matrix, i, j, k, l)
+            # If the submatrix does not contain zero, then it is possible that the submatrix may contain the maximum area
+            if not is_sub_matrix_contains_zero:
+                # Here, (k + 1) * (l + 1) provides the newly discovered sub matrix area
+                max_sub_matrix_area = max(max_sub_matrix_area, (k + 1) * (l + 1))
+    return max_sub_matrix_area
+
+def get_max_area_of_rectangle(matrix, rows, columns):
+    max_area_of_rectangle = 0
+    for i in range(rows):
+        for j in range(columns):
+            if (matrix[i][j] == "X"): 
+                # When the current element is "X", start finding the maximum submatrix area 
+                # on the bottom right that starts with the current element.
+                max_sub_matrix_area = get_max_sub_matrix_area(matrix, rows, columns, i, j)
+                max_area_of_rectangle = max(max_area_of_rectangle, max_sub_matrix_area)
+    return max_area_of_rectangle 
+    
+def main():
+    rows, columns = list(map(int,input().split()))
+    matrix = read_matrix(rows)
+    max_area_of_rectangle = get_max_area_of_rectangle(matrix, rows, columns)
+    print(max_area_of_rectangle)
+    
+main()
+
+_________________________________________________________
+Another method
+_________________________________________________________
+
+m,n=list(map(int,input().split()))
+matrix=[input().split() for i in range(m)]
+max_area=0
+height=[0]*n
+for i in range(m):
+    for j in range(n):
+        if matrix[i][j]=='X':
+            height[j]+=1 
+        else:
+            height[j]=0
+    stack=[]
+    area=0
+    j=0
+    while j<n:
+        if not stack or height[j]>=height[stack[-1]]:
+            stack.append(j)
+            j+=1 
+        else:
+            top=stack.pop()
+            width =j if not stack else j-stack[-1]-1
+            area=max(area, height[top]*width)
+    while stack:
+        top=stack.pop()
+        width=j if not stack else n-stack[-1]-1
+        area=max(area,height[top]*width)
+    max_area=max(max_area,area)
+print(max_area)
+            
