@@ -1,0 +1,107 @@
+There are multiple( T ) bookstores in the area. Each shopkeeper has a list of B
+integers that represents the cost of each book. You have different pocket money( P) for each bookstore.
+ 
+ Write a program to calculate the maximum number of books you can buy in each store with the corresponding pocket money.
+
+Input
+
+The first line of input is a positive integer T that represents the number of shops.
+The following lines represent the details of the T shops.
+Each set of two consecutive lines represents the details of a shop.
+The first line of each set contains two space-separated integers B and P.
+The second line of each set contains B space-separated integers.
+
+Output
+
+The output should be T lines.
+Each line contains an integer that represents the maximum number of books that can be bought in each shop.
+
+Explanation
+
+TestCase: For example, if the given P = 600 and B = [120, 140, 110, 180, 120, 110]
+
+With a pocket money of 600, we can buy the books at index 0,1,2,4,5 whose sum is 120 + 140 + 110 + 120 + 100 
+is equal to P
+
+given P = 300 and B = [120, 110, 1300, 130]
+With a pocket money of 300, we can buy the books at index 0,1 whose sum is 120 + 110
+is less than P
+
+given P = 100 and B = [220, 1000, 500, 2000]
+With a pocket money of 100, we cannot buy the books 
+
+So the output should be, 
+
+5
+2
+0
+
+Sample Input 1
+
+3
+6 100
+20 40 10 80 20 10
+4 70
+20 10 300 30
+4 200
+220 1000 500 2000
+
+output
+
+5
+3
+0
+
+Sample Input 2
+
+2
+8 250
+2070 1350 365 2750 30 20 140 240
+4 500
+1070 2893 2200 39
+
+output
+
+3
+1
+
+Solution
+
+ def get_no_of_books_can_buy(books_prices_list, pocket_money):
+    no_of_books_can_buy = 0
+    books_prices_list.sort()
+    for each_book_price in books_prices_list:
+        if(each_book_price <= pocket_money):
+            no_of_books_can_buy += 1
+            pocket_money -= each_book_price
+    return no_of_books_can_buy
+
+def main():
+   no_of_book_stores= int(input()) 
+   for i in range(no_of_book_stores):
+       no_of_books, pocket_money = map(int, input().split())
+       books_prices_list = list(map(int, input().split()))
+       no_of_books_can_buy = get_no_of_books_can_buy(books_prices_list, pocket_money)
+       print(no_of_books_can_buy)
+    
+main()
+
+________________________________________________________________
+
+Another Solution
+____________________________________________________________________
+
+n=int(input())
+for i in range(n):
+    count=0
+    s=0
+    books,pocket=list(map(int,input().split()))
+    money=sorted(list(map(int,input().split())))
+    for i in money:
+        s+=i 
+        if s<=pocket:
+            count+=1 
+        else:
+            break
+    print(count)
+            
