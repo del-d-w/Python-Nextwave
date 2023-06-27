@@ -1,0 +1,126 @@
+You have given an N X N matrix, where N is a number. You need to find the sum of all elements in the matrix that satisfy 
+either of the following conditions.
+
+1. The row and column indices of an element should be the same.
+2. The sum of the row and column indices of an element should be equal to the value N-1.
+
+For example, if the given number N = 3, and the given matrix is:
+
+1 2 3
+4 5 6
+7 8 9
+
+The elements that satisfy the 1st condition are 1, 5, and 9.
+The elements that satisfy the 2nd condition are 3, 5, and 7.
+
+The sum of all these elements is 25.
+
+Write a program that reads an N X N matrix and prints the sum of elements that satisfy either of the given conditions.
+
+Note: 
+
+Row and Column are zero index-based
+If an element satifies both conditions, it will only be considered once in the final sum.
+
+Input
+
+The first line of input contains an integer N.
+The next N  lines of input contain N space-separated integers representing the N X N matrix.
+
+Output
+
+The output should be a single line containing an integer representing the sum of elements that satisfy 
+either of the given conditions.
+
+Explanation
+
+TestCase: If the given number N = 3, and the given matrix is: 
+
+10 12 13
+14 15 16
+17 18 19
+
+﻿
+Here,
+
+10(0, 0), 15(1, 1), and 19(2, 2) satisfies the 1st condition.
+
+13(0+2=2), 15(1+1=2), and 17 (2+0=2) satisfies the 2nd condition.
+
+Here, the element 15 satisfies both conditions, i.e, it will only be considered once in the final sum.
+
+The elements that satisfy either of the given conditions are 10, 13, 15, 17, and 19.
+
+The sum of elements is
+
+10+13 + 15 + 17+ 19 = 74
+
+The output should be 74.
+
+Sample Input 1
+
+3
+10 12 13
+14 15 16
+17 18 19
+
+output
+
+74
+
+Sample Input 2
+
+4
+10 11 12 13
+11 12 13 14
+15 15 15 15
+12 12 12 12
+
+output
+
+102
+
+Solution
+
+ def read_matrix(n):
+    matrix=[]
+    for i in range(n):
+        row=list(map(int,input().split()))
+        matrix.append(row)
+    return matrix
+
+def get_sum_of_elements_satifies_conditions(matrix,n):
+    sum_of_elements=0
+    for i in range(n):
+        for j in range(n):
+            if(i == j or (i + j) == (n - 1)):
+                sum_of_elements+=matrix[i][j]
+    return sum_of_elements
+    
+def main():
+    n=int(input())
+    matrix=read_matrix(n)
+    sum_of_elements=get_sum_of_elements_satifies_conditions(matrix,n)
+    print(sum_of_elements)
+
+main()
+    
+________________________________________________________________
+
+Another Solution
+____________________________________________________________________
+
+n=int(input())
+lista=[]
+sum=0
+for i in range(n):
+    m=list(map(int,input().split()))
+    lista.append(m)
+for i in range(len(lista)):
+    for j in range(len(lista[0])):
+        if i==j or i+j==n-1:
+            sum+=lista[i][j]
+print(sum)
+            
+        
+    
