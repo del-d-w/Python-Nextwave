@@ -1,0 +1,155 @@
+Given a number having ten digits, convert it to a string following the below-mentioned rules.
+
+Rules for conversion:
+
+Separate the number into a set of four-three-three digits
+Use the following prefixes for successive digits
+    Single numbers: just read them separately.
+    Two Consecutive numbers: double
+    Three Consecutive numbers: triple
+    Four Consecutive numbers: quadruple
+
+Input
+
+The first line of input is a string of ten digits.
+
+Output
+
+The output should print the given number in a human-readable format.
+Refer to the sample input and output.
+
+Explanation
+
+In the example, the first test case number is 9887666668 and this number should be divided into 4-3-3 format.
+By separating the number in the dividing format the number will be like
+
+4        3       3
+9887    666     668
+
+The first divided part should be read as nine for 9.And double eight as there are two consecutive 8 's 9 it
+In the second divided part, there are three consecutive 6 's, it should be read as triple six
+In the third divided part should be read as double six  as there are two consecutive 6 's and then 8  separately.
+
+So, the total number should be read as 
+
+nine double eight seven triple six double six eight
+
+Here are some more examples,
+
+﻿
+Number              Dividing Format              Output
+
+9090407368           9090-407- 368          nine zero nine zero four zero seven three six eight
+1111222233           1111-222-233           quadruple one triple two two double three
+9999999999           9999-999-999           quadruple nine triple nine triple nine
+1234567890           1234-567-890           one two three four five six seven eight nine zero
+9467925555           9467-925- 555          nine four six seven nine two five triple five
+7064582309           7064-582-309           seven zero six four five eight two three zero nine
+8527834259           8527-834-259           eight five two seven eight three four two five nine
+ 
+
+Sample Input 1
+
+9887666668
+
+output
+
+nine double eight seven triple six double six eight
+
+Sample Input 2
+
+9090407368
+
+output
+
+nine zero nine zero four zero seven three six eight
+
+Solution
+
+number_dict = {
+    "0": "zero",
+    "1": "one",
+    "2": "two",
+    "3": "three",
+    "4": "four",
+    "5": "five",
+    "6": "six",
+    "7": "seven",
+    "8": "eight",
+    "9": "nine",
+}
+
+consecutive_number_dict = {2: "double", 3: "triple", 4: "quadruple"}
+
+def get_number_seperation_list(number):
+    number_seperation_list = []
+    number_seperation_list.append(number[:4])
+    number_seperation_list.append(number[4:7])
+    number_seperation_list.append(number[7:])
+    return number_seperation_list
+    
+def convert_number_to_human_readable(number):
+    human_readable = ""
+    i = 0
+    while i < len(number):
+        repeated_digits_count = 1
+        
+        j = i + 1
+        while (j < len(number) and number[i] == number[j]):
+            repeated_digits_count += 1
+            j += 1
+     
+        if repeated_digits_count == 1:
+            human_readable += number_dict[number[i]] + " "
+        else:
+            human_readable += consecutive_number_dict[repeated_digits_count] + " " + number_dict[number[i]] + " "
+            
+        i += repeated_digits_count
+        
+    return human_readable
+
+def get_human_readable_number(number_seperation_list):
+    human_readable_number = ""
+    for each_number in number_seperation_list:
+        human_readable_number += convert_number_to_human_readable(each_number)
+    return human_readable_number
+
+def main():
+    number = input()
+    number_seperation_list = get_number_seperation_list(number)
+    human_readable_number = get_human_readable_number(number_seperation_list)
+    print(human_readable_number)
+
+main()
+
+________________________________________________________________
+
+Another Solution
+____________________________________________________________________
+
+s=input()
+n='-'.join([s[:4],s[4:7],s[7:]])
+dicta={'0':'zero','1':'one','2':'two','3':'three','4':'four',
+'5':'five','6':'six','7':'seven','8':'eight','9':'nine'}
+s=''
+count=1
+for i in range(len(n)):
+    if i<len(n)-1 and n[i]==n[i+1]:
+        count+=1 
+    else:
+        if count==2:
+            s+='double '
+        elif count==3:
+            s+='triple '
+        elif count==4:
+            s+='quadruple '
+        if n[i] in dicta.keys():
+            s+=dicta[n[i]]+' '
+        else:
+            s+=n[i]+' '
+        count=1
+s=s.replace('- ','')
+print(s)
+    
+
+            
