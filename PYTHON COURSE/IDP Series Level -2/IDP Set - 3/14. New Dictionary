@@ -1,0 +1,97 @@
+Peter is making a new dictionary. He wants to arrange the words in the ascending order of their 
+length and later arrange the ones with the same length in lexicographic order. Each word is given a 
+serial number according to its position. Find the word according to the serial number.
+
+The serial number of words in Peter's dictionary is as follows
+
+Word            Serial Number
+
+A                    1
+B                    2
+C                    3
+...                  ...
+X                    24
+Y                    25
+Z                    26
+AA                   27
+AB                   28
+...                  ...
+BA                   53
+...                  ...
+ZZ                   702
+AAA                  703
+...                  ...
+
+Input
+
+The first line of input is a positive integer which is the serial number.
+
+Output
+
+The output should be a single line containing the word that represents the serial number.
+
+Explanation
+
+Given serial number is 42
+
+As the serial number is between 26 and 52, the first character of the word is A. 
+The remaining counter of the serial number is 16 (42 - 26).
+
+The second character of the word is the 16th alphabet, which is P
+
+So the output should be AP.
+
+Sample Input 1
+
+42
+
+output
+
+AP
+
+Sample Input 2
+
+751
+
+output
+
+ABW
+
+Solution
+
+ALPHABET_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+def get_the_word_from_serial_number(serial_number):
+    final_word = ""
+    while serial_number > 0:
+        remainder = serial_number % 26
+        if remainder == 0:
+            alphabet = ALPHABET_LETTERS[25]
+            serial_number = serial_number - 26
+        else:
+            alphabet = ALPHABET_LETTERS[remainder-1]
+            serial_number = serial_number - remainder
+        final_word = alphabet + final_word
+        serial_number = serial_number // 26
+    return final_word
+
+def main():
+    serial_number = int(input())
+    word = get_the_word_from_serial_number(serial_number)
+    print(word)
+    
+main()
+________________________________________________________________
+
+Another Solution
+____________________________________________________________________
+
+n=int(input())
+s=''
+while n>0:
+    n-=1 
+    s=chr(n%26+65)+s 
+    n=n//26
+print(s)
+
+            
