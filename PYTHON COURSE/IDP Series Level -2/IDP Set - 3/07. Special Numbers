@@ -1,0 +1,97 @@
+You have been given space-separated Numbers and your task is to modify each number in Numbers
+such that each number starts with an odd digit.
+
+If a number already starts with an odd digit, it should not be modified. If there are no odd digits in the 
+number, it should not be modified either.
+
+Write a program that reads space-separated numbers and prints the modified space-separated numbers.
+
+Input
+
+The input will be a single line containing space-separated integers representing Numbers.
+
+Output
+
+The output should be a single line containing space-separated integers representing modified Numbers.
+
+Explanation
+
+TestCase: For example, if the given integers = 21 503 256 550 86 979 281
+
+Modify each number so that its first digit is an odd digit.
+
+Number          Modified Number          Explanation
+
+21                  12                    12 starts with an odd digit 1
+503                 503                   No modification required
+256                 562                   562 starts with an odd digit 5
+550                 550                   No modification required
+979                 979                   No modification required
+281                 128                   128 starts with an odd digit 1
+
+So the output should be 
+
+12 503 562 550 86 979 128.
+
+Sample Input 1
+
+21 503 256 550 86 979 281
+
+output
+
+12 503 562 550 86 979 128
+
+Sample Input 2
+
+2001 463 6219 669 473 1006 77734 110 20511
+
+output
+
+1200 346 1962 966 734 1006 77734 110 51120
+
+Solution
+
+ def get_rotated_number(each_number):
+    rotated_number = each_number
+    for index in range(len(each_number)):
+        digit = int(each_number[index])
+        if(digit % 2 == 1):
+            rotated_number = each_number[index:] + each_number[:index] 
+            break
+    return rotated_number
+
+def get_rotated_numbers_list(numbers):
+    rotated_numbers_list = []
+    for each_number in numbers:
+        rotated_number = get_rotated_number(each_number)
+        rotated_numbers_list.append(rotated_number)
+    return rotated_numbers_list
+
+def main():
+    numbers = input().split()
+    rotated_numbers_list = get_rotated_numbers_list(numbers)
+    print(*rotated_numbers_list)
+    
+main()
+________________________________________________________________
+
+Another Solution
+____________________________________________________________________
+
+s=input().split()
+n=[]
+for i in s:
+    if int(i[0])%2==1:
+        n.append(i)
+    else:
+        k=True
+        for j in range(len(i)):
+            if int(i[j])%2==1:
+                num=i[j:]+i[:j]
+                n.append(num)
+                k=False
+                break
+        if k:
+            n.append(i)
+print(*n)
+        
