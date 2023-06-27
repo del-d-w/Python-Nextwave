@@ -1,0 +1,78 @@
+You are given a positive integer I .
+Write a program to convert the integer in a decimal system to the one represented in roman numerals.
+
+Input
+
+The input line contains an integer I
+
+Output
+
+The output contains a string which is the Roman numeral representation of given I.
+
+Explanation
+
+Given I=9
+
+The roman numeral representation of 9 is IX
+
+
+Sample Input 1
+
+9
+
+output
+
+IX
+
+Sample Input 2
+
+16
+
+output
+
+XVI
+
+
+Solution
+
+
+ROMAN_NUMERALS = [
+    (1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"), (50, "L"), (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")
+]
+
+def get_quotient_and_remainder(number, diviser):
+    quotient = number // diviser
+    remainder = number % diviser
+    return quotient, remainder
+
+def get_roman_number(number):
+    roman_number = ""
+    for roman_numeral in ROMAN_NUMERALS:
+        quotient, remainder = get_quotient_and_remainder(number, roman_numeral[0])
+        roman_number += roman_numeral[1] * quotient
+        number -= (roman_numeral[0] * quotient)
+        if number <= 0:
+            break
+    return roman_number
+
+def main():
+    number = int(input())
+    roman_number = get_roman_number(number)
+    print(roman_number)
+
+main()
+
+________________________________________________________________
+
+Another Solution
+____________________________________________________________________
+
+roman_keys=[('M',1000),('CM',900),('D',500),('CD',400),('C',100),
+('XC',90),('L',50),('XL',40),('X',10),('IX',9),('V',5),('IV',4),('I',1)]
+n=int(input())
+roman_numeral=''
+for symbol,value in roman_keys:
+    while n>=value:
+        roman_numeral+=symbol
+        n-=value
+print(roman_numeral)
