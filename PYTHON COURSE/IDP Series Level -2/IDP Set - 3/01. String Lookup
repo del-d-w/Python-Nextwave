@@ -1,0 +1,104 @@
+Ram challenges Anil to a game. Anil has been given the word W and the N number of sentences
+
+Anil needs to find the sentence number in which the word W appears for the first time in the N sentences. 
+Help Anil find the sentence number.
+Write a program that reads the word W and the N number of sentences and prints the sentence number in which the word W
+ appears for the first time in N sentences
+
+Note: Consider the lower and upper case letters as different in the words
+
+﻿
+Input
+
+The first line of input contains the string representing the word w.
+The second line of input contains an integer representing the number of sentences N.
+The next N lines of input contain line-separated sentences.
+
+Output
+
+The output should be a single line containing an integer representing the sentence number in which the word w 
+appears for the first time in the N sentences.If the given word W does not appear in any of the sentences, then print -1.
+
+Explanation
+
+TestCase: If the given W=plays and N=3, the sentences is as follows
+
+Raju is going to school
+Teja plays cricket
+Car has four wheels
+
+In sentence number 1 the word plays dont appear
+In sentence number 2 the word plays appears for the first time
+The output should be 2.
+
+Sample Input 1
+
+plays
+3
+Raju is going to school
+Teja plays cricket
+Car has four wheels
+
+output
+
+2
+
+Sample Input 2
+
+brain
+5
+Python is a programming language
+The Human Brain is eighty percent Water
+Kamala scores high in science
+Curious brain learns fast
+Lion is a Land animal
+
+output
+
+4
+
+Solution
+
+def read_sentences(n):
+    sentences_list = []
+    for i in range(n):
+        sentence = input().split() 
+        sentences_list.append(sentence)
+    return sentences_list
+
+def find_the_sentence_contains_the_word(sentences_list, word):
+    for index in range(len(sentences_list)): 
+        if word in sentences_list[index]:
+            sentence_postion = index + 1
+            return sentence_postion
+    return -1
+    
+def main():
+    word = input()
+    no_of_sentences = int(input())
+    sentences_list = read_sentences(no_of_sentences)
+    sentence_postion = find_the_sentence_contains_the_word(sentences_list, word)
+    print(sentence_postion)
+    
+main()
+
+___________________________________________________________________
+
+Another Solution
+____________________________________________________________________
+
+word=input()
+n=int(input())
+lista=[]
+for i in range(n):
+    s=input().split()
+    if word in s:
+        print(i+1)
+        lista.append(i+1)
+        break
+if len(lista)==0:
+    print(-1)
+else:
+    pass
+        
+    
