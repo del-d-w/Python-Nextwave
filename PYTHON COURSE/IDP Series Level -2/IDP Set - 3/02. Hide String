@@ -1,0 +1,110 @@
+Your friend John has been given a sentence S  and asked to modify it by replacing each letter with its previous letter 
+in the alphabet as shown in the table (A becomes Z, B becomes A, etc.).
+
+﻿Letter     Previous letter
+
+A              Z
+B              A
+C              B
+...            ...
+Z              Y
+a              z
+b              a
+c              b
+z              y
+
+Your task is to help John in modifying the sentence.
+
+Write a program that reads the sentence S, and prints the modified sentence by replacing each letter 
+with its previous letter in the alphabet.
+
+Input
+
+The input will be a single line containing a string representing the sentence s.
+
+Output
+
+The output should be a single line containing a string representing the modified sentence.
+
+Explanation
+
+TestCase: If the given sentence is Fourty Nine, 
+The previous letter of F is E, similarly replace each letter with the previous letter.
+
+﻿Letter     Previous letter
+
+F              E
+o              n
+u              t
+r              q
+t              s
+y              x
+
+N              M
+i              h
+n              m
+e              d
+
+The output should be Entqsx Mhmd.
+
+Sample Input 1
+
+Fourty Nine
+
+output
+
+Entqsx Mhmd 
+
+Sample Input 2
+
+Curious brain learns fast
+
+output
+
+Btqhntr aqzhm kdzqmr ezrs 
+
+Solution
+
+def get_new_sentence(sentence):
+    new_sentence = []
+    for word in sentence:
+        new_word = ""
+        for letter in word:
+            if (letter == "a"):
+                new_word += "z"
+            elif (letter == "A"):
+                new_word += "Z"
+            else:
+                letter_ascii_value = ord(letter)
+                previous_letter_ascii_value = letter_ascii_value - 1
+                new_word += chr(previous_letter_ascii_value)
+        new_sentence.append(new_word)
+    return new_sentence
+
+def main():
+    sentence = input().split()
+    new_sentence = get_new_sentence(sentence)
+    print(*new_sentence)
+
+main()
+        
+___________________________________________________________________
+
+Another Solution
+____________________________________________________________________
+
+s=input().split()
+w=''
+for i in s:
+    n=''
+    for j in i:
+        if j=='a':
+            n+='z'
+        elif j=='A':
+            n+='Z'
+        else:
+            n+=chr(ord(j)-1)
+    w+=n+' '
+print(w)
+        
+    
