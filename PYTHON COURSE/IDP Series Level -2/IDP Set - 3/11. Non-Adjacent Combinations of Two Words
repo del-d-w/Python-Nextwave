@@ -1,0 +1,111 @@
+Given a sentence as input, find all the unique combinations of two words and print the word combinations 
+that are not adjacent in the original sentence in lexicographical order.
+
+Input
+
+The input will be a single line containing a sentence.
+
+Output
+
+The output should be multiple lines, each line containing a valid unique combination of two words.
+The words in each line should be lexicographical order and the lines as well should be in lexicographical order. 
+A valid combination will not contain the words that appear adjacent in the given sentence. Print No Combinations
+if there are no valid combinations.
+
+Explanation
+
+TestCase: For example, if the given sentence is python is a programming language, 
+the possible unique combination of two are 
+(a, is), (a, language), (a, programming), (a, python), (is, language), (is, programming), (is, python), 
+(language, programming), (language, python), (programming, python). 
+Out of these the combinations, (a, is), (a, programming), (is, python), (language, programming) 
+are not valid as they contain words that are adjacent in the given sentence. 
+
+So the output should be, 
+
+a language
+a python
+is language
+is programming
+language python
+programming python
+
+Sample Input 1
+
+raju always plays cricket
+
+output
+
+always cricket
+cricket raju
+plays raju
+
+Sample Input 2
+
+python is a programming language
+
+output
+
+a language
+a python
+is language
+is programming
+language python
+programming python
+
+Solution
+
+def print_non_adjacent_words_list(non_adjacent_words_list):
+    if(len(non_adjacent_words_list) == 0):
+        print("No Combinations")
+    for non_adjacent_words in non_adjacent_words_list:
+        print(non_adjacent_words)
+        
+def check_are_words_adjacent(words_list, word1, word2):
+    are_words_adjacent = False
+    for index in range(len(words_list) - 1):
+        if(words_list[index] == word1 and words_list[index + 1] == word2):
+            are_words_adjacent = True
+        elif(words_list[index + 1] == word1 and words_list[index] == word2):
+            are_words_adjacent = True
+    return are_words_adjacent
+
+def get_non_adjacent_words_list(words_list):
+    non_adjacent_words_list = []
+    for i in range(len(words_list) - 1):
+        for j in range(i, len(words_list)):
+            are_words_adjacent = check_are_words_adjacent(words_list, words_list[i], words_list[j])
+            if(i + 1 < j and not are_words_adjacent):
+                non_adjacent_words = [words_list[i], words_list[j]]
+                non_adjacent_words.sort()
+                non_adjacent_words = " ".join(non_adjacent_words)
+                if(non_adjacent_words not in non_adjacent_words_list):
+                    non_adjacent_words_list.append(non_adjacent_words)
+    non_adjacent_words_list.sort()
+    return non_adjacent_words_list
+
+def main():
+    words_list = input().split()
+    non_adjacent_words_list = get_non_adjacent_words_list(words_list)
+    print_non_adjacent_words_list(non_adjacent_words_list)
+    
+main()
+
+________________________________________________________________
+
+Another Solution
+____________________________________________________________________
+
+words=input().split()
+valid_combinations=[]
+for i in range(len(words)):
+    for j in range(i+1,len(words)):
+        if abs(i-j)!=1:
+            valid_combinations.append((words[i],words[j]))
+lista=[]
+for i in sorted(valid_combinations):
+    lista.append(' '.join(sorted(i)))
+for i in sorted(lista):
+    print(i)
+    
+            
