@@ -1,0 +1,109 @@
+A Keyword Cipher is a monoalphabetic substitution cipher which uses a key to provide encryption on given string of message.
+
+In a substitution cipher each letter of the plaintext alphabet is matched with a different letter according to 
+the ciphertext alphabet. Using these letter matchings, every letter of the message is substituted 
+to get the encrypted message.
+
+In a keyword cipher, the key in the beginning (after removing the repeated letters in the key), and then the rest of 
+remaining letters are used in alphabetic order. 
+
+For example, if the key is zebras,
+
+Plaintext Alphabet :  a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
+Ciphertext Alphabet : z|e|b|r|a|s|c|d|f|g|h|i|j|k|l|m|n|o|p|q|t|u|v|w|x|y
+
+
+Notice that with this key, we are able to match each letter of english alphabet with a different letter. 
+Using these matchings we can encrypt the word discovered as rfpbluaoar. 
+( is replaced with r, i is replaced with f, and so on ...)
+
+Given a key K and the message, encrypt the message with Keyword Cipher, using the given key.
+
+Input
+
+The first line contains two space-separated strings K, M.
+
+Output
+
+The output is a string representing the encrypted message. 
+
+Explanation
+
+Given K = apple M = abcde
+
+Plaintext Alphabet :  a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
+Ciphertext Alphabet : a|p|l|e|b|c|d|f|g|h|i|j|k|m|n|o|q|r|s|t|u|v|w|x|y|z
+
+According to the above matching, the letters of the given message abcde  should be replaced in the following way.
+
+a -> a
+b -> p
+c -> l
+d -> e
+e -> b
+
+
+Som the encrypted message is apleb
+
+Sample Input 1
+
+keyword abchij
+
+output
+
+keyabc
+
+Sample Input 2
+
+apple abcde
+
+output
+
+apleb
+
+Solution
+
+ALL_LOWERCASE_LETTERS = 'abcdefghijklmnopqrstuvwxyz'
+    
+def get_alphabet_mapping(ciphertext_alphabet):
+    alphabet_mapping_dict = {}
+    for i in range(len(ALL_LOWERCASE_LETTERS)):
+        alphabet_mapping_dict[ALL_LOWERCASE_LETTERS[i]] = ciphertext_alphabet[i]
+    return alphabet_mapping_dict
+    
+def remove_letter_repetitions(word):
+    new_word = ""
+    letters_set = set()
+    for letter in word:
+        if letter not in letters_set:
+            new_word += letter
+            letters_set.add(letter)
+    return new_word
+
+def remove_letters_from_word(word, letters_to_remove):
+    new_word = ""
+    for letter in word:
+        if letter not in letters_to_remove:
+            new_word += letter
+    return new_word
+
+def get_cipher_alphabet(key):
+    key = remove_letter_repetitions(key)
+    remaining_alphabet = remove_letters_from_word(ALL_LOWERCASE_LETTERS, key)
+    return key + remaining_alphabet
+
+def get_encryted_message(word, alphabet_mapping_dict):
+    encrypted_message = ''
+    for each_alphabet in word:
+        encrypted_message += alphabet_mapping_dict[each_alphabet]
+    return encrypted_message
+
+def main():
+    key, message = input().split()
+    key, message = key.lower(), message.lower()
+    cipher_alphabet = get_cipher_alphabet(key)
+    alphabet_mapping_dict = get_alphabet_mapping(cipher_alphabet)
+    encrypted_message = get_encryted_message(message, alphabet_mapping_dict)
+    print(encrypted_message)
+
+main()
