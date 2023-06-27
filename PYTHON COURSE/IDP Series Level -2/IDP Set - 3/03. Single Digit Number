@@ -1,0 +1,81 @@
+You have given a positive number N and asked to convert that number N into a single digit by repeatedly 
+adding its digits until it becomes a single digit.
+
+Write a program that reads the number N and prints the single digit by repeatedly adding its digits 
+until it becomes a single digit.
+
+
+Input
+
+The input will be a single line containing an integer representing the number N.
+
+Output
+
+The output should be a single line containing an integer obtained by repeatedly adding the digits of the given number N
+until it becomes a single digit.
+
+Explanation
+
+TestCase: If the given number N=545, 
+
+Repeatedly add the digits of the given number 545 until it becomes a single digit like as shown below
+
+Add the digits of the given number:
+
+5 + 4 + 5 = 14
+
+Repeat the process and add the digits of the result:
+
+1 + 4 = 5
+
+As it becomes a single digit stop the process.
+
+The output should be 5.
+
+Sample Input 1
+
+545
+
+output
+
+5
+
+Sample Input 2
+
+111
+
+output
+
+3
+
+Solution
+
+def get_sum_of_digits(number):
+    sum_of_digits = 0
+    for each_digit in str(number):
+        sum_of_digits += int(each_digit)
+    return sum_of_digits
+def get_single_numeral_number(number):
+    while True:
+        if len(str(number)) == 1:
+            break
+        number = get_sum_of_digits(number)
+    return number
+def main():
+    number=input()
+    single_numeral_number = get_single_numeral_number(number)
+    print(single_numeral_number)
+main()
+        
+___________________________________________________________________
+
+Another Solution
+____________________________________________________________________
+
+n=int(input())
+if n%9==0:
+    print(9)
+else:
+    print(n%9)
+        
+    
