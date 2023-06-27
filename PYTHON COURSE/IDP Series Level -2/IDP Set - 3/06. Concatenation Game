@@ -1,0 +1,285 @@
+Sameer is participating in a competition where the task is to combine N lines of space-separated 
+strings vertically (column-wise).
+
+For example,
+
+If the given N = 3, and each line contains space-separated strings as follows
+
+He
+enjoys basketball
+playing and football
+
+He
+enjoys    basketball
+playing    and          football 
+
+Column wise
+
+The output should be
+
+Heenjoysplaying
+basketballand
+football
+
+Your task is to help Sameer by combining the N lines of space-separated strings vertically (column-wise).
+
+Write a program that reads an integer N and N lines of space-separated strings and prints the resultant strings.
+
+Input
+
+The first line of input contains an integer representing N.
+The next N lines of the input contain space-separated strings.
+
+Output
+
+The output should be a line-seperated strings obtained by combining the N lines 
+of space-separated strings vertically (column-wise).
+
+Explanation
+
+TestCase1: For example, if the given N = 2, and each line contains of space-separated strings as follows:
+
+I slove
+can this
+
+Combine the first word of the first line I with the first word of the second line can => Ican.
+
+Combine the second word of the first line slove with the second word of the second line this =>slovethis.
+
+I    slove
+can  this
+
+Column wise
+
+So the output should be,
+
+Ican
+slovethis
+
+TestCase2: For example, if the given N = 2, and each line contains of space-separated strings as follows:
+
+byby 
+hyhy
+
+Combine the first word of the first line by with the first word of the second line hy => byhy.
+
+Combine the second word of the first line by with the second word of the second line hy =>byhy.
+
+by    by
+hy    hy
+
+Column wise
+
+So the output should be,
+
+byhy
+byhy
+
+Sample Input 1
+
+1
+Hy
+
+output
+
+Hy
+
+Sample Input 2
+
+2
+by by
+hy hy
+
+output
+
+byhy
+byhy
+
+Sample Input 3
+
+2
+by hy
+hy 
+
+output
+
+byhy
+hy
+
+
+Sample Input 4
+
+3
+hy
+hy
+hy
+
+output
+
+hyhyhy
+
+Sample Input 5
+
+3
+Not you kid
+They are got
+Like great
+
+output
+
+NotTheyLike
+youaregreat
+kidgot
+
+Sample Input 6
+
+4
+hy hy
+by
+hy hy hy
+by by hy by hy
+
+output
+
+hybyhyby
+hyhyby
+hyhy
+by
+hy
+
+Sample Input 7
+
+5
+You got free
+Are some of
+Not exciting cost I
+Only free chips can care
+Selected novels only afford free
+
+output
+
+YouAreNotOnlySelected
+gotsomeexcitingfreenovels
+freeofcostchipsonly
+Icanafford
+carefree
+
+Sample Input 8
+
+6
+The
+Dog can
+Slept you be
+all pick care he
+day me free never yes
+Long up always started sure deal
+
+output
+
+TheDogSleptalldayLong
+canyoupickmeup
+becarefreealways
+heneverstarted
+yessure
+deal
+
+Sample Input 9
+
+7
+Paul the
+Went children
+Shopping had the look
+and cereal ocean at
+Bought milk waved the coding I
+Bread and at big is can
+Cheese juice me den love code python
+
+output
+
+PaulWentShoppingandBoughtBreadCheese
+thechildrenhadcerealmilkandjuice
+theoceanwavedatme
+lookatthebigden
+codingislove
+Icancode
+python
+
+Sample Input 10
+
+8
+They rachel ben the the
+went ran ate boy boy
+To the big played went
+The fastestorange in shopping
+seaside and and the to
+and won a snow buy
+made the red all a
+sandcastle race apple day coat
+
+output
+
+TheywentToTheseasideandmadesandcastle
+rachelranthefastestorangeandwontherace
+benatebiginandaredapple
+theboyplayedshoppingthesnowallday
+theboywenttobuyacoat
+
+
+Solution
+
+ def read_sentences_list(number):
+    sentences_list = []
+    for i in range(number):
+        sentence = input().split()
+        sentences_list.append(sentence)
+    return sentences_list
+
+def get_length_of_max_length_sentence(sentences_list):
+    max_length = 0
+    for each_sentence in sentences_list:
+        if(len(each_sentence) > max_length):
+            max_length = len(each_sentence)
+    return max_length
+    
+def get_concatinated_words_list(sentences_list, max_length):
+    concatinated_words_list = []
+    for index in range(max_length):
+        concatinated_word = ""
+        for each_sentence in sentences_list:
+            if(len(each_sentence) > index):
+                concatinated_word += each_sentence[index]
+        concatinated_words_list.append(concatinated_word)
+    return concatinated_words_list
+    
+def print_concatinated_words(concatinated_words):
+    for each_word in concatinated_words:
+        print(each_word)
+    
+def main():
+    number = int(input())
+    sentences_list = read_sentences_list(number)
+    max_length = get_length_of_max_length_sentence(sentences_list)
+    concatinated_words_list = get_concatinated_words_list(sentences_list, max_length)
+    print_concatinated_words(concatinated_words_list)
+        
+main()
+    
+________________________________________________________________
+
+Another Solution
+____________________________________________________________________
+
+n=int(input())
+lista=[]
+max_len=0
+for i in range(n):
+    s=input().split()
+    lista.append(s)
+    max_len=max(max_len,len(s))
+trans_lista=[[] for i in range(max_len)]
+for i in lista:
+    for j in range(len(i)):
+        trans_lista[j].append(i[j] if j<len(i) else '')
+for i in trans_lista:
+    print(''.join(i))
+            
