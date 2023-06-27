@@ -1,0 +1,113 @@
+Murli is attending a quiz. In the quiz, the question contains an integer N, Murli has to tell the closest number to N
+where all the digits of that number are even.
+
+In case of a tie between two numbers, choose the smallest one. 
+Write a program to find the number.
+
+Input
+
+The input is a single line containing an integer N.
+
+Output
+
+The output should be a single line containing the closest integer, that has all even digits.
+
+Explanation
+
+In the example, the number is 17. The closest number that has all even digits in it is 20
+
+So the output should be 20.
+
+In example two, the number is -33 . The closest number that has all even digits in it is -28
+
+So the output should be -28.
+
+Sample Input 1
+
+17
+
+output
+
+20
+
+Sample Input 2
+
+-33
+
+output
+
+-28
+
+Solution
+
+def check_even_digit_number(number):
+    number = str(number)
+    if number[0] == "-":
+        number = number[1:]
+    for each_digit in number:
+        if int(each_digit) % 2 != 0:
+            return False
+    return True
+    
+def get_lower_even_digit_number(number):
+    while True:
+        is_even_digit_number = check_even_digit_number(number)
+        if(is_even_digit_number):
+            return number
+        number -= 1
+    
+def get_higher_even_digit_number(number):
+    while True:
+        is_even_digit_number = check_even_digit_number(number)
+        if(is_even_digit_number):
+            return number
+        number += 1
+
+def get_closest_even_digits_number(number):
+    lower_even_digit_number = get_lower_even_digit_number(number)
+    higher_even_digit_number = get_higher_even_digit_number(number)
+    
+    diff_with_lower_number = number - lower_even_digit_number
+    diff_with_higher_number = higher_even_digit_number - number
+
+    if(diff_with_lower_number <= diff_with_higher_number):
+        return lower_even_digit_number
+    else:
+        return higher_even_digit_number
+
+def main():
+  number = int(input())
+  closest_number = get_closest_even_digits_number(number)
+  print(closest_number)
+ 
+main()
+
+________________________________________________________________
+
+Another Solution
+____________________________________________________________________
+
+def check_even_digits(n):
+    for i in str(abs(n)):
+        if int(i)%2!=0:
+            return False
+    return True
+n=int(input())
+nearest_even=None
+if check_even_digits(n):
+    nearest_even=n 
+else:
+    a=n 
+    b=n 
+    while True:
+        a+=1 
+        b-=1
+        if check_even_digits(abs(b)):
+            nearest_even=b
+            break
+        if check_even_digits(abs(a)):
+            nearest_even=a
+            break
+print(nearest_even)
+    
+            
