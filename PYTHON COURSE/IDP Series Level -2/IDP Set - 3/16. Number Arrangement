@@ -1,0 +1,42 @@
+Each student from the kindergarten was given a word or a number. They were made to stand in such a way 
+that their words/numbers made an actual sentence. Later the students that have numbers are told to 
+shuffle among themselves such that they appear in decreasing order when the whole sentence is read. 
+Find the sentence formed after they rearranged themselves in the said order.
+
+Note: There will not be any negative numbers or numbers with the decimal part.
+
+Input
+
+The input is a string containing the actual sentence.
+
+Output
+
+The output is a string containing the modified sentence as mentioned above.
+
+Explanation
+
+For example, if the actual sentence is  It is a 3days 4nights holiday trip
+
+The numbers in the sentence are 3 and 4. After arranging them in decreasing order, the output looks like 
+
+It is a 4days 3nights holiday trip
+
+
+Sample Input
+
+It is a 3days 4nights holiday trip
+
+output
+
+It is a 4days 3nights holiday trip
+
+
+Solution
+
+
+
+________________________________________________________________
+
+Another Solution
+____________________________________________________________________
+
