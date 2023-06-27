@@ -1,0 +1,100 @@
+You are given a sentence S(all characters are upper case) with multiple words in it. 
+Write a program to print all the perpendicular words in S
+
+An ith perpendicular word is formed by combining all the ith characters from all the words 
+in the same order in which they appear in S 
+
+Use spaces whenever it is necessary to form the perpendicular words. (Trailing spaces are not allowed)
+
+Input
+
+The first line contains a string S.
+
+Output
+
+Each line of the output contains a string formed perpendicularly as mentioned above.
+
+Explanation
+
+TestCase: For example, if the given S = CAT BAT VIN
+
+Printing the given words perpendicularly.
+
+CBV
+AAI
+TTN
+
+Joining all the first characters from the given 3 words gives CBV.
+Joining all the second characters from the given 3 words gives AAI.
+Joining all the third characters from the given 3 words gives TTN.
+
+So the output should be, 
+
+CBV
+AAI
+TTN
+
+Sample Input 1
+
+CAT BAT VIN
+
+output
+
+CBV
+AAI
+TTN
+
+Sample Input 2
+
+MAM BY DORM
+
+output
+
+MBD
+AYO
+M R
+  M
+
+Solution
+
+ def get_length_of_max_length_word(words_list):
+    max_length = 0
+    for each_word in words_list:
+        if(len(each_word) > max_length):
+            max_length = len(each_word)
+    return max_length
+def print_perpendicular_words(words_list, max_length):
+    for each_length in range(1, max_length+1):
+        prependicular_word = ''
+        for each_word in words_list:
+            if(each_length <= len(each_word)):
+                prependicular_word += each_word[each_length - 1]
+            else:
+                prependicular_word += " "
+        print(prependicular_word)
+
+def main():
+    words_list = input().split()
+    words_list_length = len(words_list)
+    max_length = get_length_of_max_length_word(words_list)
+    print_perpendicular_words(words_list, max_length)
+
+main()
+
+________________________________________________________________
+
+Another Solution
+____________________________________________________________________
+
+lista=input().split()
+max_len=max(len(word) for word in lista)
+trans_lista=[[] for i in range(max_len)]
+for word in lista:
+    for i in range(max_len):
+        if i<len(word):
+            trans_lista[i].append(word[i])
+        else:
+            trans_lista[i].append(' ')
+for i in trans_lista:
+    print(''.join(i))
+            
