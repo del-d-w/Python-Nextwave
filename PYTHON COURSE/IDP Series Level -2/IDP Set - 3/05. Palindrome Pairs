@@ -1,0 +1,109 @@
+Given a list of unique words, write a program to print all the pairs of the distinct indices (i, j) in the given list, 
+so that the concatenation of two words at indices i and j is a palindrome.
+
+Input
+
+The input will be a single line containing a sentence.
+
+Output
+
+The output should be printing each distinct pair of indices (i, j) each in a line in ascending order.
+If there are no distinct pairs found, print -1.
+
+Note: Consider (i, j) and (j, i) as two different pairs.
+
+Explanation
+
+TestCase: For example, if the given sentence is
+
+was it a car or a cat I saw
+
+The words that can be concatenated to make a palindrome are
+
+Words          indices
+
+(was, saw)      (0, 8)
+(a, a)          (2, 5)
+(a, a)          (5, 2)
+(saw, was)      (8, 0)
+
+So the output should be
+
+0 8
+2 5
+5 2
+8 0
+
+Sample Input 1
+
+was it a car or a cat I saw
+
+output
+
+0 8
+2 5
+5 2
+8 0
+
+Sample Input 2
+
+bat tac tab cat
+
+output
+
+0 2
+1 3
+2 0
+3 1
+
+Solution
+
+ def get_palindrome_pairs_list(sentence):
+    palindrome_pairs_list = []
+    for i in range(len(sentence)):
+        for j in range(len(sentence)):
+            if i != j:
+                pair = sentence[i] + sentence[j]
+                if pair == pair[::-1]:
+                    palindrome_pair_indices = str(i) + " " + str(j)
+                    palindrome_pairs_list.append(palindrome_pair_indices)
+    return palindrome_pairs_list
+
+def print_palindrome_pairs(palindrome_pairs_list):
+    if len(palindrome_pairs_list) > 0:
+        for each_pair_indices in palindrome_pairs_list:
+            print(each_pair_indices)
+    else:
+        print(-1)
+
+def main():
+    sentence = input().split()
+    palindrome_pairs_list = get_palindrome_pairs_list(sentence)
+    print_palindrome_pairs(palindrome_pairs_list)
+
+main()
+    
+________________________________________________________________
+
+Another Solution
+____________________________________________________________________
+
+def is_palindrome(word):
+    return word==word[::-1]
+def find_palindrome_pair_indexes(words):
+    pairs=[]
+    for i in range(len(words)):
+        for j in range(len(words)):
+            if i!=j:
+                concatenated=words[i]+words[j]
+                if is_palindrome(concatenated):
+                    pairs.append((i,j))
+    return pairs
+words=input().split()
+palindrome_pairs=sorted(find_palindrome_pair_indexes(words))
+if len(palindrome_pairs)>0:
+    for i in palindrome_pairs:
+        print(i[0],i[1])
+else:
+    print(-1)
+            
