@@ -1,0 +1,124 @@
+Robert has been given an assignment. In that assignment N words has been given, 
+he should find whether all these words belongs to the same Family or not by considering the below rules.
+
+Except the first word, if we can obtain each word by:
+
+changing exactly one letter from the previous word.
+Or, by adding exactly one letter to the previous word.
+Or, by removing exactly one letter from the previous word.
+
+Help Robert to find whether all the given words belongs to the same Family or not.
+
+Write a program that reads the N space-separated words and prints whether all the given 
+words belongs to the same Family or not
+
+Input
+
+The first line of input contains an integer T representing the number of test cases.
+The next T lines of input contains
+    The first line of input contains an integer N representing the number of words.
+    The second line of input contains N space-separated strings representing the words.
+
+Output
+
+The output should be T lines, each line containing a string. 
+
+Family should be printed if every word is equal to its previous word, otherwise Not a Family should be printed.
+
+Explanation
+
+Given the number of test cases 
+
+Test Case 1: If the given N = 3 and S = hip hop top
+To obtain 2nd word hop from the 1st word hip, the letter i should be changed to o
+To obtain 3rd word top from the 2nd word hop, the letter h should be changed to t
+
+As all the words are obtained from its previous words, the output should be Family.
+
+Test Case 2: If the given N = 3 and S = hip top hop
+To obtain 2nd word hop from the 1st word top,the letter i should be changed to o and letter h should be changed to t
+As two changes are needed to obtain the word top, the output should be Not a Family.
+
+Test Case 3: If the given N = 4 and S = teat treat greet meet
+To obtain 2nd word treat from the 1st word teat, the letter r  is added by making the word treat
+To obtain 3rd word greet from the 2nd word treat, the letter t should be changed to g and letter a should be changed to e
+As two changes are needed to obtain the word greet, the output should be Not a Family.
+
+Sample Input 1
+
+3
+3
+hip hop top
+3
+hip top hop
+4
+teat treat greet meet
+
+output
+
+Family
+Not a Family
+Not a Family
+
+Sample Input 2
+
+3
+3
+tic tac toe
+2
+tic tac
+3
+tet treat greet
+
+output
+
+Not a Family
+Family
+Not a Family
+
+Solution
+
+def check_equal_lengths_are_of_same_family(first_word, second_word):
+    letter_difference = 0
+    for i in range(len(first_word)):
+        if(first_word[i] != second_word[i]):
+            letter_difference += 1
+    return letter_difference == 1
+
+def check_letter_removal_makes_family(max_length_word, min_length_word):
+    is_same_family = False
+    for i in range(len(max_length_word)):
+        if(max_length_word[:i] + max_length_word[i+1:] == min_length_word):
+            is_same_family = True
+            break
+    return is_same_family
+        
+def check_if_list_is_family(words_list):
+    is_same_family = True
+    for i in range(len(words_list) - 1):
+        first_word, second_word = words_list[i], words_list[i+1]
+        first_word_length, second_word_length = len(first_word), len(second_word)
+        if(first_word_length == second_word_length):
+            is_same_family = check_equal_lengths_are_of_same_family(first_word, second_word)
+        elif(first_word_length > second_word_length):
+            is_same_family = check_letter_removal_makes_family(first_word, second_word)
+        else:
+            is_same_family = check_letter_removal_makes_family(second_word, first_word)
+        if not is_same_family:
+            break
+    
+    if(is_same_family):
+        return "Family"
+    else:
+        return "Not a Family"
+ 
+
+def main():
+   test_cases = int(input()) 
+   for i in range(test_cases):
+        no_of_words = int(input())
+        words_list = input().split()
+        is_family = check_if_list_is_family(words_list)
+        print(is_family)
+    
+main()
