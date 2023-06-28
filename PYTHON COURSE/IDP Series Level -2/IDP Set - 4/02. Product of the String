@@ -1,0 +1,92 @@
+You are given an alphanumeric string S. You need to find the product of all the characters of that 
+string S by following the rules.
+
+Rules:
+
+If the character is a digit, multiply its value.
+If the character is an alphabet, multiply the product of digits of its ASCII value.
+
+Write a program that reads the string and prints the product of all the characters of the string S.
+
+Input
+
+The input will be a single line containing a string representing S.
+
+Output
+
+The output should be a single line containing an integer that is product of all the characters of that string S.
+
+Explanation
+
+Test Case: If the given string S is 123a4
+
+ASCII value of a is 97
+
+Product of digits of ASCII value of a is 
+
+9 X 7 = 63
+Therefore the product of characters is 
+1 X 2 X 3 X 63 X 4 = 1512
+
+The output should be 1512.
+
+
+Sample Input 1
+
+123a4
+
+output
+
+1512
+
+Sample Input 2
+
+12x
+
+output
+
+0
+
+Solution
+
+def get_ascii_value_product(ascii_value):
+    ascii_value_product = 1 
+    for each_value in str(ascii_value):
+        ascii_value_product *= int(each_value)
+    return ascii_value_product
+
+def get_product(alphanumeric_string):
+    product = 1
+    for each_char in alphanumeric_string:
+        if (each_char.isdigit()):
+            product *= int(each_char)
+        else:
+            ascii_value = ord(each_char)
+            ascii_value_product = get_ascii_value_product(ascii_value)
+            product *= ascii_value_product
+    return product
+    
+def main():
+    alphanumeric_string = input()
+    product = get_product(alphanumeric_string)
+    print(product)
+
+main()
+
+________________________________________________________________
+
+Another Solution
+____________________________________________________________________
+
+s=input()
+p=1 
+k=''
+for i in s:
+    if not i.isdigit():
+        k+=str(ord(i))
+    else:
+        k+=i 
+for i in k:
+    p*=int(i)
+print(p)
+    
