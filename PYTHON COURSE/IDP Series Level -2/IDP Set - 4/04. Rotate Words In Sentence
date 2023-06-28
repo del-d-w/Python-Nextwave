@@ -1,0 +1,46 @@
+Joseph has been given a sentence S and a number N. He needs to rotate the letters of the sentence S by the given number 
+towards the left without changing the length of the words and the positions of the spaces.
+
+Example: S = I am Ajay
+if N = 1, the modified sentence should be a mA jayI
+if N = 2, the modified sentence should be m Aj ayIa
+
+Help Joseph rotates the sentence.
+
+Write a program that reads the sentence S and the number N and prints the resultant sentence.
+
+Input
+
+The first line of input contains a string representing the sentence S.
+The second line of input contains an integer representing the number N.
+
+Output
+
+The output should be a single line containing the string representing the resultant sentence.
+
+Explanation
+
+Rotate the sentence by 5 letters towards the left without changing the length of the words
+and position of spaces in the original sentence.
+
+The output should be metoyou rf irst probl emWelco.
+
+Sample Input 1
+
+Welcome to your first problem
+5
+
+output
+
+rf irst probl emWelco.
+
+Sample Input 2
+
+All the best
+
+output
+
+lth ebe stAl
+
+Solution
+
