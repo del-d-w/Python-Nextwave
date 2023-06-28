@@ -34,9 +34,84 @@ It is a 4days 3nights holiday trip
 Solution
 
 
+def adding_numbers_and_words(word_chunks_list,numbers_in_sentence_list):
+    rearranged_sentence = ''
+    for each_word in word_chunks_list:
+        rearranged_sentence+=each_word
+        if len(numbers_in_sentence_list) != 0:
+            rearranged_sentence+=str(numbers_in_sentence_list.pop())
+    return rearranged_sentence
+        
+def get_rearranged_sentence(sentence):
+    numbers_in_sentence_list=[]
+    word_chunks_list=[]
+    
+    i = 0
+    while i < len(sentence):
+        number = ''
+        if sentence[i].isdigit():
+            start_index = i
+            length_of_the_word = len(sentence)
+            end_index = length_of_the_word + 1
+            for j in range(start_index, length_of_the_word):
+                if not sentence[j].isdigit():
+                    end_index = j
+                    break
+                
+            number = sentence[start_index:end_index]
+            numbers_in_sentence_list.append(int(number))
+            word_chunks_list.append(sentence[:start_index])
+            sentence = sentence[end_index:]
+            i = 0
+        else:
+            i += 1
+            
+    word_chunks_list.append(sentence)
+    numbers_in_sentence_list=sorted(numbers_in_sentence_list)
+    
+    result=adding_numbers_and_words(word_chunks_list,numbers_in_sentence_list)
+    return result
+   
+def main():
+    sentence = input()
+    rearranged_sentence=get_rearranged_sentence(sentence)
+    print(rearranged_sentence)
+    
+main()
 
 ________________________________________________________________
 
 Another Solution
 ____________________________________________________________________
 
+s=input()
+n=''
+for i in s:
+    if i.isdigit():
+        n+=i 
+    else:
+        n+=' '
+n=n.split()
+n=list(map(int,n))
+num=sorted(n,reverse=True)
+if len(n)==0 or len(n)==1:
+    print(s)
+else:
+    r=''
+    i=0
+    j=0
+    k=len(s)
+    while j<k:
+        if s[j].isdigit():
+            if s[j].isdigit() and j==0 or not s[j-1].isdigit():
+                r+=str(num[i])
+                m=len(str(num[i]))
+                i+=1 
+                j+=1 
+            else:
+                j+=1 
+        else:
+            r+=s[j]
+            j+=1 
+    print(r)
+    
