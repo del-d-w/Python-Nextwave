@@ -1,0 +1,95 @@
+Eren and his friends are all passionate about computer programming. One of Eren's friends challenged him. 
+In that challenge, Eren has been given a sentence there he should change the sentence in such a way 
+that the smaller numbers should appear before the bigger numbers.
+
+Help Eren to change the sentence in such a way that the smaller numbers should appear before the bigger numbers.
+
+Write a program that reads the sentence and print the sentence in such way that smaller numbers should appear 
+before the bigger numbers.
+
+Note:
+
+only positive number in will be there in between sentence
+
+Input
+
+The input will be a single line containing a string representing the sentence.
+
+Output
+
+The output should be a single line containing a modified string.
+
+Explanation
+
+Test Case: if the given string is I am 5 years 11 months, and 8 days old,
+The numbers are 5, 11, and 8 in the string. 
+As per question you should print the sentence in such a way that the smaller numbers should appear before the bigger numbers.
+
+So, the output should be I am 5 years 8 months, and 11 days
+
+
+Sample Input 1
+
+I am 5 years 11 months and 8 days old
+
+output
+
+I am 5 years 8 months and 11 days old
+
+Sample Input 2
+
+At 12pm total score is 180 with 8 4s 7 6s in 150balls
+
+output
+
+At 4pm total score is 6 with 7 8s 12 150s in 180balls
+
+Solution
+
+def adding_numbers_and_words(word_chunks_list, sorted_numbers_list):
+    reordered_sentence = ''
+    for each_word in word_chunks_list:
+        reordered_sentence += each_word
+        if len(sorted_numbers_list) != 0:
+            reordered_sentence += str(sorted_numbers_list.pop())   
+    return reordered_sentence
+    
+def get_number_end_index(sentence, start_index):
+    end_index = len(sentence)
+    for j in range(start_index, len(sentence)):
+        if not sentence[j].isdigit():
+            end_index = j
+            break
+    return end_index
+    
+def get_word_chunks_and_numbers_list(sentence):
+    word_chunks_list, numbers_list = [], []
+    i = 0
+    while i < len(sentence):
+        number = ""
+        if sentence[i].isdigit():
+            start_index = i
+            end_index = get_number_end_index(sentence, start_index)  
+            number = int(sentence[start_index:end_index])
+            word_chunk = sentence[:start_index]
+            numbers_list.append(number)
+            word_chunks_list.append(word_chunk)
+            sentence = sentence[end_index:]
+            i = 0
+        else:
+            i += 1
+    word_chunks_list.append(sentence)
+    return word_chunks_list, numbers_list
+    
+def get_reordered_string(sentence):
+    word_chunks_list, numbers_list = get_word_chunks_and_numbers_list(sentence)
+    sorted_numbers_list = sorted(numbers_list, reverse=True)
+    reordered_sentence = adding_numbers_and_words(word_chunks_list, sorted_numbers_list)
+    return reordered_sentence
+
+def main():
+    sentence = input()
+    reordered_sentence = get_reordered_string(sentence)
+    print(reordered_sentence)
+    
+main()
