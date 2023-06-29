@@ -1,0 +1,119 @@
+Stephen is participating in a national coding contest. He has been given a sentence S and a number L.
+He needs to find pairs of words in the sentence S that can be concatenated to form a new word with 
+a length equal to the given number L.
+
+Help Stephen find word pairs with a length equal to the given number.
+
+Write a program that reads a sentence S and a number L and prints the concatenated word pairs
+so that the concatenated word has length L.
+
+Input
+
+The first line of input contains a string representing sentence S.
+The second line of input contains an integer representing number L.
+
+Output
+
+The output should be containing the unique concatenated word pairs each in a line in the dictionary order.
+
+Explanation
+
+Test Case: if given sentence is Welcome to your exam and L = 6
+
+The words which can be paired so that they make concatenated word with length 6 are, 
+
+Word1         Word2
+to            your
+to            exam  
+exam          to
+your          to
+
+The output should be printing each concatenated word in a line in the dictionary order.
+
+examto
+toexam
+toyour
+yourto
+
+Sample Input 1
+
+Welcome to your exam
+6
+
+output
+
+examto
+toexam
+toyour
+yourto
+
+Sample Input 2
+
+My parents and I went to a movie
+9
+
+output
+
+Myparents
+moviewent
+parentsMy
+parentsto
+toparents
+wentmovie
+
+Solution
+
+def get_word_pairs_of_given_length(words_list, length):
+    word_pairs_of_given_length = []
+    for i in range(len(words_list)):
+        for j in range(i+1, len(words_list)):
+            word_pair = words_list[i] + words_list[j]
+            if len(word_pair) == length:
+                reversed_word_pair = words_list[j] + words_list[i]
+                word_pairs_of_given_length.append(word_pair)
+                word_pairs_of_given_length.append(reversed_word_pair)
+                
+    return word_pairs_of_given_length
+
+def get_sorted_unique_word_pairs(word_pairs_of_given_length):
+    unique_word_pairs = list(set(word_pairs_of_given_length))
+    sorted_unique_word_pairs = sorted(unique_word_pairs)
+    return sorted_unique_word_pairs
+    
+def print_word_pairs(word_pairs):
+    for word_pair in word_pairs:
+        print(word_pair)
+
+def main():
+    words_list = input().split()
+    length = int(input())
+    
+    word_pairs_of_given_length = get_word_pairs_of_given_length(words_list, length)
+    sorted_unique_word_pairs = get_sorted_unique_word_pairs(word_pairs_of_given_length)
+    
+    print_word_pairs(sorted_unique_word_pairs)
+ 
+main()
+
+_______________________________________________________________________________________
+
+ANOTHER SOLUTION
+__________________________________________________________________________________________
+
+
+t=input().split()
+n=int(input())
+res=set()
+for i in range(len(t)):
+    for j in range(len(t)):
+        if i==j:
+            continue
+        else:
+            word=t[i]+t[j]
+            if len(word)==n:
+                res.add(word)
+s=list(res)
+s.sort()
+for i in s:
+    print(i)
+                
