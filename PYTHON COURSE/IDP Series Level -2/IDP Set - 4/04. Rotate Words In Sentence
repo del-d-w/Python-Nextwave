@@ -76,3 +76,31 @@ def main():
     print(rotated_sentence)
     
 main()
+
+______________________________________________________________________________________
+
+Another Solution
+______________________________________________________________________________________
+
+s=input()
+n=int(input())
+index=[]
+res=''
+for i in range(len(s)):
+    if s[i]==' ':
+        index.append(i)
+    else:
+        res+=s[i]
+m=len(res)
+rotate=n%m 
+word=res[rotate:]+res[:rotate]
+sent=''
+j=0
+for i in range(len(s)):
+    if i in index:
+        sent+=' '
+    else:
+        sent+=word[j]
+        j+=1 
+print(sent)
+        
