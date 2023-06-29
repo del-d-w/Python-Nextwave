@@ -1,0 +1,91 @@
+Ram was given an assignment by his teacher to find the special factors of a positive number N.
+A factor is a number which exactly divides the given number (including the number). 
+A factor is special if it is a prime number.
+
+Help Ram by identifying all the special factors of the number N.
+Write a program that reads the number N and prints the special factors of the number N.
+
+Input:
+
+The input will be a single line containing an integer representing a positive number N.
+
+Output:
+
+The output should be a single line containing the space-separated special factors of the number N in ascending order.
+
+Explanation:
+
+Test Case: If N = 20
+
+The factors of 20 are 1, 2, 4, 5, 10, 20 . Whereas the special factors are 2, 5
+
+The output should be 2 5
+
+Sample Input 1:
+
+20
+
+Output:
+
+2 5
+
+Sample Input 2:
+
+45
+
+Output:
+
+3 5
+
+Solution:
+
+def check_is_prime(number):
+    is_prime = True
+    for i in range(2, number):
+        if number % i == 0:
+            is_prime = False
+            break
+    return is_prime
+
+def get_the_special_factors_list(number):
+    special_factors_list = []
+    for i in range(2, number + 1):
+        if number % i == 0:
+            is_prime = check_is_prime(i)
+            if is_prime:
+                special_factors_list.append(str(i))
+    return special_factors_list
+
+def main():
+    number = int(input())
+    special_factors_list = get_the_special_factors_list(number)
+    print(*special_factors_list)
+    
+main()
+
+_________________________________________________________________________
+
+Another Solution
+_________________________________________________________________________
+
+
+def check_prime(a):
+    if a<2:
+        return False
+    count=0
+    for i in range(2,a):
+        if a%i==0:
+            count+=1 
+            break
+    if count==0:
+        return True
+    else:
+        return False
+    
+n=int(input())
+num=[]
+for i in range(1,n+1):
+    if n%i==0:
+        num.append(i)
+special_factors=list(filter(check_prime,num))
+print(*special_factors)
