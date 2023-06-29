@@ -32,11 +32,12 @@ Welcome to your first problem
 
 output
 
-rf irst probl emWelco.
+metoyou rf irst probl emWelco
 
 Sample Input 2
 
 All the best
+2
 
 output
 
@@ -45,3 +46,33 @@ lth ebe stAl
 
 Solution
 
+def get_each_word_length (words_list): 
+    length_of_each_word_list = []
+    for each_word in words_list:
+        length_of_each_word_list.append(len(each_word))
+    return length_of_each_word_list
+    
+def get_rotated_sentence (words_list, positions):
+    length_of_each_word_list = get_each_word_length (words_list)
+    sentence = "".join(words_list)
+    
+    positions = positions% len(sentence)
+    rotated_sentence = sentence [positions:] + sentence [:positions]
+    
+    new_words_list= []
+    start_index = 0
+    for each_word_length in length_of_each_word_list:
+        word=rotated_sentence[start_index:start_index+each_word_length]
+        new_words_list.append(word)
+        start_index+=each_word_length
+        
+    new_sentence=' '.join(new_words_list)
+    return new_sentence
+
+def main():
+    words_list=input().split()
+    positions=int(input())
+    rotated_sentence=get_rotated_sentence(words_list,positions)
+    print(rotated_sentence)
+    
+main()
