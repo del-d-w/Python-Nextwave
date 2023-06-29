@@ -1,0 +1,503 @@
+You are given a N entries denoting incomes of people. Same person can have more than one income entry. 
+Write a program to print person's name and index of the first income entry of the person with highest 
+total income. In case of tie in total income, choose the lexicographically smallest name. 
+
+Note:
+
+Name will contain only alphabets and spaces.
+Names are case insensitive (i.e Ravi and ravi are same).
+Ignore spaces in the name while comparing (i.e Ravi Kishore and RaviKishore are same).
+
+Input
+
+The first line contains an integer N.
+Each of next N lines contains the name and income entry of a person
+
+Output
+
+The output contains a space-separated pair of name and first entry index of the person with highest total income.
+
+Explanation
+
+Sample Output 1
+
+fot N = 4, the input is
+John Cena 1000
+Jane 2000
+Jack 4000
+Tom 4000
+
+Both Jack and Tom  have the highest net income. As Jack is lexicographically smaller than tom
+and found at index 2, the output is Jack 2
+
+Sample Output 2
+
+fot N = 4, the input is
+John Cena 1000
+Patel 1500
+Mar K 1000
+Mark 500
+
+mark ( 1000 + 500 ) and patel (1500) both earn the same. 
+So, we have a tie here. In case of tie choose the name that is smallest lexicographically which is mark
+( m  comes before p in dictionary). The first index of the mark in the given input is Mar k which is at index 2
+
+So the output is Mar K 2
+
+Sample Input 1
+
+1
+John Cena Junior 1000
+
+output
+
+John Cena Junior 0
+
+Sample Input 2
+
+2
+John Jac 1000
+John Jac 1000
+
+output
+
+John Jac 0
+
+Sample Input 3
+
+2
+SohnXena 1000
+SohnSena 1000
+
+output
+
+SohnSena 1
+
+Sample Input 4
+
+2
+JohnCena 1000
+John Cena 1000
+
+output
+
+JohnCena 0
+
+Sample Input 5
+
+2
+JohnCena 1000
+John Cena 2000
+
+output
+
+JohnCena 0
+
+Sample Input 6
+
+2
+JohnCena Junior 1000
+John Cena Junior 1000
+
+output
+
+JohnCena Junior 0
+
+Sample Input 7
+
+2
+JohnCenaJunior 1000
+John Cena 1000
+
+output
+
+John Cena 1
+
+Sample Input 8
+
+2
+John Cena Junior 2000
+John Cena 2000
+
+output
+
+John Cena 1
+
+Sample Input 9
+
+3
+Kobe Bryant 5000
+John Sen 5000
+ Kobe Aria 5000
+
+output
+
+John Sen 1
+
+Sample Input 10
+
+10
+King Kohli 10000
+Sachin Tendulkar  10000
+Xavier Hinault 10001
+Rohit Sharma 10000
+MS Dhoni 15000
+Saurav Ganguly 16000
+Ricky Ponting 10000
+Virat Kohli 10000
+Ravichandran Ashwin 10000
+Virender Sehwag 20000
+
+output
+
+Virender Sehwag 9
+
+
+Sample Input 11
+
+12
+Tresa 1237584
+Jack Nick 1245245
+Nick What 2187485
+werhjg 782586532
+ AgbhjqbvDS qwhrf 72365
+IHBDB wygdfQSYg qwefg YGQWE qwef 1024023542345
+CHris Chiols 871285
+ Natasha 1024023542345
+GOOFGGGle 1247657
+ MANHANT 8273855
+HGFHGWYHER 7246756
+werghihg 8273455
+
+output
+
+IHBDB wygdfQSYg qwefg YGQWE qwef 5
+
+Sample Input 12
+
+17
+JohnCenaJunior 1000
+John Cena 1000
+Xavier Hinault 10001
+Rohit Sharma 10000
+MS Dhoni 15000
+Saurav Ganguly 16000
+The Rock 1000000
+Robert Downey Jr 10000000
+Kit Harrington 50000
+Ricky Ponting 10000
+Virat Kohli 10000
+Ravichandran Ashwin 10000
+Virender Sehwag 20000
+Dwayne Jhonson 1000000
+Hugo Chavez 100000
+Jack Sparrow 100000
+Jack Ace 254674
+
+
+output
+
+Robert Downey Jr 7
+
+
+Sample Input 13
+
+20
+Kit Harrington 50000
+Ricky Ponting 10000
+Virat Kohli 10000
+Ravichandran Ashwin 10000
+Virender Sehwag 20000
+Dwayne Jhonson 1000000
+Hugo Chavez 100000
+Jack Sparrow 100000
+Jack Ace 20000
+Holly 2000000
+Zack 1000000000
+Zack Ryder 1000000000
+The Undertaker 10000
+The Undertaker B 100000
+Casey 100023
+Stark 231245
+AriYa 12345113
+Ted 123456789
+Tracer 123456789
+Yuval 9871234
+
+
+output
+
+Zack 10
+
+Sample Input 14
+
+30
+Rodey 81724
+Tresa 1237584
+Jack Nick 1245245
+Nick What 2187485
+What Nick 1245423
+Patric 28737568
+Tim Huddleston Cuk 82748561324
+Sam Sent 82748561324
+CuRios Schd 12454
+Noter 45278625 
+Kit Harrington 50000
+Ricky Ponting 10000
+Virat Kohli 10000
+Ravichandran Ashwin 10000
+Virender Sehwag 20000
+Dwayne Jhonson 1000000
+Hugo Chavez 100000
+Jack Sparrow 100000
+Jack Ace 20000
+Holly 2000000
+Zack 1000000000
+Zack Ryder 1000000000
+The Undertaker 10000
+The Undertaker B 100000
+Casey 100023
+Stark 231245
+AriYa 12345113
+Ted 123456789
+Tracer 123456789
+Yuval 98736734
+
+
+output
+
+Sam Sent 7
+
+
+Sample Input 15
+
+50
+Holly 2000000
+Zack 1000000000
+Zack Ryder 1000000000
+The Undertaker 10000
+The Undertaker B 100000
+Casey 100023
+Persita 27865
+Stacks 87628674
+ Crawly 7862834657
+ Crawly back 871854
+ Searchie 87634756726457
+Stark 87634756726457
+AriYa 12345113
+Ted 123456789
+Tracer 123456789
+Yuval 9873671234
+Rodey 81724
+Tresa 1237584
+Jack Nick 1245245
+Nick What 2187485
+What Nick 1245423
+Patric 28737568
+Tim Huddleston Cuk 31252345
+Sam Sent 82748561324
+CuRios Schd 12454
+Noter 45278625 
+Kit Harrington 50000
+Ricky Ponting 10000
+Virat Kohli 10000
+Ravichandran Ashwin 10000
+Virender Sehwag 20000
+Dwayne Jhonson 1000000
+Hugo Chavez 100000
+Jack Sparrow 100000
+Jack Ace 20000
+Molly 21837582465
+Chirs 4878261234
+Stuart 76246781
+Broad 82173465
+Stacy 714657
+ Nick Stay see 87246578126
+ Camry 82748561324
+Pullock 82738476
+Harry 244475867
+ Sarry 8728456762
+Nicky 82748561324
+Sunder 125612456
+Paul 124578
+ABCEDS 876876
+ABCEDS 81726
+
+output
+
+Searchie 10
+
+Sample Input 16
+
+70
+The Undertaker 10000
+The Undertaker B 100000
+Casey 100023
+Persita 27865
+Stacks 87628674
+ Crawly 7862834657
+ Crawly back 871854
+ Searchie 87634756726457
+Stark 231245
+AriYa 12345113
+Ted 123456789
+Tracer 123456789
+Yuval 9873671234
+Rodey 81724
+Tresa 1237584
+Jack Nick 1245245
+Nick What 2187485
+What Nick 1245423
+Patric 28737568
+Tim Huddleston Cuk 31252345
+Sam Sent 82748561324
+CuRios Schd 12454
+Noter 45278625 
+Kit Harrington 50000
+Ricky Ponting 10000
+Virat Kohli 10000
+Ravichandran Ashwin 10000
+Holly 2000000
+Zack 1000000000
+Zack Ryder 1000000000
+Virender Sehwag 20000
+Dwayne Jhonson 1000000
+Hugo Chavez 100000
+Jack Sparrow 100000
+Jack Ace 20000
+Molly 21837582465
+Chirs 4878261234
+Stuart 76246781
+Broad 82173465
+Stacy 714657
+ Nick Stay see 87246578126
+ Camry 82748561324
+Pullock 82738476
+Harry 244475867
+ Sarry 8728456762
+Nicky 82748561324
+Sunder 125612456
+Paul 124578
+ABCEDS 876876
+ABCEDS 81742526
+Siver 817258237523467562
+Satier Stay 8764856784234523455
+Surder 8764856784234523455
+Mike Aptle 87235865
+Rhodes 237762365
+Colt 87483726
+ Carder 762867543
+Satur 87287356
+ Maia 76237856
+ Samaint 786236756
+jhadf 78273586
+werhjg 782586532
+ AgbhjqbvDS qwhrf 72365
+IHBDB wygdfQSYg qwefg YGQWE qwef 1024023542345
+CHris Chiols 871285
+ Natasha 87182634
+GOOFGGGle 1247657
+ MANHANT 8273855
+HGFHGWYHER 7246756
+werghihg 8437
+
+
+output
+
+Satier Stay 51
+
+Solution
+
+def read_inputs(no_of_persons):
+    names_list, incomes_list = [], []
+    for i in range(no_of_persons):
+        each_entry = input().split()
+        name = " ".join(each_entry[:len(each_entry) - 1])
+        income = int(each_entry[-1])
+        names_list.append(name)
+        incomes_list.append(income)
+    return names_list, incomes_list
+def get_formatted_name(name):
+    name = "".join(name.split())
+    name = name.lower()
+    return name
+def get_persons_dict(names_list, incomes_list):
+    persons_dict = dict()
+    for i in range(len(names_list)):
+        # Getting the name by converting it to lower case and removing spaces
+        name = get_formatted_name(names_list[i])   
+        if name not in persons_dict.keys():
+            persons_dict[name] = incomes_list[i]
+        else:
+            persons_dict[name] += persons_dict[name] 
+    return persons_dict
+def get_richest_person_name(persons_dict):
+    max_income = max(persons_dict.values())
+    richest_person_names_list = []
+    for each_person in persons_dict.keys():
+        if (persons_dict[each_person] == max_income):  
+            richest_person_names_list.append(each_person)
+    richest_person_names_list.sort()
+    return richest_person_names_list[0]
+def print_richest_person_first_entry(names_list, richest_person_name):
+    for i in range(len(names_list)):
+        # Getting the name by converting it to lower case and removing spaces
+        name = get_formatted_name(names_list[i])   
+        if (name == richest_person_name):
+            print(names_list[i] + " " + str(i))
+            break
+def main():
+    no_of_persons = int(input())
+    names_list, incomes_list = read_inputs(no_of_persons)
+    persons_dict = get_persons_dict(names_list, incomes_list)
+    richest_person_name = get_richest_person_name(persons_dict)
+    print_richest_person_first_entry(names_list, richest_person_name)
+    
+main()
+    
+
+______________________________________________________________________________________
+
+Another Solution
+______________________________________________________________________________________
+
+n=int(input())
+book=[]
+for i in range(n):
+    m=input().split()
+    book.append(m)
+rich={}
+for name in book:
+    salary=int(name.pop())
+    s=''.join(name)
+    person=s.lower()
+    if person in rich:
+        value=rich[person]
+        rich[person]=value+salary
+    else:
+        rich[person]=salary
+k=list(rich.items())
+k.sort(key=lambda x:x[1],reverse=True)
+salaries=list(rich.values())
+maximum=max(salaries)
+count=salaries.count(maximum)
+if count==1:
+    unique=k[0][0]
+else:
+    res=[]
+    for a,b in rich.items():
+        if b==maximum:
+            res.append(a)
+    res.sort()
+    unique=res[0]
+i=0
+for rock in book:
+    richest_person=' '.join(rock)
+    s=''.join(rock)
+    person=s.lower()
+    if unique==person:
+        print(richest_person+' '+str(i))
+        break
+    i+=1
+    
+        
