@@ -1,0 +1,5 @@
+You are given a rectangular binary matrix (contains only zeros and ones) of R rows and C columns. 
+Print the number of different regions in the given matrix. A separate region is a collection of 
+ones interconnected horizontally or vertically. A region can have holes in it.
+
+![No of Regions](https://i.ibb.co/DzN6Wy0/Capture.png)
