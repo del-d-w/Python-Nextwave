@@ -1,0 +1,153 @@
+Given an MxN matrix filled with X's and O's, find the largest square containing only X's and return its area.
+If there are no X s in the entire matrix print 0.
+
+Input:
+
+The first line of input will be containing two space-separated integers, denoting M and N.
+The next M lines will contain N space-separated integers, denoting the elements of the matrix.
+
+Output:
+
+The output should be a single line containing the area of the maximum square.
+
+Explanation:
+
+For example, if the given M, N and elements of matrix are as the following
+
+4 5
+X O X O O
+X O X X X
+X X O X X
+X O O X O
+
+The matrix from indices (1, 3) to (2, 4) has the maximum square with X.
+So the output should be the area of the maximum rectangle with X, which is 4.
+
+Sample Input 1:
+
+4 5
+X O X O O
+X O X X X
+X X O X X
+X O O X O
+
+Sample Output 1:
+
+4
+
+Sample Input 2:
+
+3 3
+O X X
+O X X
+O O O
+
+Sample Output 2:
+
+4
+
+Outline
+
+Question: Area of Square
+Approach
+Step 1: Read the matrix
+Step 2: Check if sub-matrix contains 'O'
+Step 3: Get the maximum sub-matrix area
+Step 4: Get the maximum area of square
+Step 5: Main function
+
+Question: Area of Square
+
+Given an MxN matrix filled with X's and O's, find the largest square containing only X's and return its area.
+If there are no Xs in the entire matrix print 0.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Read the matrix from the input.
+2.Check if a sub-matrix contains 'O'.
+3.Get the maximum sub-matrix area for each 'X' in the matrix.
+4.Get the maximum area of square containing only 'X's.
+5.Implement the main function to execute the above steps.
+
+Step-by-Step Explanation
+
+Step 1: Read the matrix
+
+First, we need to read the matrix from the input. We will create a function read_matrix(rows) that takes 
+the number of rows as an argument and reads the matrix elements row by row.
+
+Step 2: Check if sub-matrix contains 'O'
+
+Next, we will create a function check_if_sub_matrix_contains_zero(matrix, i, j, k, l) that checks if a sub-matrix
+contains 'O'. This function takes the matrix, the starting row and column (i, j), and the dimensions of the 
+sub-matrix (k, l) as arguments.
+
+Step 3: Get the maximum sub-matrix area
+
+Now, we will create a function get_max_sub_matrix_area(matrix, rows, columns, i, j) that finds the maximum 
+sub-matrix area for each 'X' in the matrix. This function takes the matrix, the number of rows and columns,
+and the starting row and column (i, j) as arguments.
+
+Step 4: Get the maximum area of square
+
+Next, we will create a function get_max_area_of_square(matrix, rows, columns) that finds the maximum area of 
+square containing only 'X's. This function takes the matrix, the number of rows, and the number of columns as arguments.
+
+Step 5: Main function
+
+Finally, we will implement the main function to execute the above steps. The main function reads the number of rows
+and columns, reads the matrix, and finds the maximum area of square containing only 'X's.
+
+Now, you have a complete solution to find the largest square containing only 'X's in a given matrix.
+
+Solution:
+
+# Step 1
+def read_matrix(rows):
+    matrix = []
+    for i in range(rows):
+        row = input().split()
+        matrix.append(row)
+    return matrix
+    
+# Step2
+def check_if_sub_matrix_contains_zero(matrix, i, j, k, l):
+    for m in range(0, k + 1):
+        for n in range(0, l + 1):
+            if (matrix[i + m][j + n] == "O"):
+                return True
+    return False
+    
+# Step3
+def get_max_sub_matrix_area(matrix, rows, columns, i, j):
+    max_sub_matrix_area = 0
+    for k in range(0, rows - i):
+        for l in range(0, columns - j):
+            if(k != l): # if k != l, then it is a rectangle but not square
+                continue
+            is_sub_matrix_contains_zero = check_if_sub_matrix_contains_zero(matrix, i, j, k, l)
+            if not is_sub_matrix_contains_zero:
+                max_sub_matrix_area = max(max_sub_matrix_area, (k + 1) * (l + 1))
+    return max_sub_matrix_area
+    
+# Step4
+def get_max_area_of_square(matrix, rows, columns):
+    max_area_of_square = 0
+    for i in range(rows):
+        for j in range(columns):
+            if (matrix[i][j] == "X"): 
+                max_sub_matrix_area = get_max_sub_matrix_area(matrix, rows, columns, i, j)
+                max_area_of_square = max(max_area_of_square, max_sub_matrix_area)
+    return max_area_of_square
+    
+# Step5
+def main():
+    rows, columns = map(int, input().split(" "))
+    matrix = read_matrix(rows)
+    max_area_of_square = get_max_area_of_square(matrix, rows, columns)
+    print(max_area_of_square)
+    
+main()
+
