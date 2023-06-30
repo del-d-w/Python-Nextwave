@@ -1,0 +1,853 @@
+01. Parsing Datetime
+
+Write a program to convert the date given in the string format to a datetime object.
+The date in string format is like "8 Feb 2021".
+
+Input:
+
+The input will be a single line containing the date in the string format.
+
+Output:
+
+The output should be a single line containing the appropriate datetime object.
+
+Explanation:
+
+For example, if the given date is "2 July 2000", your code should convert this date into a datetime object.
+So the output should be
+2000-07-02 00:00:00
+
+Sample Input 1:
+
+2 Jul 2000
+
+Sample Output 1:
+
+2000-07-02 00:00:00
+
+Sample Input 2:
+
+14 Oct 1999
+
+Sample Output 2:
+
+1999-10-14 00:00:00
+
+
+Let's break down the solution into simple steps and explain each one:
+
+Step 1: Import the required module
+First, we need the datetime module to work with dates and times in Python.
+
+Step 2: Set the date format
+We have a date format to work with: "8 Feb 2021". We'll create a variable for this format.
+
+Step 3: Read the input date
+Now, we'll get the input date from the user.
+
+Step 4: Convert the input date to a datetime object
+We'll use the strptime function to convert the input date string into a datetime object. 
+This function takes two arguments - the date string and the format of the date string.
+
+Step 5: Print the datetime object
+Finally, we'll print the datetime object, which will display the date and time in the default format
+(YYYY-MM-DD HH:MM:SS). Since the time is not given, it will show as 00:00:00.
+
+Solution:
+
+# Step 1
+from datetime import datetime
+# Step2
+date_string = "%d %b %Y"
+# Step3
+input_date = input()
+# Step4
+datetime_object = datetime.strptime(input_date, date_string)
+# Step5
+print(datetime_object)
+
+__________________________________________________________________________________________
+
+02. Formatting Datetime
+
+Write a program to convert the date in string format to another string format.
+
+The input date string format is like "Jul 01 2014 02:43PM"
+
+The output date string format should be like "DD/MM/YYYY HH:MM:SS"
+
+Input:
+
+The input will be a single line containing the date in the string format similar to "Jul 01 2014 02:43PM".
+
+Output:
+
+The output should be a single line containing the datetime in "DD/MM/YYYY HH:MM:SS"
+
+Explanation:
+
+For example, if the given date is "Jul 01 2014 02:43PM", your code should convert this date into a new format.
+So the output should be
+01/07/2014 14:43:00
+
+
+
+Sample Input 1:
+
+Jul 01 2014 02:43PM
+
+Sample Output 1:
+
+01/07/2014 14:43:00
+
+Sample Input 2:
+
+Feb 29 2000 02:43AM
+
+Sample Output 2:
+
+29/02/2000 02:43:00
+
+Let's break down the solution into simple steps and explain each one:
+
+Step 1: Import the required module
+First, we need the datetime module to work with dates and times in Python.
+
+Step 2: Set the date and time format
+We have two formats to work with - input and output. We'll create variables for them.
+
+For input format: "Jul 01 2014 02:43PM"
+
+Step 3: Read the input date
+Now, we'll get the input date from the user.
+
+Step 4: Convert the input date to a datetime object
+We'll use the strptime function to convert the input date string into a datetime object. This function takes two arguments - the date string and the format of the date string.
+
+Step 5: Convert the datetime object to the output format
+Now, we'll use the strftime function to convert the datetime object to the desired output format - "DD/MM/YYYY HH:MM:SS".
+
+Step 6: Print the output
+
+Solution:
+
+# Step 1
+from datetime import datetime
+# Step2
+dt_format = "%b %d %Y %I:%M%p"
+# Step3
+input_date = input()
+# Step4
+dt_object = datetime.strptime(input_date, dt_format)
+# Step5
+output_format = "%d/%m/%Y %H:%M:%S"
+formatted_date = datetime.strftime(dt_object,output_format)
+# Step6
+print(formatted_date) 
+
+_____________________________________________________________________________________
+
+03. Print Dates
+
+Write a program to print the previous day of D, the current day D, and the next day of D.
+The date in string format is like "8 Feb 2021".
+
+Input:
+
+The input will be a single line containing the date in the string format.
+
+Output:
+
+The first line of output should contain the date of the previous day.
+The second line of output should contain the date of the current day.
+The third line of output should contain the date of the next day.
+
+Explanation:
+
+For example, if the given date is "26 Jan 2021", your code should print the previous day of that day, 
+which is "25 Jan 2021", the given date and the next day, which is "27 Jan 2021". 
+
+So the output should be
+
+2021-01-25 00:00:00
+2021-01-26 00:00:00
+2021-01-27 00:00:00
+
+Sample Input 1:
+
+26 Jan 2021
+
+Sample Output 1:
+
+2021-01-25 00:00:00
+2021-01-26 00:00:00
+2021-01-27 00:00:00
+
+Sample Input 2:
+
+2 Jul 2000
+
+Sample Output 2:
+
+2000-07-01 00:00:00
+2000-07-02 00:00:00
+2000-07-03 00:00:00
+
+Let's get started by breaking down the problem into smaller steps:
+
+Step 1: Take input from the user
+First, we need to take input from the user in the form of a string. This string should contain the date in the format 
+"day month year". For example, "8 Feb 2021". We will use the input() function to get this input from the user.
+
+Step 2: Convert the input string to a datetime object
+Now that we have the date in the form of a string, we need to convert it to a datetime object. To do this, 
+we will use the strptime() function from the datetime module. We will also create a date_string variable to 
+specify the format of the input string.
+
+Step 3: Calculate the previous day, current day, and next day
+Now that we have the date in the form of a datetime object, we can easily calculate the previous day, 
+current day, and next day using timedelta. We will subtract one day from today to get yesterday, and 
+add one day to today to get the next day.
+
+Step 4: Print the output
+Finally, we will print the output in the required format. We will print the previous day, current day, 
+and next day on separate lines.
+
+# Step 1
+from datetime import datetime,timedelta
+# Step2
+date = input()
+date_string = "%d %b %Y"
+today = datetime.strptime(date, date_string)
+# Step3
+yesterday = today - timedelta(days=1)
+next_day = today + timedelta(days=1)
+# Step4
+print(yesterday)
+print(today)
+print(next_day)
+
+________________________________________________________________________________________
+
+04. Add Years
+
+You are given a date D1 and an integer Y.
+Write a program to add the years Y to D1 and display the new date D2.
+Note: Assume 1 year has 365 days
+
+Input:
+
+The first line of input will be a string, denoting the D1 in the string format similar to "Jul 11 2021".
+The second line of input will be an integer, denoting the Y to be added.
+
+Output:
+
+The output should be a single line containing the new date D2.
+
+Explanation:
+
+For example, if the given D1 is "Jul 11 2014" and Y is 5. 
+Your code should print the date which is ahead of 5 years from the D1. 
+So the output should be
+2019-07-11 00:00:00
+
+Sample Input 1:
+
+Jul 11 2014
+5
+
+Sample Output 1:
+
+2019-07-10 00:00:00
+
+Sample Input 2:
+
+Jan 28 2021
+-2
+
+Sample Output 2:
+
+2019-01-29 00:00:00
+
+Approach:
+
+Step 1: Import required libraries
+First, we need to import the libraries necessary for our program. In this case, we'll import datetime and 
+timedelta from the datetime module.
+
+Step 2: Accept user inputs
+Next, we'll accept user inputs for the date in string format (like "Jul 11 2021") and the number of years we need to add.
+
+Step 3: Convert the string to a datetime object
+We'll now convert the input date string into a datetime object using the strptime function. 
+We'll provide the format '%b %d %Y' to match the input format.
+
+Step 4: Add years to the date
+We will add the years to the date using the timedelta function. Multiply the number of years by 365 days 
+and then add it to the date_object.
+
+Step 5: Print the new date
+Finally, print the new date (D2) as the output.
+
+Solution:
+
+# Step 1
+from datetime import datetime,timedelta
+# Step2
+date_time_string = input()
+n = int(input())
+# Step3
+date_object = datetime.strptime(date_time_string, '%b %d %Y')
+# Step4
+d_2 = date_object + timedelta(days=n*365)
+#Step5
+print(d_2)
+
+_____________________________________________________________________________________________
+
+05. List of dates
+
+You are given two dates D1 and D2.
+Write a program to print the list of dates between two dates D1 and D2(including D1 and D2) in the 
+increasing order of the dates.
+The date in string format is like "Feb 20 2021".
+
+Input:
+
+The first line of input will be a string, denoting the D1 in the string format.
+The second line of input will be a string, denoting the D2 in the string format.
+
+Output:
+
+The output should be multiple lines containing the dates from D1 to D2 each in a new line.
+
+Explanation:
+
+For example, if the given D1 and D2 is
+Jul 11 2014
+Jul 19 2014
+Your code should print the dates from 11th July to 19th July of 2014. 
+So the output should be
+2014-07-11 00:00:00
+2014-07-12 00:00:00
+2014-07-13 00:00:00
+2014-07-14 00:00:00
+2014-07-15 00:00:00
+2014-07-16 00:00:00
+2014-07-17 00:00:00
+2014-07-18 00:00:00
+2014-07-19 00:00:00
+
+Constraints
+
+Date D1 comes before Date D2
+
+Sample Input 1:
+
+Jul 11 2014
+Jul 19 2014
+
+Sample Output 1:
+
+2014-07-11 00:00:00
+2014-07-12 00:00:00
+2014-07-13 00:00:00
+2014-07-14 00:00:00
+2014-07-15 00:00:00
+2014-07-16 00:00:00
+2014-07-17 00:00:00
+2014-07-18 00:00:00
+2014-07-19 00:00:00
+
+Sample Input 2:
+
+Feb 18 2014
+Feb 24 2014
+
+Sample Output 2:
+
+2014-02-18 00:00:00
+2014-02-19 00:00:00
+2014-02-20 00:00:00
+2014-02-21 00:00:00
+2014-02-22 00:00:00
+2014-02-23 00:00:00
+2014-02-24 00:00:00
+
+Approach:
+
+Step 1: Import required modules
+First, we need to import the datetime and timedelta classes from the datetime module. 
+These classes will help us work with dates and calculate the difference between two dates.
+
+Step 2: Get input from the user
+We need to get the start and end dates from the user. We'll use the input() function to read the dates as strings.
+
+Step 3: Convert the date strings to date objects
+Now, we'll convert the date strings to date objects using the datetime.strptime() method. 
+This method takes two arguments: the date string and the format of the date string.
+
+Step 4: Calculate the number of days between the two dates
+To find out the number of days between the two dates, we'll subtract the start date from the end date 
+and store the result in a variable called number_of_days.
+
+Step 5: Print the list of dates
+Finally, we'll use a for loop to iterate through the range of days between the start and end dates.
+In each iteration, we'll add the current day to the start date using the timedelta class and print the resulting date.
+
+Solution:
+
+# Step 1
+from datetime import datetime,timedelta
+# Step2
+start_dt_string = input()
+end_dt_string = input()
+# Step3
+start_dt = datetime.strptime(start_dt_string, '%b %d %Y')
+end_dt = datetime.strptime(end_dt_string, '%b %d %Y')
+# Step4
+number_of_days = (end_dt - start_dt).days
+#Step5
+for i in range(number_of_days + 1):
+    print(start_dt + timedelta(days=i))
+
+________________________________________________________________________________
+
+06. Name of the Weekday
+
+Write a program to print the name of the weekday of a given date.
+The date in string format is like "8 Feb 2021".
+
+Input:
+
+The input will be a single line containing the date in the string format.
+
+Output:
+
+The output should be a single line containing the name of the weekday.
+
+Explanation:
+
+For example, if the given date is "7 Sept 2020", your code should print the name of the weekday on 7th September 2020. 
+So the output should be "Sunday".
+
+Sample Input 1:
+
+2 Jul 2000
+
+Sample Output 1:
+
+Sunday
+
+Sample Input 2:
+
+14 Oct 1999
+
+Sample Output 2:
+
+Thursday
+
+Approach:
+
+Step 1: Import the datetime module
+We'll start by importing the datetime module. This module has helpful functions to work with dates and times.
+
+Step 2: Read the input date
+Next, we'll read the input date from the user. The date will be in a string format like "8 Feb 2021".
+
+Step 3: Create the date format string
+Now, we'll create a date format string that matches the format of the input date. This format string will help us convert the input date into a datetime object.
+
+In this format string, %d represents the day, %b represents the abbreviated month name, and %Y represents the year.
+
+Step 4: Convert the input date to a datetime object
+Using the strptime function from the datetime module, we'll convert the input date into a datetime object.
+
+Step 5: Get the name of the weekday
+Now that we have a datetime object, we can use the strftime function to get the name of the weekday. 
+The %A format code represents the full weekday name.
+
+Step 6: Print the name of the weekday
+Finally, we'll print the name of the weekday.
+
+Solution:
+
+# Step 1
+from datetime import datetime,timedelta
+# Step2
+date = input()
+# Step3
+date_string = "%d %b %Y"
+# Step4
+datetime_object = datetime.strptime(date, date_string)
+#Step5
+name_of_the_day = datetime_object.strftime("%A")
+#Step6
+print(name_of_the_day)
+
+______________________________________________________________________________
+
+07. Count of Mondays
+
+You are given two years A and B.
+Write a program to count the number of Mondays M, which is the 1st day of the month from year A to year B(including B).
+
+Input:
+
+The input will be a single line containing the two space-separated integers, denoting the years A and B.
+
+Output:
+
+For example, if the given years are 2015 and 2017, the dates which contain Mondays as their month starting weekday 
+from 2015 to 2017 are 
+2015-06-01
+2016-02-01
+2016-08-01
+2017-05-01
+So the output should be 4.
+
+
+
+Explanation:
+
+Sample Input 1:
+
+2015 2017
+
+Sample Output 1:
+
+4
+
+Sample Input 2:
+
+2021 2021
+
+Sample Output 2:
+
+3
+
+Approach:
+
+Step 1: Read input
+First, we need to read the input from the user, which are two years separated by a space. We use input().split() 
+to read the years and separate them into two different variables, year_a and year_b. This way, we can easily work 
+with each year in our program.
+
+Step 2: Initialize variables
+Next, we need to initialize some variables. We will create a variable called mondays to store the count of Mondays 
+and a variable called months to store the numbers from 1 to 12, which represent the months.
+
+Step 3: Loop through years and months
+Now, we need to loop through all the years and months between the given years. We can use two nested loops
+(one for years and one for months) to achieve this.
+
+Step 4: Check if the first day of the month is Monday
+Inside the nested loops, we will create a datetime object for the first day of the current month and year. 
+Then, we will use strftime to find the name of the weekday. If the name of the weekday is "Monday", we increase
+the mondays count by 1.
+
+Step 5: Print the result
+Finally, after looping through all the years and months, we can print the total count of Mondays.
+
+from datetime import datetime
+# Step 1
+year_a, year_b = input().split()
+# Step2
+mondays = 0
+months = range(1, 13)
+# Step3
+for year in range(int(year_a), int(year_b)+1):
+    for month in months:
+        # Step4
+        date_time_object = datetime(year, month, 1)
+        name_of_weekday = datetime.strftime(date_time_object, "%A")
+        if name_of_weekday == "Monday":
+            mondays += 1
+#Step5
+print(mondays)
+
+_____________________________________________________________________________________________
+
+08. UNIX Timestamp to DateTime
+
+The Unix timestamp is a way to track time as a running total of seconds.
+This count starts at the Unix Epoch on January 1st, 1970, at UTC.
+Therefore, the Unix timestamp is merely the number of seconds between a particular date and the Unix Epoch.
+You are given UNIX timestamp U.
+Write a program to convert U to a readable date time(in UTC) and print it.
+
+Input:
+
+The input will be a single line containing a UNIX timestamp U.
+
+Output:
+
+The output should be a single line containing the timestamp in UTC DateTime format.
+DateTime format: YYYY-MM-DD HH:MM:SS.
+Time is in 24-hour format.
+
+Explanation:
+
+For example, if the given timestamp is 1284105682 states that, that many number of seconds have passed 
+from the reference time mentioned in the above question.
+
+Your code should print the datetime corresponds to the timestamp in UTC after the given number of seconds 
+have passed from the reference time. 
+
+So the output should be 2010-09-10 08:01:22
+
+Sample Input 1:
+
+1284105682
+
+Sample Output 1:
+
+2010-09-10 08:01:22
+
+Sample Input 2:
+
+979293600
+
+Sample Output 2:
+
+2001-01-12 10:00:00
+
+Approach:
+
+Step 1: Import the datetime module
+We need the datetime module to work with dates and times in Python. Let's import it first.
+
+Step 2: Define the Unix Epoch
+The Unix Epoch is the starting point of the Unix timestamp, which is January 1st, 1970, at UTC. 
+We will create a datetime object called zero to represent this date.
+
+Step 3: Read the UNIX timestamp
+Now, let's read the UNIX timestamp U from the input. We will store it as an integer.
+
+Step 4: Convert the timestamp to a timedelta
+We need to convert the timestamp U into a timedelta object representing the duration since the Unix Epoch.
+We will create a timedelta object called seconds using the timestamp.
+
+Step 5: Calculate the DateTime
+Now, we will add the seconds to the zero (Unix Epoch) to get the DateTime in UTC.
+
+Step 6: Define the DateTime format
+We need to print the DateTime in the format "YYYY-MM-DD HH:MM:SS". Let's define the format as a string.
+
+Step 7: Print the DateTime
+Finally, we will print the DateTime in the required format using the strftime function.
+
+Solution:
+
+# Step 1
+import datetime
+# Step2
+zero = datetime.datetime(1970, 1, 1)
+# Step3
+U = int(input())
+# Step4
+seconds = datetime.timedelta(seconds=U)
+#Step5
+result_time = zero + seconds
+#Step6
+dt_format = '%Y-%m-%d %H:%M:%S'
+#Step7
+print(result_time.strftime(dt_format))
+
+_________________________________________________________________________________________________
+
+09. Exception:
+
+Given two integers A and B.
+Write a program to print the result of A divided by B.
+
+Input:
+
+The input will be a single line containing two space-separated strings, denoting the values of A and B.
+
+Output:
+
+The output should be a single line containing the result of A divided by B.
+In the case of ZeroDivisionError, print the message "Denominator can't be 0"
+In the case of ValueError, print the message "Input should be an integer"
+
+Explanation:
+
+For example, if the given A and B are 5 and 0, ZeroDivisionError will be raised 
+as five cannot be divided by 0. So the output should be "Denominator can't be 0".
+
+For example, if the given A and B are 12 and a, ValueError will be raised as the value of B is not an integer datatype. 
+So the output should be "Input should be an integer".
+
+Sample Input 1:
+
+5 0
+
+Sample Output 1:
+
+Denominator can't be 0
+
+Sample Input 2:
+
+12 a
+
+Sample Output 2:
+
+Input should be an integer
+
+Sample Input 3:
+
+10 2
+
+Sample Output 3:
+
+5.0
+
+Outline
+
+Question: Exception
+Approach
+Step 1: Read the input values
+Step 2: Convert the input values to integers
+Step 3: Divide the numbers and handle exceptions
+
+Question: Exception
+Given two integers A and B, write a program to print the result of A divided by B. 
+If there is a ZeroDivisionError, print the message "Denominator can't be 0". 
+If there is a ValueError, print the message "Input should be an integer".
+
+Approach
+
+Read the input values A and B.
+Convert the input values to integers.
+Divide A by B and handle any exceptions that may occur.
+
+Step-by-Step Explanation
+
+Step 1: Read the input values
+Read the input values A and B as space-separated strings using the input() function and split() method.
+
+Step 2: Convert the input values to integers
+Use the int() function to convert the input values A and B to integers.
+
+Step 3: Divide the numbers and handle exceptions
+Use a try block to divide A by B and print the result. If a ZeroDivisionError occurs, 
+print "Denominator can't be 0". If a ValueError occurs, print "Input should be an integer".
+
+Solution
+
+# Step 1
+try:
+    a, b = input().split()
+    # Step2
+    a = int(a)
+    b = int(b)
+    # Step3
+    c = a/b
+    print(c)
+except ZeroDivisionError:
+    print("Denominator can't be 0")
+except ValueError:
+    print("Input should be an integer")
+
+_________________________________________________________________________________________________
+
+10. Item
+
+You are given an incomplete Item class
+
+Go through the comments in the prefilled code to implement the Item class with the described attributes and methods.
+
+Points to Note:
+
+1.The output of the testcase "Checking Default Tests" is given by the default_test function in the prefilled code.
+2.This Coding question does not have the usual input/output testcases. The class defined by you will be tested 
+internally whether the attributes are present or not. So in testcases results you will be shown the rough 
+description of the tests that will be verified.
+
+Sample Input:
+
+Checking Default Tests
+
+Sample Output:
+
+Oreo Biscuits
+30
+Food
+Oreo Biscuits@30-Food
+
+Outline
+
+Question: Item
+Approach
+Step 1: Create the Item class
+Step 2: Define the init method
+Step 3: Define the get_detail method
+Solution
+
+Question: Item
+You are given an incomplete Item class. Your task is to implement the Item class with the described
+attributes and methods. The class should have the following attributes: name, price, and category. 
+It should also have a method called get_detail that returns a string with the item's details.
+
+Approach
+To solve this problem, we will follow these steps:
+
+Create the Item class.
+Define the __init__ method to initialize the attributes name, price, and category.
+Define the get_detail method to return a string with the item's details.
+
+Step-by-Step Explanation
+
+Step 1: Create the Item class
+First, we will create a class called Item. This will be the main class that we will be working with.
+
+Step 2: Define the init method
+Next, we will define the __init__ method for the Item class. This method will be called when we 
+create a new object of the Item class. It will take three arguments: name, price, and category. 
+We will also add a condition to check if the price is greater than 0. If not, we will raise a ValueError.
+
+Step 3: Define the get_detail method
+
+Finally, we will define the get_detail method for the Item class. This method will return a string 
+with the item's details in the format "name@price-category".
+
+Solution
+
+Here is the complete solution for the Item class:
+
+# Item class should have the following attributes & methods
+#
+# Attributes:
+#   name, price, category
+#
+# Methods:
+#   get_detail: Print the details of the item in the format '{name}@{price}-{category}'
+#
+# If the value of price is less than 1, raise ValueError exception like
+#   "ValueError: Invalid value for price, got {price}"
+
+
+# Implement the Item class appropriately
+class Item:
+    def __init__(self, name, price, category):
+        if price<=0:
+            raise ValueError("Invalid value for price, got {}".format(price))
+        self.name=name
+        self.price=price
+        self.category=category
+
+    def get_detail(self):
+        return "{}@{}-{}".format(self.name,self.price,self.category)
+
+
+# You need not change any code below.
+# Do not call this function anywhere. It will automatically be called internally during tests.
+def default_test():
+    item = Item(name="Oreo Biscuits", price=30, category="Food")
+    print(item.name)  # prints "Oreo Biscuits"
+    print(item.price)  # prints '30'
+    print(item.category)  # prints "Food"
+    print(item.get_detail())  # prints "Oreo Biscuits@30-Food"
+
+default_test()
