@@ -1,0 +1,1441 @@
+01. Max Contiguous Subarray
+________________________________
+
+Given a list of integers, write a program to identify contiguous sub-list that has the largest sum and print 
+the sub-list. Any non-empty slice of the list with step size 1 can be considered as contiguous sub-list.
+
+Input:
+
+The input will contain space-separated integers, denoting the elements of the list.
+
+Output: 
+
+The output should be space-separated integers.
+
+Explanation:
+
+For example, if the given list is [2, -4, 5, -1, 2, -3], then all the possible contiguous sub-lists will be,
+
+[2]
+[2, -4]
+[2, -4, 5]
+[2, -4, 5, -1]
+[2, -4, 5, -1, 2]
+[2, -4, 5, -1, 2, -3]
+[-4]
+[-4, 5]
+[-4, 5, -1]
+[-4, 5, -1, 2]
+[-4, 5, -1, 2, -3]
+[5]
+[5, -1]
+[5, -1, 2]
+[5, -1, 2, -3]
+[-1]
+[-1, 2]
+[-1, 2, -3]
+[2]
+[2, -3]
+[-3]
+
+Among the above contiguous sub-lists, the contiguous sub-list [5, -1, 2] 
+has the largest sum which is 6. So the output should be 5 -1 2
+
+Sample Input 1: 
+
+2 -4 5 -1 2 -3
+
+Sample Output 1:
+
+5 -1 2
+
+Sample Input 2 
+
+-2 -3 4 -1 -2 1 5 -3
+
+Sample Output 2
+
+4 -1 -2 1 5
+
+
+Outline:
+
+Question: Max Contiguous Subarray
+Approach
+Step 1: Read the input and create an empty dictionary
+Step 2: Iterate through the list and calculate the sum of contiguous subarrays
+Step 3: Find the subarray with the maximum sum and print it
+
+Question: Max Contiguous Subarray
+
+Given a list of integers, write a program to identify the contiguous sub-list that has the largest sum and 
+print the sub-list. Any non-empty slice of the list with step size 1 can be considered as a contiguous sub-list.
+
+Approach:
+
+To solve this problem, we will follow these steps:
+
+Read the input list of integers.
+Iterate through the list and calculate the sum of all possible contiguous subarrays.
+Find the subarray with the maximum sum and print it.
+Step-by-Step Explanation
+
+Step 1: Read the input and create an empty dictionary
+
+First, we need to read the input list of integers. We can use the input() function to read the input and split() 
+to separate the integers. Then, we can use map() and list() to convert the input into a list of integers.
+
+After that, we will create an empty dictionary called sum_dict to store the sum of each contiguous subarray.
+
+Step 2: Iterate through the list and calculate the sum of contiguous subarrays
+
+Now, we will use two nested loops to iterate through the list and calculate the sum of all possible contiguous 
+subarrays. For each subarray, we will store its sum in the sum_dict dictionary with the subarray as the key 
+and the sum as the value.
+
+Step 3: Find the subarray with the maximum sum and print it
+
+Finally, we will find the subarray with the maximum sum and print it. To do this, we will convert the keys and 
+values of the sum_dict dictionary into two separate lists. Then, we will find the index of the maximum sum 
+in the values list and use it to get the corresponding subarray from the keys list. We will print the subarray 
+using the print() function with the * operator to unpack the elements.
+
+Solution:
+
+# Step1
+
+a = list(map(int, input().split()))
+sum_dict = {}
+
+# Step2
+
+for i in range(len(a)):
+    for j in range(i+1, len(a)+1):
+        sum_dict[tuple(a[i:j])] = sum(a[i:j]) 
+        
+#Step3
+
+keys = list(sum_dict.keys())
+values = list(sum_dict.values())
+max_sum_index = values.index(max(values))
+print(*keys[max_sum_index])
+
+_____________________________________________________________________________________________________
+
+02. Two Words Combination
+
+Given a sentence as input, print all the unique combinations of two words in lexicographical order.
+
+Input:
+
+The input will be a single line containing a sentence.
+
+Output:
+
+The output should be multiple lines, each line containing the unique combination of two words in lexicographical order.
+
+Explanation:
+
+For example, if the given sentence is "raju plays cricket", the possible unique combination of two are 
+(cricket, plays), (cricket, raju), (plays, raju). 
+
+So the output should be
+
+cricket plays
+cricket raju
+plays raju
+
+Sample Input 1
+
+raju plays cricket
+
+Sample Output 1
+
+cricket plays
+cricket raju
+plays raju
+
+Sample Input 2 
+
+python is a programming language
+
+Sample Output 2
+
+a is
+a language
+a programming
+a python
+is language
+is programming
+is python
+language programming
+language python
+programming python
+
+
+Outline
+
+Question: Two Words Combination
+Approach
+Step 1: Define the function to generate combinations
+Step 2: Read the input and split the words
+Step 3: Generate and print the combinations
+Question: Two Words Combination
+Given a sentence as input, print all the unique combinations of two words in lexicographical order.
+
+Input: The input will be a single line containing a sentence.
+
+Output: The output should be multiple lines, each line containing the unique combination of two words 
+in lexicographical order.
+
+Example: If the given sentence is "raju plays cricket", the possible unique combination of two are 
+(cricket, plays), (cricket, raju), (plays, raju). 
+
+So the output should be:
+
+cricket plays
+cricket raju
+plays raju
+
+Approach
+Create a function to generate all unique combinations of two words in lexicographical order.
+Read the input sentence and split it into words.
+Call the function to generate the combinations and print them.
+Step-by-Step Explanation
+
+Step 1: Define the function to generate combinations
+
+Define a function called generate_2_combinations that takes a list of words as input.
+Sort the words in lexicographical order.
+Create a list called items containing the indices of the words.
+Generate one-word combinations by adding each index to a new list called combinations_1.
+Generate two-word combinations by adding one more word to each one-word combination and store them in 
+a new list called combinations_2.
+Convert the index combinations to word combinations and store them in a list called word_combinations.
+Return the sorted and unique word combinations.
+
+Step 2: Read the input and split the words
+
+Read the input sentence using the input() function.
+Split the sentence into words using the split() function and store them in a variable called words.
+
+Step 3: Generate and print the combinations
+
+Call the generate_2_combinations function with the words variable as input and store the result in a variable 
+called all_combinations.
+Loop through the all_combinations list and print each combination as a space-separated string.
+
+
+Solution:
+
+# Step1 
+
+def generate_2_combinations(words):
+    words = sorted(words)
+    items = list(range(len(words)))
+    combinations_1 = []
+    for item in items:
+        combinations_1.append([item])  # Generating one word combinations
+    # Generating two words combinations by adding one more word to one word combinations
+    combinations_2 = []
+    for combination in combinations_1:
+        for item in items:
+            if item > combination[-1]:
+                combinations_2.append(combination + [item])
+
+    word_combinations = []
+    for combination in combinations_2:
+        word_combination = []
+        for index in combination:
+            word_combination.append(words[index])
+        word_combinations.append(tuple(word_combination))
+    return sorted(set(word_combinations))
+
+# Step2 
+
+words = input().split()
+
+#Step3
+all_combinations = generate_2_combinations(words)
+for combination in all_combinations:
+    print(' '.join(combination))
+    
+_____________________________________________________________________________________________
+
+03. Three Words Combination
+
+Given a sentence as input, print all the unique combinations of three words in lexicographical order.
+
+Input:
+
+The input will be a single line containing a sentence.
+
+Output:
+
+The output should be multiple lines, each line containing the unique combination of three words in lexicographical order.
+
+Explanation
+
+For example, if the given sentence is "apple is a fruit", the possible unique combination of three are 
+(a, apple, fruit), (a, apple, is), (a, fruit, is), (apple, fruit, is).
+
+So the output should be
+
+a apple fruit
+a apple is
+a fruit is
+apple fruit is
+
+Sample Input 1
+
+apple is a fruit
+
+Sample Output 1
+
+a apple fruit
+a apple is
+a fruit is
+apple fruit is
+
+Sample Input 2 
+
+raju plays cricket
+
+Sample Output 2
+
+cricket plays raju
+
+
+Three Words Combination - Python Tutorial
+In this tutorial, we will learn how to find all unique combinations of three words from a given sentence in lexicographical order using Python. Let's break down the solution into simple steps.
+
+Step 1: Get the input sentence
+
+First, we need to get the input sentence from the user. We'll use the input() function to do this.
+
+Step 2: Split the sentence into words
+
+Now, we need to split the input sentence into individual words. We can use the split() function for this.
+
+Step 3: Write a function to generate unique combinations
+
+We'll write a function called generate_3_combinations that will take a list of words as input and return 
+all unique combinations of three words in lexicographical order.
+
+Step 4: Sort the words
+
+Inside the function, we first sort the input words in lexicographical order.
+
+Step 5: Generate combinations of 1, 2, and 3 words
+
+Now, we will generate all combinations of 1, 2, and 3 words from the sorted words list. 
+We'll use nested loops to create the combinations.
+
+First, let's create a list of indices for the words.
+
+Now, let's generate the one-word combinations:
+
+Next, we'll generate the two-word combinations:
+
+Finally, let's generate the three-word combinations:
+
+Step 6: Convert index combinations to word combinations
+We have the combinations of indices of words. Now, we need to convert them into actual word combinations.
+
+Step 7: Remove duplicates and sort the word combinations
+We need to remove duplicates and sort the word combinations.
+
+Step 8: Call the function and print the results
+Now, we call the generate_3_combinations function with the words list and print the unique combinations.
+
+That's it! We have successfully broken down the solution into simple steps.
+
+Solution:
+
+# Step 3
+def generate2_combinations(words):
+    # Step 4
+    words=sorted(words)
+    # Step 5
+    items=list(range(len(words)))
+    combinations1=[]
+    for item in items:
+        combinations1.append([item])
+    combinations2=[]
+    for combination in combinations1:
+        for item in items:
+            if item>combination[-1]:
+                combinations2.append(combination+[item])
+    combinations3=[]
+    for combination in combinations2:
+        for item in items:
+            if item>combination[-1]:
+                combinations3.append(combination+[item])
+    # Step 6
+    word_combinations=[]
+    for combination in combinations3:
+        word_combination=[]
+        for index in combination:
+            word_combination.append(words[index])
+
+        word_combinations.append(tuple(word_combination))
+    # Step 7
+    return sorted(set(word_combinations))
+#Step 1
+sentence=input()
+#step2
+words=sentence.split() 
+# Step 8
+all_combinations=generate2_combinations(words)
+for combination in all_combinations:
+    print(" ".join(combination))
+
+___________________________________________________________________________________
+
+04. N Words Combination
+
+Given a sentence as input, print all the unique combinations of N words in lexicographical order.
+
+Input:
+
+The first line of input will be containing a sentence.
+The second line of input will contain a positive integer.
+
+Output:
+
+The output should be multiple lines, each line containing the unique combination of N words in lexicographical order.
+
+Explanation
+
+For example, if the given sentence is "apple is a fruit", and N is 3, the possible unique combination of three words are 
+(a, apple, fruit), (a, apple, is), (a, fruit, is), (apple, fruit, is). 
+
+So the output should be
+
+a apple fruit
+a apple is
+a fruit is
+apple fruit is
+
+Sample Input 1
+
+apple is a fruit
+3
+
+Sample Output 1
+
+a apple fruit
+a apple is
+a fruit is
+apple fruit is
+
+Sample Input 2 
+
+raju plays cricket
+2
+
+Sample Output 2
+
+cricket plays
+cricket raju
+plays raju
+
+
+Tutorial: N Words Combination
+In this tutorial, we’ll learn how to find all the unique combinations of N words from a sentence, 
+and print them in lexicographical order. Let's break down the solution into simple steps.
+
+Step 1: Define the function
+We'll create a function called all_unique_combinations that takes two inputs:
+
+A list of words from the sentence, called words
+A positive integer, n, representing the number of words we want in each combination
+
+Step 2: Sort the words
+First, we'll sort the words in lexicographical order.
+
+Step 3: Initialize variables
+We need to create a few variables:
+
+items: A list of numbers representing the positions of words in the sorted list
+old_combinations: An empty list that will store the previous set of combinations
+new_combinations: An empty list that will store the current set of combinations
+
+Step 4: Generate combinations
+Now, we'll generate all possible combinations of the word positions. We'll loop n times, 
+and for each combination in old_combinations, we'll loop through all the items. If an item
+is greater than the last item in the combination or the combination is empty, we'll create a 
+new combination and add it to new_combinations. After each iteration, we'll update old_combinations.
+
+Step 5: Convert combinations to word combinations
+Now, we'll create a list called word_combinations to store the word combinations.
+We'll loop through the number combinations in new_combinations, create a new word 
+combination by mapping the numbers to their corresponding words, and add it to word_combinations.
+
+Step 6: Return the unique combinations
+Finally, we'll return the unique word combinations in lexicographical order.
+
+Step 7: Get input and call the function
+Now, we'll get the input sentence and the value of n, split the sentence into words, and call the 
+all_unique_combinations function.
+
+Step 8: Print the output
+Lastly, we'll loop through the unique word combinations and print them as space-separated strings.
+
+
+Solution:
+
+#Step 1
+def all_uique_combinations(words,n):
+    # Step 2
+    words=sorted(words)
+    # Step 3
+    items=list(range(len(words)))
+    old_combinations=[[]]
+    new_combinations=[]
+    # Step 4
+    for i in range(n):
+        new_combinations=[]
+        for combination in old_combinations:
+            for item in items:
+                if(combination and item>combination[-1]) or len(combination)==0:
+                    new_combinations.append(combination+[item])
+            old_combinations=new_combinations
+    # Step 5        
+    word_combinations=[]
+    for combination in new_combinations:
+        word_combination=[]
+        for index in combination:
+            word_combination.append(words[index])
+        word_combinations.append(tuple(word_combination))
+    # Step 6
+    return sorted(set(word_combinations))
+#Step 7
+words=input().split()
+n=int(input())
+all_combinations=all_uique_combinations(words,n)
+# Step 8
+for combination in all_combinations:
+    print(" ".join(combination))
+
+____________________________________________________________________________________________________
+
+05. All Possible Subsets
+
+
+Given a sentence as input, print all the unique combinations of the words of the sentence,
+considering different possible number of words each time (from one word to N unique words in lexicographical order).
+
+Input:
+
+The input will be a single line containing a sentence.
+
+Output:
+
+The output should be multiple lines, each line containing the unique combination from one word to N words 
+in lexicographical order.
+
+Explanation
+
+For example, if the given sentence is "apple is a fruit".
+All possible one word unique combinations are
+a
+apple
+fruit
+is
+
+All possible two words unique combinations are
+
+a apple
+a fruit
+a is
+apple fruit
+apple is
+fruit is
+
+All possible three words unique combinations are
+
+a apple fruit
+a apple is
+a fruit is
+apple fruit is
+
+All possible four words unique combinations are
+
+a apple fruit is
+
+
+Sample Input 1
+
+apple is a fruit
+
+Sample Output 1
+
+a
+apple
+fruit
+is
+a apple
+a fruit
+a is
+apple fruit
+apple is
+fruit is
+a apple fruit
+a apple is
+a fruit is
+apple fruit is
+a apple fruit is
+
+Sample Input 2 
+
+raju plays cricket
+
+Sample Output 2
+
+cricket
+plays
+raju
+cricket plays
+cricket raju
+plays raju
+cricket plays raju
+
+
+Outline
+Question: All Possible Subsets
+Approach
+Step 1: Read the input sentence
+Step 2: Define the function to find all unique combinations
+Step 3: Print the unique combinations
+Question: All Possible Subsets
+Given a sentence as input, print all the unique combinations of the words of the sentence, considering different possible number of words each time (from one word to N unique words in lexicographical order).
+
+Approach
+
+Read the input sentence and split it into words.
+Define a function to find all unique combinations of words.
+Print the unique combinations in lexicographical order.
+
+Step-by-Step Explanation
+
+Step 1: Read the input sentence
+
+Read the input sentence using the input() function.
+Split the sentence into words using the split() function.
+
+Step 2: Define the function to find all unique combinations
+
+Create a function called all_unique_combinations that takes two arguments: words and n.
+Sort the words in lexicographical order using the sorted() function.
+Initialize two lists: old_combinations and new_combinations.
+Use a loop to iterate through the range of n.
+    For each iteration, create a new list called new_combinations.
+    For each combination in old_combinations, iterate through the items in the words list.
+        If the combination is empty or the current item is greater than the last item in the combination, 
+        append the item to the combination.
+    Update the old_combinations list with the new_combinations list.
+Create a list called word_combinations to store the final word combinations.
+For each combination in new_combinations, create a list called word_combination.
+    For each index in the combination, append the corresponding word from the words list to the word_combination list.
+    Add the word_combination tuple to the word_combinations list.
+Return the sorted set of word_combinations.
+ 
+
+Step 3: Print the unique combinations
+
+Use a loop to iterate through the range from 1 to the length of the words list plus 1.
+    For each iteration, call the all_unique_combinations function with the words list and the current iteration value.
+    For each combination in the returned list, print the combination as a string using the join() function.
+
+
+Solution
+
+# Step 2
+def all_uique_combinations(words,n):
+    words=sorted(words)
+    items=list(range(len(words)))
+    old_combinations=[[]]
+    new_combinations=[]
+    for i in range(n):
+        new_combinations=[]
+        for combination in old_combinations:
+            for item in items:
+                if(combination and item>combination[-1]) or len(combination)==0:
+                    new_combinations.append(combination+[item])
+            old_combinations=new_combinations
+    word_combinations=[]
+    for combination in new_combinations:
+        word_combination=[]
+        for index in combination:
+            word_combination.append(words[index])
+        word_combinations.append(tuple(word_combination))
+    return sorted(set(word_combinations))
+
+#Step 1
+words=input().split()
+#Step 3
+words_len=len(words)
+for i in range(1,words_len+1):
+    all_combinations=all_uique_combinations(words,i)
+    for combination in all_combinations:
+        print(" ".join(combination))
+
+__________________________________________________________________________________________
+
+06. Polynomial
+
+
+Given a number N and N inputs containing two space-separated integers in each line, representing the Power Pi
+and Coefficient Ci of a polynomial. Write a program that prints the polynomial in the standard form of 
+Cix^Pi + Ci-1x^Pi-1 + .... + C1x + C0.
+ 
+Input:
+
+The first line of input contains an integer representing N that is the number of terms in the polynomial.
+The next N lines of input contain two space-separated integers in each line, representing the Power Pi  and Coefficient Ci
+
+Output:
+
+The output should be in the form of Cix^Pi + Ci-1x^Pi-1 + .... + C1x + C0
+
+If the coefficient is 0, then the term should not be printed.
+If the term with the highest power is negative, it should be represented as -Cix^Pi
+If the term where power is 1, it should be represented as C1x instead of C1x^1 .
+If the polynomial power is 0 and the constant term is also 0, then print 0 to represent the polynomial.
+For term Cix^Pi, if the coefficient of the term Ci is 1, then print x^Pi instead of 1x^Pi
+
+Constraints  
+
+N  is less than or equal to 100
+Pi is greater than or equal to 0 and less than 1000
+Ci  is greater than or equal to -1000 and less than or equal to 1000
+
+Explanation
+
+
+For example, if the given number is N = 4,
+
+• For power 0, the coefficient is 5.
+  • 5x^0 (The coefficient of x^0 is 5, and x^0 is equivalent to 1)
+  • 5*1=5
+• For power 1, the coefficient is 0.
+  • Ox^1 (If the coefficient of x^1 is 0, then the term should not be printed)
+• For power 2, the coefficient is 10.
+  • 10x^2 (The coefficient of x^2 is 10)
+• For power 3, the coefficient is 6
+  • 6x^3 (The coefficient of x^3 is 6)
+  
+The highest power of x is 3
+
+The output should be 6x^3 + 10x^2 + 5
+
+﻿
+For example, if the given number is N = 6,
+
+• For power 0, the coefficient is 7.
+  • 7x^0 (The coefficient of x^0 is 7, and x^0 is equivalent to 1)
+  • 7*1=7
+• For power 1, the coefficient is 3.
+  • 3x (If the term with power 1, it should be represented as Cx instead of Cx^1.)
+• For power 2, the coefficient is 0.
+  • Ox^2 (If the coefficient of x^2 is 0, then the term should not be printed)
+• For power 3, the coefficient is -2.
+  • -2x^3 (If the term with the highest power is negative, it should be represented as -Cix^Pi.)
+• For power 4, the coefficient is 1.
+  • 1x^4 (The coefficient of x^4 is 1)
+• For power 5, the coefficient is 6.
+  • 6x^5 (The coefficient of x^5 is 6)
+  
+The highest power of x is 5.
+
+The output should be 6x^5 + x^4 - 2x^3+ 3x + 7.
+
+Sample Input 1
+
+4
+0 5
+1 0
+2 10
+3 6
+
+Sample Output 1
+
+6x^3 + 10x^2 + 5
+
+
+Tutorial: Polynomial
+
+What is a Polynomial?
+
+A polynomial is a mathematical expression made up of variables, coefficients, and exponents, combined using addition, 
+subtraction, and multiplication. A polynomial can have any number of terms, and each term has a coefficient and a power. 
+A polynomial can be represented as:
+
+Cnx^n + Cn-1x^n-1 + ... + C2x^2 + C1x + C_0
+
+where Cn, Cn-1, ..., C_0 are coefficients, x is the variable, and n is the degree of the polynomial.
+
+Now that you know what a polynomial is, let's learn how to write a program that prints a polynomial in a specific format.
+We will explain the solution step by step so that you can easily understand and follow along.
+
+Step 1: Read the input polynomial
+First, we need to read the input polynomial as a dictionary with the power as the key and the coefficient as the value.
+
+Step 2: Create a term for each coefficient and power
+We need to create a polynomial term for each given coefficient and power, excluding the sign. The term should follow 
+the format mentioned in the question.
+
+Step 3: Generate the polynomial expression string
+Now, we need to generate the polynomial expression string by iterating through the dictionary and combining the terms 
+created in Step 2.
+
+Step 4: Main function
+Finally, we will create a main function that calls the functions we defined in the previous steps to read the polynomial,
+generate the expression string, and print the output.
+
+That's it! You have now learned what a polynomial is and how to write a program that prints a polynomial in a specific format. 
+Practice this program and try to understand each step. Happy coding!
+
+Solution
+
+#step1
+def read_polynomial():
+    n = int(input())
+    polynomial_dict = {}
+    for i in range(n):
+        power, coefficient = map(int, input().split())
+        polynomial_dict[power] = coefficient
+    return polynomial_dict
+    
+#step2
+def get_term(coefficient, power):
+    coefficient = abs(coefficient)
+    if coefficient == 1 and power != 0:
+            coefficient = ''
+    if power > 1:
+        term = "{}x^{}".format(coefficient, power)
+    elif power == 1:
+        term = "{}x".format(coefficient)
+    elif power == 0:
+        term = "{}".format(coefficient)
+    return term
+
+#step3
+def get_polynomial_expression_string(polynomial):
+    expression = ""
+    degree = max(polynomial.keys())
+    for power in sorted(polynomial.keys(), reverse=True):
+        coefficient = polynomial[power]
+        term = get_term(coefficient, power)
+        if power == degree:
+            if coefficient > 0:
+                expression = term
+            elif coefficient < 0:
+                expression = '-{}'.format(term)
+        else:
+            if coefficient > 0:
+                expression = "{} + {}".format(expression, term)
+            elif coefficient < 0:
+                expression = "{} - {}".format(expression, term)
+    if expression == "":
+        expression = "0"
+    return expression
+
+#step4
+def main():
+    polynomial = read_polynomial()
+    print(get_polynomial_expression_string(polynomial))
+
+main()
+
+________________________________________________________________________________________
+
+07. Matrix Rotations
+
+You are given a square matrix A of dimensions NxN. You need to apply the below given 3 operations on the matrix A.
+
+Rotation: It is represented as R S where S is an integer in {90, 180, 270, 360, 450, ...} which denotes the number 
+of degrees to rotate. You need to rotate the matrix A by angle S in the clockwise direction. The angle of rotation(S) 
+will always be in multiples of 90 degrees.
+
+Update: It is represented as U X Y Z. In initial matrix A (as given in input), you need to update the element at r
+ow index X and column index Y with value Z.
+
+After the update, all the previous rotation operations have to be applied to the updated initial matrix.
+
+Querying: It is represented as Q K L. You need to print the value at row index K and column index L of the matrix A. 
+
+Input:
+
+The first line contains a single integer N.
+Next N lines contain N space-separated integers Aij (i - index of the row, j - index of the column).
+Next lines contain various operations on the array. Each operation on each line (Beginning either with R, U or Q).
+-1 will represent the end of input.
+
+Output:
+
+For each Query operation print the element present at row index K and colum index L of the matrix in its current state.
+
+Explanation
+
+For Input:
+
+2
+1 2
+3 4
+R 90
+Q 0 0
+Q 0 1
+R 90
+Q 0 0
+U 0 0 6
+Q 1 1
+-1
+
+Initial Matrix
+ 1 2 
+ 3 4
+
+ For R 90, clockwise rotation by 90 degrees, the matrix will become
+
+ 3 1
+ 4 2
+
+ For Q 0 0, print the element at row index 0 and column index 0 of A, which is 3. 
+ For Q 0 1, print the element at row index 0 and column index 1 of A, which is 1. 
+
+ Again for R 90, clockwise rotation by 90 degrees, the matrix will become
+
+ 4 3 
+ 2 1
+
+ For Q 0 0, print the element at row index 0 and column index 0 of A, which is 4. 
+ For U 0 0 6, update the value at row index 0 and column index 0 in the initial matrix to 6. 
+ 
+ So the updated matrix will be,
+
+ 6 2
+ 3 4
+
+ After updating, we need to rotate the matrix by sum of all rotation angles applied till now
+ (i.e. R 90 and R 90 => 90 + 90 => 180 degrees in clockwise direction).
+
+ After rotation the matrix will now become
+
+ 4 3
+ 2 6
+
+ Next for Q 1 1, print the element at row index 1 and column index 1 of A, which is 6. 
+ 
+ So the output should be
+ 3
+ 1
+ 4
+ 6
+ 
+Sample Input 1
+
+2
+1 2
+3 4
+R 90
+Q 0 0
+Q 0 1
+R 90
+Q 0 0
+U 0 0 6
+Q 1 1
+-1
+
+Sample Output 1
+
+3
+1
+4
+6
+
+Sample Input 2
+
+2
+5 6
+7 8
+R 90
+Q 0 1
+R 270
+Q 1 1
+R 180
+U 0 0 4
+Q 0 0
+-1
+
+Sample Output 2
+
+5
+8
+8
+
+Solution
+
+Outline
+
+Question: Matrix Rotations
+Approach
+Step 1: Read the matrix
+Step 2: Rotate the matrix
+Step 3: Perform operations on the matrix
+Question: Matrix Rotations
+You are given a square matrix A of dimensions NxN. You need to apply 3 operations on the matrix A: Rotation, Update, and Querying. Rotation is represented as R S, where S is an integer in {90, 180, 270, 360, 450, ...} which denotes the number of degrees to rotate. Update is represented as U X Y Z, where you need to update the element at row index X and column index Y with value Z. Querying is represented as Q K L, where you need to print the value at row index K and column index L of the matrix A.
+
+Approach
+
+1.Read the input matrix and store it in a variable.
+2.Rotate the matrix by the given angle in a clockwise direction.
+3.Update the matrix by changing the value at the specified row and column index.
+4.Query the matrix by printing the value at the specified row and column index.
+
+Step-by-Step Explanation
+
+Step 1: Read the matrix
+
+1.Create a function read_matrix(n) that takes an integer n as input.
+2.Initialize an empty list called matrix.
+3.Use a for loop to iterate through the range of n.
+4.For each iteration, read a row of space-separated integers using input().split() 
+and convert them to integers using map(int, ...).
+5.Append the row to the matrix list.
+6.Return the matrix list.
+
+Step 2: Rotate the matrix
+
+1.Create a function single_rotate_clockwise(matrix) that takes a matrix as input.
+2.Get the length of the matrix using len(matrix[0]) and store it in a variable n.
+3.Initialize an empty list called temp_matrix.
+4.Use a for loop to iterate through the range of n.
+5.For each iteration, create an empty list called column.
+6.Use another for loop to iterate through the matrix rows.
+7.For each row, append the element at the current column index to the column list.
+8.Append the reversed column list to the temp_matrix list.
+9.Return the temp_matrix list.
+10.Create a function rotate_matrix(matrix, degrees) that takes a matrix and an integer degrees as input.
+11.Calculate the number of rotations needed using (degrees // 90) % 4 and store it in a variable rotations.
+12.Use a for loop to iterate through the range of rotations.
+13.For each iteration, call the single_rotate_clockwise(matrix) function and update the matrix variable.
+14.Return the rotated matrix.
+
+Step 3: Perform operations on the matrix
+
+1.Read the input value for n using int(input()).
+2.Call the read_matrix(n) function and store the result in a variable matrix.
+3.Initialize a variable total_rotation with the value 0.
+4.Use a while loop to continuously read input lines.
+5.Split the input line using input().split() and store it in a variable line.
+6.Check the first element of the line list to determine the operation type.
+7.If the operation is "-1", break the loop.
+8.If the operation is "R", update the total_rotation variable and call the rotate_matrix(matrix, rotation) function.
+9.If the operation is "U", update the matrix element at the specified row and column index with the given value.
+10.If the operation is "Q", print the matrix element at the specified row and column index.
+
+Solution
+
+ # Step1
+def read_matrix(n):
+    matrix = []
+    for i in range(n):
+        row = list(map(int, input().split()))
+        matrix.append(row)
+    return matrix
+
+# Step2
+def single_rotate_clockwise(matrix):
+    n = len(matrix[0])
+    temp_matrix = []
+    for i in range(n):
+        column = []
+        for row in matrix:
+            column.append(row[i])
+        temp_matrix.append(column[::-1])
+    return temp_matrix
+
+def rotate_matrix(matrix, degrees):
+    n = len(matrix[0])
+    rotations = (degrees // 90) % 4
+    for r in range(rotations):
+        matrix = single_rotate_clockwise(matrix)
+    return matrix
+
+# Step3
+def main():
+    n = int(input())
+    matrix = read_matrix(n)
+    original_matrix = matrix
+    total_rotation = 0
+    while True:
+        line = input().split()
+        if line[0] == "-1":
+            break
+        elif line[0] == "R":
+            rotation = int(line[1])
+            total_rotation += rotation
+            matrix = rotate_matrix(matrix, rotation)
+        elif line[0] == "U":
+            ri, ci, value = int(line[1]), int(line[2]), int(line[3])
+            original_matrix[ri][ci] = int(value)
+            matrix = rotate_matrix(original_matrix, total_rotation)
+        elif line[0] == "Q":
+            ri, ci = int(line[1]), int(line[2])
+            print(matrix[ri][ci])
+
+main()
+
+___________________________________________________________________________
+
+08. Add two polynomials
+
+
+Given two polynomials A and B, write a program that adds the given two polynomials A and B
+and prints the result in the standard form of Cix^Pi + Ci-1x^Pi-1 + .... + C1x + C0
+
+Input:
+
+The first line of input contains an integer M representing the number of terms in polynomial A.
+The next M lines of input contain two space-separated integers in each line, representing the Power Pi and Coefficient Ci
+ of polynomial A.
+The next line of input contains an integer N representing the number of terms in polynomial B.
+The next N lines of input contain two space-separated integers in each line, representing the Power Pi Coefficient Ci
+ of polynomial B.
+
+Output:
+
+The output should be in the form of Cix^Pi + Ci-1x^Pi-1 + .... + C1x + C0
+
+If the coefficient is 0, then the term should not be printed.
+If the term with the highest power is negative, it should be represented as -Cix^Pi
+If the term where power is 1, it should be represented as C1x instead of C1x^1 .
+If the polynomial power is 0 and the constant term is also 0, then print 0 to represent the polynomial.
+For term Cix^Pi, if the coefficient of the term Ci is 1, then print x^Pi instead of 1x^Pi
+
+Constraints  
+
+M and N  is less than or equal to 100
+Pi and Pj is greater than or equal to 0 and less than 1000
+Ci and Cj is greater than or equal to -1000 and less than or equal to 1000
+
+Explanation
+
+For example, if M = 4  and for polynomial A.
+
+• For power 0, the coefficient is 5.
+  • 5x^0 (The coefficient of x^0 is 5, and x^0 is equivalent to 1)
+  • 5*1=5
+• For power 1, the coefficient is 0.
+  • Ox^1 (If the coefficient of x^1 is 0, then the term should not be printed)
+• For power 2, the coefficient is 10.
+  • 10x^2 (The coefficient of x^2 is 10)
+• For power 3, the coefficient is 6
+  • 6x^3 (The coefficient of x^3 is 6)
+  
+if  N = 3  and for polynomial B.
+
+• For power 0, the coefficient is 1.
+  • 1x^0 (The coefficient of x^0 is 1)
+  • 1*1=1
+• For power 1, the coefficient is 2.
+  • 2x^1 (The coefficient of x^1 is 2)
+  • 2*x=2x
+• For power 2, the coefficient is 4.
+  • 4x^2 (The coefficient of x^2 is 4)
+
+Then polynomial A represents 6x^3 + 10x^2 + 5, the polynomial B represents 4x^2 + 2x + 1, and the addition of A and B
+is 6x^3 + 14x^2 + 2x + 6
+
+
+Sample Input 1
+
+4
+0 5
+1 0
+2 10
+3 6
+3
+0 1
+1 2
+2 4
+
+Sample Output 1
+
+6x^3 + 14x^2 + 2x + 6
+
+
+Outline
+
+Question: Add two polynomials
+Approach
+Step 1: Read the polynomials
+Step 2: Create a function to get a polynomial term
+Step 3: Create a function to get the polynomial expression string
+Step 4: Create a function to add two polynomials
+Step 5: Combine all functions and print the result
+
+Question: Add two polynomials
+Given two polynomials A and B, write a program that adds the given two polynomials A and B.
+
+Approach
+To solve this problem, we will follow these steps:
+
+1.Read the polynomials A and B from the input.
+2.Create a function to get a polynomial term with a given degree and coefficient.
+3.Create a function to get the polynomial expression string.
+4.Create a function to add two polynomials.
+5.Combine all functions and print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the polynomials
+
+First, we need to read the polynomials A and B from the input. We will create a function called read_polynomial() 
+that reads the input and stores the polynomial as a dictionary with power as the key and coefficient as the value.
+
+Step 2: Create a function to get a polynomial term
+
+Next, we will create a function called get_term() that takes a coefficient and a power as input and returns
+a polynomial term with the given degree and coefficient, excluding the sign.
+ 
+Step 3: Create a function to get the polynomial expression string
+
+Now, we will create a function called get_polynomial_expression_string() that takes a polynomial dictionary 
+as input and returns the polynomial expression string.
+ 
+Step 4: Create a function to add two polynomials
+
+Next, we will create a function called add() that takes two polynomial dictionaries as input and returns 
+the sum of the two polynomials as a new dictionary.
+
+Step 5: Combine all functions and print the result
+
+Finally, we will combine all the functions and print the result of adding the two polynomials.
+
+Solution:
+
+# Step1
+def read_polynomial():
+    n = int(input())
+    polynomial_dict = {}
+    for i in range(n):
+        power, coefficient = map(int, input().split())
+        polynomial_dict[power] = coefficient
+    return polynomial_dict
+
+#Step2
+def get_term(coefficient, power):
+    coefficient = abs(coefficient)
+    if coefficient == 1 and power != 0:
+            coefficient = ''
+    if power > 1:
+        term = "{}x^{}".format(coefficient, power)
+    elif power == 1:
+        term = "{}x".format(coefficient)
+    elif power == 0:
+        term = "{}".format(coefficient)
+    return term
+
+# Step3
+def get_polynomial_expression_string(polynomial):
+    expression = ""
+    degree = max(polynomial.keys())
+    for power in sorted(polynomial.keys(), reverse=True):
+        coefficient = polynomial[power]
+        term = get_term(coefficient, power)
+        if power == degree:
+            if coefficient > 0:
+                expression = term
+            elif coefficient < 0:
+                expression = '-{}'.format(term)
+        else:
+            if coefficient > 0:
+                expression = "{} + {}".format(expression, term)
+            elif coefficient < 0:
+                expression = "{} - {}".format(expression, term)
+    if expression == "":
+        expression = 0
+    return expression
+    
+# Step4
+def get_coefficient(polynomial, power):
+    try:
+        return polynomial[power]
+    except KeyError:
+        return 0
+
+def add(p1, p2):
+    result = dict()
+    for power in (set(p1.keys()) | set(p2.keys())):
+        result[power] = get_coefficient(p1, power) + get_coefficient(p2, power)
+    return result
+    
+# Step5
+def main():
+    p1 = read_polynomial()
+    p2 = read_polynomial()
+    result = add(p1, p2)
+    print(get_polynomial_expression_string(result))
+
+main()
+
+__________________________________________________________________________________________________
+
+09. IPL Match Details
+
+Write a program that reads all the match outcomes and summarizes the information of all the matches. 
+
+Points are given to the teams based on the outcome of the match.
+
+A win earns a team 3 points. A draw earns 1. A loss earns 0. 
+
+The following information is expected:
+
+MP: Matches Played
+W: Matches Won
+D: Matches Drawn (Tied)
+L: Matches Lost
+P: Points
+
+The team information should be displayed in descending order of points.
+
+Input:
+
+The first line contains a single integer N, denoting the total no. of matches played. 
+The following N lines contain outcomes of N matches. 
+Each of those lines has information on the teams (T1, T2) which played and the outcome (O) in format T1;T2;O. 
+The outcome (O) is one of 'win', 'loss', 'draw' and refers to the first team listed. 
+See Sample Input/Output for better understanding.
+The team name may contain spaces.
+
+Output:
+
+The output should contain summarized information of all the matches in a format similar to 
+'Team: CSK, Matches Played: 4, Won: 2, Lost: 1, Draw: 1, Points: 7' for each team in a new line.
+
+If there are no teams to print in summary, print "No Output".
+
+Constraints:
+
+Names of teams may contain spaces but will be less than 24 characters 100 >= N >= 0
+
+Sample Input 1:
+
+6
+CSK;RR;loss
+RR;DD;draw
+MI;KKR;win
+KKR;RR;loss
+CSK;DD;draw
+MI;DD;draw
+
+Sample Ouput 1:
+
+Team: RR, Matches Played: 3, Won: 2, Lost: 0, Draw: 1, Points: 7
+Team: MI, Matches Played: 2, Won: 1, Lost: 0, Draw: 1, Points: 4
+Team: DD, Matches Played: 3, Won: 0, Lost: 0, Draw: 3, Points: 3
+Team: CSK, Matches Played: 2, Won: 0, Lost: 1, Draw: 1, Points: 1
+Team: KKR, Matches Played: 2, Won: 0, Lost: 2, Draw: 0, Points: 0
+
+
+Outline
+
+Question: IPL Match Details
+Approach
+Step 1: Read the number of matches
+Step 2: Store match outcomes
+Step 3: Calculate points for each team
+Step 4: Print the points table
+
+Question: IPL Match Details
+
+Write a program that reads all the match outcomes and summarizes the information of all the matches. 
+Points are given to the teams based on the outcome of the match. A win earns a team 3 points. 
+A draw earns 1. A loss earns 0. The team information should be displayed in descending order of points.
+
+Approach
+
+Read the number of matches played.
+Store the outcomes of each match in a dictionary.
+Calculate the points for each team based on their match outcomes.
+Print the points table in descending order of points.
+
+Step-by-Step Explanation
+
+Step 1: Read the number of matches
+
+Read the input value representing the number of matches played. We can use the input() function to read the input 
+and int() to convert it into an integer.
+
+Step 2: Store match outcomes
+
+Create a function store_game_result that takes the team_stats dictionary as an argument.
+Inside the function, read the input for each match and split it into t1, t2, and match_outcome.
+Update the team_stats dictionary with the match outcomes for both teams using the update_match_outcome function.
+
+Step 3: Calculate points for each team
+
+Create a function get_points that takes the team_stats dictionary and a team as arguments.
+Calculate the points for the given team based on their match outcomes and return the result.
+
+Step 4: Print the points table
+
+Create a function print_points_table that takes the team_points list and the team_stats dictionary as arguments.
+Inside the function, iterate through the team_points list and print the team information in the required format.
+
+
+Solution
+
+reverse_outcomes = {'win': 'loss', 'loss': 'win', 'draw': 'draw'}
+
+def update_match_outcome(team_stats, team, outcome):
+    outcomes = ['win', 'loss', 'draw']
+    if not team_stats.get(team):
+        team_stats[team] = {'win': 0, 'loss': 0, 'draw': 0}
+    for possible_outcome in outcomes:
+        if outcome == possible_outcome:
+            team_stats[team][outcome] += 1
+        else:
+            team_stats[team][outcome] += 0
+
+def get_points(team_stats, team):
+    return team_stats[team]['win'] * 3 + team_stats[team]['draw']
+
+# Step2
+def store_game_result(team_stats):
+    t1, t2, match_outcome = input().split(';')
+    update_match_outcome(team_stats, t1, match_outcome)
+    update_match_outcome(team_stats, t2, reverse_outcomes[match_outcome])
+
+# Step3
+def get_points(team_stats, team):
+    return team_stats[team]['win'] * 3 + team_stats[team]['draw']
+    
+# Step4
+def print_points_table(team_points, team_stats):
+    team_fmt = 'Team: {}, Matches Played: {}, Won: {}, Lost: {}, Draw: {}, Points: {}'
+    for points, team in team_points:
+        won, lost, draw = team_stats[team]['win'], team_stats[team]['loss'], team_stats[team]['draw']
+        matches_played = won + lost + draw
+        output = team_fmt.format(team, matches_played, won, lost, draw, points)
+        print(output)
+    
+# Step1
+def main():
+    n = int(input())
+    if n == 0:
+        print("No Output")
+        return
+    team_stats = dict()
+    for i in range(n):
+        store_game_result(team_stats)
+    team_points = []
+    for team in team_stats:
+        team_points.append((get_points(team_stats, team), team))
+    team_points.sort(reverse=True)
+    print_points_table(team_points, team_stats)
+
+main()
