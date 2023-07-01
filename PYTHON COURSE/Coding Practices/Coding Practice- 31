@@ -312,3 +312,914 @@ So the output should be
 
 {'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Gopal': 'Hockey', 'Jyothi': 'Cricket', 'Akhil': 'Football'}
 
+Sample Input 1:
+
+3
+Gopal Hockey
+Jyothi Cricket
+Akhil Football
+
+Sample Output 1:
+
+{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Gopal': 'Hockey', 'Jyothi': 'Cricket', 'Akhil': 'Football'}
+
+Sample Input 2:
+
+4
+Suresh Chess
+Latha Chess
+Mohan Tennis
+Ashok Football
+
+Sample Output 2:
+
+{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Suresh': 'Chess', 'Latha': 'Chess', 'Mohan': 'Tennis', 'Ashok': 'Football'}
+
+Outline
+
+Question: Sports Data
+Approach
+Step 1: Read the number of key-value pairs
+Step 2: Read and update the key-value pairs
+Step 3: Print the updated dictionary
+
+Question: Sports Data
+A college is conducting its annual sports meet. They need data of students with the sport they play.
+Each student can participate in only one sport. For this problem, the prefilled code will contain a 
+dictionary. Write a program to add a list of tuples to the dictionary as key-value pairs. If a 
+student's name appears more than once, update the latest sport entry.
+
+Input:
+
+The first line of input will contain an integer N, denoting the number of key-value pairs.
+The next N lines will contain space-separated strings, denoting key followed by the value.
+
+Output:
+
+The output should be a single line containing the dictionary with the added key-value pairs.
+
+Example:
+
+If the given N is 3, read the inputs in the next three lines, if the given three inputs are the following:
+
+Your code should print the dictionary with all the key-value pairs. So the output should be:
+
+Approach
+
+1.Read the number of key-value pairs (N) from the input.
+2.Loop through N times and read the key-value pairs.
+3.Update the dictionary with the new key-value pairs.
+4.Print the updated dictionary.
+
+Step-by-Step Explanation
+
+Step 1: Read the number of key-value pairs
+Read the input value representing the number of key-value pairs (N). We can use input() function to read 
+the input and int() to convert it into an integer.
+
+Step 2: Read and update the key-value pairs
+Create a loop that iterates N times.
+Inside the loop, read the input key-value pair as a space-separated string.
+Split the input string into a list of two elements (key and value) using the split() function.
+Update the dictionary with the new key-value pair.
+
+Step 3: Print the updated dictionary
+After updating the dictionary with all the new key-value pairs, print the dictionary.
+
+Solution:
+
+students_dict = {
+    "Ram": "Cricket",
+    "Naresh": "Football",
+    "Vani": "Tennis",
+    "Rahim": "Cricket"
+}
+
+# Write your code here
+a=int(input())
+for i in range(a):
+    key,value=input().split()
+    students_dict[key]=value
+print(students_dict)
+
+_________________________________________________________________________________________________________
+
+05. Squares
+
+Write a program to create a dictionary that contains keys as numbers from 1 to N and values are square of keys.
+
+Input:
+
+The input will be a single line containing an integer (N).
+
+Output:
+
+The output should be a single line containing the dictionary with key-value pairs from 1 to N.
+
+Explanation:
+
+For example, if the given N is 3, your code should print a dictionary with keys 
+(1, 2, 3) and values (1, 4, 9).
+
+So the output should be  {1: 1, 2: 4, 3: 9}
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+{1: 1, 2: 4, 3: 9}
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+{1: 1, 2: 4, 3: 9, 4: 16}
+
+Tutorial: Squares
+
+Step 1: Get the input
+First, we need to get the input from the user, which is an integer (N). We'll use the input() function to do this. 
+Then, we'll convert the input into an integer using the int() function.
+
+n = int(input())
+
+Step 2: Create an empty dictionary
+We'll create an empty dictionary called square_dict. We'll add the key-value pairs to this dictionary later.
+
+square_dict = {}
+
+Step 3: Use a loop to calculate the squares
+Now, we'll use a for loop to go through the numbers from 1 to N (including N). In each step of the loop, 
+we'll calculate the square of the current number and add it to the dictionary.
+
+for num in range(1, n+1):     square_dict[num] = num*num
+
+range(1, n+1) is a function that gives us a list of numbers from 1 to N (including N).
+num is the current number in the loop.
+num*num calculates the square of the current number.
+square_dict[num] = num*num adds the key-value pair to the dictionary.
+
+Step 4: Print the dictionary
+Finally, we'll print the dictionary containing the squares of numbers from 1 to N.
+
+print(square_dict)
+
+
+Solution:
+
+a=int(input())
+b={}
+for i in range(1,a+1):
+    b[i]=(i*i)
+print(b)
+
+____________________________________________________________________________________________________
+
+06. Remove N Keys
+
+For this problem, the prefilled code will contain a dictionary. Write a program to remove N key-
+value pairs from the dictionary if they present.
+
+Input:
+
+The input will be a single line containing space-separated strings, denoting the keys.
+
+Output:
+
+The output should be a single line containing the dictionary without the given key-value pairs.
+
+Explanation:
+
+For example, if the given string is "a d g", your code should print the dictionary without key-value pairs 
+of (a, d, g). So the output should be {'b': 98, 'c': 99, 'e': 101, 'f': 102, 'h': 104}
+
+Sample Input 1:
+
+a d g
+
+Sample Output 1:
+
+{'b': 98, 'c': 99, 'e': 101, 'f': 102, 'h': 104}
+
+Sample Input 2:
+
+a b f k
+
+Sample Output 2:
+
+{'c': 99, 'd': 100, 'e': 101, 'g': 103, 'h': 104}
+
+Tutorial: Remove N Keys
+
+Problem Statement
+Given a dictionary alphabets with some key-value pairs and a list of keys keys, our task is to remove N 
+key-value pairs from the dictionary if they are present in the keys list.
+
+Step 1: Define the dictionary
+First, we define the alphabets dictionary containing some key-value pairs. Each key in the dictionary 
+represents an alphabet and its corresponding value is the ASCII code of that alphabet.
+
+Step 2: Get the input
+Next, we get the input from the user in the form of a space-separated string containing the keys that we 
+want to remove from the dictionary. We'll use the input() function to get the input and then split it into 
+a list of keys using the split() function.
+
+Step 3: Remove the keys
+Now, we use a for loop to iterate through each key in the keys list. If the key is present in the alphabets 
+dictionary, we delete the corresponding key-value pair using the del keyword.
+
+for key in keys: is a loop that iterates through each key in the keys list.
+if key in alphabets: checks if the current key is present in the alphabets dictionary.
+del alphabets[key] deletes the key-value pair corresponding to the current key in the alphabets dictionary.
+
+Step 4: Print the updated dictionary
+Finally, we print the updated dictionary containing the key-value pairs that were not deleted.
+
+Solution:
+
+alphabets = {
+    'a': 97,
+    'b': 98,
+    'c': 99,
+    'd': 100,
+    'e': 101,
+    'f': 102,
+    'g': 103,
+    'h': 104,
+}
+
+# Write your code here
+keys=input().split()
+for key in keys:
+    if key in alphabets:
+        del alphabets[key]
+print(alphabets)
+
+___________________________________________________________________________________________________________
+
+07. Student ID Map
+
+You are given a sequence of student names Ni and their ids Di (corresponding to the student at the same index in Ni).
+
+Write a program to print the student name and his ID from Ni and Di in alphabetical order of the name.
+
+Input:
+
+The first line of input will contain comma-separated strings, denoting the student names (Ni).
+
+Output:
+
+The second line of input will contain comma-separated strings, denoting the corresponding student ids (Di).
+
+Explanation:
+
+The output should be M lines equal to the number of students.
+Each line in the output contains student name and his ID separated by a space in alphabetical order of the name.
+
+Explanation:
+
+For example, if the given student names sequence and IDs sequence are the following.
+
+Anand,Ramesh,Kiran
+ID102,ID101,ID100
+
+Your code should print the student name and his ID from Ni and Di in alphabetical order of the name. 
+
+So the output should be
+
+Anand ID102
+Kiran ID100
+Ramesh ID101
+
+Sample Input 1:
+
+Anand,Ramesh,Kiran
+ID102,ID101,ID100
+
+Sample Output 1:
+
+Anand ID102
+Kiran ID100
+Ramesh ID101
+
+Sample Input 2:
+
+Anjali,Ravi,Akbar,Mohan
+ID102,ID101,ID100,ID103
+
+Sample Output 2:
+
+Akbar ID100
+Anjali ID102
+Mohan ID103
+Ravi ID101
+
+Step 1: Define a function to create a dictionary
+First, we'll define a function called convert_to_key_value_pairs. This function will take two lists as input,
+one containing the keys (student names) and the other containing the values (student IDs). It will return a
+dictionary with the names as keys and the corresponding IDs as values.
+
+Step 2: Get the input
+Next, we get the input from the user in the form of two comma-separated strings. The first line contains student 
+names (Ni), and the second line contains the corresponding student IDs (Di). We'll use the input() function to 
+get the input and then split it into lists using the split(",") function.
+
+Step 3: Create the student details dictionary
+Now, we'll use the convert_to_key_value_pairs function to create a dictionary called student_details with the 
+student names as keys and their corresponding IDs as values.
+
+Step 4: Sort the dictionary
+Next, we'll sort the student_details dictionary by the student names (keys) in alphabetical order. 
+We'll first convert the dictionary to a list of items (key-value pairs) using the items() method 
+and then sort the list using the sorted() function.
+
+Step 5: Print the sorted student details
+Finally, we'll use a for loop to print the sorted student details. In each iteration, we'll print the 
+student name and ID separated by a space.
+
+Solution:
+
+def convert_to_key_value_pairs(keys_list, values_list):
+    dict_a = {}
+    number_of_keys = len(keys_list)
+    for i in range(number_of_keys):
+        key = keys_list[i]
+        value = values_list[i]
+        dict_a[key] = value
+    return dict_a
+
+student_names = input().split(",")
+student_ids = input().split(",")
+
+student_details = convert_to_key_value_pairs(student_names, student_ids)
+
+student_details_items = student_details.items()
+student_details = sorted(student_details_items)
+
+for item in student_details:
+    print(*item)
+
+___________________________________________________________________________________________________
+
+08. Rename Key
+
+For this problem, the prefilled code will contain a dictionary. Write a program to rename a key in the
+dictionary with the given name.
+
+Input:
+
+The first line of input will contain a string, denoting the existing key in the dictionary.
+The second line of input will contain a string, denoting the new key to be renamed.
+
+Output:
+
+The output should be a single line containing the list of tuples with dictionary items, where the key 
+is updated without changing the order of the key-value pairs.
+
+Explanation:
+
+For example, if the given key is "apples" and the new key is "pomegranates", your code should update 
+the key "apples" with "pomegranates" with the same value of apples. 
+
+So the output should be
+
+[('pomegranates', 10), ('bananas', 20), ('mangoes', 15), ('oranges', 200), ('watermelons', 50)]
+
+Sample Input 1:
+
+apples
+pomegranates
+
+Sample Output 1:
+
+[('pomegranates', 10), ('bananas', 20), ('mangoes', 15), ('oranges', 200), ('watermelons', 50)]
+
+Sample Input 2:
+
+oranges
+apricots
+
+Sample Output 2:
+
+[('apples', 10), ('bananas', 20), ('mangoes', 15), ('apricots', 200), ('watermelons', 50)]
+
+Tutorial: Rename Key in a Dictionary
+
+Step 1: Define the dictionary
+First, we need to define the dictionary that contains the key-value pairs. In this example, we are using a 
+dictionary called fruits. 
+
+Step 2: Take user input
+We need to get two inputs from the user. The first input is the existing key in the dictionary that we want
+to rename. The second input is the new key that will replace the existing key. We store these inputs in the
+variables key and new_key, respectively.
+
+Step 3: Convert the dictionary to a list of tuples
+To update the key in the dictionary without changing the order, we will convert the dictionary into a list 
+of tuples called fruit_items. Each tuple in the list contains a key-value pair from the dictionary.
+
+Next, create a copy of the fruit_items list called fruit_items_copy. This copy will be used to update the key.
+
+Step 4: Find the key and update it
+Now, we will loop through the fruit_items list to find the tuple containing the key we want to rename. 
+Once we find the tuple, we will create a new tuple with the new key and the same value. We will then 
+update the corresponding tuple in the fruit_items_copy list with the new tuple.
+
+Step 5: Print the updated list of tuples
+Finally, we will print the updated list of tuples fruit_items_copy containing the renamed key.
+
+Solution:
+
+fruits = {
+    "apples": 10,
+    "bananas": 20,
+    "mangoes": 15,
+    "oranges": 200,
+    "watermelons": 50
+}
+
+key = input()
+new_key = input()
+
+fruit_items = list(fruits.items())
+
+fruit_items_copy = fruit_items.copy()
+
+fruits_count = len(fruit_items)
+
+for i in range(fruits_count):
+    if fruit_items[i][0] == key:
+        updated_tuple = (new_key, fruit_items[i][1])
+        fruit_items_copy[i] = updated_tuple
+        
+print(fruit_items_copy)
+
+____________________________________________________________________________________________
+
+09. Combine Two Dictionaries
+
+Write a program to combine two dictionaries updating values for common keys.
+
+Input:
+
+The first line of input will contain space-separated strings, denoting the keys of first dictionary.
+The second line of input will contain space-separated integers, denoting the values of first dictionary.
+The third line of input will contain space-separated strings, denoting the keys of second dictionary.
+The fourth line of input will contain space-separated integers, denoting the values of second dictionary.
+
+Output:
+
+The output should be a single line containing the list of tuples of dictionary items with all the key-value
+pairs of two dictionaries sorted in ascending order by key.
+
+Explanation:
+
+For example, if the given inputs are the following.
+
+Akhil Ram Raju Mohan
+1 10 15 18
+Gopal Krishna Vani Ram
+21 22 19 20
+
+Your code should combine the two dictionaries and if keys are in both dictionaries then the combined 
+dictionary should contain the value of second dictionary. So the output should be
+
+[('Akhil', 1), ('Gopal', 21), ('Krishna', 22), ('Mohan', 18), ('Raju', 15), ('Ram', 20), ('Vani', 19)]
+
+Sample Input 1:
+
+Akhil Ram Raju Mohan
+1 10 15 18
+Gopal Krishna Vani Ram
+21 22 19 20
+
+Sample Output 1:
+
+[('Akhil', 1), ('Gopal', 21), ('Krishna', 22), ('Mohan', 18), ('Raju', 15), ('Ram', 20), ('Vani', 19)]
+
+Sample Input 2:
+
+Anjali Ravi Akbar
+1 2 3
+Suresh Gopal Latha Mohan Ashok
+20 21 22 25 30
+
+Sample Output:
+
+[('Akbar', 3), ('Anjali', 1), ('Ashok', 30), ('Gopal', 21), ('Latha', 22), ('Mohan', 25), ('Ravi', 2), ('Suresh', 20)]
+
+Outline
+
+Question: Combine Two Dictionaries
+Approach
+Step 1: Convert string to integer list
+Step 2: Convert keys and values to dictionary
+Step 3: Read input and combine dictionaries
+Solution
+
+Question: Combine Two Dictionaries
+Write a program to combine two dictionaries updating values for common keys. The input will be given in 
+four lines. The first two lines will have the keys and values of the first dictionary, and the next two 
+lines will have the keys and values of the second dictionary. The output should be a single line containing 
+the list of tuples of dictionary items with all the key-value pairs of two dictionaries sorted in ascending order by key.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Convert the input strings of values into lists of integers.
+2.Create dictionaries using the input keys and values.
+3.Combine the two dictionaries and update the values for common keys.
+4.Sort the combined dictionary by keys and print the result.
+
+Step-by-Step Explanation
+
+Step 1: Convert string to integer list
+First, we need to convert the input strings of values into lists of integers. We can create a function 
+called convert_string_to_int that takes a list of strings as input and returns a list of integers.
+
+Step 2: Convert keys and values to dictionary
+Next, we need to create dictionaries using the input keys and values. We can create a function called 
+convert_to_key_value_pairs that takes two lists as input (keys and values) and returns a dictionary.
+
+Step 3: Read input and combine dictionaries
+Now, we can read the input, convert the values to integers, create dictionaries, and combine them. 
+We will use the update() method to update the values for common keys in the first dictionary with 
+the values from the second dictionary. Finally, we will sort the combined dictionary by keys and print the result.
+
+Here is the complete solution for the problem:
+
+Solution:
+
+def convert_string_to_int(str_num_list):
+    int_list = []
+    for str_num in str_num_list:
+        num = int(str_num)
+        int_list.append(num)
+    return int_list
+
+def convert_to_key_value_pairs(keys_list, values_list):
+    dict_a = {}
+    number_of_keys = len(keys_list)
+    for i in range(number_of_keys):
+        key = keys_list[i]
+        value = values_list[i]
+        dict_a[key] = value
+    return dict_a
+
+dict_a_keys = input().split()
+dict_a_values = input().split()
+dict_b_keys = input().split()
+dict_b_values = input().split()
+
+dict_a_values = convert_string_to_int(dict_a_values)
+dict_b_values = convert_string_to_int(dict_b_values)
+
+student_details_1 = convert_to_key_value_pairs(dict_a_keys, dict_a_values)
+student_details_2 = convert_to_key_value_pairs(dict_b_keys, dict_b_values)
+
+student_details_1.update(student_details_2)
+student_details = student_details_1.items()
+student_details = sorted(student_details)
+print(student_details)
+
+___________________________________________________________________________________________________
+
+10. Consecutive Sum Triangle
+
+Given a list of integers, write a program to print a consecutive sum triangle.
+
+Consecutive Sum Triangle is a triangle, where the first level contains all elements in the inputs. 
+
+From next level, print the sum of consecutive elements of the previous level.
+
+Input:
+
+The input will be a single line containing comma-separated integers.
+
+Output:
+
+The output should be M number of lines equal to the length of the given list.
+Each line should contain a list of consecutive sum of numbers of the previous line.
+
+Explanation:
+
+For example, if the given string is "3,5,7,9", as the input list contain four numbers, the output should be four lines.
+The first line of the triangle should contain all the elements.
+The second line should be the sum of consecutive elements of the previous line, which is the first line.
+[3+5, 5+7, 7+9] -> [8, 12, 16]
+Similarly for the next lines until a single element occurs in the last line.
+
+So the output should be
+
+[3, 5, 7, 9]
+[8, 12, 16]
+[20, 28]
+[48]
+
+Sample Input 1:
+
+3,5,7,9
+
+Sample Output 1:
+
+[3, 5, 7, 9]
+[8, 12, 16]
+[20, 28]
+[48]
+
+Sample Input 2:
+
+8,6
+
+Sample Output 2:
+
+[8, 6]
+[14]
+
+Outline
+
+Question: Consecutive Sum Triangle
+Approach
+Step 1: Read the input and convert it to a list of integers
+Step 2: Create a function to calculate the consecutive sum of a list
+Step 3: Create a function to print the consecutive sum triangle
+Step 4: Call the functions to print the consecutive sum triangle
+
+Question: Consecutive Sum Triangle
+Given a list of integers, write a program to print a consecutive sum triangle. A consecutive sum triangle 
+is a triangle where the first level contains all elements in the inputs. From the next level, print the 
+sum of consecutive elements of the previous level.
+
+Input: A single line containing comma-separated integers.
+
+Output: M number of lines equal to the length of the given list. Each line should contain a list
+of consecutive sum of numbers of the previous line.
+
+Example: If the given string is "3,5,7,9", the output should be:
+
+Approach
+
+1.Read the input and convert it to a list of integers.
+2.Create a function to calculate the consecutive sum of a list.
+3.Create a function to print the consecutive sum triangle.
+4.Call the functions to print the consecutive sum triangle.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and convert it to a list of integers
+Read the input using the input() function and split it using the split(",") method to get a list of strings.
+Create a function convert_string_to_int() to convert the list of strings to a list of integers.
+Call the convert_string_to_int() function with the list of strings as an argument and store the result in a variable int_list.
+
+Step 2: Create a function to calculate the consecutive sum of a list
+Define a function get_con_sum_list() that takes a list of integers as an argument.
+Initialize an empty list con_sum_list to store the consecutive sum of the input list.
+Iterate through the input list using a for loop with an index i ranging from 0 to the second last element.
+Calculate the consecutive sum of the current element and the next element, and append it to the con_sum_list.
+Return the con_sum_list after the loop.
+
+Step 3: Create a function to print the consecutive sum triangle
+Define a function print_sum_triangle() that takes a list of integers as an argument.
+Use a while loop to iterate until the length of the input list is greater than 1.
+Call the get_con_sum_list() function with the input list as an argument and store the result in a variable con_sum_list.
+Print the con_sum_list.
+Update the input list with the con_sum_list for the next iteration.
+
+Step 4: Call the functions to print the consecutive sum triangle
+Call the print_sum_triangle() function with the int_list as an argument.
+
+Solution:
+
+def get_con_sum_list(int_list):
+    con_sum_list = []
+    end_index = len(int_list) - 1
+    for i in range(end_index):
+        con_sum = int_list[i] + int_list[i + 1]
+        con_sum_list.append(con_sum)
+    return con_sum_list
+
+def print_sum_triangle(int_list):
+    while len(int_list) > 1:
+        con_sum_list = get_con_sum_list(int_list)
+        print(con_sum_list)
+        int_list = con_sum_list
+
+def convert_string_to_int(str_num_list):
+    new_list = []
+    for item in str_num_list:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+str_num_list = input().split(",")
+int_list = convert_string_to_int(str_num_list)
+print(int_list)
+print_sum_triangle(int_list)
+
+___________________________________________________________________________________________________
+
+11. Grouping of Scores
+
+A player has collected few colored balls which have a number on them. 
+To calculate score, we have to group the colored balls picked by user and sum up the numbers on them.
+
+Write a program to create a dictionary, grouping of colored balls and the corresponding total score.
+
+Input:
+
+The input will be a single line containing comma-separated key-value pairs.
+Each key-value pair is separated by the colon character (:).
+
+Output:
+
+The output should be a single line containing a list of tuples of dictionary items by grouping of 
+colored balls and the corresponding total score, where keys are sorted in alphabetical order.
+
+Explanation:
+
+For example if the given string is "r:1,b:2,r:3", as the key 'r' is repeated twice, the key 'r' in the output 
+dictionary should have the value of sum of two scores(1 + 3) in the input. So the output should be
+
+[('b', 2), ('r', 4)]
+
+Sample Input 1:
+
+r:1,b:2,r:3
+
+Sample Output 1:
+
+[('b', 2), ('r', 4)]
+
+Sample Input 2:
+
+r:1,g:2,r:3,b:1,g:4
+
+Sample Output 2:
+
+[('b', 1), ('g', 6), ('r', 4)]
+
+Outline
+
+Question: Grouping of Scores
+Approach
+Step 1: Read the input and split it into a list
+Step 2: Create a function to calculate the scores
+Step 3: Call the function and sort the result
+Step 4: Print the result
+
+Question: Grouping of Scores
+A player has collected few colored balls which have a number on them. To calculate the score, we have 
+to group the colored balls picked by the user and sum up the numbers on them. Write a program to create 
+a dictionary, grouping of colored balls and the corresponding total score.
+
+Input: The input will be a single line containing comma-separated key-value pairs. Each key-value pair
+is separated by the colon character (:).
+
+Output: The output should be a single line containing a list of tuples of dictionary items by grouping 
+of colored balls and the corresponding total score, where keys are sorted in alphabetical order.
+
+Example: If the given string is "r:1,b:2,r:3", as the key 'r' is repeated twice, the key 'r' in the 
+output dictionary should have the value of sum of two scores(1 + 3) in the input. 
+So the output should be [('b', 2), ('r', 4)].
+
+Approach
+1.Read the input string and split it into a list of key-value pairs.
+2.Create a function to calculate the scores for each colored ball.
+3.Call the function and sort the result in alphabetical order.
+4.Print the result as a list of tuples.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split it into a list
+Read the input string using the input() function.
+Split the input string into a list of key-value pairs using the split() function with a comma (,) as the separator.
+
+Step 2: Create a function to calculate the scores
+Create a function called get_scores() that takes the list of key-value pairs as an argument.
+Inside the function, create an empty dictionary called ball_score_dict.
+Iterate through the list of key-value pairs using a for loop.
+For each pair, split it into a key and a value using the split() function with a colon (:) as the separator.
+Convert the value to an integer using the int() function.
+Check if the key is already in the dictionary.
+If it is, add the value to the existing score for that key.
+If it is not, add the key and value to the dictionary.
+Return the dictionary.
+ 
+Step 3: Call the function and sort the result
+Call the get_scores() function with the ball_score_list as an argument.
+Store the result in a variable called ball_score_pairs.
+Convert the dictionary items to a list of tuples using the items() method.
+Sort the list of tuples in alphabetical order using the sorted() function.
+
+Step 4: Print the result
+Print the sorted list of tuples as the final output.
+
+Solution
+
+def get_scores(ball_and_score_list):
+    ball_score_dict = {}
+    for item in ball_and_score_list:
+        pair = item.split(":")
+        key, value = pair[0], int(pair[1])
+        if key in ball_score_dict:
+            score = ball_score_dict[key]
+            ball_score_dict[key] = score + value
+        else:
+            ball_score_dict[key] = value
+    return ball_score_dict
+
+ball_score_list = input().split(",")
+ball_score_pairs = get_scores(ball_score_list)
+ball_scores_items = ball_score_pairs.items()
+ball_scores_items = sorted(ball_scores_items)
+print(ball_scores_items)
+
+_________________________________________________________________________________________________
+
+12. Identify the Mistake - String Formatting
+
+Given two strings, name and sport. Write a program using string formatting to concatenate the name 
+followed by the message "is playing" and followed by the sport.
+
+Input:
+
+The first line of input will contain a string.
+The second line of input will contain a string.
+
+Output:
+
+The output should be a single line concatenating the message with the given inputs.
+
+Explanation:
+
+For example, if the given name is "Raju" and the sport is "cricket", your code should print the 
+message concatenating the name and sport. So the output should be
+
+Raju is playing Cricket
+
+Sample Input 1:
+
+Raju
+Cricket
+
+Sample Output 1:
+
+Raju is playing Cricket
+
+Sample Input 2:
+
+Latha
+Tennis
+
+Sample Output 2:
+
+Latha is playing Tennis
+
+
+Outline
+
+Question: Identify the Mistake - String Formatting
+Approach
+Step 1: Read the input strings
+Step 2: Create the message template
+Step 3: Format the message and print the output
+
+Question: Identify the Mistake - String Formatting
+Given two strings, name and sport. Write a program using string formatting to concatenate the name
+followed by the message "is playing" and followed by the sport.
+
+Approach
+
+1.Read the input strings for name and sport.
+2.Create a message template with placeholders for the name and sport.
+3.Format the message by replacing the placeholders with the input strings.
+4.Print the formatted message.
+
+Step-by-Step Explanation
+
+Step 1: Read the input strings
+Read the input value representing the name. We can use input() function to read the input.
+Read the input value representing the sport. We can use input() function to read the input.
+
+Step 2: Create the message template
+Create a message template with placeholders for the name and sport. We can use curly braces {} as 
+placeholders in the message template.
+
+Step 3: Format the message and print the output
+Format the message by replacing the placeholders with the input strings. We can use the format() 
+method to replace the placeholders with the input strings.
+Print the formatted message.
+
+Solution
+
+str_a = input()
+str_b = input()
+message = "{arg_1} is playing {arg_2}"
+print(message.format(arg_1=str_a, arg_2=str_b))
+
+
