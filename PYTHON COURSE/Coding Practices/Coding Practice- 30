@@ -1,0 +1,1253 @@
+01. Maximum, Minimum and Sum of Matrix
+
+For this problem, the prefilled code will contain an MxN matrix. Write a program to print the maximum, 
+minimum and sum of all elements in the matrix.
+
+Input:
+
+The first line of input will contain two space-separated integers, denoting the M and N.
+The next M following lines will contain N space-separated integers, denoting the elements of each list.
+
+Output:
+
+The first line of output should be the maximum of all elements in the matrix.
+The second line of output should be the minimum of all elements in the matrix.
+The third line of output should be the sum of all elements in the matrix.
+
+Explanation:
+
+For example, if the given M is 3 and N is 3, read the inputs in the next three lines. 
+If the numbers given in the next three lines are the following.
+
+1 2 3
+10 20 30
+5 10 15
+
+The first line of output should print the maximum of all the elements in the matrix, which is 30.
+The second line of output should print the minimum of all the elements in the matrix, which is 1.
+The third line of output should print the sum of all the elements in the matrix, which is 96.
+
+So the output should be
+
+30
+1
+96
+
+Sample Input 1:
+
+3 3
+1 2 3
+10 20 30
+5 10 15
+
+Sample Output 1:
+
+30
+1
+96
+
+Sample Input 2:
+
+2 5
+-50 20 3 25 -20
+88 17 38 72 -10
+
+Sample Output 2:
+
+88
+-50
+183
+
+In this tutorial, you will learn how to find the maximum, minimum, and sum of all elements in a given
+matrix using Python. We will break down the solution into simple steps and explain each step in detail.
+
+Step 1: Convert a list of strings to a list of integers
+First, let's create a function that takes a list of strings and converts it into a list of integers.
+
+This function iterates through each item in the input list, converts it to an integer, and appends 
+it to a new list. The new list containing integers is then returned.
+
+Step 2: Read matrix dimensions and elements
+Read the dimensions of the matrix (M and N) from the input and convert them to integers. Then, create 
+an empty list called num_list to store the matrix elements.
+
+Next, use a for loop to read M lines of input, each containing N space-separated integers. Convert 
+the input strings to integers using the convert_string_to_int function and append the converted list to num_list.
+
+Step 3: Initialize lists for maximum, minimum, and sum
+Create three empty lists to store the row-wise maximum, minimum, and sum values of the matrix.
+
+Step 4: Calculate row-wise maximum, minimum, and sum
+Iterate through each row in the num_list matrix. For each row, calculate the maximum, minimum, and 
+sum values and append them to the corresponding lists (row_max, row_min, and row_sum).
+
+Step 5: Print the overall maximum, minimum, and sum
+Finally, use the built-in max(), min(), and sum() functions to find the overall maximum, minimum, 
+and sum values from the row_max, row_min, and row_sum lists, respectively. Print these values in separate lines.
+
+Solution:
+
+def convert_string_to_int(list_a):
+    new_list = []
+    for item in list_a:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+m, n = input().split()
+m, n = int(m), int(n)
+num_list = []
+
+for i in range(m):
+    list_a = input().split()
+    list_a = convert_string_to_int(list_a)
+    num_list.append(list_a)
+
+# Write your code here
+row_max=[]
+row_min=[]
+row_sum=[]
+for row in num_list:
+    row_max.append(max(row))
+    row_min.append(min(row))
+    row_sum.append(sum(row))
+print(max(row_max))
+print(min(row_min))
+print(sum(row_sum))
+    
+_______________________________________________________________________________________________________
+
+02. Row and Column with Maximum
+
+An M * N matrix is given in the prefilled code.
+
+Write a program that finds the maximum element in the matrix and prints all the elements of the
+corresponding row and the column that has the maximum element.
+
+Input:
+
+The first line of input contains two space-separated integers, representing M and N
+The next M lines of input contain N space-separated integers, representing the elements of the matrix.
+
+Output:
+
+The first line of output should be a list containing all the elements of the row that has the maximum element.  
+The second line of output should be a list containing all the elements of the column that has the maximum element.
+
+Explanation:
+
+For example, if the given M = 3, N = 3, and the given elements of the M * N matrix are,
+
+1 2 3
+10 20 30
+5 10 15
+
+30 is the maximum element in the given  M * N matrix.
+
+https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/programming-foundations/Image+Pasted+at+2023-4-4+18-27.png
+
+In the given matrix the 2nd row and the 3rd column have the maximum element 30
+
+The output should be, 
+
+[ 10, 20, 30 ]
+[ 3, 30, 15 ]
+
+Sample Input 1:
+
+3 3
+1 2 3
+10 20 30
+5 10 15
+
+Sample output 1:
+
+[10, 20, 30]
+[3, 30, 15]
+
+Sample Input 2:
+
+2 5
+-50 20 3 25 -20
+88 17 38 72 -10
+
+Sample output 2:
+
+[88, 17, 38, 72, -10]
+[-50, 88]
+
+Outline
+
+Question: Row and Column with Maximum
+Approach
+Step 1: Read the input and convert it into a matrix
+Step 2: Find the maximum element and its position
+Step 3: Print the row and column containing the maximum element
+Solution
+
+Question: Row and Column with Maximum
+You are given an M * N matrix. Your task is to write a program that finds the maximum element 
+in the matrix and prints all the elements of the corresponding row and the column that has the maximum element.
+
+Approach
+
+1.Read the input and convert it into a matrix.
+2.Find the maximum element and its position (row and column) in the matrix.
+3.Print the row and column containing the maximum element.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and convert it into a matrix
+Read the input values for M and N using the input() function and split them using the split() function.
+Convert the input values into integers using the int() function.
+Create an empty list called num_list to store the matrix elements.
+Use a for loop to read the matrix elements row by row.
+For each row, read the input elements using the input() function and split them using the split() function.
+Convert the input elements into integers using the convert_string_to_int() function.
+Append the converted row to the num_list.
+
+
+Step 2: Find the maximum element and its position
+Create an empty list called row_wise_max to store the maximum element of each row.
+Use a for loop to iterate through each row in the num_list.
+For each row, find the maximum element using the max() function and append it to the row_wise_max list.
+Find the overall maximum element using the max() function on the row_wise_max list.
+Find the row index containing the maximum element using the index() function on the row_wise_max list.
+
+Step 3: Print the row and column containing the maximum element
+Get the row containing the maximum element from the num_list using the row index found in the previous step.
+Print the row containing the maximum element.
+Find the column index containing the maximum element using the index() function on the row containing the maximum element.
+Create an empty list called max_column to store the elements of the column containing the maximum element.
+Use a for loop to iterate through each row in the num_list.
+For each row, append the element at the column index containing the maximum element to the max_column list.
+Print the column containing the maximum element.
+
+Solution:
+
+def convert_string_to_int(list_a):
+    new_list = []
+    for item in list_a:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+
+m, n = input().split()
+m, n = int(m), int(n)
+num_list = []
+
+for i in range(m):
+    list_a = input().split()
+    list_a = convert_string_to_int(list_a)
+    num_list.append(list_a)
+# Write your code here
+row_wise_max=[]
+for row in num_list:
+    row_wise_max.append(max(row))
+maximum=max(row_wise_max)
+row_index_containing_max=row_wise_max.index(maximum)
+max_row=num_list[row_index_containing_max]
+print(max_row)
+column_index_containing_max=max_row.index(maximum)
+max_column=[]
+for row in num_list:
+    max_column.append(row[column_index_containing_max])
+print(max_column)
+    
+_____________________________________________________________________________________________________
+
+03. Transpose Matrix
+
+For this problem, the prefilled code will contain an MxN matrix. Write a program to print the transpose of the matrix.
+Transpose of a matrix is obtained by changing rows to columns and columns to rows.
+
+Input:
+
+The first line of input will contain two space-separated integers, denoting the M and N.
+The next M following lines will contain N space-separated integers, denoting the elements of each list.
+
+Output:
+
+The output should be N lines containing the transpose of the given matrix.
+Note: N is the length of a list in the matrix.
+
+Explanation:
+
+For example, if the given M is 3 and N is 3, read the inputs in the next three lines. 
+If the numbers given in the next three lines are the following.
+
+1 2 3
+10 20 30
+5 10 15
+
+By changing rows to columns and columns to rows, the transpose of the above matrix should be
+
+[1, 10, 5]
+[2, 20, 10]
+[3, 30, 15]
+
+Sample Input 1:
+
+3 3
+1 2 3
+10 20 30
+5 10 15
+
+Sample output 1:
+
+[1, 10, 5]
+[2, 20, 10]
+[3, 30, 15]
+
+Sample Input 2:
+
+2 5
+-50 20 3 25 -20
+88 17 38 72 -10
+
+Sample output 2:
+
+[-50, 88]
+[20, 17]
+[3, 38]
+[25, 72]
+[-20, -10]
+
+
+Outline
+
+Question: Transpose Matrix
+Approach
+Step 1: Read the input values
+Step 2: Convert the input values into a matrix
+Step 3: Transpose the matrix
+Step 4: Print the transposed matrix
+
+Question: Transpose Matrix
+In this problem, you are given an MxN matrix. Your task is to write a program to print the transpose of 
+the matrix. Transpose of a matrix is obtained by changing rows to columns and columns to rows.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Read the input values representing the dimensions of the matrix (M and N) and the elements of the matrix.
+2.Convert the input values into a matrix.
+3.Transpose the matrix by changing rows to columns and columns to rows.
+4.Print the transposed matrix.
+
+Step-by-Step Explanation
+
+Step 1: Read the input values
+First, we need to read the input values representing the dimensions of the matrix (M and N) and the elements 
+of the matrix. We can use the input() function to read the input and split() to separate the values.
+
+Step 2: Convert the input values into a matrix
+Now, we need to read the elements of the matrix and store them in a list. We will use a for loop to 
+read the input values and convert them into integers using the int() function.
+Here, we are using a helper function convert_string_to_int() to convert the input values into integers.
+
+Step 3: Transpose the matrix
+Now that we have the matrix, we can transpose it by changing rows to columns and columns to rows.
+We will use a function get_transpose_of_matrix() to perform this operation.
+
+We will call this function with our matrix and its dimensions as arguments.
+
+Step 4: Print the transposed matrix
+
+Finally, we will print the transposed matrix using a for loop.
+
+Solution
+
+def get_transpose_of_matrix(matrix, m, n):
+    # Complete this function
+    transpose_matrix=[]
+    for i in range(n):
+        row=[]
+        for j in range(m):
+            row.append(matrix[j][i])
+        transpose_matrix.append(row)
+    return transpose_matrix
+def convert_string_to_int(list_a):
+    new_list = []
+    for item in list_a:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+
+m, n = input().split()
+m, n = int(m), int(n)
+num_list = []
+
+for i in range(m):
+    list_a = input().split()
+    list_a = convert_string_to_int(list_a)
+    num_list.append(list_a)
+
+# Call the get_transpose_of_matrix function
+transpose_matrix=get_transpose_of_matrix(num_list,m,n)
+for row in transpose_matrix:
+    print(row)
+
+__________________________________________________________________________________________________
+
+04. Row - Maximum, Minimum, Sum
+
+For this problem, the prefilled code will contain an MxN matrix. Write a program to print the 
+maximum, minimum and sum for each row in the matrix.
+
+Input:
+
+The first line of input will contain two space-separated integers, denoting the M and N.
+The next M following lines will contain N space-separated integers, denoting the elements of each list.
+
+Output:
+
+The first line of output should contain the list of the maximum number in each row.
+The second line of output should contain the list of minimum number in each row.
+The third line of output should contain the list of the sum of each row.
+
+Explanation:
+
+For example, if the given M is 3 and N is 3, read the inputs in the next three lines.
+If the numbers given in the next three lines are the following.
+
+1 2 3
+10 20 30
+5 10 15
+
+The first line of output should contain the list of maximum numbers in each row, which are (3, 30, 15).
+The second line of output should contain the list of minimum numbers in each row, which are (1, 10, 5).
+The third line of output should contain the list of sums of each row, which are (6, 60, 30).
+
+So the output should be
+
+[3, 30, 15]
+[1, 10, 5]
+[6, 60, 30]
+
+
+Sample Input 1:
+
+3 3
+1 2 3
+10 20 30
+5 10 15
+
+Sample output 1:
+
+[3, 30, 15]
+[1, 10, 5]
+[6, 60, 30]
+
+Sample Input 2:
+
+2 5
+-50 20 3 25 -20
+88 17 38 72 -10
+
+Sample output 2:
+
+[25, 88]
+[-50, -10]
+[-22, 205]
+
+
+Outline
+
+Question: Row - Maximum, Minimum, Sum
+Approach
+Step 1: Read the input values
+Step 2: Convert the input values into integers
+Step 3: Calculate the maximum, minimum, and sum for each row
+Step 4: Print the results
+
+Question: Row - Maximum, Minimum, Sum
+In this coding question, you are given an MxN matrix. Your task is to write a program that prints 
+the maximum, minimum, and sum for each row in the matrix.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Read the input values for M, N, and the matrix elements.
+2.Convert the input values into integers.
+3.Calculate the maximum, minimum, and sum for each row in the matrix.
+4.Print the results.
+Step-by-Step Explanation
+
+Step 1: Read the input values
+First, we need to read the input values for M, N, and the matrix elements. We can use the input() 
+function to read the input values.
+
+Step 2: Convert the input values into integers
+Next, we need to convert the input values into integers. We can create a function called 
+convert_string_to_int() to do this.
+
+Step 3: Calculate the maximum, minimum, and sum for each row
+Now, we need to calculate the maximum, minimum, and sum for each row in the matrix. 
+We can create a function called print_max_min_sum_for_row_wise() to do this.
+
+Step 4: Print the results
+Finally, we need to print the results. We can modify the print_max_min_sum_for_row_wise() function 
+to print the maximum, minimum, and sum lists.
+
+Here is the complete solution for the coding question:
+
+Solution
+
+def print_max_min_sum_for_row_wise(num_list):
+    # Complete this function
+    max_list=[]
+    min_list=[]
+    sum_list=[]
+    for each_row in num_list:
+        max_list.append(max(each_row))
+        min_list.append(min(each_row))
+        sum_list.append(sum(each_row))
+    print(max_list)
+    print(min_list)
+    print(sum_list)
+def convert_string_to_int(list_a):
+    new_list = []
+    for item in list_a:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+
+m, n = input().split()
+m, n = int(m), int(n)
+num_list = []
+
+for i in range(m):
+    list_a = input().split()
+    list_a = convert_string_to_int(list_a)
+    num_list.append(list_a)
+
+print_max_min_sum_for_row_wise(num_list)
+
+________________________________________________________________________________________________
+
+05. Column - Maximum, Minimum, Sum
+
+For this problem, the prefilled code will contain an MxN matrix. Write a program to print 
+the maximum, minimum and sum for each column in the matrix.
+
+Input:
+
+The first line of input will contain two space-separated integers, denoting the M and N.
+The next M following lines will contain N space-separated integers, denoting the elements of each list.
+
+Output:
+
+The first line of output should contain the list of the maximum number in each column.
+The second line of output should contain the list of minimum number in each column.
+The third line of output should contain the list of the sum of each column.
+
+Explanation:
+
+For example, if the given M is 3 and N is 3, read the inputs in the next three lines. 
+If the numbers given in the next three lines are the following.
+
+1 2 3
+10 20 30
+5 10 15
+
+The first line of output should contain the list of maximum numbers in each column, which are (10, 20, 30).
+The second line of output should contain the list of minimum numbers in each column, which are (1, 2, 3).
+The third line of output should contain the list of sums of each column, which are (16, 32, 48).
+
+[10, 20, 30]
+[1, 2, 3]
+[16, 32, 48]
+
+
+Sample Input 1:
+
+3 3
+1 2 3
+10 20 30
+5 10 15
+
+Sample output 1:
+
+[10, 20, 30]
+[1, 2, 3]
+[16, 32, 48]
+
+Sample Input 2:
+
+2 5
+-50 20 3 25 -20
+88 17 38 72 -10
+
+Sample output 2:
+
+[88, 20, 38, 72, -10]
+[-50, 17, 3, 25, -20]
+[38, 37, 41, 97, -30]
+
+Outline
+
+Question: Column - Maximum, Minimum, Sum
+Approach
+Step 1: Read the input values
+Step 2: Convert the input values to integers
+Step 3: Create a transpose of the matrix
+Step 4: Calculate the maximum, minimum, and sum for each row
+Solution
+
+Question: Column - Maximum, Minimum, Sum
+
+In this problem, you are given an MxN matrix. Your task is to write a program that prints 
+the maximum, minimum, and sum for each column in the matrix.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Read the input values for M, N, and the matrix elements.
+2.Convert the input values to integers.
+3.Create a transpose of the matrix.
+4.Calculate the maximum, minimum, and sum for each row of the transposed matrix.
+
+Step-by-Step Explanation
+
+Step 1: Read the input values
+First, we need to read the input values for M, N, and the matrix elements. We can use the input() 
+function to read the input values.
+
+Step 2: Convert the input values to integers
+Next, we need to convert the input values to integers. We can use the int() function to convert the values.
+
+Step 3: Create a transpose of the matrix
+Now, we need to create a transpose of the matrix. The transpose of a matrix is obtained by interchanging 
+its rows and columns.
+
+Step 4: Calculate the maximum, minimum, and sum for each row
+Finally, we need to calculate the maximum, minimum, and sum for each row of the transposed matrix and print the results.
+
+Here is the complete solution for the problem:
+
+Solution
+
+def get_transpose_of_matrix(matrix, m, n):
+    # Complete this function
+    transpose_matrix=[]
+    for i in range(n):
+        row=[]
+        for j in range(m):
+            row.append(matrix[j][i])
+        transpose_matrix.append(row)
+    return transpose_matrix
+
+def print_max_min_sum_for_row_wise(num_list):
+    # Complete this function
+    max_list=[]
+    min_list=[]
+    sum_list=[]
+    for each_row in num_list:
+        max_list.append(max(each_row))
+        min_list.append(min(each_row))
+        sum_list.append(sum(each_row))
+    print(max_list)
+    print(min_list)
+    print(sum_list)
+
+def convert_string_to_int(list_a):
+    new_list = []
+    for item in list_a:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+
+m, n = input().split()
+m, n = int(m), int(n)
+num_list = []
+
+for i in range(m):
+    list_a = input().split()
+    list_a = convert_string_to_int(list_a)
+    num_list.append(list_a)
+
+
+# Write your code here
+# Call the get_transpose_of_matrix function
+# Call the print_max_min_sum_for_row_wise function
+num_list=get_transpose_of_matrix(num_list,m,n)
+print_max_min_sum_for_row_wise(num_list)
+
+___________________________________________________________________________________________
+
+06. Elements of Principal Diagonal
+
+For this problem, the prefilled code will contain an MxN matrix. Write a program to print the list of 
+elements of principal diagonal in the matrix.
+
+Input:
+
+The first line of input will contain two space-separated integers, denoting the M and N.
+The next M following lines will contain N space-separated integers, denoting the elements of each list.
+
+Output:
+
+The output should be a single line containing the list of principal diagonal elements.
+
+Explanation:
+
+For example, if the given M is 3 and N is 3, read the inputs in the next three lines.
+If the numbers given in the next three lines are the following.
+
+1 2 3
+10 20 30
+5 10 15
+
+The principal diagonal elements of the above matrix are (1, 20, 15). So the output should be
+
+[1, 20, 15]
+
+Sample Input 1:
+
+3 3
+1 2 3
+10 20 30
+5 10 15
+
+Sample output 1:
+
+[1, 20, 15]
+
+Sample Input 2:
+
+23 23
+-8 10 1 4 4 9 2 3 -7 -2 -8 3 -3 7 -9 2 -5 -8 6 -8 -1 4 -7
+0 4 -4 9 0 0 -7 1 -6 2 -10 -5 5 9 -9 8 10 4 7 -10 4 -1 -9
+7 -10 -7 -5 -5 -5 -1 -2 -5 3 10 -6 9 -5 -4 5 7 -7 -1 6 -10 -3 -7
+5 0 3 -7 0 7 7 -6 5 -5 -10 -5 4 1 6 6 5 9 -6 8 -5 -7 -1
+-6 10 4 -2 -3 -3 7 -3 -1 7 3 5 -8 5 -6 -1 -9 6 -3 -9 -9 8 4
+-10 0 2 6 5 0 -6 9 6 9 5 -1 -6 -4 -7 0 4 -4 -3 -10 -1 -1 1
+-9 5 7 -9 -8 6 -1 -4 7 8 -1 2 10 4 -6 5 9 -4 3 -10 -8 6 8
+0 0 -4 2 -1 -1 -2 6 2 -4 4 7 -1 -3 -5 -1 -1 8 -9 8 5 -7 1
+-10 -1 10 -10 -9 -6 3 -3 -5 0 -6 9 -9 2 -1 9 -8 8 -2 9 -6 -9 -7
+-8 -1 7 3 10 10 -8 9 -8 8 7 5 6 -6 -4 -6 -8 4 3 7 7 9 -6
+1 -4 10 -2 -10 -2 1 -10 -4 2 -3 1 -1 -10 -8 1 0 4 -10 -6 5 -5 -7
+-7 -5 4 -3 5 9 5 3 10 -8 10 -4 -3 -6 9 -3 -4 -6 0 6 2 -2 -2
+0 -10 3 3 -4 2 -3 -2 5 0 2 -10 3 8 -1 -6 -10 9 -8 10 -8 0 4
+-9 -4 0 -4 3 -9 3 -8 0 -6 -5 9 8 2 2 -7 -8 -2 2 0 7 -1 -6
+-10 6 7 -5 -9 8 10 0 1 -2 -9 -9 -3 9 -8 2 -9 5 -9 7 10 4 3
+-9 9 6 8 -7 -4 -1 7 0 8 0 0 -1 -8 5 -10 3 4 -1 5 4 -1 0
+0 1 4 -9 -3 -8 -1 5 -3 -3 -8 -6 -7 -10 2 -2 7 -3 9 6 -2 -8 7
+2 -3 2 10 0 0 -3 -10 -7 4 7 8 -4 -8 7 2 -5 5 1 2 -3 -3 3
+-7 1 9 -6 3 -7 0 -3 -3 4 5 -4 -10 -7 -4 10 -9 6 5 2 -10 -4 2
+-2 10 -2 5 -10 -4 -7 -1 -3 -1 -6 7 -6 -4 -2 5 -9 -9 -2 3 -4 5 -6
+8 2 -10 -6 -2 -4 8 7 4 -5 0 -7 -10 -10 0 -2 -8 -8 3 10 -5 -5 0
+4 10 1 7 -5 2 9 -1 -5 -1 -4 2 -5 3 -8 -1 -1 3 -1 -9 -1 -3 -9
+9 -10 8 -2 -8 9 1 3 0 2 10 -6 4 6 3 9 -8 4 -4 -2 -6 4 -1
+
+Sample output 2:
+
+[-8, 4, -7, -7, -3, 0, -1, 6, -5, 8, -3, -4, 3, 2, -8, -10, 7, 5, 5, 3, -5, -3, -1]
+
+
+Outline
+
+Question: Elements of Principal Diagonal
+Approach
+Step 1: Read the input values
+Step 2: Convert string to integer
+Step 3: Get the principal diagonal elements
+Step 4: Print the principal diagonal elements
+
+Question: Elements of Principal Diagonal
+In this problem, you are given an MxN matrix. Your task is to write a program to print the list of 
+elements of the principal diagonal in the matrix.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Read the input values for M, N, and the matrix elements.
+2.Convert the input strings to integers.
+3.Get the principal diagonal elements from the matrix.
+4.Print the principal diagonal elements.
+
+Step-by-Step Explanation
+
+Step 1: Read the input values
+First, we need to read the input values for M, N, and the matrix elements. We can use the input() 
+function to read the input and split() to separate the values.
+
+Step 2: Convert string to integer
+Next, we need to convert the input strings to integers. We can create a function called convert_string_to_int() to do this.
+
+Step 3: Get the principal diagonal elements
+Now, we need to get the principal diagonal elements from the matrix. We can create a function called 
+get_principal_diagonal_elements() to do this.
+
+Step 4: Print the principal diagonal elements
+Finally, we need to print the principal diagonal elements.
+
+Here is the complete solution for the problem:
+
+Solution
+
+def get_principal_diagonal_elements(matrix, m, n):
+    diagonal_elements = []
+    for i in range(m):
+        if i < n:
+            element = matrix[i][i]
+            diagonal_elements.append(element)
+    return diagonal_elements
+
+def convert_string_to_int(list_a):
+    new_list = []
+    for item in list_a:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+m, n = input().split()
+m, n = int(m), int(n)
+num_list = []
+
+for i in range(m):
+    list_a = input().split()
+    num_list.append(list_a)
+
+for i in range(m):
+    list_a = convert_string_to_int(num_list[i])
+    num_list[i] = list_a
+
+diagonal_elements = get_principal_diagonal_elements(num_list, m, n)
+print(diagonal_elements)
+
+___________________________________________________________________________________________________
+
+07. Lower Triangle
+
+For this problem, the prefilled code will contain an MxN matrix. Write a program to print the lower triangle of the matrix.
+Lower triangular matrix is a matrix which contain elements below principle diagonal including principle diagonal elements.
+
+Input:
+
+The first line of input will contain two space-separated integers, denoting the M and N.
+The next M following lines will contain N space-separated integers, denoting the elements of each list.
+
+Output:
+
+The output should be M rows containing the elements in the form of a lower triangle.
+
+Explanation:
+
+For example, if the given M is 3 and N is 3, read the inputs in the next three lines.
+If the numbers given in the next three lines are the following.
+
+1 2 3
+10 20 30
+5 10 15
+
+The lower triangle of the above matrix is
+
+[1]
+[10, 20]
+[5, 10, 15]
+
+Sample Input 1:
+
+3 3
+1 2 3
+10 20 30
+5 10 15
+
+Sample output 1:
+
+[1]
+[10, 20]
+[5, 10, 15]
+
+Sample Input 2:
+
+2 5
+-50 20 3 25 -20
+88 17 38 72 -10
+
+Sample Output:
+
+[-50]
+[88, 17]
+
+Outline
+
+Question: Lower Triangle
+Approach
+Step 1: Read the input values
+Step 2: Convert string to integer
+Step 3: Print the lower triangle
+Solution
+
+Question: Lower Triangle
+
+In this problem, you are given an MxN matrix. Your task is to write a program to print the lower triangle
+of the matrix. A lower triangular matrix is a matrix that contains elements below the principal diagonal,
+including the principal diagonal elements.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Read the input values for M, N, and the matrix elements.
+2.Convert the input strings to integers.
+3.Print the lower triangle of the matrix.
+
+Step-by-Step Explanation
+
+Step 1: Read the input values
+First, we need to read the input values for M, N, and the matrix elements. We can use the input() function 
+to read the input and split() to separate the values.
+
+Step 2: Convert string to integer
+Next, we need to convert the input strings to integers. We can create a function called convert_string_to_int() 
+that takes a list of strings as input and returns a new list with the same elements converted to integers.
+
+Now, we can use this function to convert the input strings to integers.
+
+Step 3: Print the lower triangle
+Finally, we need to print the lower triangle of the matrix. We can create a function called print_lower_triangle() 
+that takes the matrix as input and prints the lower triangle.
+Now, we can call this function to print the lower triangle of the matrix.
+Here is the complete solution for the problem:
+
+Solution
+
+def print_lower_triangle(matrix):
+    for i in range(len(matrix)):
+        row_list = matrix[i][:i+1]
+        print(row_list)
+
+
+def convert_string_to_int(list_a):
+    new_list = []
+    for item in list_a:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+
+m, n = input().split()
+m, n = int(m), int(n)
+num_list = []
+
+for i in range(m):
+    list_a = input().split()
+    list_a = convert_string_to_int(list_a)
+    num_list.append(list_a)
+
+print_lower_triangle(num_list)
+
+___________________________________________________________________________________________________
+
+08. Replace a Value
+
+For this problem, the prefilled code will contain an MxN matrix. Write a program to replace all elements 
+of a given value with a new value.
+
+Input:
+
+The first line of input will contain two space-separated integers, denoting the M and N.
+The next M following lines will contain N space-separated integers, denoting the elements of each list.
+The next line of input will contain two space-separated integers, denoting the first value to be replaced by the second one.
+
+Output:
+
+The output should be MxN matrix, with the value replaced at all places.
+
+Explanation:
+
+For example, if the given M is 3 and N is 3, read the inputs in the next three lines.
+If the numbers given in the next three lines are the following.
+
+1 2 3
+10 20 30
+5 10 15
+
+If the given values in the next line are "10 8", print the matrix by replacing the value 10 
+which is in second and third row.
+
+So the output should be
+
+[1, 2, 3]
+[8, 20, 30]
+[5, 8, 15]
+
+Sample Input 1:
+
+3 3
+1 2 3
+10 20 30
+5 10 15
+10 8
+
+Sample output 1:
+
+[1, 2, 3]
+[8, 20, 30]
+[5, 8, 15]
+
+Sample Input 2:
+
+2 5
+-50 20 3 25 -20
+88 17 38 72 -10
+-20 30
+
+Sample Output:
+
+[-50, 20, 3, 25, 30]
+[88, 17, 38, 72, -10]
+
+
+Outline
+
+Question: Replace a Value
+Approach
+Step 1: Read the input values
+Step 2: Replace the old value with the new value
+Step 3: Print the updated matrix
+Question: Replace a Value
+
+In this problem, you are given an MxN matrix. Your task is to write a program that replaces all 
+elements of a given value with a new value.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Read the input values (M, N, matrix, old value, and new value).
+2.Replace the old value with the new value in the matrix.
+3.Print the updated matrix.
+
+Step-by-Step Explanation
+
+Step 1: Read the input values
+First, we need to read the input values:
+Read the values of M and N, which represent the number of rows and columns in the matrix.
+Read the matrix elements in the next M lines.
+Read the old value and the new value that we need to replace.
+
+Step 2: Replace the old value with the new value
+Now, we need to replace the old value with the new value in the matrix:
+Create a function replace_old_value_with_new_value that takes the matrix, old value, and new value as arguments.
+Inside the function, create an empty list called updated_matrix.
+Loop through each row in the matrix.
+For each row, loop through each element.
+If the element is equal to the old value, replace it with the new value.
+Add the updated row to the updated_matrix.
+Return the updated_matrix.
+
+Step 3: Print the updated matrix
+Finally, we need to print the updated matrix:
+Call the replace_old_value_with_new_value function with the input matrix, old value, and new value.
+Loop through each row in the updated matrix and print it.
+
+Here is the complete solution in Python:
+
+Solution
+
+def replace_old_value_with_new_value(matrix, old_value, new_value):
+    updated_matrix = []
+    for row in matrix:
+        updated_row = row
+        for i in range(len(row)):
+            if row[i] == old_value:
+                updated_row[i] = new_value
+        updated_matrix.append(updated_row)
+    return updated_matrix
+
+def convert_string_to_int(list_a):
+    new_list = []
+    for item in list_a:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+
+m, n = input().split()
+m, n = int(m), int(n)
+num_list = []
+
+for i in range(m):
+    list_a = input().split()
+    list_a = convert_string_to_int(list_a)
+    num_list.append(list_a)
+
+values = input().split()
+old_value, new_value = convert_string_to_int(values)
+
+updated_matrix = replace_old_value_with_new_value(num_list, old_value, new_value)
+for row in updated_matrix:
+    print(row)
+
+______________________________________________________________________________________________________________
+
+09. Add Two Matrices
+
+For this problem, the prefilled code will contain two MxN matrices. Write a program to add the given two matrices.
+To add two matrices, just add the corresponding entries, and place this sum in the corresponding 
+position in the result matrix.
+
+Input:
+
+The first line of input will contain two space-separated integers, denoting the M and N.
+The next M following lines will contain space-separated integers, denoting the elements of each list for first matrix.
+The next M following lines will contain space-separated integers, denoting the elements of each list for second matrix.
+
+Output:
+
+Each line should contain a row in the matrix as a list after adding two matrices.
+
+Explanation:
+
+For example, if the given M is 3 and N is 3, read the inputs for first matrix in the next three lines. 
+If the numbers for the first matrix are the following.
+
+1 2 3
+10 20 30
+5 10 15
+
+Read the inputs for second matrix in the next three lines. If the numbers for the second matrix are the following.
+
+2 4 6
+11 22 33
+7 14 21
+
+By adding the elements at the same location in both the matrices will give the required matrix. So the output should be
+
+[3, 6, 9]
+[21, 42, 63]
+[12, 24, 36]
+
+Sample Input 1:
+
+3 3
+1 2 3
+10 20 30
+5 10 15
+2 4 6
+11 22 33
+7 14 21
+
+Sample output 1:
+
+[3, 6, 9]
+[21, 42, 63]
+[12, 24, 36]
+
+Sample Input 2:
+
+1 5
+-50 20 3 25 -20
+88 17 38 72 -10
+
+Sample Output 2:
+
+[38, 37, 41, 97, -30]
+
+Outline
+
+Question: Add Two Matrices
+Approach
+Step 1: Read the input values
+Step 2: Convert string to integer
+Step 3: Read matrix inputs
+Step 4: Add two matrices
+Step 5: Print the result matrix
+
+Question: Add Two Matrices
+In this problem, you are given two matrices of size MxN. Your task is to write a program to add the 
+given two matrices. To add two matrices, just add the corresponding entries, and place this sum in 
+the corresponding position in the result matrix.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Read the input values for M, N, and the two matrices.
+2.Convert the input strings to integers.
+3.Read the matrix inputs and store them in two separate lists.
+4.Add the two matrices and store the result in a new list.
+5.Print the result matrix.
+
+Step-by-Step Explanation
+
+Step 1: Read the input values
+First, we need to read the input values for M, N, and the two matrices. We can use the input() function 
+to read the input and split() to separate the values. Then, we can convert M and N into integers using int().
+
+Step 2: Convert string to integer
+Next, we need to convert the input strings to integers. We can create a function called convert_string_to_int()
+that takes a list of strings as input and returns a new list with the same elements converted to integers.
+
+Step 3: Read matrix inputs
+Now, we need to read the matrix inputs and store them in two separate lists. We can create a function 
+called read_matrix_inputs() that takes the number of rows (M) as input and reads the matrix inputs 
+using the input() function. Then, it calls the convert_string_to_int() function to convert the input 
+strings to integers and appends the converted list to the matrix.
+
+Step 4: Add two matrices
+Now, we need to add the two matrices and store the result in a new list. We can create a 
+function called add_two_matrices() that takes the two matrices, and their dimensions (M and N) 
+as input. It initializes an empty list called result_matrix and iterates through the rows and 
+columns of the matrices. For each element, it adds the corresponding elements from both matrices and
+appends the sum to the row_result list. Finally, it appends the row_result list to the result_matrix.
+
+Step 5: Print the result matrix
+Finally, we need to print the result matrix. We can call the read_matrix_inputs() function to read the 
+inputs for both matrices and store them in first_matrix and second_matrix. Then, we can call the 
+add_two_matrices() function to add the two matrices and store the result in result_matrix. Lastly,
+we can use a for loop to print each row of the result matrix.
+
+Here is the complete solution for the problem:
+
+Solution
+
+def add_two_matrices(first_matrix, second_matrix, m, n):
+    result_matrix = []
+    for i in range(m):
+        row_result = []
+        for j in range(n):
+            value = first_matrix[i][j] + second_matrix[i][j]
+            row_result.append(value)
+        result_matrix.append(row_result)
+    return result_matrix
+
+
+def convert_string_to_int(list_a):
+    new_list = []
+    for item in list_a:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+
+def read_matrix_inputs(m):
+    num_list = []
+    for i in range(m):
+        list_a = input().split()
+        list_a = convert_string_to_int(list_a)
+        num_list.append(list_a)
+    return num_list
+
+
+m, n = input().split()
+m, n = int(m), int(n)
+
+first_matrix = read_matrix_inputs(m)
+second_matrix = read_matrix_inputs(m)
+
+result_matrix = add_two_matrices(first_matrix, second_matrix, m, n)
+for row in result_matrix:
+    print(row)
