@@ -1,0 +1,411 @@
+01. String Rotation
+
+Write a program that reads the two words S1 and S2 and checks if S2 is a rotation of S1.
+
+Print the number of times S1 rotates to match S2 if S2 is a rotation of S1. Otherwise, print "No Match"
+
+Input:
+
+The first line of input contains a string representing S1.
+The second line of input contains a string representing S2.
+
+Output:
+
+The output should be a single line containing an integer that is the number of right rotations made by S1
+to match S2, if S2 is a rotaion of S1
+
+Otherwise, the output should be a single line containing a string "No Match"
+
+Explanation:
+
+For example, if the given strings are S1 = python and S2 = onpyth
+
+                    1st rotation
+python  -------------------------------------> npytho
+
+                    2nd rotation
+npytho  -------------------------------------> onpyth
+
+After 2 right rotations, the string S1 is "onpyth", which is equal to the string S2.
+
+The output should be 2.
+
+Sample Input 1:
+
+python
+onpyth
+
+Sample Output 1:
+
+2
+
+Sample Input 2:
+
+Python
+Python
+
+Sample Output 2:
+
+0
+
+Solution:
+
+a=input()
+b=input()
+ans=''
+for i in range(len(a)):
+    match=''
+    for j in range(len(b)):
+        if i+j<len(a) and a[i+j]==b[j]:
+            match+=b[j]
+        else:
+            if len(match)>len(ans):
+                ans=match
+if a==b:
+    print(0)
+elif ans=='' or ans[0]!=b[0] or len(a)!=len(b):
+    print("No Match")
+else:
+    print(len(ans))
+
+_______________________________________________________________________________________________________
+
+02. Ordered Matrix
+
+Given a M x N matrix, write a program to print the matrix after ordering all the elements of the matrix 
+in increasing order.
+
+Input:
+
+The first line of input will contain two space-separated integers, denoting the M and N.
+The next M following lines will contain N space-separated integers, denoting the elements of each list.
+
+Output:
+
+The output should be M lines containing the ordered matrix.
+
+Note: There is a space at the end of each line.
+
+Explanation:
+
+For example, if the given M is 3 and N is 3, read the inputs in the next three lines if the numbers 
+given in the next three lines are the following.
+
+1 20 3
+30 10 2
+5 11 15
+
+By ordering all the elements of the matrix in increasing order, the ordered matrix should be
+
+1 2 3
+5 10 11
+15 20 30
+
+Sample Input 1:
+
+3 3
+1 20 3
+30 10 2
+5 11 15
+
+Sample Output 1:
+
+1 2 3
+5 10 11
+15 20 30
+
+Sample Input 2:
+
+2 5
+-50 20 3 25 -20
+88 17 38 72 -10
+
+Sample Output 2:
+
+-50 -20 -10 3 17 
+20 25 38 72 88 
+
+Solution:
+
+def sortMat(mat, m,n) :
+    # Temporary matrix of size n^2
+    temp = [0] * (m * n)
+    k = 0
+    # Copy the elements of matrix 
+    # one by one into temp[]
+    for i in range(0, m) :
+        for j in range(0, n) :
+            temp[k] = mat[i][j]
+            k += 1
+    # sort temp[]
+    temp.sort()
+    # copy the elements of temp[]
+    # one by one in mat[][]
+    k = 0
+    for i in range(0, m) :
+        for j in range(0, n) :
+            mat[i][j] = temp[k]
+            k += 1
+ 
+# Function to print the given matrix
+def printMat(mat, m,n) :
+    for i in range(0, m) :
+        for j in range( 0, n ) :
+            print(mat[i][j] , end = " ")
+        print()
+def int_list(lista):     
+    newlist=[]
+    for item in lista:
+        num=int(item)
+        newlist.append(num)
+    return newlist
+# Driver program to test above
+m,n=input().split()
+m,n=int(m),int(n)
+num_list=[]
+for i in range(m):
+    lista=input().split()
+    lista=int_list(lista)
+    num_list.append(lista)
+sortMat(num_list, m,n)
+printMat(num_list, m,n)
+ 
+____________________________________________________________________________________________________________________
+
+03. First Perfect Square
+
+Given two integers (M and N), write a program to print the first perfect square in a given range.
+
+Input:
+
+The first line of input will contain a positive integer (M).
+The second line of input will contain a positive integer (N).
+
+Output:
+
+The output should be a single line containing the first perfect square in a given range.
+
+Explanation:
+
+For example, if the given numbers are M is 4 and N is 16, the perfect squares from 4 to 16 are 
+4(2 * 2), 9(3 * 3), and 16(4 * 4), as the first perfect square is 4. 
+
+So the output should be 4.
+
+Sample Input 1:
+
+4
+16
+
+Sample Output 1:
+
+4
+
+Sample Input 2:
+
+5
+8
+
+Sample Output 2:
+
+No Perfect Square
+
+Solution:
+
+"""a=int(input())
+b=int(input())
+count=0
+for i in range(a,b+1):
+    if (i**0.5)==int(i**0.5):
+        count=count+1
+        print(i)
+        break
+        
+if count==0:
+    print("No Perfect Square")
+"""
+n=int(input())
+m=int(input())
+count=0
+a=[]
+for i in range(n,m+1):
+    for j in range (1,i+1):
+        if (j ** 2 == i) :
+            a.append(i)
+if len(a)==0:
+    print("No Perfect Square")
+else:
+    print(a[0])
+
+________________________________________________________________________________________________________________
+
+04. Numbers in String - 1
+
+Given a string, write a program to return the sum and average of the digits of all numbers that appear
+in the string, ignoring all other characters.
+
+Input:
+
+The input will be a single line containing a string.
+
+Output:
+
+The output should contain the sum and average of the digits of all numbers that appear in the string.
+
+Note: Round the average value to two decimal places.
+
+Explanation:
+
+For example, if the given string is "I am 25 years and 10 months old", the digits of all numbers that 
+appear in the string are 2, 5, 1, 0. Your code should print the sum of all digits(8) and the average 
+of all digits(2.0) in the new line.
+
+
+Sample Input 1:
+
+I am 25 years and 10 months old
+
+Sample Output 1:
+
+8
+2.0
+
+Sample Input 2:
+
+Tech Foundation 35567
+
+Sample Output 2:
+
+26
+5.2
+
+
+Solution:
+
+a = input()
+d=''
+l=''
+for i in a:
+    if i.isdigit():
+        d+=i
+    else:
+        l+=i
+sum=0
+for i in d:
+    sum=sum+int(i)
+average=sum/len(d)
+print(sum)
+print(round(average,2))
+
+______________________________________________________________________________________________________________
+
+05. Numbers in String - 2
+
+Write a program that reads a sentence and prints the sum and average of the numbers that appear in 
+the sentence, ignoring all other characters.
+
+Note: Round the average value to two decimal parts
+
+For example,
+Average = 10/3 = 3.33333333333
+Average = round(Average,2) = 3.33
+
+Input:
+
+The input will be a single line containing a string representing a sentence.
+
+Output:
+
+The first line of output should be an integer which is the sum of the numbers in the given sentence.
+The second line of output should be a float that is the average of the numbers in the given sentence.
+
+Explanation:
+
+For example, if the given sentence is "I am 25 years and 10 months old"
+The numbers in the sentence are 25 and 10
+The sum of the numbers is 35 (25 + 10 = 35)
+The average of the numbers is 17.5 (35/2 = 17.5)
+
+The output should be,
+35
+17.5
+
+For example, if the given sentence is "1time3 %times4"
+The numbers in the sentence are 1,3 and 4
+The sum of the numbers is 8 (1 + 3 + 4 = 8)
+The average of the numbers is 2.66666666667 (8/3 = 2.66666666667)
+
+After rounding the average value to two decimal places, the average is 2.67
+
+The output should be,
+8
+2.67
+
+Sample Input 1:
+
+I am 25 years and 10 months old
+
+Sample Output 1:
+
+35
+17.5
+
+Sample Input 2:
+
+Tech Foundation 35567
+
+Sample Output 2:
+
+35567
+35567.0
+
+Solution:
+
+def SumAndAverage(str1):
+    # A temporary  SumAndAverage(str1):
+    # A temporary string
+    temp = "0"
+    # holds sum of all numbers present in the string
+    Sum = 0
+    #counter of numbers in row
+    count=0
+    # read each char
+    for ch in str1:
+        # if  char is a digit
+        if (ch.isdigit()):
+            temp += ch
+        # if current character is not digit
+        else:
+            if temp!="0":
+                count+=1
+            Sum += int(temp)
+            # reset temporary string
+            temp = "0"
+    if str1[-1].isdigit():
+        count+=1
+    Sum += int(temp)
+    # print sum of numbers
+    print(Sum)
+    # print average of nubers
+    average=(Sum / count)
+    print(round(average,2))
+# Main code
+str1 = input()
+# Function call
+SumAndAverage(str1)
+
+
+"""a=input().split()
+d=''
+new_list=[]
+num_list=[]
+for i in a:
+    if i.isdigit():
+        new_list.append(i)
+for i in new_list:
+    num=int(i)
+    num_list.append(num)
+print(sum(num_list))
+average=sum(num_list)/(len(num_list))
+print(round(average,2))"""
+    
