@@ -1,0 +1,281 @@
+01. Prefix and Suffix
+
+Write a program to check the overlapping of one string's suffix with the prefix of another string.
+
+Input:
+
+The first line of the input will contain a string A.
+The second line of the input will contain a string B.
+
+output:
+
+The output should contain overlapping word if present else print "No overlapping".
+
+Explanation:
+
+For example, if the given two strings, A and B, are "ramisgood" "goodforall" 
+The output should be "good" as good overlaps as a suffix of the first string and prefix of next.
+
+Sample Input 1:
+
+ramisgood
+goodforall
+
+Sample Output 1:
+
+good
+
+Sample Input 2:
+
+finally
+restforall
+
+Sample Output 2:
+
+No overlapping
+
+Solution:
+
+"""a = input()
+b = input()
+len_of_a = len(a)
+len_of_b = len(b)
+answer = ""
+for i in range(len_of_a):
+    match = ""
+    for j in range(len_of_b):
+        if (i + j < len_of_a and a[i + j] == b[j]):
+            match += b[j]
+        else:
+            if (len(match) > len(answer)):
+                answer = match
+if answer == "" or answer[0] != b[0]:
+    print("No overlapping")
+else:
+    print(answer)"""
+
+a=input()
+b=input()
+count=0
+s=""
+for i in a:
+    if i in b and i==b[count]:
+        s+=(i)
+        count+=1
+if s:
+    print(s)
+else:
+    print("No overlapping")
+
+___________________________________________________________________________________________________________________
+
+02. Remove Words
+
+Given a string, write a program to remove all the words with K length.
+
+Input:
+
+The first line of the input will contain a string A.
+The second line of the input will contain an integer K.
+
+output:
+
+The output should contain a string after removing all the words whose length is equal to K.
+
+Explanation:
+
+For example, string A is "Tea is good for you", k is 3 then output should be "is good."
+Here words "Tea", "for", "you" length is equal to 3, so these words are removed from string.
+
+Sample Input 1:
+
+Tea is good for you
+3
+
+Sample Output 1:
+
+is good
+
+Sample Input 2:
+
+A gang stood in front of me
+2
+
+Sample Output 2:
+
+A gang stood front 
+
+Solution:
+
+def toString(s): 
+    str1 = "" 
+    for ele in s: 
+        str1 += ele  
+    return str1 
+def remove(sentence, n):
+    n_words = []
+    words = sentence.split(" ")
+    for word in words:
+        if not len(word) == n:
+            n_words.append(word)
+            n_words.append(" ")
+    return toString(n_words)
+
+a = str(input())
+n = int(input())
+print(remove(a, n))
+
+________________________________________________________________________________________________________
+
+03. Shift Numbers
+
+Given a string, write a program to move all the numbers in it to its end.
+
+Input:
+
+The input will contain a string A.
+
+output:
+
+The output should contain a string after moving all the numbers in it to its end.
+
+Explanation:
+
+For example, if the given string A is "1good23morning456," the output should be "goodmorning123456," 
+as it contains numbers at the end.
+
+Sample Input 1:
+
+1good23morning456
+
+Sample Output 1:
+
+goodmorning123456
+
+Sample Input 2:
+
+com876binat25ion
+
+Sample Output 2:
+
+combination87625
+
+Solution:
+
+a=input()
+digits=''
+letters=''
+for i in a:
+    if i.isdigit():
+        digits+=i
+    else:
+        letters+=i
+print(letters+digits)
+
+________________________________________________________________________________________________________
+
+04. Anti-Diagonals
+
+Given a MxN matrix,write a program to print all Anti-Diagonals elements of matrix
+
+Input:
+
+The first line of input will contain a M, N values separated by space.
+The second line will contain matrix A of dimensions MxN.
+
+output:
+
+The output should contain anti-diagonal elements separated by a line.
+
+Explanation:
+
+For example, if M = 4, N = 4
+Matrix A:
+
+https://res.cloudinary.com/due4dmz2b/image/fetch/dpr_auto,w_auto,f_auto,q_auto/https://bss-backend-media-static.s3.ap-south-1.amazonaws.com/prod/media/profile_pic/card-notes-attachment/3a175e7e-0365-4ac9-9620-fdda34c1ce31.png
+
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+
+4 4
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+
+So the output should be
+
+1 
+2 5 
+3 6 9 
+4 7 10 13
+8 11 14
+12 15
+16
+
+Sample Input 1:
+
+2 3
+1 5 5
+2 7 8
+
+Sample Output 1:
+
+1 
+5 2 
+5 7 
+8 
+
+Sample Input 2:
+
+3 4
+1 2 3 4
+5 6 7 8
+9 10 11 12
+
+Sample Output 2:
+
+1 
+2 5 
+3 6 9 
+4 7 10 
+8 11 
+12 
+
+Solution:
+
+"""m, n = map(int, input().split())
+matrix = [list(map(int, input().split())) for _ in range(m)]
+
+max_sum = m + n - 2
+for sum in range(max_sum+1):
+    for i in range(sum+1):
+        if i < m and sum - i < n:
+            print(matrix[i][sum - i], end=" ")
+    print()"""
+
+def convert_to_int(lista):
+    new_list=[]
+    for i in lista:
+        new_list.append(int(i))
+    return new_list
+
+m,n=input().split()
+m,n=int(m),int(n)
+num_list=[]
+for i in range(m):
+    lista=input().split()
+    lista=convert_to_int(lista)
+    num_list.append(lista)
+for i in range(m*2):
+    for j in range(m):
+        for k in range(n):
+            if k+j==i:
+                print(num_list[j][k],end=' ')
+    print()
+
+___________________________________________________________________________________________________________
+
+05. 
