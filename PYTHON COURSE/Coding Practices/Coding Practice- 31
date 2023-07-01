@@ -1,0 +1,314 @@
+01. Add a Key
+
+For this problem, the prefilled code will contain a dictionary. Write a program to add a key-value pair to the dictionary.
+
+Input:
+
+The input will be a single line containing the strings, separated by space, denoting the key-value pair.
+
+Output:
+
+The output should be a single line containing the dictionary with the added key-value pair.
+
+Explanation:
+
+For example, if the given string is "Ramesh Cricket", your code should add the key 
+"Ramesh" and the value for it should be"Cricket". 
+
+So the output should be:
+
+{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Ramesh': 'Cricket'}
+
+Sample Input 1:
+
+Ramesh Cricket
+
+Sample Output 1:
+
+{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Ramesh': 'Cricket'}
+
+Sample Input 2:
+
+Suresh Chess
+
+Sample Output 2:
+
+{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Suresh': 'Chess'}
+
+
+Outline
+
+Question: Add a Key
+Approach
+Step 1: Read the input
+Step 2: Add the key-value pair to the dictionary
+Step 3: Print the updated dictionary
+
+Question: Add a Key
+In this problem, you are given a dictionary with some key-value pairs. Your task is to write a program 
+that adds a new key-value pair to the dictionary.
+
+Input: A single line containing two strings, separated by a space, representing the key-value pair.
+
+Output: A single line containing the updated dictionary with the added key-value pair.
+
+Example: If the given input is "Ramesh Cricket", your code should add the key 
+"Ramesh" and the value "Cricket" to the dictionary. 
+The output should be:
+
+{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Ramesh': 'Cricket'}
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+Read the input key-value pair.
+Add the key-value pair to the dictionary.
+Print the updated dictionary.
+
+Step-by-Step Explanation
+
+Step 1: Read the input
+First, we need to read the input key-value pair. We can use the input() function to read the input and split() 
+to separate the key and value.
+
+Step 2: Add the key-value pair to the dictionary
+Now that we have the key and value, we can add them to the dictionary. To do this, we can use the following code:
+
+This code adds the key-value pair to the students_dict dictionary.
+
+Step 3: Print the updated dictionary
+Finally, we need to print the updated dictionary. We can do this using the print() function:
+
+This code prints the updated dictionary with the added key-value pair.
+
+Here's the complete solution for the problem:
+
+This code reads the input key-value pair, adds it to the dictionary, and prints the updated dictionary.
+
+
+Solution:
+
+students_dict = {
+    "Ram": "Cricket",
+    "Naresh": "Football",
+    "Vani": "Tennis",
+    "Rahim": "Cricket"
+}
+
+key, value = input().split()
+students_dict[key] = value
+print(students_dict)
+
+_____________________________________________________________________________________________________
+
+02. Update a Value of Key
+
+For this problem, the prefilled code will contain a dictionary. Write a program to update the value of a given key.
+
+Input:
+
+The input will be a single line containing the strings, separated by space, denoting the key-value pair.
+
+Output:
+
+The output should be a single line containing the dictionary with the updated value to the given key.
+
+Explanation:
+
+For example, if the given string is "Rahim Hockey", your code should update the key 
+"Rahim" with the value "Hockey". 
+
+So the output should be
+
+{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Hockey', 'Deepak': 'Boxing'}
+
+Sample Input 1:
+
+Rahim Hockey
+
+Sample Output 1:
+
+{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Hockey', 'Deepak': 'Boxing'}
+
+Sample Input 2:
+
+Vani Badminton
+
+Sample Output 2:
+
+{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Badminton', 'Rahim': 'Cricket', 'Deepak': 'Boxing'}
+
+
+Outline
+
+Question: Update Value of Key
+Approach
+Step 1: Read the input key-value pair
+Step 2: Update the dictionary with the given key-value pair
+Step 3: Print the updated dictionary
+
+Question: Update Value of Key
+In this problem, you are given a dictionary with some key-value pairs. Your task is to write a program 
+that updates the value of a given key in the dictionary.
+
+Approach
+
+To solve this problem, you can follow these steps:
+
+1.Read the input key-value pair.
+2.Update the dictionary with the given key-value pair.
+3.Print the updated dictionary.
+
+Step-by-Step Explanation
+
+Step 1: Read the input key-value pair
+First, you need to read the input key-value pair. The input will be a single line containing two strings 
+separated by a space. You can use the input() function to read the input and split() to separate the strings into a list.
+
+Step 2: Update the dictionary with the given key-value pair
+Now that you have the key and value, you can update the dictionary. To do this, you can simply assign 
+the value to the key in the dictionary.
+
+Step 3: Print the updated dictionary
+Finally, you can print the updated dictionary using the print() function.
+
+
+Solution:
+
+students_dict = {
+    "Ram": "Cricket",
+    "Naresh": "Football",
+    "Vani": "Tennis",
+    "Rahim": "Cricket",
+    "Deepak": "Boxing"
+}
+
+# Write your code here
+key, value=input().split()
+students_dict[key]=value
+print(students_dict)
+
+___________________________________________________________________________________________________________________
+
+03. Remove a Key
+
+For this problem, the prefilled code will contain a dictionary. Write a program to remove a key.
+
+Input: 
+
+The input will be a single line containing a string, denoting the key to be removed.
+
+Output:
+
+The output should be a single line containing the dictionary without the given key and its value.
+
+explanation:
+
+For example, if the given string is "Vani", your code should print the dictionary without the key-value 
+pair of "Vani" 
+
+So the output should be
+
+{'Ram': 'Cricket', 'Naresh': 'Football', 'Rahim': 'Cricket', 'Deepak': 'Boxing'}
+
+Sample Input 1:
+
+Vani
+
+Sample Output 1:
+
+{'Ram': 'Cricket', 'Naresh': 'Football', 'Rahim': 'Cricket', 'Deepak': 'Boxing'}
+
+Sample Input 2:
+
+Rahim
+
+Sample Output 2:
+
+{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Deepak': 'Boxing'}
+
+Outline
+
+Question: Remove a Key
+Approach
+Step 1: Read the input key
+Step 2: Remove the key from the dictionary
+Step 3: Print the updated dictionary
+
+Question: Remove a Key
+In this problem, you are given a dictionary with student names as keys and their favorite sports as values. 
+Your task is to write a program that removes a given key (student name) from the dictionary.
+
+Approach
+To solve this problem, we will follow these steps:
+
+1.Read the input key (student name) that needs to be removed.
+2.Remove the key from the dictionary.
+3.Print the updated dictionary without the removed key and its value.
+
+Step-by-Step Explanation
+
+Step 1: Read the input key
+First, we need to read the input key (student name) that we want to remove from the dictionary. 
+We can use the input() function to read the input and store it in a variable called key.
+
+Step 2: Remove the key from the dictionary
+Now that we have the key to remove, we can use the del keyword to remove the key and its value from the dictionary. 
+We will use the variable students_dict to store the given dictionary.
+
+Step 3: Print the updated dictionary
+
+Finally, we need to print the updated dictionary without the removed key and its value. We can use the print()
+function to do this.
+
+Solution:
+
+students_dict = {
+    "Ram": "Cricket",
+    "Naresh": "Football",
+    "Vani": "Tennis",
+    "Rahim": "Cricket",
+    "Deepak": "Boxing"
+}
+
+# Write your code here
+a=input()
+del students_dict[a]
+print(students_dict)
+
+____________________________________________________________________________________________________
+
+04. Sports Data
+
+A college is conducting its annual sports meet. So they need data of students with the sport they play. 
+Each student can participate in only one sport.
+
+For this problem, the prefilled code will contain a dictionary. Write a program to add a list of tuples 
+to the dictionary as key-value pairs.
+
+If a student's name appears more than once, update the latest sport entry.
+
+Input: 
+
+The first line of input will contain an integer N, denoting the number of key-value pairs.
+The next N lines will contain space-separated strings, denoting key followed by the value.
+
+Output:
+
+The output should be a single line containing the dictionary with the added key-value pairs.
+
+Explanation:
+
+For example, if the given N is 3, read the inputs in the next three lines, if the given three inputs are the following.
+
+Gopal Hockey
+Jyothi Cricket
+Akhil Football
+
+Your code should print the dictionary with all the key-value pairs. 
+
+So the output should be
+
+{'Ram': 'Cricket', 'Naresh': 'Football', 'Vani': 'Tennis', 'Rahim': 'Cricket', 'Gopal': 'Hockey', 'Jyothi': 'Cricket', 'Akhil': 'Football'}
+
