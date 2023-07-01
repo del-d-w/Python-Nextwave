@@ -1,0 +1,429 @@
+01. Truck
+
+You are given two incomplete classes Car and Truck
+
+A Truck is a Car but with the additional behaviours.
+Inherit the Car class into Truck class and build the additional features.
+
+Go through the comments in the prefilled code to implement the Car and Truck classes with the 
+described attributes and methods  
+
+Points to Note:
+
+1.The output of the testcase "Checking Default Tests" is given by the default_test function in the prefilled code.
+2. This Coding question does not have the usual input/output testcases. The class defined by you will be tested 
+internally whether the attributes are present or not. So in testcases results you will be shown the rough 
+description of the tests that will be verified.
+3.You can copy the implementation of Car class from the previous set and add new features on top of that code.
+
+Sample Input:
+
+Checking Default Tests
+
+Sample Output:
+
+False
+50
+25
+0
+Cannot load cargo more than max limit: 100
+True
+Cannot load cargo during motion
+Cannot unload cargo during motion
+Honk Honk
+Car has not started yet
+
+
+Outline
+
+Question: Truck
+Approach
+Step 1: Create Car class
+Step 2: Create Truck class
+Step 3: Implement loadcargo and unloadcargo methods
+Step 4: Override sound_horn method
+Solution
+
+Question: Truck
+You are given two incomplete classes Car and Truck. A Truck is a Car but with additional behaviors. 
+Inherit the Car class into the Truck class and build the additional features. Go through the comments
+in the prefilled code to implement the Car and Truck classes with the described attributes and methods.
+
+Approach
+
+Create a Car class with attributes and methods as described in the question.
+Create a Truck class that inherits from the Car class.
+Add additional attributes and methods to the Truck class as described in the question.
+Override the sound_horn method in the Truck class.
+
+Step-by-Step Explanation
+
+Step 1: Create Car class
+Create a Car class with the following attributes and methods:
+
+Attributes:
+color
+max_speed
+acceleration
+tyre_friction
+is_engine_started
+current_speed
+Methods:
+start_engine()
+stop_engine()
+accelerate()
+apply_brakes()
+sound_horn()
+ 
+Step 2: Create Truck class
+Create a Truck class that inherits from the Car class. Add the max_cargo_weight attribute and initialize 
+it in the __init__ method using super().
+
+Step 3: Implement loadcargo and unloadcargo methods
+Add the load_cargo and unload_cargo methods to the Truck class. These methods should check if the engine
+is started and if the cargo weight is within the maximum limit.
+
+ 
+Step 4: Override sound_horn method
+Override the sound_horn method in the Truck class to change the horn sound.
+
+
+Solution
+
+
+# Truck class should have the following attributes & methods
+#
+# Old Attributes:
+#   color, max_speed, acceleration, tyre_friction, is_engine_started, current_speed
+# New Attributes:
+#     max_cargo_weight, load
+#
+# Old Methods:
+#   start_engine, stop_engine, accelerate, apply_brakes, sound_horn
+# 
+# Override Methods:
+#   sound_horn:
+#       - Print "Honk Honk" if truck engine is on
+#       - Print "Car has not started yet" if truck engine is off
+#
+# New Methods:
+#   load_cargo:
+#       - This method will have an argument cargo_weight, denoting the weight to be loaded in the truck.
+#       - Truck can load some cargo within max_cargo_weight
+#       - When this method is called when the car engine is off, the  current_load of the truck
+#         should increase according to the  cargo_weight  passed as an argument to this method.
+#       - When this method is called when the car engine is on, print the message  "Cannot load cargo during motion"
+#       - When the cargo_weight is more than max_cargo_weight,
+#           print the message  "Cannot load cargo more than max limit: {max_cargo_weight}"
+#   unload_cargo:
+#       - This method will have an argument cargo_weight, denoting the weight to be unloaded from the truck.
+#       - Truck can unload amount of cargo_weight passed as an argument, only when the truck engine is off.
+#       - If the truck engine is on, print the message "Cannot unload cargo during motion"
+#       - Truck load can never go behind 0
+#
+# When a new Truck is created, the engine should be off by default and current_speed, load should be 0
+
+
+# Implement the Car and Truck class appropriately
+# Inherit the Car class into Truck class and override the methods which have extra features
+class Car:
+    def __init__(self, color, max_speed, acceleration, tyre_friction):
+        self.color=color
+        self.max_speed=max_speed
+        self.acceleration=acceleration
+        self.tyre_friction=tyre_friction
+        self.is_engine_started=False
+        self.current_speed=0
+        
+    def start_engine(self):
+        self.is_engine_started=True
+
+    def stop_engine(self):
+        self.is_engine_started=False
+
+    def accelerate(self):
+        if not self.is_engine_started:
+            print("Car has not started yet")
+        else:
+            self.current_speed+=self.acceleration
+            if self.current_speed>self.max_speed:
+                self.current_speed=self.max_speed
+
+    def apply_brakes(self):
+        self.current_speed-=self.tyre_friction
+        if self.current_speed<0:
+            self.current_speed=0
+
+    def sound_horn(self):
+        if self.is_engine_started:
+            print("Beep Beep")
+        else:
+            print("Car has not started yet")
+
+
+class Truck(Car):
+    def __init__(self, color, max_speed, acceleration, tyre_friction, max_cargo_weight):
+        super().__init__(color,max_speed,acceleration,tyre_friction)
+        self.max_cargo_weight=max_cargo_weight
+        self.load=0
+    def load_cargo(self,cargo_weight):
+        if self.is_engine_started:
+            print("Cannot load cargo during motion")
+        elif cargo_weight+self.load>self.max_cargo_weight:
+            print("Cannot load cargo more than max limit: {}".format(self.max_cargo_weight))
+        else:
+            self.load+=cargo_weight
+    def unload_cargo(self,cargo_weight):
+        if self.is_engine_started:
+            print("Cannot unload cargo during motion")
+        else:
+            self.load-=cargo_weight
+            if self.load<0:
+                self.load=0
+    def sound_horn(self):
+        if self.is_engine_started:
+            print("Honk Honk")
+        else:
+            print("Car has not started yet")
+
+
+# You need not change any code below.
+# Do not call this function anywhere. It will automatically be called internally during tests.
+def default_test():
+    truck = Truck(color="Red", max_speed=250, acceleration=10, tyre_friction=3, max_cargo_weight=100)
+    print(truck.is_engine_started)
+    truck.load_cargo(cargo_weight=50)  # Loading cargo_weight 50 to the truck
+    print(truck.load)  # 0 + 50 => 50
+    truck.unload_cargo(cargo_weight=25)  # Unloading cargo_weight 25 from the truck
+    print(truck.load)  # 50 - 25 => 25
+    truck.unload_cargo(cargo_weight=70)  # Unloading cargo_weight 70 (more than load in the truck)
+    print(truck.load)  # 25 - 75 => 0 as load never be negative
+    truck.load_cargo(cargo_weight=120)  # Prints "Cannot load cargo more than max limit: 100"
+
+    truck.load_cargo(cargo_weight=20)  # Loading cargo_weight 20 to the truck
+    truck.start_engine()
+    print(truck.is_engine_started)  # True
+    truck.load_cargo(cargo_weight=40)  # Prints "Cannot load cargo during motion"
+    truck.unload_cargo(cargo_weight=10)  # Prints "Cannot unload cargo during motion"
+
+    truck.sound_horn()  # Prints "Honk Honk"
+    truck.stop_engine()
+    truck.sound_horn()  # Prints "Car has not started yet"
+
+_____________________________________________________________________________________________________________________
+
+02. RaceCar
+
+Now we need a RaceCar in our cars world.  
+
+You are given two incomplete classes Car and RaceCar
+
+A RaceCar is a Car  but with the additional behaviours.
+Inherit the Car class into RaceCar  class and build the additional features.
+
+Go through the comments in the prefilled code to implement the Car and RaceCar classes with the 
+described attributes and methods  
+
+Points to Note:
+
+1.The output of the testcase "Checking Default Tests" is given by the default_test function in the prefilled code.
+2. This Coding question does not have the usual input/output testcases. The class defined by you will be tested 
+internally whether the attributes are present or not. So in testcases results you will be shown the rough 
+description of the tests that will be verified.
+3.You can copy the implementation of Car class from the previous set and add new features on top of that code.
+
+
+Sample Input:
+
+Checking Default Tests
+
+Sample Output:
+
+70
+3
+140
+2
+210
+1
+180
+1
+250
+0
+Peep Peep
+Beep Beep
+
+Outline
+
+Question: RaceCar
+Approach
+Step 1: Create the Car class
+Step 2: Create the RaceCar class
+Step 3: Implement the accelerate method in RaceCar
+Step 4: Implement the sound_horn method in RaceCar
+Solution
+
+Question: RaceCar
+In this coding question, you are given two incomplete classes Car and RaceCar. A RaceCar is a Car but 
+with additional behaviors. Your task is to inherit the Car class into the RaceCar class and build the additional features.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+Create the Car class with its attributes and methods.
+Create the RaceCar class by inheriting the Car class.
+Implement the accelerate method in the RaceCar class.
+Implement the sound_horn method in the RaceCar class.
+
+Step-by-Step Explanation
+
+Step 1: Create the Car class
+First, let's create the Car class with its attributes and methods. The Car class should have the following attributes:
+
+color
+max_speed
+acceleration
+tyre_friction
+is_engine_started
+current_speed
+And the following methods:
+
+start_engine()
+stop_engine()
+accelerate()
+apply_brakes()
+sound_horn()
+Here's the code for the Car class:
+
+ 
+Step 2: Create the RaceCar class
+Now, let's create the RaceCar class by inheriting the Car class. The RaceCar class should have an additional
+attribute called nitro.
+
+Here's the code for the RaceCar class:
+
+Step 3: Implement the accelerate method in RaceCar
+Next, we need to implement the accelerate method in the RaceCar class. This method should first check
+if there is any nitro left and if the engine is started. If both conditions are met, it should increase 
+the current_speed by 20 and decrease the nitro by 1. Then, call the accelerate method from the Car class using super().
+
+Here's the code for the accelerate method in the RaceCar class:
+
+Step 4: Implement the sound_horn method in RaceCar
+Finally, we need to implement the sound_horn method in the RaceCar class. This method should first check 
+if the engine is started. If it is, it should print "Peep Peep\nBeep Beep". 
+Otherwise, it should print "Car has not started yet".
+
+Here's the code for the sound_horn method in the RaceCar class:
+
+Here's the complete solution for the Car and RaceCar classes:
+
+Solution
+
+# RaceCar class should have the following attributes & methods
+#
+# Old Attributes:
+#   color, max_speed, acceleration, tyre_friction, is_engine_started, current_speed
+# New Attributes:
+#     nitro
+#
+# Old Methods:
+#   start_engine, stop_engine, accelerate, apply_brakes, sound_horn
+# 
+# Override Methods:
+#   sound_horn:
+#       - Print "Peep Peep\nBeep Beep" if race_car engine is on
+#       - Print "Car has not started yet" if race_car engine is off
+#   accelerate:
+#       - When car accelerates when nitro points are available
+#       the current_speed will add 20 within max limits.
+#       - And nitro get reduced by 1 point
+#
+# When a new RaceCar is created, the engine should be off by default and current_speed should be 0
+
+
+# Implement the Car and RaceCar class appropriately
+# Inherit the Car class into RaceCar class and override the methods which have extra features
+class Car:
+    def __init__(self, color, max_speed, acceleration, tyre_friction):
+        self.color=color 
+        self.max_speed=max_speed
+        self.acceleration=acceleration
+        self.tyre_friction=tyre_friction
+        self.is_engine_started=False 
+        self.current_speed=0 
+        
+
+    def start_engine(self):
+        self.is_engine_started=True
+    
+
+    def stop_engine(self):
+        self.is_engine_started=False
+
+    def accelerate(self):
+        if not self.is_engine_started:
+            print("Car has not started yet")
+        else:
+            self.current_speed+=self.acceleration
+            if self.current_speed>self.max_speed:
+                self.current_speed=self.max_speed
+
+    def apply_brakes(self):
+        self.current_speed-=self.tyre_friction
+        if self.current_speed<0:
+            self.current_speed=0
+        
+
+    def sound_horn(self):
+        if self.is_engine_started:
+            print("Beep Beep")
+        else:
+            print("Car has not started yet")
+
+
+
+class RaceCar(Car):
+    def __init__(self, color, max_speed, acceleration, tyre_friction, nitro):
+        super().__init__( color, max_speed, acceleration, tyre_friction)
+        self.nitro=nitro 
+        
+
+    def accelerate(self):
+        if self.nitro>0 and self.is_engine_started:
+            self.current_speed+=20 
+            self.nitro-=1
+        super().accelerate()
+        
+            
+        
+
+    def sound_horn(self):
+        if self.is_engine_started:
+            print("Peep Peep\nBeep Beep")
+        else:
+            print("Car has not started yet")
+        
+        
+# You need not change any code below.
+# Do not call this function anywhere. It will automatically be called internally during tests.
+def default_test():
+    racecar = RaceCar(color="Red", max_speed=250, acceleration=50, tyre_friction=30, nitro=4)
+    racecar.start_engine()
+    racecar.accelerate()  # Calling the accelerate method when the is_engine_started is True
+    print(racecar.current_speed)  # 0 + (50 + 20) => 70
+    print(racecar.nitro)  # 4 - 1 => 3
+    racecar.accelerate()  # 70 + (50 + 20) => 140
+    print(racecar.current_speed)  # 140
+    print(racecar.nitro)  # 3 - 1 => 2
+    racecar.accelerate()  # 140 + (50 + 20) => 210
+    print(racecar.current_speed)  # 210
+    print(racecar.nitro)  # 2 - 1 => 1
+    racecar.apply_brakes()  # 210 - 30 => 180
+    print(racecar.current_speed)  # 180
+    print(racecar.nitro)  # 1
+    racecar.accelerate()  # 180 + (50 + 20) => 250
+    print(racecar.current_speed)  # 250
+    print(racecar.nitro)  # 1 - 1 => 0
+    racecar.sound_horn()
+
