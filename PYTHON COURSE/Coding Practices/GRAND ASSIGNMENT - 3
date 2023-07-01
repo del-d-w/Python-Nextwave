@@ -278,4 +278,392 @@ for i in range(m*2):
 
 ___________________________________________________________________________________________________________
 
-05. 
+05. Word Count
+
+Write a program that reads a sentence S and prints the frequency of each word in the given sentence.
+
+Note: 
+
+In the given sentence S= "Hello world Hello"
+The frequency of Hello in the given sentence is twice
+The frequency of Hello in the given sentence is once
+
+Input:
+
+The input will be a single line containing a string representing a sentence S.
+
+output:
+
+The output should be multiple lines with each line containing a word and its frequency in the given sentence 
+seperated by colon-character ( : ) with the order of appearance in the given sentence. 
+
+Explanation:
+
+For example, If the given sentence S="Hello world welcome to python world"
+
+Hello appears once in the sentence, so its frequency is 1
+world appears twice in the sentence, so its frequency is 2
+welcome appears once in the sentence, so its frequency is 1
+to appears once in the sentence, so its frequency is 1
+python appears once in the sentence, so its frequency is 1
+
+So, the output should be,
+
+Hello: 1
+world: 2
+welcome: 1
+to: 1
+python: 1
+
+For example, If the given sentence S="This is my book"
+
+this appears once in the sentence, so its frequency is 1
+is appears once in the sentence, so its frequency is 1
+my appears once in the sentence, so its frequency is 1
+book appears once in the sentence, so its frequency is 1
+
+So, the output should be,
+
+This: 1
+is: 1
+my: 1
+book: 1
+
+Sample Input 1:
+
+Hello world welcome to python world
+
+Sample Output 1:
+
+Hello: 1
+world: 2
+welcome: 1
+to: 1
+python: 1
+
+Sample Input 2:
+
+This is my book
+
+Sample Output 2:
+
+This: 1
+is: 1
+my: 1
+book: 1
+
+Solution:
+"""words = {}
+for i in input().split():
+    word = ("".join([ j if j.isalnum() else "" for j in i ]))
+    if word not in words:
+        words[word] = 1
+    else:
+        words[word] += 1
+
+for word in (words):
+    print(word, ": ", words[word], sep='')"""
+
+"""n=input().split()
+words={}
+for i in n:
+    if i not in words:
+        words[i] = 1
+    else:
+        words[i] += 1
+for i in words:
+    print(i+":"+" "+str(words[i]))"""
+
+a=input().split()
+b=[]
+for i in a:
+    if i not in b:
+        b.append(i)
+for i in b:
+    msg="{}: {}".format(i,a.count(i))
+    print(msg)
+
+_________________________________________________________________________________________________
+
+06. Word Count-2
+
+Write a program that reads a sentence S and prints the frequency of each word in the given sentence 
+sorted in alphabetical order.
+
+Note: 
+
+In the given sentence S= "Hello world Hello"
+The frequency of Hello in the given sentence is twice
+The frequency of Hello in the given sentence is once
+
+Input:
+
+The input will be a single line containing a string representing a sentence S.
+
+output:
+
+The output should be multiple lines with each line containing a word and its frequency in the given 
+sentence separated by colon-character ( : ), where words are sorted in alphabetical order.
+
+Explanation:
+
+For example, If the given sentence S="Hello world welcome to python world"
+
+Hello appears once in the sentence, so its frequency is 1
+python appears once in the sentence, so its frequency is 1
+to appears once in the sentence, so its frequency is 1
+welcome appears once in the sentence, so its frequency is 1
+world appears twice in the sentence, so its frequency is 2
+
+So, the output should be,
+
+Hello: 1
+python: 1
+to: 1
+welcome: 1
+world: 2
+
+For example, If the given sentence S="This is my book"
+
+this appears once in the sentence, so its frequency is 1
+book appears once in the sentence, so its frequency is 1
+is appears once in the sentence, so its frequency is 1
+my appears once in the sentence, so its frequency is 1
+
+So, the output should be,
+
+This: 1
+book: 1
+is: 1
+my: 1
+
+Sample Input 1:
+
+Hello world welcome to python world
+
+Sample Output 1:
+
+Hello: 1
+python: 1
+to: 1
+welcome: 1
+world: 2
+
+Sample Input 2:
+
+This is my book
+
+Sample Output 2:
+
+This: 1
+book: 1
+is: 1
+my: 1
+
+
+Solution:
+
+words = {}
+for str in input().split():
+    word = ("".join([ c if c.isalnum() else "" for c in str ]))
+    if word not in words:
+        words[word] = 1
+    else:
+        words[word] += 1
+
+for word in sorted(words):
+    print(word, ": ", words[word], sep='')
+
+______________________________________________________________________________________________________________________
+
+07. Simple Calculator-2
+
+Write a program to create a menu-driven calculator that performs basic arithmetic operations (+, -, *, /, and %).
+
+Input:
+
+The input will be a single line containing two integers and operator(+, -, *, /, and %) similar to 3 + 5.
+
+Output:
+
+If the given operator is "+", print the sum of two numbers.
+If the given operator is "-", print the result of the subtraction of the two numbers.
+If the given operator is "*", print the multiplication of the two numbers.
+If the given operator is "/", print the result of the division of the two numbers.
+If the given operator is "%", print the result of the modulus operation of the two numbers.
+
+Explanation:
+
+For example, if the given operator is "+" and the two numbers are 3 and 5. As it is an addition operator, 
+your code should print the sum of the given two numbers (3 + 5), which is 8.
+
+Similarly, if the given operator is "*" and the two numbers are 2 and 5.
+
+As it is a multiplication operator, your code should print the result of the multiplication of the given 
+two numbers (2 * 5), which is 10.
+
+Similarly, if the given operator is "-" and the two numbers are 10 and 9.
+
+As it is a subtraction operator, your code should print the result of the subtraction of the given 
+two numbers (10 - 9), which is 1.
+
+Sample Input 1:
+
+3 + 5
+
+Sample Output 1:
+
+8
+
+Sample Input 2:
+
+2 * 5
+
+Sample Output 2:
+
+10
+
+Sample Input 3:
+
+10 - 9
+
+Sample Output 3:
+
+1
+
+Solution:
+
+a=input().split()
+b=int(a[0])
+c=int(a[2])
+if a[1]=="+":
+    print(b+c)
+if a[1]=="*":
+    print(b*c)
+if a[1]=="-":
+    print(b-c)
+if a[1]=="/":
+    print(b/c)
+if a[1]=="%":
+    print(b%c)
+      
+_____________________________________________________________________________________________________________
+
+08. Tic-Tac-Toe game
+
+Abhinav and Anjali are playing a game called Tic-Tac-Toe. The game is played on a square board with 3 rows and 3 columns
+
+Abhinav chooses the letter O and Anjali chooses the letter X. They take turns putting their letters in 
+empty spaces on the board.
+
+1.The first player to get three of their letters in a row, column, or diagonal wins the game.
+2.If all spaces on the board are filled and no player has won, the game ends in a tie.
+
+Let’s see some gameplay visually.
+
+https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/Screenshot+from+2023-03-30+17-36-39.png
+
+There are a total of 8 ways to arrange the same sign and win the game. Let’s see all the 8
+arrangements that can win the game.
+
+https://s3.ap-south-1.amazonaws.com/new-assets.ccbp.in/frontend/content/Screenshot+from+2023-03-30+17-53-49.png
+
+Write a program that reads three lines containing space-separated O's and X's and prints the result of the game.
+
+Input:
+
+The input will be three lines containing space-separated O's and X's
+
+Output:
+
+The output should be a single line containing a string. Abhinav Wins
+should be printed if Abhinav wins the game or Anjali Wins should be printed if Anjali wins the game. Otherwise, 
+Tie should be printed.
+
+Explanation:
+
+For example,
+
+1.If the given
+
+O X O
+O X X
+O O X
+
+As the 1st Column contains three of O's Abinav wins the game as O is Abhinav's choice.
+
+So, the output should be "Abinav Wins"
+
+2.If the given
+
+O O X
+X X O
+X O O 
+
+As the anti-diagonal contains three of X's Anjali wins the game as X is Abhinav's choice.
+
+So, the output should be "Anjali Wins"
+
+3.If the given
+
+O X O
+X X O
+O O X
+
+As all spaces on the grid are filled and no player has won.
+
+So, the output should be "Tie"
+
+Sample Input 1:
+
+O X O
+O X X
+O O X
+
+Sample Output 1:
+
+Abhinav Wins
+
+Sample Input 2:
+
+O O X
+X X O
+X O O
+
+Sample Output 2:
+
+Anjali Wins
+
+Solution:
+
+def check_win(board):
+    """
+    Check if somebody win.
+    Return winning symbol or None in case of tie
+    """
+    for r in range(3):
+        if board[r][0] == board[r][1] == board[r][2]:
+            return board[r][0]
+        
+    for c in range(3):
+        if board[0][c] == board[1][c] == board[2][c]:
+            return board[0][c]
+
+    if board[0][0] == board [1][1] == board [2][2]:
+        return board[0][0]
+    
+    if board[0][2] == board [1][1] == board [2][0]:
+        return board[0][2]
+
+board = []
+for r in range(3):
+    line = input()
+    board.append(line.split())
+
+res = check_win(board)
+if res is None:
+    print("Tie")
+elif res.upper() == 'X':
+    print('Anjali Wins')
+elif res.upper() == 'O':
+    print('Abhinav Wins')
