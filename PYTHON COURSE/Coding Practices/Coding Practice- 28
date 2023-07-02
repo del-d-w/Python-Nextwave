@@ -1,0 +1,584 @@
+01. Same Elements
+
+Write a program to check if all the elements in a given list are same.
+
+Input:
+
+The input will be a single line containing space-separated integers.
+
+Output:
+
+The output should be a single line containing either "True" or list of unique elements sorted in ascending order.
+
+Explanation:
+
+For example, if the given string is "45 45 45 45", as all the numbers are 45, the output should be "True".
+Whereas, if the given string is "45 20 45 45 20", as all the numbers are not same, your code should print 
+the list of unique elements sorted in ascending order. So the output should be
+
+[20, 45]
+
+Sample Input 1:
+
+45 45 45 45
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+45 20 45 45 20
+
+Sample Output 2:
+
+[20, 45]
+
+Outline
+
+Question: Same Elements
+Approach
+Step 1: Read the input and convert it into a list of integers
+Step 2: Check if all elements are the same
+Step 3: Print the result
+
+Question: Same Elements
+
+Write a program to check if all the elements in a given list are the same. 
+The input will be a single line containing space-separated integers. 
+The output should be a single line containing either "True" or a list of unique elements sorted in ascending order.
+
+For example, if the given string is "45 45 45 45", as all the numbers are 45, the output should be "True". 
+Whereas, if the given string is "45 20 45 45 20", as all the numbers are not the same, your code should 
+print the list of unique elements sorted in ascending order. So the output should be [20, 45].
+
+Approach
+
+1.Read the input and convert it into a list of integers.
+2.Check if all elements in the list are the same.
+3.If all elements are the same, print "True". Otherwise, print the list of unique elements sorted in ascending order.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and convert it into a list of integers
+Read the input using the input() function and split it into a list of strings using the split() function.
+Create a function convert_string_to_int() that takes a list of strings as input and returns a list of integers.
+Call the convert_string_to_int() function with the list of strings as input and store the result in a variable num_list.
+
+Step 2: Check if all elements are the same
+Create a set num_set from the list num_list. This will remove duplicate elements and store only unique elements.
+Check if the length of the set num_set is 1. If it is, it means all elements in the list are the same.
+
+Step 3: Print the result
+1.If the length of the set num_set is 1, print "True".
+2.Otherwise, convert the set num_set back to a list, sort it in ascending order using the sort() function, 
+and print the sorted list.
+
+Solution:
+
+def convert_string_to_int(list_a):
+    new_list = []
+    for item in list_a:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+num_list = input().split()
+num_list = convert_string_to_int(num_list)
+
+num_set = set(num_list)
+if len(num_set) == 1:
+    print("True")
+else:
+    num_list = list(num_set)
+    num_list.sort()
+    print(num_list)
+
+_____________________________________________________________________________________________________________
+
+02. Extract Numbers
+
+Write a program to remove the elements other than numbers in the list.
+
+Input:
+
+The input will be a single line containing comma-separated strings.
+
+Output:
+
+The output should be a single line containing the list of numbers.
+
+Explanation:
+
+For example, if the given string is "1,2,3,#,4", as there is character # in the given string. 
+Your code should remove such characters and print a list with only numbers. So the output should be
+
+[1, 2, 3, 4]
+
+Sample Input 1:
+
+1,2,3,#,4
+
+Sample Output 1:
+
+[1, 2, 3, 4]
+
+Sample Input 2:
+
+10,20,-,40,50,@
+
+Sample Output 2:
+
+[10, 20, 40, 50]
+
+Outline
+
+Question: Extract Numbers
+Approach
+Step 1: Read the input and split it
+Step 2: Iterate through the list and check for numbers
+Step 3: Print the list of numbers
+
+Question: Extract Numbers
+Write a program to remove the elements other than numbers in the list.
+
+Input: The input will be a single line containing comma-separated strings.
+
+Output: The output should be a single line containing the list of numbers.
+
+Explanation: For example, if the given string is "1,2,3,#,4", as there is character # in the given string. 
+Your code should remove such characters and print a list with only numbers. So the output should be [1, 2, 3, 4].
+
+Approach
+
+1.Read the input string and split it into a list of strings.
+2.Iterate through the list and check if each item is a number.
+3.If an item is a number, add it to a new list.
+4.Print the new list containing only numbers.
+5.Step-by-Step Explanation
+
+Step 1: Read the input and split it
+Read the input string using the input() function.
+Split the input string into a list of strings using the split() function with a comma (,) as the separator.
+
+Step 2: Iterate through the list and check for numbers
+Create an empty list called num_list to store the numbers.
+Use a for loop to iterate through each item in list_a.
+Check if the item is a number using the isdigit() function.
+If the item is a number, convert it to an integer using the int() function and append it to num_list.
+
+Step 3: Print the list of numbers
+Print the num_list containing only numbers.
+
+Solution:
+
+list_a = input().split(",")
+
+num_list = []
+for item in list_a:
+    is_digit = item.isdigit()
+    if is_digit:
+        number = int(item)
+        num_list.append(number)
+
+print(num_list)
+
+_____________________________________________________________________________________________________________
+
+03. Missing Numbers
+
+Write a program to find the missing numbers from 1 to the maximum number in the list.
+
+Input:
+
+The input will be a single line containing space-separated integers.
+
+Output:
+
+The output should be a single line containing the list of missing numbers sorted in ascending order.
+
+Explanation:
+
+For example, if the given string is "1 2 3 5 6 7", your code should print the list of missing numbers 
+from 1 to 7. So the output should be
+
+[4]
+
+Sample Input 1:
+
+1 2 3 5 6 7
+
+Sample Output 1:
+
+[4]
+
+Sample Input 2:
+
+1 2 3 5 6 7 10
+
+Sample Output 2:
+
+[4, 8, 9]
+
+Outline
+
+Question: Missing Numbers
+Approach
+Step 1: Read the input and convert it into a list of integers
+Step 2: Find the maximum number in the list
+Step 3: Create a set of first N natural numbers
+Step 4: Find the missing numbers
+Step 5: Sort and print the missing numbers
+
+Question: Missing Numbers
+Write a program to find the missing numbers from 1 to the maximum number in the list.
+
+Input: The input will be a single line containing space-separated integers.
+
+Output: The output should be a single line containing the list of missing numbers sorted in ascending order.
+
+Example: If the given string is "1 2 3 5 6 7", your code should print the list of missing numbers from 
+1 to 7. So the output should be [4].
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Read the input and convert it into a list of integers.
+2.Find the maximum number in the list.
+3.Create a set of first N natural numbers.
+4.Find the missing numbers by comparing the sets.
+5.Sort and print the missing numbers.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and convert it into a list of integers
+First, we need to read the input and convert it into a list of integers. We can use the input() function to 
+read the input and split() to separate the numbers. Then, we will create a function convert_string_to_int()
+to convert the list of strings into a list of integers.
+
+Step 2: Find the maximum number in the list
+Next, we need to find the maximum number in the list. We can use the max() function to find the maximum number.
+
+Step 3: Create a set of first N natural numbers
+Now, we will create a set of first N natural numbers, where N is the maximum number in the list. 
+We can use the range() function and set() to create the set.
+
+Step 4: Find the missing numbers
+To find the missing numbers, we will compare the set of first N natural numbers with the set of numbers in the list.
+We can use the difference() function to find the missing numbers.
+
+Step 5: Sort and print the missing numbers
+Finally, we will sort the missing numbers in ascending order and print them. We can use the sort() 
+function to sort the list and print() function to print the list.
+
+Solution:
+
+def convert_string_to_int(list_a):
+    new_list = []
+    for item in list_a:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+num_list = input().split()
+num_list = convert_string_to_int(num_list)
+maximum = max(num_list)
+num_set = set(num_list)
+
+first_n_num_set = set(range(1, maximum+1))
+missing_num_set = first_n_num_set.difference(num_set)
+missing_num_list = list(missing_num_set)
+missing_num_list.sort()
+print(missing_num_list)
+
+_____________________________________________________________________________________________________________
+
+04. Set Relation
+
+For this problem, the prefilled code will contain a set.
+Write a program to check the following relations with the given set.
+
+1. Superset
+2. Subset
+3. Disjoint Set
+
+Input:
+
+The input will be a single line containing the space-separated integers.
+
+Output:
+
+The output should be a single line containing either "Superset" or "Subset" or "Disjoint Set".
+
+Explanation:
+
+For example, if the given string is "2 3 4", the output should be "Superset", as all 
+the values in the given set are present in the original set.
+
+Sample Input 1:
+
+2 3 4
+
+Sample Output 1:
+
+Superset
+
+Sample Input 2:
+
+1 2 3 4 5 6 7 8 9 10 11
+
+Sample Output 2:
+
+Subset
+
+Outline
+
+Question: Set Relation
+Approach
+Step 1: Convert string input to a list of integers
+Step 2: Check the relations between the sets
+Solution
+Question: Set Relation
+In this problem, you are given a set of numbers. Your task is to write a program that checks the 
+following relations with the given set:
+
+Superset
+Subset
+Disjoint Set
+You will receive a single line input containing space-separated integers. 
+The output should be a single line containing either "Superset", "Subset", or "Disjoint Set".
+
+For example, if the given input is "2 3 4", the output should be "Superset", 
+as all the values in the given set are present in the original set.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Convert the input string into a list of integers.
+2.Check the relations between the sets and print the result.
+
+Step-by-Step Explanation
+
+Step 1: Convert string input to a list of integers
+First, we need to convert the input string into a list of integers. We can do this by using the split()
+function to separate the numbers and then converting each number to an integer using the int() function.
+
+Step 2: Check the relations between the sets
+Now that we have the list of integers, we can create a set from it and check the relations 
+between the sets using the issuperset(), issubset(), and isdisjoint() functions.
+
+Solution:
+
+num_set = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+# Write your code here
+num1=input().split()
+lista=[]
+for i in num1:
+    list_new=int(i)
+    lista.append(list_new)
+set_a=set(lista)
+if num_set.issuperset(set_a):
+    print("Superset")
+elif num_set.isdisjoint(set_a):
+    print("Disjoint Set")
+else:
+    print("Subset")
+
+_____________________________________________________________________________________________________________
+
+05. Common Elements in Three Sets
+
+Write a program to find the common elements in the three sets.
+
+Input:
+
+The first line of input will contain space-separated integers.
+The second line of input will contain space-separated integers.
+The third line of input will contain space-separated integers.
+
+Output:
+
+The output should be a single line containing the list of common elements in three sets sorted in ascending order.
+
+Explanation:
+
+For example, if the given three strings are as the following.
+
+2 4 6 8 10
+4 8 10 12 16
+5 10 15 20
+
+As 10 is common in all three sets, the output should be
+
+[10]
+
+Sample Input 1:
+
+2 4 6 8 10
+4 8 10 12 16
+5 10 15 20
+
+Sample Output 1:
+
+[10]
+
+Sample Input 2:
+
+2 4 6 8 10 12
+2 4 8 12 16
+2 5 10 12 15 20
+
+Sample Output 2:
+
+[2, 12]
+
+Outline
+
+Question: Common Elements in Three Sets
+Approach
+Step 1: Read the input and convert it to sets
+Step 2: Find the common elements in the sets
+Step 3: Sort the common elements and print the result
+
+Question: Common Elements in Three Sets
+
+Write a program to find the common elements in three sets. The input will be three lines, each containing
+space-separated integers. The output should be a single line containing the list of common elements in 
+the three sets sorted in ascending order.
+
+For example, if the given three strings are as follows:
+
+As 10 is common in all three sets, the output should be:
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Read the input and convert each line into a set of integers.
+2.Find the common elements in the three sets.
+3.Sort the common elements in ascending order and print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and convert it to sets
+First, we need to read the input and convert each line into a set of integers. We can use the input() 
+function to read the input and split() to separate the integers. Then, we can use a helper function 
+convert_string_to_int() to convert the list of strings to a list of integers. Finally, we can convert 
+the list of integers to a set using the set() function.
+
+Step 2: Find the common elements in the sets
+Now that we have the sets, we can find the common elements in them. We can use the intersection() 
+function to find the common elements between two sets. We will first find the common elements between
+the first and second sets, and then find the common elements between the result and the third set.
+
+Step 3: Sort the common elements and print the result
+
+Finally, we need to sort the common elements in ascending order and print the result.
+We can convert the set of common elements to a list using the list() function, and then 
+use the sort() function to sort the list. After sorting, we can print the result.
+
+Solution:
+
+def convert_string_to_int(list_a):
+    new_list = []
+    for item in list_a:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+num_list = []
+for i in range(3):
+    values_list = input().split()
+    values_list = convert_string_to_int(values_list)
+    values_set = set(values_list)
+    num_list.append(values_set)
+
+intersection_a = num_list[0].intersection(num_list[1])
+intersection_b = intersection_a.intersection(num_list[2])
+
+result = list(intersection_b)
+result.sort()
+
+print(result)
+
+_____________________________________________________________________________________________________________
+
+06.
+
+Input:
+
+Output:
+
+Explanation:
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution:
+
+_____________________________________________________________________________________________________________
+
+07.
+
+Input:
+
+Output:
+
+Explanation:
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution:
+
+_____________________________________________________________________________________________________________
+
+08.
+
+Input:
+
+Output:
+
+Explanation:
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution:
+
+_____________________________________________________________________________________________________________
+
+09.
+
+Input:
+
+Output:
+
+Explanation:
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution:
