@@ -706,7 +706,14 @@ will be of the types listed above. Iterate through each command in order and per
 operation on your list.
 
 For example, if the given N is 5, read the commands in the next five lines. If the given five commands are
+
 append 5 - append 5 to the list, nums_list = [5]
+insert 0 2 - insert 2 at index 0, nums_list = [2, 5]
+append 1 - append 1 to the list, nums_list = [2, 5, 1]
+sort - sort the list, nums_list = [1, 2, 5]
+print - print the list
+
+So the output should be [1, 2, 5]
 
 Sample Input 1:
 
