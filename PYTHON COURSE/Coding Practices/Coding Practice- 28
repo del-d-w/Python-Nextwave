@@ -505,80 +505,478 @@ print(result)
 
 _____________________________________________________________________________________________________________
 
-06.
+06. Common Elements in N Sets
+
+Write a program to find the common elements in the N sets.
 
 Input:
 
+The first line of input will contain a positive integer (N).
+The next N lines will contain space-separated integers, denoting the elements of each set.
+
 Output:
+
+The output should be a single line containing the list of common elements in N sets sorted in ascending order.
 
 Explanation:
 
+For example, if the given N is 3, read inputs in the next three lines. If the given three strings are as the following.
+
+2 4 6 8 10
+4 8 10 12 16
+5 10 15 20
+
+As 10 is common in all three sets, the output should be
+
+[10]
+
 Sample Input 1:
+
+3
+2 4 6 8 10
+4 8 10 12 16
+5 10 15 20
 
 Sample Output 1:
 
+[10]
+
 Sample Input 2:
+
+4
+2 4 6 8 10 12
+2 4 8 12 16 10
+2 5 10 12 15 20 4
+12 10 4 8
 
 Sample Output 2:
 
+[4, 10, 12]
+
+Outline
+
+Question: Common Elements in N Sets
+Approach
+Step 1: Read the input and convert it into a list of sets
+Step 2: Find the common elements in the N sets
+Step 3: Sort the common elements and print the result
+
+Question: Common Elements in N Sets
+
+Write a program to find the common elements in the N sets. The first line of input will contain a 
+positive integer (N). The next N lines will contain space-separated integers, denoting the elements 
+of each set. The output should be a single line containing the list of common elements in N sets sorted in ascending order.
+
+For example, if the given N is 3, read inputs in the next three lines. If the given three strings are as the following:
+
+As 10 is common in all three sets, the output should be:
+
+Approach
+
+1.Read the input and convert it into a list of sets.
+2.Find the common elements in the N sets.
+3.Sort the common elements and print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and convert it into a list of sets
+Read the input value representing the number of sets (N). We can use input() function to read the input 
+and int() to convert it into an integer.
+Create an empty list called num_set_list to store the sets.
+Use a for loop to iterate through the range of N.
+Inside the loop, read the input values for each set, split them using split() function, and convert them 
+into a list of integers using a helper function convert_string_to_int().
+Convert the list of integers into a set using set() function and append it to the num_set_list.
+
+Step 2: Find the common elements in the N sets
+Create a function called get_intersection_of_n_sets() that takes the num_set_list as an argument.
+Initialize a variable result with the first set in the num_set_list.
+Use a for loop to iterate through the num_set_list.
+Inside the loop, update the result variable with the intersection of the current set and the result 
+set using the intersection() function.
+Return the result set after the loop.
+
+Step 3: Sort the common elements and print the result
+Call the get_intersection_of_n_sets() function with the num_set_list as an argument and store the result 
+in a variable result_set.
+Convert the result_set into a list called result_list.
+Sort the result_list using the sort() function.
+Print the result_list.
+
 Solution:
+
+def convert_string_to_int(list_a):
+    new_list = []
+    for item in list_a:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+
+def get_intersection_of_n_sets(num_set_list):
+    result = num_set_list[0]
+    for num_set in num_set_list:
+        result = result.intersection(num_set)
+    return result
+
+
+n = int(input())
+num_set_list = []
+for i in range(n):
+    values_list = input().split()
+    values_list = convert_string_to_int(values_list)
+    values_set = set(values_list)
+    num_set_list.append(values_set)
+
+result_set = get_intersection_of_n_sets(num_set_list)
+result_list = list(result_set)
+result_list.sort()
+print(result_list)
 
 _____________________________________________________________________________________________________________
 
-07.
+07. K Sum Pairs
+
+Write a program that reads comma-separated numbers and the number K 
+and then finds all the unique pairs in the given numbers whose sum is equal to K.
 
 Input:
 
+The first line of input contains comma-separated integers.
+The second line of input contains an integer representing K.
+
 Output:
+
+The output should contain all the unique pairs whose sum is equal to K, each on a new line.
 
 Explanation:
 
+If the given comma-separated integers are 5,3,7,9,5 and K=12
+
+Following are the possible pairs from the given numbers.
+
+Possible Pairs            sum
+
+5+3                        8
+5+7                        12
+5+9                        14
+5+5                        10
+3+7                        10
+3+9                        12
+3+5                        8
+9+3                        12
+7+9                        16
+7+5                        12
+9+5                        14
+
+From the above, the pairs whose sum is equals to 12 are
+
+5 + 7 = 12
+3 + 9 = 12
+9 + 3 = 12
+7 + 5 = 12
+
+Sort the above pairs and print each unique pair as a tuple
+
+So, the output should be,
+
+(3, 9)
+(5, 7)
+
 Sample Input 1:
+
+5,3,7,9,5
+12
 
 Sample Output 1:
 
+(3, 9)
+(5, 7)
+
 Sample Input 2:
+
+-4,-3,-2,-1,0,1,2,3,4,5,6
+-1
 
 Sample Output 2:
 
+(-4, 3)
+(-3, 2)
+(-2, 1)
+(-1, 0)
+
+Outline
+
+Question: K Sum Pairs
+Approach
+Step 1: Read Input and Convert to Integers
+Step 2: Find Unique Pairs with Sum K
+Step 3: Print Unique Pairs
+
+Question: K Sum Pairs
+Write a program that reads comma-separated numbers and the number K and then finds all the unique pairs 
+in the given numbers whose sum is equal to K.
+
+Approach
+Read the input numbers and K.
+Convert the input numbers into a list of integers.
+Find all the unique pairs in the list whose sum is equal to K.
+Print the unique pairs.
+Step-by-Step Explanation
+
+Step 1: Read Input and Convert to Integers
+
+Read the comma-separated numbers using the input() function and split them using the split(",") method.
+Read the integer K using the input() function and convert it to an integer using the int() function.
+Create a function convert_string_to_int() that takes a list of strings and returns a list of integers 
+by converting each string to an integer using the int() function.
+
+Step 2: Find Unique Pairs with Sum K
+
+Create a function get_unique_pairs() that takes a list of integers and the target sum K as input.
+Initialize an empty set called unique_pairs_set to store the unique pairs.
+Use a for loop to iterate through the list of integers.
+For each integer, calculate the required number to make the sum equal to K by subtracting the current integer from K.
+Check if the required number is present in the remaining list of integers.
+If it is present, create a tuple with the current integer and the required number.
+Sort the tuple to avoid duplicates like (5,7) and (7,5).
+Add the sorted tuple to the unique_pairs_set.
+Return the unique_pairs_set.
+
+Step 3: Print Unique Pairs
+
+Call the convert_string_to_int() function to convert the input numbers into a list of integers.
+Call the get_unique_pairs() function with the list of integers and K to get the unique pairs.
+Sort the unique pairs according to the first element.
+Use a for loop to print each unique pair.
+
 Solution:
+
+def get_unique_pairs(int_list, pair_sum):
+    stop_index = len(int_list) - 1
+    unique_pairs_set = set()
+    for cur_index in range(stop_index):
+        num_1 = int_list[cur_index]
+        num_2 = pair_sum - num_1
+        remaining_list = int_list[cur_index+1:]
+        if num_2 in remaining_list:
+            pair = (num_1, num_2)
+            sorted_pair = tuple(sorted(pair))
+            unique_pairs_set.add(sorted_pair)
+    return unique_pairs_set
+
+
+def convert_string_to_int(str_num_list):
+    new_list = []
+    for item in str_num_list:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+
+str_num_list = input().split(",")
+pair_sum = int(input())
+int_list = convert_string_to_int(str_num_list)
+unique_pairs = get_unique_pairs(int_list, pair_sum)
+unique_pairs = list(unique_pairs)
+unique_pairs.sort()
+for pair in unique_pairs:
+    print(pair)
+
+"""
+a=sorted(list(map(int,input().split(","))))
+n=int(input())
+list_pair=[]
+for i in range(len(a)):
+    for j in range(i+1):
+        if a[i]+a[j]==n:
+            list_pair.append((a[i],a[j]))
+list_pair=sorted(list_pair)
+b=set(list_pair)
+c=[]
+for i in b:
+    c.append((i[::-1]))
+d=sorted(c[::-1])
+for i in d:
+    print(i)
+"""
 
 _____________________________________________________________________________________________________________
 
-08.
+08. Rotate D Times
+
+Write a program that reads the comma-separated integers and a positive integer D, then rotates the numbers 
+D times to the left, and prints the rotated list.
 
 Input:
 
+The first line of input will be comma-separated integers.
+The second line of input will be a positive integer representing D.
+
 Output:
+
+The output should be a single line containing a rotated List
 
 Explanation:
 
+For example, if the given comma-separated integers are 1,2,3,4,5 and the positive integer D = 2,
+
+                   1st rotation
+1 2 3 4 5 -------------------------------> 2 3 4 5 1
+
+                   2nd rotation
+2 3 4 5 1-------------------------------> 3 4 5 1 2
+
+After rotating the comma-separated integers 2 times by left, the elements are  3, 4, 5, 1, 2
+
+So, the output should be,
+
+[3, 4, 5, 1, 2]
+
 Sample Input 1:
+
+1,2,3,4,5
+2
 
 Sample Output 1:
 
+[3, 4, 5, 1, 2]
+
 Sample Input 2:
+
+1,3,5,7,9,11
+25
 
 Sample Output 2:
 
+[3, 5, 7, 9, 11, 1]
+
+Rotate D Times
+
+Let's get started!
+
+Step 1: Understanding the Problem
+Before we begin writing any code, it's important to understand what the problem is asking us to do. In this case, 
+we are given a list of comma-separated integers and a positive integer D. Our task is to rotate the numbers in 
+the list D times to the left and print the rotated list.
+
+Step 2: Input and Output
+The first line of input will be a comma-separated list of integers. The second line of input will be a positive integer D.
+
+The output should be a single line containing the rotated list.
+
+Step 3: Breaking Down the Solution
+Let's take a look at the provided code and break it down into smaller, more manageable chunks.
+
+convert_string_to_int(str_num_list):
+This function takes in a list of strings and converts them to a list of integers.
+
+Reading the Input
+We can read the input using the input() function in Python. We will first read the comma-separated list of 
+integers, and then the positive integer D.
+
+Rotating the List
+We will now rotate the list using the provided code:
+
+Now that we have all the steps, let's put them together into one complete program.
+
 Solution:
+
+def convert_string_to_int(str_num_list):
+    new_list=[]
+    for item in str_num_list:
+        num=int(item)
+        new_list.append(num)
+    return new_list
+str_num_list=input().split(",")
+rotate_times=int(input())
+int_list=convert_string_to_int(str_num_list)
+len_of_list=len(int_list)
+val=rotate_times%len_of_list
+first_part=int_list[0:val]
+second_part=int_list[val:]
+second_part.extend(first_part)
+print(second_part)
 
 _____________________________________________________________________________________________________________
 
-09.
+09. Identify the Mistake - N Greatest Numbers
+
+For this problem, the prefilled code will contain a list. Write a program to print N greatest numbers in a list.
 
 Input:
 
+The input will be a single line containing a positive integer (N).
+
 Output:
+
+The output should be a single line containing a string of N greatest numbers in ascending order.
 
 Explanation:
 
+For example, if the given N is 2, the output should be "8 20", as the two greatest numbers in the list are 8 and 20.
+
 Sample Input 1:
+
+2
 
 Sample Output 1:
 
+8 20
+
 Sample Input 2:
+
+3
 
 Sample Output 2:
 
+7 8 20
+
+let's get started!
+
+Tutorial: Identify the Mistake - N Greatest Numbers
+
+Step 1: Understanding the Problem
+The problem is to write a program that takes in a positive integer N and a list of numbers, and then
+returns a string of N greatest numbers in ascending order. Let's understand the problem statement by an example:
+
+Suppose we have a list of numbers [5, 20, 3, 7, 6, 8] and we want to find the 2 greatest numbers. 
+The program should return a string "8 20".
+
+Step 2: Analyzing the Solution
+The problem has been solved using Python programming language, but there is a mistake in the code. 
+Let's analyze the solution provided.
+
+The solution starts by defining a list of numbers called list_a. The user is then asked to input a positive 
+integer N. The program then sorts the list in ascending order using the sorted() function. The length 
+of the list is then stored in a variable called list_len. 
+
+Next, the code creates a new list called res, which contains the last N elements of the sorted list.
+Finally, the program converts each element in the res list to a string and joins them together with
+a space character to form a single string.
+
+Step 3: Identifying the Mistake
+While the overall approach of the solution is correct, there is a mistake in the program. Can you spot it?
+Let me give you a hint: the mistake is in the last two lines of the code.
+
+Step 4: Fixing the Mistake
+The mistake is that we are modifying the original list list_a while converting elements to strings. 
+This can lead to unexpected results if we need to use the original list again later in the program. 
+To fix this, we should create a new list called res_str to store the string representation of each 
+element in the res list.
+
+Let's modify the last two lines of the code to fix the mistake:
+
+Now that we have all the steps, let's put them together into one complete program.
+
 Solution:
+
+list_a = [5, 20, 3, 7, 6, 8]
+k = int(input())
+list_a=sorted(list_a)
+list_len = len(list_a)
+res = list_a[list_len - k:]
+for i in range(k):
+    res[i] = str(res[i])
+print(" ".join(res))
+
