@@ -1,0 +1,763 @@
+01. List Append
+
+For this problem, the prefilled code will contain a list. Write a program to add the given word at the end of the list.
+
+Input:
+
+The input will be a single line containing a string.
+
+The output should be a single line containing the list by adding the word at the end of the list.
+
+Explanation:
+
+For example, if the given word is "Golf", your code should add the word at the end of the list. So the output should be
+['Cricket', 'Hockey', 'Football', 'Badminton', 'Golf']
+
+Sample Input 1:
+
+Golf
+
+Sample Output 1:
+
+['Cricket', 'Hockey', 'Football', 'Badminton', 'Golf']
+
+Sample Input 2:
+
+Tennis
+
+Sample Output 2:
+
+['Cricket', 'Hockey', 'Football', 'Badminton', 'Tennis']
+
+Outline
+Question: List Append
+Approach
+Step 1: Read the input
+Step 2: Add the input to the list
+Step 3: Print the updated list
+
+Question: List Append
+
+In this problem, you are given a list of sports. Your task is to write a program that adds a given sport 
+to the end of the list and then prints the updated list.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Read the input sport name.
+2.Add the input sport to the end of the list.
+3.Print the updated list.
+4.Step-by-Step Explanation
+
+Step 1: Read the input
+First, we need to read the input sport name. We can use the input() function to read the input and store it in 
+a variable called sport.
+
+Step 2: Add the input to the list
+Now, we need to add the input sport to the end of the list. We can use the append() function to add the spor
+t to the list. The list is already given as sports_list.
+
+Step 3: Print the updated list
+Finally, we need to print the updated list. We can use the print() function to print the list.
+
+Here is the complete solution for the problem:
+
+Soltion:
+
+sports_list = ['Cricket', 'Hockey', 'Football', 'Badminton']
+n=input()
+sports_list.append(n)
+print(sports_list)
+
+__________________________________________________________________________________________________
+
+02. Extend the List
+
+A list L is given in the prefilled code.
+
+Write a program that reads space-separated strings and prints a list obtained by adding given space-separated 
+strings to the end of the list L
+
+L=['5', '7', 'Rohit', 'Virat', 'Dhoni']
+
+Input:
+
+The input will be a single line containing space-separated strings.
+
+Output:
+
+The output should be a single line containing a list obtained by adding given space-separated strings 
+to the end of the given list 
+
+Explanation:
+
+For example, if the given space-separated strings are "Surya Rahul Ishan Gill"
+
+The given prefilled list is L=['5', '7', 'Rohit', 'Virat', 'Dhoni']
+The given strings are "Surya", "Rahul", "Ishan" and "Gill"
+The strings when added to the end of the list L are '5', '7', 'Rohit', 'Virat', 'Dhoni',"Surya", "Rahul", "Ishan" and "Gill"
+
+['5', '7', 'Rohit', 'Virat', 'Dhoni', 'Surya', 'Rahul', 'Ishan', 'Gill']
+
+Sample Input 1:
+
+Surya Rahul Ishan Gill
+
+Sample Output 1:
+
+['5', '7', 'Rohit', 'Virat', 'Dhoni', 'Surya', 'Rahul', 'Ishan', 'Gill']
+
+Sample Input 2:
+
+apple carrot b12
+
+Sample Output 2:
+
+['5', '7', 'Rohit', 'Virat', 'Dhoni', 'apple', 'carrot', 'b12']
+
+Solution:
+
+L = ["5", "7", "Rohit", "Virat", "Dhoni"]
+# write your code here
+s=input().split()
+L.extend(s)
+print(L)
+
+__________________________________________________________________________________________________
+
+03. Insert an Element
+
+For this problem, the prefilled code will contain a list. Write a program to insert a number (N) 
+at the given index (I) location in the list.
+
+Input:
+
+The first line of input will contain an integer (N).
+The second line of input will contain a positive integer (I).
+
+Output:
+
+The output should be a single line containing the list with the number at the given index location.
+
+Explanation:
+
+For example, if the given N is 30 and I is 2, your code should insert 30 in the list at index 2. So the output should be
+
+[10, 20, 30, 40, 50, 60]
+
+Sample Input 1:
+
+30
+2
+
+Sample Output 1:
+
+[10, 20, 30, 40, 50, 60]
+
+Sample Input 2:
+
+70
+6
+
+Sample Output 2:
+
+[10, 20, 40, 50, 60, 70]
+
+Solution:
+
+Outline
+
+Question: Insert an Element
+Approach
+Step 1: Read the input values
+Step 2: Insert the value at the given index
+Step 3: Print the modified list
+
+Question: Insert an Element
+
+In this problem, you are given a list of numbers. Your task is to write a program that inserts a given
+number (N) at a specific index (I) in the list.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+Read the input values for the number (N) and the index (I).
+Insert the number (N) at the given index (I) in the list.
+Print the modified list.
+Step-by-Step Explanation
+
+Step 1: Read the input values
+First, we need to read the input values for the number (N) and the index (I). We can use the input() 
+function to read the input and int() to convert it into an integer.
+
+Step 2: Insert the value at the given index
+Now that we have the input values, we can insert the number (N) at the given index (I) in the list. 
+We can use the insert() function to do this.
+
+Step 3: Print the modified list
+Finally, we need to print the modified list. We can use the print() function to do this.
+
+Here's the complete solution for the problem:
+
+nums_list = [10, 20, 40, 50, 60]
+value = int(input())
+index = int(input())
+
+nums_list.insert(index, value)
+print(nums_list)
+
+__________________________________________________________________________________________________
+
+04. Remove the Last Items
+
+For this problem, the prefilled code will contain a list. Write a program to remove the last N items in the list.
+
+Input:
+
+The input will be a single line containing an integer (N).
+
+Output:
+
+The output should be a single line containing the list without the last N items.
+
+Explanation:
+
+For example, if the given N is 3, your code should remove the last three elements in the list. So the output should be
+
+['Python', 'C', 'Java', 'Ruby', 'C++', 'CSS', 'HTML', 'Bash', 'Perl', 'R', 'Swift']
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+['Python', 'C', 'Java', 'Ruby', 'C++', 'CSS', 'HTML', 'Bash', 'Perl', 'R', 'Swift']
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+['Python', 'C', 'Java', 'Ruby', 'C++', 'CSS', 'HTML', 'Bash', 'Perl', 'R']
+
+Outline
+
+Question: Remove the Last Items
+Approach
+Step 1: Read the input value
+Step 2: Remove the last N items from the list
+Step 3: Print the modified list
+
+Question: Remove the Last Items
+
+In this problem, you are given a list of programming languages. Your task is to remove the last N items 
+from the list. The input will be a single line containing an integer (N), and the output should be a single
+line containing the list without the last N items.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+Read the input value representing the number of items to remove from the list.
+Remove the last N items from the list.
+Print the modified list.
+
+Step-by-Step Explanation
+
+Step 1: Read the input value
+Read the input value representing the number of items to remove from the list. We can use the input() function 
+to read the input and int() to convert it into an integer.
+
+Step 2: Remove the last N items from the list
+We will use a for loop to remove the last N items from the list. Inside the loop, we will use the pop() method
+to remove the last item from the list. We will repeat this process N times.
+
+Step 3: Print the modified list
+After removing the last N items from the list, print the modified list.
+
+Here is the complete solution for the problem:
+
+Solution:
+
+programming_languages = ['Python', 'C', 'Java', 'Ruby', 'C++', 'CSS', 'HTML', 'Bash', 'Perl', 'R', 'Swift', 'SQL', 'PHP', 'JavaScript']
+
+n = int(input())
+for i in range(n):
+    programming_languages.pop()
+print(programming_languages)
+
+__________________________________________________________________________________________________
+
+05. Count the Occurrences
+
+For this problem, the prefilled code will contain a list. Write a program to count all the occurrences 
+of the given number (N) in the list.
+
+Input:
+
+The input will be a single line containing an integer (N).
+
+Output:
+
+The output should be a single line containing the count of all the occurrences of the given number (N) in the list.
+
+Explanation:
+
+For example, if the given N is 5, the output should be 2, as 5 has two occurrences in the list.
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+2
+
+Sample Input 2:
+
+100
+
+Sample Output 2:
+
+3
+
+
+Let's break down the problem into steps:
+
+Step 1: Understanding the problem
+The problem is asking us to count the occurrences of a given number (N) in a list. We will take input from 
+the user as an integer (N) and the list will already be given in the prefilled code. Then, we will count 
+the occurrences of the given number in the list and print the count as output.
+
+Step 2: Taking Input
+We will take input from the user as an integer (N). This will be the number that we need to count the 
+occurrences of in the list. We will use the input() function to take input from the user and then convert 
+it into an integer using the int() function. We will store this value in a variable called number.
+
+Step 3: Counting Occurrences
+Now that we have the input number, we need to count its occurrences in the list. We can use the count() function 
+in Python to do this. This function takes an element as input and returns the number of times that element appears 
+in the list.
+
+Step 4: Printing Output
+Finally, we will print the count of occurrences of the given number in the list. We will use the print() 
+function to display the count on the screen.
+
+Now that we have all the steps, put them together into one complete program to get the desired output__
+
+Solution:
+
+nums_list = [5, 10, 20, 35, 5, 50, 20, 100, 200, 10, 150, 100, 100, 20, 20]
+
+number = int(input())
+count_of_occurrences = nums_list.count(number)
+print(count_of_occurrences)
+
+________________________________________________________________________________________________
+
+06. Find the Indices of Element
+
+A list A is given in the prefilled code.
+
+Write a program that reads a number N and prints the index of the given number N in the list L.
+If there are multiple occurrences of N, print all indices separated by a space.
+
+Input:
+
+The input will be a single line containing an integer representing N.
+
+Output:
+
+The output should be a single line containing space-separated integers representing the indices of of the given number 
+N in the list L
+
+Explanation:
+
+1. For example, if the given number is N = 10
+
+Integers in the list L and their respective indices are,
+
+Numbers    5 4 10 2 3 2 25 15 4 4
+Indices    0 1  2 3 4 5 6  7  8 9
+
+The index of value 10 is 2
+
+The output should be 2.
+
+2. For example, if the given number is N = 2
+
+Integers in the list L and their respective indices are,
+
+Numbers    5 4 10 2 3 2 25 15 4 4
+Indices    0 1  2 3 4 5 6  7  8 9
+
+The index of value 2 are 3 and 5
+
+The output should be 3 and 5.
+
+Sample Input 1:
+
+10
+
+Sample Output 1:
+
+2
+
+Sample Input 2:
+
+2
+
+Sample Output 2:
+
+3 5
+
+Solution:
+
+num_list = [5, 4, 10, 2, 3, 2, 5, 15, 4, 4]
+# write your code here
+number=int(input())
+all_indices=[]
+for index in range(len(num_list)):
+    if number==num_list[index]:
+        all_indices.append(str(index))
+print(' '.join(all_indices))
+
+__________________________________________________________________________________________________
+
+07. Remove All the Occurrences
+
+For this problem, the prefilled code will contain a list. Write a program to remove all the occurrences
+of the given number (N) in a list.
+
+Input:
+
+The input will be a single line containing an integer (N).
+
+Output:
+
+The output should be a single line containing the list without the number (N).
+
+Note: The order of numbers in the output list should be same as in the input list.
+
+Explanation:
+
+For example, if the given N is 5, your code should print the list by removing 5 at all the occurrences. 
+So the output should be
+
+[10, 20, 35, 50, 20, 100, 200, 10, 150, 100, 100]
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+[10, 20, 35, 50, 20, 100, 200, 10, 150, 100, 100]
+
+Sample Input 2:
+
+10
+
+Sample Output 2:
+
+[5, 20, 35, 5, 50, 20, 100, 200, 150, 100, 100]
+
+Let's break down the solution for the coding question into simple steps.
+
+Step 1: Input the number
+The first step is to take an input from the user. This input will be the number that we want to remove 
+from the list. We use the input() function to take the input from the user and then convert it into an 
+integer using the int() function.
+
+Step 2: Count the occurrences of the number in the list
+The next step is to count the number of occurrences of the input number in the list. We use the count()
+function to do this.
+
+Step 3: Remove the number from the list
+Now that we know the number of occurrences of the input number in the list, we can use a loop to remove 
+all occurrences of the number from the list. We use the remove() function inside the loop to remove each
+occurrence of the input number from the list.
+
+Step 4: Print the updated list
+Finally, we print the updated list after removing all occurrences of the input number.
+
+Now that we have all the steps, let's put them together into one complete program and solve the question.
+
+Solution:
+
+nums_list = [5, 10, 20, 35, 5, 50, 20, 100, 200, 10, 150, 100, 100]
+
+number = int(input())
+count_of_occurrences = nums_list.count(number)
+for i in range(count_of_occurrences):
+    nums_list.remove(number)
+print(nums_list)
+
+__________________________________________________________________________________________________
+
+08. Nth Term in Fibonacci Series
+
+Write a program to recursively find the Nth term in the Fibonacci series.
+A Fibonacci sequence is the integer sequence of 0, 1, 1, 2, 3, 5, 8...
+The first two terms are 0 and 1. All other terms are obtained by adding the preceding two terms.
+
+Input:
+
+The input will be a single line containing a positive integer (N).
+
+Output:
+
+The output should be a single line containing the Nth term in the  Fibonacci Series.
+
+Explanation:
+
+For example, if the given N is 5, your code should print the 5th term in the Fibonacci Series.
+
+Term     Number
+0          0
+1          1
+2          1
+3          2
+4          3
+5          5
+
+So the output should be 5.
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+5
+
+Sample Input 2:
+
+8
+
+Sample Output 2:
+
+21
+
+Let's break down the solution for the coding question into simple steps
+
+Step 1: Understanding the Fibonacci Series
+Before we start coding, let's understand what the Fibonacci series is. It is a sequence of numbers where 
+each number is the sum of the preceding two numbers. For example, the first two numbers in the series are
+0 and 1. So the third number is 0+1=1, the fourth number is 1+1=2, and so on. 
+The sequence looks like this: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+
+Step 2: Recursively finding the Nth term
+Now that we know what the Fibonacci series is, let's move on to finding the Nth term in the series. 
+We can use a recursive function to do this. A recursive function is a function that calls itself 
+to solve a problem. Here's how the function works:
+
+If the value of N is less than or equal to 1, return N.
+Otherwise, return the sum of the (N-1)th and (N-2)th terms in the series.
+Here's the code for the recursive function:
+
+Step 3: Taking Input and Printing Output
+Now that we have our recursive function, let's put it to use by taking input from the user and printing 
+the Nth term in the series. We'll use the input() function to take input from the user, and the print() 
+function to print the result.
+
+Now that we have all the steps, let's put them together into one complete program and solve the question.
+
+Solution:
+
+def fibonacci(n):
+    # Complete this function
+    if n<=1:
+        return n
+    return fibonacci(n-1)+fibonacci(n-2)
+
+n = int(input())
+# call the fibonacci function
+result=fibonacci(n)
+print(result)
+
+__________________________________________________________________________________________________
+
+09. N Terms in Fibonacci Series
+
+Write a program to recursively create a list of N Fibonacci terms.
+A Fibonacci sequence is the integer sequence of 0, 1, 1, 2, 3, 5, 8...
+The first two terms are 0 and 1. All other terms are obtained by adding the preceding two terms.
+
+Input:
+
+The first line of input will contain a positive integer (N).
+
+Output:
+
+The output should be a single line containing a list with N Fibonacci terms.
+
+Explanation:
+
+For example, if the given N is 5, your code should print the list of five Fibonacci terms. So the output should be
+
+[0, 1, 1, 2, 3]
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+[0, 1, 1, 2, 3]
+
+Sample Input 2:
+
+8
+
+Sample Output 2:
+
+[0, 1, 1, 2, 3, 5, 8, 13]
+
+Outline
+
+Question: N Terms in Fibonacci Series
+Approach
+Step 1: Define the Fibonacci Function
+Step 2: Create the Fibonacci Series Function
+Step 3: Read Input and Call the Function
+Solution
+
+Question: N Terms in Fibonacci Series
+
+In this coding question, you need to write a program that creates a list of N Fibonacci terms. The Fibonacci 
+sequence is an integer sequence of 0, 1, 1, 2, 3, 5, 8, and so on. The first two terms are 0 and 1, and all
+other terms are obtained by adding the preceding two terms.
+
+For example, if the given N is 5, your code should print the list of five Fibonacci terms: [0, 1, 1, 2, 3].
+
+Approach
+To solve this problem, we will follow these steps:
+
+Define a function to calculate the nth term of the Fibonacci sequence using recursion.
+Create a function to generate the Fibonacci series of N terms.
+Read the input value for N and call the function to generate the Fibonacci series.
+
+Step-by-Step Explanation
+
+Step 1: Define the Fibonacci Function
+First, we need to define a function called fibonacci(n) that calculates the nth term of the Fibonacci sequence 
+using recursion. If n is 0 or 1, the function returns n. Otherwise, the function returns the sum of the previous
+two terms by calling itself with n-1 and n-2.
+
+Step 2: Create the Fibonacci Series Function
+Next, we need to create a function called get_fibonacci_series(n) that generates the Fibonacci series of N terms. 
+We will use a for loop to iterate from 0 to n-1. For each iteration, we will call the fibonacci() function 
+to get the term and append it to the fibonacci_series list.
+
+Step 3: Read Input and Call the Function
+Finally, we need to read the input value for N, call the get_fibonacci_series() function to generate the Fibonacci series, 
+and print the result.
+
+Solution:
+
+def fibonacci(n):
+    # Complete this function to return nth term in fibonacci series
+    if n<=1:
+        return n
+    else:
+        return fibonacci(n-1)+fibonacci(n-2)
+def get_fibonacci_series(n):
+    # Complete this function to return list of n terms of fibonacci series
+    fibonacci_series=[]
+    for i in range(n):
+        term=fibonacci(i)
+        fibonacci_series.append(term)
+    return fibonacci_series
+n = int(input())
+# Call the get_fibonacci_series function
+result=get_fibonacci_series(n)
+print(result)
+
+__________________________________________________________________________________________________
+
+10. List Methods
+
+Consider a list (nums_list = []). Write a program to perform the following commands on the list
+  1. insert I E - insert the integer E at index I
+  2. append E - insert integer E at the end of the list
+  3. pop - remove the last element
+  4. remove E - remove the first occurrence of integer E
+  5. sort - sort the list in ascending order
+  6. print - print the list
+
+Input:
+
+The first line of input will contain an integer (N).
+The next N lines will contain the commands described above to be performed on the list each in a line.
+
+Output:
+
+For each command of type print, print the list on a new line.
+
+Explanation:
+
+Initialize your list and read in the value of N followed by N lines of commands where each command 
+will be of the types listed above. Iterate through each command in order and perform the corresponding 
+operation on your list.
+
+For example, if the given N is 5, read the commands in the next five lines. If the given five commands are
+append 5 - append 5 to the list, nums_list = [5]
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution:
+
+__________________________________________________________________________________________________
+
+11. 
+
+
+Input:
+
+Output:
+
+Explanation:
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution:
+
+__________________________________________________________________________________________________
+
+12. 
+
+
+Input:
+
+Output:
+
+Explanation:
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution:
+
+__________________________________________________________________________________________________
