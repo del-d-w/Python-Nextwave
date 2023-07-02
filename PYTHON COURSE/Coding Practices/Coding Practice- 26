@@ -717,54 +717,226 @@ So the output should be [1, 2, 5]
 
 Sample Input 1:
 
+5
+append 5
+insert 0 2
+append 1
+sort
+print
+
 Sample Output 1:
+
+[1, 2, 5]
 
 Sample Input 2:
 
+7
+print
+append 8
+append 7
+insert 2 1
+remove 8
+pop
+print
+
 Sample Output 2:
 
+[]
+[7]
+
+Outline
+
+Question: List Methods
+Approach
+Step 1: Read the input value
+Step 2: Initialize an empty list
+Step 3: Perform the commands on the list
+Solution
+
+Question: List Methods
+In this coding question, you are given a list nums_list = []. Your task is to write a program that performs 
+various commands on the list. The commands are:
+
+insert I E
+insert the integer E at index I
+append E
+insert integer E at the end of the list
+pop
+remove the last element
+remove E
+remove the first occurrence of integer E
+sort
+sort the list in ascending order
+print
+print the list
+You will be given an integer N, followed by N lines of commands. For each command of type print, print 
+the list on a new line.
+
+Approach
+
+To solve this problem, follow these steps:
+
+Read the input value representing the number of commands N.
+Initialize an empty list nums_list.
+Iterate through each command and perform the corresponding operation on the list.
+
+Step-by-Step Explanation
+
+Step 1: Read the input value
+Read the input value representing the number of commands N. We can use the input() function to read the input
+and int() to convert it into an integer.
+
+Step 2: Initialize an empty list
+Create an empty list called nums_list to store the numbers.
+
+Step 3: Perform the commands on the list
+Iterate through each command using a for loop and perform the corresponding operation on the list.
+
+Split the command using split() method and store it in a variable command.
+Use if-elif statements to check the command type and perform the corresponding operation on the list.
+ 
+Here is the complete solution for the given problem:
+
 Solution:
+
+n = int(input())
+
+nums_list = []
+for i in range(n):
+    command = input().split()
+    if command[0] == 'insert':
+        index = int(command[1])
+        value = int(command[2])
+        nums_list.insert(index, value)
+    elif command[0] == 'append':
+        value = int(command[1])
+        nums_list.append(value)
+    elif command[0] == 'pop':
+        nums_list.pop()
+    elif command[0] == "remove":
+        value = int(command[1])
+        nums_list.remove(value)
+    elif command[0] == "sort":
+        nums_list.sort()
+    elif command[0] == "print":
+        print(nums_list)
 
 __________________________________________________________________________________________________
 
-11. 
+11. Mode of Numbers
 
+Given comma-separated numbers, write a program to find the Mode of the given numbers.
 
-Input:
+Note:
 
-Output:
+Mode is the number that occurs more times than other numbers in the list
 
-Explanation:
+For example, if the given list of numbers 6, 3, 9, 3, 6, 6, 5, 9, 3
 
-Sample Input 1:
+The number 6 occurs 3 times
+The number 3 occurs 3 times
+The number 9 occurs 2 times
+The number 5 occurs 1 times
 
-Sample Output 1:
+The Modes are 6 and 3 as they occured more times than the other numbers in the given list.
 
-Sample Input 2:
+If there are multiple modes, print the mode that occurs first in the given numbers.
 
-Sample Output 2:
-
-Solution:
-
-__________________________________________________________________________________________________
-
-12. 
-
+Among 6 and 3, 6 occurs first in the given numbers.
 
 Input:
 
+The input will be a single line containing comma-separated integers.
+
 Output:
+
+The output should be a single line containing an integer that is the Mode of the given numbers.
 
 Explanation:
 
+1.For example, if the given comma-separated numbers are 1,5,9,1,4,7,5,3,5,6,8,5
+
+The numbers with their respective number of occurrences,
+
+Number            Number of Occurrences
+1                        2
+5                        4
+9                        1
+4                        1
+7                        1
+3                        1
+6                        1
+8                        1
+
+The number 5 occurred 4 times that is more than other numbers occurrences.
+
+The output should be 5.
+
+2.For example, if the given comma-separated numbers are 6,3,9,3,6,6,5,9,3
+
+The numbers with their respective number of occurrences,
+
+Number            Number of Occurrences
+6                        3
+3                        3
+9                        2
+5                        1
+
+The numbers 6 and 3 occurred 3 times that is more than other numbers occurrences.
+
+If there are multiple modes, print the mode that occurs first in the given numbers.
+
+Among 6 and 3, 6 occurs first in the given numbers.
+
+The output should be 6.
+
 Sample Input 1:
+
+1,5,9,1,4,7,5,3,5,6,8,5
 
 Sample Output 1:
 
+5
+
 Sample Input 2:
+
+6,3,9,3,6,6,5,9,3
 
 Sample Output 2:
 
+6
+
 Solution:
 
+numbers_list=input().split(",")
+largest_frequency=0
+mode=0
+for number in numbers_list:
+    each_frequency=numbers_list.count(number)
+    if each_frequency > largest_frequency:
+        largest_frequency=each_frequency
+        mode=number
+print(mode)
+
+"""
+
+n=input().split(',')
+lista=[]
+count={}
+for i in n:
+    lista.append(int(i))
+max_count=0
+for i in lista:
+    if i in count:
+        count[i]+=1 
+    else:
+        count[i]=1
+    if count[i]>max_count:
+        max_count=count[i]
+for i in count:
+    if count[i]==max_count:
+        print(i)
+        break
+
+"""
 __________________________________________________________________________________________________
