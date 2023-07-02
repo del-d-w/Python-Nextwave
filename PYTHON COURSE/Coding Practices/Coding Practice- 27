@@ -1,0 +1,668 @@
+01. Replace the Element
+
+For this problem, the prefilled code will contain a list of tuples. Write a program to replace the last number 
+of each tuple in the list with the given number (N).
+
+Input:
+
+The input will be a single line containing an integer (N).
+
+Output:
+
+The output should be a single line containing the list of tuples with the given number.
+
+Explanation:
+
+For example, if the given N is 50, your code should print the list of tuples by replacing the last number
+of each tuple with 50. So the output should be
+
+[(10, 20, 50), (1, 50), (5, 10, 15, 50)]
+
+Sample Input 1:
+
+50
+
+Sample Ouput 1:
+
+[(10, 20, 50), (1, 50), (5, 10, 15, 50)]
+
+Sample Input 2:
+
+80
+
+Sample Ouput 2:
+
+[(10, 20, 80), (1, 80), (5, 10, 15, 80)]
+
+Outline
+
+Question: Replace the Element
+Approach
+Step 1: Read the input number
+Step 2: Iterate through the list of tuples
+Step 3: Replace the last element of each tuple
+Step 4: Print the updated list of tuples
+
+Question: Replace the Element
+
+In this problem, you are given a list of tuples. Your task is to write a program that replaces the last 
+number of each tuple in the list with a given number (N).
+
+Approach
+To solve this problem, we will follow these steps:
+
+1.Read the input number (N).
+2.Iterate through the list of tuples.
+3.Replace the last element of each tuple with the input number (N).
+4.Print the updated list of tuples.
+
+Step-by-Step Explanation
+
+Step 1: Read the input number
+First, we need to read the input number (N) that will replace the last element of each tuple. We can use 
+the input() function to read the input and int() to convert it into an integer.
+
+Step 2: Iterate through the list of tuples
+Now, we need to iterate through the list of tuples. We can use a for loop to do this. In each iteration, 
+we will access the current tuple and perform the replacement operation.
+
+Step 3: Replace the last element of each tuple
+Inside the for loop, we will replace the last element of the current tuple with the input number (N). 
+To do this, we can use the slicing operation to remove the last element of the tuple and then add the 
+input number (N) as a new element.
+
+After replacing the last element, we will append the updated tuple to a new list called new_list.
+
+Step 4: Print the updated list of tuples
+Finally, after iterating through all the tuples and replacing the last element, we will print the updated list of tuples.
+
+Here is the complete solution for the problem:
+
+Solution:
+
+num_list = [(10, 20, 30), (1, 2), (5, 10, 15, 45)]
+
+n = int(input())
+
+new_list = []
+for tuple_a in num_list:
+    update_tuple = tuple_a[:-1] + (n,)
+    new_list.append(update_tuple)
+
+print(new_list)
+
+_______________________________________________________________________________________________________
+
+02. Remove Duplicates
+
+Write a program to remove duplicate numbers in the list.
+
+Input:
+
+The input will be a single line containing space-separated integers.
+
+Output:
+
+The output should be a single line containing the list without duplicates in ascending order.
+
+Explanation:
+
+For example, if the given string is "5 10 15 20 10 30 15", as the numbers 10 and 15 are repeated more than once, 
+your code should remove the duplicate numbers. So the output should be
+
+[5, 10, 15, 20, 30]
+
+Sample Input 1:
+
+5 10 15 20 10 30 15
+
+Sample Output 1:
+
+[5, 10, 15, 20, 30]
+
+Sample Input 2:
+
+-18 10 20 20 50 40 -18 50 60 20
+
+Sample Output 2:
+
+[-18, 10, 20, 40, 50, 60]
+
+Outline
+
+Question: Remove Duplicates
+Approach
+Step 1: Read the input and split the numbers
+Step 2: Create a new list and convert the numbers to integers
+Step 3: Remove duplicates using a set
+Step 4: Sort the list and print the result
+
+Question: Remove Duplicates
+
+Write a program to remove duplicate numbers in the list.
+
+Input: The input will be a single line containing space-separated integers.
+
+Output: The output should be a single line containing the list without duplicates in ascending order.
+
+Explanation: For example, if the given string is "5 10 15 20 10 30 15", as the numbers 10 and 15 are 
+repeated more than once, your code should remove the duplicate numbers. 
+So the output should be [5, 10, 15, 20, 30].
+
+Approach
+
+1.Read the input and split the numbers into a list.
+2.Create a new list and convert the numbers to integers.
+3.Remove duplicates using a set.
+4.Sort the list and print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the numbers
+Read the input value representing the space-separated integers. We can use the input() function to read 
+the input and split() function to split the input into a list of strings.
+
+Step 2: Create a new list and convert the numbers to integers
+Create an empty list called new_list. Then, use a for loop to iterate through the num_list. For each item 
+in the num_list, convert the item to an integer using the int() function and append it to the new_list.
+
+Step 3: Remove duplicates using a set
+To remove duplicates from the new_list, we can use a set. A set is a collection of unique elements. 
+Convert the new_list to a set using the set() function, and then convert it back to a list using the list() function.
+
+Step 4: Sort the list and print the result
+Now, sort the num_list in ascending order using the sort() function. Finally, print the sorted list without duplicates.
+
+Solution:
+
+num_list = input().split()
+
+new_list = []
+for item in num_list:
+    num = int(item)
+    new_list.append(num)
+
+new_set = set(new_list)
+num_list = list(new_set)
+num_list.sort()
+print(num_list)
+
+_______________________________________________________________________________________________________________
+
+03. Remove Multiple Items
+
+For this problem, the prefilled code will contain a set. Write a program to remove a list of numbers if present in the set.
+
+Input:
+
+The input will be a single line containing space-separated integers.
+
+Output:
+
+The output should be a single line containing the list of remaining numbers in ascending order.
+
+Explanation:
+
+For example, if the given string is "20 40 80", your code should remove the numbers(20, 40, 80) from the set.
+So the output should be
+
+[10, 30, 50, 60, 70, 90, 100]
+
+Sample Input 1:
+
+20 40 80
+
+Sample Output 1:
+
+[10, 30, 50, 60, 70, 90, 100]
+
+Sample Input 2:
+
+10 90
+
+Sample Output 2:
+
+[20, 30, 40, 50, 60, 70, 80, 100]
+
+Outline
+
+Question: Remove Multiple Items
+Approach
+Step 1: Read the input numbers
+Step 2: Remove the input numbers from the set
+Step 3: Sort and print the remaining numbers
+
+Question: Remove Multiple Items
+In this problem, you are given a set of numbers. Your task is to remove a list of numbers from the set 
+if they are present in it. You will receive a single line of input containing space-separated integers. 
+The output should be a single line containing the list of remaining numbers in ascending order.
+So the output should be:
+
+For example, if the given input is "20 40 80", your code should remove the numbers (20, 40, 80) from the set.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Read the input numbers as a list of strings.
+2.Remove the input numbers from the set if they are present.
+3.Sort the remaining numbers in the set.
+4.Print the sorted list of remaining numbers.
+
+Step-by-Step Explanation
+
+Step 1: Read the input numbers
+First, we need to read the input numbers as a list of strings. We can use the input() function to read the 
+input and split() function to split the input string into a list of strings.
+
+Step 2: Remove the input numbers from the set
+Now, we will iterate through the list of input numbers and remove them from the set if they are present. 
+We can use a for loop to iterate through the list and the discard() function to remove the number from the set.
+
+Here, we first convert the string item to an integer num using the int() function. Then, we use the discard() 
+function to remove the number num from the set num_set. If the number is not present in the set, the discard() 
+function does nothing.
+
+Step 3: Sort and print the remaining numbers
+After removing the input numbers from the set, we need to sort the remaining numbers in ascending order.
+We can convert the set to a list and use the sort() function to sort the list.
+
+Finally, we can print the sorted list of remaining numbers.
+
+Here is the complete solution for the problem:
+
+Solution:
+
+num_set = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100}
+
+list_a = input().split()
+
+for item in list_a:
+    num = int(item)
+    num_set.discard(num)
+
+nums_list = list(num_set)
+nums_list.sort()
+print(nums_list)
+
+_______________________________________________________________________________________________________________
+
+04. Common Elements
+
+Given two lines of comma-separated integers, write a program to print the numbers that are present in both of the lines.
+
+Input:
+
+The first line of input will contain comma-separated integers.
+The second line of input will contain comma-separated integers.
+
+Output:
+
+The output should be a single line containing the list of common elements in both lists sorted in ascending order.
+
+Explanation:
+
+For example, if the given two strings are "1,2,3,4,5,6" and "2,4,5,9,10", your code should print the 
+list of common elements. So the output should be
+
+[2, 4, 5]
+
+Sample Input 1:
+
+1,2,3,4,5,6
+2,4,5,9,10
+
+Sample Output 1:
+
+[2, 4, 5]
+
+Sample Input 2:
+
+20,5,-45,100,30
+98,-45,20,5,35
+
+Sample Output 2:
+
+[-45, 5, 20]
+
+Outline
+
+Question: Common Elements
+Approach
+Step 1: Read the input and convert it into lists
+Step 2: Convert the lists into sets
+Step 3: Find the common elements
+Step 4: Sort the common elements and print the result
+
+Question: Common Elements
+Given two lines of comma-separated integers, write a program to print the numbers that are present in both of the lines.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Read the input and convert it into lists of integers.
+2.Convert the lists into sets.
+3.Find the common elements between the two sets.
+4.Sort the common elements and print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and convert it into lists
+First, we need to read the input lines and convert them into lists of integers. We can use the input() 
+function to read the input and split() function to split the input by commas.
+
+Now, we need to convert the lists of strings into lists of integers. We can create a function called 
+convert_string_to_int() that takes a list of strings as input and returns a list of integers.
+
+Now, let's use this function to convert our input lists into lists of integers.
+
+Step 2: Convert the lists into sets
+Now that we have our lists of integers, we need to convert them into sets. We can use the set() function to do this.
+
+Step 3: Find the common elements
+Now that we have our sets, we can find the common elements between them. We can use the intersection() 
+function to do this.
+
+Step 4: Sort the common elements and print the result
+Now that we have our common elements, we need to sort them in ascending order and print the result. 
+We can use the sort() function to sort the list and the print() function to print the result.
+
+Here is the complete solution for the problem:
+
+Solution:
+
+def convert_string_to_int(num_list):
+    new_list = []
+    for item in num_list:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+list_a = input().split(",")
+list_b = input().split(",")
+
+list_a = convert_string_to_int(list_a)
+list_b = convert_string_to_int(list_b)
+
+set_a = set(list_a)
+set_b = set(list_b)
+
+result_set = set_a.intersection(set_b)
+result_list = list(result_set)
+result_list.sort()
+print(result_list)
+
+_______________________________________________________________________________________________________________
+
+05. Multiplies of 2 and 3
+
+Given an integer N. Write a program to create two sets with N multiples of 2 and 3 and print the following
+
+  1. All the multiples of 2 but not the multiplies of 3
+  2. Uncommon multiples of 2 and 3
+
+Input:
+
+The input will be a single line containing a positive integer (N).
+
+Output:
+
+The first line of output should be a single line containing a list with all the multiples of 2 but not 
+the multiplies of 3 in ascending order.
+
+The second line of output should be a single line containing a list with uncommon multiples of 2 and 3 in ascending order.
+
+Explanation:
+
+For example, if the given N is 5, the first 5 multiples of 2 and 3 are the following
+multiples_of_2 = {2, 4, 6, 8, 10}
+multiplies_of_3 = {3, 6, 9, 12, 15}
+
+The first line of output should contain a list of all the multiples of 2 but not the multiples 
+of 3, as 6 is a multiple of 3, print the list without 6. So the output should be
+
+[2, 4, 8, 10]
+
+The second line of output should contain a list of uncommon multiples of 2 and 3, as 6 is common 
+in both the sets print a list with all the multiples of 2 and 3 without 6. So the output should be
+
+[2, 3, 4, 8, 9, 10, 12, 15]
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+[2, 4, 8, 10]
+[2, 3, 4, 8, 9, 10, 12, 15]
+
+Sample Input 2:
+
+10
+
+Sample Output 2:
+
+[2, 4, 8, 10, 14, 16, 20]
+[2, 3, 4, 8, 9, 10, 14, 15, 16, 20, 21, 24, 27, 30]
+
+Tutorial: Multiplies of 2 and 3
+
+Lets try to breakdown the solution for the coding question "Multiplies of 2 and 3" into simple steps
+
+Step 1: Understanding the Problem
+Before we start coding, let's try to understand the problem. The problem statement says that we need to
+create two sets with N multiples of 2 and 3, and then print out the following subsets:
+
+1. All the multiples of 2 but not the multiples of 3
+2. Uncommon multiples of 2 and 3
+
+For example, if N is 5, the first 5 multiples of 2 and 3 are as follows:
+multiples_of_2 = {2, 4, 6, 8, 10}
+multiples_of_3 = {3, 6, 9, 12, 15}
+
+The first subset should contain all the multiples of 2 but not the multiples of 3, which would be:
+[2, 4, 8, 10]
+
+The second subset should contain all the uncommon multiples of 2 and 3, which would be:
+[2, 3, 4, 8, 9, 10, 12, 15]
+
+Now that we understand the problem, let's start coding!
+
+Step 2: Writing the Code
+The first thing we need to do is to get the value of N from the user. We will use the input() function to get 
+the input from the user and convert it to an integer using the int() function. We will then create two empty 
+sets to hold the multiples of 2 and 3.
+
+Next, we will use a loop to generate the multiples of 2 and 3. We will iterate from 1 to N and multiply each number 
+by 2 and 3 to generate the multiples. We will then add these multiples to their respective sets using the add() method.
+
+Now, we need to generate the first subset - all the multiples of 2 but not the multiples of 3. We can do this 
+by using the difference() method to find the difference between the two sets. This will give us all the elements
+that are in multiples_of_2 but not in multiples_of_3. We will then convert this set to a list and sort 
+it in ascending order.
+
+Finally, we can print out the first subset using the print() function.
+
+Next, we need to generate the second subset - all the uncommon multiples of 2 and 3. We can do this by using the 
+symmetric_difference() method to find the symmetric difference between the two sets. This will give us all the 
+elements that are in either multiples_of_2 or multiples_of_3, but not in both. We will then convert this set to 
+a list and sort it in ascending order.
+
+Finally, we can print out the second subset using the print() function.
+Now that we have all the steps to solve the "Multiples of 2 and 3" problem, put them togather and solve the question.
+
+Solution:
+
+n = int(input())
+
+multiples_of_2 = set()
+multiples_of_3 = set()
+
+for i in range(1, n+1):
+    multiples_of_2.add(2*i)
+    multiples_of_3.add(3*i)
+    
+diff = multiples_of_2.difference(multiples_of_3)
+diff = list(diff)
+diff.sort()
+
+print(diff)
+
+symmetric_diff = multiples_of_2.symmetric_difference(multiples_of_3)
+symmetric_diff = list(symmetric_diff)
+symmetric_diff.sort()
+
+print(symmetric_diff)
+
+_______________________________________________________________________________________________________________
+
+06. Identify the Mistake - Convert a List to Tuple
+
+Write a program to convert a list into a tuple.
+
+Input:
+
+The input will be a single line containing the comma-separated integers.
+
+Output:
+
+The output should be a single line containing the tuple with the list elements.
+
+Explanation:
+
+For example, if the given string is "5,10,15,20,25,30", your code should print the tuple
+with the numbers present in the given string. So the output should be
+
+(5, 10, 15, 20, 25, 30)
+
+Sample Input 1:
+
+5,10,15,20,25,30
+
+Sample Output 1:
+
+(5, 10, 15, 20, 25, 30)
+
+Sample Input 2:
+
+-18,10,20,50,40
+
+Sample Output 2:
+
+(-18, 10, 20, 50, 40)
+
+Tutorial: Convert a List to Tuple in Python
+
+In this tutorial, you will learn how to convert a list into a tuple in Python. We will break down the solution
+into simple steps and explain each part in easy-to-understand language.
+
+Step 1: Get the input
+First, let's get the input from the user. We will use the input() function to read a line of text, which is 
+a string containing comma-separated integers.
+
+Step 2: Split the string
+Now, let's split the string into a list of strings using the split() function. We will use a comma as the delimiter.
+
+Step 3: Initialize a variable for index
+Before we start converting each element of the list to an integer, let's initialize a variable to keep track 
+of the index we are currently working on.
+
+Step 4: Convert strings to integers
+Next, we will use a for loop to go through each element in the list. We will convert each element from a 
+string to an integer using the int() function. After converting, we will replace the original string with
+the integer value in the list and increase the index by 1.
+
+Step 5: Convert the list to a tuple
+Now that we have a list of integers, we can convert it into a tuple. We will use the tuple() function to do this.
+
+Step 6: Print the result
+Finally, we will print the tuple containing the integers. We can simply use the print() function to display the result.
+
+Now that we have all the steps, let's put them together into one complete program and solve the question.
+
+Solution:
+
+str_a = input()
+a = str_a.split(",")
+i = 0
+for item in a:
+    a[i] = int(item)
+    i += 1
+print(tuple(a))
+
+_______________________________________________________________________________________________________________
+
+07. Identify the Mistake - Add an Item to Set
+
+For this problem, the prefilled code will contain a set. Write a program to add an word W to the set.
+
+Input:
+
+The input will be a single line containing a string (W).
+
+Output:
+
+The output should be a single line containing the list in ascending order.
+
+Explanation:
+
+For example, if the given word W is "pen", your code should add W to the set. So the output should be
+
+["pen", "pencil"]
+
+Sample Input 1:
+
+pen
+
+Sample Output 1:
+
+["pen", "pencil"]
+
+Sample Input 2:
+
+notepad
+
+Sample Output 2:
+
+['notepad', 'pencil']
+
+Tutorial: Identify the Mistake - Add an Item to Set
+
+In this tutorial, you will learn how to add an item to a set in Python. We will go through the steps one by one,
+so you can easily understand the process. Let's get started!
+
+Step 1: Create a set with a single item
+First, we need to create a set. In our example, we'll start with a set containing just one item: "pencil". 
+Here's the code to do that:
+
+Step 2: Get the input word from the user
+Now, we need to get the input word (W) from the user. We can use the input() function to do this. Here's the code:
+
+Step 3: Add the input word to the set
+Next, we'll add the input word to our set. We can use the update() method to add an item to the set. But first, 
+we need to put the word inside a list or another set, because the update() method only accepts lists or sets
+as its argument. Here's the code:
+
+Step 4: Convert the set to a list and sort it
+We want to display the items in the set in ascending order. To do this, we first need to convert the set to a list.
+Then, we can use the sort() method to sort the list. Here's the code:
+
+Step 5: Print the sorted list
+Finally, we can print the sorted list to display the output. Here's the code:
+
+Now that we have all the steps, let's put them together into one complete program and solve the question.
+
+Solution:
+
+set_a = {"pencil"}
+
+word = input()
+set_a.update([word])
+
+list_a = list(set_a)
+list_a.sort()
+print(list_a)
+
+_______________________________________________________________________________________________________________
