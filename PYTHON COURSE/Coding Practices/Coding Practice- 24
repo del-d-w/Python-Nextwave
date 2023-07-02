@@ -1141,22 +1141,90 @@ print(max_of_digits)
 
 __________________________________________________________________________________________________________
 
-12.
+12. Identify The Mistake - Sort and Square the List It
+
+Write a program to print the square of given list numbers in ascending order.
 
 Input:
 
+The input will be a single line containing the comma-separated integers.
+
 Output:
+
+The output should be a single line containing the list with the square of the numbers in ascending order.
 
 Explanation:
 
+For example, if the given string is "2, 4, 1, 3, 5", your code should print the square of the numbers
+in ascending order. So the output should be
+
+[1, 4, 9, 25]
+
 Sample Input 1:
+
+2,4,1,3,5
 
 Sample Output 1:
 
+[1, 4, 9, 16, 25]
+
 Sample Input 2:
+
+2,3,-1,5
 
 Sample Output 2:
 
+[1, 4, 9, 25]
+
+Outline
+
+Question: Identify The Mistake - Sort and Square the List It
+Approach
+Step 1: Read the input and split the numbers
+Step 2: Calculate the square of each number
+Step 3: Sort the squared numbers
+Step 4: Print the sorted squared numbers
+
+Question: Identify The Mistake - Sort and Square the List It
+
+Write a program to print the square of given list numbers in ascending order. The input will be a 
+single line containing the comma-separated integers. The output should be a single line containing
+the list with the square of the numbers in ascending order.
+
+For example, if the given string is "2, 4, 1, 3, 5", your code should print the square of the numbers
+in ascending order. So the output should be:
+
+Approach
+
+Read the input and split the numbers by comma.
+Calculate the square of each number in the list.
+Sort the squared numbers in ascending order.
+Print the sorted squared numbers.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the numbers
+Read the input using the input() function.
+Split the input string by comma using the split() function.
+
+Step 2: Calculate the square of each number
+Create an empty list called list_x.
+Use a for loop to iterate through each number in list_a.
+Calculate the square of each number using int(num)**2 and add it to list_x.
+
+Step 3: Sort the squared numbers
+Sort the squared numbers in list_x using the sorted() function.
+
+Step 4: Print the sorted squared numbers
+Print the sorted squared numbers using the print() function.
+
 Solution:
+
+list_a=input()
+list_x = list_a.split(',')
+for num in range (len(list_x)):
+    list_x[num]= int(list_x[num])**2
+
+print(sorted(list_x))
 
 __________________________________________________________________________________________________________
