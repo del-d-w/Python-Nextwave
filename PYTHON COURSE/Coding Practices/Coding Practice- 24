@@ -1,0 +1,1114 @@
+01.
+
+Given space-separated numbers, write a program to print the sum of the given numbers.
+
+Input:
+
+The input will be a single line containing space-separated integers.
+
+Output:
+
+The output should be a single line containing an integer that is the sum of the given numbers.
+
+Explanation:
+
+For example, if the given space-separated numbers are 3 4 7 8
+
+The given numbers are 3,4,7 and 8
+
+The sum of 3,4,7 and 8 is 22 (3 + 4 + 7 + 8 = 22)
+
+The output should be 22.
+
+Sample Input 1:
+
+3 4 7 8
+
+Sample Output 1:
+
+22
+
+Sample Input 2:
+
+23 48 69 77 95
+
+Sample Output 2:
+
+312
+
+Outline
+
+Question: Sum of Numbers in the List
+Approach
+Step 1: Read the input and split the numbers
+Step 2: Convert the numbers to integers and store them in a new list
+Step 3: Calculate the sum of the numbers in the list
+Step 4: Print the sum of the numbers
+
+Question: Sum of Numbers in the List
+Given space-separated numbers, write a program to print the sum of the given numbers.
+
+Input
+The input will be a single line containing space-separated integers.
+
+Output
+The output should be a single line containing an integer that is the sum of the given numbers.
+
+Explanation
+For example, if the given space-separated numbers are 3 4 7 8,
+
+The given numbers are 3, 4, 7, and 8.
+The sum of 3, 4, 7, and 8 is 22. (3 + 4 + 7 + 8 = 22)
+The output should be 22.
+
+Approach
+To solve this problem, we will follow these steps:
+
+Read the input and split the numbers.
+Convert the numbers to integers and store them in a new list.
+Calculate the sum of the numbers in the list.
+Print the sum of the numbers.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the numbers
+
+First, we need to read the input line containing space-separated integers. We can use the input() function 
+to read the input. Then, we will use the split() function to split the input line into a list of strings.
+
+Step 2: Convert the numbers to integers and store them in a new list
+
+Now, we will create a new empty list called new_list. We will use a for loop to iterate through each number 
+in the numbers_list. Inside the loop, we will convert each number from a string to an integer using the int() 
+function. Then, we will add the converted integer to the new_list.
+
+Step 3: Calculate the sum of the numbers in the list
+
+After converting all the numbers to integers and storing them in the new_list, we can calculate the sum 
+of the numbers using the sum() function.
+
+PYTHON
+Step 4: Print the sum of the numbers
+
+Finally, we will print the sum of the numbers using the print() function.
+
+Here is the complete solution for the problem:
+
+Solution:
+
+numbers_list = input().split()
+new_list = []
+
+for each_number in numbers_list:
+    number = int(each_number)
+    new_list += [number]
+    
+sum_of_numbers = sum(new_list)
+
+print(sum_of_numbers)
+
+__________________________________________________________________________________________________________
+
+02. Largest Number in the List - 2
+
+Write a program to print the largest number in the list.
+
+Input:
+
+The input will be a single line containing the comma-separated integers.
+
+Output:
+
+The output should be a single line containing the largest number in the list.
+
+Explanation:
+
+For example, if the given string is "2,4,-1,5", your code should print the largest number in the list. 
+So the output should be 5.
+
+Sample Input 1:
+
+2,3,-1,5
+
+Sample Output 1:
+
+5
+
+Sample Input 2:
+
+30,52,24,19
+
+Sample Output 2:
+
+52
+
+Outline
+
+Question: Largest Number in the List - 2
+Approach
+Step 1: Read the input and split the numbers
+Step 2: Convert the numbers to integers
+Step 3: Sort the list of numbers
+Step 4: Find the largest number and print it
+
+Question: Largest Number in the List - 2
+
+Write a program to print the largest number in the list. The input will be a single line containing the 
+comma-separated integers. The output should be a single line containing the largest number in the list.
+
+For example, if the given string is "2,4,-1,5", your code should print the largest number in the list. 
+So the output should be 5.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+Read the input and split the numbers.
+Convert the numbers to integers.
+Sort the list of numbers.
+Find the largest number and print it.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the numbers
+
+First, we need to read the input, which is a single line containing comma-separated integers. We can use the input() 
+function to read the input. Then, we will split the input string into a list of numbers using the split() function
+with a comma (,) as the separator.
+
+Step 2: Convert the numbers to integers
+
+Now, we have a list of numbers as strings. We need to convert each number in the list to an integer. 
+We can use a for loop to iterate through the list and the int() function to convert each number to an integer.
+
+Step 3: Sort the list of numbers
+
+Next, we need to sort the list of numbers in ascending order. We can use the sorted() function to sort the list.
+
+Step 4: Find the largest number and print it
+
+Finally, we can find the largest number in the sorted list by selecting the last element of the list 
+(since it is sorted in ascending order). We can use the index -1 to access the last element of the list.
+Then, we will print the largest number using the print() function.
+
+Here is the complete solution for the problem:
+
+Solution:
+
+numbers = input()
+nums_list = numbers.split(",")
+
+length_of_nums_list = len(nums_list)
+for i in range(length_of_nums_list):
+    nums_list[i] = int(nums_list[i])
+
+nums_list = sorted(nums_list)
+largest_number = nums_list[-1]
+print(largest_number)
+
+__________________________________________________________________________________________________________
+
+03. Smallest Number in the List - 2
+
+Write a program to print the smallest number in the list.
+
+Input:
+
+The input will be a single line containing the comma-separated integers.
+
+Output:
+
+The output should be a single line containing the smallest number in the list.
+
+Explanation:
+
+For example, if the given string is "2,4,-1,5", your code should print the smallest number in the list. 
+So the output should be -1.
+
+Sample Input 1:
+
+2,3,-1,5
+
+Sample Output 1:
+
+-1
+
+Sample Input 2:
+
+30,52,24,19
+
+Sample Output 2:
+
+19
+
+Outline
+
+Question: Smallest Number in the List - 2
+
+Approach
+Step 1: Read the input and split the numbers
+Step 2: Convert the numbers to integers
+Step 3: Sort the list of numbers
+Step 4: Print the smallest number
+
+Question: Smallest Number in the List - 2
+
+Write a program to print the smallest number in the list.
+
+Input: The input will be a single line containing the comma-separated integers.
+
+Output: The output should be a single line containing the smallest number in the list.
+
+Explanation: For example, if the given string is "2,4,-1,5", your code should print the smallest number in the list. 
+So the output should be -1.
+
+Approach
+
+Read the input and split the numbers by comma.
+Convert the numbers to integers.
+Sort the list of numbers.
+Print the smallest number.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the numbers
+
+First, we need to read the input which is a single line containing comma-separated integers. We can use the input()
+function to read the input. Then, we need to split the numbers by comma using the split() function.
+
+Step 2: Convert the numbers to integers
+
+Now, we have a list of numbers as strings. We need to convert them to integers. We can use a for loop to iterate
+through the list and the int() function to convert each number to an integer.
+
+Step 3: Sort the list of numbers
+
+After converting the numbers to integers, we need to sort the list to find the smallest number. We can use the sorted() 
+function to sort the list.
+
+Step 4: Print the smallest number
+
+Now that the list is sorted, the smallest number is the first element in the list. We can print it using the print() 
+function.
+
+Solution:
+
+numbers = input()
+nums_list = numbers.split(",")
+
+length_of_nums_list = len(nums_list)
+for i in range(length_of_nums_list):
+    nums_list[i] = int(nums_list[i])
+
+nums_list = sorted(nums_list)
+smallest_number = nums_list[0]
+print(smallest_number)
+
+__________________________________________________________________________________________________________
+
+04. Kth Largest Number in the List
+
+Write a program to print the Kth largest number in the list.
+
+Input:
+
+The first line of input will contain comma-separated integers.
+The second line of input will contain an integer (K).
+
+Output:
+
+The output should be a single line containing the Kth largest number in the list.
+
+Explanation:
+
+For example, if the given string is "2,3,-1,5" and K is 2, your code should print the second largest number in the list. 
+So the output should be 3.
+
+Sample Input 1:
+
+2,3,-1,5
+2
+
+Sample Output 1:
+
+3
+
+Sample Input 2:
+
+30,52,24,19
+1
+
+Sample Output 2:
+
+52
+
+Outline
+
+Question: Kth Largest Number in the List
+Approach
+Step 1: Read the input values
+Step 2: Convert the input string into a list of integers
+Step 3: Sort the list of integers
+Step 4: Find the Kth largest number and print it
+
+Question: Kth Largest Number in the List
+
+Write a program to print the Kth largest number in the list.
+
+Input:
+
+The first line of input will contain comma-separated integers.
+The second line of input will contain an integer (K).
+
+Output:
+
+The output should be a single line containing the Kth largest number in the list.
+
+Explanation:
+
+For example, if the given string is "2,3,-1,5" and K is 2, your code should print the second largest number 
+in the list. So the output should be 3.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+Read the input values (comma-separated integers and K).
+Convert the input string into a list of integers.
+Sort the list of integers.
+Find the Kth largest number in the sorted list and print it.
+
+Step-by-Step Explanation
+
+Step 1: Read the input values
+Read the input value representing the comma-separated integers. We can use the input() function to read the input.
+Read the input value representing K. We can use the input() function to read the input and int() to convert it
+into an integer.
+
+Step 2: Convert the input string into a list of integers
+Split the input string numbers using the split() function with a comma (,) as the separator. This will give
+us a list of strings.
+
+Find the length of the list using the len() function.
+Convert each string in the list to an integer using a for loop and the int() function.
+
+Step 3: Sort the list of integers
+Sort the list of integers using the sorted() function.
+
+Step 4: Find the Kth largest number and print it
+Find the Kth largest number in the sorted list by using the index -k.
+Print the Kth largest number using the print() function.
+
+Solution:
+
+numbers = input()
+k = int(input())
+
+nums_list = numbers.split(",")
+
+length_of_nums_list = len(nums_list)
+for i in range(length_of_nums_list):
+    nums_list[i] = int(nums_list[i])
+
+nums_list = sorted(nums_list)
+kth_largest_number = nums_list[-k]
+print(kth_largest_number)
+
+__________________________________________________________________________________________________________
+
+05. Largest Number in the List - 3
+
+Given comma-separated numbers and an index I, write a program to print the Largest number 
+among the numbers from the given index I to the end of the list.
+
+Input:
+
+The first line of input contains comma-separated integers.
+The second line of input contains an integer representing I.
+
+Output:
+
+The output should be a single line containing an integer that is the Largest number among the numbers from 
+the given index I to the end of the list.
+
+Explanation:
+
+For example, if the given comma-separated numbers are 10,7,2,5 and the index is I = 1
+
+Numbers    10 7 2 5
+Indices     0 1 2 3
+
+The numbers from index 1 are 7, 2 and 5
+
+The Largest number among the numbers from index 1 is 7.
+
+The output should be 7
+
+Sample Input 1:
+
+10,7,2,5
+1
+
+Sample Output 1:
+
+7
+
+Sample Input 2:
+
+94,39,63,41,56,80,74
+2
+
+Sample Output 2:
+
+80
+
+Outline
+
+Question: Largest Number in the List - 3
+Approach
+Step 1: Read the input and convert it into a list of integers
+Step 2: Extract the numbers from the given index to the end of the list
+Step 3: Find the largest number and print it
+
+Question: Largest Number in the List - 3
+
+Given comma-separated numbers and an index I, write a program to print the Largest number among the numbers 
+from the given index I to the end of the list.
+
+Approach
+
+To solve this problem, we can follow these steps:
+
+Read the input and convert it into a list of integers.
+Extract the numbers from the given index to the end of the list.
+Find the largest number among the extracted numbers and print it.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and convert it into a list of integers
+
+First, we need to read the input, which consists of comma-separated numbers and an index I. We can use the 
+input() function to read the input and split() function to separate the numbers. Then, we need to convert
+each number into an integer and store them in a list.
+
+Step 2: Extract the numbers from the given index to the end of the list
+
+Now that we have the list of integers, we need to extract the numbers from the given index I to the end of 
+the list. We can use list slicing to achieve this.
+
+Step 3: Find the largest number and print it
+
+Finally, we need to find the largest number among the extracted numbers. We can use the max() function 
+to find the largest number. Then, we print the largest number.
+
+Here's the complete solution for the problem:
+
+Solution:
+
+input_list = input().split(",")
+index = int(input())
+
+numbers_list = []
+
+for each_number in input_list:
+    number = int(each_number)
+    numbers_list += [number]
+
+numbers_from_index = numbers_list[index : ]
+largest_number = max(numbers_from_index)
+
+print(largest_number)
+
+__________________________________________________________________________________________________________
+
+06. Sort Numbers in the List
+
+Given comma-separated numbers, write a program to print a list containing the given numbers in Ascending order.
+
+Input:
+
+The input will be a single line containing comma-separated integers.
+
+Output:
+
+The output should be a single line containing a list that has the given numbers in Ascending order.
+
+Explanation:
+
+For example, if the given comma-separated numbers are 7, 10, 5, 1
+
+The given numbers are 7, 10, 5 and 1
+
+The Ascending order of the given numbers is 1, 5, 7 and 10
+
+The output should be,
+
+[1, 5, 7, 10]
+
+Sample Input 1:
+
+7,10,5,1
+
+Sample Output 1:
+
+[1, 5, 7, 10]
+
+Sample Input 2:
+
+-2,-1,-3,-7,-9
+
+Sample Output 2:
+
+[-9, -7, -3, -2, -1]
+
+Outline
+
+Question: Sort Numbers in the List
+Approach
+Step 1: Read the input and split the numbers
+Step 2: Convert the numbers to integers and store them in a new list
+Step 3: Sort the list in ascending order
+Step 4: Print the sorted list
+
+Question: Sort Numbers in the List
+
+Given comma-separated numbers, write a program to print a list containing the given numbers in Ascending order.
+
+Input
+
+The input will be a single line containing comma-separated integers.
+
+Output
+
+The output should be a single line containing a list that has the given numbers in Ascending order.
+
+Approach
+
+Read the input and split the numbers using a comma.
+Convert the numbers to integers and store them in a new list.
+Sort the list in ascending order.
+Print the sorted list.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the numbers
+
+First, we need to read the input which is a single line containing comma-separated integers. We can use the input() 
+function to read the input. Then, we can use the split() function to split the input using a comma.
+
+Step 2: Convert the numbers to integers and store them in a new list
+
+Now, we need to convert the numbers in the numbers_list to integers and store them in a new list called new_list. 
+We can use a for loop to iterate through the numbers_list and the int() function to convert each number to an integer.
+
+Step 3: Sort the list in ascending order
+
+Next, we need to sort the new_list in ascending order. We can use the sorted() function to do this.
+
+Step 4: Print the sorted list
+
+Finally, we need to print the sorted_list. We can use the print() function to do this.
+
+Solution:
+
+numbers_list = input().split(",")
+new_list = []
+
+for each_number in numbers_list:
+    number = int(each_number)
+    new_list += [number]
+
+sorted_list = sorted(new_list)
+
+print(sorted_list)
+
+__________________________________________________________________________________________________________
+
+07. Sort Numbers in the List - 2
+
+Given comma-separated numbers, write a program to print a list containing given numbers in Descending order.
+
+Input:
+
+The input will be a single line containing comma-separated integers.
+
+Output:
+
+The output should be a single line containing a list that has the given numbers in Descending order.
+
+Explanation:
+
+For example, if the given comma-separated numbers are 16, 25, 1, 5
+
+The given numbers are 16, 25, 1 and 25
+
+The Descending order of the given numbers is 25, 16, 5 and 1
+
+The output should be,
+
+[25, 16, 5, 1]
+
+Sample Input 1:
+
+16,25,1,5
+
+Sample Output 1:
+
+[25, 16, 5, 1]
+
+Sample Input 2:
+
+-3,-7,-25,-1,-50
+
+Sample Output 2:
+
+[-1, -3, -7, -25, -50]
+
+Outline
+
+Question: Sort Numbers in the List - 2
+Approach
+Step 1: Read the input and split the numbers
+Step 2: Convert the numbers to integers and store them in a new list
+Step 3: Sort the list in descending order
+Step 4: Print the sorted list
+
+Question: Sort Numbers in the List - 2
+Given comma-separated numbers, write a program to print a list containing given numbers in Descending order.
+
+Input
+The input will be a single line containing comma-separated integers.
+
+Output
+The output should be a single line containing a list that has the given numbers in Descending order.
+
+Explanation
+For example, if the given comma-separated numbers are 16,25,1,5,
+
+The given numbers are 16, 25, 1, and 5.
+The Descending order of numbers is 25, 16, 5, and 1.
+The output should be,
+
+Approach
+
+Read the input and split the comma-separated numbers.
+Convert the numbers to integers and store them in a new list.
+Sort the list in descending order.
+Print the sorted list.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the numbers
+
+Read the input using the input() function, which will give us a string containing comma-separated numbers. 
+Then, use the split() function to split the string into a list of numbers.
+
+Step 2: Convert the numbers to integers and store them in a new list
+
+Create an empty list called new_list. Then, use a for loop to iterate through the numbers_list. For each number 
+in the list, convert it to an integer using the int() function and add it to the new_list.
+
+Step 3: Sort the list in descending order
+
+Use the sorted() function to sort the new_list in descending order. To do this, set the reverse parameter to True.
+
+Step 4: Print the sorted list
+
+Finally, print the reverse_sorted_list to display the sorted numbers in descending order.
+
+Solution:
+
+numbers_list = input().split(",")
+new_list = []
+
+for each_number in numbers_list:
+    number = int(each_number)
+    new_list += [number]
+
+reverse_sorted_list = sorted(new_list, reverse=True)
+
+print(reverse_sorted_list)
+
+__________________________________________________________________________________________________________
+
+08. Second Largest Number in the List
+
+Given comma-separated numbers, write a program to print the Second Largest number in the given numbers.
+
+Input:
+
+The input will be a single line containing comma-separated integers.
+
+Output:
+
+The output should be a single line containing an integer that is the Second Largest number in the given numbers.
+
+Explanation:
+
+For example, if the given comma-separated numbers are 13 12 3 25
+
+The given numbers are 13,12,3 and 25
+The First Largest number in the given numbers is 25
+The Second Largest number in the given numbers is 13.
+
+The output should be 13.
+
+Sample Input 1:
+
+13,12,3,25
+
+Sample Output 1:
+
+13
+
+Sample Input 2:
+
+-3,-2,-10,-15,-9
+
+Sample Output 2:
+
+-3
+
+Outline
+Question: Second Largest Number in the List
+Approach
+Step 1: Read the input and create a list of numbers
+Step 2: Sort the list of numbers
+Step 3: Find the second largest number and print it
+
+Question: Second Largest Number in the List
+Given comma-separated numbers, write a program to print the Second Largest number in the given numbers.
+
+Input
+The input will be a single line containing comma-separated integers.
+
+Output
+The output should be a single line containing an integer that is the Second Largest number in the given numbers.
+
+Approach
+
+To find the second largest number in the given comma-separated numbers, we can follow these steps:
+
+Read the input and create a list of numbers.
+Sort the list of numbers.
+Find the second largest number and print it.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and create a list of numbers
+
+First, we need to read the input, which is a single line containing comma-separated integers. We can use the 
+input() function to read the input and split(",") to separate the numbers.
+
+Then, we need to create a new list of integers by converting each number from the input list to an integer 
+using the int() function.
+
+Step 2: Sort the list of numbers
+
+Now that we have a list of integers, we need to sort it in ascending order. We can use the sorted() function
+to sort the list.
+
+Step 3: Find the second largest number and print it
+
+After sorting the list, the second largest number will be the second last element in the sorted list. 
+We can access it using the index -2.
+
+Finally, we can print the second largest number using the print() function.
+
+Solution:
+
+numbers_list = input().split(",")
+new_list = []
+
+for each_number in numbers_list:
+    number = int(each_number)
+    new_list += [number]
+
+sorted_list = sorted(new_list)
+second_largest = sorted_list[-2]
+
+print(second_largest)
+
+__________________________________________________________________________________________________________
+
+09. Difference Between Largest and Smallest Number
+
+Write a program to print the difference between the largest and smallest numbers in the list.
+
+Input:
+
+The input will be a single line containing the comma-separated integers.
+
+Output:
+
+The output should be a single line containing the differences between the largest and the smallest 
+numbers in the given list.
+
+Explanation:
+
+For example, if the given string is "2,4,-1,5", the largest number is 5 and the smallest number is -1, 
+the difference between the largest and the smallest number is 6, so the output should be 6.
+
+Sample Input 1:
+
+2,3,-1,5
+
+Sample Output 1:
+
+6
+
+Sample Input 2:
+
+30,52,24,19
+
+Sample Output 2:
+
+33
+
+Outline
+
+Question: Difference Between Largest and Smallest Number
+Approach
+Step 1: Read the input and split the numbers
+Step 2: Convert the numbers to integers
+Step 3: Find the largest and smallest numbers
+Step 4: Calculate the difference and print the result
+
+Question: Difference Between Largest and Smallest Number
+Write a program to print the difference between the largest and smallest numbers in the list.
+
+Input: The input will be a single line containing the comma-separated integers.
+
+Output: The output should be a single line containing the differences between the largest and the smallest
+numbers in the given list.
+
+Explanation: For example, if the given string is "2,4,-1,5", the largest number is 5 and the smallest 
+number is -1, the difference between the largest and the smallest number is 6, so the output should be 6.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+Read the input and split the numbers into a list.
+Convert the numbers in the list to integers.
+Find the largest and smallest numbers in the list.
+Calculate the difference between the largest and smallest numbers and print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the numbers
+
+First, we need to read the input, which is a single line containing comma-separated integers. 
+We can use the input() function to read the input. Then, we will split the input string into a list
+of numbers using the split() function with a comma (,) as the separator.
+
+Step 2: Convert the numbers to integers
+
+Now, we have a list of numbers as strings. We need to convert each number in the list to an integer. 
+We can use a for loop to iterate through the list and the int() function to convert each number to an integer.
+
+Step 3: Find the largest and smallest numbers
+
+With the list of integers, we can now find the largest and smallest numbers using the max() and min() functions.
+
+Step 4: Calculate the difference and print the result
+
+Finally, we can calculate the difference between the largest and smallest numbers by subtracting the 
+smallest number from the largest number. Then, we will print the result using the print() function.
+
+Here is the complete solution for the problem:
+
+Solution:
+
+numbers = input()
+nums_list = numbers.split(",")
+
+length_of_nums_list = len(nums_list)
+for i in range(length_of_nums_list):
+    nums_list[i] = int(nums_list[i])
+
+largest_number = max(nums_list)
+smallest_number = min(nums_list)
+
+difference = largest_number - smallest_number
+print(difference)
+
+__________________________________________________________________________________________________________
+
+10. Largest Sum of Five Elements
+
+Given comma-separated numbers, write a program to print the maximum possible sum with 5
+numbers of the given comma-separed numbers.
+
+Input:
+
+The input will be a single line containing comma-separated integers.
+
+Output:
+
+The output should be a single line containing an integer representing the maximum possible sum with 5
+numbers of the given comma-separed numbers.
+
+Explanation:
+
+For example, if the given comma-separated numbers are 12,1,22,6,14,7
+
+The given numbers are 12,1,22,6,14 and 7
+The descending order of the given comma-separated numbers is 22,14,12,7,6,1
+The maximum possible sum with 5 numbers will be the sum of the first 5 maximum numbers.
+The first 5 maximum numbers sum is 61 ( 22 + 14 + 12 + 7 + 6 + 1 = 61)
+
+The output should be 61.
+
+Sample Input 1:
+
+12,1,22,6,14,7
+
+Sample Output 1:
+
+61
+
+Sample Input 2:
+
+70,43,3,89,65,27,64,75
+
+Sample Output 2:
+
+363
+
+Outline
+
+Question: Largest Sum of Five Elements
+Approach
+Step 1: Read the input and split the numbers
+Step 2: Convert the numbers to integers
+Step 3: Sort the numbers in descending order
+Step 4: Calculate the sum of the first five numbers
+Step 5: Print the largest sum
+
+Question: Largest Sum of Five Elements
+
+In this coding question, you are given a single line of comma-separated numbers. Your task is to write 
+a program that prints the maximum possible sum of 5 numbers from the given comma-separated numbers.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+Read the input and split the numbers.
+Convert the numbers to integers.
+Sort the numbers in descending order.
+Calculate the sum of the first five numbers.
+Print the largest sum.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the numbers
+
+First, we need to read the input line containing comma-separated numbers. We can use the input() function 
+to read the input. Then, we will split the numbers using the split() function with a comma (,) as the separator.
+
+Step 2: Convert the numbers to integers
+
+Now, we will create a new list called new_list. We will loop through each number in numbers_list using a 
+for loop, convert the number to an integer using the int() function, and add it to new_list.
+
+Step 3: Sort the numbers in descending order
+
+Next, we will sort the numbers in new_list in descending order using the sorted() function with the reverse 
+parameter set to True.
+
+Step 4: Calculate the sum of the first five numbers
+
+Now, we will calculate the sum of the first five numbers in the sorted list. We can do this by slicing the
+list to get the first five numbers and then using the sum() function to calculate their sum.
+
+Step 5: Print the largest sum
+
+Finally, we will print the largest sum using the print() function.
+
+Here is the complete solution for the coding question:
+
+Solution:
+
+numbers_list = input().split(",")
+
+new_list = []
+for each_number in numbers_list:
+    number = int(each_number)
+    new_list += [number]
+
+sorted_list = sorted(new_list, reverse=True)
+first_five_numbers = sorted_list[:5]
+
+largest_sum = sum(first_five_numbers)
+print(largest_sum)
+
+__________________________________________________________________________________________________________
+
+11.
+
+Input:
+
+Output:
+
+Explanation:
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Tutorial: Extract Digits
+
+Step 1: Define a function to get the digits
+First, we'll create a function called get_digits that takes a string as an input and returns a list of 
+digits found in the string.
+
+Explanation:
+Create an empty list called digits_list to store the digits.
+Loop through each character in the input string using a for loop.
+Check if the character is a digit using the isdigit() method. If it is, convert the character to an integer 
+and add it to the digits_list.
+
+Step 2: Get the input string
+Now, we'll ask the user to enter a string and store it in a variable called str_1.
+
+Step 3: Extract the digits
+We'll use the get_digits function that we created in Step 1 to extract the digits from the input string str_1.
+
+Step 4: Calculate the sum, minimum, and maximum
+Now that we have the digits in a list, we can calculate the sum, minimum, and maximum of these digits 
+using Python's built-in functions sum(), min(), and max().
+
+Step 5: Print the results
+Finally, we'll print the sum, minimum, and maximum of the digits, each on a new line.
+
+Now that we have all the steps, put them together and solve the question.
+
+Solution:
+
+__________________________________________________________________________________________________________
+
+12.
+
+Input:
+
+Output:
+
+Explanation:
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution:
+
+__________________________________________________________________________________________________________
