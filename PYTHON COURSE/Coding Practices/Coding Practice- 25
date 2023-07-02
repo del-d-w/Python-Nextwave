@@ -1,0 +1,252 @@
+01. Identify the Mistake - Sum of First N Natural Numb
+
+Write a program to recursively compute the sum of the numbers from 1 to N.
+
+Input:
+
+The input will be a single line containing a positive integer (N).
+
+Output:
+
+The output should be a single line containing the sum of the first N natural numbers.
+
+Explanation:
+
+For example, if the given N is 4, your code should print the sum of numbers from 1 to 4. So the output should be 10.
+
+Sample Input 1:
+
+4
+
+Sample Ouput 1:
+
+10
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+15
+
+Outline
+
+Question: Identify the Mistake - Sum of First N Natural Numbers
+
+Approach
+Step 1: Define the Recursive Function
+Step 2: Read the Input and Call the Function
+Step 3: Print the Result
+
+Question: Identify the Mistake - Sum of First N Natural Numbers
+Write a program to recursively compute the sum of the numbers from 1 to N.
+
+Input: The input will be a single line containing a positive integer (N).
+
+Output: The output should be a single line containing the sum of the first N natural numbers.
+
+Explanation: For example, if the given N is 4, your code should print the sum of numbers from 1 to 4. 
+So the output should be 10.
+
+Approach
+
+To solve this problem, we will use a recursive function to compute the sum of the numbers from 1 to N.
+We will follow these steps:
+
+Define a recursive function sum_of_numbers that takes an integer n as input and returns the sum of the numbers from 1 to n.
+Read the input value num and call the function sum_of_numbers with num as the argument.
+Print the result returned by the function.
+
+Step-by-Step Explanation
+
+Step 1: Define the Recursive Function
+First, we need to define a recursive function sum_of_numbers that takes an integer n as input and returns 
+the sum of the numbers from 1 to n. The function should have a base case when n is 1, and it should return 1. 
+For other values of n, the function should return the sum of n and the result of calling itself with n-1 as the argument.
+
+Step 2: Read the Input and Call the Function
+Now, we need to read the input value representing the positive integer N. We can use the input() function
+to read the input and int() to convert it into an integer. Then, we will call the sum_of_numbers function 
+with the input value num as the argument and store the result in a variable called result.
+
+Step 3: Print the Result
+Finally, we need to print the result returned by the sum_of_numbers function. We can use the print() function 
+to display the result on the screen.
+
+Here is the complete solution for the problem:
+
+Solution:
+
+def sum_of_numbers(n):
+    if n == 0:  # Base case
+        return 0
+    else:
+        return n + sum_of_numbers(n-1)  # Recursion
+
+
+num = int(input())
+result = sum_of_numbers(num)
+print(result)
+
+___________________________________________________________________________________________________________
+
+02. Sum of Numbers
+
+Input:
+
+Output:
+
+Explanation:
+
+Sample Input 1:
+
+Sample Ouput 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution:
+
+___________________________________________________________________________________________________________
+
+03.
+
+Input:
+
+Output:
+
+Explanation:
+
+Sample Input 1:
+
+Sample Ouput 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution:
+
+___________________________________________________________________________________________________________
+
+04.
+
+Input:
+
+Output:
+
+Explanation:
+
+Sample Input 1:
+
+Sample Ouput 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution:
+
+___________________________________________________________________________________________________________
+
+05.
+
+Input:
+
+Output:
+
+Explanation:
+
+Sample Input 1:
+
+Sample Ouput 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution:
+
+___________________________________________________________________________________________________________
+
+06.
+
+Input:
+
+Output:
+
+Explanation:
+
+Sample Input 1:
+
+Sample Ouput 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution:
+
+___________________________________________________________________________________________________________
+
+07.
+
+Input:
+
+Output:
+
+Explanation:
+
+Sample Input 1:
+
+Sample Ouput 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution:
+
+___________________________________________________________________________________________________________
+
+08.
+
+Input:
+
+Output:
+
+Explanation:
+
+Sample Input 1:
+
+Sample Ouput 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution:
+
+___________________________________________________________________________________________________________
+
+09.
+
+Input:
+
+Output:
+
+Explanation:
+
+Sample Input 1:
+
+Sample Ouput 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution:
+
+___________________________________________________________________________________________________________
