@@ -93,160 +93,647 @@ ________________________________________________________________________________
 
 02. Sum of Numbers
 
+A function is given in the prefilled code that takes a list L as an argument.
+Write a program that returns the sum of the numbers in the list L using Recursion.
+
 Input:
+
+The input will be a single line containing space-separated integers.
 
 Output:
 
+The output should be a single line containing an integer that is the sum of the numbers in the list L 
+that is passed as an argument.
+
 Explanation:
+
+For example, if the given space-separated numbers are 2 1 5 6
+
+The sum of the given numbers 2, 1, 5 and 6 is 14.
+
+The output should be 14.
 
 Sample Input 1:
 
+2 1 5 6
+
 Sample Ouput 1:
+
+14
 
 Sample Input 2:
 
+-10 12 1 3 4 30 46 97 78
+
 Sample Output 2:
 
+261
+
+Outline
+
+Question: Sum of Numbers
+Approach
+Step 1: Read the input numbers
+Step 2: Create a recursive function to calculate the sum
+Step 3: Call the function and print the result
+Question: Sum of Numbers
+In this coding question, you are given a function that takes a list L as an argument. Your task is to
+write a program that returns the sum of the numbers in the list L using recursion.
+
+You will receive a single line of input containing space-separated integers. The output should be a single 
+line containing an integer that is the sum of the numbers in the list L.
+
+For example, if the given space-separated numbers are 2 1 5 6, the sum of these numbers is 14 (2 + 1 + 5 + 6), 
+and the output should be 14.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+Read the input numbers and store them in a list.
+Create a recursive function to calculate the sum of the numbers in the list.
+Call the function and print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input numbers
+First, we need to read the input numbers and store them in a list. We can use the input() function to read 
+the input and split() to separate the numbers.
+
+Step 2: Create a recursive function to calculate the sum
+Now, let's create a function called get_sum() that takes a list of numbers as an argument and returns the 
+sum of the numbers using recursion.
+
+Get the first number in the list and convert it to an integer using int().
+PYTHON
+Check if the length of the list is 1. If it is, return the first number as the sum.
+
+If the length of the list is greater than 1, call the get_sum() function with the remaining numbers in the
+list and add the first number to the result.
+
+Here's the complete get_sum() function:
+
+Step 3: Call the function and print the result
+Finally, call the get_sum() function with the list of input numbers and store the result in a variable 
+called sum_of_numbers. Then, print the result.
+
+Here's the complete solution for the given problem:
+
 Solution:
+
+def get_sum(numbers):
+    each_number = int(numbers[0])
+    
+    if len(numbers) == 1:
+        return each_number
+        
+    return each_number + get_sum(numbers[1:])
+    
+
+numbers = input().split()
+
+sum_of_numbers = get_sum(numbers)
+print(sum_of_numbers)
 
 ___________________________________________________________________________________________________________
 
-03.
+03. Factorial - 2
+
+Write a program to recursively compute the factorial of a given number N.
+Factorial is the product of all positive integers less than or equal to N.
 
 Input:
 
+The input will be a single line containing a positive integer (N).
+
 Output:
+
+The output should be a single line containing the factorial of the number.
 
 Explanation:
 
+For example, if the given N is 4, the factorial of 4 is (4 × 3 × 2 × 1). So the output should be 24.
+
 Sample Input 1:
+
+4
 
 Sample Ouput 1:
 
+24
+
 Sample Input 2:
+
+5
 
 Sample Output 2:
 
+120
+
+Outline
+
+Question: Factorial - 2
+Approach
+Step 1: Define the Recursive Function
+Step 2: Read the Input and Call the Function
+Solution
+
+Question: Factorial - 2
+
+Write a program to recursively compute the factorial of a given number N. Factorial is the product of 
+all positive integers less than or equal to N.
+
+Input: The input will be a single line containing a positive integer (N).
+
+Output: The output should be a single line containing the factorial of the number.
+
+Explanation: For example, if the given N is 4, the factorial of 4 is (4 × 3 × 2 × 1). So the output should be 24.
+
+Approach
+
+To solve this problem, we will use a recursive function to compute the factorial of a given number. 
+The function will call itself with a smaller value of the number until it reaches the base case (when the number is 0 or 1).
+
+Step-by-Step Explanation
+
+Step 1: Define the Recursive Function
+First, let's define a function called compute_factorial that takes a single argument n. This function
+will compute the factorial of n using recursion.
+
+Check if n is less than or equal to 0 (base case). If it is, return 1. python if n <= 0: return 1
+If n is greater than 0, multiply n with the result of calling compute_factorial with n - 1 as the argument.
+This is the recursive step. python else: return n * compute_factorial(n - 1)
+
+Step 2: Read the Input and Call the Function
+
+Now that we have defined our recursive function, let's read the input and call the function to compute the factorial.
+
+Read the input value representing the number N. We can use the input() function to read the input and int() 
+to convert it into an integer. python num = int(input())
+
+Call the compute_factorial function with the input number num as the argument and store the result in a 
+variable called result. python result = compute_factorial(num)
+
+Print the result. python print(result)
+
 Solution:
+
+def compute_factorial(n):
+    # Complete this recursive function
+    if n<=0:
+        return 1
+    else:
+        return n*compute_factorial(n-1)
+
+num = int(input())
+# Call the compute_factorial function
+result=compute_factorial(num)
+print(result)
 
 ___________________________________________________________________________________________________________
 
-04.
+04. Sum of Squares of Numbers
+
+A function is given in the prefilled code that takes a list L as an argument.
+
+Write a program that returns the sum of the squares of the numbers in the list L using Recursion
 
 Input:
 
+The input will be a single line containing space-separated integers.
+
 Output:
+
+The output should be a single line containing an integer that is the sum of the squares of the numbers in the list L
+ that is passed as an argument.
 
 Explanation:
 
+For example, if the given space-separated numbers are 5 2 4
+
+The squares of the given numbers are 24. 4 and 16
+
+The sum of the squares of the given numbers is  45 (24 + 4 + 16 = 45).
+
+The output should be 45.
+
 Sample Input 1:
+
+5 2 4
 
 Sample Ouput 1:
 
+45
+
 Sample Input 2:
+
+3 -10 1 6
 
 Sample Output 2:
 
+146
+
 Solution:
+
+def get_sum_of_squares(numbers):
+    each_number=int(numbers[0])
+    
+    if len(numbers)==1:
+        return each_number**2
+    
+    return each_number**2+get_sum_of_squares(numbers[1:])
+    
+numbers=input().split()
+
+squares_sum=get_sum_of_squares(numbers)
+print(squares_sum)
 
 ___________________________________________________________________________________________________________
 
-05.
+05. Largest Square of Number
+
+
+A function is given in the prefilled code that takes a list L as an argument.
+
+Write a program that returns the sum of the squares of the numbers in the list L using Recursion
 
 Input:
 
+The input will be a single line containing space-separated integers.
+
 Output:
+
+The output should be a single line containing an integer that is the largest of the squares of the numbers in the list L
+that is passed as an argument.
 
 Explanation:
 
+For example, if the given space-separated numbers are 2 3 5 4
+
+The squares of the given numbers are 4, 9, 25 and 16
+
+The largest of the squares of the given numbers is 25.
+
+The output should be  25.
+
 Sample Input 1:
+
+2 3 5 4
 
 Sample Ouput 1:
 
+25
+
 Sample Input 2:
+
+1 -10 100
 
 Sample Output 2:
 
+10000
+
 Solution:
+
+def get_largest_square(numbers):
+    each_number_square=int(numbers[0])**2
+    
+    if len(numbers)==1:
+        return each_number_square
+    
+    return max(each_number_square,get_largest_square(numbers[1:]))
+    
+numbers=input().split()
+
+result=get_largest_square(numbers)
+print(result)
 
 ___________________________________________________________________________________________________________
 
-06.
+06. Sum of the Digits - 3
+
+Write a program to recursively compute the sum of all the digits in the given number N.
 
 Input:
 
+The input will be a single line containing a positive integer (N).
+
 Output:
+
+The output should be a single line containing the sum of all the digits in the number.
 
 Explanation:
 
+For example, if the given N is 255, your code should print the sum of all the digits. So the output should be 12.
+
 Sample Input 1:
+
+255
 
 Sample Ouput 1:
 
+12
+
 Sample Input 2:
+
+111
 
 Sample Output 2:
 
+3
+
+Outline
+
+Question: Sum of the Digits - 3
+Approach
+Step 1: Define the function
+Step 2: Implement the base case
+Step 3: Implement the recursive case
+Step 4: Read the input and call the function
+
+Question: Sum of the Digits - 3
+
+Write a program to recursively compute the sum of all the digits in the given number N.
+
+Input: The input will be a single line containing a positive integer (N).
+
+Output: The output should be a single line containing the sum of all the digits in the number.
+
+Explanation: For example, if the given N is 255, your code should print the sum of all the digits. 
+So the output should be 12.
+
+Approach
+
+To solve this problem, we will use a recursive function that takes a number as input and returns the sum of its digits.
+We will break down the problem into smaller subproblems by dividing the number by 10 and adding the remainder to the 
+sum of the digits of the quotient.
+
+Step-by-Step Explanation
+Step 1: Define the function
+First, let's define a function called sum_of_the_digits that takes a single argument, number. This function will 
+be responsible for calculating the sum of the digits of the given number.
+
+Step 2: Implement the base case
+In the function, we need to define a base case for when the number is less than 10. If the number is less than 10,
+we can simply return the number itself as the sum of its digits.
+
+Step 3: Implement the recursive case
+Now, let's implement the recursive case. If the number is greater than or equal to 10, we will calculate the sum 
+of the digits by dividing the number by 10 and adding the remainder to the sum of the digits of the quotient. We
+will use the modulo operator (%) to get the remainder and the floor division operator (//) to get the quotient.
+
+Step 4: Read the input and call the function
+Finally, we need to read the input number, call the sum_of_the_digits function with the input number, and print the result.
+
+Here is the complete solution for the problem:
+
 Solution:
+
+def sum_of_the_digits(number):
+    if number < 10:  # Base case
+        return number
+    else:
+        return (number % 10) + sum_of_the_digits(number // 10)  # Recursion
+
+
+number = int(input())
+result = sum_of_the_digits(number)
+print(result)
 
 ___________________________________________________________________________________________________________
 
-07.
+07. Exponent of a Number - 2
+
+Write a program to recursively compute the value of A raised to the power B.
 
 Input:
 
+The first line of input will contain an integer (A). 
+The second line of input will contain a positive integer (B).
+
 Output:
+
+The output should be a single line containing the value of A raised to power B.
 
 Explanation:
 
+For example, if the given A is 2 and B is 3, the value of 2 raised to power 3 is (2 * 2 * 2).
+So the output should be 8.
+
 Sample Input 1:
+
+2
+3
 
 Sample Ouput 1:
 
+8
+
 Sample Input 2:
+
+5
+2
 
 Sample Output 2:
 
+25
+
+Outline
+
+Question: Exponent of a Number - 2
+Approach
+Step 1: Define the Recursive Function
+Step 2: Read Input Values
+Step 3: Calculate the Result and Print
+
+Question: Exponent of a Number - 2
+
+Write a program to recursively compute the value of A raised to the power B.
+
+Input:
+
+The first line of input will contain an integer (A). 
+The second line of input will contain a positive integer (B).
+
+Output:
+
+The output should be a single line containing the value of A raised to power B.
+
+Explanation:
+
+For example, if the given A is 2 and B is 3, the value of 2 raised to power 3 is (2  2  2). So the output should be 8.
+
+Approach
+
+To solve this problem, we will use a recursive function to calculate the power of a number. We will define a 
+function calculate_power(x, y) that takes two arguments, x and y, and returns the result of x raised to the power of y.
+
+Step-by-Step Explanation
+
+Step 1: Define the Recursive Function
+First, let's define the recursive function calculate_power(x, y):
+If y is 1, return x as the base case.
+
+Otherwise, decrease y by 1 and multiply x by the result of calling calculate_power(x, y) recursively.
+
+Step 2: Read Input Values
+Now, we need to read the input values for A and B. We can use the input() function to read the input and int() 
+to convert it into an integer.
+
+Step 3: Calculate the Result and Print
+Finally, we will call the calculate_power(a, b) function with the input values a and b, store the result in a 
+variable result, and print the result.
+
+Here is the complete solution for the problem:
+
+
 Solution:
+
+def calculate_power(x, y):
+    if y == 1:  # Base case
+        return x
+    else:
+        y -= 1
+        return x * calculate_power(x, y)  # Recursion
+
+a = int(input())
+b = int(input())
+result = calculate_power(a, b)
+print(result)
 
 ___________________________________________________________________________________________________________
 
-08.
+08. Reverse the String - 2
+
+A function is given in the prefilled code that takes a string S as an argument.
+Write a program that returns the reverse of the given string S using Recursion.
 
 Input:
 
+The input will be a single line containing a string representing S
+
 Output:
+
+The output should be a single line containing the reverse of the string S that is passed as an argument to the function.
 
 Explanation:
 
+For example, if the given string is S = "react"
+
+The characters in react are r,e,a,c and t
+
+The reverse of the string react is tcaer
+
+The output should be "tcaer".
+
 Sample Input 1:
+
+react
 
 Sample Ouput 1:
 
+tcaer
+
 Sample Input 2:
+
+BootStrap
 
 Sample Output 2:
 
+partStooB
+
 Solution:
+
+def get_reversed_string(string):
+    if len(string)==1:
+        return string[0]
+        
+    return string[len(string)-1]+get_reversed_string(string[:-1])
+    
+string=input()
+
+resultant_string=get_reversed_string(string)
+print(resultant_string)
 
 ___________________________________________________________________________________________________________
 
-09.
+09. Sum of the Series - 2
+
+A function is given in the prefilled code that takes two numbers N as arguments.
+Write a program that returns the sum of the given series up to N terms using Recursion.
+
+Series
+
+X, X-2, X-4, X-6, ... N terms
+
+Terms in the given series
+
+Term number        Term
+
+First Term           X
+Second Term        (X - 2)
+Third Term         (X - 4)
+-----               -----
+Nth Term            (X - 2 * (N - 1))
 
 Input:
 
+
+The first line of input contains an integer representing X.
+The second line of input contains an integer representing N.
+
 Output:
+
+The output should be a single line containing an integer that is the sum of the series 
+(X, X - 2, X - 4, ...)  up to N terms.
 
 Explanation:
 
+For example, if the given numbers are X = 8 and N = 3
+
+The number of terms is 3
+The First term and Third term in the given series are 8 (8 - 0), 6 (8 - 2) and 4 (8 - 4).
+
+Terms in the given series
+
+Term number        Term
+
+First Term         8 - 0 (8)
+Second Term        8 - 2 (6)
+Third Term         8 - 4 (4)
+
+The sum of the series from First and Third is 18. (8 + 6 + 4 = 18)
+
+The output should be 18.
+
 Sample Input 1:
+
+8
+3
 
 Sample Ouput 1:
 
+18
+
 Sample Input 2:
+
+-1
+4
 
 Sample Output 2:
 
+-16
+
 Solution:
+
+def get_sum_of_series(number,number_of_terms):
+    if number_of_terms==1:
+        return number
+    return number+get_sum_of_series(number-2,number_of_terms-1)
+    
+number=int(input())
+number_of_terms=int(input())
+
+series_sum=get_sum_of_series(number,number_of_terms)
+print(series_sum)
 
 ___________________________________________________________________________________________________________
