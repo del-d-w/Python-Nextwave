@@ -1,0 +1,1031 @@
+01. Nested List
+
+Write a program to read N lines of inputs and create a nested list with each line as a list.
+
+Input:
+
+The first line of input will contain a positive integer N.
+The next N lines will contain space-separated integers.
+
+Output:
+
+The output should be a single line containing the nested list.
+
+Explanation:
+
+For example, if the given N is 3, read the inputs in the next three lines.
+If the given three strings are as the following.
+
+1 2 3 4
+10 20 30
+5 10 15 20
+
+Your code should print the nested list with each line of input as a list in it.
+
+So the output should be
+
+[[1, 2, 3, 4], [10, 20, 30], [5, 10, 15, 20]]
+
+Sample Input 1:
+
+3
+1 2 3 4
+10 20 30
+5 10 15 20
+
+Sample Output 1:
+
+[[1, 2, 3, 4], [10, 20, 30], [5, 10, 15, 20]]
+
+Sample Input 2:
+
+4
+-50 20 3
+88 17
+3 11
+200 1800
+
+Sample Output 2:
+
+[[-50, 20, 3], [88, 17], [3, 11], [200, 1800]]
+
+Let's get started
+
+Step 1: Understanding the Problem
+The problem we're trying to solve is to create a nested list in Python. But what exactly is a nested list?
+A nested list is a list that contains other lists within it. In other words, it's a list of lists! 
+
+For this particular problem, we are given a positive integer N as the first input, followed by N lines of 
+space-separated integers. Our task is to create a nested list with each line of input as a list within the
+nested list. Finally, we need to print the nested list as a single line of output. 
+
+Step 2: Breaking Down the Solution
+Now that we understand the problem, let's break down the solution into smaller steps. 
+
+Step 2.1: Converting Strings to Integers
+The first step is to convert the space-separated integers in each line of input from strings to integers.
+We can do this by creating a function that takes a list of strings as input and returns a list of integers.
+
+Here's the code for the convert_string_to_int() function:
+
+Step 2.2: Reading Input and Creating the Nested List
+The next step is to read the input and create the nested list. We'll start by reading the first input,
+which is the positive integer N. We'll then use a loop to read the next N lines of space-separated integers.
+For each line, we'll use the split() function to split the line into a list of strings, and then we'll 
+use our convert_string_to_int() function to convert the strings to integers. Finally, we'll append the 
+resulting list to a larger list, which will be our nested list.
+
+Here's the code for creating the nested list:
+
+Step 2.3: Printing the Nested List
+The final step is to print the nested list as a single line of output. We can do this simply by using the print() 
+function and passing the nested list as an argument.
+
+Here's the code for printing the nested list:
+
+Now that we have all the steps, let's put them together into one complete program.
+
+Solution:
+
+def convert_string_to_int(list_a):
+    new_list=[]
+    for item in list_a:
+        num=int(item)
+        new_list.append(num)
+    return new_list
+    
+n=int(input())
+num_list=[]
+for i in range(n):
+    list_a=input().split()
+    list_a=convert_string_to_int(list_a)
+    num_list.append(list_a)
+print(num_list)
+
+____________________________________________________________________________________________________________
+
+02. List of Maximum Values
+
+Write a program to create a list with maximum values in each list.
+
+Input: 
+
+The first line of input will contain a positive integer N.
+The next N lines will contain space-separated integers.
+
+Output:
+
+The output should be a single line containing the list of maximum values in each list.
+
+Explanation:
+
+For example, if the given N is 3, read the inputs in the next three lines.
+If the given three strings are as the following.
+
+1 2 3 4
+10 20 30
+5 10 15 20
+
+Your code should print the list of maximum values in each list.
+
+So the output should be
+
+[4, 30, 20]
+
+Sample Input 1:
+
+3
+1 2 3 4
+10 20 30
+5 10 15 20
+
+Sample Output 1:
+
+[4, 30, 20]
+
+Sample Input 2:
+
+4
+-50 20 3
+88 17
+3 11
+200 1800
+
+Sample Output 2:
+
+[20, 88, 11, 1800]
+
+Outline
+
+Question: List of Maximum Values
+Approach
+Step 1: Read the input and initialize variables
+Step 2: Create a function to convert string to integer
+Step 3: Process each list and find the maximum value
+Step 4: Print the list of maximum values
+
+Question: List of Maximum Values
+
+Write a program to create a list with maximum values in each list. The first line of input will contain a
+positive integer N. The next N lines will contain space-separated integers. The output should be a single 
+line containing the list of maximum values in each list.
+
+For example, if the given N is 3, read the inputs in the next three lines. If the given three strings are as the following:
+
+Your code should print the list of maximum values in each list. So the output should be:
+
+Approach
+
+1.Read the input value N and initialize an empty list called max_list.
+2.Create a function to convert a list of strings to a list of integers.
+3.Loop through N times, read each list of integers, and find the maximum value in each list.
+4.Add the maximum value to the max_list.
+5.Print the max_list.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and initialize variables
+Read the input value representing the number of lists (N). We can use input() function to read the input 
+and int() to convert it into an integer.
+Initialize an empty list called max_list to store the maximum values of each list.
+
+Step 2: Create a function to convert string to integer
+Create a function called convert_string_to_int that takes a list of strings as input and returns a new list 
+with the same elements converted to integers.
+
+Step 3: Process each list and find the maximum value
+Create a loop that iterates N times.
+Inside the loop, read the input list of integers as a string and split it into a list of strings using split() method.
+Convert the list of strings to a list of integers using the convert_string_to_int function.
+Find the maximum value in the list using the max() function.
+Add the maximum value to the max_list.
+
+Step 4: Print the list of maximum values
+Print the max_list containing the maximum values of each input list.
+
+Solution
+
+def convert_string_to_int(list_a):
+    new_list = []
+    for item in list_a:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+n = int(input())
+max_list = []
+
+for i in range(n):
+    list_a = input().split()
+    list_a = convert_string_to_int(list_a)
+    max_num = max(list_a)
+    max_list.append(max_num)
+
+print(max_list)
+
+_______________________________________________________________________________________________________________
+
+03. List of Lists to List of Tuples
+
+Write a program to convert the list of lists to a list of tuples.
+
+Input:
+
+The first line of input will contain an integer (N), denoting the number of lists.
+The next N lines will contain space-separated integers.
+
+Output:
+
+The output should be a single line containing a list with N tuples in the order of inputs given.
+
+Explanation:
+
+For example, if the given N is 3, read the inputs in the next three lines and print them as a list of tuples.
+
+If the given three strings are as the following.
+
+1 2 3 4
+10 20 30
+5 10 15 20
+
+Your code should print each line of input as a tuple, such that making a list of three tuples. 
+So the output should be
+
+[(1, 2, 3, 4), (10, 20, 30), (5, 10, 15, 20)]
+
+Sample Input 1:
+
+3
+1 2 3 4
+10 20 30
+5 10 15 20
+
+Sample Output 1:
+
+[(1, 2, 3, 4), (10, 20, 30), (5, 10, 15, 20)]
+
+Sample Input 2:
+
+4
+-50 20 3
+88 17
+3 11
+200 1800
+
+Sample Output 2:
+
+[(-50, 20, 3), (88, 17), (3, 11), (200, 1800)]
+
+Outline
+
+Question: List of Lists to List of Tuples
+Approach
+Step 1: Read the input and create a list of lists
+Step 2: Convert the list of lists to a list of tuples
+Step 3: Print the list of tuples
+
+Question: List of Lists to List of Tuples
+
+Write a program to convert the list of lists to a list of tuples. The first line of input will contain an
+integer (N), denoting the number of lists. The next N lines will contain space-separated integers.
+The output should be a single line containing a list with N tuples in the order of inputs given.
+
+For example, if the given N is 3, read the inputs in the next three lines and print them as a list of tuples. 
+If the given three strings are as the following:
+
+Your code should print each line of input as a tuple, such that making a list of three tuples. 
+
+So the output should be:
+
+[(1, 2, 3, 4), (10, 20, 30), (5, 10, 15, 20)]
+
+Approach
+
+1.Read the input and create a list of lists.
+2.Convert the list of lists to a list of tuples.
+3.Print the list of tuples.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and create a list of lists
+Read the input value representing the number of lists (N). We can use input() function to read the input 
+and int() to convert it into an integer.
+Create an empty list called num_list to store the lists.
+Use a for loop to iterate through the range of N.
+Inside the for loop, read the input line and split it using split() function to create a list of strings.
+Convert the list of strings to a list of integers using a helper function convert_string_to_int().
+Append the list of integers to num_list.
+
+Step 2: Convert the list of lists to a list of tuples
+Create a function called convert_nested_list_to_list_of_tuples() that takes a list of lists as an argument.
+Inside the function, create an empty list called tuples_list to store the tuples.
+Use a for loop to iterate through the list of lists.
+Inside the for loop, convert each list to a tuple using the tuple() function and append it to tuples_list.
+Return the tuples_list from the function.
+Call the convert_nested_list_to_list_of_tuples() function with num_list as an argument and store the result 
+in a variable called tuples_list.
+
+Step 3: Print the list of tuples
+Print the tuples_list variable.
+
+Solution
+
+def convert_nested_list_to_list_of_tuples(nested_list):
+    tuples_list = []
+    for each_list in nested_list:
+        tuple_a = tuple(each_list)
+        tuples_list.append(tuple_a)
+    return tuples_list
+
+
+def convert_string_to_int(list_a):
+    new_list = []
+    for item in list_a:
+        num = int(item)
+        new_list.append(num)
+    return new_list
+
+
+n = int(input())
+num_list = []
+
+for i in range(n):
+    list_a = input().split()
+    list_a = convert_string_to_int(list_a)
+    num_list.append(list_a)
+
+
+tuples_list = convert_nested_list_to_list_of_tuples(num_list)
+print(tuples_list)
+
+_____________________________________________________________________________________________________
+
+04. Nested List Indexing
+
+For this problem, the prefilled code will contain a list of tuples. Write a program to print the index 
+of the given number N in the list of tuples.
+
+Input:
+
+The input will be a single line containing an integer (N).
+
+Output:
+
+The output should be a single line containing two numbers separated by space.
+The first number should be the index of tuples that contain the number N.
+The second number should be the index of the number N in the tuple.
+
+Explanation:
+
+For example, if the given N is 4, as it is the second element in the first tuple. So the output should be "0 1"
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+0 1
+
+Sample Input 2:
+
+15
+
+Sample Output 2:
+
+1 1
+
+Outline
+
+Question: Nested List Indexing
+Approach
+Step 1: Read the input number
+Step 2: Check if the number is in the tuple
+Step 3: Find the index of the tuple and the number
+Step 4: Print the result
+
+Question: Nested List Indexing
+
+In this problem, you are given a list of tuples. Your task is to write a program that prints the index
+of a given number N in the list of tuples.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Read the input number N.
+2.Check if the number N is in any of the tuples.
+3.If the number is found, find the index of the tuple and the index of the number N in the tuple.
+4.Print the result as two numbers separated by a space.
+
+Step-by-Step Explanation
+
+Step 1: Read the input number
+First, we need to read the input number N. We can use the input() function to read the input and int() to 
+convert it into an integer.
+
+Step 2: Check if the number is in the tuple
+Now, we will loop through the list of tuples and check if the number N is in any of the tuples. We can 
+use the in keyword to check if the number is present in the tuple.
+
+Step 3: Find the index of the tuple and the number
+If the number N is found in a tuple, we need to find the index of that tuple in the list and the index of
+the number N in the tuple. We can use the index() method to find the index of an element in a list or tuple.
+
+Step 4: Print the result
+Finally, we will print the result as two numbers separated by a space. We can use the str() function to convert 
+the numbers into strings and concatenate them with a space.
+
+Here is the complete solution for the problem:
+
+Solution:
+
+num_list = [(2, 4, 6, 8), (5, 15, 25, 35), (7, 14, 21)]
+
+n = int(input())
+for tuple_a in num_list:
+    is_contain = n in tuple_a
+    if is_contain:
+        tuple_index = num_list.index(tuple_a)
+        n_index = tuple_a.index(n)
+        print(str(tuple_index) + " " + str(n_index))
+        break
+
+_____________________________________________________________________________________________________
+
+05. Accessing Nested Lists
+
+For this problem, the prefilled code will contain a list of tuples. Write a program to create a list 
+with the values at the given indexes.
+
+Input:
+
+The first line of input will contain a positive integer (N).
+The next N lines will contain two space-separated integers.
+The first number will be the index of the tuple.
+The second number will be the index of the value in the tuple.
+
+
+Output:
+
+The output should be a single line containing the list of values in the order of inputs given.
+
+Explanation:
+
+For example, if the given N is 3, then read the inputs in the next three lines. If the inputs in the next three lines are
+
+1 2
+0 3
+0 1
+
+The value at index 2 in the tuple at index 1 in the list is 'hockey', similarly the output 
+list should contain the values at given indexes. So the output should be
+
+['hockey', 'grapes', 'banana']
+
+Sample Input 1:
+
+3
+1 2
+0 3
+0 1
+
+Sample Output 1:
+
+['hockey', 'grapes', 'banana']
+
+Sample Input 2:
+
+4
+0 0
+0 2
+1 2
+1 1
+
+Sample Output 2:
+
+['apple', 'orange', 'hockey', 'football']
+
+Outline
+
+Question: Accessing Nested Lists
+Approach
+Step 1: Read the input value
+Step 2: Create an empty list
+Step 3: Iterate through the input lines
+Step 4: Access the values at the given indexes
+Step 5: Print the new list
+
+Question: Accessing Nested Lists
+
+In this problem, you are given a list of tuples. Your task is to create a new list with the values at 
+the given indexes from the input.
+
+Approach
+
+To solve this problem, you need to follow these steps:
+
+1.Read the input value representing the number of lines (N).
+2.Create an empty list to store the values.
+3.Iterate through the input lines.
+4.Access the values at the given indexes and add them to the new list.
+5.Print the new list.
+
+Step-by-Step Explanation
+
+Step 1: Read the input value
+Read the input value representing the number of lines (N). We can use input() function to read the input and 
+int() to convert it into an integer.
+
+Step 2: Create an empty list
+Create an empty list called new_list to store the values at the given indexes.
+
+Step 3: Iterate through the input lines
+Use a for loop to iterate through the input lines. The loop should run n times.
+
+Step 4: Access the values at the given indexes
+Inside the for loop, read the input line and split it into two integers: tuple_index and value_index. 
+Then, access the value at the given indexes in the list of tuples and add it to the new_list.
+
+Step 5: Print the new list
+After the for loop, print the new_list containing the values at the given indexes.
+
+Here is the complete solution for the problem:
+
+Solution
+
+list_a = [('apple', 'banana', 'orange', 'grapes'), ('cricket', 'football', 'hockey'), ('car', 'bicycle', 'bus')]
+
+n = int(input())
+new_list = []
+
+for i in range(n):
+    index = input().split()
+    tuple_index = int(index[0])
+    value_index = int(index[1])
+    value = list_a[tuple_index][value_index]
+    new_list.append(value)
+
+print(new_list)
+
+____________________________________________________________________________________________________________________
+
+06. Remove N in All Tuples
+
+For this problem, the prefilled code will contain a list of tuples. Write a program to remove
+the given number N in all the tuples if it present.
+
+Input:
+
+The input will be a single line containing an integer (N).
+
+Output:
+
+The output should be a single line containing the list of tuples without the N.
+
+Explanation:
+
+For example, if the given N is 3, as 3 is in tuples at index 0 and 2, remove 3 in those tuples and print the list. 
+So the output should be
+
+[(1, 2, 4, 5, 6), (2, 4, 6, 8), (1, 5, 7)]
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+[(1, 2, 4, 5, 6), (2, 4, 6, 8), (1, 5, 7)]
+
+Sample Input 2:
+
+6
+
+Sample Output 2:
+
+[(1, 2, 3, 4, 5), (2, 4, 8), (1, 3, 5, 7)]
+
+Outline
+
+Question: Remove N in All Tuples
+Approach
+Step 1: Read the input value
+Step 2: Create an empty list for storing the new tuples
+Step 3: Iterate through the list of tuples
+Step 4: Check if N is present in the tuple and remove it
+Step 5: Add the new tuple to the new list
+Step 6: Print the new list
+
+Question: Remove N in All Tuples
+
+In this problem, you are given a list of tuples. Your task is to write a program that removes a
+given number N from all the tuples if it is present.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+1.Read the input value N.
+2.Create an empty list for storing the new tuples.
+3.Iterate through the list of tuples.
+4.Check if N is present in the tuple and remove it.
+5.Add the new tuple to the new list.
+6.Print the new list.
+
+Step-by-Step Explanation
+
+Step 1: Read the input value
+Read the input value representing the number N that needs to be removed from the tuples. We can use the 
+input() function to read the input and int() to convert it into an integer.
+
+Step 2: Create an empty list for storing the new tuples
+Create an empty list called new_list that will store the new tuples after removing N.
+
+Step 3: Iterate through the list of tuples
+Use a for loop to iterate through the list of tuples. For each tuple, we will check if N is present and remove it.
+
+Step 4: Check if N is present in the tuple and remove it
+Inside the for loop, create a new variable new_tuple and assign it the value of the current tuple. Then, 
+check if N is present in the tuple using the in keyword. If N is present, find its index using the index() 
+method and remove it by creating a new tuple without N.
+
+Step 5: Add the new tuple to the new list
+After removing N from the tuple, add the new tuple to the new_list using the append() method.
+
+Step 6: Print the new list
+Finally, print the new_list containing the new tuples without N.
+
+Here is the complete solution for the problem:
+
+Solution
+
+num_list = [(1, 2, 3, 4, 5, 6), (2, 4, 6, 8), (1, 3, 5, 7)]
+
+n = int(input())
+new_list = []
+for tuple_a in num_list:
+    new_tuple = tuple_a
+    if n in tuple_a:
+        n_index = tuple_a.index(n)
+        new_tuple = tuple_a[:n_index] + tuple_a[n_index+1:]
+    new_list.append(new_tuple)
+
+print(new_list)
+
+___________________________________________________________________________________________________________
+
+07. Max and Min Value in List of Tuples
+
+Write a program to print the maximum and minimum of all the values at index zero and index one in the list of tuples.
+
+Input:
+
+The first line of input will contain a positive integer (N).
+The next N lines will contain space-separated two integers, denoting elements of each tuple.
+
+Output:
+
+The first line of output should contain a tuple with the maximum and minimum value at index zero.
+The second line of output should contain a tuple with the maximum and minimum value at index one.
+
+Explanation:
+
+For example, if the given N is 3, read the inputs in the next three lines. If the inputs in the 
+next three lines are the following.
+
+1 5
+3 2
+5 8
+
+As 5 is the maximum and 1 is the minimum in the values at index zero and 8 is the maximum and 2 is the 
+minimum in the values at index one. So the output should be
+
+(5, 1)
+(8, 2)
+
+Sample Input 1:
+
+3
+1 5
+3 2
+5 8
+
+Sample Output 1:
+
+(5, 1)
+(8, 2)
+
+Sample Input 2:
+
+4
+1 2
+2 5
+10 1
+-3 6
+
+Sample Output 2:
+
+(10, -3)
+(6, 1)
+
+In this tutorial, we will learn how to find the maximum and minimum values at index zero and index 
+one in a list of tuples. We will break down the solution into easy-to-understand steps.
+
+Step 1: Read the input
+First, we need to read the number of tuples (N) and store it as an integer.
+
+Step 2: Create empty lists
+Create three empty lists:
+- num_list to store the tuples.
+- zero_index_list to store the values at index zero.
+- first_index_list to store the values at index one.
+
+Step 3: Read the tuples and store values
+Now, we need to read the tuples and store the values at index zero and index one in separate lists. 
+We will use a loop that runs 'n' times, where 'n' is the number of tuples.
+
+In each iteration of the loop:
+1. Read a line of input and split it into two parts using the split() function.
+2. Convert the two parts to integers and store them as first_value and second_value.
+3. Add first_value to zero_index_list and second_value to first_index_list.
+
+Step 4: Find the maximum and minimum values
+Now that we have separate lists for values at index zero and index one, we can find the maximum and minimum
+values for each list. We will create two tuples, zero_index_min_max_tuple and first_index_min_max_tuple, to 
+store the maximum and minimum values.
+
+Step 5: Print the results
+Finally, we can print the tuples containing the maximum and minimum values at index zero and index one.
+
+
+Solution:
+
+n=int(input())
+num_list=[]
+zero_index_list=[]
+first_index_list=[]
+for i in range(n):
+    values_list=input().split()
+    first_value=int(values_list[0])
+    zero_index_list.append(first_value)
+    second_value=int(values_list[1])
+    first_index_list.append(second_value)
+zero_index_min_max_tuple=(max(zero_index_list),min(zero_index_list))
+first_index_min_max_tuple=(max(first_index_list),min(first_index_list))
+print(zero_index_min_max_tuple)
+print(first_index_min_max_tuple)
+
+________________________________________________________________________________________________________
+
+08. List of Unique Tuples
+
+Write a program to print the lists which contain the unique elements in the given list of lists.
+
+Input:
+
+The first line of input will contain a positive integer (N).
+The next N lines will contain space-separated integers, denoting elements of each list.
+
+Output:
+
+The output should be a single line containing the list of lists with unique elements in the order of inputs given.
+
+Explanation:
+
+For example, if the given N is 3, read the inputs in the next three lines. 
+If the inputs in the next three lines are the following.
+
+1 2 3
+5 10 15
+10 20 10 30
+
+As the third list contains duplicate elements, the output list should not contain the third list. 
+So the output should be
+
+[[1, 2, 3], [5, 10, 15]]
+
+Sample Input 1:
+
+3
+1 2 3
+5 10 15
+10 20 10 30
+
+Sample Output 1:
+
+[[1, 2, 3], [5, 10, 15]]
+
+Sample Input 2:
+
+4
+1 2 3 3 4
+2 3 4 5
+10 20 30
+3 6 9 12 3
+
+Sample Output 2:
+
+[[2, 3, 4, 5], [10, 20, 30]]
+
+Step 1: Understand the problem
+The objective is to create a program that reads a list of lists containing integers and filters out the 
+lists with duplicate elements. The output should be a list of lists with unique elements in the order of inputs given.
+
+Step 2: Define a function to convert a list of strings to a list of integers
+To start, we need to define a function that takes a list of strings as input and returns a list of integers. 
+This is necessary because the input will be a list of space-separated integers as strings.
+
+Step 3: Read the number of lists (N) from the input
+Read the first line of input, which is a positive integer representing the number of lists (N) to be processed.
+
+Step 4: Process each list and store the unique ones
+Create an empty list named num_list to store the unique lists. Then, use a for loop to iterate through the 
+range of N. For each iteration:
+
+Read a line of input, split the space-separated integers, and convert them to integers using the 
+convert_string_to_int() function.
+Create a set from the list of integers to remove duplicates.
+Check if the length of the list and the set are equal, which indicates that the list has unique elements.
+If the list has unique elements, append it to the num_list.
+
+Step 5: Print the final list
+After processing all the lists, print the final num_list containing the unique lists.
+
+
+def convert_string_to_int(list_a):
+    new_list=[]
+    for item in list_a:
+        num=int(item)
+        new_list.append(num)
+    return new_list
+n=int(input())
+num_list=[]
+for i in range(n):
+    values_list=input().split()
+    values_list=convert_string_to_int(values_list)
+    value_set=set(values_list)
+    is_equal=len(values_list)==len(value_set)
+    if is_equal:
+        num_list.append(values_list)
+print(num_list)
+    
+__________________________________________________________________________________________________________
+
+09. Character Frequency
+
+Write a program to compute the frequency of characters other than space.
+
+Input:
+
+The input will be a single line containing a string.
+
+Note:
+
+  1. The input string will contain only alphabets and white space.
+  2. Ignore the case-sensitivity.
+
+Output:
+
+The output should be M lines equal to unique characters in the given string sorted in alphabetical order.
+Each line should contain the character and its frequency separated by a colon (:). 
+
+Explanation:
+
+For example, if the given string is "Pop up", all the unique characters in the given string are (p, o, u).
+The characters (p, o, u) are with frequency (3, 1, 1) respectively. Your code should print each unique character
+and its frequency separated by a colon(:) in alphabetical order. 
+
+So the output should be
+
+o: 1
+p: 3
+u: 1
+
+Sample Input 1:
+
+Pop up
+
+Sample Output 1:
+
+o: 1
+p: 3
+u: 1
+
+Sample Input 2:
+
+Tic Tac Toe
+
+Sample Output 2:
+
+a: 1
+c: 2
+e: 1
+i: 1
+o: 1
+t: 3
+
+In this tutorial, we will explain a solution for the coding question "Character Frequency" using Python. 
+We will break down the given solution into simple steps and explain each step in plain English.
+
+Step 1: Create a function to count character frequency
+First, we need to create a function that takes a string as input and counts the frequency of each unique 
+character, ignoring spaces and case sensitivity. Let's call this function print_char_count.
+
+Step 2: Convert the string to lowercase
+To ignore case sensitivity, convert the entire input string to lowercase using the lower() method.
+
+Step 3: Extract unique characters
+Next, we need to find all the unique characters in the given string. We can do this using a set data structure, 
+which automatically removes duplicates. Then, remove any spaces from the set using the discard() method.
+
+Step 4: Iterate through the sorted unique characters
+Now, we need to print the frequency of each unique character in alphabetical order. To do this,
+sort the unique characters using the sorted() function, and iterate through them using a for loop.
+
+Step 5: Print the character and its frequency
+Inside the loop, count the occurrences of each character using the count() method, and print the character
+followed by its frequency separated by a colon (:).
+
+Step 6: Read input and call the function
+Lastly, read the input string using the input() function, and call the print_char_count() function 
+with the input string as an argument.
+
+Solution:
+
+def print_char_count(line):
+    line=line.lower()
+    unique_chars=set(line)
+    unique_chars.discard(" ")
+    for char in sorted(unique_chars):
+        print("{}: {}".format(char,line.count(char)))
+line=input()
+print_char_count(line)
+
+______________________________________________________________________________________________________________________
+
+10. Identify the Mistake - String Formatting
+
+Given two strings, name and sport. Write a program using string formatting to concatenate the name
+followed by the message "is playing" and followed by the sport.
+
+Input:
+
+The first line of input will contain a string.
+The second line of input will contain a string.
+
+Ouput:
+
+The output should be a single line concatenating the message with the given inputs.
+
+Explanation:
+
+For example, if the given name is "Raju" and the sport is "cricket", your code should print 
+the message concatenating the name and sport. So the output should be
+
+Raju is playing Cricket
+
+Sample Input 1:
+
+Raju
+Cricket
+
+Sample Ouput 1:
+
+Raju is playing Cricket
+
+Sample Input 2:
+
+Latha
+Tennis
+
+Sample Ouput 2:
+
+Latha is playing Tennis
+
+This tutorial will help you understand how to create a Python program that concatenates two strings
+(name and sport) along with a message using string formatting. We will break down the solution into 
+simple steps and explain each step using easy-to-understand language.
+
+Step 1: Accept Input
+First, we need to get the input strings from the user. We use the input() function to accept user input 
+and store the values in two variables.
+
+Step 2: Create the Message Template
+Next, we will create a template for the message. We will use curly braces {} as placeholders for the variables 
+that we will insert later. The template should look like this:
+
+Step 3: Format the Message
+Now, it's time to insert the input values (name and sport) into the message template. We will use the format()
+function for this purpose. The format() function replaces the placeholders {} in the template with the provided 
+values in the order they appear.
+
+Step 4: Print the Output
+Finally, we will print the formatted message to the console using the print() function.
+
+Solution:
+
+str_a = input()
+str_b = input()
+message = "{arg_1} is playing {arg_2}"
+print(message.format(arg_2=str_b, arg_1=str_a))
