@@ -1046,21 +1046,50 @@ print(largest_sum)
 
 __________________________________________________________________________________________________________
 
-11.
+11. Extract Digits
+
+Write a program to extract the numbers in a given string and print the sum, minimum and maximum of those numbers.
 
 Input:
 
+The input will be a single line containing a string.
+
 Output:
+
+The first line of output should contain the sum of digits in the given word.'
+The second line of output should contain the minimum of digits in the given word.
+The third line of output should contain the maximum of digits in the given word.
 
 Explanation:
 
+For example, if the given word is "C0d1n8", the digits in the given word are (0, 1, 8). 
+Your code should print the sum, minimum and maximum in each line respectively. 
+
+So the output should be
+
+9
+0
+8
+
 Sample Input 1:
+
+C0d1n8
 
 Sample Output 1:
 
+9
+0
+8
+
 Sample Input 2:
 
+Pr08ra3mi2g
+
 Sample Output 2:
+
+13
+0
+8
 
 Tutorial: Extract Digits
 
@@ -1090,6 +1119,25 @@ Finally, we'll print the sum, minimum, and maximum of the digits, each on a new 
 Now that we have all the steps, put them together and solve the question.
 
 Solution:
+
+def get_digits(str_1):
+    digits_list = []
+    for char in str_1:
+        if char.isdigit():
+            digits_list += [int(char)]
+    return digits_list
+
+str_1 = input()
+
+digits = get_digits(str_1)
+
+sum_of_digits = sum(digits)
+min_of_digits = min(digits)
+max_of_digits = max(digits)
+
+print(sum_of_digits)
+print(min_of_digits)
+print(max_of_digits)
 
 __________________________________________________________________________________________________________
 
