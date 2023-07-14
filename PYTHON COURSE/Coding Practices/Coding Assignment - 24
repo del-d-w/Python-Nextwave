@@ -1,0 +1,277 @@
+1. Find Mean
+
+Given comma-separated numbers, write a program to print the Mean of the given numbers
+
+Note:
+
+The Mean is the average of the given numbers.
+It is calculated by dividing the sum of the given numbers by the total count of numbers.
+For example, numbers 10,2,31,4
+• Sum of the numbers 10, 2, 31 and 4 is 47
+• Count of the numbers is 4.
+• Mean of the numbers 10, 2, 31 and 4 is 11.75
+(10/4 = 11.75 ).
+
+Input:
+
+The input will be a single line containing comma-separated integers.
+
+Output:
+
+The output should be a single line containing a float that is the Mean of the given comma-separated numbers.
+
+Explanation
+
+For example, if the given comma-separated numbers are 2,5,10,15,25,30,
+• The given numbers are 2, 5, 10, 15, 25, and 30.
+The sum of the above numbers is 87 ( 2+ 5+ 10 + 15 + 25+
+30 = 87 ).
+Count of the numbers is 6.
+• The Mean of the numbers 2, 5, 10, 15, 25, and 30 is 14.5 ( 87/
+6 = 14.5 ).
+
+The output should be 14.5.
+
+Sample Input 1:
+
+2,5,10,15,25,30
+
+Sample Output 1:
+
+14.5
+
+Sample Input 2:
+
+20,15,10,25
+
+Sample Output 2:
+
+17.5
+
+Solution:
+
+s=input().split(',')
+sum=0
+for i in s:
+    sum+=int(i)
+print(sum/len(s))
+
+_____________________________________________________________________________________________________
+
+2. ﻿Kth Smallest Number
+
+Write a program to print the Kth smallest number in the list.
+
+Input
+
+The first line of input will contain comma-separated integers. The second line of input will contain an integer (K).
+Output
+
+The output should be a single line containing the Kth smallest number in the list.
+
+Explanation
+For example, if the given string is "2,3,-1,5" and K is 2, 
+your code should print the second smallest number in the list.
+
+So the output should be 2.
+
+Sample Input 1
+2,3,-1,5
+2
+
+Sample Output 1
+2
+
+Sample Input 2:
+
+30,52,24,19
+1
+
+Sample Output 2:
+
+19
+
+Solution:
+
+a=input()
+c=int(input())
+b=a.split(',')
+for i in range (len(b)):
+    b[i]=int(b[i])
+b=sorted(b)
+print(b[c-1])
+
+_________________________________________________________________________________________________
+
+3. Median of Numbers in the List
+
+Given comma-separated numbers, write a program to print the Meadian of the given numbers.
+
+Note:
+
+Median is the middle value of the given numbers, where the numbers should be in ascending order.
+For example, if the numbers are 1,9,4,7,2,
+• The numbers should be arranged in ascending order 1, 2, 4, 7, 9.
+• The count of numbers is 5. So, the middle number is the third number.
+• The median is 4 as it is the third number of the given numbers.
+If the count of numbers is an even number, median is the average of the two middle values.
+For example, if the numbers are 3,7,10,15,
+• The median is 8.5 as the average of the two middle numbers (7,10) is 8.5.
+
+Input:
+
+The input will be a single line containing comma-separated integers.
+
+Output:
+
+The output should be a single line containing a float that is the Median of the given comma-separated numbers.
+
+Explanation:
+
+For example, if the given comma-separated numbers are 5,7,3,9,8,10,
+• The numbers in ascending order are 3, 5, 7, 8, 9, and 10.
+• The count of numbers is 6 which is even.
+• The middle values of the given list are 7 and 8.
+• The Median is 7.5 (7+8/2 == 7.5 ).
+The output should be 7.5
+
+For example, if the given comma-separated numbers are 10, 15, 72, 51, 13,
+• The numbers in ascending order are 10, 13, 15, 51, and 72.
+• The count of numbers is 5 which is odd.
+• The middle value is 15.
+The output should be 15.
+
+Sample Input 1
+
+5,7,3,9,8,10
+
+Sample Output 1
+
+7.5
+
+Sample Input 2:
+
+10,15,72,51,13
+
+Sample Output 2:
+
+15
+
+Solution:
+
+n=input().split(',')
+lista=[]
+for i in n:
+    lista.append(int(i))
+lista.sort()
+if len(lista)%2==0:
+    median=(lista[len(lista)//2-1]+lista[len(lista)//2])/2
+else:
+    median=lista[len(lista)//2]
+print(median)
+
+____________________________________________________________________________________________________
+
+4. Smallest Number in the List - 3
+
+Given comma-separated numbers and an index I, write a program to print the Smallest number among the numbers
+from the given to the end of the list. index I
+
+Input:
+
+The first line of input contains comma-separated integers. The second line of input contains an integer representing I
+
+Output:
+
+The output should be a single line containing an integer representing the Smallest number among the numbers 
+from the given index I to the end of the list.
+
+Explanation:
+
+For example, if the given comma-separated numbers are 1,9,3,1,2,7,4,8 and I = 2,
+• The numbers and their respective index values are,
+
+Numbers   1 9 3 1 2 7 4 8
+Indices   0 1 2 3 4 5 6 7
+
+• The numbers from index 2 are 3, 1, 2, 7, 4, and 8.
+• The Smallest number from index 2 is 1.
+
+The output should be 1.
+
+Sample Input 1:
+
+1,9,3,1,2,7,4,8
+2
+
+Sample Output 1:
+
+1
+
+Sample Input 2:
+
+10,56,84,26,9,69,7
+1
+
+Sample Output 2:
+
+7
+
+Solution
+
+s=input().split(',')
+n=int(input())
+lista=[]
+for i in s:
+    lista.append(int(i))
+lista=lista[n:]
+print(min(lista))
+
+________________________________________________________________________________________________________
+
+5. Smallest Sum of N Elements
+Given comma-separated numbers and a number N, write a program to print the smallest possible sum with N numbers 
+of the given comma-separated numbers.
+
+Input:
+
+The first line of input contains comma-separated numbers.
+The second line of input contains an integer representing N.
+
+Output:
+
+The output should be a single line containing an integer representing the smallest possible sum with N numbers
+of the given comma-separated numbers.
+
+Explanation:
+
+Sample Input 1:
+
+2,10,9,6,5
+3
+
+Sample Output 1:
+
+13
+
+Sample Input 2:
+
+1,2,3,4
+2
+
+Sample Output 2:
+
+3
+
+Solution
+
+s=input().split(',')
+n=int(input())
+lista=[]
+for i in s:
+    lista.append(int(i))
+lista.sort()
+lista=lista[:n]
+print(sum(lista))
+
+______________________________________________________________________________________________________
