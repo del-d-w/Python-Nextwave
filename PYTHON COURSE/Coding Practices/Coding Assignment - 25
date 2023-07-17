@@ -1,0 +1,205 @@
+01. Sum of N terms in Harmonic Series - 2
+
+A function is given in the prefilled code that takes a number N as an argument.
+Write a program that returns the sum of the given series up to N terms using Recursion.
+The sum should be rounded up to 2 decimals.
+
+Series:
+
+1, 1/2, 11/3, ...... 1/N terms
+
+﻿
+Terms in the series:
+
+Term Number         Term
+First Term            1
+Second Term          1/2
+Third Term           1/3
+  ......             ...
+Nth Term             1/N
+
+﻿Input:
+
+The input will be a single line containing an integer representing N
+
+Output:
+
+The output should be a single line containing a float that is the sum of the series (1, 1/2, 1/3, ...) 
+up to N terms rounded up to 2 decimals.
+
+Explanation
+
+For example, if the given number is N = 3,
+• The number of terms is 3.
+• The First term to Third term in the given series are 1, 1/2 and 1/3.
+Terms in the given series:
+
+Term Number    Term
+First Term       1
+Second Term      1/2
+Third Term       1/3
+
+• The sum of the series from First Term to Third Term is
+1.8333333333333333. ( 1 + 1/2 + 1/3 =
+1.8333333333333333)
+• The sum rounded up to 2 decimals is 1.83.
+
+The output should be 1.83
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+1.83
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+2.59
+
+Solution:
+
+def get_series_sum(number):
+    # Complete this recursive function
+    sum=0
+    for i in range(1,number+1):
+        sum+=(1/i)
+    return round(sum,2)
+    
+number = int(input())
+series_sum = get_series_sum(number)
+print(series_sum)
+
+_________________________________________________________________________________________________
+
+02. Find the First Element in List
+
+A function is given in the prefilled code that takes a list L and a number N as arguments.
+Write a program that returns the index of the first occurrence of the given number N in the list L using recursion.
+
+Input:
+
+The first line of input contains space-separated integers.
+The second line of input contains an integer representing N.
+
+Output:
+
+The output should be a single line containing an integer that is the index of the first occurrence of the 
+number N in the list L.
+
+﻿Explanation
+
+For example, if the given space-separated numbers are 7 1 384 3
+8 and the number is N = 8,
+
+• The given numbers are 7, 1, 3, 8, 4, 3, and 8.
+
+Numbers 7 1 3 8 4 3 8
+Indices 0 1 2 3 4 5 6
+
+• The indices of the occurrences of the number 8 are 3 and 6.
+• The index of the first occurrence of the number 8 is 3.
+
+The output should be 3.
+
+Sample Input 1:
+
+7 1 3 8 4 3 8
+8
+
+Sample Output 1:
+
+3
+
+Sample Input 2:
+
+17 36 42 55 33 21 42 42
+42
+
+Sample Output 2:
+
+2
+
+Solution:
+
+def get_index(numbers_list, number):
+    def helper(numbers_list,number,index):
+        if index>=len(numbers_list):
+            return -1
+        if int(numbers_list[index])==number:
+            return index
+        return helper(numbers_list,number,index+1)
+    return helper(numbers_list,number,0)
+numbers_list = input().split()
+number = int(input())
+number_index =get_index(numbers_list,number) 
+print(number_index)
+
+_________________________________________________________________________________________
+
+03. Palindrome - 5
+
+A function is given in the prefilled code that takes a string S as an argument.
+Write a program that checks if S is a Palindrome using recursion.
+Return True if S is a Palindrome. Otherwise, return False.
+
+Note:
+
+• Consider uppercase letters and lowercase letters are same.
+• A string is said to be a palindrome if the string and reverse of the string is same.
+
+﻿
+Input:
+
+The input will be a single line containing a string representing S
+
+Output:
+
+The output should be a single line containing a boolean. True should be printed 
+if the given string is a Palindrome. Otherwise, False should be printed.
+
+﻿Explanation:
+
+For example, if the given string is Noon,
+• The reverse of the string Noon is nooN.
+• As the reversed string and the given string are the same. (Considering uppercase letters and lowercase letters
+are same. ).
+• Noon is a palindrome.
+
+The output should be, True.
+
+Sample Input 1:
+
+Noon
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+tony
+
+Sample Output 2:
+
+False
+
+Solution:
+def is_palindrome(string):
+    # Complete this recursive function
+    string=string.lower()
+    if string==string[::-1]:
+        return "True"
+    else:
+        return "False"
+
+string = input()
+is_true =is_palindrome(string)
+print(is_true)
+
+
