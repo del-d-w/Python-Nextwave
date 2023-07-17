@@ -1,0 +1,234 @@
+1. Team Points
+
+﻿Write a function with the name calculate_league_points that takes the number of wins, draws, and losses 
+and calculates the number of points a football team has obtained so far.
+
+-Each win is equal to 4 points 
+-Each draw is equal to 2 points 
+-Each loss is equal to -1 point
+
+Input:
+
+The input will be a single line containing comma-separated integers in the order of the number of wins, draws, and losses.
+
+Output:
+
+The output should be a single line containing the total number of points, a football team has obtained so far.
+
+Explanation
+For example, if the given string is "4,1,2", which denotes that 4 is the number of wins, 1 is the number of draws, 
+and 2 is the number of losses. As each win adds 4 points, each draw adds 2 points and each loss deducts 1 point, 
+the total points of a team is the sum of all the points.
+
+So the output should be 16.
+
+Sample Input 1
+
+4,1,2
+
+Sample Output 1
+
+16
+
+Sample Input 2
+
+2,0,9
+
+Sample Output 2
+
+-1
+
+Solution:
+
+def calculate_league_points(wins, draws, losses):
+    # Complete this function
+    win_points=wins*4
+    draw_poits=draws*2
+    loss_points=losses*-1
+    total_points=win_points+loss_points+draw_poits
+    return total_points
+statistics = input().split(",")
+wins = int(statistics[0])
+draws = int(statistics[1])
+losses = int(statistics[2])
+# Call the calculate_league_points function
+total_points=calculate_league_points(wins,draws,losses)
+print(total_points)
+
+_______________________________________________________________________________________________
+
+2.﻿ Sum of Cubes from M to N
+
+Write a function with name sum_of_cubes_m_to_n that takes two integers (M and N) and sum the cubes from M to N.
+
+Input:
+
+The first line of input will contain an integer (M).
+The second line of input will contain an integer (N).
+
+Output:
+
+The output should be a single line containing the sum of the cubes from M to N.
+
+Explanation:
+
+For example, if the given M is 3 and N is 5, the sum of cubes of 3, 4 and 5 is 216. So the output should be 216.
+
+Sample Input 1
+
+3 
+5
+
+Sample Output 1
+
+216
+
+Sample Input 2
+
+1
+4
+
+Sample Output 2
+
+100
+
+Solution:
+
+def sum_of_cubes_m_to_n(m, n):
+    # Complete this function
+    sum1=0
+    for i in range (m,n+1):
+        sum1=sum1+(i*i*i)
+    return sum1
+
+m = int(input())
+n = int(input())
+# Call the sum_of_cubes_m_to_n function
+sum1=sum_of_cubes_m_to_n(m,n)
+print(sum1)
+____________________________________________________________________________________________________
+
+3. ﻿Prime Numbers from M to N - 2
+
+A function is given in the prefilled code that takes two numbers M and N as arguments.
+Write a program that returns all the prime numbers from M to N separated by a space.
+
+Input:
+
+The first line of input contains an integer representing M. 
+The second line of input contains an integer representing N.
+
+Output
+The output should be a single line containing a string of prime numbers from M to N separated
+by space as shown in the sample output.
+
+Explanation:
+
+For example, if the given numbers are M = 3 and N = 10
+• The prime numbers from 3 to 10 are 3, 5, and 7.
+The output should be 357.
+
+Sample Input 1
+
+3
+10
+
+Sample Output 1
+
+3 5 7
+
+Sample Input 2
+
+13
+29
+
+Sample Output 2
+
+13 17 19 23 29
+
+Solution:
+
+def check_is_prime(m, n):
+    # complete this function
+    s=''
+    for i in range(m,n+1):
+        factors=0
+        for j in range(2,i):
+            if i%j==0:
+                factors+=1 
+        if factors==0 and i>1:
+            s+=str(i)+' '
+    return s            
+m = int(input())
+n = int(input())
+
+prime_numbers = check_is_prime(m,n)   # Call the check_is_prime function
+
+print(prime_numbers)
+
+____________________________________________________________________________________________
+
+04. Uppercase and Lowercase Letters
+
+Given a word, write a function with the name get_lower_and_upper_case_letters that takes a word and prints
+all the uppercase and lowercase letters in the first line and the second line respectively.
+
+Input:
+
+The input will be a single line containing a string.
+Note: There will not be any special characters in the given string.
+
+Output:
+
+The first line of output should be a string containing all the uppercase letters in the given word.
+The second line of output should be a string containing all the lowercase letters in the given word.
+Note: The order of letters in the output should be same as the input string.
+
+Explanation
+
+For example, if the given word is "PreMium", your function should print all the uppercase letters in the first line
+and all the lowercase letters in the second line.
+
+So the output should be
+
+PM
+reium
+
+Sample Input 1
+
+PreMium
+
+Sample Output 1
+
+PM
+reium
+
+Sample Input 2
+
+BoNaNZa
+
+Sample Output 2
+
+BNNZ
+oaa
+
+Solution
+
+def get_lower_and_upper_case_letters(word):
+    # Complete this function
+    uppercase_letters=""
+    lowercase_letters=""
+    for letter in word:
+        if letter.upper()==letter:
+            uppercase_letters+=letter
+        else:
+            lowercase_letters+=letter
+    print(uppercase_letters)
+    print(lowercase_letters)
+word = input()
+# Call the get_lower_and_upper_case_letters function
+get_lower_and_upper_case_letters(word)
+
+________________________________________________________________________________________
+
+05.
