@@ -1,0 +1,285 @@
+01. Reverse Words in Sentence
+
+You are given a string S as input, write a program to print the string after reversing the words of the given sentence.
+
+Input:
+
+The first line of input is a string S.
+
+Explanation:
+
+In the given example, the sentence "This is Python" contains 3 words. When reversing, the word "Python"
+comes to the starting of the sentence, and "This" goes to the last of the sentence. The word "is"
+remains in the same position. 
+
+So the output should be "Python is This"
+
+Sample Input 1:
+
+This is Python
+
+Sample Output 1:
+
+Python is This
+
+Sample Input 2:
+
+Hi! World Hello
+
+Sample Output 2:
+
+Hello World Hi!
+
+Solution:
+
+sentence=input()
+words=sentence.split()
+rev_words=words[::-1]
+reverse_sen=" ".join(rev_words)
+print(reverse_sen)
+___________________________________________________________________________________________________
+
+02. Last half of List
+
+You are given an integer N as input. Write a program to read N inputs and print a list containing the elements
+in the last half of the list.
+
+Input:
+
+The first line of input is an integer N.
+The second line contains N space-separated integers.
+
+﻿
+Explanation:
+
+Sample Output 1
+
+In the example, we are given 6 numbers 1, 2, 3, 4, 5, 6 as input.
+The last half of elements of the list are 4, 5, 6.
+So, the output should be [4, 5, 6].
+
+Sample Output 2
+
+In the example, we are given 5 numbers 1, 11, 13, 21, 19 as input.
+The last half of elements of the list are 21, 19.
+So, the output should be [21, 19] .
+
+Sample Input 1:
+
+6
+1 2 3 4 5 6
+
+Sample Output 1:
+
+[4, 5, 6]
+
+Sample Input 2:
+
+5
+1 11 13 21 19
+
+Sample Output 2:
+
+[21, 19]
+
+Solution:
+
+"""N = int(input())
+list = list(map(int, input().split()))
+
+print(list[N // 2 if N % 2 == 0 else N // 2 + 1::])"""
+n=int(input())
+list1=input()
+mylist=list1.split()
+for i in range (len(mylist)):
+    mylist[i]=int(mylist[i])
+if n % 2 == 0:
+    l1=mylist[:n//2]
+    l2=mylist[n//2:]
+else:
+    l1=mylist[:(n+1)//2]
+    l2=mylist[(n+1)//2:]
+print(l2)
+______________________________________________________________________________________________________________
+
+03. Product of Elements in the List
+
+You are given a space-separated list of integers as input. Write a program to print the product of these numbers.
+
+Input:
+
+The first line of input contains space-separated integers.
+
+Explanation:
+
+In the example, there are 6 numbers, 1, 2, 3, 4, 5, 6.
+The product of list elements is 1×2×3×4 × 5 × 6 So, the output should be 720.
+
+Sample Input 1:
+
+1 2 3 4 5 6
+
+Sample Output 1:
+
+720
+
+Sample Input 2:
+
+1 11 13 21 19
+
+Sample Output 2:
+
+57057
+
+Solution:
+
+"""n=input()
+a=n.split()
+result=1
+for i in range(len(a)):
+    a[i]=int(a[i])
+for x in a:
+    result=result*x
+print(result)"""
+n=input().split()
+p=1
+for i in n:
+    p=p*int(i)
+print(p)
+__________________________________________________________________________________________________
+
+04. Average of Given Numbers
+
+You are given space-separated integers as input. Write a program to print the average of the given numbers.
+
+Input:
+
+The first line of input contains space-separated integers.
+
+Output:
+
+The output should be a float value rounded up to two decimal places.
+
+Explanation:
+
+In the example, input is 1, 0, 2, 5, 9, 8. The sum of all numbers present in the list is 25, and their average is 25/6.
+So, the output should be 4.17.
+
+Sample Input 1:
+
+1 0 2 5 9 8
+
+Sample Output 1:
+
+4.17
+
+Sample Input 2:
+
+1 2 3 4 5
+
+Sample Output 2:
+
+3.0
+
+Solution:
+
+"""n=input()
+a=n.split()
+for i in range(len(a)):
+    a[i]=int(a[i])
+average=sum(a)/len(a)
+print(round(average,2))"""
+n=input().split()
+sum=0
+for i in n:
+    sum=sum+int(i)
+average=sum/len(n)
+print(round(average,2))
+____________________________________________________________________________________________________
+
+05. Largest Number in the List
+
+You are given space-separated integers as input. Write a program to
+print the maximum number among the given numbers.
+
+Input:
+
+The first line of input contains space-separated integers.
+
+Explanation:
+
+In the example, the integers given are
+1, 0, 3, 2, 9, 8. The
+maximum number present among them is 9.
+So, the output should be 9.
+
+Sample Input 1:
+
+1 0 3 2 9 8
+
+Sample Output 1:
+
+9
+
+Sample Input 2:
+
+-1 -3 -4 0
+
+Sample Output 2:
+
+0
+
+Solution:
+
+#print(max([int(n) for n in input().split()]))
+n=input()
+a=n.split()
+for i in range(len(a)):
+    a[i]=int(a[i])
+print(max(a))
+
+____________________________________________________________________________________________________
+
+06. Acronyms
+
+You are given some abbreviations as input. Write a program to print
+the acronyms separated by a dot(.) of those abbreviations.
+
+Input:
+
+The first line of input contains space-separated strings.
+
+Explanation:
+
+Consider the given abbreviation, Indian Administrative Service. We need to consider the first character in each of the
+words to get the acronym. We get the letter from the first string Indian, we get the letter A from the second word
+Administrative, and we get the letter S from the third word Service.
+
+So, the final output should be I.A.S.
+
+Sample Input 1:
+
+Indian Administrative Service
+
+Sample Output 1:
+
+I.A.S
+
+Sample Input 2:
+
+Very Important Person
+
+Sample Output 2:
+
+V.I.P
+
+Solution:
+
+sentence=input()
+words=sentence.split()
+a=words[0][0]
+for i in words[1:]:
+    a=a+"."+i[0]
+print(a)
+
+_______________________________________________________________________________________________
