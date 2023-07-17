@@ -1,0 +1,266 @@
+01. Swap Elements in List
+
+A List L is given in the prefilled code. Write a program that reads the two indices 11 and 12.
+• Replace the element in the 11 th index with the element in
+12 th index
+Replace the element in the 12 th index with the element in 11 th index
+Print the updated list.
+
+L = [1, "two", 9, 5.09, "Three", -558, "four", -93.7, "six"]
+
+Input:
+
+The first line of input contains an integer representing 11. The second line of input contains an integer representing 12.
+
+Output:
+
+The output should be a single line containing a list obtained by replacing the element at 11 with the element 
+at 12 and the element at 12 with the element at 11.
+
+Explantion:
+
+﻿
+For example, if the given numbers are 11 = 2 and 12 = 6,
+• The elements in the given prefilled list L are 1, "two", 9, 5.09, "Three", -558, "four", -93.7, and "six".
+• The element at index 2 is 9, and the element at index 6 is "four".
+
+1 "two" 9 5.09 "Three" -558 "four" -93.7 "six"
+0    1  2   3    4       5     6      7    8
+
+• Replace 9 with "four" and "four" with 9.
+
+1 "two" "four" 5.09 "Three"
+0   1      2    3      4
+
+The output should be,
+
+[1, "two", "four", 5.09, "Three', -558, 9, -93.7, "six"]
+
+Sample Input 1:
+
+2
+6
+
+Sample Ouput 1:
+
+[1, 'two', 'four', 5.09, 'Three', -558, 9, -93.7, 'six']
+
+Sample Input 2:
+
+4
+1
+
+Sample Ouput 2:
+
+[1, 'Three', 9, 5.09, 'two', -558, 'four', -93.7, 'six']
+
+Solution:
+
+L = [1, "two", 9, 5.09, "Three", -558, "four", -93.7, "six"]
+
+#Write your code here
+m=int(input())
+n=int(input())
+L[m],L[n]=L[n],L[m]
+print(L)
+
+________________________________________________________________________________________
+
+02. List Indexing - 3
+
+Given N numbers, and an index, write a program to store the numbers in a list and print the number 
+at the given index. For this problem, each input will contain T test cases. Each test case will give
+an index Ki as input, which should be considered to print the number.
+
+Input:
+
+The first line of input is an integer N.
+The second line of input is an integer T representing the number of test cases.
+The next N lines contain integers representing the numbers of the list.
+The next T lines contain integer Ki for each line.
+
+Output:
+
+You need to print a number in a new line for each of the K test cases.
+
+Explanation:
+
+In the given example, there are 4 numbers 1, 2, 3, 4 as input For the first test case,
+K=0, the number at the Oth index is 1.
+For the second test case, K=3, the number at the 3rd index is 4.
+So, the output should be
+
+index 0 1 2 3 
+Value 1 2 3 4
+
+1
+4
+
+Sample Input 1:
+
+4
+2
+1
+2
+3
+4
+0
+3
+
+Sample Ouput 1:
+
+1
+4
+
+Sample Input 2:
+
+3
+1
+13
+21
+19
+0
+
+Sample Ouput 2:
+
+13
+
+Solution:
+
+"""n = int(input())
+t = int(input())
+numbers = [int(input()) for _ in range(n)]
+for _ in range(t):
+    print(numbers[int(input())])"""
+n=int(input())
+t=int(input())
+lista=[]
+for i in range(n):
+    m=int(input())
+    lista.append(m)
+for i in range(t):
+    k=int(input())
+    print(lista[k])
+
+_______________________________________________________________________________________________
+
+03. First and Last Elements of List
+
+First and Last Elements of List
+
+You are given an integer N as input. Write a program to read N integers and print a list containing
+the first and last two inputs.
+
+Input:
+
+The first line of input is an integer N
+The next N lines each contains an integer.
+
+Explanation:
+
+In the given example, we are given 6 numbers 1, 2, 3, 4, 5, 6 as input.
+The list should contain first two integers 1, 2 and last two integers 5, 6
+So, the output should be [1, 2, 5, 6].
+
+Sample Input 1:
+
+6
+1
+2
+3
+4
+5
+6
+
+Sample Ouput 1:
+
+[1, 2, 5, 6]
+
+Sample Input 2:
+
+5
+1
+11
+13
+21
+19
+
+Sample Ouput 2:
+
+[1, 11, 21, 19]
+
+Solution:
+
+"""N = int(input())
+l = []
+for i in range(N):
+    l.append(int(input()))
+    b = l[:2] + l[-2:]
+print(b)"""
+n=int(input())
+lista=[]
+for i in range(n):
+    value=int(input())
+    lista+=[value]
+print(lista[:2]+lista[-2:])
+
+________________________________________________________________________
+
+04. Divisible by 5
+
+Given a number N, write a program that reads N numbers and prints a list of numbers that are divisible by 5
+
+Input:
+
+The first line of input contains an integer representing N.
+The next N lines of input contain integers.
+
+Output:
+
+The output should be a single line containing a list of numbers that are divisible by 5.
+
+Explanation:
+
+For example, if the given number is N = 3
+The given 3 inputs are 10, 7, and 35.
+In the given inputs 10 and 35 are divisible by 5.
+• As, 10 % 5 == 0,10 is divisible by 5.
+• As, 35 % 5 == 0,35 is divisible by 5.
+
+The output should be [10, 35]
+
+Sample Input 1:
+
+3
+10
+7
+35
+
+Sample Ouput 1:
+
+[10, 35]
+
+Sample Input 2:
+
+5
+-15
+25
+63
+-95
+-80
+
+Sample Ouput 2:
+
+[-15, 25, -95, -80]
+
+Solution:
+
+n=int(input())
+lista=[]
+for i in range(n):
+    m=int(input())
+    if m%5==0:
+        lista.append(m)
+print(lista)
+
+___________________________________________________________________________________
