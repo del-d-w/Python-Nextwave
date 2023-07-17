@@ -231,4 +231,51 @@ get_lower_and_upper_case_letters(word)
 
 ________________________________________________________________________________________
 
-05.
+05. Four Passengers and a Driver
+
+A typical car can hold four passengers and one driver, allowing five people to travel around.
+Write a function with the name number_of_cars_needed that takes a number of people (N) and return 
+how many cars are needed to seat everyone comfortably.
+
+Input:
+
+The input will be a single line containing an integer.
+
+Output:
+
+The output should be a single line containing the number of cars needed.
+
+Explanation:
+
+For example, if the given number of people is 5, the output should be 1, as five people can travel in a car.
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+1
+
+Sample Input 2:
+
+11
+
+Sample Output 3:
+
+3
+
+Solution:
+
+def number_of_cars_needed(no_of_people):
+    # Complete this function
+    if no_of_people%5==0:
+        print(no_of_people//5)
+    else:
+        print(no_of_people//5+1)
+
+no_of_people = int(input())
+# Call the number_of_cars_needed function
+number_of_cars_needed(no_of_people)
+
+_________________________________________________________________________________________________________
