@@ -1,0 +1,111 @@
+01. Alphabets in Hollow Diamond
+
+Given a number N, write a program to print a Hollow Diamond of 2 * N-1 rows using letters.
+
+      A 
+     B C 
+    D   E 
+     B C 
+      A
+
+Input:
+
+The input will be a single line containing an integer representing N.
+
+Output:
+
+The output should be 2* N-1 rows containing letters as a Hollow Diamond shown in the sample output.
+
+Explanation:
+
+For example, if the given number is N=5,
+• Print the letters on 9 (25-1) rows as shown in the given image.
+
+Note:
+
+In the given image, the Empty box indicates a space (" ").
+
+      A 
+     B C 
+    D   E 
+   F     G 
+  H       I 
+ J         K 
+L           M 
+ J         K 
+  H       I 
+   F     G 
+    D   E 
+     B C 
+      A
+
+Sample Input 1:
+
+7
+
+Sample Ouput 1:
+
+      A 
+     B C 
+    D   E 
+   F     G 
+  H       I 
+ J         K 
+L           M 
+ J         K 
+  H       I 
+   F     G 
+    D   E 
+     B C 
+      A
+
+Sample Input 2:
+
+5
+
+Sample Ouput 2:
+
+    A 
+   B C 
+  D   E 
+ F     G 
+H       I 
+ F     G 
+  D   E 
+   B C 
+    A
+
+Solution:
+
+n=int(input())
+p=65
+for i in range(n):
+    for j in range(n-i-1):
+        print('',end=' ')
+    for j in range(i+1):
+        if j==0 or i==j:
+            print(chr(p),end=' ')
+            p+=1 
+        else:
+            print(' ',end=' ')
+    print()
+p=64+(2*n-1)
+for i in range(1,n-1):
+    for j in range(i):
+        print('',end=' ')
+    for j in range(n-i):
+        if j==0:
+            print(chr(p-3),end=' ')
+            p-=1 
+        elif i+j==n-1:
+            print(chr(p-1),end=' ')
+            p-=1
+        else:
+            print(' ',end=' ')
+    print()
+if n>1:
+    print(' '*(n-1)+'A')
+
+_____________________________________________________________________________________________________________
+
+02.
