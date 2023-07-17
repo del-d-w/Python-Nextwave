@@ -1,0 +1,229 @@
+01. ﻿ATM PIN Code Validation
+
+Write a function with the name validate_atm_pin_code that takes a word as an argument.
+ATM PIN is considered valid only if the given word contains
+- Exactly 4 or 6 characters
+- All the characters should be digits
+
+Input:
+
+The input will be a single line containing a string.
+
+Output:
+
+The output should be a single line containing either "Valid PIN Code or "Invalid PIN Code".
+
+﻿Explanation:
+
+For example, if the given word is "9837", the output should be "Valid PIN Code", as it contains 
+exactly four characters and all the characters are digits.
+Whereas, if the given word is "A289h4", the output should be "Invalid
+PIN Code", though the given word contains exactly six characters, all the characters are not digits.
+
+Sample Input 1
+
+9837
+
+Sample Output 1
+
+Valid PIN Code
+
+Sample Input 2
+
+A289h4
+
+Sample Output 2
+
+Invalid PIN Code
+
+Solution:
+
+def validate_atm_pin_code(pin):
+    # Complete this function
+    if (len(pin)==4 or len(pin)==6) and pin.isdigit():
+        print("Valid PIN Code")
+    else:
+        print("Invalid PIN Code")
+
+pin = input()
+# Call the validate_atm_pin_code function
+validate_atm_pin_code(pin)
+
+____________________________________________________________________________________________
+
+02. Calculate Bill
+
+Write a function with the name calculate_bill that takes the bill amount as an argument.
+ - If the bill amount is less than 500, the discount should be 5%.
+ - If the bill amount is greater than or equal to 500 and less than 2500, the discount should be 10%.
+ - If the bill amount is greater than or equal to 2500, the discount should be 20%.
+Calculate the bill amount with the appropriate discount and print it.
+
+Input:
+
+The input will be a single line containing a positive integer.
+
+Output:
+
+The output should be a single line containing the bill amount.
+Note: Round of the bill amount to three decimal places.
+
+Explanation:
+
+For example, if the given bill amount is 1500, the 10% discount should apply (which is 150), 
+after deducting the discount amount, print the bill amount.
+
+So the output should be 1350.0
+
+Sample Input 1
+
+1500
+
+Sample Output 1
+
+1350.0
+
+Sample Input 2
+
+250
+
+Sample Output 2
+
+237.5
+
+Solution:
+
+def calculate_bill(amount):
+    # Complete this function
+    if amount<500:
+        result=float(amount-(amount*5/100))
+    elif 500<=amount<2500:
+        result=float(amount-(amount*10/100))
+    else:
+        result=float(amount-(amount*20/100))
+    return result
+amount = int(input())
+result=calculate_bill(amount)
+print(result)
+# Call the calculate_bill function
+
+______________________________________________________________________________________
+
+03. Fizz Buzz
+
+Write a function with the name fizz_buzz that takes a number as an argument.
+ - If the number is divisible by 3, it should return “Fizz”.
+ - If it is divisible by 5, it should return “Buzz”.
+ - If it is divisible by both 3 and 5, it should return “FizzBuzz”.
+ - Otherwise, it should return the same number.
+
+Input:
+
+The first line of input will contain an integer.
+
+Output:
+
+The output should be a single line containing the word according to the above conditions.
+
+Explanation:
+
+For example, if the given number is 20, the output should be "Buzz", as 20 is divisible by 5 and not divisible by 3.
+Whereas the given number is 7, the output should be 7, as 7 is not divisible by neither 3 nor 5.
+
+Sample Input 1
+
+20
+
+Sample Output 1
+
+Buzz
+
+Sample Input 2
+
+7
+
+Sample Output 2
+
+7
+
+Solution:
+
+def fizz_buzz(number):
+    # Complete this function
+    if number%3==0 and number%5==0:
+        result="FizzBuzz"
+    elif number%3==0:
+        result="Fizz"
+    elif number%5==0:
+        result="Buzz"
+    else:
+        result=number
+    return result
+number = int(input())
+result=fizz_buzz(number)
+print(result)
+# Call the fizz_buzz function
+
+__________________________________________________________________________________________________
+
+04. Count of Lowercase and Uppercase Letters
+
+For this problem, the prefilled code will contain a function. Write a program to count the number of uppercase
+and lowercase letters in the given word.
+
+Input:
+
+The input will be a single line containing a string.
+
+Output:
+
+The first line of output should contain the number of uppercase letters in the given word.
+The second line of output should contain the number of lowercase letters in the given word.
+
+Explanation:
+
+For example, if the given word is "MasTer", your code should print the number of uppercase and lowercase letters. 
+
+So the output should be
+2
+4
+
+Sample Input 1
+
+MasTer
+
+Sample Output 1
+
+2
+4
+
+Sample Input 2
+
+FOUNDATIONS
+
+Sample Output 2
+
+11
+0
+
+Solution:
+
+def count_of_lowercase_and_uppercase_letters(arg_1):
+    # Complete this function
+    count_of_lowercase=0
+    count_of_uppercase=0
+    for character in arg_1:
+        if character.upper()==character:
+            count_of_uppercase+=1
+        else:
+            count_of_lowercase+=1
+    
+    print(count_of_uppercase)
+    print(count_of_lowercase)
+
+
+word = input()
+count_of_lowercase_and_uppercase_letters(word)
+# Call the count_of_lowercase_and_uppercase_letters function
+
+_________________________________________________________________________________________________
