@@ -1,0 +1,521 @@
+01. ﻿Word Triangle - 2
+
+Given a word W, write a program that prints the letters of the word in N rows as an Inverted Right Angled Triangle 
+as shown in the sample output, where N is the length of the word W.
+
+Input
+
+The input will be a single line containing a string representing W.
+
+Output
+
+The output should be N rows containing strings as an Inverted Right Angled Triangle shown in the sample output.
+
+﻿Explanation
+
+For example, if the given word is W = "game",
+The number of letters in the word game is 4.
+• The first row should contain all 4 letters game.
+• The second row should contain the first 3 letters gam.
+• The third row should contain the first 2 letters ga.
+The fourth row should contain the first 1 letter g.
+
+The output should be,
+
+game
+gam
+ga
+g
+
+Sample Input 1:
+
+game
+
+Sample Output 1:
+
+game
+gam
+ga
+g
+
+Sample Input 2:
+
+TUPLE
+
+Sample Output 2:
+
+TUPLE
+TUPL
+TUP
+TU
+T
+
+Sample Input 3:
+
+uNiCoRn
+
+Sample Output 3:
+
+uNiCoRn
+uNiCoR
+uNiCo
+uNiC
+uNi
+uN
+u
+
+Solution:
+
+n=input()
+n_len=len(n)
+for i in range(len(n),0,-1):
+    print (n[:i])
+
+_____________________________________________________________________________________________
+
+02. Inverted Right Angled Triangle - 8
+
+Given a number N, write a program to print an Inverted Right Angled Triangle of N rows using strats (*).
+
+* * * * *
+    * * *
+        *
+
+Note:
+
+• Each row should contain odd number of
+stars( * ) and odd numbering starts from 1. • There is a space after every star ( * ).
+
+Input:
+
+The input will be a single line containing an integer representing N.
+
+Output:
+
+The output should be N rows containing an odd number of stars ( * ) as an Inverted Right Angled triangle
+shown in the sample output.
+
+Explanation:
+
+For example, if the given number is N = 4,
+• Print the stars (*) in 4 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-inverted-right-angled-triangle-8.png
+
+Note:
+
+In the given image,
+• The Empty box indicates the two spaces (" ").
+• The Star in box indicates the star and a space ("*")
+
+The output should be,
+
+* * * * * * *
+    * * * * *
+        * * *
+            *
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+* * * * * * * 
+    * * * * * 
+        * * * 
+            * 
+
+Sample Input 2:
+
+9
+
+Sample Output 2:
+
+* * * * * * * * * * * * * * * * * 
+    * * * * * * * * * * * * * * * 
+        * * * * * * * * * * * * * 
+            * * * * * * * * * * * 
+                * * * * * * * * * 
+                    * * * * * * * 
+                        * * * * * 
+                            * * * 
+                                * 
+
+Solution:
+
+n=int(input())
+for i in range(2*n,0,-2):
+    print('  '*(2*n-i)+'* '*(i-1))
+   
+___________________________________________________________________________________________________
+
+03. Shuffle String - 2
+
+Given two strings S1 and S2 of equal length, write a program that prints a new string by appending 
+characters from S1 first and then from S2 alternately.
+
+Input
+
+The first line of input contains a string representing S1. The second line of input contains a string representing S2.
+
+Output:
+
+The output should be a single line containing a string obtained by appending characters from
+S1 first and then from S2 alternately.
+
+Constraints:
+
+The two strings S1 and S2 given as inputs will always have equal length.
+
+Explanation:
+
+For example given strings are  S1 = "bring" and S2 = "camel"
+
+• Characters in bring are b, r, i, n, g and characters in camel are c, a, m, e, l.
+
+b r i n g
+1 2 3 4 5
+
+c a m e l
+1 2 3 4 5
+
+• New string by appending 1st character from bring, 2nd character from camel, 3rd character from bring, 
+4th character from camel and 5th character from bring is baieg.
+
+The output should be baieg.
+
+Sample Input 1:
+
+bring
+camel
+
+Sample Output 1:
+
+baieg
+
+Sample Input 2:
+
+APPRECIATE
+BACKPACKER
+
+Sample Output 2:
+
+AAPKEAIKTR
+
+Solution:
+
+s1=input()
+s2=input()
+s=''
+for i in range(min(len(s1),len(s2))):
+    if i%2==0:
+        s+=s1[i]
+    else:
+        s+=s2[i]
+print(s)
+
+__________________________________________________________________________________________________________________
+
+04. Sum of Even numbers
+
+Write a program to find the sum of even numbers in first N natural numbers.
+
+Input
+
+The input is an integer N.
+
+Output
+
+The output should be an integer containing the sum of even numbers upto the given number.
+
+Explanation:
+
+In the given example N = 5, the even natural numbers below 5 are 2, 4
+Then total = 2 + 4
+So, the output should be 6.
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+6
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+6
+
+Solution:
+
+n=int(input())
+s=0
+for i in range(1,n+1):
+    if(i%2==0):
+        s=s+i
+print(s)
+
+_________________________________________________________________________________________
+
+05. Sum of Odd numbers
+
+Write a program to find the sum of odd numbers in first N natural numbers.
+
+Input
+
+The input is an integer N.
+
+Output
+
+The output should be an integer containing the sum of odd numbers upto the given number.
+
+Explanation:
+
+In the given example N = 10, the odd natural numbers below 10 are 1,3,5,7,9
+Then total = 1 + 3 + 5 + 7 + 9
+So, the output should be 25.
+
+Sample Input 1:
+
+10
+
+Sample Output 1:
+
+25
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+9
+
+Solution:
+
+n=int(input())
+s=0
+for i in range(1,n+1):
+    if(i%2==1):
+        s=s+i
+print(s)
+
+______________________________________________________________________________________________
+
+06. ﻿Composite Number
+
+Given an integer N, write a program to find if the given number is a composite number or not. 
+If it is composite, print True or else print False.
+
+Note:
+
+Composite numbers are numbers that have more than two factors.
+
+Input:
+
+The first line of input is an integer N.
+
+Output:
+
+The output should be True or False.
+
+Explanation:
+
+In the given example, 12 is a composite number as it can be divisible by 1, 2, 3, 4, 6, 12
+
+Therefore, the output should be True
+
+Sample Input 1:
+
+12
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+False
+
+Solution:
+
+n=int(input())
+count=0
+for i in range(2,n):
+    if n%i==0:
+        count=count+1
+if count>=1:
+    print("True")
+else:
+    print("False")
+        
+__________________________________________________________________________________________
+
+07. Striped Rectangle
+
+Given an integer number M, N as input. Write a program to print a striped rectangular pattern of M rows and N cloumns
+ using ( + and - ) character.
+
+Input:
+
+The first line of input is an integer M.
+The second line of input is an integer N.
+
+Output:
+
+In the given example the striped rectangular pattern of 7 rows and 5 columns.
+
+Therefore, the output should be 
+
++ + + + +
+- - - - -
++ + + + +
+- - - - -
++ + + + +
+- - - - -
++ + + + +
+
+
+Sample Input 1:
+
+5
+7
+
+Sample Output 1:
+
++ + + + + + + 
+- - - - - - - 
++ + + + + + + 
+- - - - - - - 
++ + + + + + + 
+
+Sample Input 2:
+
+7
+5
+
+Sample Output 2:
+
++ + + + + 
+- - - - - 
++ + + + + 
+- - - - - 
++ + + + + 
+- - - - - 
++ + + + + 
+
+Solution:
+
+m=int(input())
+n=int(input())
+for i in range(m):
+        if (i%2==0):
+            print("+ "*(n))
+        else:
+            (i%2==1)
+            print("- "*n)
+
+_________________________________________________________________________________________________
+
+08. Hollow Rectangle - 2
+
+Given two numbers M and N write a program to print Hollow Rectangle of M + 2 rows and N + 2 columns
+uisng pulses (+ ), hyphens (- ), and pipes ( | ).
+
++----------+
+|          |
+|          |
+|          |
++----------+
+
+Input:
+
+The first line of input contains an integer representing M.
+The second line of input contains an integer representing N.
+
+Output:
+
+The output should be M + 2 rows containing pluses ( + ),hyphens (- ), and pipes ( | ) as a
+Hollow Rectangle shown in the sample output. 
+
+Explanation:
+
+For example, if the given numbers are M = 3 and N = 10
+• The hollow rectangle should have 5 rows. ( 3+2 = 5)
+• The first and the last rows should contain 2 pluses ( +) with 10 hyphens ( - ) between them, as shown below.
+
++---------+
+
+• The middle 3 rows should contain 2 pipes ( | ) with 10 spaces  between them, as shown below.
+
+|          |
+|          |
+|          |
+
+• The final hollow rectangle is as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-rectangle-2.png
+
+Note:
+
+In the given image,
+• The Empty box indicates the one space (" ").
+• The Plus box indicates the plus ("+").
+• The Hyphen box indicates the hyphen ("-").
+• The Pipe box indicates the pipe ("").
+
+The output should be,
+
++----------+
+|          |
+|          |
+|          |
++----------+
+
+Sample Input 1:
+
+3
+10
+
+Sample Output 1:
+
++----------+
+|          |
+|          |
+|          |
++----------+
+
+Sample Input 2:
+
+5
+10
+
+Sample Output 2:
+
++----------+
+|          |
+|          |
+|          |
+|          |
+|          |
++----------+
+
+Solution:
+
+M = int(input())
+N = int(input())
+print("+"+N*"-"+"+")
+for row in range(M):
+    print("|"+N*" "+"|")
+print("+"+N*"-"+"+")
+
+_____________________________________________________________________________________________________________
