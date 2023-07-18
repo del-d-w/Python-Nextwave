@@ -1,0 +1,295 @@
+01. ﻿Print Characters - 4
+
+Given a string S and two numbers M and N, write a program to print the characters of S that
+have Unicode values from M to N separated by a space.
+
+Note:
+
+Unicode values are unique numbers that are given to every character, symbol and digit.
+
+Input:
+
+The first line of input contains a string representing S The second line of input contains an integer 
+representing M. The third line of input contains an integer representing N.
+
+Output:
+
+The output should be a single line containing a string that has characters that have Unicode values 
+from M to N separated by a space.
+
+Explanation:
+
+﻿For example, if the given string is S = "words", and two numbers are M = 99 and N = 112.
+Character  Unicode value
+    W          119
+    o          111
+    r          114
+    d          100
+    s          115
+
+• The characters o and d have Unicode values from 99 to 112.
+The output should be "o d".
+
+Sample Input 1:
+
+words
+99
+112
+
+Sample Output 1:
+
+o d
+
+Sample Input 2:
+
+AiRPort
+65
+111
+
+Sample Output 2:
+
+A i R P o 
+
+Solution:
+
+s=input()
+m=int(input())
+n=int(input())
+res=[]
+a=''
+for i in range(m,n+1):
+    res.append(i)
+for i in s:
+    if ord(i) in res:
+        a+=i+' '
+print(a)
+
+_______________________________________________________________________________________
+
+02. ﻿Unicode Value of First Digit
+
+Given a string S, write a program to print the Unicode value of the first digit in the given string.
+
+Note:
+
+Unicode values are unique numbers that are given to every character, symbol and digit.
+
+Input:
+﻿
+The input will be a single line containing a string representing S
+
+Output:
+
+The output should be a single line containing an integer that is the Unicode value of the first digit in the given string.
+
+Explanation:
+
+For example, if the given string is S = "python5834"
+The first digit in python5834 is 5.
+The Unicode value of 5 is 53.
+
+The output should be 53.
+
+Sample Input 1:
+
+python5834
+
+Sample Output 1:
+
+53
+
+Sample Input 2:
+
+0Chair12
+
+Sample Output 2:
+
+48 
+
+Solution:
+
+s=input()
+for i in s:
+    if i.isdigit():
+        print(ord(i))
+        break
+__________________________________________________________________________________________
+
+03. Replacing Characters of Sentence
+
+You are given a string S. Write a program to replace each letter of the string with the next letter 
+that comes in the English alphabet.
+
+Note: Ensure that while replacing the letters, uppercase should be replaced with uppercase letters,
+and lowercase should be replaced with lowercase letters.
+
+Input:
+
+The first line of input is a string.
+
+Explanation:
+
+In the given example, Hello World.
+If we replace each letter with the letter that comes next in the English alphabet, H becomes, e becomes f and so on
+So, the output should be Ifmmp Xpsme.
+
+Sample Input 1:
+
+Hello World
+
+Sample Output 1:
+
+Ifmmp Xpsme
+
+Sample Input 2:
+
+Something is better than Nothing
+
+Sample Output 2:
+
+Tpnfuijoh jt cfuufs uibo Opuijoh
+
+Solution:
+
+a=input()
+b=""
+for i in a:
+    i=ord(i)+1
+    b=b+chr(i)
+    b=b.replace("!"," ")
+print(b)
+
+_________________________________________________________________________________________
+
+04. ﻿Replace First Letter in Words
+
+Given a sentence S, write a program to print the sentence by replacing the first letter of every
+word with its next letter based on its Unicode value.
+
+Note:
+
+Unicode values are unique numbers that are given to every character, symbol and digit.
+
+Input:
+
+The input will be a single line containing a string representing S.
+
+﻿
+Explanation:
+
+For example, if the given sentence is S = "East And West",
+The sentence "East And West" has three words.
+• The first letter of the word East is E.
+  • The Unicode value of E is 69.
+  • The letter with the next Unicode value 70 is F.
+  • Replace E with F.
+• The first letter of the word And is A.
+  • The Unicode value of A is 65.
+  • The letter with the next Unicode value 66 is B.
+  • Replace A with B.
+• The first letter of the word West is W.
+  • The Unicode value of W is 87.
+  • The letter with the next Unicode value 88 is X.
+  • Replace W with X.
+The output should be "Fast Bnd Xest".
+
+Sample Input 1:
+
+East And West
+
+Sample Output 1:
+
+Fast Bnd Xest 
+
+Sample Input 2:
+
+NEver In a MiLLion YeARs
+
+Sample Output 2:
+
+OEver Jn b NiLLion ZeARs
+
+Solution:
+
+s=input().split(' ')
+a=''
+for i in s:
+    if i[0].isalpha():
+        s=chr(ord(i[0])+1)+i[1:]
+        a+=s+' '
+    else:
+        a+=i+' '
+print(a)
+
+_________________________________________________________________________________________
+
+05. ﻿Print Characters in Dictionary Order
+
+Given a string S, write a program that prints the character with the Least Unicode Value and the 
+character with the Highest Unicode Value separated by a space.
+
+Note:
+
+Unicode values are unique numbers that are given to every character, symbol and digit.
+
+Input:
+
+The input will be a single line containing a string representing S .
+
+Output:
+
+The output should be a single line containing a string that has the character with the Least Unicode 
+Value and the character with the Highest Unicode Value separated by a space.
+
+Explanation:
+
+For example, if the given string is S = "Five",
+Character  Unicode value
+    F          70
+    i          105
+    V          118
+    e          101
+
+• The character with the Least Unicode Value is F and the
+character with the Highest Unicode Value is v.
+The output should be "F v".
+
+Sample Input 1:
+
+Five
+
+Sample Output 1:
+
+F v
+
+Sample Input 2:
+
+TeamWork
+
+Sample Output 2:
+
+T r
+
+Solution:
+
+s=input()
+res=[]
+p=''
+for i in s:
+    res.append(ord(i))
+m=max(res)
+n=min(res)
+for i in s:
+    if ord(i)==n:
+        p+=i
+for i in s:
+    if ord(i)==m:
+        p+=i
+#print(p)
+a=[]
+for i in p:
+    if i not in a:
+        a.append(i)
+print(' '.join(a))
+
+_________________________________________________________________________________________
