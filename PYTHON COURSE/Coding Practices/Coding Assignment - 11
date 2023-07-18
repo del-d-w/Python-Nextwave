@@ -1,0 +1,282 @@
+01.﻿ Palindrome - 3
+
+Given a string, write a program that checks if the given string is a palindrome.
+Print Palindrome if the given string is a palindrome. Otherwise, print Not a Palindrome.
+
+Note:
+
+• A string is said to be a palindrome if the string and reverse of the string is same.
+• Consider a letter in uppercase or lowercase to be the same.
+﻿
+Input
+
+The input will be a single line containing a string.
+
+Output
+
+The output should be a single line containing a string. Palindrome should be printed if the given string
+is a palindrome. Otherwise Not a Palindrome should be printed.
+
+﻿Explanation:
+
+For example, if the given string is Madam,
+
+• The word remains the same when written in reverse.
+
+The output should be Palindrome.
+
+For example, if the given string is ROVER,
+
+The word does not remain the same when written in reverse.
+
+The output should be Not a Palindrome.
+
+Sample Input 1:
+
+Madam
+
+Sample Output 1:
+
+Palindrome
+
+Sample Input 2:
+
+ROVER
+
+Sample Output 2:
+
+Not a Palindrome
+
+Solution:
+
+a=input()
+a=a.lower()
+reverse_a=""
+for i in a:
+  reverse_a = i + reverse_a
+  total = (reverse_a)
+if total==a:
+  print("Palindrome")
+else:
+  print("Not a Palindrome")
+
+___________________________________________________________________________________________________
+
+02. Palindrome - 4
+
+You are given a string, write a program to find whether the string is palindrome or not.
+
+Note: Treat uppercase letters and lowercase letters as same when comparing letters. Ignore spaces and quotes 
+within the string.
+
+Input:
+
+The first line of input is a string.
+
+Output:
+
+The output should be True or False
+
+Explanation:
+
+In the given example, the string No lemon no melon is a palindrome as we are ignoring spaces. 
+So, the output should be True.
+
+Sample Input 1:
+
+No lemon no melon
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+Race Cars
+
+Sample Output 2:
+
+False
+
+Solution:
+
+a=input()
+a=a.replace(" ","")
+a = a.replace("'","")
+a=a.lower()
+reverse_a=""
+for i in a:
+  reverse_a = i + reverse_a
+  total = (reverse_a)
+if total==a:
+  print("True")
+else:
+  print("False")
+  
+_____________________________________________________________________________________________________________________
+
+03. Remove Vowels in a Sentence
+
+Given a sentence S. Write a program to remove all the vowels in the given sentence.
+
+Note
+
+Vowels are A, E, I, O, U, a, e, i, o, u. Consider both uppercase and lowercase vowels.
+
+Input
+
+The input will be a single line containing a string.
+
+Output
+
+The output should be a single line containing a string obtained by removing vowels from the given sentence.
+
+Explanation
+
+For example, if the given S = "Hello World"
+• The vowels in S are e, o.
+• The string after removing the vowels in S is HII Wrld.
+The output should be HII Wrld.
+
+Sample Input 1:
+
+Hello World
+
+Sample Output 1:
+
+ Hll Wrld
+
+Sample Input 2:
+
+Once upon a time
+
+Sample Output 2:
+
+nc pn  tm
+
+Solution:
+
+text=input()
+vowels=['a','e','i','o','u','A','E','I','O','U']
+newtext=""
+textlen=len(text)
+for i in range(textlen):
+    if text[i] not in vowels:
+        newtext=newtext+text[i]
+text=newtext
+print(text)
+
+_____________________________________________________________________________________________________
+
+04. ﻿First Part or Last Part
+
+Given two strings S1 and S2, write a program that checks if S2 is at the beginning or ending of S1.
+Print True if S2 is at the beginning or ending of S1. Otherwise, print False.
+
+Input
+
+The first line of input contains a string representing S1. The second line of input contains a string representing S2.
+
+Output
+
+The output should be a single line containing a string. True should be printed if S2 is at the beginning or ending of S1.
+Otherwise, False should be printed.
+
+Explanation
+
+For example, if the given strings are $1 = "Manager" and S2 = "Man"
+• Manager begins with Man.
+The output should be True as the S1 starts with S2.
+
+For example, if the given strings are $1 = "helicopter" and S2 = "cop"
+• helicopter does not begins with cop or ends with cop.
+The output should be False as S1 does not begin with or end with S2.
+
+Sample Input 1:
+
+Manager
+Man
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+helicopter
+cop
+
+Sample Output 2:
+
+False
+
+Solution:
+
+s1=input()
+s2=input()
+if s1.startswith(s2) or s1.endswith(s2):
+    print(True)
+else:
+    print(False)
+
+_____________________________________________________________________________________________
+
+05. ﻿Letter, Digit or Special Character
+
+Given a character C, write a program to check if the C is a Lowercase Letter or Uppercase Letter or 
+Digit or a Special Character.
+
+Note
+
+A special character is a character that is not an alphabetic or numeric character.
+Examples of special characters are !, @, #, $, %, ^, &, *, ~,.
+
+﻿Input
+
+The input will be a single line containing a character representing C.
+
+Output
+
+The output should be a single line containing a string. Print Digit if given C is a number,
+print Lowercase Letter if C is a lowercase letter, print Uppercase Letter if C is an uppercase letter.
+Otherwise, print Special Character.
+
+﻿Explanation
+
+For example, if the given character is C = "9"
+The 9(C) is a digit.
+The output should be Digit.
+
+For example, if the given character is C = "&"
+The & (C) is a special character.
+The output should be Special Character.
+
+Sample Input 1:
+
+9
+
+Sample Output 1:
+
+Digit
+
+Sample Input 2:
+
+A
+
+Sample Output 2:
+
+Uppercase Letter
+
+Solution:
+
+text=input()
+if text.isdigit():
+    print("Digit")
+elif text.isupper():
+    print("Uppercase Letter")
+elif text.islower():
+    print("Lowercase Letter")
+else:
+    print("Special Character")
+
+______________________________________________________________________________________
