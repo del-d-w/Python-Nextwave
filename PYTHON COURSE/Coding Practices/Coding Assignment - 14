@@ -1,0 +1,164 @@
+﻿01. Numbers in Inverted Hollow Right Angled Triangle-4
+
+Given two numbers S and N, write a program to print a Hollow Inverted Right Angled Triangle of N rows using numbers.
+The numbers start from S on the N th row and increase by 1 until the 1st row.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-description-numbers-in-inverted-hollow-right-angled-triangle-2.png
+﻿
+Note:
+
+There is a space after each number.
+
+Input:
+
+The first line of input contains an integer representing S. The second line of input contains an integer representing N.
+
+Output:
+
+The output should be N rows containing numbers starting from S as a Hollow Inverted Right Angled Triangle 
+shown in the sample output.
+
+﻿Explanation:
+
+For example, if the given numbers are S = 2 and N = 4,
+• Print numbers on 4 rows, where the numbers start from 2 on the
+4th row and increase by 1 until the 1st row as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-explanation-numbers-in-inverted-hollow-right-angled-triangle-2.png
+
+﻿Note:
+
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Number in the box indicates the number and a space ("11 ").
+The output should be,
+
+11 10 9 8
+  7   5
+    4 3
+      2
+
+Sample Input 1:
+
+2
+4
+
+Sample Output 1:
+
+11 10 9 8 
+  7   5 
+    4 3 
+      2 
+
+Sample Input 2:
+
+15
+5
+
+Sample Output 2:
+
+29 28 27 26 25 
+  24     21 
+    20   18 
+      17 16 
+        15 
+
+Solution:
+
+m=int(input())
+n=int(input())
+p=n*(n+1)//2-1+m
+for i in range(n):
+    for j in range(i):
+        print(' ',end=' ')
+    for j in range(n-i):
+        if j==0 or i==0 or i+j==n-1:
+            print(p,end=' ')
+        else:
+            print(' ',end=' ')
+        p-=1
+    print()
+
+___________________________________________________________________________________________
+
+02. ﻿Numbers in Inverted Hollow Pyramid
+
+Given two numbers S and N, write a program to print a
+Inverted Hollow Pyramid of N rows using numbers starting from S.
+
+https://res.cloudinary.com/da7qpgps9/image/upload/v1677586163/Screenshot_from_2023-02-28_17-39-10_bzxrp6.png
+
+Input:
+
+The first line of input contains an integer representing S.
+The second line of input contains an integer representing N.
+
+Output:
+
+The Output should be N rows containing numbers starting from S as a Inverted Hollow Pyramid shown in the sample output.
+
+Explanation:
+
+For example, if the given numbers are S = 3 and N = 4
+
+Print numbers on 4 rows, starting from 3 as shown in the given image.
+
+https://res.cloudinary.com/da7qpgps9/image/upload/v1677586210/Screenshot_from_2023-02-28_17-39-54_hdmrnt.png
+
+﻿Note:
+
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Number in the box indicates the number and a space ("3 ").
+The output should be,
+
+3 4 5 6
+ 7   9
+  10 11
+   12
+
+Sample Input 1:
+
+3
+4
+
+Sample Output 1:
+
+3 4 5 6
+ 7   9
+  10 11
+   12
+
+Sample Input 2:
+
+13
+6
+
+Sample Output 2:
+
+13 14 15 16 17 18 
+ 19       23 
+  24     27 
+   28   30 
+    31 32 
+     33 
+
+Solution:
+
+m=int(input())
+n=int(input())
+p=m 
+for i in range(n):
+    for j in range(i):
+        print('',end=' ')
+    for j in range(n-i):
+        if i==0 or j==0 or i+j==n-1:
+            print(p,end=' ')
+        else:
+            print(' ',end=' ')
+        p+=1 
+    print()
+
+______________________________________________________________________________
+
+03.
