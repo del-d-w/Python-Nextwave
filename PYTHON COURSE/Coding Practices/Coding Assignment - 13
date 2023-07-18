@@ -1,0 +1,234 @@
+01. ﻿Pythagoras Triplets
+
+Given a number N, write a program to print the count of Pythagorean triplets containing numbers A, B and C 
+from 1 to N such that the sum of squares of the numbers A and B is equal B < C. to the square of C,
+where A < B < C.
+
+A is the first number, B is the second number, and C is the third number in a triplet.
+
+Note:
+
+A Pythagorean triplet is a set of three integers A, B, and C such that A2+ B2 = C2
+﻿
+Input:
+
+The input will be a single line containing an integer representing N
+
+Output:
+
+The output should be a single line containing an integer which is the count of Pythagorean triplets whose 
+sum of squares of numbers A and B is equal to the square of C.
+
+Explanation:
+
+For example, if the given number is N = 20,
+The Pythagorean triplets such that A2+ B2 = C2 where A <B < C are,
+
+(3, 4, 5),
+(6, 8, 10),
+(5, 12, 13),
+(9, 12, 15),
+(8, 15, 17),
+(12, 16, 20)
+
+The count of Pythagorean triplets whose sum of squares of numbers A and B is equal to
+the square of C is 6.
+The output should be 6.
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+1
+
+Sample Input 2:
+
+20
+
+Sample Ouput 2:
+
+6
+
+Solution:
+
+L=int(input())
+count=0
+for a in range(1,L-1):
+    for b in range(a+1,L):
+        for c in range(b+1,L+1):
+            x=a*a
+            y=b*b
+            z=c*c
+            if (x+y==z):
+                count+=1
+print(count)
+
+__________________________________________________________________________________
+
+02. ﻿Numbers in Inverted Right Angled Triangle - 3
+
+Given two numbers S and N, write a program to print an Inverted Right Angled Triangle of N rows K+S -1 and ending with S.
+
+K is the count of numbers that can be printed in N rows of an Inverted Right Angled Triangle.
+
+For example, if the given number is S = 4 and the number of rows is N = 3,
+
+• The count of numbers that can be arranged in an Inverted Right Angled Triangle of 3 rows is K = 6 ( 3+2 + 1 = 6).
+• The starting number from which the numbers should be printed is K+S - 1 which is 9 (6 + 4-1).
+So, the Inverted Right Angled Triangle should be printed with the numbers starting from 9 (K + S-1) 
+and ending with 4 (S) in descending order as given below.
+
+9 8 7
+6 5
+4
+
+﻿Note:
+
+There is a space after every number.
+
+Input
+
+The first line of input contains an integer representing S.
+The second line of input contains an integer representing N.
+
+Output
+
+The output should be N rows containing numbers starting from K+ S-1 and ending with S as an 
+Inverted Right Angled Triangle shown in the sample output.
+
+﻿Explanation
+For example, if the given numbers are S = 8 and N = 4,
+• The count of numbers that can be arranged in an Inverted Right Angled Triangle of 4 rows is K = 10 ( 4+ 3+2+1 = 10).
+The starting number from which the numbers should be printed is K+S-1 which is 17 ( 10 + 8-1).
+• Print the numbers starting from 17 and ending with 8 (S) in descending order on 4 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-inverted-right-angled-triangle-3.png
+
+Note:
+
+In the given image, the Number in the box indicates the number and space("17 ")
+
+The Ouput should be 
+
+17 16 15 14
+13 12 11
+10 9
+8
+
+Sample Input 1:
+
+8
+4
+
+Sample Output 1:
+
+17 16 15 14
+13 12 11
+10 9
+8
+
+Sample Input 2:
+
+2
+3
+
+Sample Ouput 2:
+
+7 6 5 
+4 3 
+2
+
+Solution:
+
+s=int(input())
+n=int(input())
+k=0
+for i in range(1,n+1):
+    k+=i
+num=k+s-1
+for i in range(n,0,-1):
+    for j in range(i):
+        print(num,end=" ")
+        num-=1
+    print()
+
+_____________________________________________________________________________
+
+03. Numbers in Inverted Pyrimad
+
+Given a number N write a program to print an Inverted Pyramid of N rows using numbers starting from 1.
+
+1 2 3 4 5
+ 1 2 3 4
+  1 2 3
+   1 2
+    1
+
+﻿
+Input
+
+The input will be a single line containing an integer representing N.
+
+Output
+
+The output should be N rows containing numbers starting from 1 as an Inverted Pyramid shown in the sample output.
+
+Explanation
+
+For example, if the given number is 5,
+• Print the numbers on 5 rows as shown in the given image.
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-inverted-pyramid.png
+
+Note:
+
+In the given image
+• Empty box indicates a space ("")
+• The number in the box indicates a number ("1 ")
+
+The output should be
+
+1 2 3 4 5
+ 1 2 3 4
+  1 2 3
+   1 2
+    1
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+1 2 3 4 5 
+ 1 2 3 4 
+  1 2 3 
+   1 2 
+    1 
+
+Sample Input 2:
+
+3
+
+Sample Ouput 2:
+
+1 2 3 
+ 1 2 
+  1 
+
+Solution:
+
+n=int(input())
+for i in range(n):
+    p=1
+    for j in range(i):
+        print(end=' ')
+    for j in range(n-i):
+        print(p,end=' ')
+        p=p+1
+    print()
+
+________________________________________________________________________________
+
+04. 
