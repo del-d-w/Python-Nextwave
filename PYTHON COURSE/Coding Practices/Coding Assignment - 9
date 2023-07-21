@@ -1,0 +1,526 @@
+01. ﻿Product of Numbers divisible by 3 from M to N
+
+Write a program that reads two numbers M and N, and finds the product of the numbers from M to N 
+that are divisible by 3.
+
+Print the product of the numbers from M to N that are divisible by 3.
+If there are no numbers that are divisible by 3 from M to N. Otherwise, print 1.
+
+Input:
+
+The first line of input contains an integer representing M. 
+The second line of input contains an integer representing N.
+
+Output:
+
+The output should be a single line containing an integer that is the product of the numbers from M to N 
+that are divisible by 3 if there are numbers that are divisible by 3 from M to N Otherwise, print 1.
+
+Constraints:
+
+N should be greater than or equal to M.
+
+Explanation:
+
+For example, if the given numbers are M = 2 and N = 7,
+• The numbers from 2 to 7 are 2, 3, 4, 5, 6 and 7.
+• Numbers from 2 to 7 that are divisible by 3 are 3 and 6.
+
+The product of numbers from 2 to 7 that are divisible by 3 is 18. ( 3*6 = 18 )
+﻿
+Number      Previous Product      Current Product (Previous Product * Number)
+3                1                                1*3=3
+6                3                                3*6=18
+
+The output should be 18.
+
+Sample Input 1:
+
+2
+7
+
+Sample Output 1:
+
+18
+
+Sample Input 2:
+
+12
+14
+
+Sample Output 2:
+
+12
+
+Sample Input 3:
+
+1
+2
+
+Sample Output 3:
+
+1
+
+Solution:
+
+m=int(input())
+n=int(input())
+p=1
+for i in range(m,n+1):
+    if i%3==0:
+        p*=i 
+print(p)
+    
+__________________________________________________________________________________________
+
+02﻿. Sum of K Powers
+
+Write a program that reads two numbers N and K and prints the sum of the Kth power of all the numbers from 1 to N
+
+Input:
+
+The first line of input contains an integer representing N. 
+The second line of input contains an integer representing K.
+
+Output:
+
+The output should be a single line containing an integer that is the sum of the Kth power of all the numbers from 1 to N.
+
+﻿Explanation
+﻿
+For example, if the given two numbers are N = 5 and K = 3,
+• The numbers from 1 to 5 are 1, 2, 3, 4 and 5.
+• The 3 (K) power of all numbers from 1 to 5 are 13, 23, 33, 43 and 53).
+• The sum of 3 (K) power of the numbers from 1 to 5 is 225. (13+23+33 +43+53)
+
+Number (X)     3 power of Number (X3)     Previous Sum         Current Sum (Previous Sum + (X3))
+1                      1                      0                         0 + 1 = 1
+2                      8                      1                         1 + 8 = 9
+3                      27                     9                         9 + 27 = 36
+4                      64                     36                        36 + 64 = 100
+5                      125                    100                       100 + 125 = 225
+
+The output should be 225.
+
+Sample Input 1:
+
+5
+3
+
+Sample Output 1:
+
+225 
+
+Sample Input 2:
+
+2
+8
+
+Sample Output 2:
+
+257 
+
+Solution:
+
+n=int(input())
+m=int(input())
+t=0
+for i in range(n+1):
+    t=t+(i**m)
+print(t)
+
+_____________________________________________________________________________________________
+
+03. Count of Numbers divisible by 6 and 8
+
+Write a program that reads a number N and prints the count of numbers from 1 to N that are divisible by both 6 and 8
+
+﻿Input:
+
+The input will be a single line containing an integer representing N.
+
+Output:
+
+The output should be a single line containing an integer that is the count of numbers from
+1 to N that are divisible by both 6 and 8.
+
+Explanation:
+
+For example, if the given number is N = 50,
+Numbers from 1 to 50 that are divisible by both 6 and 8 are 24 and 48.
+So, the count of numbers from 1 to 50 that are divisible by both 6 and 8 is 2
+
+The output should be 2.
+
+Sample Input 1:
+
+50
+
+Sample Output 1:
+
+2
+
+Sample Input 2:
+
+175
+
+Sample Output 2:
+
+7
+                  
+Solution:
+
+n=int(input())
+count=0
+for i in range(1,n+1):
+    if i%6==0 and i%8==0:
+        count+=1 
+print(count)
+
+____________________________________________________________________________________________________
+
+04.﻿ Inverted Right Angled Triangle - 3
+
+Write a program that reads a number N and prints an Inverted Right Angled Triangle of N rows 
+using stars (*) and pluses (+).
+
+The first row contains N stars (*) and the next N-1 rows contain pluses (+).
+
+* * * * 
++ + + 
++ + 
++
+
+Note:
+
+There is space after every star (*) and every (+).
+
+﻿Input
+
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars (*) and pluses (+) as an Inverted Right Angled Triangle
+shown in the sample output.
+
+Explanation:
+
+For example, if the given number is N = 4,
+• Print the stars ( ) and pluses (+) on 4 rows as shown in the given image.
+• The first row should contain 4 stars ( * ).
+• The next 3 rows should contain pluses ( + ).
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-inverted-right-angled-triangle-3.png
+
+Note:
+
+There is space after every star (*) and every (+).
+
+The output should be,
+
+* * * *
++ + +
++ +
++
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+* * * *
++ + +
++ +
++
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+* * * * * * * 
++ + + + + + 
++ + + + + 
++ + + + 
++ + + 
++ + 
++ 
+
+Solution:
+
+n=int(input())
+for i in range(1,2):
+    print("* "*n)
+for i in range(2,n+1):
+    print("+ "*(n-i+1))
+    
+______________________________________________________________________________________________________
+
+05. Perfect Squares in a Range
+
+You are given two numbers, A and B where 1 <= A <= B, Write a program to find the number of perfect squares
+in the range A to B (including A and B).
+
+﻿Input
+
+The first line of input is an integer A.
+The second line of input is an integer B.
+
+Explanation:
+
+In the given example, A = 9 and B = 100. The perfect squares in the range A to B are
+
+3 * 3 = 9
+4 * 4 = 16
+5 * 5 = 25
+6 * 6 = 36
+7 * 7 = 49
+8 * 8 = 64
+9 * 9 = 81
+10 * 10 = 100
+
+The output should be 8.
+
+Sample Input 1:
+
+9
+100
+
+Sample Output 1:
+
+8
+
+Sample Input 2:
+
+625
+1444
+
+Sample Output 2:
+
+14
+
+Solution:
+
+A = int(input())
+B = int(input())
+count=0
+for i in range(A, B + 1):
+    if i ** 0.5 == int(i ** 0.5):
+        count=count+1
+print(count)
+
+__________________________________________________________________________________________
+
+06. Solid & Hollow Diamond
+
+Given a number N write a program to print a pyramid and an Inverted Hollow Pyramid of 2 * N - 1 rows using stars (*)
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+ *     *
+  *   *
+   * *
+    *
+
+﻿Input
+
+The input will be a single line containing an integer representing N.
+
+Output
+
+The output should be 2 * N - 1 rows containing stars (*) as pyramid and an Inverted Hollow Pyramid
+shown in the sample output.
+
+Explanation:
+
+For example, if the given number is N = 5,
+• Print the stars (*) on 9 rows ( (2 * 5 ) - 1) as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-solid-and-hollow-diamond.png
+
+Note:
+
+In the given image,
+The Empty box indicates two spaces (" ").
+• The Star in box indicates the star and a space ("*").
+
+The output should be,
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+ *     *
+  *   *
+   * *
+    *
+
+Sample Input 1:
+
+6
+
+Sample Output 1:
+
+     * 
+    * * 
+   * * * 
+  * * * * 
+ * * * * * 
+* * * * * * 
+ *       * 
+  *     * 
+   *   * 
+    * * 
+     *
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+ *     * 
+  *   * 
+   * * 
+    *
+
+Solution:
+
+"""N = int(input())
+for i in range(N):
+    print(' '*(N - i - 1)+'* '* (i + 1))
+for j in range(N-1):
+    stars =' '*(j + 1)+ '*' + ' '*(N*2-2*j-5) + '*'
+    if j == (N - 2):
+        stars = ' '*(N - 1) + '*'
+    print(stars)
+"""
+"""n=int(input())
+for i in range(n-1):
+    for j in range(n-i-1):
+        print(end=' ')
+    for j in range(i+1):
+        print("*",end=' ')
+    print()
+for row in range(1,n+1):
+    for col in range(1,2*n):
+        if (row==1 and col%2!=0) or row==col or col+row==n*2:
+            print("*",end="")
+        else:
+            print(end=" ")
+    print()"""
+"""n=int(input())
+k=n-1
+for i in range(1,n+1):
+    spaces=" "*k
+    stars="* "*i
+    print(spaces+stars)
+    k=k-1
+for row in range(1,n+1):
+    i=n-(row)
+    left_spaces=" "*(n-i)
+    if(i>2) and (i<n):
+        hallow_spaces="  "*(i-2)
+        stars="* "+hallow_spaces+"* "
+        print(left_spaces+stars)
+    else:
+        stars="* "*i
+        print(left_spaces+stars)"""
+n=int(input())
+for i in range(n-1):
+    for j in range(n-i-1):
+        print(end=' ')
+    for j in range(i+1):
+        print("*",end=' ')
+    print()
+for i in range(n-1,0,-1):
+    for j in range(n-i-1):
+        print(end=' ')
+    for j in range(i+1):
+        if i==n-1 or j==0 or i==j:
+            print("*",end=' ')
+        else:
+            print(" ",end=' ')
+    print()
+print(" "*(n-1)+"*")
+
+_________________________________________________________________________________
+
+07. ﻿Solid Right Angled Triangle - 2
+
+Given an integer number N as input. Write a program to print the right-angled triangular 
+pattern of N lines as shown below.
+
+Note: There is a space after each asterisk (*) character.
+
+Input
+
+The first line of input is an integer N.
+
+Explanation
+
+In the given example, the solid right-angled triangle of side 5. Therefore, the output should be 
+
+
+        * 
+      * * 
+    * * * 
+  * * * * 
+* * * * *
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+      * 
+    * * 
+  * * * 
+* * * * 
+
+
+Sample Input 2:
+
+6
+
+Sample Output 2:
+
+          * 
+        * * 
+      * * * 
+    * * * * 
+  * * * * * 
+* * * * * * 
+
+Solution:
+
+n=int(input())
+for i in range(n):
+    if i==n-1:
+        print("* "*n)
+    elif i==0:
+        print("  "*(n-1)+"* ")
+    else:
+        print("  "*(n-i-1)+"* "*(i+1))
+"""n=int(input())
+for i in range(n):
+    for j in range(n-i-1):
+        print(" ",end=" ")
+    for j in range(i+1):
+        print("*",end=" ")
+    print()
+"""
+
+_______________________________________________________________________________________
