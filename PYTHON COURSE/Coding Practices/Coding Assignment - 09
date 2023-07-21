@@ -258,35 +258,116 @@ for i in range(2,n+1):
     
 ______________________________________________________________________________________________________
 
-05. Perfect Squares in a Range
+05. Two Right Angled Triangles - 2
 
-You are given two numbers, A and B where 1 <= A <= B, Write a program to find the number of perfect squares
-in the range A to B (including A and B).
+Write a program that reads a number N and prints a Right Angled Triangle of N rows and an 
+Inverted Right Angled Triangle of N rows using stars ( * ).
 
-﻿Input
+*
+* *
+* * *
+* * *
+* *
+*
 
-The first line of input is an integer A.
-The second line of input is an integer B.
+﻿
+Note:
+
+There is a space after every star (*).
+
+Input:
+
+The input will be a single line containing an integer representing N.
+
+Output:
+
+The output should be 2* N rows containing stars (*) as two Triangles shown in the sample output.
 
 Explanation:
 
-In the given example, A = 9 and B = 100. The perfect squares in the range A to B are
+For example, if the given number is N = 3,
+• Print the stars (*) on 6 rows (2*3=6) as shown in the given image.
+• The first 3 rows should contain a Right Angled Triangle.
+• The next 3 rows should contain an Inverted Right Angled Triangle.
 
-3 * 3 = 9
-4 * 4 = 16
-5 * 5 = 25
-6 * 6 = 36
-7 * 7 = 49
-8 * 8 = 64
-9 * 9 = 81
-10 * 10 = 100
+The output should be,
 
-The output should be 8.
+*
+* *
+* * *
+* * *
+* *
+*
 
 Sample Input 1:
 
-9
-100
+3
+
+Sample Output 1:
+
+* 
+* * 
+* * * 
+* * * 
+* * 
+* 
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * * * 
+* * * * * * * 
+* * * * * * * 
+* * * * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+
+Solution:
+
+n=int(input())
+for i in range(1,n+1):
+    print("* "*i)
+for i in range(n,0,-1):
+    print("* "*i)
+
+__________________________________________________________________________________________
+
+06. Find the Power of Number
+
+Given an integer N, and exponent M as input, write a program to calculate N power M 
+without using the power operator ( ** ).
+
+Input:
+
+The first line of input is an integer N.
+The second line of input is an integer M.
+
+Output:
+
+The output should be an integer representing the N power M.
+
+Explanation:
+
+ N = 2, M = 3
+2**3 (2 power 3)= 8
+
+So output should be 8.
+
+Sample Input 1:
+
+2
+3
 
 Sample Output 1:
 
@@ -294,233 +375,59 @@ Sample Output 1:
 
 Sample Input 2:
 
-625
-1444
+3
+1
 
 Sample Output 2:
 
-14
+3
 
 Solution:
 
-A = int(input())
-B = int(input())
-count=0
-for i in range(A, B + 1):
-    if i ** 0.5 == int(i ** 0.5):
-        count=count+1
-print(count)
-
-__________________________________________________________________________________________
-
-06. Solid & Hollow Diamond
-
-Given a number N write a program to print a pyramid and an Inverted Hollow Pyramid of 2 * N - 1 rows using stars (*)
-
-    * 
-   * * 
-  * * * 
- * * * * 
-* * * * * 
- *     *
-  *   *
-   * *
-    *
-
-﻿Input
-
-The input will be a single line containing an integer representing N.
-
-Output
-
-The output should be 2 * N - 1 rows containing stars (*) as pyramid and an Inverted Hollow Pyramid
-shown in the sample output.
-
-Explanation:
-
-For example, if the given number is N = 5,
-• Print the stars (*) on 9 rows ( (2 * 5 ) - 1) as shown in the given image.
-
-https://assets.ccbp.in/frontend/content/programming-foundations/cx-solid-and-hollow-diamond.png
-
-Note:
-
-In the given image,
-The Empty box indicates two spaces (" ").
-• The Star in box indicates the star and a space ("*").
-
-The output should be,
-
-    * 
-   * * 
-  * * * 
- * * * * 
-* * * * * 
- *     *
-  *   *
-   * *
-    *
-
-Sample Input 1:
-
-6
-
-Sample Output 1:
-
-     * 
-    * * 
-   * * * 
-  * * * * 
- * * * * * 
-* * * * * * 
- *       * 
-  *     * 
-   *   * 
-    * * 
-     *
-
-Sample Input 2:
-
-5
-
-Sample Output 2:
-
-    * 
-   * * 
-  * * * 
- * * * * 
-* * * * * 
- *     * 
-  *   * 
-   * * 
-    *
-
-Solution:
-
-"""N = int(input())
-for i in range(N):
-    print(' '*(N - i - 1)+'* '* (i + 1))
-for j in range(N-1):
-    stars =' '*(j + 1)+ '*' + ' '*(N*2-2*j-5) + '*'
-    if j == (N - 2):
-        stars = ' '*(N - 1) + '*'
-    print(stars)
-"""
-"""n=int(input())
-for i in range(n-1):
-    for j in range(n-i-1):
-        print(end=' ')
-    for j in range(i+1):
-        print("*",end=' ')
-    print()
-for row in range(1,n+1):
-    for col in range(1,2*n):
-        if (row==1 and col%2!=0) or row==col or col+row==n*2:
-            print("*",end="")
-        else:
-            print(end=" ")
-    print()"""
-"""n=int(input())
-k=n-1
-for i in range(1,n+1):
-    spaces=" "*k
-    stars="* "*i
-    print(spaces+stars)
-    k=k-1
-for row in range(1,n+1):
-    i=n-(row)
-    left_spaces=" "*(n-i)
-    if(i>2) and (i<n):
-        hallow_spaces="  "*(i-2)
-        stars="* "+hallow_spaces+"* "
-        print(left_spaces+stars)
-    else:
-        stars="* "*i
-        print(left_spaces+stars)"""
 n=int(input())
-for i in range(n-1):
-    for j in range(n-i-1):
-        print(end=' ')
-    for j in range(i+1):
-        print("*",end=' ')
-    print()
-for i in range(n-1,0,-1):
-    for j in range(n-i-1):
-        print(end=' ')
-    for j in range(i+1):
-        if i==n-1 or j==0 or i==j:
-            print("*",end=' ')
-        else:
-            print(" ",end=' ')
-    print()
-print(" "*(n-1)+"*")
+m=int(input())
+print(n**m)
 
 _________________________________________________________________________________
 
-07. ﻿Solid Right Angled Triangle - 2
+07. ﻿﻿Product of Numbers from M to N
 
-Given an integer number N as input. Write a program to print the right-angled triangular 
-pattern of N lines as shown below.
+Given two integers M, N. Write a program to print the product of numbers in the range M and N (inclusive of M and N ).
 
-Note: There is a space after each asterisk (*) character.
+Input:
 
-Input
+The first line of input is an integer M. The second line of input is an integer N.
 
-The first line of input is an integer N.
+Explanation:
 
-Explanation
-
-In the given example, the solid right-angled triangle of side 5. Therefore, the output should be 
-
-
-        * 
-      * * 
-    * * * 
-  * * * * 
-* * * * *
+In the given example, the product of numbers between the range 2 and 5 is 2*3*4*5. 
+Therefore, the output should be 120.
 
 Sample Input 1:
 
-4
+2
+5
 
 Sample Output 1:
 
-      * 
-    * * 
-  * * * 
-* * * * 
-
+120
 
 Sample Input 2:
 
-6
+1
+4
 
 Sample Output 2:
 
-          * 
-        * * 
-      * * * 
-    * * * * 
-  * * * * * 
-* * * * * * 
+24
 
 Solution:
 
-n=int(input())
-for i in range(n):
-    if i==n-1:
-        print("* "*n)
-    elif i==0:
-        print("  "*(n-1)+"* ")
-    else:
-        print("  "*(n-i-1)+"* "*(i+1))
-"""n=int(input())
-for i in range(n):
-    for j in range(n-i-1):
-        print(" ",end=" ")
-    for j in range(i+1):
-        print("*",end=" ")
-    print()
-"""
+num1 = int(input())
+num2 = int(input())
+sum = 1
+for i in range(num1,num2+1):
+  sum=sum*i
+print(sum)
 
 _______________________________________________________________________________________
