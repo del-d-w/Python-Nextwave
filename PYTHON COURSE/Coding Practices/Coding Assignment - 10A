@@ -1,0 +1,551 @@
+01. Number of Digits until N
+
+write a program that reads a number N and find the count of digits from 1 to N
+
+Note:
+
+Numbers from 1 to 9 are single digits
+Numbers from 10 to 99 are double digits and so on.
+
+Input:
+
+The input will be a single line containing an integer representing N.
+
+Output:
+
+The output should be a single line containing an integer that is the count of the total number of digits from 1 to N.
+
+Explanation:
+
+﻿For example, if the given number is N = 10,
+Count the digits from 1 to 106,
+
+• The numbers from 1 to 9 have one digit each, so there are 9 digits in total.
+• The number 10 has two digits (1, 0), so there are 2 digits in total.
+
+The output should be 11.( 9 + 2 = 11)
+
+For example, if the given number is N = 106,
+
+Count the digits from 1 to 106,
+• The numbers from 1 to 9 have one digit each, so there are 9 digits in total.
+•The numbers from 10 to 99 have two digits each, so there are 180 digits in total. (90 * 2 = 180 )
+• The numbers from 100 to 106 have three digits each, so there are 21 digits in total. (7 * 3 = 21)
+
+The output should be 210. (9 + 180 + 21 = 210)
+
+Sample Input 1:
+
+10
+
+Sample Output 1:
+
+  11
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+4
+
+Solution:
+
+n=int(input())
+sum=0
+for i in range(1,n+1):
+    no_of_digits = len(str(i))
+    sum = sum + no_of_digits
+print(sum)
+    
+__________________________________________________________________________________________
+
+02﻿ ﻿ Sum of N Terms in the series
+
+Given two numbers X and N, write a program to print the sum of N terms in the given series.
+
+Series:
+x, -x3, x5, -x7, x9... N terms
+
+Terms in the given series:
+
+Term Number  Term  Power
+
+First Term    X     1
+Second Term  -X3    3
+Third Term    X5    5
+Fourth Term  -X7    7
+ 
+Input:
+
+The first line of input contains an integer representing x.
+The second line of input contains an integer representing N.
+
+Output:
+
+The output should be a single line containing an integer that is the Fisrt term to the Nth term
+
+Explanation:
+
+For example, if the given numbers are X = 2 and N=5,
+• The first term to the fifth term in the given series are
+
+2 (21), -8 (-23), 32 (25), -128 (-27) and 512 (29).
+
+Terms in the given series:
+
+Term Number   Term       Power
+
+First Term     21 (2)      1
+Second Term   -23 (-8)     3
+Third Term     25 (32)     5
+Fourth Term    27 (-128)   7
+Fifth Term     29 (512)    9
+
+Sum of terms from first term to fifth term is 410.
+2 + (-8) + 32 + (-128) + 512 = 410
+The output should be 410.
+
+Sample Input 1:
+
+2
+5
+
+Sample Output 1:
+
+410
+
+Sample Input 2:
+
+3
+2
+
+Sample Output 2:
+
+-24
+                    * 
+Solution:
+
+A=int(input())
+B=int(input())
+a=1
+sum1=0
+for i in range(0,B):
+    if i%2==0:
+        sum1=sum1+(A**a)
+    else:
+        sum1=sum1-(A**a)
+    a=a+2
+print(sum1)
+
+_____________________________________________________________________________________________
+
+03. More than two Factors
+
+Given a number N, write a program to find the count of factors of N.
+Print Number has more than 2 factors if the count of factors is greater than 2. 
+Otherwise, print Number doesn't have more than 2 factors.
+
+Note:
+
+A factor is a number that divides another number, leaving no remainder.
+
+• For example 4 % 2 == 0, 2 is factor of 4.
+
+Input:
+
+The input will be a single line containing an integer representing N.
+
+Output:
+
+The output should be a single line containing a string. Number has
+more than 2 factors should be printed if the count of factors of the number N is greater than 2. 
+Otherwise, Number doesn't have more than 2 factors should be printed.
+
+Explanation:
+
+For example, if the given number is N=6,
+• The factors of 6 are 1, 2, 3 and 6.
+• The count of factors for 6 is 4.
+
+The output should be Number has more than 2 factors.
+
+Sample Input 1:
+
+6
+
+Sample Output 1:
+
+Number has more than 2 factors
+
+Sample Input 2:
+
+13
+
+Sample Output 2:
+
+Number doesn't have more than 2 factors
+                  
+Solution:
+
+n=int(input())
+count=0
+for i in range(1,n+1):
+    if n%i==0:
+        count+=1 
+if count>2:
+    print("Number has more than 2 factors")
+else:
+    print("Number doesn't have more than 2 factors")
+    
+____________________________________________________________________________________________________
+
+04. Right Angled Triangle - 8
+
+Given a number N write a program to print two Right Angled Triangles each of N rows using stars (*)
+
+
+* 
+* * 
+* * * 
+* 
+* * 
+* * *
+
+﻿Input
+
+The input will be a single line containing an integer representing N.
+
+Output
+
+The output should be 2 * N rows containing stars (*) as two Right Angled Triangle shown in the sample output.
+
+Explanation:
+
+For example, if the given number is N = 4,
+• Print the stars (*) on 8 rows as shown in the given image.
+The first 4 rows  has a Right Angled Triangle
+The next 4 rows has anothet Right Angled Triangle
+
+https://res.cloudinary.com/deujvj7up/image/upload/v1671019721/Screenshot_from_2022-12-14_17-38-28_fiazfk.png
+
+Note:
+
+There is space after every star (*)
+
+The output should be,
+
+* 
+* * 
+* * * 
+* * * * 
+* 
+* * 
+* * * 
+* * * *
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+* 
+* * 
+* * * 
+* * * * 
+* 
+* * 
+* * * 
+* * * * 
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+
+Solution:
+
+m=int(input())
+count=1
+while(count<=m):
+    print("* "*count)
+    count=count+1
+count=1
+while(count<=m):
+    print("* "*count)
+    count=count+1
+
+______________________________________________________________________________________________________
+
+05. Diamond - 2
+
+Given a number N write a program to print a Diamond of 2 * N - 1 rows using numbers.
+
+   1
+  2 2
+ 3 3 3 
+  2 2
+   1
+
+Note:
+
+There is a space of every number.
+
+﻿Input
+
+The number will be a single line containing an integer representing N.
+
+Output:
+
+The ouput should be 2 * N - 1 rows containing numbers as a Diamond shown in sample output.
+
+Explanation:
+
+for example, if the given N = 4,
+print the numbers starting from 1 to 4 on 7 rows ((2 * 4) - 1) as shown in the given image
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-diamond-2.png
+
+Note:
+
+In the given image,
+The Empty box indicates two spaces (" ").
+• The Star in box indicates the star and a number ("1").
+
+The output should be,
+
+   1 
+  2 2 
+ 3 3 3 
+4 4 4 4 
+ 3 3 3 
+  2 2 
+   1
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+   1 
+  2 2 
+ 3 3 3 
+4 4 4 4 
+ 3 3 3 
+  2 2 
+   1
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+      1 
+     2 2 
+    3 3 3 
+   4 4 4 4 
+  5 5 5 5 5 
+ 6 6 6 6 6 6 
+7 7 7 7 7 7 7 
+ 6 6 6 6 6 6 
+  5 5 5 5 5 
+   4 4 4 4 
+    3 3 3 
+     2 2 
+      1
+
+Solution:
+
+n=int(input())
+for i in range(1,n+1):
+    print(' '*(n-i)+(str(i)+" ")*i)
+for i in range(n-1,0,-1):
+    print(' '*(n-i)+(str(i)+' ')*i)
+
+__________________________________________________________________________________________
+
+06. Inverted Right Angled Traingle - 6
+
+Given a number N write a program to print a Right Angled Traingle of N rows using stars (*)
+
+* * * * * 
+  * * * * 
+    * * * 
+      * * 
+        *
+
+Note:
+
+There is a space after every star(*)
+
+﻿Input
+
+The input will be a single line containing an integer representing N.
+
+Output
+
+The output should be N rows containing stars (*) a Right Angled Traingle shown in the sample output.
+
+Explanation:
+
+For example, if the given number is N = 4,
+• Print the stars (*) on 4 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-inverted-right-angled-triangle-6.png
+
+Note:
+
+In the given image,
+The Empty box indicates two spaces (" ").
+• The Star in box indicates the star and a space ("*").
+
+The output should be,
+
+* * * * 
+  * * * 
+    * * 
+      *
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+* * * * 
+  * * * 
+    * * 
+      *
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+* * * * * 
+  * * * * 
+    * * * 
+      * * 
+        * 
+
+Solution:
+
+n=int(input())
+print("* "*n)
+for i in range(1,n):
+    print("  "*(i)+"* "+"* "*(n-i-1))
+
+"""n=int(input())
+for i in range(n):
+    for j in range(i):
+        print(" ",end=" ")
+    for j in range(n-i):
+        print("*",end=" ")
+    print()"""
+
+_________________________________________________________________________________
+
+07. W Shape with* - 2
+
+Given an integer number N as input. Write a program to print the letter W of N rows using stars (*).
+
+* * * * * * * * 
+ * * *   * * * 
+  * *     * * 
+   *       *
+
+Note: There is a space after each asterisk (*) character.
+
+﻿Input
+
+The input will be a single line containing an integer representing N.
+
+Output
+
+The output should be N rows containing stars (*) as the letter W shown in the sample output.
+
+Explanation:
+
+For example, if the given number is N = 5,
+• Print the stars (*) on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-wshape-with-stars-2.png
+
+Note:
+
+In the given image,
+The Empty box indicates two spaces (" ").
+• The Star in box indicates the star and a space ("*").
+
+The output should be,
+
+* * * * * * * * * 
+ * * * * * * * * 
+  * * *   * * * 
+   * *     * * 
+    *       *
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+* * * * * * * * * 
+ * * * * * * * * 
+  * * *   * * * 
+   * *     * * 
+    *       * 
+
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+* * * * * * * 
+ * * * * * * 
+  * *   * * 
+   *     * 
+
+Solution:
+
+"""N = int(input())
+print("* " * (2 * N - 1))
+for k in range(1, N):
+    print(" " * k, end="")
+    print("* " * (N - k), end="")
+    print("  " * (k - 1), end="")
+    print("* " * (N - k))"""
+
+N = int(input())
+print("* " * (2 * N - 1))
+for i in range(1,N):
+    for j in range(i):
+        print(" ",end="")
+    for j in range(N-i):
+        print("*",end=" ")
+    for j in range(i-1):
+        print(" ",end=" ")
+    for j in range(N-i):
+        print("*",end=" ")
+    print()
+
+_______________________________________________________________________________________
