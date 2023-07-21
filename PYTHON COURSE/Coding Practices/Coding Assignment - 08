@@ -1,0 +1,572 @@
+01. Rectangle 3 (For Loop)
+
+Write a program that reads two numbers M and N, and prints a Rectangle of M rows and N columns using numbers.
+
+1 1 1 1
+2 2 2 2
+3 3 3 3
+
+﻿Note:
+
+• Use For loop for iteration.
+• There is a space after every number.
+
+Input:
+
+The first line of input contains an integer representing M. The second line of input contains an integer representing N.
+
+Output:
+
+The output should be M rows and N columns containing numbers as a Rectangle shown in the sample output.
+
+Explanation:
+
+For example, if the given numbers are M = 2 and N = 3,
+• Print the numbers on 2 rows and 3 columns as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-rectangle-3.png
+
+Note:
+
+In the given image,
+• There is a space after every number.
+
+The output should be,
+
+1 1 1
+2 2 2
+
+Sample Input 1:
+
+2
+3
+
+Sample Output 1:
+
+1 1 1
+2 2 2
+
+Sample Input 2:
+
+5
+4
+
+Sample Output 2:
+
+1 1 1 1 
+2 2 2 2 
+3 3 3 3 
+4 4 4 4 
+5 5 5 5 
+
+Solution:
+
+n=int(input())
+m=int(input())
+for i in range(n):
+    print((str(i+1)+' ')*m)
+    
+__________________________________________________________________________________________
+
+02﻿ Print from 0 to N
+
+write a program that reads a number N and prints the numbers from 0 to N.
+
+Note:
+
+Use For Loop for iteration.
+ 
+Input:
+
+The input will be a single line containing an integer representing N.
+
+Output:
+
+The output should contain all the numbers from 0 to N, each on a new line.
+
+﻿Explanation
+
+For example, if the given number is N = 4,
+
+• The numbers from 0 to 4 are 0,1,2,3 and 4 
+
+The output should be,
+
+0
+1
+2
+3
+4
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+0
+1
+2
+3
+4
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+0
+1
+2
+3
+4
+5
+6
+7
+
+Solution:
+
+n=int(input())
+for i in range(0,n+1):
+    print(i)
+
+_____________________________________________________________________________________________
+
+03.Average of N Inputs
+
+Given a number N, write a program that reads N inputs and prints the average of the given N inputs.
+
+Note:
+
+The average of N numbers can be calculated as, Average = Sum of N numbers / N
+Example: If 3 numbers are 2, 3, and 7.
+The average of 3 numbers is, Average = (2 + 3 + 7) / 3 = 4.0
+Use For loop for iteration.
+﻿
+Input:
+
+The first line of input contains an integer representing N.
+the next N lines of input contain integers
+
+﻿Output:
+
+The output should be a single line containing a float that is the average of the given N inputs.
+
+Explanation:
+
+For example, if the given number is N = 4,
+The 4 inputs are 3, 4, 6 and 7.
+• The sum of 3, 4, 6 and 7 is 20. ( 3+ 4+ 6+ 7 = 20)
+• The average of 3, 4, 6 and 7 is 5.0. ( 20/4 = 5.0 )
+
+The output should be 5.0.
+
+Sample Input 1:
+
+4
+3
+4
+6
+7
+
+Sample Output 1:
+
+5.0
+
+Sample Input 2:
+
+2
+24
+15
+
+Sample Output 2:
+
+19.5
+                  
+Solution:
+
+n=int(input())
+sum=0
+for i in range(n):
+    m=int(input())
+    sum+=m 
+print(sum/n)
+
+____________________________________________________________________________________________________
+
+04. Right Angled Traingle - 4
+
+Write a program that reads a number N and prints two Right Angled Traingles of N rows using stars (*).
+
+*
+* *
+* * *
+*
+* *
+* * *
+
+Note:
+
+Use For Loop Iteration
+There is space after every star (*)
+
+﻿Input
+
+The input will be a single line containing an integer representing N.
+
+Output
+
+The output should be 2 * N rows containing stars (*) as two Right Angled Traingles shown in the sample output.
+
+Explanation:
+
+For example, if the given number is N = 4,
+• Print the stars (*) on 8 rows as shown in the given image.
+• The first 4 rows should have a Right Angled Triangle
+• The ext rows should have another Right Angled Triangle
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-right-angled-triangle-4.jpg
+
+Note:
+
+In the given image,
+• The Star in box indicates the star and a space ("*").
+
+The output should be,
+
+*
+* *
+* * *
+* * * *
+*
+* *
+* * *
+* * * *
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+*
+* *
+* * *
+* * * *
+*
+* *
+* * *
+* * * *
+
+Sample Input 2:
+
+6
+
+Sample Output 2:
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * * * 
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * * * 
+
+Solution:
+
+n=int(input())
+for i in range(1,n+1):
+    print("* "*i)
+for i in range(1,n+1):
+    print("* "*i)
+
+______________________________________________________________________________________________________
+
+05. Product of the Numbers from M to N
+
+﻿Write a program that reads two numbers M and N, and prints the product of numbers from M to N.
+
+Note:
+
+Use For loop for iteration.
+
+Input:
+
+The first line of input contains an integer representing M. The second line of input contains an integer representing N
+
+﻿Output:
+
+The output should be a single line containing an integer that is the product of numbers from M to N
+
+Explanation
+
+For example, if the given numbers are M = 5 and N = 7,
+• The numbers from 5 to 7 are 5, 6, and 7.
+• The product of 5, 6, and 7 is 210. (5 * 6 * 7 = 210)
+
+The output should be 210.
+
+Sample Input 1:
+
+5
+7
+
+Sample Output 1:
+
+210
+
+Sample Input 2:
+
+9
+14
+
+Sample Output 2:
+
+2162160
+
+Solution:
+
+m=int(input())
+n=int(input())
+p=1
+for i in range(m,n+1):
+    p*=i 
+print(p)
+
+__________________________________________________________________________________________
+
+06. Sum of N Squares (For Loop)
+
+Write a program to print the sum of the squares of the first N natural numbers.
+
+Input:
+
+The input will be a single line containing a positive integer (N).
+
+Output:
+
+The output should be a single line containing the sum of the squares of the first N natural numbers.
+
+Explanation:
+
+For example, if the given number is 6, the sum of the squares of the first 6 natural numbers,
+which is (1 + 4 + 9 + 16 + 25 + 36). 
+So the output should be 91.
+
+For example, if the given number is 3, the sum of the squares of the  first 3 natural numbers,
+which is (1 + 4 + 9). 
+So the output should be 14.
+
+Sample Input 1:
+
+6
+
+Sample Output 1:
+
+91
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+14
+
+Solution:
+
+n = int(input())
+sum= 0
+for i in range(1, n+1):
+    sum = sum+(i*i)
+
+print(sum)
+
+__________________________________________________________________________________________________________
+
+07. Print Integers - 3
+
+﻿
+You are given an integer N as input. Write a program to print integers from N to 1.
+
+Note: 
+
+Use For Loop.
+
+Input:
+
+The first line of input is an integer N
+
+Explanation:
+
+In the given example, N = 5 the integers from 5 to 1 are 5, 4, 3, 2,1
+Therefore, the output should be
+
+5
+4
+3
+2
+1
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+5
+4
+3
+2
+1
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+3
+2
+1
+
+Solution:
+
+a=int(input())
+for i in range(a):
+    print(a-i)
+___________________________________________________________________________________________________________
+
+08. Solid Rectangle - 2
+
+Write a program to print a rectangle pattern of M rows and N columns using the plus character ( + ).
+
+Note:
+
+There is a space after each plus + character. Note: Use for loop.
+
+Input:
+
+The first line of input is an integer M. The second line of input is an integer N
+
+Explanation:
+
+In the given example, 3 rows and 5 columns.
+
+Therefor, the output should be,
+
++ + + + + 
++ + + + + 
++ + + + +
+    
+Sample Input 1:
+
+3
+5
+
+Sample Output 1:
+
++ + + + + 
++ + + + + 
++ + + + + 
+
+Sample Input 2:
+
+4
+4
+
+Sample Output 2:
+
++ + + + 
++ + + + 
++ + + + 
++ + + + 
+
+Solution:
+
+rows = int(input())
+columns=int(input())
+for counter in range(rows):
+  print("+ " * columns)
+
+_________________________________________________________________________________
+
+09. ﻿Solid Right Angled Triangle - 2
+
+﻿
+Given an integer number N as input. Write a program to print the double triangular pattern of N lines
+using an asterisk (*) character as shown below.
+
+Note: 
+
+There is a space after each asterisk character.
+Use for-loop.
+
+Input:
+
+The first line of input will contain a positive integer.
+
+Explanation:
+
+Given N 4, there should be 2 triangular patterns with 4 lines each.
+
+So, the output should be 
+
+* 
+* * 
+* * * 
+* * * * 
+* 
+* * 
+* * * 
+* * * *
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+* 
+* * 
+* * * 
+* * * * 
+* 
+* * 
+* * * 
+* * * *
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+
+Solution:
+
+rows = int(input())
+for counter in range(rows):
+    counter=counter+1
+    print("* " * counter)
+for counter in range(rows):
+    counter=counter+1
+    print("* " * counter)
+
+_______________________________________________________________________________________
