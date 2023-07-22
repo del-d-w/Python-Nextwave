@@ -1,0 +1,494 @@
+01. ﻿Calculate Double or Triple
+
+Write a program that reads a number N and checks if N is divisible by 3.
+Print the triple of N if N is divisible by 3. Otherwise, print the double of N.
+
+Note:
+
+Double of N is calculated as N * 2
+Triple of N is calculated as N * 3
+
+Input:
+
+The input will be a single line containing an integer representing N.
+
+Output:
+
+The output should be a single line containing an integer. The triple of N should be printed 
+if N is divisible by 3. Otherwise, the double of N should be printed.
+﻿
+Explanation:
+
+For example, if the given number is N = 6,
+• 6 is divisible by 3. So, N should be tripled (N * 3 ).
+• The triple of 6 is 18. ( 63 18 )
+The output should be 18.
+
+For example, if the given number is N = 4,
+• 4 is not divisible by 3. So, N should be doubled (N * 2 ).
+• The double of 4 is 8. (4*2=8)
+The output should be 8.
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+9
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+8
+
+Solution:
+
+a=int(input())
+b=(a%3)==0
+if b:
+    print(3*a)
+else:
+    print(2*a)
+
+____________________________________________________________________________________________________
+
+02. ﻿Smallest Remainder
+
+Write a program that reads two numbers A and B and finds the,
+
+• Remainder when A is divided by B (A% B).
+• Remainder when B is divided by A (B% A).
+
+Print the smallest among the remainders A % B and B % A.
+
+Input:
+
+The first line of input contains an integer representing A. 
+The second line of input contains an integer representing B.
+﻿
+Output:
+
+The output should be a single line containing an integer that is the smallest among the remainders A % B and B % A.
+
+Explanation:
+
+For example, if the given numbers are A = 3 and B = 7,
+• The remainder A % B is 3. ( 3% 7 = 3)
+• The remainder B % A is 1. ( 7% 3 = 1)
+• Smallest among 1 and 3 is 1.
+The output should be 1.
+
+Sample Input 1:
+
+3
+7
+
+Sample Output 1:
+
+1
+
+Sample Input 2:
+
+12
+6
+
+Sample Output 2:
+
+0
+
+Solution:
+
+a=int(input())
+b=int(input())
+c=(a%b)
+d=(b%a)
+print(min(c, d))
+
+_________________________________________________________________________________________________________
+
+03. ﻿Not divisible by Numbers
+
+Write a program that reads a number N and checks if N is not divisible by all the given numbers 2, 3, 5 and 7.
+
+Input:
+
+The input will be a single line containing an integer.
+
+Output:
+
+The output should be a single line containing a boolean. True should be printed
+if N is not divisible by the given numbers 2, 3, 5 and 7. Otherwise, False should be printed.
+﻿
+Explanation:
+
+For example, if the given number N = 5633
+✓ 5633 is not divisible by 2.
+✓ 5633 is not divisible by 3.
+✓ 5633 is not divisible by 5.
+✓5633 is not divisible by 7.
+The output should be True as 5633 is not divisible by 2, 3, 5 and 7.
+
+Sample Input 1:
+
+5633
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+1000
+
+Sample Output 2:
+
+False
+
+Solution:
+
+a=int(input())
+if((a%2)==0 or(a%3)==0 or(a%5)==0 or(a%7)==0):
+    print("False")
+else:
+    print("True")
+
+________________________________________________________________________________________________
+
+04.﻿ Number or Remainder
+
+Write a program that reads a number N and checks if one of the given conditions is satisfied.
+
+• N is divisible by 5 and N is divisible by 7.
+• N is less than 7.
+
+Print N if one of the given conditions is satisfied. Otherwise, print the remainder 
+when N is divided by 5 and the remainder when N is divided by 7 on each line.
+
+Input:
+
+The input will be a single line containing an integer representing N.
+
+﻿
+Output
+The output should be a single line containing an integer N if one of the given conditions is satisfied.
+Otherwise,
+The first line of output should be an integer that is the remainder when N is divided by 5. 
+The second line of output should be an integer that is the remainder when N is divided by 7.
+
+﻿Explanation:
+
+For example, if the given number is N=3,
+
+▼x N is divisible by 5 and N is divisible by 7
+    X N is divisible by 5. (3 is not divisible by 5)
+    X N is divisible by 7. (3 is not divisible by 7)
+▼✓N is less than 7
+    ✔N is less than 7 (3 is less than 7)
+
+The output should be 3 as one of the given conditions is satisfied.
+
+﻿For example, if the given number is N = 9,
+
+▼X N is divisible by 5 and N is divisible by 7.
+    X N is divisible by 5. (9 is not divisible by 5)
+    X N is divisible by 7. (9 is not divisible by 7)
+▼X N is less than 7.
+    X N is less than 7. (9 is not less than 7)
+
+As both the given conditions are not satisfied, the output should be the remainders when 9 is divided by 5 and 7.
+
+• The remainder when 9 divided by 5 is 4.
+• The remainder when 9 divided by 7 is 2.
+
+The output should be,
+
+4
+2
+
+Sample Input 1:
+
+9
+
+Sample Output 1:
+
+4
+2
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+3
+
+Solution:
+
+a=int(input())
+if (a%5==0 and a%7==0) or a<7:
+    print(a)
+else:
+    print(a%5)
+    print(a%7)
+
+_______________________________________________________________________________________________________
+
+05.﻿ Compute Hypotenuse
+
+Write a program that reads two sides A and B of a right-angled triangle and prints the
+Hypotenuse H of the right-angled triangle.
+
+Quick Tip:
+
+According to Pythagoras's theorem, the Hypotenuse of a right-angled triangle is (A2 + B2)0.5
+﻿
+Input:
+
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output:
+
+The output should be a single line containing an integer that is the Hypotenuse of the right-angled triangle.
+﻿
+Explanation:
+
+For example, if the given sides are A = 3, and B = 4,
+Hypotenuse = (A2 + B2)0.5
+
+• The square of A is 9 (32).
+• The square of B is 16 (42).
+• The sum of squares of A and B is 25 ( 9 + 16 = 25).
+• The hypotenuse is equal to 5. (250.5)
+
+The output should be 5.
+
+Sample Input 1:
+
+3
+4
+
+Sample Output 1:
+
+5
+
+Sample Input 2:
+
+12
+5
+
+Sample Output 2:
+
+13
+
+Solution:
+
+"""import math
+a=int(input())
+b=int(input())
+c=((a**2)+(b**2))
+e=int(math.sqrt(c))
+print(e) 
+"""
+a=int(input())
+b=int(input())
+c=((a**2)+(b**2))**0.5
+print(int(c))
+
+______________________________________________________________________________________________
+
+06.﻿ Square Root of a Number - 2
+
+Write a program that reads two numbers A and B and checks if the square root of A is equal to B.
+
+Note:
+
+To calculate the Square Root of a number N, use the N power 0.5 (No.5).
+Print Square root of A is equal to B if the square root of A is equal to B. 
+Otherwise, print Square root of A is not equal to B.
+
+Input:
+
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output:
+
+The output should be a single line containing a string. Square root of A is equal to B should be printed 
+if the square root of A is equal to B. Otherwise, Square root of A is not equal to B should be printed.
+
+﻿Explanation:
+
+For example, if the given numbers are A = 64 and B = 8,
+• The square root of A is 8 (640.5 = 8).
+• 8 (square root of 64) is equal to 8 ( B ).
+
+The output should be Square root of A is equal to B as the square root of A is equal to B.
+
+Sample Input 1:
+
+64
+8
+
+Sample Output 1:
+
+Square root of A is equal to B
+
+Sample Input 2:
+
+55
+5
+
+Sample Output 2:
+
+Square root of A is not equal to B
+
+Solution:
+
+a=int(input())
+b=int(input())
+if int(pow(a,0.5))==b:
+    print("Square root of A is equal to B")
+else:
+    print("Square root of A is not equal to B")
+
+______________________________________________________________________________________________________
+
+07.﻿ 4-digit Armstrong Number
+
+Write a program that reads a four-digit number N and checks if N is an Armstrong Number.
+
+Note:
+
+Armstrong Number
+
+A four-digit number N is an Armstrong Number if the number is equal to the sum of the 4th power of all digits.
+
+Example:
+
+1634 is an Armstrong Number as the sum of the 4th power of all digits of N is equal to 1634. (14+ 64+ 34+ 44 = 1634)
+
+﻿Print Armstrong Number if N is an Armstrong number. Otherwise, print Not an Armstrong Number.
+
+Input:
+
+The input will be a single line containing a four-digit integer representing N.
+
+Output:
+
+The output should be a single line containing a string. Armstrong Number should be printed if N is an Armstrong number. 
+Otherwise, Not an Armstrong Number should be printed.
+
+Explanation:
+
+For example, if the given four-digit number is N = 1634
+
+• The digits of N are 1, 6, 3, and 4.
+• The sum of the 4th power of all the digits of N is 1634. (14+ 64+ 34+ 44 = 1634)
+• 1634 (Sum of the 4th power of all digits of N ) is equal to 1634. So, N is an Armstrong number.
+
+The output should be Armstrong Number.
+
+Sample Input 1:
+
+1634
+
+Sample Output 1:
+
+Armstrong Number
+
+Sample Input 2:
+
+1568
+
+Sample Output 2:
+
+Not an Armstrong Number
+
+Solution:
+
+a=input()
+if (pow(int(a[0]),4)+pow(int(a[1]),4)+pow(int(a[2]),4)+pow(int(a[3]),4))==int(a):
+    print("Armstrong Number")
+else:
+    print("Not an Armstrong Number")
+
+_______________________________________________________________________________________________________
+
+08.﻿ Years, Weeks & Days
+
+Given N number of days as input, write a program to convert N number of days to years (Y), weeks (W) and days ( D ).
+
+Note:
+
+Take 1 year = 365 days.
+
+Input:
+
+The input contains single integer N.
+
+﻿Output:
+
+The first line of output contains an integer Y representing the number of years.
+The second line of output contains an integer W representing the number of weeks. 
+The third line of output contains an integer D representing the number of days.
+
+Explanation:
+
+Given N = 1329. The value can be written as
+1329 = 3 years + 33 weeks + 3 days
+
+So the output should be
+
+3 
+33 
+3
+
+Sample Input 1:
+
+1329
+
+Sample Output 1:
+
+3
+33
+3
+
+Sample Input 2:
+
+0
+
+Sample Output 2:
+
+0
+0
+0
+
+Solution:
+
+"""n=input()
+n=int(n)
+y=n/365
+y=int(y)
+x=n-(365*y)
+w=x/7
+w=int(w)
+d = x - (w) * 7
+d=int(d)
+print(y)
+print(w)
+print(d)"""
+
+a=int(input())
+years=a//365
+weeks=(a-(years*365))//7
+days=((a-(years*365))-(weeks*7))
+print(years)
+print(weeks)
+print(days)
+
+___________________________________________________________________________________________________
