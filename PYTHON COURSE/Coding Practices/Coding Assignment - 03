@@ -1,0 +1,321 @@
+01. Top 10 Rankers
+
+Write a program that reads the rank of a student R and checks if R is less than 10.
+Print HONOR STUDENT if R is less than 10. Otherwise, print NORMAL STUDENT.
+
+Input:
+
+The input will be a single line containing an integer representing R.
+
+Output:
+
+The output should be a single line containing a string. HONOR STUDENT should be printed if R 
+is less than 10. Otherwise, NORMAL STUDENT should be printed.
+﻿
+Explanation:
+
+For example, if the given rank is R = 1, the output should be HONOR STUDENT as 1 is less than 10.
+For example, if the given rank is R = 15, the output should be NORMAL STUDENT as 15 is not less than 10.
+
+Sample Input1 :
+
+1
+
+Sample Output 1:
+
+HONOR STUDENT
+
+Sample Input 2:
+
+15
+
+Sample Output 2:
+
+NORMAL STUDENT
+
+Solution:
+
+rank=input()
+rank=int(rank)
+if rank<10:
+  print("HONOR STUDENT")  
+else:
+ print("NORMAL STUDENT")   
+
+_________________________________________________________________________________________________________
+
+02.﻿ Sum or Product
+
+Write a program that reads two numbers A and B and checks if the sum of A and B is less than 10.
+Print the sum of A and B if the sum of A and B is less than 10. Otherwise, print the product of A and B.
+
+Input:
+
+The first line of input contains an integer representing A. 
+The second line of input contains an integer representing B.
+﻿
+Output:
+
+The output should be a single line containing an integer. The sum of A and B should be printed 
+if the sum of A and B is less than 10. Otherwise, the product of A and B should be printed.
+
+Explanation:
+
+For example, if the given numbers are A = 1 and B = 2,
+✓ The sum of A and B is less than 10. (Sum of A and B is 3 (1 + 2 = 3). 3 is less than 10)
+The output should be 3 (1 + 2 = 3) as the sum of A and B is less than 10.
+
+﻿For example, if the given numbers are A = 42 and B = 10,
+X The sum of A and B is less than 10. (Sum of A and B is 52 ( 42 + 10 = 52 ). 52 is not less than 10)
+The output should be 420 ( 42* 10 = 420) as the sum of A and B is not less than 10.
+
+Sample Input1 :
+
+1
+2
+
+Sample Output 1:
+
+3
+
+Sample Input 2:
+
+42
+10
+
+Sample Output 2:
+
+420
+
+Solution:
+
+A=input()
+A=int(A)
+B=input()
+B=int(B)
+C=A+B
+D=A*B
+if C<10:
+  print(C)  
+else:
+ print(D)   
+
+______________________________________________________________________________________________________
+
+03.﻿ Discount
+
+Write a program that reads two coupon codes A and B and checks if the first three characters
+of one of the coupon codes is equal to "DIS".
+
+Print Discount if the first three characters of one of the coupon codes is equal to "DIS". Otherwise, print No Discount.
+
+Input:
+
+The first line of input contains a string representing A.
+The second line of input contains a string representing B.
+﻿
+Output:
+
+The output should be a single line containing a string. Discount should be printed if the first
+three characters of one of the coupon codes is equal to "DIS". Otherwise, No Discount should be printed.
+
+Explanation:
+
+For example, if the given coupon codes are A = "DISA9#5" and B = "6BY@X"
+✓ The first three characters of A is equal to "DIS". (The first three characters of "DISA9#5" is "DIS". 
+"DIS" is equal to "DIS")
+X The first three characters of B is equal to "DIS". (The first three characters of "6BY@X" is "6BY".
+"6BY" is not equal to "DIS")
+
+The output should be Discount as the first three characters of A is equal to "DIS".
+
+Sample Input1 :
+
+DISA9#5
+6BY@X
+
+Sample Output 1:
+
+Discount
+
+Sample Input 2:
+
+17F
+DVC&SN
+
+Sample Output 2:
+
+No Discount
+
+Solution:
+
+a=input()
+b=input()
+if a[:3]=="DIS" or b[:3]=="DIS":
+    print("Discount")
+else:
+    print("No Discount")
+
+_____________________________________________________________________________________________________
+
+04. ﻿Qualified or Not Qualified
+
+Write a program that reads the marks M in Maths and marks P in Physics and checks if both M and P 
+are greater than 35 or sum of M and P is greater than or equal to 100.
+
+Print Qualified if both M and P are greater than 35 or sum of M and P is greater than or equal to 100.
+Otherwise, print Not Qualified.
+
+Input:
+
+The first line of input contains an integer representing M. The second line of input contains an integer representing P.
+﻿
+Output:
+
+The output should be a single line containing a string. Qualified should be printed if both M and P 
+are greater than 35 or sum of M and P is greater than or equal to 100. Otherwise, Not Qualified should be printed.
+
+Explanation:
+
+For example, if the given marks are M = 50 and P = 40,
+✓ Both M and P are greater than 35. (50 and 40 are greater than 35)
+× Sum of M and P is greater than or equal to 100.( 50+ 40 = 90, 90 is not greater than or equal to 100)
+
+The output should be Qualified as both M and P are greater than 35.
+
+Sample Input1 :
+
+50
+40
+
+Sample Output 1:
+
+Qualified
+
+Sample Input 2:
+
+30
+49
+
+Sample Output 2:
+
+Not Qualified
+
+Solution:
+
+m=int(input())
+p=int(input())
+if (m>35 and p>35) or(m+p)>=100:
+    print("Qualified")
+else:
+    print("Not Qualified")
+
+__________________________________________________________________________________________
+
+05. ﻿Valid Number
+
+Write a program that reads a three-digit number N and checks if both the given conditions are satisfied.
+
+• Any of the digits of N is not equal to 5
+• N is between 300 and 700
+
+Print Valid Number if both the given conditions are satisfied. Otherwise, print Not a Valid Number.
+
+﻿Input:
+
+The input will be a single line containing a three-digit integer representing N.
+
+Output:
+
+The output should be a single line containing a string. Valid Number should be printed if both
+the given conditions are satisfied. Otherwise, Not a Valid Number should be printed.
+﻿
+Explanation:
+
+For example, if the given three-digit number is N = 653,
+✓ Any of the digits of N is not equal to 5. (Digits of N are 6, 5 and 3. 6, 3 are not equal to 5)
+✓ N is between 300 and 700. (653 is between 300 and 700)
+
+The output should be Valid Number as both the given conditions are satisfied.
+
+Sample Input1 :
+
+653
+
+Sample Output 1:
+
+Valid Number
+
+Sample Input 2:
+
+947
+
+Sample Output 2:
+
+Not a Valid Number
+
+Solution:
+
+n=input()
+if not(int(n[0])==5 and int(n[1])==5 and int(n[2])==5) and 300<int(n)<700:
+    print("Valid Number")
+else:
+    print("Not a Valid Number")
+
+______________________________________________________________________________________________________
+
+06. ﻿Between 9 and 21
+
+Write a program that reads three numbers A, B, and C and checks if any of the given numbers is between 9 and 21.
+
+Input:
+
+The first line of input contains an integer representing A. The second line of input contains
+an integer representing B. The third line of input contains an integer representing C.
+
+﻿Output:
+
+The output should be a single line containing a boolean. True should be printed if any of the given
+numbers is between 9 and 21. Otherwise, False should be printed.
+
+Explanation:
+
+For example, if the given numbers are A = 2, B = 4, and C = 16,
+× A is between 9 and 21. (2 is not between 9 and 21)
+x B is between 9 and 21. (4 is not between 9 and 21)
+✓ C is between 9 and 21. (16 is between 9 and 21)
+
+The output should be True as one of the given numbers is between 9 and 21.
+
+Sample Input1 :
+
+2
+4
+16
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+2
+4
+6
+
+Sample Output 2:
+
+False
+
+Solution:
+
+a=input()
+b=input()
+c=input()
+a=int(a)
+b=int(b)
+c=int(c)
+d =  10<= a <=20 or 10 <= b <= 20 or 10 <= c <= 20 
+print(d)
+
+_________________________________________________________________________________________
