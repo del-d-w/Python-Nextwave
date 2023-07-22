@@ -1,0 +1,371 @@
+01. ﻿Same Digits
+
+Write a program that reads a three-digit number and checks if all the digits of the number are the same.
+
+Input
+The input will be a single line containing a three-digit integer.
+
+Output
+The output should be a single line containing a boolean. True should be printed if all the digits of
+the number are the same, otherwise False should be printed.
+
+Explanation
+For example, if the given number is 222,
+• The first digit (2) is equal to the second digit (2).
+• The second digit (2) is equal to the third digit (2).
+The output should be True as all the digits of the number 222 are the same.
+
+Sample Input 1:
+
+222
+
+Sample Ouput 1:
+
+True
+
+Sample Input 2:
+
+989
+
+Sample Ouput 2:
+
+False
+
+Solution:
+
+a=input()
+if a[0]==a[1] and a[1]==a[2] and a[2]==a[0]:
+    print(True)
+else:
+    print(False)
+
+________________________________________________________________________________________________________
+
+02.﻿ Sum and Product Check - 2
+
+Write a program that reads two numbers A and B and checks if the sum of A and B is negative or the product
+of A and B is negative.
+
+Input
+The first line of input contains an integer representing A. The second line of input contains an integer representing B.
+﻿
+Output
+The output should be a single line containing a boolean. True should be printed if the sum of
+A and B is negative or the product of A and B is negative, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = 5 and B = -3,
+X The sum of A and B is negative. (5+ (-3)= 2, 2 is a positive number)
+✓ The product of A and B is negative. (5*(-3)=-15, -15 is a negative number)
+
+The output should be True as the product is negative.
+
+Sample Input 1:
+
+5
+-3
+
+Sample Ouput 1:
+
+True
+
+Sample Input 2:
+
+100
+4
+
+Sample Ouput 2:
+
+False
+
+Solution:
+
+a=int(input())
+b=int(input())
+if a<0 and b<0 or a*b<0:
+    print(True)
+else:
+    print(False)
+
+________________________________________________________________________________________________________
+
+03.﻿ Valid Triangle
+
+Write a program that reads three sides A, B, and C of a triangle and checks if the sum of any 
+two sides of the triangle is always greater than the third side.
+
+Input
+The first line of input contains an integer representing side A. The second line of input contains
+an integer representing side B. The third line of input contains an integer representing side C.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the sum of 
+any two sides of the triangle is always greater than the third side, otherwise False should be printed.
+
+Explanation
+For example, if the given sides of the triangle are A = 3, B = 4 and C = 5,
+The sum of sides A, B should be greater than C and the sum of sides B C should be greater
+than A and the sum of sides C, A should be greater than B.
+
+✓ A + B is greater than C. ( 3+ 4 = 7,7 is greater than 5)
+✓ B + C is greater than A. (4 + 5 = 9,9 is greater than 3)
+✓ C + A is greater than B. (5 + 3 = 8,8 is greater than 4)
+
+The output should be True as the sum of any two sides of the triangle is always greater than the third side.
+
+Sample Input 1:
+
+3
+4
+5
+
+Sample Ouput 1:
+
+True
+
+Sample Input 2:
+
+2
+1
+10
+
+Sample Ouput 2:
+
+False
+
+Solution:
+
+a=int(input())
+b=int(input())
+c=int(input())
+if a+b>c and b+c>a and c+a>b:
+    print(True)
+else:
+    print(False)
+
+________________________________________________________________________________________________________
+
+04. Required Number
+
+Write a program that reads a number N and checks if the number N is between 50 and 100 or if the 
+first digit of N is equal to 7.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the number N 
+is between 50 and 100 or if the first digit of N is equal to 7, otherwise False should be printed.
+
+Explanation
+For example, if the given number is N = 54,
+✓ The number N is between 50 and 100. (54 is between 50 and 100)
+X The first digit of N is equal to 7. (The first digit of 54 is 5. 5 is not equal to 7)
+The output should be True as N is between 50 and 100.
+
+Sample Input 1:
+
+54
+
+Sample Ouput 1:
+
+True
+
+Sample Input 2:
+
+101
+
+Sample Ouput 2:
+
+False
+
+Solution:
+
+n=input()
+if (50<int(n)<100) or (int(n[0])==7):
+    print(True)
+else:
+    print(False)
+
+________________________________________________________________________________________________________
+
+05.﻿ Compare Numbers - 10
+
+Write a program that reads two numbers A and B and checks
+if both the below conditions are satisfied.
+• One of A and B is less than 20.
+• One of A and B is greater than 30.
+
+Input
+The first line of input contains an integer representing A The second line of input contains an integer representing B.
+
+Output
+The output should be a single line containing a boolean. True should be printed if one of A and B
+is less than 20 and one of A and B is greater than 30, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = 15 and B = 35,
+✔ One of A and B is less than 20. (15 is less than 20)
+✔ One of A and B is greater than 30. (35 is greater than 30)
+The output should be True as both the given conditions are satisfied.
+
+Sample Input 1:
+
+15
+32
+
+Sample Ouput 1:
+
+True
+
+Sample Input 2:
+
+9
+21
+
+Sample Ouput 2:
+
+False
+
+Solution:
+
+a=int(input())
+b=int(input())
+if (a<20 or b<20) and (a>30 or b>30):
+    print(True)
+else:
+    print(False)
+
+________________________________________________________________________________________________________
+
+06. Eligibility Criteria - 3
+
+﻿Write a program that reads the marks M in Maths, marks P in Physics and marks C in 
+Chemistry and checks if both the below conditions are satisfied.
+• M>= 35 and P >= 35 and C >= 35.
+• M+ P >= 90 or P+C>= 90 or M + C >= 90
+
+Input
+The first line of input contains an integer representing marks M in Maths.
+The second line of input contains an integer representing marks P in Physics.
+The third line of input contains an integer representing marks C in Chemistry.
+
+Output
+The output should be a single line containing a boolean. True should
+be printed if both the given conditions are satisfied, otherwise False should be printed.
+
+Explanation
+
+For example, if the given marks are M = 50, P = 35 and C = 40,
+
+▼✓M >= 35 and P >= 35 and C >= 35
+    ✓ M is greater than or equal to 35. (50 is greater than 35)
+    ✓ P is greater than or equal to 35. (35 is equal to 35)
+    ✓ C is greater than or equal to 35. (40 is greater than 35)
+
+▼✓ M+P 90 or P+C>= 90 or M + C >= 90
+    X M+P is greater than or equal to 90. (50+ 35 = 85,85 is less than 90)
+    × P+C is greater than or equal to 90. ( 35+ 40 = 75,75 is less than 90)
+    ✓ M + C is greater than or equal to 90. (50+40= 90, 90 is equal to 90)
+
+The output should be True as both the given conditions are satisfied.
+
+
+Sample Input 1:
+
+50
+35
+40
+
+Sample Ouput 1:
+
+True
+
+Sample Input 2:
+
+35
+35
+100
+
+Sample Ouput 2:
+
+True
+
+Solution:
+
+M=input()
+M=int(M)
+P=input()
+P=int(P)
+C=input()
+C=int(C)
+D=M>=35 and P>= 35 and C >= 35
+E=(M+P)>=90 or (P+C)>=90 or (C+M)>=90
+print(D and E)
+
+________________________________________________________________________________________________________
+
+07. Eligibility Criteria - 4
+
+Write a program that reads the marks M in Maths, marks P in Physics and marks C in Chemistry and checks 
+if any of the below conditions is satisfied.
+
+• M>= 60 and P >= 50 and C >= 45 and M+P+C>= 180.
+• M + P >= 120 or C + P >= 110.
+
+Input
+The first line of input contains an integer representing marks M in Maths. 
+The second line of input contains an integer representing marks P in Physics. 
+The third line of input contains an integer representing marks C in Chemistry.
+
+Output
+The output should be a single line containing a boolean. True should be printed if any of the given 
+conditions is satisfied, otherwise False should be printed.
+
+Explanation
+For example, if the given marks are M = 72, P = 65 and C = 51,
+▼✓ M >= 60 and P >= 50 and C >= 45 and M+P+C>= 180
+    ✓ M is greater than 60. (72 is greater than 60) ✓ P is greater than 50. (65 is greater than 50)
+    ✓ C is greater than 45. (51 is greater than 45)
+    ✓ M+P+C is greater than 180. (M+P+ C = 188 is greater than 180)
+
+▼✓ M+P >= 120 or C + P >= 110
+    ✓ The sum of M and P is greater than or equal to 120. ( 72 + 65 = 137, 137 is greater than 120)
+    ✓ The sum of C and P is greater than or equal to 110. (65+ 51 = 116, 116 is greater than 110)
+
+The output should be True as any of the given conditions is satisfied.
+
+Sample Input 1:
+
+72
+65
+51
+
+Sample Ouput 1:
+
+True
+
+Sample Input 2:
+
+70
+0
+70
+
+Sample Ouput 2:
+
+False
+
+Solution:
+
+m=input()
+p=input()
+c=input()
+m=int(m)
+p=int(p)
+c=int(c)
+d=(m>=60 and p>=50 and c>=45 and (m+p+c)>=180)
+e=(m +p>=120) or (c+p>=110)
+print(d or e)
+
+________________________________________________________________________________________________________
+
