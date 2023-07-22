@@ -1,0 +1,177 @@
+01. Print the Input
+
+Write a program that reads a single line of input and print the given input.
+
+Sample Input 1:
+
+Bat
+
+Sample Output 1:
+
+Bat
+
+Sample Input 2:
+
+5
+
+Sample Ouput 2:
+
+5
+
+Solution:
+
+a=input()
+print(a)
+
+_______________________________________________________________________________________________________________
+
+02. Print the Input - 2
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
+
+03.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
+
+04.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
+
+05.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
+
+06.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
+
+07.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
+
+08.
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
+09.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
+
+10
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
+
+11. 
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
+
+12.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
