@@ -1,0 +1,422 @@
+01. Shape
+
+Write a program that reads a number N and prints three lines with each line containing N pluses ( + ).
+
+Note:
+
+There is a space after every plus symbol.
+
+Input:
+
+The input will be a single line containing an integer.
+
+Ouput:
+
+The output should be three lines containing N space separated pluses (+) in each line.
+
+Constraints:
+
+N is always greater than 0
+
+Explanation:
+
+For example, if the given number N is 4, the output should be
+
++ + + +
++ + + +
++ + + +
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
++ + + + 
++ + + + 
++ + + + 
+
+Sample Input 2:
+
+2
+
+Sample Ouput 2:
+
++ + 
++ + 
++ +
+
+Solution:
+
+a=int(input())
+print("+ "*a)
+print("+ "*a)
+print("+ "*a)
+
+___________________________________________________________________________________________________
+
+02. Basic Arithmetic
+
+Write a program to take two integer inputs (say A and B) and print the result of the following operations:
+
+1. Addition
+2. Subtraction 
+3. Multiplication
+
+Output:
+
+The first line should contain the sum of the two given integers.
+The second line should contain the subtraction of the two given integers.
+The third line should contain the product of the two given integers.
+
+Explanation:
+
+In the given example, the inputs are A = 4 and B = 3
+Addition: 4 + 3 = 7
+Subtraction: 4 - 3 = 1
+Multiplication: 4 * 3 =  12
+
+Sample Input 1:
+
+4
+3
+
+Sample Output 1:
+
+7
+1
+12
+
+Sample Input 2:
+
+2
+5
+
+Sample Ouput 2:
+
+7
+-3
+10
+
+Solution:
+
+a=int(input())
+b=int(input())
+
+print(a+b)
+print(a-b)
+print(a*b)
+
+_________________________________________________________________________________________________________
+
+03. ﻿Percentage - 2
+
+Write a program that reads a number NN is divided into two parts X and Y
+• X is 30 percent of N.
+• Y is the remaining percentage of N. Print Y.
+
+Note:
+
+Total Percentage of X and Y is 100.
+The Percentage (P) of Number (N) can be calculated as:
+value = (percentage / 100)* number
+
+Input:
+
+The input will be a single line containing an integer.
+
+Output:
+
+The output should be a single line containing an integer that is the Y percentage of N.
+
+Explanation:﻿
+
+For example, if the given number is N = 50,
+• Total Percentage of X and Y is 100.
+• X is 30 percent of N.
+• Y is the remaining percentage of N. The remaining percentage is 70 (100 - 30 ).
+• The 70 percent of 50 is,
+
+Y = (percentage / 100)* number
+Y = (70 / 100) * 50
+Y = 0.7 * 50
+Y = 35.0
+
+The output should be 35.0.
+
+Sample Input 1:
+
+50
+
+Sample Output 1:
+
+35.0
+
+Sample Input 2:
+
+200
+
+Sample Ouput 2:
+
+140.0
+
+Solution:
+
+a=int(input())
+print((70/100)*a)
+
+______________________________________________________________________________________________
+
+04. Area and Perimeter of Square
+
+You are given a side of a square as input. Write a program to find the perimeter and area of the square.
+
+Input:
+
+The input is an integer representing the length of the side of the square.
+
+Output:
+
+The first line of the output should contain area of the square, and 
+the second line of the output should contain the perimeter of the square as per the format shown in the sample output. 
+
+Explanation:
+
+Given the length of the side is 2.
+As the area of square is Side * Side and the perimeter of the square is $ * Side
+
+Then output should be
+
+Area of the square is: 4
+Perimeter of the square
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+Area of the square is: 9
+Perimeter of the square is: 12
+
+Sample Input 2:
+
+4
+
+Sample Ouput 2:
+
+Area of the square is: 16
+Perimeter of the square is: 16
+
+Solution:
+
+a=input()
+a=int(a)
+print("Area of the square is: " +str(a*a))
+print("Perimeter of the square is: " +str(4*a))
+
+_________________________________________________________________________________________________
+
+05.﻿ Star Repetition - 5
+
+Write a program that reads two words W1 and W2. W1 contains two parts. The first part contains W2 and 
+the second part contains the remaining letters in W1. Print W1 with the first part as stars ( * ).
+
+Input:
+
+The first line of input contains a string representing W1. 
+The second line of input contains a string representing W2.
+﻿
+Output:
+
+The output should be a single line containing a string W1 with the first part as stars.
+
+Explanation:
+
+For example, if the given words are W1 = Subway and W2 Sub.
+
+S u b w a y
+0 1 2 3 4 5
+
+• The first of Subway (W1 ) is Sub (W2 ).
+• Print stars (*) instead of Sub in Subway.
+
+The Ouput should be ***way
+
+Sample Input 1:
+
+Subway
+Sub
+
+Sample Output 1:
+
+***way
+
+Sample Input 2:
+
+Hyperactive
+Hyper
+
+Sample Ouput 2:
+
+*****active
+
+Solution:
+
+a=input()
+b=input()
+print("*"*len(b)+a[len(b):])
+
+__________________________________________________________________________________________
+
+06.﻿ Part of a String - 3
+
+Write a program that reads a string A and prints the string A by excluding the first two and last 
+two characters of the string.
+
+Input:
+
+The input will be a single line containing a string.
+
+Output:
+
+The output should be a single line containing the string obtained by excluding the first two 
+and last two characters of the string A.
+﻿
+Explanation:
+
+For example, if the given string is ##Soft##,
+Exclude the first two and last two characters of a string ##Soft##.
+
+# # S o f t # #
+0 1 2 3 4 5 6 7
+
+The output should be Soft as the first two and last two characters are excluded.
+
+Sample Input 1:
+
+##Soft##
+
+Sample Output 1:
+
+Soft
+
+Sample Input 2:
+
+z@Industry2#
+
+Sample Ouput 2:
+
+Industry
+
+Solution:
+
+a=input()
+print(a[2:-2])
+
+________________________________________________________________________________________________
+
+07. Replace a Letter
+
+Write a program that reads a word W, an index I, and a letter C.
+Print the word W by replacing the letter at the index | with the given letter C.
+
+Input:
+
+The first line of input contains a string. 
+The second line of input contains an integer.
+The third line of input contains a string.
+
+Output:
+
+The output should be a single line containing a string obtained by replacing the letter at the index 
+of the word W with the letter C.
+
+Constraints:
+
+The index is always greater than 0 and one less than word length (length-1).
+
+Explanation:
+
+For example, if the given word W is Prime, the index is 3 and the letter C is z.
+
+P r i m e
+0 1 2 3 4
+
+• The letters before the 3rd index are Pri.
+• The letter at the 3rd index m should be replaced with Z.
+• The letter after the 3rd index is e.
+The output should be Prize as the letter m in Prime is replaced with the letter Z.
+
+Sample Input 1:
+
+Prime
+3
+z
+
+Sample Output 1:
+
+Prize
+
+Sample Input 2:
+
+butter
+1
+i
+
+Sample Ouput 2:
+
+bitter
+
+Solution:
+
+a=input()
+b=int(input())
+c=input()
+print(a[:b]+c+a[b+1:])
+
+_____________________________________________________________________________________________
+
+08. Half String - 2
+
+Write a program that reads a string and prints the second half part of the string.
+
+Input:
+
+The input will be a single line containing a string.
+
+Output:
+
+The output should be a single line containing a string that is the second half part of the string.
+
+Explanation:
+
+For example, if the given string is Football
+
+F o o t b a l l
+0 1 2 3 4 5 6 7
+
+Sample Input 1:
+
+Football
+
+Sample Output 1:
+
+ball
+
+Sample Input 2:
+
+time
+
+Sample Ouput 2:
+
+me
+
+Solution:
+
+s = input()
+s1 = s[:len(s)//2]
+s2 = s[len(s)//2:]
+print(s2)
+
+_______________________________________________________________________________________________________
