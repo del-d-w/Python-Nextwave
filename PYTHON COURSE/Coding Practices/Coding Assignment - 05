@@ -1,0 +1,365 @@
+01. Positive or Negative
+
+﻿Write a program that reads a number N and checks if the number N is a Negative Number or a Positive Number.
+Print Positive if N is greater than O.
+Print Negative if N is less than 0.
+
+Input:
+
+The input will be a single line containing a float representing N.
+
+Output:
+
+The output should be a single line containing a string. Positive should be printed if N is greater than O. 
+Negative should be printed if N is less than 0.
+
+Constraints:
+
+﻿The given number N is not equal to 0.
+
+Explanation:
+
+For example, if the given number is N = -12.5,
+• -12.5 is less than zero ( -12.5 <0).
+The output should be Negative.
+
+For example, if the given number is N = 15.2,
+• 15.2 is greater than zero (15.2 > 0 ).
+The output should be Positive.
+
+Sample Input 1:
+
+-12.5
+
+Sample Output 1:
+
+Negative
+
+Sample Input 2:
+
+15.2 
+
+Sample Output 2:
+
+Positive
+
+Solution:
+
+rank=input()
+rank=float(rank)
+if rank<0:
+  print("Negative")  
+else:
+ print("Positive")   
+
+______________________________________________________________________________________________________
+
+02. Profit or Loss
+
+Write a program that reads the Cost Price CP and Selling Price SP of a product and compares SP with CP.
+Print Profit if SP is greater than CP
+Print Loss if SP is less than CP
+Print No Profit - No Loss if SP is equal to CP .
+
+Input:
+
+The first line of input contains an integer representing CP The second line of input contains an integer representing SP.
+
+Output:
+
+The output should be a single line containing a string. Profit should be
+printed if SP is greater than CP. Loss should be printed if SP is
+less than CP. No Profit - No Loss should be printed if SP is equal to CP.
+
+Explanation:
+
+For example, if the given Cost Price is CP = 143 and the given Selling Price is SP = 155,
+• The Selling Price SP is greater than the Cost Price CP .(155 is greater than 143)
+The output should be Profit.
+
+Sample Input 1:
+
+143
+155
+
+Sample Output 1:
+
+Profit
+
+Sample Input 2:
+
+165
+125
+
+Sample Output 2:
+
+Loss
+
+Solution:
+
+cp=int(input())
+sp=int(input())
+if(sp>cp):
+    print("Profit")
+elif(sp<cp):
+    print("Loss")
+else:
+    (sp==cp)
+    print("No Profit - No Loss")
+    
+__________________________________________________________________________________________________
+
+03. Get Season
+﻿
+Write a program to find season for the given month number.
+
+Input:
+
+The first line of input will contain an integer that indicates the number of the month.
+If the given number of the month is 3, that indicates March month.
+
+Output:
+
+If the given month is either November or December or January, print "Winter".
+If the given month is either February or March, print "Spring".
+If the given month is either April or May or June print "Summer".
+If the given month is either July or August, print "Rainy".
+If the given month is either September or October, print "Autumn".
+
+Explanation:
+
+For example, if the given month is 1, which indicates January month, the output should be "Winter".
+Similarly, if the given month is 4, which indicates April month, the output should be "Summer".
+
+Sample Input 1:
+
+1
+
+Sample Output 1:
+
+Winter
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+Summer
+
+Solution:
+
+a=int(input())
+if(a==2 or a==3):
+    print("Spring")
+elif(a==4 or a==5 or a==6):
+    print("Summer")
+elif(a==7 or a==8):
+    print("Rainy")
+elif (a==9 or a==10):
+    print("Autumn")
+else:
+    (a==11 or a==12 or a==1)
+    print("Winter")
+
+_______________________________________________________________________________________________________
+
+04. Smallest Among 3 Numbers
+﻿
+Write a program to print the smallest value among the three numbers A, B, and C.
+
+Input:
+
+The first line is an integer A. The second line is an integer B. The third line is an integer C.
+
+Explanation:
+
+In the given values A = 6, B5, C=4. 4 is the smallest value among the three.
+So the output should be 4.
+
+Sample Input 1:
+
+6
+5
+4
+
+Sample Output 1:
+
+4
+
+Sample Input 2:
+
+-10000
+-10000
+-10000
+
+Sample Output 2:
+
+-10000
+
+Solution:
+
+a = int(input())
+b = int(input())
+c = int(input())
+if a < b and a < c :
+    smallest = a
+elif b < c :
+    smallest = b
+else :
+    smallest = c
+print(smallest)
+
+___________________________________________________________________________________________________
+
+05. Weather Condition
+
+Write a program to dipslay a customized message based on temperature T.
+
+Input:
+
+The first line is areal number T
+﻿
+Output:
+
+Print Freezing weather if T < 0
+Print Very Cold weather if 0 <= T < 10
+Print Cold weather if 10 <= T < 20
+Print Normal if 20 <= T < 30
+Print Hot if 30 <T< 40
+Print Very Hot if T >= 40.
+
+Explanation:
+
+In the given example, the temperature is -50.0.
+As the temperature is less than 0, the output should be Freezing weather
+
+Sample Input 1:
+
+-50.0
+
+Sample Output 1:
+
+Freezing weather
+
+Sample Input 2:
+
+5.7
+
+Sample Output 2:
+
+Very Cold weather
+
+Solution:
+
+t=float(input())
+if(t<0):
+    print("Freezing weather")
+elif(0<=t<10):
+    print("Very Cold weather")
+elif(10<=t<20):
+    print("Cold weather")
+elif(20<=t<30):
+    print("Normal")
+elif(30<=t<40):
+    print("Hot")
+else:
+    (t>=40)
+    print("Very Hot")
+
+_______________________________________________________________________________________________-
+
+06. Leap Year
+﻿
+Write a program that reads a year Y and checks if the year Y is a leap year. 
+A year is a leap year if any of the given conditions are satisfied.
+
+Y is divisible by 400.
+Y is divisible by 4, and not divisible by 100.
+
+Print True if any of the given conditions are satisfied. Otherwise, print False.
+
+Input:
+
+The input will be a single line containing an integer representing Y
+
+Output:
+
+The output should be a single line containing a boolean value. True should be printed 
+if any of the given conditions are satisfied. Otherwise, False should be printed.
+
+﻿Explanation:
+
+For example, if the given Y = 2016,
+X Y is divisible by 400. (The remainder is 16 when 2016 is divided by 400)
+✓ Y is divisible by 4 and not divisible by 100. (The remainder is O when 2016 is divided by 4 and the
+remainder is 16 when 2016 is divided by 100)
+As one of the given conditions is satisfied,
+The output should be True.
+
+﻿For example, if the given Y = 1800,
+X Y is divisible by 400. (The remainder is 200 when 1800 is divided by 400)
+X Y is divisible by 4 and not divisible by 100. (The remainder is O when 1800 is divided by 4 and the
+remainder is O when 1800 is divided by 100)
+As both the given conditions are not satisfied,
+The output should be False.
+
+Sample Input 1:
+
+2016
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+1800
+
+Sample Output 2:
+
+False
+
+Solution:
+
+a=int(input())
+if (a % 400 == 0) and (a % 100 == 0):
+    print("True")
+elif (a % 4 ==0) and (a % 100 != 0):
+    print("True")
+else:
+    print("False")
+
+______________________________________________________________________________________________________
+
+07. Relation between two Numbers 2
+
+Write a program to print the relation between two numbers, A and B.
+
+Input:
+﻿
+The first line is an integer A. The second line is an integer B.
+
+Output:
+
+Print A B if A and B are equal. Print A > B if A is greater than B.
+Print AB if A is less than B.
+
+Explanation:
+
+Given A3, B = 4
+As 34, the output should be A <B.
+
+Solution:
+
+a=int(input())
+b=int(input())
+if (a==b):
+    print("A == B")
+elif(a>b):
+    print("A > B")
+else:
+    (a<b)
+    print("A < B")
+
+__________________________________________________________________________________________________________
