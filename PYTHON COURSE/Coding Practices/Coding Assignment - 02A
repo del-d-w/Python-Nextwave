@@ -1,0 +1,527 @@
+01.﻿Compare Digits
+
+Write a program that reads a two-digit number N and checks,
+
+• If the number N is greater than 25.
+• If the first digit of N is greater than the second digit of N.
+
+Print the result as shown in sample output.
+
+Input:
+
+The input will be a single line containing a two-digit integer.
+
+Output:
+﻿
+• The first line of output should be a boolean. True should be printed if the number is greater than 25,
+otherwise False should be printed.
+The second line of output should be a boolean. True should be printed if the first digit is greater than
+the second digit, otherwise False should be printed.
+
+Explanation:
+
+For example, if the given two-digit number is N = 28,
+✓ N is greater than 25.
+X The first digit of N is greater than the second digit of N. (first digit of N is 2 and 
+the second digit of N is 8, 2 is not greater than 8)
+
+The output should be
+
+True
+False
+
+Sample Input 1:
+
+28
+
+Sample Ouput 1:
+
+True
+False
+
+Sample Input 2:
+
+87
+
+Sample Ouput 2:
+
+True
+True
+
+Solution:
+
+a=int(input())
+b=str(a)
+if (a>25)==False:
+    print("False")
+if (a>25)==True:
+    print("True")
+if (int(b[0])>int(b[1]))==False:
+    print("False")
+if (int(b[0])>int(b[1]))==True:
+    print("True")
+________________________________________________________________________________________________________
+
+02. ﻿Compare First Digit & Last Digit
+
+Write a program that reads two three-digit numbers A and B and checks if the first digit of A 
+is less than the last digit of B.
+
+Input
+The first line of input contains a three-digit integer representing A.
+The second line of input contains a three-digit integer representing B.
+﻿
+Output
+The output should be a single line containing a boolean. True should be printed if the first digit
+of A is less than the last digit of B, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = 123 and B = 378,
+The first digit of 123 is 1 and the last digit of 378 is 8.
+• The digit 1 is less than 8.
+The output should be True as the first digit of A is less than the last digit of B.
+﻿
+For example, if the given numbers are A = 215 and B = 572,
+• The first digit of 215 is 2 and the last digit of 572 is 2.
+• The digit 2 is not less than 2.(2 is equal to 2)
+The output should be False as the first digit of A is not less than the last digit of B.
+
+Sample Input 1:
+
+123
+378
+
+Sample Ouput 1:
+
+True
+
+Sample Input 2:
+
+215
+572
+
+Sample Ouput 2:
+
+False
+
+Solution:
+
+a=input()
+b=input()
+if int(a[0])<int(b[-1]):
+    print("True")
+else:
+    print("False")
+
+________________________________________________________________________________________________________
+
+03. Compare Last Three Characters
+
+Write a program to check if the last three characters in the two given strings are the same.
+
+Input
+The first and second lines of inputs are strings.
+
+Output
+The output should be either True or False.
+﻿
+Explanation
+Given strings are apple, pimple . In both the strings, the last three characters ple are common.
+So the output should be True.
+
+Sample Input 1:
+
+apple
+pimple
+
+Sample Ouput 1:
+
+True
+
+Sample Input 2:
+
+meals
+deal
+
+Sample Ouput 2:
+
+False
+
+Solution:
+
+a=input()
+b=input()
+c=a[-3]
+d=b[-3]
+print(c==d)
+
+________________________________________________________________________________________________________
+
+04.﻿ Percentage - 3
+
+Write a program that reads a percentage P and a number N and checks if the P percentage of 500 is equal to the number N.
+
+Note
+The Percentage (P) of 500 can be calculated as:
+value = (percentage / 100) * 500
+﻿
+Input
+The first line of input contains an integer representing P. The second line of input contains an integer representing N.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the P percentage of 500
+is equal to the number N, otherwise False should be printed.
+﻿
+Explanation
+For example, if the given percentage is P = 50 and number N = 250, the 50 percentage of 500 is,
+value = (percentage / 100) * 500
+value = (50 / 100) * 500
+value = 0.5 * 500
+value = 250.0
+The output should be True as 250 ( P percentage of 500) is equal to 250 (number N ).
+
+Sample Input 1:
+
+50
+250
+
+Sample Ouput 1:
+
+True
+
+Sample Input 2:
+
+5
+100
+
+Sample Ouput 2:
+
+False
+
+Solution:
+
+a=int(input())
+b=int(input())
+value=(a/100)*500
+if value==b:
+    print("True")
+else:
+    print("False")
+
+________________________________________________________________________________________________________
+
+05. Compare Area and Perimeter
+﻿
+Write a program that reads the length and breadth of the rectangle and checks if the area of the 
+rectangle is less than or equal to the perimeter of the rectangle.
+
+Note
+Formula to calculate the area of a rectangle:
+Area of rectangle = length * breadth
+Formula to calculate the perimeter of a rectangle:
+Perimeter of the rectangle = 2 * (length + breadth)
+﻿
+Input
+The first line of input contains an integer representing the length of the rectangle.
+The second line of input contains an integer representing the breadth of the rectangle.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the area of 
+the rectangle is less than or equal to the perimeter of the rectangle, otherwise False should be printed.
+
+﻿Explanation
+For example, if the given length is 3 and the breadth is 4,
+• Area of the rectangle is 34 12.
+• Perimeter of the rectangle is 2* (3 + 4) = 14.
+• The area of the rectangle 12 is less than or equal to the perimeter of the rectangle 14.
+The output should be True as the area of the rectangle is less than or equal to the perimeter of the rectangle.
+
+Sample Input 1:
+
+3
+4
+
+Sample Ouput 1:
+
+True
+
+Sample Input 2:
+
+4
+4
+
+Sample Ouput 2:
+
+True
+
+Sample Input 3:
+
+10
+6
+
+Sample Ouput 3:
+
+False
+
+Solution:
+
+a=int(input())
+b=int(input())
+area=a*b 
+perimeter=2*(a+b)
+if area<=perimeter:
+    print("True")
+else:
+    print("False")
+
+________________________________________________________________________________________________________
+
+06.﻿ Less than or Equal to - 2
+
+Write a program that reads two numbers A and B and checks,
+
+• If A is less than or equal to B.
+If B is less than or equal to A.
+Print the result as shown in the sample output.
+
+Input
+The first line of input contains an integer A. The second line of input contains an integer B.
+﻿
+Output
+The first line of output should be a string as shown in the sample output. 
+The second line of output should be a string as shown in the sample output.
+
+Explanation
+For example, if the given numbers are A = 5 and B = 3,
+x A is less than or equal to ✓ B is less than or equal to
+B. (5 is not less than or equal to 3) A. (3 is less than or equal to 5)
+The output should be
+
+A <= B is False
+B <= A is True
+
+Sample Input 1:
+
+5
+3
+
+Sample Ouput 1:
+
+A <= B is False
+B <= A is True
+
+Sample Input 2:
+
+21
+64
+
+Sample Ouput 2:
+
+A <= B is True
+B <= A is False
+
+Solution:
+
+a=int(input())
+b=int(input())
+if (a<=b)==False:
+    print("A <= B is False")
+if (a<=b)==True:
+    print("A <= B is True")
+if (b<=a)==False:
+    print("B <= A is False")
+if (b<=a)==True:
+    print("B <= A is True")
+
+________________________________________________________________________________________________________
+
+07. Compare First N & Last N characters
+
+Write a program that reads a string and a number N and checks if the
+first N characters of the string and the last N characters of the string are, not the same.
+
+Input
+The first line of input contains a string. The second line of input contains an integer.
+﻿
+Output:
+
+The output should be a single line containing a boolean. True should be printed if the first N 
+characters of the string and the last N characters of the string are not the same, otherwise False should be printed.
+
+Explanation
+For example, if the given string is toronto and the number N = 2,
+
+t o r o n t o
+0 1 2 3 4 5 6
+
+﻿• The first 2 characters of toronto are to.
+• The last 2 characters of toronto are to.
+• The first 2 characters (to) and the last 2 characters (to) are the same.
+
+The output should be False as the first 2 characters and the last 2 characters are the same.
+
+For example, if the given string is educated and the number N = 3,
+
+e d u c a t e d
+0 1 2 3 4 5 6 7
+
+﻿• The first 3 characters of educated are edu.
+• The last 3 characters of educated are ted.
+• The first 3 characters (edu) and the last 3 characters (ted) are not same.
+
+The output should be True as the first 3 characters and the last 3 characters are not same.
+
+Sample Input 1:
+
+toronto
+2
+
+Sample Ouput 1:
+
+False
+
+Sample Input 2:
+
+educated
+3
+
+Sample Ouput 2:
+
+True
+
+Sample Input 3:
+
+bulb
+1
+
+Sample Ouput 3:
+
+False
+
+Solution:
+
+s=input()
+n=int(input())
+first_n=s[0:n]
+last_n=s[-n:]
+if first_n!=last_n:
+    print("True")
+else:
+    print("False")
+
+________________________________________________________________________________________________________
+
+08. Profit
+﻿
+Write a program that reads the selling price S and buying price B of a product and checks if S is greater than B.
+
+Input
+The first line of input contains an integer representing the selling price S.
+The second line of input contains an integer representing the buying price B.
+
+Output
+The output should be a single line containing a boolean. True should be printed if S is greater than B,
+otherwise False should be printed.
+﻿
+Explanation
+For example, if the given selling price S = 600 and the buying price B = 500,
+The S is greater than B. (600 is greater than 500).
+The output should be True as the selling price is greater than the buying price.
+
+Sample Input 1:
+
+600
+500
+
+Sample Ouput 1:
+
+True
+
+Sample Input 2:
+
+100
+105
+
+Sample Ouput 2:
+
+False
+
+Solution:
+
+s=int(input())
+b=int(input())
+if s>b:
+    print("True")
+else:
+    print("False")
+
+________________________________________________________________________________________________________
+
+09.﻿ Check First Part of a String
+
+Write a program that reads two strings S1 and S2, and checks if S2 is the first part of S1.
+
+Note
+No.of characters in the first part of S1 is equal to the number of characters in S2.
+
+Input
+The first line of input contains a string representing S1.
+The second line of input contains a string representing S2.
+
+Output
+The output should be a single line containing a boolean. True should be printed if S2 is 
+the first part of S1, otherwise False should be printed.
+﻿
+Explanation
+For example, if the given strings are S1 = rainbow and S2 = rain,
+
+r a i n b o w
+0 1 2 3 4 5 6
+
+• The first part of S1 is rain.
+• The characters in S2 are rain.
+• The first part of S1 and the characters of S2 are the same.
+
+The output should be True as the S2 rain is the first part of the S1 rainbow.
+﻿
+For example, if the given strings are S1 = debug and S2 = bug,
+• The characters in S2 are bug.
+• The first part of S1 is deb.
+
+d e b u g
+0 1 2 3 4
+
+• The first part of S1 and the characters of S2 are not the same.
+
+The output should be False as the $2 bug is not the first part of the S1 debug.
+
+Sample Input 1:
+
+rainbow
+rain
+
+Sample Ouput 1:
+
+True
+
+Sample Input 2:
+
+debug
+bug
+
+Sample Ouput 2:
+
+False
+
+Solution:
+
+s1=input()
+s2=input()
+a=(s1[0:len(s2)])
+if a==s2:
+    print("True")
+else:
+    print("False")
+
+________________________________________________________________________________________________________
+
