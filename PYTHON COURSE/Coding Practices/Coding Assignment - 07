@@ -67,7 +67,11 @@ Solution:
 
 m=int(input())
 n=int(input())
-count=1
+"""
+for i in range(m):
+    print((str(i+1)+' ')*n)
+ """ 
+count=1 
 while count<=m:
     print((str(count)+" ")*n)
     count+=1
@@ -76,49 +80,39 @@ ________________________________________________________________________________
 
 02﻿ Print from 0 to N
 
-write a program that reads a number N and prints the numbers from 0 to N.
+write a program that reads a number N and prin N numbers statring from 0
 
-Note:
-
-Use For Loop for iteration.
- 
 Input:
 
 The input will be a single line containing an integer representing N.
 
 Output:
 
-The output should contain all the numbers from 0 to N, each on a new line.
+The output should be N lineswith each line containing an integer that is one of the N numbers starting from 0
 
 ﻿Explanation
 
-For example, if the given number is N = 4,
+For example, if the given number is N = 2,
 
-• The numbers from 0 to 4 are 0,1,2,3 and 4 
+• The 2 numbers from 0  are 0 and 1.
 
 The output should be,
 
 0
 1
-2
-3
-4
 
 Sample Input 1:
 
-4
+2
 
 Sample Output 1:
 
 0
 1
-2
-3
-4
 
 Sample Input 2:
 
-7
+5
 
 Sample Output 2:
 
@@ -127,79 +121,82 @@ Sample Output 2:
 2
 3
 4
-5
-6
-7
 
 Solution:
 
 n=int(input())
+"""
+for i in range(0,n):
+    print(i)
+"""
 count=0
-while count<=n:
+while count<n:
     print(count)
-    count+=1
-
-_____________________________________________________________________________________________
+    count+=1    
+    
+_________________________________________________________________________________________
 
 03.Average of N Inputs
 
-Given a number N, write a program that reads N inputs and prints the average of the given N inputs.
+Given a number N, write a program that reads N inputs and prints the average of the N inputs.
 
-Note:
-
-The average of N numbers can be calculated as, Average = Sum of N numbers / N
-Example: If 3 numbers are 2, 3, and 7.
-The average of 3 numbers is, Average = (2 + 3 + 7) / 3 = 4.0
-Use For loop for iteration.
-﻿
-Input:
+﻿Input:
 
 The first line of input contains an integer representing N.
 the next N lines of input contain integers
 
 ﻿Output:
 
-The output should be a single line containing a float that is the average of the given N inputs.
+The output should be a single line containing a float that is the average of the N inputs.
 
 Explanation:
 
-For example, if the given number is N = 4,
-The 4 inputs are 3, 4, 6 and 7.
-• The sum of 3, 4, 6 and 7 is 20. ( 3+ 4+ 6+ 7 = 20)
-• The average of 3, 4, 6 and 7 is 5.0. ( 20/4 = 5.0 )
+For example, if the given number is N = 5,
+The 4 inputs are 3, 6, 2, 8 and 1.
+• The sum of 3, 6, 2, 8 and 1 is 20. ( 3+ 6 + 2 + 8 + 1 = 20)
+• The average of 5 inputs is 4.0. ( 20/5 = 4.0 )
 
 The output should be 5.0.
 
 Sample Input 1:
 
-4
+5
 3
-4
 6
-7
+2
+8
+1
 
 Sample Output 1:
 
-5.0
+4.0
 
 Sample Input 2:
 
 2
-24
-15
+2
+3
 
 Sample Output 2:
 
-19.5
+2.5
                   
 Solution:
 
 n=int(input())
 sum=0
+"""
 for i in range(n):
     m=int(input())
+    sum+=m
+"""
+count=1
+while count<=n:
+    m=int(input())
     sum+=m 
+    count+=1
 print(sum/n)
+
 
 ____________________________________________________________________________________________________
 
@@ -216,7 +213,6 @@ Write a program that reads a number N and prints two Right Angled Traingles of N
 
 Note:
 
-Use For Loop Iteration
 There is space after every star (*)
 
 ﻿Input
@@ -269,7 +265,7 @@ Sample Output 1:
 
 Sample Input 2:
 
-6
+5
 
 Sample Output 2:
 
@@ -278,80 +274,91 @@ Sample Output 2:
 * * * 
 * * * * 
 * * * * * 
-* * * * * * 
 * 
 * * 
 * * * 
 * * * * 
 * * * * * 
-* * * * * * 
 
 Solution:
 
 n=int(input())
+"""
 for i in range(1,n+1):
     print("* "*i)
 for i in range(1,n+1):
     print("* "*i)
+"""
+count=1 
+count1=1
+while count<=n:
+    print("* "*count)
+    count+=1
+while count1<=n:
+    print("* "*count1)
+    count1+=1
 
 ______________________________________________________________________________________________________
 
-05. Product of the Numbers from M to N
+05. Product of N Numbers after X
 
-﻿Write a program that reads two numbers M and N, and prints the product of numbers from M to N.
-
-Note:
-
-Use For loop for iteration.
+﻿Write a program that reads two numbers X and N, and prints the product of N numbers after X.
 
 Input:
 
-The first line of input contains an integer representing M. The second line of input contains an integer representing N
+The first line of input contains an integer representing X. 
+The second line of input contains an integer representing N
 
 ﻿Output:
 
-The output should be a single line containing an integer that is the product of numbers from M to N
+The output should be a single line containing an integer obtained by multiplying the N numbers after X.
 
 Explanation
 
-For example, if the given numbers are M = 5 and N = 7,
-• The numbers from 5 to 7 are 5, 6, and 7.
-• The product of 5, 6, and 7 is 210. (5 * 6 * 7 = 210)
+For example, if the given numbers are X = 4 and N = 2,
+• The 2 numbers after  4 are 5 and 6
+• The product of next 2 numbers from 4 is (5 * 6 = 30)
 
-The output should be 210.
+The output should be 30.
 
 Sample Input 1:
 
-5
-7
+4
+2
 
 Sample Output 1:
 
-210
+30
 
 Sample Input 2:
 
-9
-14
+10
+5
 
 Sample Output 2:
 
-2162160
+360360
 
 Solution:
 
 m=int(input())
 n=int(input())
 p=1
-for i in range(m,n+1):
-    p*=i 
+"""
+for i in range(m+1,m+n+1):
+    p*=i
+"""
+count=m+1
+while count<m+n+1:
+    p*=count
+    count+=1
 print(p)
-
+    
 __________________________________________________________________________________________
 
-06. Sum of N Squares (For Loop)
+06. Sum of N Squares
 
-Write a program to print the sum of the squares of the first N natural numbers.
+Write a program that reads a number N and prints the sum of the squares of N numbers starting from 1.
 
 Input:
 
@@ -359,13 +366,15 @@ The input will be a single line containing a positive integer (N).
 
 Output:
 
-The output should be a single line containing the sum of the squares of the first N natural numbers.
+The output should be a single line containing an ineteger that is the sum of sqaures of N numbers starting from 1.
 
 Explanation:
 
-For example, if the given number is 6, the sum of the squares of the first 6 natural numbers,
-which is (1 + 4 + 9 + 16 + 25 + 36). 
-So the output should be 91.
+For example, if the given number is N = 4,
+the 4 numbers starting from 1 are 1,2,3 and 4
+the square of the numbers are 1, 4, 9 and 16
+the sum of squares is (1 + 4 + 9 + 16 = 30). 
+So the output should be 30.
 
 For example, if the given number is 3, the sum of the squares of the  first 3 natural numbers,
 which is (1 + 4 + 9). 
@@ -373,27 +382,32 @@ So the output should be 14.
 
 Sample Input 1:
 
-6
+4
 
 Sample Output 1:
 
-91
+30
 
 Sample Input 2:
 
-3
+7
 
 Sample Output 2:
 
-14
+140
 
 Solution:
 
-n = int(input())
-sum= 0
-for i in range(1, n+1):
-    sum = sum+(i*i)
-
+n=int(input())
+sum=0
+"""
+for i in range(1,n+1):
+    sum+=(i*i)
+"""
+count=1 
+while count<=n:
+    sum+=count*count
+    count+=1
 print(sum)
 
 __________________________________________________________________________________________________________
@@ -402,10 +416,6 @@ ________________________________________________________________________________
 
 ﻿
 You are given an integer N as input. Write a program to print integers from N to 1.
-
-Note: 
-
-Use For Loop.
 
 Input:
 
@@ -446,135 +456,10 @@ Sample Output 2:
 
 Solution:
 
-a=int(input())
-for i in range(a):
-    print(a-i)
+n=int(input())
+count=0
+while(n>count):
+    print(n)
+    n=n-1
+
 ___________________________________________________________________________________________________________
-
-08. Solid Rectangle - 2
-
-Write a program to print a rectangle pattern of M rows and N columns using the plus character ( + ).
-
-Note:
-
-There is a space after each plus + character. Note: Use for loop.
-
-Input:
-
-The first line of input is an integer M. The second line of input is an integer N
-
-Explanation:
-
-In the given example, 3 rows and 5 columns.
-
-Therefor, the output should be,
-
-+ + + + + 
-+ + + + + 
-+ + + + +
-    
-Sample Input 1:
-
-3
-5
-
-Sample Output 1:
-
-+ + + + + 
-+ + + + + 
-+ + + + + 
-
-Sample Input 2:
-
-4
-4
-
-Sample Output 2:
-
-+ + + + 
-+ + + + 
-+ + + + 
-+ + + + 
-
-Solution:
-
-rows = int(input())
-columns=int(input())
-for counter in range(rows):
-  print("+ " * columns)
-
-_________________________________________________________________________________
-
-09. ﻿Solid Right Angled Triangle - 2
-
-﻿
-Given an integer number N as input. Write a program to print the double triangular pattern of N lines
-using an asterisk (*) character as shown below.
-
-Note: 
-
-There is a space after each asterisk character.
-Use for-loop.
-
-Input:
-
-The first line of input will contain a positive integer.
-
-Explanation:
-
-Given N 4, there should be 2 triangular patterns with 4 lines each.
-
-So, the output should be 
-
-* 
-* * 
-* * * 
-* * * * 
-* 
-* * 
-* * * 
-* * * *
-
-Sample Input 1:
-
-4
-
-Sample Output 1:
-
-* 
-* * 
-* * * 
-* * * * 
-* 
-* * 
-* * * 
-* * * *
-
-Sample Input 2:
-
-5
-
-Sample Output 2:
-
-* 
-* * 
-* * * 
-* * * * 
-* * * * * 
-* 
-* * 
-* * * 
-* * * * 
-* * * * * 
-
-Solution:
-
-rows = int(input())
-for counter in range(rows):
-    counter=counter+1
-    print("* " * counter)
-for counter in range(rows):
-    counter=counter+1
-    print("* " * counter)
-
-_______________________________________________________________________________________
