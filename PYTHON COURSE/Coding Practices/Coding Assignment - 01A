@@ -1,0 +1,373 @@
+01. Simple Reactangle
+
+Write a program that prints a simple rectangle using stars (*).
+
+Explanation:
+
+Print two stars on the first line, two stars on the second line and two stars on the third line.
+
+Note:
+
+There is space after every star
+
+Sample Ouput:
+
+* * 
+* * 
+* * 
+
+Solution:
+
+print("* "*2)
+print("* "*2)
+print("* "*2)
+
+____________________________________________________________________________________________________________
+
+02. Simple Sqaure - 3
+
+Write a program that prints a simple sqaure using stars (*).
+
+Explanation:
+
+Print three stars on the first line, three stars on the second line and three stars on the third line.
+
+Note:
+
+There is space after every star
+
+Sample Ouput:
+
+* * * 
+* * * 
+* * * 
+
+Solution:
+
+print("* "*3)
+print("* "*3)
+print("* "*3)
+
+_______________________________________________________________________________________________________
+
+03. Simple Triangle - 3
+
+Write a program that prints a simple traingle using stars (*).
+
+Explanation:
+
+Print one stars on the first line, two stars on the second line and three stars on the third line.
+
+Note:
+
+There is space after every star
+
+Sample Ouput:
+
+* 
+* * 
+* * *
+
+Solution:
+
+print("* "*1)
+print("* "*2)
+print("* "*3)
+
+_________________________________________________________________________________________________________
+
+04. Stars - 2
+
+Write a program that reads a word and prints the word in the given format.
+
+****** Python ******
+
+Note
+
+The number of stars before and after the word is equal to the length of the word
+
+Input:
+﻿
+The input will be a single line containing a string.
+
+Output:
+
+The output should be a single line containing a string in the format shown
+
+Explanation:
+
+For example, if the given word is Code,
+• The length of the word Code is 4
+• Add 4 stars and a space before the word Code
+• Add a space and 4 stars after the word Code
+The output should be,
+**** Code ****
+
+Sample Input 1:
+
+Code
+
+Sample Output 1:
+
+**** Code ****
+
+Sample Input 2:
+
+Hi
+
+Sample Ouput 2:
+
+** Hi **
+
+Solution:
+
+a=input()
+print("*"*len(a)+" "+a+" "+"*"*len(a))
+
+_________________________________________________________________________________________________
+
+05.﻿ Second Word in First Word
+
+Write a program that reads two words W1 and W2 W2 is at the beginning of W1. Print the index at which W2 ends in W1.
+
+Input:
+
+The first line of input contains a string representing W1. The second line of input contains a string representing W2.
+
+﻿Output:
+
+The output should be a single line containing an integer that is the index at which the word W2 ends in the word W1.
+
+Explanation:
+
+For example, if the given words are W1 = Midterm and W2 = Mid,
+
+M i d t e r m
+0 1 2 3 4 5 6
+
+The output should be 2 as the word Mid ends at index 2 in the word Midterm.
+
+Sample Input 1:
+
+Midterm
+Mid
+
+Sample Output 1:
+
+2
+
+Sample Input 2:
+
+Unkind
+Un
+
+Sample Ouput 2:
+
+1
+
+Solution:
+
+a=input()
+b=input()
+print(len(b)-1)
+
+___________________________________________________________________________________________________________
+
+06.﻿ Print in Reverse Order - 2
+
+Write a program that reads two words A and B, and prints the given words in reverse order separated by ###
+
+Note
+
+The characters used in ### are three hash symbols.
+
+Input:
+
+The first line of input contains a string representing A. The second line of input contains a string representing B
+
+Output:
+
+The first line of output should be a string containing the word B The second line of output should be a 
+string containing ### The third line of output should be a string containing the word A
+
+Explanation:
+
+For example, if the given words are A= "Cat" and B = "Rat"
+• In the first line Rat should be printed.
+• In the second line ### should be printed.
+In the third line Cat should be printed.
+The output should be,
+Rat
+###
+Cat
+
+Sample Input 1:
+
+Cat 
+Rat
+
+Sample Output 1:
+
+Rat
+###
+Cat
+
+Sample Input 2:
+
+Train 
+Bus
+
+Sample Ouput 2:
+
+Bus
+###
+Train
+
+Solution:
+
+a=input()
+b=input()
+print(b)
+print("###")
+print(a)
+
+____________________________________________________________________________________________________
+
+07. First and Last Characters
+
+Write a program that reads a word and prints the first and last characters of the word on two lines.
+
+Input:
+
+The input will be a single line containing a string.
+
+Output:
+
+The first line of output should be a string containing the first character of the word.
+The second line of output should be a string containing the last character of the word.
+
+Explanation:
+
+For example, if the given word is qwerty, the first character is q and the last character is y. 
+So, the output should be,
+
+q
+y
+
+Sample Input 1:
+
+q
+y
+
+Sample Output 1:
+
+qwerty
+
+Sample Input 2:
+
+Python Programming
+
+Sample Ouput 2:
+
+P
+g
+
+Solution:
+
+a=input()
+print(a[0])
+print(a[-1])
+
+_____________________________________________________________________________________________________
+
+08. First Letters
+
+﻿
+You are given three strings as input. Write a program to print the first character of each string.
+
+Input:
+
+The first, second, and third lines of input are strings.
+
+Explanation:
+
+Consider the given strings to be apple, banana, and carrot . We need to consider the first character
+in each of these strings. We get the character a from the first string apple, we get the character b
+from the second string banana, and we get the character C from the third string carrot.
+So the final output should be abc.
+
+Sample Input 1:
+
+apple
+banana
+carrot
+
+Sample Output 1:
+
+abc
+
+Sample Input 2:
+
+Very
+Important
+Person
+
+Sample Ouput 2:
+
+VIP
+Solution:
+
+a=input()
+b=input()
+c=input()
+d=a[0]
+e=b[0]
+f=c[0]
+print(d+e+f)
+
+___________________________________________________________________________________________________________
+
+09. Star Repetition - 3
+
+Write a program that reads a string and prints the first and last characters of the given string and 
+prints the stars (*) instead of the remaining characters.
+
+Input:
+
+The input will be a single line containing a string.
+
+Ouput:
+
+The output should be a single line containing the first and last characters of the given string and
+stars (*) instead of the remaining characters.
+
+Explanation:
+
+For example, if the given string is qwerty@2020, the output should be q*********0
+
+Sample Input 1:
+
+qwerty@2020
+
+Sample Output 1:
+
+q*********0
+
+Sample Input 2:
+
+9647329032
+
+Sample Ouput 2:
+
+9********2
+
+Solution:
+
+a=input()
+length=len(a)
+first_one_letter=a[0:1]
+last_one_letter=(a[length - 1:])
+stars=( length - ( len (first_one_letter) + len (last_one_letter) ) )
+print(str(first_one_letter)+str(stars*"*")+str(last_one_letter))
+
+_________________________________________________________________________________________________________
