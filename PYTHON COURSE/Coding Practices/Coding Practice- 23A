@@ -1,0 +1,737 @@
+01. Sum of two numbers - 3
+
+For this problem, the prefilled code will contain a function. Write a program that the given function will return the sum of the two values passed to the function.
+
+Input:
+
+The first line of input will contain an integer.
+The second line of input will contain an integer.
+
+Output:
+
+The output should be a single line containing the sum of the two numbers.
+
+Explanation:
+
+For example, if the given numbers are 5 and 8, your code should print the sum of the given two numbers. So the output should be 13.
+
+Sample Input 1:
+
+5
+8
+
+Sample Output 1:
+
+13
+
+Sample Input 2:
+
+15
+10
+
+Sample Output 2:
+
+25
+
+Outline
+Question: Sum of two numbers - 3
+
+Approach
+Step 1: Define the function
+Step 2: Read the input numbers
+Step 3: Call the function and print the result
+
+Question: Sum of two numbers - 3
+In this problem, you need to write a program that takes two numbers as input and returns the sum of those two numbers. The code will have a function
+called add that takes two arguments and returns their sum.
+
+Approach
+To solve this problem, we will follow these steps:
+
+Define a function called add that takes two arguments and returns their sum.
+Read the input numbers from the user.
+Call the add function with the input numbers and print the result.
+
+Step-by-Step Explanation
+
+Step 1: Define the function
+
+First, we need to define a function called add that takes two arguments, arg_1 and arg_2. Inside the function, we will calculate the sum of the two arguments 
+and store it in a variable called result. Finally, we will return the result variable.
+
+Step 2: Read the input numbers
+
+Now, we need to read the input numbers from the user. We will use the input() function to read the input and int() to convert it into an integer. 
+We will store the first number in a variable called a and the second number in a variable called b.
+
+Step 3: Call the function and print the result
+
+Finally, we will call the add function with the input numbers a and b. The function will return the sum of the two numbers, which we will store 
+in a variable called result. Then, we will print the result variable.
+
+Here is the complete solution for the problem:
+
+Solution:
+
+def add(arg_1, arg_2):
+    result = arg_1 + arg_2
+    return result
+
+a = int(input())
+b = int(input())
+result = add(a, b)
+print(result)
+
+______________________________________________________________________________________________________________________________________________________
+
+02. Printing Message
+
+For this problem, the prefilled code will contain a function. Write a function with two arguments that prints the message as expected
+
+Akhil is 15 years old.
+
+Input:
+
+The first line of input will contain a string.
+The second line of input will contain a positive integer.
+
+Output:
+
+The output should be a single line containing the message.
+
+explanation:
+
+For example, if the given person name is "Akhil" and the age is 15, your code should print the message as shown below
+Akhil is 15 years old.
+
+Sample Input 1:
+
+Akhil
+15
+
+Sample Output 1:
+
+Akhil is 15 years old.
+
+Sample Input 2:
+
+Neha
+10
+
+Sample Output 2:
+
+Neha is 10 years old.
+
+Outline
+
+Question: Printing Message
+Approach
+Step 1: Read the input values
+Step 2: Create the message function
+Step 3: Call the message function
+
+Question: Printing Message
+In this coding question, you are given a person's name and age as input. Your task is to write a function that takes these two inputs and prints a message 
+in the format: <name> is <age> years old.
+
+For example, if the given person's name is "Akhil" and the age is 15, your code should print the message: Akhil is 15 years old.
+
+Approach
+
+To solve this problem, we will follow these steps:
+
+Read the input values (name and age) from the user.
+Create a function called message that takes two arguments (name and age) and prints the message in the required format.
+Call the message function with the input values.
+
+Step-by-Step Explanation
+Step 1: Read the input values
+
+First, we need to read the input values from the user. We will use the input() function to read the input and store the name and age in two separate variables.
+
+Here, we use input() to read the name (a string) and age (an integer). We convert the age input to an integer using the int() function.
+
+Step 2: Create the message function
+
+Next, we will create a function called message that takes two arguments: arg_1 (name) and arg_2 (age). Inside the function, we will create a string 
+called msg that combines the name and age in the required format. Then, we will print the msg string.
+
+In this function, we use the + operator to concatenate the name, age, and other parts of the message. We also convert the age back to a string using the 
+str() function so that we can concatenate it with the other strings.
+
+Step 3: Call the message function
+
+Finally, we will call the message function with the input values (name and age) that we read earlier.
+
+This will print the message in the required format.
+
+Here is the complete solution for the given problem:
+
+This code reads the input values, creates a function to print the message, and calls the function with the input values.
+
+Solution:
+
+def message(arg_1, arg_2):
+    msg = arg_1 + " is " + str(arg_2) + " years old."
+    print(msg)
+
+name = input()
+age = int(input())
+message(name, age)
+
+_________________________________________________________________________________________________________________________________________________________
+
+03. Indexing - 2
+
+For this problem, the prefilled code will contain a function. Write a program that the given function will return the character present at the index N in the word W. 
+
+Input:
+
+The first line of input will contain a string (W).
+The second line of input will contain a positive integer (N).
+
+Output:
+
+The output should be a single line containing the character present at the index N in the word W. 
+
+explanation:
+
+For example, if the given word W is Chocolate and the integer N is 2. Since the index starts from zero. The character present at index 2 is o
+
+Sample Input 1:
+
+Chocolate
+2
+
+Sample Output 1:
+
+o
+
+Sample Input 2:
+
+Google
+4
+
+Sample Output 2:
+
+l
+
+Outline
+
+Question: Indexing - 2
+Approach
+Step 1: Read the input values
+Step 2: Create the indexing function
+Step 3: Call the indexing function and print the result
+
+Question: Indexing - 2
+In this coding question, you are given a word W and an integer N. Your task is to write a program that returns the character present at the index N in the word W.
+
+Approach
+To solve this problem, we will follow these steps:
+
+Read the input values: the word W and the integer N.
+Create a function called indexing that takes two arguments, arg_1 and arg_2, and returns the character at the index arg_2 in the word arg_1.
+Call the indexing function with the input values and print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input values
+
+First, we need to read the input values from the user. We will read the word W and the integer N using the input() function and store them in variables word and index.
+
+Step 2: Create the indexing function
+
+Now, let's create a function called indexing that takes two arguments, arg_1 and arg_2. This function will return the character at the index arg_2 in the word arg_1.
+
+In this function, we use the square brackets [] to access the character at the index arg_2 in the word arg_1. We store this character in a variable called 
+character and return it.
+
+Step 3: Call the indexing function and print the result
+
+Finally, we will call the indexing function with the input values word and index. We will store the result in a variable called result and print it.
+
+Here is the complete solution for the coding question:
+
+Solution:
+
+def indexing(arg_1, arg_2):
+    character = arg_1[arg_2]
+    return character
+
+word = input()
+index = int(input())
+result = indexing(word, index)
+print(result)
+
+________________________________________________________________________________________________________________________________________________________
+
+04. Divisible by Nine
+
+A fuction is given in the prefilled code that takes three numbers N1, N2 and N3 as arguments.
+Write a program that returns True if atleast one of the given numbers N1, N2 and N3 is divisible by 9, Otherwise return False.
+
+Input:
+
+The first line of input will contain an integer representing N1.
+The second line of input will contain an integer representing N2.
+The third line of input will contain an integer representing N3.
+
+Output:
+
+The output should be a single line containing a boolean. True should be printed if one of the numbers N1, N2 and N3 is divisible by 9, Otherwise False should be printed
+
+Explanation:
+
+For example, if the given numbers are N1 = 3, N2 = 9, and N3 = 16,
+X The number 3 is not divisible by 9. (3 % 9 = 3 )
+✓ The number 9 is divisible by 9. ( 9 % 9 = 0)
+X The number 16 is not divisible by 9. ( 16 % 9 = 7 )
+The output should be True, as one of the numbers is divisible by 9.
+
+Sample Input 1:
+
+3
+9
+16
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+46
+67
+91
+
+Sample Output 2:
+
+False
+
+Outline
+
+Question: Divisible by Nine
+Approach
+Step 1: Define the function
+Step 2: Check if the numbers are divisible by 9
+Step 3: Read input and call the function
+Solution
+
+Question: Divisible by Nine
+In this coding question, you are given a function that takes three numbers N1, N2, and N3 as arguments. Your task is to write a program that 
+returns True if at least one of the given numbers N1, N2, and N3 is divisible by 9. Otherwise, return False.
+
+Approach
+To solve this problem, we will follow these steps:
+
+Define a function called check_divisible_by_9 that takes three numbers as arguments.
+Check if any of the numbers are divisible by 9 using the modulo operator (%).
+Return True if at least one number is divisible by 9, otherwise return False.
+Read the input numbers and call the function.
+Print the result.
+
+Step-by-Step Explanation
+
+Step 1: Define the function
+
+First, let's define a function called check_divisible_by_9 that takes three arguments: first_number, second_number, and third_number.
+
+Step 2: Check if the numbers are divisible by 9
+
+Inside the function, we will use the modulo operator (%) to check if any of the numbers are divisible by 9. If the remainder of the division is 0,
+then the number is divisible by 9.
+Now, we will return the value of is_divisible_by_9.
+
+Step 3: Read input and call the function
+
+Now, we will read the input numbers using the input() function and convert them to integers using the int() function.
+Next, we will call the check_divisible_by_9 function with the input numbers and store the result in a variable called result.
+Finally, we will print the result.
+
+Here is the complete solution for the problem:
+
+Solution:
+
+def check_divisible_by_9(first_number, second_number, third_number):
+    is_divisible_by_9 = ((first_number % 9 == 0) or (second_number % 9 == 0) or (third_number % 9 == 0))
+
+    return  is_divisible_by_9
+    
+first_number = int(input())
+second_number = int(input())
+third_number = int(input())
+
+result = check_divisible_by_9(first_number, second_number, third_number)
+
+print(result)
+
+______________________________________________________________________________________________________________________________________________________
+
+05. Compare Numbers - 11
+
+A function is given in the prefilled code that takes two numbers M and N as arguments.
+Write a program that returns True if both the M and N are greater than 100 and M is less than N .. Otherwise, return False.
+
+Input
+
+The first line of input contains an integer representing M.
+The second line of input contains an integer representing N.
+
+Ouput:
+
+The output should be a single line containing a boolean. True should be printed if both the M and N are greater than 100 and M is less than N. 
+Otherwise, False should be printed.
+
+Explanation:
+
+For example, if the given numbers are M = 105 and N = 120
+✓ The numbers 105 and 120 are greater than 100.
+✓ The number 105 is less than the number 120.
+The output should be True.
+
+Sample Input 1:
+
+105
+120
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+225
+19
+
+Sample Output 2:
+
+False
+
+Solution:
+
+def compare_numbers(first_number, second_number):
+    greater_than_100=(first_number>100) and (second_number>100)
+    is_less=first_number<second_number
+    if greater_than_100 and is_less:
+        is_valid=True
+    else:
+        is_valid=False
+    return is_valid
+
+first_number = int(input())
+second_number = int(input())
+
+result =compare_numbers(first_number,second_number)
+print(result)
+
+________________________________________________________________________________________________________________________________________
+
+06. Win or Lose or Draw - 2
+
+A function is given in the prefilled code that takes two numbers A and B B as arguments.
+
+Write a program that compares the scores of A and B.
+
+Return "Win" if A is greater than B.
+Return "Draw" if A and B are equal.
+Return "Lose" if A is less than B .
+
+Input:
+
+The first line of input contains an integer representing A. 
+The second line of input contains an integer representing B.
+
+Ouput:
+
+The output should be a single line containing a string. Win should be printed if A is greater than B. Draw should be printed if A is equal to B.
+Lose should be printed if A is less than B.
+
+Explanation:
+
+For example, if the given numbers are A = 10 and B = 6,
+✓ A is greater than B. (10 is greater than 6)
+X A is equal to B. (10 is not equal to 6)
+X A is less than B. (10 is not less than 6)
+
+The output should be Win.
+
+For example, if the given numbers are A =70 and B = 95,
+✓ A is greater than B. (70 is not greater than 95)
+X A is equal to B. (70 is not equal to 95)
+X A is less than B. (70 is less than 95)
+
+The output should be Lose.
+
+Sample Input 1:
+
+10
+6
+
+Sample Output 1:
+
+Win
+
+Sample Input 2:
+
+70
+95
+
+Sample Output 2:
+
+Lose
+
+Outline
+
+Question: Win or Lose or Draw - 2
+Approach
+Step 1: Read the input values
+Step 2: Create a function to compare the scores
+Step 3: Print the result
+
+Question: Win or Lose or Draw - 2
+
+In this coding question, you are given two numbers A and B which represent the scores of two teams. Your task is to write a program that compares 
+the scores and returns "Win" if A is greater than B, "Draw" if A and B are equal, and "Lose" if A is less than B.
+
+Approach
+To solve this problem, we will follow these steps:
+
+Read the input values for A and B.
+Create a function to compare the scores of A and B.
+Print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input values
+
+First, we need to read the input values for A and B. We can use the input() function to read the input and int() to convert it into an integer.
+
+Step 2: Create a function to compare the scores
+
+Now, let's create a function called compare that takes two arguments, team_a_points and team_b_points. Inside the function, we will use conditional 
+statements to compare the scores and return the result.
+
+In this function, we first check if team_a_points is greater than team_b_points. If it is, we set the result variable to "Win". If not, 
+we check if team_a_points is equal to team_b_points. If they are equal, we set the result variable to "Draw". If neither of these conditions 
+is true, it means that team_a_points is less than team_b_points, so we set the result variable to "Lose". Finally, we return the result variable.
+
+Step 3: Print the result
+
+Now that we have our compare function, we can call it with the input values team_a_points and team_b_points and store the result in a variable called compare_result.
+Finally, we can print the compare_result variable to display the output.
+
+Here's the complete solution for this coding question:
+
+Solution:
+
+def compare(team_a_points, team_b_points):
+    if team_a_points > team_b_points:
+        result = "Win"
+    
+    elif team_a_points == team_b_points:
+        result = "Draw"
+    
+    else:
+        result = "Lose"
+        
+    return result
+
+team_a_points = int(input())
+team_b_points = int(input())
+
+compare_result = compare(team_a_points, team_b_points)
+
+print(compare_result)
+
+__________________________________________________________________________________________________________________________________________________________
+
+07. Sum of Squares from M to N - 2
+
+Write a function with name sum_of_squares_m_to_n that takes two integers (M and N) and sum the squares from M to N.
+
+Input:
+
+The first line of input will contain an integer (M).
+The second line of input will contain an integer (N).
+
+Output:
+
+The output should be a single line containing the sum of the squares from M to N.
+
+Explanation:
+
+For example, if the given M is 3 and N is 5, the sum of squares of 3, 4 and 5 is 50. So the output should be 50.
+
+Tutorial: Sum of Squares from M to N - 2
+
+Introduction
+In this tutorial, we will learn how to solve the "sum of squares of numbers from M to N-2". coding question using Python step by step. 
+
+Step 1: Understand the problem
+Our task is to create a function named sum_of_squares_m_to_n that takes two numbers, M and N, and returns the sum of squares from M to N. 
+For example, if M = 3 and N = 5, the sum of squares of 3, 4, and 5 is 50. So the output should be 50.
+
+Step 2: Create the function
+Let's start by creating a function named sum_of_squares_m_to_n that takes two numbers, M and N, as its input:
+
+Step 3: Initialize a variable to store the sum
+Inside the function, create a variable called total and set it to zero. We'll use this variable to store the sum of the squares as we loop through the numbers:
+
+Step 4: Loop through the numbers
+Now, let's create a loop that goes through each number from M to N, including N. We'll use the range() function to create this loop:
+
+Step 5: Add the square of the number to the total
+Inside the loop, let's add the square of the current number i to our total. We can square a number by using the ** operator:
+
+Step 6: Return the total sum
+After the loop finishes, our total variable will have the sum of squares from M to N. So, we can return this value from our function:
+
+Step 7: Read input values
+Now, let's read the input values for M and N using the input() function and convert them to integers using the int() function:
+
+Step 8: Call the function and print the result
+Finally, let's call our sum_of_squares_m_to_n function with the input values M and N, store the result in a variable called result, and print the result:
+
+Sample Input 1:
+
+3
+5
+
+Sample Output 1:
+
+50
+
+Sample Input 2:
+
+1
+4
+
+Sample Output 2:
+
+30
+
+Solution:
+
+def sum_of_squares_m_to_n(m, n):
+    total = 0
+    for i in range(m, n+1):
+        total += (i**2)
+    return total
+    
+m = int(input())
+n = int(input())
+result = sum_of_squares_m_to_n(m, n)
+print(result)
+
+____________________________________________________________________________________________________________________________________________________________
+
+08. Print Odd numbers from M to N -2 
+
+A function is given in the prefilled code that takes two numbers M and Nas arguments.
+Write a program to print all the odd numbers from M to N separated by a space.
+
+Input:
+
+The first line of input contains an integer representing M
+The second line of input contains an integer representing N.
+
+Output:
+
+The output should be a single line containing a string of odd numbers from M to N separated by a space.
+
+Explanation:
+
+For Example, if the given numbers are M=2 and N=7
+The odd numbers from 2 to 7 are 3, 5 and 7.
+The Output should be 3 5 7.
+
+Outline
+
+Question: Print Odd Numbers from M to N - 2
+Approach
+Step 1: Define the function
+Step 2: Create a list to store odd numbers
+Step 3: Iterate through the range of numbers
+Step 4: Check if a number is odd
+Step 5: Convert the list to a string
+Step 6: Read input and call the function
+
+Question: Print Odd Numbers from M to N - 2
+
+Write a program to print all the odd numbers from M to N separated by a space. The program should read two numbers M and N as input 
+and output a single line containing a string of odd numbers from M to N separated by a space.
+
+Approach
+To solve this problem, we will follow these steps:
+Define a function that takes two numbers M and N as arguments.
+Create a list to store odd numbers.
+Iterate through the range of numbers from M to N.
+Check if a number is odd, and if it is, add it to the list.
+Convert the list of odd numbers to a string separated by spaces.
+Read the input values for M and N, call the function, and print the result.
+
+Step-by-Step Explanation
+
+Step 1: Define the function
+First, let's define a function called get_odd_numbers_in_range that takes two arguments, start_number and end_number. 
+This function will return a string containing all the odd numbers between start_number and end_number separated by spaces.
+
+Step 2: Create a list to store odd numbers
+Inside the function, create an empty list called odd_numbers_list to store the odd numbers we find.
+
+Step 3: Iterate through the range of numbers
+Now, we need to iterate through the range of numbers from start_number to end_number. We can use a for loop for this purpose.
+
+Step 4: Check if a number is odd
+Inside the for loop, we need to check if the current number each_number is odd. We can do this by checking if the remainder of the number 
+when divided by 2 is 1. If it is, we add the number to our odd_numbers_list.
+
+Step 5: Convert the list to a string
+After the loop, we need to convert our odd_numbers_list to a string separated by spaces. We can use the join() function to do this.
+Finally, we return the space_separated_odd_numbers string from our function.
+
+Step 6: Read input and call the function
+Now, we need to read the input values for M and N, call our get_odd_numbers_in_range function with these values, and print the result.
+Here's the complete solution for the problem:
+
+Sample Input 1:
+
+2
+7
+
+Sample Output 1:
+
+3 5 7
+
+Sample Input 2:
+
+49
+66
+
+Sample Output 2:
+
+49 51 53 55 57 59 61 63 65
+
+Solution:
+
+def get_odd_numbers_in_range(start_number, end_number):
+
+    odd_numbers_list = []
+
+    for each_number in range(start_number, end_number + 1):
+        if each_number % 2 == 1:
+            odd_numbers_list += [str(each_number)]
+    
+    space_separated_odd_numbers = " ".join(odd_numbers_list)
+
+    return space_separated_odd_numbers
+
+start_number = int(input())
+end_number = int(input())
+
+odd_numbers = get_odd_numbers_in_range(start_number, end_number)
+
+print(odd_numbers)
+
+________________________________________________________________________________________________________________________________________________________
