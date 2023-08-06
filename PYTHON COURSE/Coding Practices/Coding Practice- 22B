@@ -1,0 +1,81 @@
+01. Return the Given Argument
+
+For this problem, the prefilled code will contain a function. Write a program to return the value passed to the function.
+
+Input:
+The first line of input will contain an integer.
+
+Ouput:
+The output should be a single line containing the value returned by the function.
+
+Explanation:
+
+For example, if the given integer is 20, the output should be 20, as the function returns the same value.
+
+Tutorial: Print the Input - 5
+
+Outline
+
+Question: Return the Given Argument
+Approach
+Step 1: Define the Function
+Step 2: Read the Input
+Step 3: Call the Function and Print the Result
+
+Question: Return the Given Argument
+In this problem, you are given a function. Your task is to write a program that returns the value passed to the function.
+
+Input:
+
+The first line of input will contain an integer.
+
+Output:
+
+The output should be a single line containing the value returned by the function.
+
+Example:
+
+For example, if the given integer is 20, the output should be 20, as the function returns the same value.
+
+Approach
+
+To solve this problem, we will follow these steps:
+Define the function that takes an argument and returns the same value.
+Read the input value (an integer) from the user.
+Call the function with the input value and print the result.
+
+Step-by-Step Explanation
+
+Step 1: Define the Function
+First, let's define the function func that takes one argument arg_1 and returns the same value.
+
+Step 2: Read the Input
+Now, we need to read the input value representing the integer. We can use the input() function to read the input and int() to convert it into an integer.
+
+Step 3: Call the Function and Print the Result
+Finally, we will call the function func with the input value n and store the result in a variable called result. Then, we will print the result.
+
+Sample Input 1:
+
+20
+
+Sample Output 1:
+
+20
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+5
+
+Solution:
+
+def func(arg_1):
+    return arg_1
+
+n = int(input())
+result = func(n)
+print(result)
