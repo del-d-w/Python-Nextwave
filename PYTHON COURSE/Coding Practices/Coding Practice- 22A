@@ -1,0 +1,345 @@
+01. Print the Input - 5
+
+A function is given in the prefilled code that takes the word S as an argument.
+Write a program that reads a word S and print the given word by calling the function.
+
+Input:
+The input will be a single line containing a string representing S.
+
+Ouput:
+The output should be a single line containing a string that is passed as an argument to the function.
+
+Explanation:
+
+For example, if the given word is S = "Javascript"
+The word Javascript should be passed as an argument.
+The output should be Javascript.
+
+Tutorial: Print the Input - 5
+
+Step 1: Write the function
+First, let's write a function called print_arg that takes a word as input and prints it.
+
+In this code, def is used to define a function named print_arg. The function takes a single input called string. Inside the function,
+we use the print command to display the value of string.
+
+Step 2: Get the user input
+Next, we need to ask the user for a word. We'll use the input() function to get the user's input and store it in a variable called string.
+
+Step 3: Call the function
+Now that we have the user's input, let's call the print_arg function and pass the string as an argument.
+This line of code calls the print_arg function and sends the value of string to it. The function will then print the word.
+
+Step 4: Put it all together
+Finally, let's combine all the steps into a single program.
+
+Sample Input 1:
+
+Javascript
+
+Sample Output 1:
+
+Javascript
+
+Sample Input 2:
+
+Microsoft Visual Basic
+
+Sample Output 2:
+
+Microsoft Visual Basic
+
+Solution:
+
+def print_arg(string):
+    print(string)
+
+string = input()
+
+print_arg(string)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+02. Welcome Message
+
+Input:
+
+Ouput:
+
+Explanation:
+
+Sample Input 1:
+
+Preethi
+
+Sample Output 1:
+
+Welcome Preethi
+
+Sample Input 2:
+
+Naresh Kumar
+
+Sample Output 2:
+
+Welcome Naresh Kumar
+
+Solution:
+
+def say_wishes(arg_1):
+    wishes = "Welcome " + arg_1
+    print(wishes)
+
+name = input()
+say_wishes(name)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+03. Multiply With Three
+
+Input:
+
+Ouput:
+
+Explanation:
+
+Sample Input 1:
+
+2
+
+Sample Output 1:
+
+6
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+15
+
+Solution:
+
+def multiply_with_three(arg_1):
+    result = arg_1 * 3
+    print(result)
+
+n = int(input())
+multiply_with_three(n)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+04. Divisible by Seven - 2
+
+Input:
+
+Ouput:
+
+Explanation:
+
+Sample Input 1:
+
+14
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+15
+
+Sample Output 2:
+
+False
+
+Solution:
+
+def divisible_by_seven(arg_1):
+    remainder = arg_1 % 7
+    if remainder == 0:
+        result = True
+    else:
+        result = False
+    print(result)
+    
+n = int(input())
+divisible_by_seven(n)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+05. Between 200 and 500
+
+Input:
+
+Ouput:
+
+Explanation:
+
+Sample Input 1:
+
+280
+
+Sample Output 1:
+
+Yes
+
+Sample Input 2:
+
+560
+
+Sample Output 2:
+
+No
+
+Solution:
+
+def is_between_200_and_500(number):
+    if number > 200 and number < 500:
+        print("Yes")
+    else:
+        print("No")
+
+number = int(input())
+is_between_200_and_500(number)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+06. Discount - 2
+
+Input:
+
+Ouput:
+
+Explanation:
+
+Sample Input 1:
+
+1500
+
+Sample Output 1:
+
+10%
+
+Sample Input 2:
+
+250
+
+Sample Output 2:
+
+5%
+
+Solution:
+
+def get_discount(amount):
+    if amount < 500:
+        discount = "5%"
+    elif (amount >= 500) and (amount < 2500):
+        discount = "10%"
+    else:
+        discount = "20%"
+    return discount
+
+amount = int(input())
+result = get_discount(amount)
+print(result)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+07. Print N Integers - 3
+
+Input:
+
+Ouput:
+
+Explanation:
+
+Sample Input 1:
+
+1
+
+Sample Output 1:
+
+1
+2
+3
+4
+
+Sample Input 2:
+
+10
+
+Sample Output 2:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+Solution:
+
+def print_numbers(number):
+    for each_number in range(1, number + 1):
+        print(each_number)
+
+number = int(input())
+print_numbers(number)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+08. Even Numbers or Odd Numbers
+
+Input:
+
+Ouput:
+
+Explanation:
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+0 EVEN
+1 ODD
+2 EVEN
+3 ODD
+
+Sample Input 2:
+
+8
+
+Sample Output 2:
+
+0 EVEN
+1 ODD
+2 EVEN
+3 ODD
+4 EVEN
+5 ODD
+6 EVEN
+7 ODD
+8 EVEN
+
+Solution:
+
+def show_numbers(number):
+    for i in range(number+1):
+        if (i % 2) == 0:
+            print(str(i) + " EVEN")
+        else:
+            print(str(i) + " ODD")
+
+number = int(input())
+show_numbers(number)
+
+________________________________________________________________________________________________________________________________________________________________________
+
