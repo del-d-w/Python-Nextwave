@@ -1,0 +1,681 @@
+01. Factors of a Number - 3
+
+A function is given in the prefilled code that takes a number N as an argument.
+Write a program that returns the factors of the given number N separated by a space as shown in the sample output.
+
+Input:
+
+The input will be a single line containing an integer representing N.
+
+Output:
+
+The output should be a single line containing a string of space separated numbers that are factors of N as shown in the sample output.
+
+Explanation:
+
+For example, if the given number is N=6,
+The factors of 6 are 1, 2, 3 and 6.
+The output should be, 1 2 3 6
+
+Outline
+
+Question: Factors of a Number - 3
+Approach
+Step 1: Define the function and initialize an empty list
+Step 2: Iterate through the numbers from 1 to N
+Step 3: Check if the number is a factor of N
+Step 4: Convert the list of factors into a string
+Step 5: Read the input and call the function
+
+Question: Factors of a Number - 3
+Write a program that takes a number N as input and returns the factors of the given number N separated by a space.
+
+Approach
+
+To solve this problem, we will follow these steps:
+Define a function that takes a number N as input.
+Initialize an empty list to store the factors of N.
+Iterate through the numbers from 1 to N.
+Check if the current number is a factor of N.
+If it is a factor, add it to the list of factors.
+Convert the list of factors into a string separated by spaces.
+Read the input and call the function to get the result.
+
+Step-by-Step Explanation
+
+Step 1: Define the function and initialize an empty list
+First, let's define a function called factors_of_n that takes a number N as input. Inside the function, create an empty list called factors to store the factors of N.
+
+Step 2: Iterate through the numbers from 1 to N
+Now, we need to check all the numbers from 1 to N to see if they are factors of N. To do this, create a for loop that iterates through the numbers from 1 to N (inclusive).
+
+Step 3: Check if the number is a factor of N
+Inside the for loop, check if the current number (each_number) is a factor of N. If the remainder of the division of N by each_number is 0, 
+then each_number is a factor of N.
+If each_number is a factor of N, add it to the factors list as a string.
+
+Step 4: Convert the list of factors into a string
+After the for loop, we have a list of factors as strings. Now, we need to convert this list into a single string separated by spaces. 
+We can use the join() function to do this.
+Finally, return the factors_separated_by_space string from the function.
+
+Step 5: Read the input and call the function
+Outside the function, read the input value representing the number N. We can use the input() function to read the input and int() to convert it into an integer.
+Call the factors_of_n function with the input number and store the result in a variable called result.
+Finally, print the result.
+
+Sample Input 1:
+
+6
+
+Sample Output 1:
+
+1 2 3 6 
+
+Sample Input 2:
+
+15
+
+Sample Output 2:
+
+1 3 5 15 
+
+Solution:
+
+def factors_of_n(number):
+    factors = []
+    for each_number in range(1, number + 1):
+        if number % each_number == 0:
+            factors += [str(each_number)]
+            factors_separated_by_space = " ".join(factors)
+    return factors_separated_by_space
+    
+number = int(input())
+result = factors_of_n(number)
+print(result)
+______________________________________________________________________________________________________________________________________________________
+
+02. Prime Number - 3
+
+A function is given in the prefilled code that takes a number N as an argument.
+
+Write a program to check if the given number N is prime or not.
+
+Print Prime Number if the number is prime. Otherwise, print Not a Prime Number
+
+Input:
+
+The input will be a single line containing an integer representing N.
+
+Output:
+
+The output should be a single line containing a string. Prime Number should be printed if N is a Prime Number. Otherwise, Not a Prime Number should be printed.
+
+Explanation:
+
+For example, if the given number is N=13
+The factors of 13 are 1 and 13
+the number 13 is a prime number as it has only 2 factors.
+The output should be Prime Number
+
+Outline
+
+Question: Prime Number - 3
+Approach
+Step 1: Define the function and read the input
+Step 2: Check if the number is prime
+Step 3: Print the result
+
+Question: Prime Number - 3
+In this coding question, you are given a function that takes a number N as an argument. Your task is to check if the given number N is prime or not. 
+If the number is prime, print "Prime Number". Otherwise, print "Not a Prime Number".
+
+Approach
+
+To solve this problem, we will follow these steps:
+Define the function is_prime and read the input number N.
+Check if the number N is prime by counting its factors.
+Print the result based on the number of factors.
+
+Step-by-Step Explanation
+
+Step 1: Define the function and read the input
+First, let's define the function is_prime that takes a number as an argument. Then, read the input number N using the input() function and convert 
+it to an integer using the int() function.
+
+Step 2: Check if the number is prime
+Now, let's check if the number N is prime by counting its factors. We will use a for loop to iterate through the numbers from 1 to N (inclusive). 
+If the number is divisible by the current number in the loop, we will increment the count of factors.
+After the loop, we will check if the number of factors is equal to 2. If it is, the number is prime, and we will return "Prime Number".
+Otherwise, we will return "Not a Prime Number".
+
+Step 3: Print the result
+Finally, let's call the is_prime function with the input number N and store the result in a variable called result. Then, print the resul
+
+Here is the complete solution for the given problem:
+
+Sample Input 1:
+
+13
+
+Sample Output 1:
+
+Prime Number 
+
+Sample Input 2:
+
+10
+
+Sample Output 2:
+
+Not a Prime Number
+
+Solution:
+
+def is_prime(number):
+    no_of_factors = 0
+    
+    for i in range(1, number + 1):
+        if (number % i == 0):
+            no_of_factors += 1
+        
+    if no_of_factors == 2:
+        return "Prime Number"
+    else:
+        return "Not a Prime Number"
+
+number = int(input())
+result  = is_prime(number)
+print(result)
+
+___________________________________________________________________________________________________________________________________________________________
+
+03. Prime Numbers from 1 to N-2
+
+A function is given in the prefilled code that takes a number N as an argument.
+Write a program that returns all the prime numbers from 1 to N separated by a space.
+
+Input:
+
+The input will be a single line containing an integer representing 
+
+Output:
+
+The output should be a single line containing a string of prime numbers from 1 to N separated by a space as shown in the sample output.
+
+Explanation:
+
+For example, if the given number is N=8,
+The numbers from 1 to 8 are 1, 2, 3, 4, 5, 6, 7 and 8
+Prime numbers from 1 to 8 are 2, 3, 5 and 7
+The output should be, 2 3 5 7
+
+Outline
+
+Question: Prime Numbers from 1 to N - 2
+Approach
+Step 1: Create a function to check if a number is prime
+Step 2: Read the input value and initialize an empty list
+Step 3: Iterate through the numbers from 1 to N and check if they are prime
+Step 4: Print the prime numbers separated by spaces
+
+Question: Prime Numbers from 1 to N - 2
+Write a program that takes a number N as input and returns all the prime numbers from 1 to N separated by a space.
+
+Approach
+
+To solve this problem, we will follow these steps:
+Create a function to check if a number is prime.
+Read the input value and initialize an empty list.
+Iterate through the numbers from 1 to N and check if they are prime.
+Print the prime numbers separated by spaces.
+
+Step-by-Step Explanation
+
+Step 1: Create a function to check if a number is prime
+First, we need to create a function called is_prime that takes a number n as input and returns True if the number is prime and False otherwise.
+To check if a number is prime, we can use a loop that goes from 2 to n-1. If n is divisible by any of these numbers, it is not prime. 
+If the loop finishes without finding any divisors, the number is prime.
+
+Step 2: Read the input value and initialize an empty list
+Now, we need to read the input value representing the number N. We can use the input() function to read the input and int() to convert it into an integer. 
+Then, we will create an empty list called prime_numbers_list to store the prime numbers.
+
+Step 3: Iterate through the numbers from 1 to N and check if they are prime
+Next, we will use a for loop to iterate through the numbers from 1 to N. For each number, we will call the is_prime() function to check if it is prime.
+If the function returns True, we will add the number to the prime_numbers_list.
+
+Step 4: Print the prime numbers separated by spaces
+Finally, we will use the join() function to create a string with the prime numbers separated by spaces. Then, we will print the string.
+
+Sample Input 1:
+
+8
+
+Sample Output 1:
+
+2 3 5 7 
+
+Sample Input 2:
+
+15
+
+Sample Output 2:
+
+2 3 5 7 11 13
+
+Solution:
+
+def is_prime(n):
+    if(n == 1 or n == 0):
+        return False
+        
+    for i in range(2, n):
+        if(n % i == 0):
+            return False
+            
+    return True
+ 
+n = int(input())
+prime_numbers_list = []
+
+for i in range(1, n + 1):
+    if(is_prime(i)):
+        prime_numbers_list.append(str(i))
+
+prime_numbers_separated_by_spaces = " ".join(prime_numbers_list)
+print(prime_numbers_separated_by_spaces)
+
+_________________________________________________________________________________________________________________________________________________
+
+04. First Uppercase Letter - 2
+
+A function is given in the prefilled code that takes a string S as an argument.
+Write a program to return the first uppercase letter in the given string S.
+
+Input:
+
+The input will be a single line containing a string representing S.
+
+Output:
+
+The output should be a single line containing a string that is the first uppercase letter in the given string S.
+
+Explanation:
+
+For example, if the given string is S = "javascript",
+• The characters of the string are j, a, v, a, S, c, r, i, p, and T.
+• The uppercase letters in the given string are S and T.
+• The first uppercase letter is S.
+The output should be S.
+
+For example, if the given string is S = "reactJS"
+• The characters of the string are r, e, a, c, t, J and s.
+• The uppercase letters in the given string are J and S 
+• The first uppercase letter is J.
+The output should be J.
+
+Outline
+
+Question: First Uppercase Letter - 2
+Approach
+Step 1: Define the function
+Step 2: Iterate through the string
+Step 3: Check for uppercase letters
+Step 4: Print the result
+
+Question: First Uppercase Letter - 2
+In this coding question, you are given a function that takes a string S as an argument. Your task is to write a program to return the first uppercase 
+letter in the given string S.
+
+Approach
+To solve this problem, we will follow these steps:
+Define a function get_first_upper_letter that takes a string as an argument.
+Iterate through the characters in the string.
+Check if the character is an uppercase letter. If it is, return the character.
+Print the result.
+
+Step-by-Step Explanation
+
+Step 1: Define the function
+First, let's define a function called get_first_upper_letter that takes a string as an argument. This function will help us find the first uppercase 
+letter in the given string.
+
+Step 2: Iterate through the string
+Now, we need to iterate through the characters in the string. We can use a for loop to do this.
+
+Step 3: Check for uppercase letters
+Inside the for loop, we will check if the current character is an uppercase letter. We can do this by comparing the character with its 
+uppercase version using the upper() method.
+If the character is an uppercase letter, we will store it in a variable called first_upper_case_letter and break out of the loop.
+After the loop, we will return the first_upper_case_letter variable.
+
+Step 4: Print the result
+Now that we have our function, let's use it to find the first uppercase letter in the input string.
+First, we will read the input string using the input() function.
+Next, we will call the get_first_upper_letter function with the input string as an argument and store the result in a variable called upper_case_character.
+Finally, we will print the upper_case_character variable.
+
+Sample Input 1:
+
+javaScripT
+
+Sample Output 1:
+
+S
+
+Sample Input 2:
+
+reactJS
+
+Sample Output 2:
+
+J
+
+Solution:
+
+def get_first_upper_letter(string):
+
+    for each_character in string:
+        if each_character == each_character.upper():
+            first_upper_case_letter = each_character
+            break
+    return first_upper_case_letter
+
+string = input()
+upper_case_character = get_first_upper_letter(string)
+print(upper_case_character)
+
+________________________________________________________________________________________________________________________________________________________________
+
+05. Identify the Mistake - List of Squares
+
+Given a list of integers, write a program to square the elements in the given list.
+
+Input:
+
+The input will be a single line containing comma-separated integers.
+
+Output:
+
+The output should be a single line containing a list by squaring the elements.
+
+Explanation:
+
+For example, if the given string is the following.
+1,2,3,4
+Print the list by squaring the elements in the list. So the output should be [1, 4, 9, 16]
+
+Outline
+
+Question: Identify the Mistake - List of Squares
+Approach
+Step 1: Read the input and split the numbers
+Step 2: Create a function to square the numbers
+Step 3: Call the function and print the result
+
+Question: Identify the Mistake - List of Squares
+
+You are given a list of integers as a single line of comma-separated numbers. Your task is to write a program that squares each number in the 
+list and prints the result as a list.
+
+For example, if the input is 1,2,3,4, the output should be [1, 4, 9, 16].
+
+Approach
+To solve this problem, we will follow these steps:
+
+Read the input and split the numbers into a list.
+Create a function that takes the list of numbers, squares each number, and returns the new list.
+Call the function with the input list and print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the numbers
+First, we need to read the input and split the numbers into a list. We can use the input() function to read the input and the split() function
+to split the numbers by commas.
+
+Step 2: Create a function to square the numbers
+Next, we will create a function called get_list() that takes the list of numbers as a string, squares each number, and returns the new list.
+Inside the function, find the length of the list using the len() function.
+Use a for loop to iterate through the list.
+For each number in the list, convert it to an integer using the int() function, square it using the ** operator, and update the list.
+
+Step 3: Call the function and print the result
+Finally, we will call the get_list() function with the input list and print the result.
+
+Sample Input 1:
+
+1,2,3,4
+
+Sample Output 1:
+
+[1, 4, 9, 16]
+
+Sample Input 2:
+
+2,1,5,7
+
+Sample Output 2:
+
+[4, 1, 25, 49]
+
+Solution:
+
+def get_list(string_a):
+    list_a = string_a.split(',')
+    len_list_a = len(list_a)
+    for i in range(len_list_a):
+        list_a[i] = int(list_a[i])**2
+    return list_a
+
+string_a = input()
+numbers_list = get_list(string_a)
+print(numbers_list)
+
+________________________________________________________________________________________________________________________________________________________________
+
+06. Count of Even Numbers
+
+A function is given in the prefilled code, that takes N space-separated integers as an argument.
+Write a program to return the count of even numbers among the given N space- separated numbers.
+
+Input:
+The input will be a single line containing a string of N space-separated integers.
+
+Output:
+The output should be a single line containing an integer that is the count of even numbers among the given N space-separated numbers.
+
+Explanation:
+
+For example if the given numberd are 2 3 4 5 6 7 8
+• The even numbers among the given numbers 2, 4, 6 and 8
+• The count of even numbers is 4.
+The Ouput Should be 4.
+
+Outline
+
+Question: Count of Even Numbers
+Approach
+Step 1: Define the function
+Step 2: Initialize the even count
+Step 3: Iterate through the numbers
+Step 4: Check if the number is even
+Step 5: Return the even count
+Solution
+
+Question: Count of Even Numbers
+
+In this coding question, you are given a function that takes a string of N space-separated integers as an argument. Your task is to write a 
+program that returns the count of even numbers among the given N space-separated numbers.
+
+Approach
+To solve this problem, we will follow these steps:
+Define the function get_even_numbers_count that takes a string of numbers as an argument.
+Initialize a variable even_count to store the count of even numbers.
+Iterate through the numbers in the string.
+Check if the number is even, and if it is, increment the even_count.
+Return the even_count.
+
+Step-by-Step Explanation
+
+Step 1: Define the function
+First, let's define the function get_even_numbers_count that takes a string of numbers as an argument.
+
+Step 2: Initialize the even count
+Inside the function, we will initialize a variable even_count to store the count of even numbers. We will also split the input string into a list 
+of numbers using the split() function.
+
+Step 3: Iterate through the numbers
+Now, we will use a for loop to iterate through the numbers in the list.
+
+Step 4: Check if the number is even
+Inside the loop, we will convert the current number to an integer using the int() function. Then, we will check if the number is even by using the 
+modulo operator %. If the number is even (i.e., number % 2 == 0), we will increment the even_count.
+
+Step 5: Return the even count
+After the loop, we will return the even_count as the result.
+
+Sample Input 1:
+
+2 3 4 5 6 7 8
+
+Sample Output 1:
+
+4
+
+Sample Input 2:
+
+6 8 10 12 14 16 18
+
+Sample Output 2:
+
+7
+
+Solution:
+
+def get_even_numbers_count(numbers):
+    even_count = 0
+    numbers = numbers.split()
+
+    for number in numbers:
+        number = int(number)
+        if number % 2 == 0:
+            even_count += 1
+    
+    return even_count
+
+numbers = input()
+result = get_even_numbers_count(numbers)
+print(result)
+
+___________________________________________________________________________________________________________________________________________________________
+
+07. Shuffle String - 3
+
+A function is given in the prefilled code that takes a string S and N space- separated indices as an argument.
+Write a program that prints a string by joining characters present at each index of the given N indices.
+
+Input
+The first line of input contains a string representing S.
+The second line of input contains N space-separated integers.
+
+Output
+The output should be a single line containing a string obtained by shuffling the characters in the order of the given N space-separated indices.
+
+Explanation:
+
+For Example, if the given string S = "tonyPh" and space-seperated indices are 4 3 0 5 1 2
+• The Characters of the string "tonyPh" with indices are
+
+Character  Position
+t            0
+o            1
+n            2
+y            3
+P            4
+h            5
+
+• The string formed in the given order of 4 3 0 5 1 2 is "Python"
+The output should be "Python"
+
+Outline
+
+Question: Shuffle String - 3
+Approach
+Step 1: Read the input
+Step 2: Create the shuffle_string function
+Step 3: Call the shuffle_string function and print the result
+
+Question: Shuffle String - 3
+
+In this coding question, you are given a string S and N space-separated indices as input. Your task is to write a program that prints a new string
+by joining characters present at each index of the given N indices.
+
+For example, if the given string is S = "tonyPh" and N space-separated indices are 4 3 0 5 1 2, the output should be Python.
+
+Approach
+
+To solve this problem, we will follow these steps:
+Read the input string S and the N space-separated indices.
+Create a function called shuffle_string that takes the input string and the indices list as arguments.
+Inside the function, create a new empty string called new_string.
+Iterate through the indices list and for each index, add the character from the input string at that index to the new_string.
+Return the new_string.
+Call the shuffle_string function with the input string and indices list, and print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input
+First, we need to read the input string S and the N space-separated indices. We can use the input() function to read the input.
+
+Step 2: Create the shuffle_string function
+Now, let's create a function called shuffle_string that takes the input string and the indices list as arguments. Inside the function, create a 
+new empty string called new_string.
+
+Next, we need to split the indices_list string into a list of individual indices. We can use the split() function to do this.
+Now, let's iterate through the indices_list using a for loop. For each index, we will convert it to an integer using the int() function, and then add the 
+character from the input string at that index to the new_string.
+
+Finally, return the new_string from the function.
+The complete shuffle_string function should look like this:
+
+Step 3: Call the shuffle_string function and print the result
+Now that we have our shuffle_string function, let's call it with the input string and indices list, and print the result.
+
+Sample Input 1:
+
+tonyPh
+4 3 0 5 1 2
+
+Sample Output 1:
+
+Python
+
+Sample Input 2:
+
+goindc
+5 1 4 2 3 0
+
+Sample Output 2:
+
+coding
+
+Solution:
+
+def shuffle_string(string, indices_list):
+    new_string = ""
+    indices_list = indices_list.split()
+    
+    for index in indices_list:
+        index = int(index)
+        new_string += string[index]
+
+    return new_string
+
+string = input()
+indices_list = input()
+
+result = shuffle_string(string, indices_list)
+print(result)
+
+_____________________________________________________________________________________________________________________________________________________________________
