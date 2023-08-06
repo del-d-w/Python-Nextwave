@@ -12,7 +12,7 @@ The output should be a single line containing a string that is passed as an argu
 Explanation:
 
 For example, if the given word is S = "Javascript"
-The word Javascript should be passed as an argument.
+• The word Javascript should be passed as an argument.
 The output should be Javascript.
 
 Tutorial: Print the Input - 5
@@ -62,11 +62,49 @@ ________________________________________________________________________________
 
 02. Welcome Message
 
+For this problem, the prefilled code will contain a function. Write a program to concatenate the message "Welcome " followed by the given name.
+
 Input:
+The first line of input will contain a string.
 
 Ouput:
+The output should be a single line containing the welcome message.
 
 Explanation:
+
+For example, if the given name is "Preethi", your code should concatenate the message "Welcome " followed by the name. So the output should be "Welcome Preethi"
+
+Outline
+
+Question: Welcome Message
+Approach
+Step 1: Read the input name
+Step 2: Create the welcome message
+Step 3: Print the welcome message
+
+Question: Welcome Message
+
+In this coding question, you are given a name as input. Your task is to write a program that concatenates the message "Welcome " 
+followed by the given name and prints the welcome message.
+
+Approach
+To solve this problem, we will follow these steps:
+Read the input name.
+Create the welcome message by concatenating "Welcome " and the input name.
+Print the welcome message.
+
+Step-by-Step Explanation
+
+Step 1: Read the input name
+First, we need to read the input name. We can use the input() function to read the input and store it in a variable called name.
+
+Step 2: Create the welcome message
+Now, we need to create the welcome message by concatenating "Welcome " and the input name. We can do this using the + operator. 
+We will create a function called say_wishes that takes the input name as an argument and returns the welcome message.
+
+Step 3: Print the welcome message
+Finally, we need to print the welcome message. We can do this using the print() function inside the say_wishes function.
+Now, we just need to call the say_wishes function with the input name as an argument.
 
 Sample Input 1:
 
@@ -97,11 +135,52 @@ ________________________________________________________________________________
 
 03. Multiply With Three
 
+For this problem, the prefilled code will contain a function. Write a program that the given function will multiply the number N with three.
+
 Input:
+The first line of input will contain an integer (N).
 
 Ouput:
+The output should be a single line containing given number multiplied by three.
 
 Explanation:
+For example, if the given N is 2, the function should print the N multiplied by 3. So the output should be 6.
+
+Outline
+
+Question: Multiply with Three
+Approach
+Step 1: Define the function
+Step 2: Read the input
+Step 3: Call the function
+
+Question: Multiply with Three
+In this coding question, you are given a number N. Your task is to write a function that multiplies the given number N with three and prints the result.
+
+Approach
+To solve this problem, we will follow these steps:
+Define a function called multiply_with_three that takes a single argument arg_1.
+Inside the function, multiply arg_1 with 3 and store the result in a variable called result.
+Print the value of result.
+Read the input value representing the number N.
+Call the multiply_with_three function with the input value N.
+
+Step-by-Step Explanation
+
+Step 1: Define the function
+First, let's define a function called multiply_with_three that takes a single argument arg_1. This function will be responsible for 
+multiplying the given number with three and printing the result.
+
+In this code snippet, we define the function multiply_with_three and multiply the input argument arg_1 with 3. We store the result in a 
+variable called result and then print the value of result.
+
+Step 2: Read the input
+Now, we need to read the input value representing the number N. We can use the input() function to read the input and int() to convert it into an integer.
+In this code snippet, we read the input value and store it in a variable called n.
+
+Step 3: Call the function
+Finally, we need to call the multiply_with_three function with the input value N.
+In this code snippet, we call the multiply_with_three function with the input value n. The function will multiply the given number with three and print the result.
 
 Sample Input 1:
 
@@ -132,11 +211,47 @@ ________________________________________________________________________________
 
 04. Divisible by Seven - 2
 
+For this problem, the prefilled code will contain a function. Write a program that the given function will check if the number N is divisible by 7.
+
 Input:
+The first line of input will contain an integer (N).
 
 Ouput:
+The output should be a single line containing either "True" or "False".
 
 Explanation:
+For example, if the given N is 14, the output should be "True", as 14 is divisible is seven.
+
+Outline
+
+Divisible by Seven - 2
+
+In this tutorial, we will learn how to write a simple Python program to check if a given number is divisible by 7. Let's break down the solution 
+into smaller steps and explain each step.
+
+Step 1: Understand the problem
+We have a number 'N', and our task is to check if it is divisible by 7. If it is, we need to print "True", otherwise, we print "False".
+
+Step 2: Write the function
+We will start by writing a function called divisible_by_seven. This function will take one input, the number we want to check, 
+and print "True" or "False" based on whether it is divisible by 7.
+
+Step 3: Calculate the remainder
+Next, we need to find the remainder when our number is divided by 7. We will use the modulo operator (%) for this. If the remainder is 0, 
+it means the number is divisible by 7.
+
+Step 4: Check if the remainder is 0
+Now, we will use an 'if' statement to check if the remainder is 0. If it is, we set the result to "True". Otherwise, we set it to "False".
+
+Step 5: Print the result
+Finally, we will print the result ("True" or "False").
+Our divisible_by_seven function is now complete. It should look like this:
+
+Step 6: Get the input and call the function
+Now, we need to get the input from the user and call our divisible_by_seven function with that input. We will use the input() function to get
+the user's input and convert it to an integer using the int() function.
+
+Now, you should be able to understand and write a Python program that checks if a given number is divisible by 7.
 
 Sample Input 1:
 
@@ -171,11 +286,35 @@ ________________________________________________________________________________
 
 05. Between 200 and 500
 
-Input:
+A function is given in the prefilled code that takes a number N as an argument.
+Write a program that checks if N is between 200 and 500.
+Print Yes if N is between 200 and 500. Otherwise, print No.
 
-Ouput:
+Input:
+The input will be a single line containing an integer representing N.
+
+Output:
+The output should be a single line containing a string. Yes should be printed if the given number N is between 200 and 500.
+Otherwise, No should be printed by calling the given function.
 
 Explanation:
+
+For Example, if the given number is N=280
+• The number 280 is between 200 and 500 ( 200 < 280 < 500)
+The output should be "Yes"
+
+Tutorial: Between 200 and 500
+Step 1: Write the function
+First, let's create a function called is_between_200_and_500 that takes a number as its argument. We'll use this function to check if the number is between 200 and 500.
+
+Step 2: Add the condition inside the function
+Now, we'll add a condition inside the function. We'll check if the number is greater than 200 and less than 500. If it is, we'll print "Yes". If it's not, we'll print "No".
+
+Step 3: Get the input number
+Next, we'll get the input number (N) from the user. We'll use the input() function to get the number, and then we'll convert it to an integer using the int() function.
+
+Step 4: Call the function
+Finally, we'll call the is_between_200_and_500 function and pass the input number (N) as an argument.
 
 Sample Input 1:
 
@@ -208,11 +347,43 @@ ________________________________________________________________________________
 
 06. Discount - 2
 
+Write a function with the name get_discount that takes the bill amount as an argument.
+
+ - If the bill amount is less than 500, the discount should be "5%".
+ - If the bill amount is greater than or equal to 500 and less than 2500, the discount should be "10%".
+ - If the bill amount is greater than or equal to 2500, the discount should be "20%".
+
 Input:
+The input will be a single line containing a positive integer.
 
 Ouput:
+The output should be a single line containing the discount according to the above conditions.
 
 Explanation:
+For example, if the given bill amount is 1500, the output should be "10%", as it is greater than 500 and less than 2500
+For example, if the given bill amount is 250, the output should be "5%", as it is less than 500
+
+Tutorial: Discount Calculation in Python
+In this tutorial, we will learn how to solve the "Discount - 2" coding question using Python step by step. 
+
+Step 1: Define the function
+First, we need to create a function named get_discount. This function will take one input: the bill amount. We will use this input to determine the discount percentage.
+
+Step 2: Check the bill amount
+Now, we will check the bill amount to determine the discount percentage. We will use if, elif, and else statements to cover all the possible cases.
+
+If the bill amount is less than 500, the discount is 5%.
+If the bill amount is greater than or equal to 500 and less than 2500, the discount is 10%.
+If the bill amount is greater than or equal to 2500, the discount is 20%.
+
+Step 3: Return the discount
+Once we have determined the discount percentage, we will return it from our function.
+
+Step 4: Get the bill amount from the user
+We will now ask the user to enter the bill amount. We will use the input() function to get the input and int() to convert it into an integer.
+
+Step 5: Call the function and print the result
+Finally, we will call our get_discount function with the user's bill amount and store the result in a variable named result. We will then print the result to the screen.
 
 Sample Input 1:
 
@@ -249,11 +420,40 @@ ________________________________________________________________________________
 
 07. Print N Integers - 3
 
-Input:
+A function is given in the prefilled code that takes a number N as an argument.
+Write a program to print the numbers from 1 to the given number N, each on a new line.
 
-Ouput:
+Input:
+The input will be a single line containing an integer representing N.
+
+Output:
+The output should be N lines containing integers from 1 to the given number N that is passed as an argument to the function, each on a new line.
 
 Explanation:
+For example, if the given number N=4,
+• The numbers from 1 to 4 are 1, 2, 3 and 4
+The output should be
+1
+2
+3
+4
+
+Tutorial: Print N Integers - 3
+Step 1: Create a function to print the numbers
+First, let's create a function called print_numbers that takes a single argument, number. This function will be responsible for printing the numbers from 1 to N.
+
+Step 2: Use a loop to print each number
+Inside the print_numbers function, we will use a for loop to go through each number from 1 to N. We can do this by using the range function. The range 
+function generates a list of numbers from a starting value to an ending value. In this case, we want to start at 1 and end at N.
+
+Since the range function stops before the ending value, we need to add 1 to N, like this: range(1, number + 1). Inside the loop, we just need to print the current number.
+
+Step 3: Get the input from the user
+Now that we have our function ready, we need to get the input from the user. The input will be a single line containing an integer representing N. 
+We can use the input() function to get the input from the user and the int() function to convert the input to an integer.
+
+Step 4: Call the function with the user's input
+Finally, we need to call the print_numbers function with the user's input as the argument. This will execute the function and print the numbers from 1 to N.
 
 Sample Input 1:
 
@@ -296,11 +496,62 @@ ________________________________________________________________________________
 
 08. Even Numbers or Odd Numbers
 
+Write a function with the name show_numbers that takes a number (N) and print all the numbers from 0 to N with a label to identify the even and odd numbers as shown below
+
+0 EVEN
+1 ODD
+2 EVEN
+3 ODD
+
 Input:
+The input will be a single line containing a positive integer.
 
 Ouput:
+The output should be N+1 lines containing a number with a label in each line.
 
 Explanation:
+For example, if the given input is 3, the output should be 4 lines as shown below
+
+0 EVEN
+1 ODD
+2 EVEN
+3 ODD
+
+Outline
+
+Question: Even Numbers or Odd Numbers
+Approach
+Step 1: Define the function and read the input
+Step 2: Use a loop to iterate through the numbers
+Step 3: Check if the number is even or odd
+Step 4: Print the number with its label
+
+Question: Even Numbers or Odd Numbers
+Write a function with the name show_numbers that takes a number (N) and print all the numbers from 0 to N with a label to identify the 
+even and odd numbers as shown below:
+
+The input will be a single line containing a positive integer. The output should be N+1 lines containing a number with a label in each line.
+
+Approach
+Define a function called show_numbers that takes a number as input.
+Use a loop to iterate through all the numbers from 0 to N.
+Check if the number is even or odd.
+Print the number with its label (EVEN or ODD).
+
+Step-by-Step Explanation
+
+Step 1: Define the function and read the input
+First, we need to define a function called show_numbers that takes a number as input. We also need to read the input value representing the number N. We can use the input() function to read the input and int() to convert it into an integer.
+
+Step 2: Use a loop to iterate through the numbers
+Inside the show_numbers function, we need to use a loop to iterate through all the numbers from 0 to N. We can use a for loop with the range() function to achieve this.
+
+Step 3: Check if the number is even or odd
+Now, we need to check if the current number i is even or odd. We can do this by using the modulo operator %. If i % 2 is equal to 0, then the number is 
+even, otherwise, it is odd.
+
+Step 4: Print the number with its label
+Finally, we need to print the number i with its label (EVEN or ODD). We can use the print() function and concatenate the number with its label using the + operator.
 
 Sample Input 1:
 
