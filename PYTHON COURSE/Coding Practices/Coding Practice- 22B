@@ -12,7 +12,7 @@ Explanation:
 
 For example, if the given integer is 20, the output should be 20, as the function returns the same value.
 
-Tutorial: Print the Input - 5
+Tutorial: Return the Given Argument
 
 Outline
 
@@ -79,3 +79,247 @@ def func(arg_1):
 n = int(input())
 result = func(n)
 print(result)
+
+____________________________________________________________________________________________________________________________________________________________
+
+02. Perimeter of Square
+
+For this problem, the prefilled code will contain a function. Write a program that the given function will return the perimeter of the square.
+The sum of lengths of the four sides of a square is the perimeter of the square.
+
+Input:
+The first line of input will contain a positive integer.
+
+Ouput:
+The output should be a single line containing the perimeter of the square.
+
+Explanation:
+
+For example, if the given number is 3, since the square has the same length of sides, the perimeter of the square is the sum of the four sides' 
+length. So the output should be 12.
+
+Tutorial: Perimeter of Square
+
+In this tutorial, we will learn how to write a simple Python program to calculate the perimeter of a square. Let's break down the solution
+into smaller steps and explain each step.
+
+Step 1: Understand the problem
+We have the length of one side of a square, and our task is to calculate the perimeter of the square. A square has four equal sides, so we 
+need to multiply the length of one side by 4 to find the perimeter.
+
+Step 2: Write the function
+We will start by writing a function called perimeter_of_square. This function will take one input, the length of one side of the square, 
+and return the perimeter of the square.
+
+Step 3: Calculate the perimeter
+Next, we need to calculate the perimeter of the square by multiplying the length of one side by 4.
+
+Step 4: Return the perimeter
+Now, we will return the calculated perimeter from the function.
+Our perimeter_of_square function is now complete. It should look like this:
+
+Step 5: Get the input and call the function
+Now, we need to get the input from the user and call our perimeter_of_square function with that input. We will use the input() function 
+to get the user's input and convert it to an integer using the int() function.
+
+After getting the input, we will call the `perimeter_of_square function with the input and store the result in a variable called result.
+
+Step 6: Print the result
+Finally, we will print the result, which is the perimeter of the square.
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+12
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+20
+
+Solution:
+
+def perimeter_of_square(arg_1):
+    perimeter = arg_1 * 4
+    return perimeter
+    
+side = int(input())
+result = perimeter_of_square(side)
+print(result)
+
+____________________________________________________________________________________________________________________________________________________________
+
+03. Second Character in the Word
+
+For this problem, the prefilled code will contain a function. Write a program that the given function will return the second character 
+in the word passed to the function.
+
+Input:
+The first line of input will contain a string.
+
+Ouput:
+The output should be a single line containing the second character of the given word.
+
+Explanation:
+
+For example, if the given word is "MATHS", your code should print the second character in the given word, which is "A".
+
+Tutorial: Second Character in the Word
+
+Outline
+
+Question: Second Character in the Word
+Approach
+Step 1: Define the Function
+Step 2: Read the Input
+Step 3: Call the Function and Print the Result
+
+Question: Second Character in the Word
+In this problem, you need to write a program that returns the second character in the given word. The input will be a single string, and
+the output should be a single line containing the second character of the given word.
+
+For example, if the given word is "MATHS", your code should print the second character in the given word, which is "A".
+
+Approach
+
+To solve this problem, we will follow these steps:
+Define a function that takes a string as an argument and returns the second character of the string.
+Read the input string.
+Call the function with the input string and print the result.
+
+Step-by-Step Explanation
+
+Step 1: Define the Function
+First, let's define a function called second_character that takes a single argument, arg_1. Inside the function, we will find the second 
+character of the string by using the index 1 and store it in a variable called character. Finally, we will return the character variable.
+
+Step 2: Read the Input
+Now, we need to read the input string. We can use the input() function to read the input and store it in a variable called word.
+
+Step 3: Call the Function and Print the Result
+Next, we will call the second_character function with the word variable as an argument. The function will return the second 
+character of the word, which we will store in a variable called result. Finally, we will print the result variable.
+
+Sample Input 1:
+
+MATHS
+
+Sample Output 1:
+
+A
+
+Sample Input 2:
+
+Google
+
+Sample Output 2:
+
+o
+
+Solution:
+
+def second_character(arg_1):
+    character = arg_1[1]
+    return character
+    
+word=input()
+result = second_character(word)
+print(result)
+
+____________________________________________________________________________________________________________________________________________________________
+
+04. Percentage - 4
+
+A function is given in prefilled code that takes a Number N as an argument.
+Write a program that checks if N is less than 1000
+Return 5% of the N if N is less than 1000, Otherwise return  10% of the N.
+
+Input:
+The input will be a single line containing an integer representing N.
+
+Ouput:
+The output should be a single line containing the float returned by the function. 5% of the N should be printed if N is less than 1000,Otherwise 10% of N
+should be printed.
+
+Explanation:
+
+For example, if the given word is "MATHS", your code should print the second character in the given word, which is "A".
+
+Tutorial: Percentage - 4
+
+Outline
+
+Question: Percentage - 4
+Approach
+Step 1: Define the function
+Step 2: Check if the number is less than 1000
+Step 3: Calculate the percentage
+Step 4: Read the input and call the function
+
+Question: Percentage - 4
+A function is given in prefilled code that takes a number N as an argument. Write a program that checks if N is less than 1000. 
+Return 5% of the N if N is less than 1000. Otherwise, return 10% of the N.
+
+The input will be a single line containing an integer representing N. The output should be a single line containing the float returned by 
+the function. 5% of the N should be printed if N is less than 1000. Otherwise, 10% of N should be printed.
+
+Approach
+
+Define a function that takes a number as an argument.
+Check if the number is less than 1000.
+Calculate the percentage based on the condition.
+Read the input and call the function.
+
+Step-by-Step Explanation
+
+Step 1: Define the function
+Define a function called calculate_percentage that takes a single argument, number.
+
+Step 2: Check if the number is less than 1000
+Inside the function, use an if statement to check if the number is less than 1000.
+
+Step 3: Calculate the percentage
+If the number is less than 1000, calculate 5% of the number. Otherwise, calculate 10% of the number. Store the result in a variable called value.
+Return the value from the function.
+
+Step 4: Read the input and call the function
+Read the input value representing the number N. We can use the input() function to read the input and int() to convert it into an integer.
+Call the calculate_percentage function with the number as an argument and store the result in a variable called result.
+Print the result.
+
+Sample Input 1:
+
+500
+
+Sample Output 1:
+
+25.0
+
+Sample Input 2:
+
+2000
+
+Sample Output 2:
+
+200.0
+
+Solution:
+
+def calculate_percentage(number):
+    if number < 1000:
+        value = ((5 / 100) * number)
+    else:
+        value = ((10 / 100) * number)
+        
+    return value
+    
+number = int(input())
+result = calculate_percentage(number)
+print(result)
+
