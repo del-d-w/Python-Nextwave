@@ -1,0 +1,701 @@
+01. Check First Letter and Last Letter of Word
+
+Given space-separated words, write a program to check if the first letter and last letter of each word are the same.
+
+Note : Consider both uppercase and lowercase letters as the same.
+
+Input:
+The input will be a single line containing space-separated strings.
+
+Ouput:
+The output should contain boolean values. For each word, True should be printed if the first and last letter are the same. Otherwise, False should be printed.
+
+Explanation:
+
+For example, if the given space-seperated words are "water Noon river".
+• The given words are "water", "Noon" and "river"
+• The word "water", the first letter ( w ) and the last letter ( r ) are different.
+• The word "Noon", the first letter ( N ) and the last letter ( n ) are same.
+• The word "river", the first letter ( r ) and the last letter ( r ) are same.
+
+The output should be 
+
+False
+True
+True
+
+Tutorial: Check First Letter and Last Letter of Word
+
+Outline
+
+Question: Check First Letter and Last Letter of Word
+Approach
+Step 1: Read the input and split the words
+Step 2: Convert each word to lowercase
+Step 3: Check if the first and last letters are the same
+Step 4: Print the result
+
+Question: Check First Letter and Last Letter of Word
+In this coding question, you are given space-separated words. Your task is to write a program to check if the first letter and last letter of 
+each word are the same. You should consider both uppercase and lowercase letters as the same.
+
+Approach
+
+To solve this problem, you can follow these steps:
+Read the input and split the words.
+Convert each word to lowercase.
+Check if the first and last letters are the same.
+Print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the words
+First, you need to read the input, which is a single line containing space-separated words. You can use the input() function to read the input
+and the split() function to split the words.
+
+Step 2: Convert each word to lowercase
+Next, you need to convert each word to lowercase. This is because you should consider both uppercase and lowercase letters as the same. You 
+can use a for loop to iterate through each word and the lower() function to convert the word to lowercase.
+
+Step 3: Check if the first and last letters are the same
+Now, you need to check if the first and last letters of each word are the same. You can use indexing to get the first letter (each_word[0]) and 
+the last letter (each_word[-1]).
+
+Step 4: Print the result
+Finally, you need to print the result. If the first and last letters are the same, print "True". Otherwise, print "False".
+
+Sample Input 1:
+
+water Noon river
+
+Sample Output 1:
+
+False
+True
+True
+
+Sample Input 2:
+
+eat play dance work label
+
+Sample Output 2:
+
+False
+False
+False
+False
+True
+
+Solution:
+
+words = input().split()
+for each_word in words:
+    each_word = each_word.lower()
+    first_letter = each_word[0]
+    last_letter = each_word[-1]
+    if first_letter == last_letter:
+        print("True")
+    else:
+        print("False")
+
+________________________________________________________________________________________________________________________________________________________________________
+
+02. Reverse the Sentence
+
+Given a sentence S, write a program to print the reverse of the sentence.
+
+Input:
+The input will be a single line containing a string representing S.
+
+Ouput:
+The output should be a single line containing a string obtained by reversing the sentence S.
+
+Explanation:
+
+For example, if the given sentence is S = "I am learning Python"
+• The reverse of the sentence "I am learning Python" is "nohtyP gninrael ma I".
+The output should be nohtyP gninrael ma l.
+
+Tutorial: Reverse the Sentence
+
+Outline
+
+Question: Reverse the Sentence
+Approach
+Step 1: Read the input sentence
+Step 2: Reverse the sentence
+Step 3: Print the reversed sentence
+
+Question: Reverse the Sentence
+In this coding question, you are given a sentence S. Your task is to write a program that prints the reverse of the sentence.
+
+Approach
+To solve this problem, we will follow these steps:
+Read the input sentence.
+Reverse the sentence.
+Print the reversed sentence.
+
+Step-by-Step Explanation
+
+Step 1: Read the input sentence
+First, we need to read the input sentence from the user. We can use the input() function to read the input and store it in a variable called sentence.
+
+Step 2: Reverse the sentence
+Now, we need to reverse the sentence. In Python, we can use slicing to reverse a string. We can use the syntax string[::-1] to reverse the string. 
+Here, we will reverse the sentence and store the result in a variable called reversed_sentence.
+
+Step 3: Print the reversed sentence
+Finally, we need to print the reversed sentence. We can use the print() function to do this.
+
+Sample Input 1:
+
+I am learning Python
+
+Sample Output 1:
+
+nohtyP gninrael ma I
+
+Sample Input 2:
+
+the train came on time
+
+Sample Output 2:
+
+emit no emac niart eht
+
+Solution:
+
+sentence = input()
+reversed_sentence = sentence[::-1]
+print(reversed_sentence)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+03. Reverse Words in List
+
+Given a list of words, write a program to reverse the words in the list.
+
+Input:
+The first line of input will contain space-separated words, denoting the elements of the list.
+
+Ouput:
+The output should be a single line containing a list with the elements in reverse order.
+
+Explanation:
+For example, if the given sentence is the following.
+Banana Apple Pomegranate Strawberry Grapes Orange
+Your code should print the list by reversing the words in the given sentence. So the output should be
+['Orange', 'Grapes', 'Strawberry', 'Pomegranate', 'Apple', 'Banana']
+
+Tutorial: Reverse Words in List
+
+Outline
+
+Question: Reverse Words in List
+Approach
+Step 1: Read the input sentence
+Step 2: Split the sentence into words
+Step 3: Reverse the words in the list
+Step 4: Print the reversed words list
+
+Question: Reverse Words in List
+Given a list of words, write a program to reverse the words in the list.
+Input: The first line of input will contain space-separated words, denoting the elements of the list.
+Output: The output should be a single line containing a list with the elements in reverse order.
+Example: If the given sentence is "Banana Apple Pomegranate Strawberry Grapes Orange", your code should print the list by reversing the words 
+in the given sentence. So the output should be ['Orange', 'Grapes', 'Strawberry', 'Pomegranate', 'Apple', 'Banana'].
+
+Approach
+
+To solve this problem, we will follow these steps:
+Read the input sentence.
+Split the sentence into words.
+Reverse the words in the list.
+Print the reversed words list.
+
+Step-by-Step Explanation
+
+Step 1: Read the input sentence
+First, we need to read the input sentence. We can use the input() function to read the input.
+
+Step 2: Split the sentence into words
+Now, we need to split the sentence into words. We can use the split() function to do this. It will create a list of words.
+
+Step 3: Reverse the words in the list
+Next, we need to reverse the words in the list. We can use the slicing technique [::-1] to reverse the list.
+
+Step 4: Print the reversed words list
+Finally, we need to print the reversed words list. We can use the print() function to do this.
+
+Sample Input 1:
+
+Banana Apple Pomegranate Strawberry Grapes Orange
+
+Sample Output 1:
+
+['Orange', 'Grapes', 'Strawberry', 'Pomegranate', 'Apple', 'Banana']
+
+Sample Input 2:
+
+Cricket Hockey Football Badminton Tennis Basketball Golf Volleyball Archery Boxing
+
+Sample Output 2:
+
+['Boxing', 'Archery', 'Volleyball', 'Golf', 'Basketball', 'Tennis', 'Badminton', 'Football', 'Hockey', 'Cricket']
+
+Solution:
+
+sentence = input()
+words_list = sentence.split()
+reverse_words_list = words_list[::-1]
+print(reverse_words_list)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+04. Reverse the Letters in Words of the Sentence
+
+Given a sentence, write a program to reverse the letters in words of the sentence.
+
+Input:
+The first line of input will contain a string.
+
+Ouput:
+The output should be a single line containing the sentence by reversing all the letters in words.
+Note: The order of the words in the modified sentence should be the same as in the given sentence.
+
+Explanation:
+For example, if the given sentence is the following.
+The cat is on the mat.
+Print the sentence by reversing the letters in words without changing the order of the words in the sentence. So the output should be 
+ehT tac si no eht .tam
+
+Tutorial: Reverse the Letters in Words of the Sentence
+
+Outline
+
+Question: Reverse the Letters in Words of the Sentence
+Approach
+Step 1: Read the input sentence
+Step 2: Split the sentence into words
+Step 3: Reverse the letters in each word
+Step 4: Join the reversed words to form the modified sentence
+Solution
+
+Question: Reverse the Letters in Words of the Sentence
+In this coding question, you are given a sentence. Your task is to write a program that reverses the letters in each word of the sentence 
+without changing the order of the words.
+
+Approach
+
+To solve this problem, we will follow these steps:
+Read the input sentence.
+Split the sentence into words.
+Reverse the letters in each word.
+Join the reversed words to form the modified sentence.
+
+Step-by-Step Explanation
+
+Step 1: Read the input sentence
+First, we need to read the input sentence. We can use the input() function to read the input and store it in a variable called sentence.
+
+Step 2: Split the sentence into words
+Now, we need to split the sentence into words. We can use the split() function to do this. This function will create a list of words called words_list.
+
+Step 3: Reverse the letters in each word
+Next, we need to reverse the letters in each word. We can use a for loop to iterate through each word in the words_list. Inside the loop, 
+we can use slicing to reverse the letters in the word and add the reversed word to a new list called modified_sentence.
+
+Step 4: Join the reversed words to form the modified sentence
+Finally, we need to join the reversed words to form the modified sentence. We can use the join() function to do this. This function will 
+create a string called reversed_letters_sentence containing the modified sentence.
+
+Now, we can print the modified sentence.
+
+Sample Input 1:
+
+The cat is on the mat.
+
+Sample Output 1:
+
+ehT tac si no eht .tam
+
+Sample Input 2:
+
+Have a nice weekend.
+
+Sample Output 2:
+
+evaH a ecin .dnekeew
+
+Solution:
+
+sentence = input()
+words_list = sentence.split()
+modified_sentence = []
+for word in words_list:
+    modified_sentence += [word[::-1]]
+reversed_letters_sentence = " ".join(modified_sentence)
+print(reversed_letters_sentence)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+05. First Half Words of List
+
+Given space-separated words, write a program that creates a list using space-separated words and prints the first half of the words in the list as a new list.
+Note: If the given number of words is an odd number, add one to it such that it becomes an even number and count half of the number of words.
+
+Input:
+The input will be a single line containing space-separated strings.
+
+Output:
+The output should be a single line containing a list of first half of the words.
+
+Explanation:
+
+For example, if the given words are "apple mango orange grapes kiwi".
+• Given 5 words are "apple", "mango", "orange", "grapes", and "kiwi". 
+• Half of the given 5 words are 3 words "apple", "mango", and "orange".
+The output should be ['apple', 'mango', 'orange']
+
+Tutorial: First Half Words of List
+
+Outline
+
+Question: First half Words of List
+Approach
+Step 1: Read the input and split the words
+Step 2: Calculate the half list length
+Step 3: Create a new list with the first half words
+Step 4: Print the new list
+
+Question: First half Words of List
+Given space-separated words, write a program that creates a list using space-separated words and prints the first half of the words in the list as a new list.
+If the given number of words is an odd number, add one to it such that it becomes an even number and count half of the number of words.
+
+Approach
+
+To solve this problem, we will follow these steps:
+Read the input and split the words into a list.
+Calculate the half list length.
+Create a new list with the first half words.
+Print the new list.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the words
+First, we need to read the input and split the words into a list. We can use the input() function to read the input and the split() function to split the words.
+
+Step 2: Calculate the half list length
+Next, we need to calculate the half list length. If the number of words is even, we can simply divide it by 2. If it's odd, 
+we need to add 1 to it and then divide by 2.
+
+Step 3: Create a new list with the first half words
+Now, we can create a new list with the first half words using slicing.
+
+Step 4: Print the new list
+Finally, we can print the new list.
+
+Sample Input 1:
+
+apple mango orange grapes kiwi
+
+Sample Output 1:
+
+['apple', 'mango', 'orange']
+
+Sample Input 2:
+
+python java c html
+
+Sample Output 2:
+
+['python', 'java']
+
+Solution:
+
+words = input().split()
+words_length = len(words)
+if words_length % 2 == 0:
+    half_list_length = words_length // 2
+else:
+    half_list_length = (words_length // 2) + 1
+
+new_list = words[:half_list_length]
+print(new_list)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+06. First Half Numbers of List
+
+Given space-separated numbers, write a program that creates a list using space-separated numbers and prints the first half of the numbers of the list as a new list.
+Note: If the given number of words is an odd number, add one to it such that it becomes an even number and count half of the number of words.
+
+Input:
+The input will be a single line containing space-separated integers.
+
+Ouput:
+The output should be a single line containing a list of first half of the numbers.
+
+Explanation:
+For example, if the given numbers are 1 390827.
+• Given 7 numbers are 1, 3, 9, 0, 8, 2, and 7.
+• Half of the given 7 numbers are 4 numbers 1, 3, 9, and 0.
+The output should be [1, 3, 9, 0].
+
+Tutorial: First Half Numbers of List
+
+Outline
+
+Question: First half Numbers of List
+Approach
+Step 1: Read the input and create a list
+Step 2: Calculate the half list length
+Step 3: Create the first half list
+Step 4: Print the first half list
+
+Question: First half Numbers of List
+Given space-separated numbers, write a program that creates a list using space-separated numbers and prints the first half of the numbers of the list as a new list.
+
+If the given number of words is an odd number, add one to it such that it becomes an even number and count half of the number of words.
+
+Approach
+
+Read the input and create a list of numbers.
+Calculate the half list length.
+Create the first half list.
+Print the first half list.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and create a list
+
+First, we need to read the input and create a list of numbers. We can use the input() function to read the input and split() function 
+to split the input into a list of strings. Then, we need to convert each string in the list to an integer using a loop.
+
+Step 2: Calculate the half list length
+Next, we need to calculate the half list length. If the length of the list is an even number, we can simply divide the length by 2. 
+If the length is an odd number, we need to add 1 to the length and then divide it by 2.
+
+Step 3: Create the first half list
+Now, we can create the first half list by slicing the original list using the calculated half list length.
+
+Step 4: Print the first half list
+Finally, we can print the first half list using the print() function.
+
+Sample Input 1:
+
+1 3 9 0 8 2 7
+
+Sample Output 1:
+
+[1, 3, 9, 0]
+
+Sample Input 2:
+
+38 -49 52 -66 71 89 88 -23 41 98
+
+Sample Output 2:
+
+[38, -49, 52, -66, 71]
+
+Solution:
+
+numbers = input().split()
+length = len(numbers)
+for each_num_index in range(length):
+    numbers[each_num_index]=int(numbers[each_num_index])
+if length % 2 == 0:
+    half_list_length = length // 2
+else:
+    half_list_length = (length // 2) + 1
+
+first_half_list = numbers[:half_list_length]
+print(first_half_list)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+07. Last N Words of List
+
+Given space-separated words S and a number N. Write a program that creates a list using space-separated words and prints the last 
+N words of the list in reverse order.
+
+Input
+The first line of input contains a string representing S S.
+The second line of input contains an integer representing N.
+
+Output
+The output should be a single line containing a list that has the last N words of
+S in reverse order.
+
+Explanation:
+For example, if the given sentence is S = "This is my favourite cookie" and the number is N = 4
+• The words in the S are This, is, my, favourite, cookie.
+• The last 4 words in S are "is", "my", "favourite" and "cookie".
+• The reverse order of the last 4 words is "cookie", "favourite", "my", and "is"
+The output should be ['cookie', 'favourite', 'my', 'is']
+
+Tutorial: Last N Words of List
+
+Step 1: Read the input
+First, we need to read the input from the user. We'll read a sentence (S) and a number (N) in two separate lines.
+
+In the code above, we used the input() function to read the input from the user. For the number, we converted the input string 
+to an integer using the int() function.
+
+Step 2: Split the sentence into words
+Now, we need to split the given sentence into words. We'll use the split() function to do this.
+
+Here, the split() function breaks the sentence into words using space as the separator and creates a list called words.
+
+Step 3: Get the last N words
+Next, we need to get the last N words from the list words. We'll use Python's list slicing feature to achieve this.
+
+In this step, we used list slicing to get the last N words from the words list and stored them in a new list called words_list.
+
+Step 4: Reverse the order of the last N words
+Now that we have the last N words, we need to reverse their order. We can do this using list slicing again.
+
+Here, we used list slicing with the [::-1] syntax to reverse the order of the words in the words_list and stored the result in a new list called resultant_list.
+
+Step 5: Print the output
+Finally, we need to print the resultant_list as the output.
+
+In this step, we used the print() function to display the final result, which is the resultant_list.
+
+Sample Input 1:
+
+This is my favourite cookie
+4
+
+Sample Output 1:
+
+['cookie', 'favourite', 'my', 'is']
+
+Sample Input 2:
+
+a piece of cake
+2
+
+Sample Output 2:
+
+['cake', 'of']
+
+Solution:
+
+sentence = input()
+number = int(input())
+words = sentence.split()
+words_list = words[-number:]
+resultant_list = words_list[::-1]
+print(resultant_list)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+08. Identify the Mistake - Reverse Order - 2
+
+Given two lists of equal lengths (N), write a program to iterate both lists simultaneously such that the first list should 
+display the item in original order and the second list in reverse order.
+
+Input:
+The first line of input will contain comma-separated integers.
+The second line of input will contain comma-separated integers.
+
+Ouput:
+The output should be N rows and 2 columns, the first column should contain the elements of the first list in the original order, 
+and the second column should contain the elements of the second list in the reverse order.
+
+Explanation:
+For example, if the given two lists are the following.
+1,2,3
+4,5,6
+Print the elements in such a way that the elements of the first list are printed in original order, and the elements of the second list 
+are printed in reverse order. So the output should be as shown below
+
+1 6
+2 5
+3 4
+
+Tutorial: Identify the Mistake - Reverse Order - 2
+
+Outline
+
+Question: Identify the Mistake - Reverse Order - 2
+Approach
+Step 1: Read the input and create two lists
+Step 2: Find the length of the lists
+Step 3: Iterate through the lists and print the elements
+
+Question: Identify the Mistake - Reverse Order - 2
+You are given two lists of equal lengths (N). Your task is to write a program that iterates through both lists simultaneously. The first list 
+should display the items in their original order, and the second list should display the items in reverse order.
+
+Input:
+The first line of input will contain comma-separated integers.
+The second line of input will contain comma-separated integers.
+Output:
+The output should be N rows and 2 columns. The first column should contain the elements of the first list in the original order, 
+and the second column should contain the elements of the second list in the reverse order.
+Example:
+
+If the given two lists are:
+
+The output should be:
+
+Approach
+
+To solve this problem, we will follow these steps:
+Read the input and create two lists.
+Find the length of the lists.
+Iterate through the lists and print the elements.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and create two lists
+First, we need to read the input and create two lists. We can use the input() function to read the input and split() function to split the input by commas.
+
+Step 2: Find the length of the lists
+Next, we need to find the length of the lists. We can use the len() function to find the length of a list.
+
+Step 3: Iterate through the lists and print the elements
+Now, we need to iterate through the lists and print the elements. We can use a for loop to iterate through the lists. For each iteration,
+we will print the element from the first list and the element from the second list in reverse order.
+
+Sample Input 1:
+
+1,2,3
+4,5,6
+
+Sample Output 1:
+
+1 6
+2 5
+3 4
+
+Sample Input 2:
+
+1,3,5,7,9
+2,4,6,8,10
+
+Sample Output 2:
+
+1 10
+3 8
+5 6
+7 4
+9 2
+
+Solution:
+
+list_a = input().split(",")
+list_b = input().split(",")
+
+len_of_list_a = len(list_a)
+n = len_of_list_a - 1
+
+for i in range(len_of_list_a):
+    num_1 = list_a[i]
+    num_2 = list_b[n-i]
+    result = str(num_1) + " " + str(num_2)
+    print(result)
+
+________________________________________________________________________________________________________________________________________________________________________
