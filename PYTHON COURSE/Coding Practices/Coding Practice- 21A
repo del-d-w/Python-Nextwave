@@ -172,463 +172,594 @@ ________________________________________________________________________________
 
 03. Split Numbers
 
-For this problem, the prefilled code will contain a function. Write a program that the given function will multiply the number N with three.
+Given space-separated numbers, write a program to print a list containing the given numbers
 
 Input:
-The first line of input will contain an integer (N).
+The input will be a single line containing space-separated integers.
 
 Ouput:
-The output should be a single line containing given number multiplied by three.
+The output should be a single line containing a list of given integers.
 
 Explanation:
-For example, if the given N is 2, the function should print the N multiplied by 3. So the output should be 6.
+For example, if the given space-separated numbers are The output should be, [10, 20, 30, 40, 50]
 
 Tutorial: Split Numbers
 
 Outline
 
-Question: Multiply with Three
+Question: Split Numbers
 Approach
-Step 1: Define the function
-Step 2: Read the input
-Step 3: Call the function
-
-Question: Multiply with Three
-In this coding question, you are given a number N. Your task is to write a function that multiplies the given number N with three and prints the result.
+Step 1: Read the input
+Step 2: Split the input
+Step 3: Convert the numbers to integers
+Step 4: Print the list
+Question: Split Numbers
+Given space-separated numbers, write a program to print a list containing the given numbers.
 
 Approach
-To solve this problem, we will follow these steps:
-Define a function called multiply_with_three that takes a single argument arg_1.
-Inside the function, multiply arg_1 with 3 and store the result in a variable called result.
-Print the value of result.
-Read the input value representing the number N.
-Call the multiply_with_three function with the input value N.
+
+Read the input as a string.
+Split the input string into a list of strings.
+Convert each string in the list to an integer.
+Print the list of integers.
 
 Step-by-Step Explanation
 
-Step 1: Define the function
-First, let's define a function called multiply_with_three that takes a single argument arg_1. This function will be responsible for 
-multiplying the given number with three and printing the result.
+Step 1: Read the input
+Read the input value as a string using the input() function.
+Store the input string in a variable called numbers.
 
-In this code snippet, we define the function multiply_with_three and multiply the input argument arg_1 with 3. We store the result in a 
-variable called result and then print the value of result.
+Step 2: Split the input
+Split the input string into a list of strings using the split() function.
+Store the list of strings in a variable called numbers_list.
 
-Step 2: Read the input
-Now, we need to read the input value representing the number N. We can use the input() function to read the input and int() to convert it into an integer.
-In this code snippet, we read the input value and store it in a variable called n.
+Step 3: Convert the numbers to integers
+Create an empty list called resultant_list.
+Use a for loop to iterate through each string in the numbers_list.
+Convert each string to an integer using the int() function.
+Add the integer to the resultant_list using the += operator.
 
-Step 3: Call the function
-Finally, we need to call the multiply_with_three function with the input value N.
-In this code snippet, we call the multiply_with_three function with the input value n. The function will multiply the given number with three and print the result.
+Step 4: Print the list
+Print the resultant_list containing the integers.
 
 Sample Input 1:
 
-2
+10 20 30 40 50
 
 Sample Output 1:
 
-6
+[10, 20, 30, 40, 50]
 
 Sample Input 2:
 
-5
+005 950 312
 
 Sample Output 2:
 
-15
+[5, 950, 312]
 
 Solution:
 
-def multiply_with_three(arg_1):
-    result = arg_1 * 3
-    print(result)
-
-n = int(input())
-multiply_with_three(n)
+numbers = input()
+numbers_list = numbers.split()
+resultant_list = []
+for number in numbers_list:
+    number = int(number)
+    resultant_list += [number]
+print(resultant_list)
 
 ________________________________________________________________________________________________________________________________________________________________________
 
-04. Divisible by Seven - 2
+04. Sum of List Elements
 
-For this problem, the prefilled code will contain a function. Write a program that the given function will check if the number N is divisible by 7.
+Given a list of numbers, write a program to print the sum of the numbers in the list.
 
 Input:
-The first line of input will contain an integer (N).
+The first line of input will contain space-separated integers, denoting the elements of the list.
 
 Ouput:
-The output should be a single line containing either "True" or "False".
+The output should be a single line containing the sum of the integers in the given list.
 
 Explanation:
-For example, if the given N is 14, the output should be "True", as 14 is divisible is seven.
+For example, if the given string is the following.
+2 5 10 -15 3
+Your code should print the sum of the given list elements. So the output should be 5.
+
+Tutorial: Sum of List Elements
 
 Outline
 
-Divisible by Seven - 2
+Question: Sum of List Elements
+Approach
+Step 1: Read the input and split the numbers
+Step 2: Initialize the sum variable
+Step 3: Calculate the sum of the list elements
+Step 4: Print the sum
 
-In this tutorial, we will learn how to write a simple Python program to check if a given number is divisible by 7. Let's break down the solution 
-into smaller steps and explain each step.
+Question: Sum of List Elements
+Given a list of numbers, write a program to print the sum of the numbers in the list.
+Input: The first line of input will contain space-separated integers, denoting the elements of the list.
+Output: The output should be a single line containing the sum of the integers in the given list.
+Example: If the given string is "2 5 10 -15 3", your code should print the sum of the given list elements. So the output should be 5.
 
-Step 1: Understand the problem
-We have a number 'N', and our task is to check if it is divisible by 7. If it is, we need to print "True", otherwise, we print "False".
+Approach
 
-Step 2: Write the function
-We will start by writing a function called divisible_by_seven. This function will take one input, the number we want to check, 
-and print "True" or "False" based on whether it is divisible by 7.
+To solve this problem, we will follow these steps:
+Read the input and split the numbers into a list.
+Initialize a variable to store the sum of the list elements.
+Calculate the sum of the list elements using a loop.
+Print the sum.
 
-Step 3: Calculate the remainder
-Next, we need to find the remainder when our number is divided by 7. We will use the modulo operator (%) for this. If the remainder is 0, 
-it means the number is divisible by 7.
+Step-by-Step Explanation
 
-Step 4: Check if the remainder is 0
-Now, we will use an 'if' statement to check if the remainder is 0. If it is, we set the result to "True". Otherwise, we set it to "False".
+Step 1: Read the input and split the numbers
+First, we need to read the input and split the numbers into a list. We can use the input() function to read the input and the split() function to split the numbers.
+
+Step 2: Initialize the sum variable
+Next, we need to initialize a variable to store the sum of the list elements. We can set the initial value of the sum to 0.
+
+Step 3: Calculate the sum of the list elements
+Now, we need to calculate the sum of the list elements. We can use a for loop to iterate through the list and add each number to the sum variable.
+
+Step 4: Print the sum
+Finally, we need to print the sum of the list elements. We can use the print() function to print the sum.
+
+Sample Input 1:
+
+2 5 10 -15 3
+
+Sample Output 1:
+
+5
+
+Sample Input 2:
+
+-50 20 3 88 17 3 11 200 1800
+
+Sample Output 2:
+
+2092
+
+Solution:
+
+numbers = input()
+num_list = numbers.split()
+list_sum = 0
+for number in num_list:
+    list_sum = list_sum + int(number)
+print(list_sum)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+05. Divisible by 3
+
+Given space-separated numbers, write a program to print a list containing the given numbers that are divisible by 3.
+
+Input:
+The input will be a single line containing space-separated integers.
+
+Output:
+The output should be a single line containing a list of given integers that are divisible by 3.
+
+Explanation:
+
+For example, if the given numbers are 3 10 9 11 18 20
+• The given numbers are 3, 10, 9, 11, 18 and 20
+The numbers divisible by 3 from the given numbers are 3, 9 and 18
+The output should be [3, 9, 18]
+
+Tutorial: Divisble by 3
+
+Outline
+
+Question: Divisible by 3
+Approach
+Step 1: Read the input and split the numbers
+Step 2: Create an empty list for divisible numbers
+Step 3: Check if each number is divisible by 3
+Step 4: Print the list of divisible numbers
+
+Question: Divisible by 3
+In this coding question, you are given a list of space-separated numbers. Your task is to write a program that prints a list containing 
+the given numbers that are divisible by 3.
+
+Approach
+
+To solve this problem, we will follow these steps:
+Read the input and split the numbers into a list.
+Create an empty list to store the numbers divisible by 3.
+Check if each number in the list is divisible by 3, and if it is, add it to the new list.
+Print the list of numbers divisible by 3.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the numbers
+First, we need to read the input, which is a single line containing space-separated integers. We can use the input() function to read the input 
+and then use the split() method to split the numbers into a list.
+
+Step 2: Create an empty list for divisible numbers
+Next, we need to create an empty list that will store the numbers divisible by 3. We can do this by creating a new list called divisible_by_3_list.
+
+Step 3: Check if each number is divisible by 3
+Now, we need to check if each number in the numbers_list is divisible by 3. We can do this by using a for loop to iterate through the list and 
+using the modulo operator (%) to check if the number is divisible by 3. If it is, we add the number to the divisible_by_3_list.
+
+Step 4: Print the list of divisible numbers
+Finally, we need to print the list of numbers divisible by 3. We can do this by using the print() function and passing the divisible_by_3_list as an argument.
+
+Sample Input 1:
+
+3 10 9 11 18 20
+
+Sample Output 1:
+
+[3, 9, 18]
+
+Sample Input 2:
+
+300 485 142 1596
+
+Sample Output 2:
+
+[300, 1596]
+
+Solution:
+
+numbers = input()
+numbers_list = numbers.split()
+divisible_by_3_list = []
+for number in numbers_list:
+    number = int(number)
+    if number % 3 == 0:
+        divisible_by_3_list += [number]
+print(divisible_by_3_list)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+06. Smallest Number in the List
+
+Given space-separated numbers, write a program to print the Smallest number among the given numbers.
+
+Input:
+The input will be a single line containing space-separated integers.
+
+Ouput:
+The output should be a single line containing an integer that is the smallest number among the given space-separated integers.
+
+Explanation:
+For example, if the given numbers are 54 10 15 24 7 12
+• The smallest number among 54, 10, 15, 24, 7, and 12 is 7.
+The output should be 7.
+
+Tutorial: Smallest Number in the List
+
+Outline
+
+Question: Smallest Number in the List
+Approach
+Step 1: Read the input and split the numbers
+Step 2: Initialize the smallest number
+Step 3: Find the smallest number
+Step 4: Print the smallest number
+
+Question: Smallest Number in the List
+Given space-separated numbers, write a program to print the Smallest number among the given numbers.
+Input
+The input will be a single line containing space-separated integers.
+Output
+The output should be a single line containing an integer that is the smallest number among the given space-separated integers.
+Explanation
+For example, if the given numbers are 54 10 15 24 7 12,
+The smallest number among 54, 10, 15, 24, 7, and 12 is 7.
+The output should be 7.
+
+Approach
+
+Read the input and split the numbers into a list.
+Initialize the smallest number with the first number in the list.
+Iterate through the list and compare each number with the smallest number. If a smaller number is found, update the smallest number.
+Print the smallest number.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the numbers
+Read the input using the input() function and store it in a variable called numbers.
+Split the input string into a list of strings using the split() function and store it in a variable called numbers_list.
+
+Step 2: Initialize the smallest number
+Initialize the smallest number with the first number in the list by converting the first string in numbers_list to an integer using the int() function.
+
+Step 3: Find the smallest number
+Iterate through the numbers_list using a for loop.
+For each number in the list, convert the string to an integer using the int() function.
+Compare the integer with the current smallest number. If the integer is smaller than the smallest number, update the smallest number with the new integer.
+
+Step 4: Print the smallest number
+Print the smallest number using the print() function.
+
+Sample Input 1:
+
+54 10 15 24 7 12
+
+Sample Output 1:
+
+7
+
+Sample Input 2:
+
+55 6 946 789 38
+
+Sample Output 2:
+
+6
+
+Solution:
+
+numbers = input()
+numbers_list = numbers.split()
+smallest_number = int(numbers_list[0])
+for number in numbers_list:
+    number = int(number)
+    if number < smallest_number:
+        smallest_number = number
+print(smallest_number)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+07. Join Words in Sentence
+
+Given a sentence S. The words in the sentence S are separated by a space. 
+Write a program that prints a string by joining the words in the sentence S with the dot( . )
+
+Input:
+The input will be a single line containing a string representing S.
+
+Output:
+The output should be a single line containing a string obtained by joining the words in the sentence S with the dot( . )
+
+Explanation:
+For example, if the given sentence is S = "This is a program"
+• Words in S are This, is , a and program
+• After joining the words in the sentence S with the dot ( . ) is This.is.a.program
+The output should be "This.is.a.program"
+
+Tutorial: Join Words in Sentence
+
+Outline
+
+Question: Join Words in Sentence
+Approach
+Step 1: Read the input sentence
+Step 2: Split the sentence into words
+Step 3: Join the words with a dot
+Step 4: Print the result
+
+Question: Join Words in Sentence
+Given a sentence S. The words in the sentence S are separated by a space.
+Write a program that prints a string by joining the words in the sentence S with the dot(.).
+
+Approach
+
+To solve this problem, we will follow these steps:
+Read the input sentence.
+Split the sentence into words.
+Join the words with a dot.
+Print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input sentence
+First, we need to read the input sentence from the user. We can use the input() function to read the input and store it in a variable called string.
+
+Step 2: Split the sentence into words
+Now, we need to split the sentence into words. We can use the split() function to do this. It will create a list of words called words_list.
+
+Step 3: Join the words with a dot
+Next, we need to join the words in the words_list with a dot(.). We can use the join() function to do this. It will create a new string called words_joined_by_dot.
+
+Step 4: Print the result
+Finally, we need to print the result, which is the words_joined_by_dot string.
+
+Sample Input 1:
+
+This is a program
+
+Sample Output 1:
+
+This.is.a.program
+
+Sample Input 2:
+
+Dreams come true
+
+Sample Output 2:
+
+Dreams.come.true
+
+Solution:
+
+string = input()
+words_list = string.split()
+words_joined_by_dot = ".".join(words_list)
+print(words_joined_by_dot)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+08. Join Numbers
+
+Given space-separated numbers.
+Write a program that prints a string by joining the given space-separated numbers with the comma( , ).
+
+Input:
+The input will be a single line containing space-separated integers.
+
+Ouput:
+The output should be a single line containing a string obtained by joining the given space-separated numbers with the comma( , ).
+
+Explanation:
+For example, if the given numbers are 24 45 86 57 88
+• Given number are 24, 45, 86, 57 and 88
+• After joining numbers with a comma ( , ) is 24,45,86,57,88
+The output should be 24,45,86,57,88.
+
+Tutorial: Join Numbers
+
+Outline
+
+Question: Join Numbers
+Approach
+Step 1: Read the input
+Step 2: Split the input into a list
+Step 3: Join the list with commas
+Step 4: Print the result
+
+Question: Join Numbers
+Given space-separated numbers, write a program that prints a string by joining the given space-separated numbers with a comma (,).
+Input
+The input will be a single line containing space-separated integers.
+Output
+The output should be a single line containing a string obtained by joining the given space-separated numbers with a comma (,).
+
+Approach
+
+Read the input as a string.
+Split the input string into a list of numbers.
+Join the list of numbers with commas.
+Print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input
+Read the input value as a string using the input() function.
+
+Step 2: Split the input into a list
+Split the input string into a list of numbers using the split() function.
+
+Step 3: Join the list with commas
+Join the list of numbers with commas using the join() function.
+
+Step 4: Print the result
+Print the result, which is the string of numbers joined by commas.
+
+Sample Input 1:
+
+24 45 86 57 88
+
+Sample Output 1:
+
+24,45,86,57,88
+
+Sample Input 2:
+
+109 2 46
+
+Sample Output 2:
+
+109,2,46
+
+Solution:
+
+numbers = input()
+numbers_list = numbers.split()
+numbers_joined_by_comma = ",".join(numbers_list)
+print(numbers_joined_by_comma)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+09. Join Third Letter of Words
+
+Given a sentence S. The words in the sentence S are separated by a space. 
+Write a program that prints a new string by joining the third letter of each word in the sentence with the comma( , ).
+
+Input:
+The input will be a single line containing a string representing S.
+
+Ouput:
+The output should be a single line containing a string obtained by joining the third letter of each word in the sentence with the comma( , ).
+
+Explanation:
+
+For example, if the given sentence is S = "Being More Productive" ,
+• The words in the sentence "Being More Productive" are "Being", "More", and "Productive".
+• The 3rd letter in the word "Being" is i.
+• The 3rd letter in the word "More" is.
+• The 3rd letter in the word "Productive" is o.
+• After joining the 3rd letter of each word in the sentence with the comma( , ) is i,r,o.
+
+The output should be, i,r,o
+
+Tutorial: Join Third Letter of Words
+
+Outline
+
+Question: Join Third Letter of Words
+Approach
+Step 1: Read the input sentence
+Step 2: Split the sentence into words
+Step 3: Find the third letter of each word
+Step 4: Join the third letters with a comma
+Step 5: Print the result
+
+Question: Join Third Letter of Words
+Given a sentence S. The words in the sentence S are separated by a space.
+Write a program that prints a new string by joining the third letter of each word in the sentence with the comma(,).
+
+Approach
+
+To solve this problem, we will follow these steps:
+Read the input sentence.
+Split the sentence into words.
+Find the third letter of each word.
+Join the third letters with a comma.
+Print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input sentence
+First, we need to read the input sentence from the user. We can use the input() function to read the input and store it in a variable called sentence.
+
+Step 2: Split the sentence into words
+Now, we need to split the sentence into words. We can use the split() function to do this. It will create a list of words called string_list.
+
+Step 3: Find the third letter of each word
+Next, we need to find the third letter of each word in the string_list. We can use a for loop to iterate through each word in the list. If the length 
+of the word is greater than 2, we can get the third letter using the index 2 (since Python uses zero-based indexing). We will store the third letters 
+in a new list called result.
+
+Step 4: Join the third letters with a comma
+Now that we have the third letters of each word in the result list, we need to join them with a comma. We can use the join() function to do this. 
+It will create a new string called character_joined_by_comma.
 
 Step 5: Print the result
-Finally, we will print the result ("True" or "False").
-Our divisible_by_seven function is now complete. It should look like this:
-
-Step 6: Get the input and call the function
-Now, we need to get the input from the user and call our divisible_by_seven function with that input. We will use the input() function to get
-the user's input and convert it to an integer using the int() function.
-
-Now, you should be able to understand and write a Python program that checks if a given number is divisible by 7.
+Finally, we need to print the result, which is the character_joined_by_comma string.
 
 Sample Input 1:
 
-14
+Being More Productive
 
 Sample Output 1:
 
-True
+i,r,o
 
 Sample Input 2:
 
-15
+Python Course
 
 Sample Output 2:
 
-False
+t,u
 
 Solution:
 
-def divisible_by_seven(arg_1):
-    remainder = arg_1 % 7
-    if remainder == 0:
-        result = True
-    else:
-        result = False
-    print(result)
-    
-n = int(input())
-divisible_by_seven(n)
+sentence = input()
+string_list = sentence.split()
+result = []
+for word in string_list:
+    if (len(word) > 2):
+        character = word[2]
+        result += [character]
+character_joined_by_comma = ",".join(result)
+print(character_joined_by_comma)
+
+__________________________________________________________________________________________________________________________________________________________
 
-________________________________________________________________________________________________________________________________________________________________________
-
-05. Between 200 and 500
-
-A function is given in the prefilled code that takes a number N as an argument.
-Write a program that checks if N is between 200 and 500.
-Print Yes if N is between 200 and 500. Otherwise, print No.
-
-Input:
-The input will be a single line containing an integer representing N.
-
-Output:
-The output should be a single line containing a string. Yes should be printed if the given number N is between 200 and 500.
-Otherwise, No should be printed by calling the given function.
-
-Explanation:
-
-For Example, if the given number is N=280
-• The number 280 is between 200 and 500 ( 200 < 280 < 500)
-The output should be "Yes"
-
-Tutorial: Between 200 and 500
-Step 1: Write the function
-First, let's create a function called is_between_200_and_500 that takes a number as its argument. We'll use this function to check if the number is between 200 and 500.
-
-Step 2: Add the condition inside the function
-Now, we'll add a condition inside the function. We'll check if the number is greater than 200 and less than 500. If it is, we'll print "Yes". If it's not, we'll print "No".
-
-Step 3: Get the input number
-Next, we'll get the input number (N) from the user. We'll use the input() function to get the number, and then we'll convert it to an integer using the int() function.
-
-Step 4: Call the function
-Finally, we'll call the is_between_200_and_500 function and pass the input number (N) as an argument.
-
-Sample Input 1:
-
-280
-
-Sample Output 1:
-
-Yes
-
-Sample Input 2:
-
-560
-
-Sample Output 2:
-
-No
-
-Solution:
-
-def is_between_200_and_500(number):
-    if number > 200 and number < 500:
-        print("Yes")
-    else:
-        print("No")
-
-number = int(input())
-is_between_200_and_500(number)
-
-________________________________________________________________________________________________________________________________________________________________________
-
-06. Discount - 2
-
-Write a function with the name get_discount that takes the bill amount as an argument.
-
- - If the bill amount is less than 500, the discount should be "5%".
- - If the bill amount is greater than or equal to 500 and less than 2500, the discount should be "10%".
- - If the bill amount is greater than or equal to 2500, the discount should be "20%".
-
-Input:
-The input will be a single line containing a positive integer.
-
-Ouput:
-The output should be a single line containing the discount according to the above conditions.
-
-Explanation:
-For example, if the given bill amount is 1500, the output should be "10%", as it is greater than 500 and less than 2500
-For example, if the given bill amount is 250, the output should be "5%", as it is less than 500
-
-Tutorial: Discount Calculation in Python
-In this tutorial, we will learn how to solve the "Discount - 2" coding question using Python step by step. 
-
-Step 1: Define the function
-First, we need to create a function named get_discount. This function will take one input: the bill amount. We will use this input to determine the discount percentage.
-
-Step 2: Check the bill amount
-Now, we will check the bill amount to determine the discount percentage. We will use if, elif, and else statements to cover all the possible cases.
-
-If the bill amount is less than 500, the discount is 5%.
-If the bill amount is greater than or equal to 500 and less than 2500, the discount is 10%.
-If the bill amount is greater than or equal to 2500, the discount is 20%.
-
-Step 3: Return the discount
-Once we have determined the discount percentage, we will return it from our function.
-
-Step 4: Get the bill amount from the user
-We will now ask the user to enter the bill amount. We will use the input() function to get the input and int() to convert it into an integer.
-
-Step 5: Call the function and print the result
-Finally, we will call our get_discount function with the user's bill amount and store the result in a variable named result. We will then print the result to the screen.
-
-Sample Input 1:
-
-1500
-
-Sample Output 1:
-
-10%
-
-Sample Input 2:
-
-250
-
-Sample Output 2:
-
-5%
-
-Solution:
-
-def get_discount(amount):
-    if amount < 500:
-        discount = "5%"
-    elif (amount >= 500) and (amount < 2500):
-        discount = "10%"
-    else:
-        discount = "20%"
-    return discount
-
-amount = int(input())
-result = get_discount(amount)
-print(result)
-
-________________________________________________________________________________________________________________________________________________________________________
-
-07. Print N Integers - 3
-
-A function is given in the prefilled code that takes a number N as an argument.
-Write a program to print the numbers from 1 to the given number N, each on a new line.
-
-Input:
-The input will be a single line containing an integer representing N.
-
-Output:
-The output should be N lines containing integers from 1 to the given number N that is passed as an argument to the function, each on a new line.
-
-Explanation:
-For example, if the given number N=4,
-• The numbers from 1 to 4 are 1, 2, 3 and 4
-The output should be
-1
-2
-3
-4
-
-Tutorial: Print N Integers - 3
-Step 1: Create a function to print the numbers
-First, let's create a function called print_numbers that takes a single argument, number. This function will be responsible for printing the numbers from 1 to N.
-
-Step 2: Use a loop to print each number
-Inside the print_numbers function, we will use a for loop to go through each number from 1 to N. We can do this by using the range function. The range 
-function generates a list of numbers from a starting value to an ending value. In this case, we want to start at 1 and end at N.
-
-Since the range function stops before the ending value, we need to add 1 to N, like this: range(1, number + 1). Inside the loop, we just need to print the current number.
-
-Step 3: Get the input from the user
-Now that we have our function ready, we need to get the input from the user. The input will be a single line containing an integer representing N. 
-We can use the input() function to get the input from the user and the int() function to convert the input to an integer.
-
-Step 4: Call the function with the user's input
-Finally, we need to call the print_numbers function with the user's input as the argument. This will execute the function and print the numbers from 1 to N.
-
-Sample Input 1:
-
-1
-
-Sample Output 1:
-
-1
-2
-3
-4
-
-Sample Input 2:
-
-10
-
-Sample Output 2:
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-
-Solution:
-
-def print_numbers(number):
-    for each_number in range(1, number + 1):
-        print(each_number)
-
-number = int(input())
-print_numbers(number)
-
-________________________________________________________________________________________________________________________________________________________________________
-
-08. Even Numbers or Odd Numbers
-
-Write a function with the name show_numbers that takes a number (N) and print all the numbers from 0 to N with a label to identify the even and odd numbers as shown below
-
-0 EVEN
-1 ODD
-2 EVEN
-3 ODD
-
-Input:
-The input will be a single line containing a positive integer.
-
-Ouput:
-The output should be N+1 lines containing a number with a label in each line.
-
-Explanation:
-For example, if the given input is 3, the output should be 4 lines as shown below
-
-0 EVEN
-1 ODD
-2 EVEN
-3 ODD
-
-Outline
-
-Question: Even Numbers or Odd Numbers
-Approach
-Step 1: Define the function and read the input
-Step 2: Use a loop to iterate through the numbers
-Step 3: Check if the number is even or odd
-Step 4: Print the number with its label
-
-Question: Even Numbers or Odd Numbers
-Write a function with the name show_numbers that takes a number (N) and print all the numbers from 0 to N with a label to identify the 
-even and odd numbers as shown below:
-
-The input will be a single line containing a positive integer. The output should be N+1 lines containing a number with a label in each line.
-
-Approach
-Define a function called show_numbers that takes a number as input.
-Use a loop to iterate through all the numbers from 0 to N.
-Check if the number is even or odd.
-Print the number with its label (EVEN or ODD).
-
-Step-by-Step Explanation
-
-Step 1: Define the function and read the input
-First, we need to define a function called show_numbers that takes a number as input. We also need to read the input value representing the number N. We can use the input() function to read the input and int() to convert it into an integer.
-
-Step 2: Use a loop to iterate through the numbers
-Inside the show_numbers function, we need to use a loop to iterate through all the numbers from 0 to N. We can use a for loop with the range() function to achieve this.
-
-Step 3: Check if the number is even or odd
-Now, we need to check if the current number i is even or odd. We can do this by using the modulo operator %. If i % 2 is equal to 0, then the number is 
-even, otherwise, it is odd.
-
-Step 4: Print the number with its label
-Finally, we need to print the number i with its label (EVEN or ODD). We can use the print() function and concatenate the number with its label using the + operator.
-
-Sample Input 1:
-
-3
-
-Sample Output 1:
-
-0 EVEN
-1 ODD
-2 EVEN
-3 ODD
-
-Sample Input 2:
-
-8
-
-Sample Output 2:
-
-0 EVEN
-1 ODD
-2 EVEN
-3 ODD
-4 EVEN
-5 ODD
-6 EVEN
-7 ODD
-8 EVEN
-
-Solution:
-
-def show_numbers(number):
-    for i in range(number+1):
-        if (i % 2) == 0:
-            print(str(i) + " EVEN")
-        else:
-            print(str(i) + " ODD")
-
-number = int(input())
-show_numbers(number)
-
-________________________________________________________________________________________________________________________________________________________________________
