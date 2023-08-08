@@ -223,349 +223,592 @@ print(second_list)
 
 ________________________________________________________________________________________________________________________________________________________________________
 
-06. Smallest Number in the List
+06. List Concatenation -2 
 
-Given space-separated numbers, write a program to print the Smallest number among the given numbers.
-
-Input:
-The input will be a single line containing space-separated integers.
-
-Ouput:
-The output should be a single line containing an integer that is the smallest number among the given space-separated integers.
-
-Explanation:
-For example, if the given numbers are 54 10 15 24 7 12
-• The smallest number among 54, 10, 15, 24, 7, and 12 is 7.
-The output should be 7.
-
-Tutorial: Smallest Number in the List
-
-Outline
-
-Question: Smallest Number in the List
-Approach
-Step 1: Read the input and split the numbers
-Step 2: Initialize the smallest number
-Step 3: Find the smallest number
-Step 4: Print the smallest number
-
-Question: Smallest Number in the List
-Given space-separated numbers, write a program to print the Smallest number among the given numbers.
-Input
-The input will be a single line containing space-separated integers.
-Output
-The output should be a single line containing an integer that is the smallest number among the given space-separated integers.
-Explanation
-For example, if the given numbers are 54 10 15 24 7 12,
-The smallest number among 54, 10, 15, 24, 7, and 12 is 7.
-The output should be 7.
-
-Approach
-
-Read the input and split the numbers into a list.
-Initialize the smallest number with the first number in the list.
-Iterate through the list and compare each number with the smallest number. If a smaller number is found, update the smallest number.
-Print the smallest number.
-
-Step-by-Step Explanation
-
-Step 1: Read the input and split the numbers
-Read the input using the input() function and store it in a variable called numbers.
-Split the input string into a list of strings using the split() function and store it in a variable called numbers_list.
-
-Step 2: Initialize the smallest number
-Initialize the smallest number with the first number in the list by converting the first string in numbers_list to an integer using the int() function.
-
-Step 3: Find the smallest number
-Iterate through the numbers_list using a for loop.
-For each number in the list, convert the string to an integer using the int() function.
-Compare the integer with the current smallest number. If the integer is smaller than the smallest number, update the smallest number with the new integer.
-
-Step 4: Print the smallest number
-Print the smallest number using the print() function.
-
-Sample Input 1:
-
-54 10 15 24 7 12
-
-Sample Output 1:
-
-7
-
-Sample Input 2:
-
-55 6 946 789 38
-
-Sample Output 2:
-
-6
-
-Solution:
-
-numbers = input()
-numbers_list = numbers.split()
-smallest_number = int(numbers_list[0])
-for number in numbers_list:
-    number = int(number)
-    if number < smallest_number:
-        smallest_number = number
-print(smallest_number)
-
-________________________________________________________________________________________________________________________________________________________________________
-
-07. Join Words in Sentence
-
-Given a sentence S. The words in the sentence S are separated by a space. 
-Write a program that prints a string by joining the words in the sentence S with the dot( . )
+A list L is given in the prefilled code.
+Given a number N, write a program that reads N inputs and prints the list by adding the given Ninputs at the end of the list L.
+L = ["apple", "78", "970.03"]
 
 Input:
-The input will be a single line containing a string representing S.
+The first line of input contains an integer representing N.
+The next N lines of input contain strings.
 
 Output:
-The output should be a single line containing a string obtained by joining the words in the sentence S with the dot( . )
+The output should be a single line containing a list obtained by adding the given N inputs at the end of the list L.
 
 Explanation:
-For example, if the given sentence is S = "This is a program"
-• Words in S are This, is , a and program
-• After joining the words in the sentence S with the dot ( . ) is This.is.a.program
-The output should be "This.is.a.program"
 
-Tutorial: Join Words in Sentence
-
-Outline
-
-Question: Join Words in Sentence
-Approach
-Step 1: Read the input sentence
-Step 2: Split the sentence into words
-Step 3: Join the words with a dot
-Step 4: Print the result
-
-Question: Join Words in Sentence
-Given a sentence S. The words in the sentence S are separated by a space.
-Write a program that prints a string by joining the words in the sentence S with the dot(.).
-
-Approach
-
-To solve this problem, we will follow these steps:
-Read the input sentence.
-Split the sentence into words.
-Join the words with a dot.
-Print the result.
-
-Step-by-Step Explanation
-
-Step 1: Read the input sentence
-First, we need to read the input sentence from the user. We can use the input() function to read the input and store it in a variable called string.
-
-Step 2: Split the sentence into words
-Now, we need to split the sentence into words. We can use the split() function to do this. It will create a list of words called words_list.
-
-Step 3: Join the words with a dot
-Next, we need to join the words in the words_list with a dot(.). We can use the join() function to do this. It will create a new string called words_joined_by_dot.
-
-Step 4: Print the result
-Finally, we need to print the result, which is the words_joined_by_dot string.
+For example, if the given number is N = 2
+• The given 2 inputs are,
+38
+grapes
+• The elements in the given prefilled list L are "apple", "78", and "970.03".
+• After adding the given 2 inputs at the end of the list L is "apple", "78", "970.03", "38", and
+"grapes"
+The output should be,
+['apple', '78', '970.03', '38', 'grapes']
 
 Sample Input 1:
 
-This is a program
+2
+38
+grapes
 
 Sample Output 1:
 
-This.is.a.program
+['apple', '78', '970.03', '38', 'grapes']
 
 Sample Input 2:
 
-Dreams come true
+3
+57.94
+table
+-990
 
 Sample Output 2:
 
-Dreams.come.true
+['apple', '78', '970.03', '57.94', 'table', '-990']
 
 Solution:
 
-string = input()
-words_list = string.split()
-words_joined_by_dot = ".".join(words_list)
-print(words_joined_by_dot)
+L = ["apple", "78", "970.03"]
+# Write your code here
+
+number_of_inputs = int(input())
+
+for i in range(number_of_inputs):
+    new_item = input()
+    L += [new_item]
+    
+print(L)
 
 ________________________________________________________________________________________________________________________________________________________________________
 
-08. Join Numbers
+07. Create and PrintList - 2
 
-Given space-separated numbers.
-Write a program that prints a string by joining the given space-separated numbers with the comma( , ).
+Write a program to print a list with the given N inputs.
 
 Input:
-The input will be a single line containing space-separated integers.
+The first line of input will contain a positive integer (N).
+The next following N lines will be containing the list elements.
 
-Ouput:
-The output should be a single line containing a string obtained by joining the given space-separated numbers with the comma( , ).
+Output:
+The output should be a single line containing the list created with the given inputs.
 
 Explanation:
-For example, if the given numbers are 24 45 86 57 88
-• Given number are 24, 45, 86, 57 and 88
-• After joining numbers with a comma ( , ) is 24,45,86,57,88
-The output should be 24,45,86,57,88.
+For example, if the given N is 5, read the inputs in the next five lines and print the list containing the given five elements.
+If the given five inputs are
+20
+Tiger
+Cinema
+5.5
+93
+The output should be ['20', 'Tiger', 'Cinema', '5.5', '93']
 
-Tutorial: Join Numbers
+Sample Input 1:
 
-Outline
+5
+20
+Tiger
+Cinema
+5.5
+93
 
-Question: Join Numbers
-Approach
-Step 1: Read the input
-Step 2: Split the input into a list
-Step 3: Join the list with commas
-Step 4: Print the result
+Sample Output 1:
 
-Question: Join Numbers
-Given space-separated numbers, write a program that prints a string by joining the given space-separated numbers with a comma (,).
+['20', 'Tiger', 'Cinema', '5.5', '93']
+
+Sample Input 2:
+
+3
+12
+17
+43.5
+
+Sample Output 2:
+
+['12', '17', '43.5']
+
+Solution:
+
+n = int(input())
+
+list_a = []
+for i in range(n):
+    value = input()
+    list_a += [value]
+
+print(list_a)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+08. Create and Print List - 3
+
+You are given N numbers as input. Create a list and add the N numbers which are given as input and print the list.
+
+Input:
+The first line of input is an integer N. The next N lines each contain an integer.
+
+Explanation:
+
+In the given example, N=4 and the numbers are 1, 2, 3, 4.
+So, the output should be [1, 2, 3, 4]
+
+Sample Input 1:
+
+4
+1
+2
+3
+4
+
+Sample Output 1:
+
+[1, 2, 3, 4]
+
+Sample Input 2:
+
+3
+13
+21
+19
+
+Sample Output 2:
+
+[13, 21, 19]
+
+Solution:
+
+n = int(input())
+l = []
+
+for i in range(n):
+    number = int(input())
+    l += [number]
+
+print(l)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+09. List Repetition
+
+A list L is given in the prefilled code.
+Given a number N, write a program that prints the list byrepeating the prefilled list N times.
+
 Input
-The input will be a single line containing space-separated integers.
+The input will be a single line containing an integer representing N.
+
 Output
-The output should be a single line containing a string obtained by joining the given space-separated numbers with a comma (,).
-
-Approach
-
-Read the input as a string.
-Split the input string into a list of numbers.
-Join the list of numbers with commas.
-Print the result.
-
-Step-by-Step Explanation
-
-Step 1: Read the input
-Read the input value as a string using the input() function.
-
-Step 2: Split the input into a list
-Split the input string into a list of numbers using the split() function.
-
-Step 3: Join the list with commas
-Join the list of numbers with commas using the join() function.
-
-Step 4: Print the result
-Print the result, which is the string of numbers joined by commas.
-
-Sample Input 1:
-
-24 45 86 57 88
-
-Sample Output 1:
-
-24,45,86,57,88
-
-Sample Input 2:
-
-109 2 46
-
-Sample Output 2:
-
-109,2,46
-
-Solution:
-
-numbers = input()
-numbers_list = numbers.split()
-numbers_joined_by_comma = ",".join(numbers_list)
-print(numbers_joined_by_comma)
-
-________________________________________________________________________________________________________________________________________________________________________
-
-09. Join Third Letter of Words
-
-Given a sentence S. The words in the sentence S are separated by a space. 
-Write a program that prints a new string by joining the third letter of each word in the sentence with the comma( , ).
-
-Input:
-The input will be a single line containing a string representing S.
-
-Ouput:
-The output should be a single line containing a string obtained by joining the third letter of each word in the sentence with the comma( , ).
+The output should be a single line containing a list obtained by repeating the prefilled list N times.
 
 Explanation:
 
-For example, if the given sentence is S = "Being More Productive" ,
-• The words in the sentence "Being More Productive" are "Being", "More", and "Productive".
-• The 3rd letter in the word "Being" is i.
-• The 3rd letter in the word "More" is.
-• The 3rd letter in the word "Productive" is o.
-• After joining the 3rd letter of each word in the sentence with the comma( , ) is i,r,o.
-
-The output should be, i,r,o
-
-Tutorial: Join Third Letter of Words
-
-Outline
-
-Question: Join Third Letter of Words
-Approach
-Step 1: Read the input sentence
-Step 2: Split the sentence into words
-Step 3: Find the third letter of each word
-Step 4: Join the third letters with a comma
-Step 5: Print the result
-
-Question: Join Third Letter of Words
-Given a sentence S. The words in the sentence S are separated by a space.
-Write a program that prints a new string by joining the third letter of each word in the sentence with the comma(,).
-
-Approach
-
-To solve this problem, we will follow these steps:
-Read the input sentence.
-Split the sentence into words.
-Find the third letter of each word.
-Join the third letters with a comma.
-Print the result.
-
-Step-by-Step Explanation
-
-Step 1: Read the input sentence
-First, we need to read the input sentence from the user. We can use the input() function to read the input and store it in a variable called sentence.
-
-Step 2: Split the sentence into words
-Now, we need to split the sentence into words. We can use the split() function to do this. It will create a list of words called string_list.
-
-Step 3: Find the third letter of each word
-Next, we need to find the third letter of each word in the string_list. We can use a for loop to iterate through each word in the list. If the length 
-of the word is greater than 2, we can get the third letter using the index 2 (since Python uses zero-based indexing). We will store the third letters 
-in a new list called result.
-
-Step 4: Join the third letters with a comma
-Now that we have the third letters of each word in the result list, we need to join them with a comma. We can use the join() function to do this. 
-It will create a new string called character_joined_by_comma.
-
-Step 5: Print the result
-Finally, we need to print the result, which is the character_joined_by_comma string.
+For example, if the given number is N = 2,
+• The elements in the given prefilled list L are 1, "two", "3", and 4.0.
+• The prefilled list should be repeated 2 times.
+• After repeating the prefilled list, the elements in the list are 1,
+"two", "3", 4.0, 1, "two", "3", and 4.0.
+The output should be [1, 'two', '3', 4.0, 1, 'two', '3', 4.0]
 
 Sample Input 1:
 
-Being More Productive
+2
 
 Sample Output 1:
 
-i,r,o
+[1, 'two', '3', 4.0, 1, 'two', '3', 4.0]
 
 Sample Input 2:
 
-Python Course
+3
 
 Sample Output 2:
 
-t,u
+[1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0]
 
 Solution:
 
-sentence = input()
-string_list = sentence.split()
-result = []
-for word in string_list:
-    if (len(word) > 2):
-        character = word[2]
-        result += [character]
-character_joined_by_comma = ",".join(result)
-print(character_joined_by_comma)
+L = [1, "two", "3", 4.0]
 
-__________________________________________________________________________________________________________________________________________________________
+number_of_times = int(input())
+
+resultant_list = L * number_of_times
+
+print(resultant_list)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+10. List Repetition - 2
+
+Given two integers M and N, write a program to create a list with element M repeated by N times.
+
+Input:
+The first line of input will be an integer.
+The second line of input will be a positive integer.
+
+Output:
+The output should be a single line containing a list with element M repeated by N times.
+
+Explanation:
+
+For example, if the given M and N are 5 and 4, the output should contain a list with the number 5 repeated 4 times.
+[5, 5, 5, 5]
+
+Sample Input 1:
+
+5
+4
+
+Sample Output 1:
+
+[5, 5, 5, 5]
+
+Sample Input 2:
+
+-2
+
+Sample Output 2:
+
+[-2, -2, -2, -2, -2, -2, -2, -2]
+
+Solution:
+
+m = int(input())
+n = int(input())
+
+list_a = [m] * n  # repeat n times
+print(list_a)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+11. Convert Sttring to List
+
+Given a string, write a program to convert the string into a list.
+
+Input:
+The input will be a single line containing a string.
+
+Output:
+The output should be a single line containing a list with all the characters in the given string.
+
+Explanation:
+
+For example, if the given string is "Python", 
+the output should be
+['P', 'y', 't', 'h', 'o', 'n']
+
+Sample Input 1:
+
+Python
+
+Sample Output 1:
+
+['P', 'y', 't', 'h', 'o', 'n']
+
+Sample Input 2:
+
+Temperature
+
+Sample Output 2:
+
+['T', 'e', 'm', 'p', 'e', 'r', 'a', 't', 'u', 'r', 'e']
+
+Solution:
+
+word = input()
+word_list = list(word)
+print(word_list)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+12. Modifying List
+
+A list L is given in the prefilled code.
+Given an index, and a number N, write a program that prints the list by replacing the element at index with the number N.
+
+Input:
+
+The first line of input contains an integer representing
+The second line of input contains an integer representing N.
+
+Output:
+
+The output should be a single line containing a list obtained by replacing the element at index
+with the number
+
+Explanation:
+
+For example, if the given index is 1 = 3 and the number is N = 100
+• The elements in the given prefilled list L are 1, 20, 33, 45, 520, 64, 71, 852, 9999, and 101010.
+The element at index 3 is 45.
+
+1 20 33 45 520 64 71 852 9999 101010
+0 1  2  3   4  5  6   7   8     9
+
+• Replace the Number 45 with the number 100
+
+1 20 33 100 520 64 71 852 9999 101010
+0 1  2   3   4  5  6   7   8     9
+
+[1, 20, 33, 100, 520, 64, 71, 852, 9999, 101010]
+
+Sample Input 1:
+
+3
+100
+
+Sample Output 1:
+
+[1, 20, 33, 100, 520, 64, 71, 852, 9999, 101010]
+
+Sample Input 2:
+
+0
+-55
+
+Sample Output 2:
+
+[-55, 20, 33, 45, 520, 64, 71, 852, 9999, 101010]
+
+Solution:
+
+L = [1, 20, 33, 45, 520, 64, 71, 852, 9999, 101010]
+
+index = int(input())
+number = int(input())
+
+L[index] = number
+
+print(L)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+13. Greater than N
+
+For this problem, the prefilled code will contain a list. Your program should create a new list with all the elements in existing 
+list that are greater than given number.
+
+Note: The order of elements in the new list should be same as the order of those elements in the list given in the prefilled code.
+
+Input
+The first line of input will contain an integer.
+
+Output
+The output should be a single line containing the list with elements greater than N.
+
+Explanation
+For example, if the given number is 50, your code should print the list of numbers that are greater than 50 in the given list. 
+So the output should be [93, 71]
+
+Sample Input 1:
+
+50
+
+Sample Output 1:
+
+[93, 71]
+
+Sample Input 2:
+
+-45
+
+Sample Output 2:
+
+[1, 6, 32, 93, 71, -20, 30, 50]
+
+Solution:
+
+num_list = [1, 6, 32, 93, 71, -20, 30, -90, 50]
+
+n = int(input())
+new_list = []
+for number in num_list:
+    if number > n:
+        new_list += [number]
+
+print(new_list)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+14. First 3 and Last 3 Elements of List
+
+Write a program to read N inputs and print a list containing the first and last three inputs.
+
+Input
+The first line of input will contain a positive integer (N).
+The next following N lines will contain a string each in a line.
+
+Output
+The output should be a single line containing a list with the first and last three inputs.
+
+Explanation
+For example, if the given N is 8, read the inputs in the next eight lines. If the given eight inputs are the following.
+8
+Anjali
+Ravi
+Akbar
+Suresh
+Gopal
+Latha
+Mohan
+Ashok
+
+Your code should print a list containing the first and last 3 inputs
+So the output should be ['Anjali', 'Ravi', 'Akbar', 'Latha', 'Mohan', 'Ashok']
+
+Sample Input 1:
+
+8
+Anjali
+Ravi
+Akbar
+Suresh
+Gopal
+Latha
+Mohan
+Ashok
+
+Sample Output 1:
+
+['Anjali', 'Ravi', 'Akbar', 'Latha', 'Mohan', 'Ashok']
+
+Sample Input 2:
+
+10
+Cricket
+Hockey
+Football
+Badminton
+Tennis
+Basketball
+Golf
+Volleyball
+Archery
+Boxing
+
+Sample Output 2:
+
+['Cricket', 'Hockey', 'Football', 'Volleyball', 'Archery', 'Boxing']
+
+Solution:
+
+n = int(input())
+
+list_a = []
+for i in range(n):
+    value = input()
+    list_a += [value]
+
+new_list = list_a[:3] + list_a[n-3:]
+print(new_list)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+15. Reverse Order
+
+Given an integer N, write a program to print the given N inputs in the reverse order.
+
+Input
+The first line of input will contain a positive integer (N).
+The next following N lines will contain a string each in a line.
+
+Output
+The output should be N lines, printing the given inputs in reverse order, each in a new line.
+
+Explanation
+
+For example, if the given number is 8, read the inputs in the next eight lines and print them in the reverse order.
+If the given eight inputs are the following.
+
+Anjali
+Ravi
+Akbar
+Suresh
+Gopal
+Latha
+Mohan
+Ashok
+
+So the output should be 
+
+Ashok
+Mohan
+Latha
+Gopal
+Suresh
+Akbar
+Ravi
+Anjali
+
+Sample Input 1:
+
+8
+Anjali
+Ravi
+Akbar
+Suresh
+Gopal
+Latha
+Mohan
+Ashok
+
+Sample Output 1:
+
+Ashok
+Mohan
+Latha
+Gopal
+Suresh
+Akbar
+Ravi
+Anjali
+
+Sample Input 2:
+
+10
+Cricket
+Hockey
+Football
+Badminton
+Tennis
+Basketball
+Golf
+Volleyball
+Archery
+Boxing
+
+Sample Output 2:
+
+Boxing
+Archery
+Volleyball
+Golf
+Basketball
+Tennis
+Badminton
+Football
+Hockey
+Cricket
+
+Solution:
+
+n = int(input())
+list_a = []
+
+for i in range(n):
+    value = input()  # Read the list inputs
+    list_a += [value]
+
+for i in range(n):
+    print(list_a[n-i-1])
+n = int(input())
+
+list_a = []
+for i in range(n):
+    value = input()
+    list_a += [value]
+
+new_list = list_a[:3] + list_a[n-3:]
+print(new_list)
+
+________________________________________________________________________________________________________________________________________________________________________
