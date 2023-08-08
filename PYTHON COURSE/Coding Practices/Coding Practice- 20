@@ -118,13 +118,16 @@ ________________________________________________________________________________
 
 04. Find Element in List
 
-Given a list of numbers, write a program to print the sum of the numbers in the list.
+A list L is given in the prefilled code.
+Write a program that reads a string S and checks if S is in the given list L. Print True if S is present in L else, print False.
+L = ["5", "eat", "9.80", "Water", "python", "-678", "7685.26", "-2.5", "sing"]
 
-Input:
-The first line of input will contain space-separated integers, denoting the elements of the list.
+Input
+The input will be a single line containing a string representing S.
 
-Ouput:
-The output should be a single line containing the sum of the integers in the given list.
+Output
+The output should be a single line containing a boolean. True should be printed if S is present
+in L. Otherwise, False should be printed.
 
 Explanation:
 
@@ -138,154 +141,85 @@ For example, if the given string is S = "Java",
 • The given string "Java" is not present in the prefilled list L.
 The output should be False
 
-Tutorial: Sum of List Elements
-
-Outline
-
-Question: Sum of List Elements
-Approach
-Step 1: Read the input and split the numbers
-Step 2: Initialize the sum variable
-Step 3: Calculate the sum of the list elements
-Step 4: Print the sum
-
-Question: Sum of List Elements
-Given a list of numbers, write a program to print the sum of the numbers in the list.
-Input: The first line of input will contain space-separated integers, denoting the elements of the list.
-Output: The output should be a single line containing the sum of the integers in the given list.
-Example: If the given string is "2 5 10 -15 3", your code should print the sum of the given list elements. So the output should be 5.
-
-Approach
-
-To solve this problem, we will follow these steps:
-Read the input and split the numbers into a list.
-Initialize a variable to store the sum of the list elements.
-Calculate the sum of the list elements using a loop.
-Print the sum.
-
-Step-by-Step Explanation
-
-Step 1: Read the input and split the numbers
-First, we need to read the input and split the numbers into a list. We can use the input() function to read the input and the split() function to split the numbers.
-
-Step 2: Initialize the sum variable
-Next, we need to initialize a variable to store the sum of the list elements. We can set the initial value of the sum to 0.
-
-Step 3: Calculate the sum of the list elements
-Now, we need to calculate the sum of the list elements. We can use a for loop to iterate through the list and add each number to the sum variable.
-
-Step 4: Print the sum
-Finally, we need to print the sum of the list elements. We can use the print() function to print the sum.
-
 Sample Input 1:
 
-2 5 10 -15 3
+Water
 
 Sample Output 1:
 
-5
+True
 
 Sample Input 2:
 
--50 20 3 88 17 3 11 200 1800
+java
 
 Sample Output 2:
 
-2092
+False
 
 Solution:
 
-numbers = input()
-num_list = numbers.split()
-list_sum = 0
-for number in num_list:
-    list_sum = list_sum + int(number)
-print(list_sum)
+L = ["5", "eat", "9.80", "Water", "python", "-678", "7685.26", "-2.5", "sing"]
+# Write your code here
+string = input()
+is_present = False
+
+for each_item in L:
+    if each_item == string:
+        is_present = True
+        break
+
+print(is_present)
 
 ________________________________________________________________________________________________________________________________________________________________________
 
-05. Divisible by 3
+05. List Concatenation
 
-Given space-separated numbers, write a program to print a list containing the given numbers that are divisible by 3.
+For this problem, the prefilled code will contain a list. You need to concatenate the given number to the list. The first list should 
+have the number concatenated at the beginning. The second list should have the number concatenated at the end.
 
 Input:
-The input will be a single line containing space-separated integers.
+The input will be a single line containing an integer.
 
 Output:
-The output should be a single line containing a list of given integers that are divisible by 3.
+The first line of output should be a list containing the given number at the beginning of the list.
+The second line of output should be a list containing the given number at the end of the list.
 
 Explanation:
 
-For example, if the given numbers are 3 10 9 11 18 20
-• The given numbers are 3, 10, 9, 11, 18 and 20
-The numbers divisible by 3 from the given numbers are 3, 9 and 18
-The output should be [3, 9, 18]
+For example, if the given number is 20, by adding this to the existing list, the output should be as below
+[20, 10, 20, 40, 100]
+[10, 20, 40, 100, 20]
 
-Tutorial: Divisble by 3
-
-Outline
-
-Question: Divisible by 3
-Approach
-Step 1: Read the input and split the numbers
-Step 2: Create an empty list for divisible numbers
-Step 3: Check if each number is divisible by 3
-Step 4: Print the list of divisible numbers
-
-Question: Divisible by 3
-In this coding question, you are given a list of space-separated numbers. Your task is to write a program that prints a list containing 
-the given numbers that are divisible by 3.
-
-Approach
-
-To solve this problem, we will follow these steps:
-Read the input and split the numbers into a list.
-Create an empty list to store the numbers divisible by 3.
-Check if each number in the list is divisible by 3, and if it is, add it to the new list.
-Print the list of numbers divisible by 3.
-
-Step-by-Step Explanation
-
-Step 1: Read the input and split the numbers
-First, we need to read the input, which is a single line containing space-separated integers. We can use the input() function to read the input 
-and then use the split() method to split the numbers into a list.
-
-Step 2: Create an empty list for divisible numbers
-Next, we need to create an empty list that will store the numbers divisible by 3. We can do this by creating a new list called divisible_by_3_list.
-
-Step 3: Check if each number is divisible by 3
-Now, we need to check if each number in the numbers_list is divisible by 3. We can do this by using a for loop to iterate through the list and 
-using the modulo operator (%) to check if the number is divisible by 3. If it is, we add the number to the divisible_by_3_list.
-
-Step 4: Print the list of divisible numbers
-Finally, we need to print the list of numbers divisible by 3. We can do this by using the print() function and passing the divisible_by_3_list as an argument.
 
 Sample Input 1:
 
-3 10 9 11 18 20
+20
 
 Sample Output 1:
 
-[3, 9, 18]
+[20, 10, 20, 40, 100]
+[10, 20, 40, 100, 20]
 
 Sample Input 2:
 
-300 485 142 1596
+-86
 
 Sample Output 2:
 
-[300, 1596]
+[-86, 10, 20, 40, 100]
+[10, 20, 40, 100, -86]
 
 Solution:
 
-numbers = input()
-numbers_list = numbers.split()
-divisible_by_3_list = []
-for number in numbers_list:
-    number = int(number)
-    if number % 3 == 0:
-        divisible_by_3_list += [number]
-print(divisible_by_3_list)
+num_list =  [10, 20, 40, 100]
+n = int(input())
+n1=[n]
+first_list =n1+num_list # Add the number in the beginning
+second_list = num_list+n1# Add the number at the end
+
+print(first_list)
+print(second_list)
 
 ________________________________________________________________________________________________________________________________________________________________________
 
