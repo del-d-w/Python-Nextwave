@@ -1,0 +1,637 @@
+01. Create & Print List
+
+Write a program to print a list with the given elements
+"Rose", 183, 148, 123.64, False
+
+Ouput:
+The output should be a single line containing a list with the above elements.
+
+Explanation:
+
+Your code should print the following output.
+['Rose', 183, 148, 123.64, False]
+
+Sample Output:
+
+['Rose', 183, 148, 123.64, False]
+
+Solution:
+
+list1=['Rose',183,148,123.64,False]
+print(list1)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+02. List Indexing
+
+For this problem, the prefilled code will contain a list. Write a program to print the element at the given index location.
+
+Input
+The first line of input will contain a positive integer.
+
+Output
+The output should be a single line containing the list element at the given index.
+
+Explanation
+For example, if the given index location is 4, the element at index 4 in the list is "Green". So the output should be "Green".
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+Green
+
+Sample Input 2:
+
+2
+
+Sample Output 2:
+
+Yellow
+
+Solution:
+
+color_list = ["Red", "Orange", "Yellow", "Pink", "Green", "Blue", "Purple", "Black", "White"]
+# Write your code here
+index=int(input())
+result=print(color_list[index])
+
+________________________________________________________________________________________________________________________________________________________________________
+
+03. List Indexing - 2
+
+For this problem, the prefilled code will contain a list. You need to write a program to read N integers, and print the elements 
+at the index locations represented by those integers.
+
+Input:
+The first line of input will contain a positive integer (N).
+The following N lines will contain a positive integer in each line.
+
+Ouput:
+The output should be N lines containing the list elements at the given indexes each in a line.
+
+Explanation:
+For example, if the given number N is 2, read the inputs in the next two lines and print the elements at the given indexes. 
+If the given two indexes are 1 and 4, the output should be
+
+Java
+C++
+
+Sample Input 1:
+
+2
+1
+4
+
+Sample Output 1:
+
+Java
+C++
+
+Sample Input 2:
+
+4
+0
+2
+8
+5
+
+Sample Output 2:
+
+Python
+Ruby
+Swift
+Go
+
+Solution:
+
+programming_languages_list = ["Python", "Java", "Ruby", "C", "C++", "Go", "R", "JavaScript", "Swift", "PHP", "Kotlin", "Perl"]
+# Write your code here
+m = int(input())
+for i in range(m):
+    index = int(input())  # Read the list indexes
+    print(programming_languages_list[index])  # Print the elements at given index
+
+________________________________________________________________________________________________________________________________________________________________________
+
+04. Find Element in List
+
+Given a list of numbers, write a program to print the sum of the numbers in the list.
+
+Input:
+The first line of input will contain space-separated integers, denoting the elements of the list.
+
+Ouput:
+The output should be a single line containing the sum of the integers in the given list.
+
+Explanation:
+
+For example, if the given string is S = "Water"
+• The elements in the given prefilled list L are "5", "eat", "9.80", "Water", "python", "-678", "7685.26", "-2.5", and "sing".
+• The given string "Water" is present in the prefilled list L at the 3rd index.
+The output should be True.
+
+For example, if the given string is S = "Java",
+• The elements in the given prefilled list L are "5", "eat", "9.80", "Water", "python", "-678", "7685.26", "-2.5", and "sing".
+• The given string "Java" is not present in the prefilled list L.
+The output should be False
+
+Tutorial: Sum of List Elements
+
+Outline
+
+Question: Sum of List Elements
+Approach
+Step 1: Read the input and split the numbers
+Step 2: Initialize the sum variable
+Step 3: Calculate the sum of the list elements
+Step 4: Print the sum
+
+Question: Sum of List Elements
+Given a list of numbers, write a program to print the sum of the numbers in the list.
+Input: The first line of input will contain space-separated integers, denoting the elements of the list.
+Output: The output should be a single line containing the sum of the integers in the given list.
+Example: If the given string is "2 5 10 -15 3", your code should print the sum of the given list elements. So the output should be 5.
+
+Approach
+
+To solve this problem, we will follow these steps:
+Read the input and split the numbers into a list.
+Initialize a variable to store the sum of the list elements.
+Calculate the sum of the list elements using a loop.
+Print the sum.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the numbers
+First, we need to read the input and split the numbers into a list. We can use the input() function to read the input and the split() function to split the numbers.
+
+Step 2: Initialize the sum variable
+Next, we need to initialize a variable to store the sum of the list elements. We can set the initial value of the sum to 0.
+
+Step 3: Calculate the sum of the list elements
+Now, we need to calculate the sum of the list elements. We can use a for loop to iterate through the list and add each number to the sum variable.
+
+Step 4: Print the sum
+Finally, we need to print the sum of the list elements. We can use the print() function to print the sum.
+
+Sample Input 1:
+
+2 5 10 -15 3
+
+Sample Output 1:
+
+5
+
+Sample Input 2:
+
+-50 20 3 88 17 3 11 200 1800
+
+Sample Output 2:
+
+2092
+
+Solution:
+
+numbers = input()
+num_list = numbers.split()
+list_sum = 0
+for number in num_list:
+    list_sum = list_sum + int(number)
+print(list_sum)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+05. Divisible by 3
+
+Given space-separated numbers, write a program to print a list containing the given numbers that are divisible by 3.
+
+Input:
+The input will be a single line containing space-separated integers.
+
+Output:
+The output should be a single line containing a list of given integers that are divisible by 3.
+
+Explanation:
+
+For example, if the given numbers are 3 10 9 11 18 20
+• The given numbers are 3, 10, 9, 11, 18 and 20
+The numbers divisible by 3 from the given numbers are 3, 9 and 18
+The output should be [3, 9, 18]
+
+Tutorial: Divisble by 3
+
+Outline
+
+Question: Divisible by 3
+Approach
+Step 1: Read the input and split the numbers
+Step 2: Create an empty list for divisible numbers
+Step 3: Check if each number is divisible by 3
+Step 4: Print the list of divisible numbers
+
+Question: Divisible by 3
+In this coding question, you are given a list of space-separated numbers. Your task is to write a program that prints a list containing 
+the given numbers that are divisible by 3.
+
+Approach
+
+To solve this problem, we will follow these steps:
+Read the input and split the numbers into a list.
+Create an empty list to store the numbers divisible by 3.
+Check if each number in the list is divisible by 3, and if it is, add it to the new list.
+Print the list of numbers divisible by 3.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the numbers
+First, we need to read the input, which is a single line containing space-separated integers. We can use the input() function to read the input 
+and then use the split() method to split the numbers into a list.
+
+Step 2: Create an empty list for divisible numbers
+Next, we need to create an empty list that will store the numbers divisible by 3. We can do this by creating a new list called divisible_by_3_list.
+
+Step 3: Check if each number is divisible by 3
+Now, we need to check if each number in the numbers_list is divisible by 3. We can do this by using a for loop to iterate through the list and 
+using the modulo operator (%) to check if the number is divisible by 3. If it is, we add the number to the divisible_by_3_list.
+
+Step 4: Print the list of divisible numbers
+Finally, we need to print the list of numbers divisible by 3. We can do this by using the print() function and passing the divisible_by_3_list as an argument.
+
+Sample Input 1:
+
+3 10 9 11 18 20
+
+Sample Output 1:
+
+[3, 9, 18]
+
+Sample Input 2:
+
+300 485 142 1596
+
+Sample Output 2:
+
+[300, 1596]
+
+Solution:
+
+numbers = input()
+numbers_list = numbers.split()
+divisible_by_3_list = []
+for number in numbers_list:
+    number = int(number)
+    if number % 3 == 0:
+        divisible_by_3_list += [number]
+print(divisible_by_3_list)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+06. Smallest Number in the List
+
+Given space-separated numbers, write a program to print the Smallest number among the given numbers.
+
+Input:
+The input will be a single line containing space-separated integers.
+
+Ouput:
+The output should be a single line containing an integer that is the smallest number among the given space-separated integers.
+
+Explanation:
+For example, if the given numbers are 54 10 15 24 7 12
+• The smallest number among 54, 10, 15, 24, 7, and 12 is 7.
+The output should be 7.
+
+Tutorial: Smallest Number in the List
+
+Outline
+
+Question: Smallest Number in the List
+Approach
+Step 1: Read the input and split the numbers
+Step 2: Initialize the smallest number
+Step 3: Find the smallest number
+Step 4: Print the smallest number
+
+Question: Smallest Number in the List
+Given space-separated numbers, write a program to print the Smallest number among the given numbers.
+Input
+The input will be a single line containing space-separated integers.
+Output
+The output should be a single line containing an integer that is the smallest number among the given space-separated integers.
+Explanation
+For example, if the given numbers are 54 10 15 24 7 12,
+The smallest number among 54, 10, 15, 24, 7, and 12 is 7.
+The output should be 7.
+
+Approach
+
+Read the input and split the numbers into a list.
+Initialize the smallest number with the first number in the list.
+Iterate through the list and compare each number with the smallest number. If a smaller number is found, update the smallest number.
+Print the smallest number.
+
+Step-by-Step Explanation
+
+Step 1: Read the input and split the numbers
+Read the input using the input() function and store it in a variable called numbers.
+Split the input string into a list of strings using the split() function and store it in a variable called numbers_list.
+
+Step 2: Initialize the smallest number
+Initialize the smallest number with the first number in the list by converting the first string in numbers_list to an integer using the int() function.
+
+Step 3: Find the smallest number
+Iterate through the numbers_list using a for loop.
+For each number in the list, convert the string to an integer using the int() function.
+Compare the integer with the current smallest number. If the integer is smaller than the smallest number, update the smallest number with the new integer.
+
+Step 4: Print the smallest number
+Print the smallest number using the print() function.
+
+Sample Input 1:
+
+54 10 15 24 7 12
+
+Sample Output 1:
+
+7
+
+Sample Input 2:
+
+55 6 946 789 38
+
+Sample Output 2:
+
+6
+
+Solution:
+
+numbers = input()
+numbers_list = numbers.split()
+smallest_number = int(numbers_list[0])
+for number in numbers_list:
+    number = int(number)
+    if number < smallest_number:
+        smallest_number = number
+print(smallest_number)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+07. Join Words in Sentence
+
+Given a sentence S. The words in the sentence S are separated by a space. 
+Write a program that prints a string by joining the words in the sentence S with the dot( . )
+
+Input:
+The input will be a single line containing a string representing S.
+
+Output:
+The output should be a single line containing a string obtained by joining the words in the sentence S with the dot( . )
+
+Explanation:
+For example, if the given sentence is S = "This is a program"
+• Words in S are This, is , a and program
+• After joining the words in the sentence S with the dot ( . ) is This.is.a.program
+The output should be "This.is.a.program"
+
+Tutorial: Join Words in Sentence
+
+Outline
+
+Question: Join Words in Sentence
+Approach
+Step 1: Read the input sentence
+Step 2: Split the sentence into words
+Step 3: Join the words with a dot
+Step 4: Print the result
+
+Question: Join Words in Sentence
+Given a sentence S. The words in the sentence S are separated by a space.
+Write a program that prints a string by joining the words in the sentence S with the dot(.).
+
+Approach
+
+To solve this problem, we will follow these steps:
+Read the input sentence.
+Split the sentence into words.
+Join the words with a dot.
+Print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input sentence
+First, we need to read the input sentence from the user. We can use the input() function to read the input and store it in a variable called string.
+
+Step 2: Split the sentence into words
+Now, we need to split the sentence into words. We can use the split() function to do this. It will create a list of words called words_list.
+
+Step 3: Join the words with a dot
+Next, we need to join the words in the words_list with a dot(.). We can use the join() function to do this. It will create a new string called words_joined_by_dot.
+
+Step 4: Print the result
+Finally, we need to print the result, which is the words_joined_by_dot string.
+
+Sample Input 1:
+
+This is a program
+
+Sample Output 1:
+
+This.is.a.program
+
+Sample Input 2:
+
+Dreams come true
+
+Sample Output 2:
+
+Dreams.come.true
+
+Solution:
+
+string = input()
+words_list = string.split()
+words_joined_by_dot = ".".join(words_list)
+print(words_joined_by_dot)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+08. Join Numbers
+
+Given space-separated numbers.
+Write a program that prints a string by joining the given space-separated numbers with the comma( , ).
+
+Input:
+The input will be a single line containing space-separated integers.
+
+Ouput:
+The output should be a single line containing a string obtained by joining the given space-separated numbers with the comma( , ).
+
+Explanation:
+For example, if the given numbers are 24 45 86 57 88
+• Given number are 24, 45, 86, 57 and 88
+• After joining numbers with a comma ( , ) is 24,45,86,57,88
+The output should be 24,45,86,57,88.
+
+Tutorial: Join Numbers
+
+Outline
+
+Question: Join Numbers
+Approach
+Step 1: Read the input
+Step 2: Split the input into a list
+Step 3: Join the list with commas
+Step 4: Print the result
+
+Question: Join Numbers
+Given space-separated numbers, write a program that prints a string by joining the given space-separated numbers with a comma (,).
+Input
+The input will be a single line containing space-separated integers.
+Output
+The output should be a single line containing a string obtained by joining the given space-separated numbers with a comma (,).
+
+Approach
+
+Read the input as a string.
+Split the input string into a list of numbers.
+Join the list of numbers with commas.
+Print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input
+Read the input value as a string using the input() function.
+
+Step 2: Split the input into a list
+Split the input string into a list of numbers using the split() function.
+
+Step 3: Join the list with commas
+Join the list of numbers with commas using the join() function.
+
+Step 4: Print the result
+Print the result, which is the string of numbers joined by commas.
+
+Sample Input 1:
+
+24 45 86 57 88
+
+Sample Output 1:
+
+24,45,86,57,88
+
+Sample Input 2:
+
+109 2 46
+
+Sample Output 2:
+
+109,2,46
+
+Solution:
+
+numbers = input()
+numbers_list = numbers.split()
+numbers_joined_by_comma = ",".join(numbers_list)
+print(numbers_joined_by_comma)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+09. Join Third Letter of Words
+
+Given a sentence S. The words in the sentence S are separated by a space. 
+Write a program that prints a new string by joining the third letter of each word in the sentence with the comma( , ).
+
+Input:
+The input will be a single line containing a string representing S.
+
+Ouput:
+The output should be a single line containing a string obtained by joining the third letter of each word in the sentence with the comma( , ).
+
+Explanation:
+
+For example, if the given sentence is S = "Being More Productive" ,
+• The words in the sentence "Being More Productive" are "Being", "More", and "Productive".
+• The 3rd letter in the word "Being" is i.
+• The 3rd letter in the word "More" is.
+• The 3rd letter in the word "Productive" is o.
+• After joining the 3rd letter of each word in the sentence with the comma( , ) is i,r,o.
+
+The output should be, i,r,o
+
+Tutorial: Join Third Letter of Words
+
+Outline
+
+Question: Join Third Letter of Words
+Approach
+Step 1: Read the input sentence
+Step 2: Split the sentence into words
+Step 3: Find the third letter of each word
+Step 4: Join the third letters with a comma
+Step 5: Print the result
+
+Question: Join Third Letter of Words
+Given a sentence S. The words in the sentence S are separated by a space.
+Write a program that prints a new string by joining the third letter of each word in the sentence with the comma(,).
+
+Approach
+
+To solve this problem, we will follow these steps:
+Read the input sentence.
+Split the sentence into words.
+Find the third letter of each word.
+Join the third letters with a comma.
+Print the result.
+
+Step-by-Step Explanation
+
+Step 1: Read the input sentence
+First, we need to read the input sentence from the user. We can use the input() function to read the input and store it in a variable called sentence.
+
+Step 2: Split the sentence into words
+Now, we need to split the sentence into words. We can use the split() function to do this. It will create a list of words called string_list.
+
+Step 3: Find the third letter of each word
+Next, we need to find the third letter of each word in the string_list. We can use a for loop to iterate through each word in the list. If the length 
+of the word is greater than 2, we can get the third letter using the index 2 (since Python uses zero-based indexing). We will store the third letters 
+in a new list called result.
+
+Step 4: Join the third letters with a comma
+Now that we have the third letters of each word in the result list, we need to join them with a comma. We can use the join() function to do this. 
+It will create a new string called character_joined_by_comma.
+
+Step 5: Print the result
+Finally, we need to print the result, which is the character_joined_by_comma string.
+
+Sample Input 1:
+
+Being More Productive
+
+Sample Output 1:
+
+i,r,o
+
+Sample Input 2:
+
+Python Course
+
+Sample Output 2:
+
+t,u
+
+Solution:
+
+sentence = input()
+string_list = sentence.split()
+result = []
+for word in string_list:
+    if (len(word) > 2):
+        character = word[2]
+        result += [character]
+character_joined_by_comma = ",".join(result)
+print(character_joined_by_comma)
+
+__________________________________________________________________________________________________________________________________________________________
