@@ -1,0 +1,878 @@
+01. Print Unicode Values
+
+Given a string S, write a program to print the Unicode values of all the characters in S, each on a new line.
+
+Input
+The input will be a single line containing a string representing S.
+
+Output
+The output should contain integers that are the Unicode values of all the characters in the string, each on a new line.
+
+Explanation:
+
+For example, if the given string is S = "code"
+• The characters in the string code are c, o, d, and e.
+• The Unicode values of above characters are,
+
+Character   Unicode Values
+
+c              99
+o              111
+d              100
+e              101
+
+The output should be,
+
+99
+111
+100
+101
+
+Sample Input 1:
+
+code
+
+Sample Output 1:
+
+99
+111
+100
+101
+
+Sample Input 2:
+
+India
+
+Sample Output 2:
+
+73
+110
+100
+105
+97
+
+Solution:
+
+string  = input()
+
+for each_character in string:
+    print(ord(each_character))
+
+________________________________________________________________________________________________________________________________________________________________________
+
+02. Count of Characters
+
+
+Given a string S and a number N, write a program to print the count of characters in S whose Unicode value is equal to the given number N.
+
+Input
+The first line of input contains a string representing S.
+The second line of input contains an integer representing N .
+
+Output
+The output should contain the count of characters in the string S whose Unicode value is equal to the given number N.
+
+Explanation
+
+For example, if the given string is S = "Google" and the given number is N = 111
+• The characters in the string Google are G, o, o, g, I and e.
+• The Unicode values of the above characters are,
+
+Character   Unicode Values
+
+G              71
+O              111
+O              111
+g              103
+l              108
+e              101
+
+• There are 2 characters o and O with the same unicode value 111.
+The output should be 2.
+
+Sample Input 1:
+
+Google
+111
+
+Sample Output 1:
+
+2
+
+Sample Input 2:
+
+code-editor
+101
+
+Sample Output 2:
+
+2
+
+Solution:
+
+string = input()
+number = int(input())
+
+count = 0
+
+for each_character in string:
+    if ord(each_character) == number:
+        count = count + 1
+
+print(count)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+03. Print Smallest Letter
+
+Given a string S, write a program to print the character with the smallest Unicode value in the string S.
+
+Input
+The input will be a single line containing a string representing S .
+
+Output
+The output should be a single line containing a string representing the character with the smallest Unicode value in the string S
+
+Explanation
+
+For example, if the given string is S = "edit"
+• The characters in the string edit are e, d, i and t.
+• The Unicode values of the above characters are,
+
+Character   Unicode Values
+
+e              101
+d              100
+i              105
+t              116
+
+• The smallest Unicode value among the characters of the string edit is 100 100 101 <105 < 116 ) and the corresponding character is d.
+The output should be d.
+
+Sample Input 1:
+
+edit
+
+Sample Output 1:
+
+d
+
+Sample Input 2:
+
+baking
+
+Sample Output 2:
+
+a
+
+Solution:
+
+string = input()
+
+smallest_character  = string[0]
+
+for index in range(1, len(string)):
+    if ord(string[index]) < ord(smallest_character):
+        smallest_character = string[index]
+        
+print(smallest_character)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+04. Unicode Value of First Uppercase Letter
+
+Given two numbers X and N, write a program to find the sum of N terms in the given series. 
+Then, print the sum by rounding up to 4 decimals in the given series.
+
+Series: x,x2,x3,x4, ... N terms
+
+Terms in the given series:
+
+Term Number    Term      Power
+
+First Term      X1        1
+Second Term     X2        2
+Third Term      X3        3
+Fourth Term     X4        4
+...            ...       ...
+
+Input
+The first line of input contains a float representing X
+The second line of input contains an integer representing N.
+
+Output
+The output should be a single line containing a float representing the sum of the series (X,X2,X3,X4,...) 
+rounded up to 4 decimals up to N terms.
+
+Explanation
+
+For example, if the given numbers are X = 2.16 and N = 4,
+• Number of terms is 4.
+• The terms from the first term to the fourth term in the given series are 2.16 (2.161), 4.6656 (2.162), 10.077696 (2.163), 21.76782336 (2.164).
+
+Terms in the given series:
+
+Term Number    Term (X = 2.16)       Power
+
+First Term      2.161 (2.16)          1
+Second Term     2.162 (4.6656)        2
+Third Term      2.163 (10.077696)     3
+Fourth Term     2.164 (21.76782336)   4
+
+• The sum of the series up to 4 terms is 38.67111936. (2.16 + 4.6656 + 10.077696 + 21.76782336 = 38.67111936 )
+• The sum of the series rounded up to 4 decimals is 38.6711.
+The output should be 38.6711.
+
+Sample Input 1:
+
+2.16
+4
+
+Sample Output 1:
+
+38.6711
+
+Sample Input 2:
+
+5.789
+7
+
+Sample Output 2:
+
+263379.2558
+
+Solution:
+
+string = input()
+
+for each_character in string:
+    if each_character == each_character.upper():
+        print(ord(each_character))
+        break
+
+________________________________________________________________________________________________________________________________________________________________________
+
+05. Time Conversion
+
+Given a time T in either Minutes (M) or Seconds ( S ).
+Example: 220M, 3S .
+If the last character in the T is M  it is Minutes. 
+If the last character in the T is S, it is Seconds.
+
+Write a program to convert the given time T in Minutes (M) or Seconds (S) into Hours (H) rounded up to 2 decimals.
+The last character of the output should be H representing time in Hours.
+
+Note:
+1 Minute = 1/60 Hours.
+1 Second = 1/3600 Hours.
+
+Input
+The input will be a single line containing a string representing T
+
+Output
+The output should be a single line containing a string obtained by converting Minutes (M) or Seconds (S) into Hours ( H ) as shown in the sample output.
+
+Explanation:
+
+For example, if the given time is T = 80M
+• The given time is in Minutes (M).
+• Converting from Minutes to Hours.
+• 80 Minutes = (80 / 60) Hours since, [1 Minute = 1 / 60 Hours] = 1.333333333 Hours.
+• 1.333333333 Hours rounded up to 2 decimal places is 1.33 Hours.
+The output should be 1.33H
+
+For example, if the given time is T = 4200S
+• The given time is in Seconds (S).
+• Converting from Seconds to Hours.
+• 4200 Seconds = (4200/3600) Hours since, [1 Second = 1/3600 Hours] = 1.16666666667 Hours.
+• 1.16666666667 Hours rounded up to 2 decimal places is 1.17 Hours.
+The output should be 1.17H.
+
+
+Sample Input 1:
+
+80M
+
+Sample Output 1:
+
+1.33H
+
+Sample Input 2:
+
+4200S
+
+Sample Output 2:
+
+1.17H
+
+Solution:
+
+given_time = input()
+
+is_seconds = given_time[-1] == "S"
+
+given_time = given_time[:-1]
+given_time = int(given_time)
+
+if is_seconds:
+    seconds_to_hours = given_time/3600
+    seconds_to_hours = round(seconds_to_hours,2)
+    hours = str(seconds_to_hours)+"H"
+else:
+    minutes_to_hours = given_time/60 
+    minutes_to_hours = round(minutes_to_hours,2)
+    hours = str(minutes_to_hours)+"H"
+    
+print(hours)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+06. Hollow Diamond - 2
+
+Given the number of rows N, write a program to print the hallow diamond pattern similar to the pattern shown below.
+
+    A
+   B B
+  C   C
+ D     D
+E       E
+ D     D
+  C   C
+   B B
+    A
+
+Input
+The input will be a single line containing a positive integer (N).
+
+Output
+The output should be (2*N - 1) rows and (2*N - 1) columns containing the alphabet characters in the hollow diamond pattern.
+
+Explanation:
+
+For example, if the given number is 5, the pattern should contain 9 rows and 9 columns as shown below.
+
+    A
+   B B
+  C   C
+ D     D
+E       E
+ D     D
+  C   C
+   B B
+    A
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+    A
+   B B
+  C   C
+ D     D
+E       E
+ D     D
+  C   C
+   B B
+    A
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+  A
+ B B
+C   C
+ B B
+  A
+
+Solution:
+
+n = int(input())
+alpha = 65
+for row in range(n):
+    left_spaces = " " * (n - row - 1) 
+    hollow_spaces = " " * (2 * row - 1)
+    if row == 0:
+        each_row = left_spaces + chr(alpha)
+        alpha += 1
+    else:
+        each_row = left_spaces + chr(alpha) + hollow_spaces + chr(alpha)
+        alpha += 1
+    print(each_row)
+    
+alpha -= 2
+
+for row in range(1, n):
+    left_spaces = " " * row 
+    hollow_spaces = " " * (2 * (n - row - 1) - 1)
+    if row == n - 1:
+        each_row = left_spaces + chr(alpha)
+    else:
+        each_row = left_spaces + chr(alpha) + hollow_spaces + chr(alpha)
+        alpha -= 1 
+    print(each_row)
+
+----------------------------------------Another Method for Solution-------------------------------------------------------
+
+n = int(input())
+p=65
+left_spaces_count=n-1
+left_spaces=" "*left_spaces_count
+row_output=left_spaces+chr(p)
+print(row_output)
+
+hallow_spaces_count=-1
+for row in range(2,n+1):
+    p=p+1
+    left_spaces_count=n-row
+    left_spaces=" "*left_spaces_count
+    
+    hallow_spaces_count=hallow_spaces_count+2
+    hallow_spaces=" "*hallow_spaces_count
+    
+    row_output=left_spaces+chr(p)+hallow_spaces+chr(p)
+    print(row_output)
+
+for row in range(1, n-1):
+    p=p-1
+    left_spaces_count=row
+    left_spaces=" "*left_spaces_count
+    
+    hallow_spaces_count=hallow_spaces_count-2
+    hallow_spaces=" "*hallow_spaces_count
+    
+    row_output=left_spaces+chr(p)+hallow_spaces+chr(p)
+    print(row_output)
+
+left_spaces_count=n-1
+left_spaces=" "*left_spaces_count
+row_output=left_spaces+"A"
+print(row_output)
+    
+________________________________________________________________________________________________________________________________________________________________________
+
+07. Daimond - 3
+
+Given an integer value N write a program to print a number diamond of 2*N -1 rows as shown below.
+
+. . . . 0 . . . . 
+. . . 0 0 0 . . . 
+. . 0 0 0 0 0 . . 
+. 0 0 0 0 0 0 0 . 
+0 0 0 0 0 0 0 0 0 
+. 0 0 0 0 0 0 0 . 
+. . 0 0 0 0 0 . . 
+. . . 0 0 0 . . . 
+. . . . 0 . . . . 
+
+Input
+The first line of input is an integer N.
+
+Explanation
+In the given example, the number of rows in the diamond is 5
+So, the output should be
+
+. . . . 0 . . . . 
+. . . 0 0 0 . . . 
+. . 0 0 0 0 0 . . 
+. 0 0 0 0 0 0 0 . 
+0 0 0 0 0 0 0 0 0 
+. 0 0 0 0 0 0 0 . 
+. . 0 0 0 0 0 . . 
+. . . 0 0 0 . . . 
+. . . . 0 . . . . 
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+. . . . 0 . . . . 
+. . . 0 0 0 . . . 
+. . 0 0 0 0 0 . . 
+. 0 0 0 0 0 0 0 . 
+0 0 0 0 0 0 0 0 0 
+. 0 0 0 0 0 0 0 . 
+. . 0 0 0 0 0 . . 
+. . . 0 0 0 . . . 
+. . . . 0 . . . . 
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+. . . 0 . . . 
+. . 0 0 0 . . 
+. 0 0 0 0 0 . 
+0 0 0 0 0 0 0 
+. 0 0 0 0 0 . 
+. . 0 0 0 . . 
+. . . 0 . . .
+
+Solution:
+
+n = int(input())
+
+for row in range(n):
+    zeroes = "0 "  * (2 * row + 1)
+    dots = ". " * (n - row - 1)
+    each_row = dots + zeroes + dots
+    print(each_row)
+    
+for row in range(1, n):
+    zeroes = "0 "  * (2 * (n - row) - 1)
+    dots = ". "  * (row)
+    each_row = dots + zeroes + dots
+    print(each_row)
+
+----------------Another Method for Solution-----------------------------
+
+"""n = int(input())
+for row in range(0, n):
+    stars_count=n-row-1
+    left_stars=". "*stars_count
+    hallow_spaces="0 "*(2*row+1)
+    right_stars=". "*(stars_count)
+    print(left_stars+hallow_spaces+right_stars)
+for row in range(1,n):
+    stars_count=n-row-1
+    stars=". "*(row)
+    hallow_spaces="0 "*(2*stars_count+1)
+    print(stars+hallow_spaces+stars)"""
+
+n=int(input())
+for i in range(n-1):
+    for j in range(i,n-1):
+        print(".",end=" ")
+    for j in range(i):
+        print("0",end=" ")
+    for j in range(i+1):
+        print("0",end=" ")
+    for j in range(i,n-1):
+        print(".",end=" ")
+    print()
+
+for i in range(n):    
+    for j in range(i):
+        print(".",end=" ")
+    for j in range(i+1,n):
+        print("0",end=" ")   
+    for j in range(i,n):
+        print("0",end=" ")   
+    for j in range(i):
+        print(".",end=" ")
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+08. M Shape with * - 3
+
+Given a number N N, write a program to print the letter M of N
+rows with two Solid Pyramids using zeros( 0 ) and dots ( . )
+
+. . . 0 . . . . . . 0 . . . 
+. . 0 0 0 . . . . 0 0 0 . . 
+. 0 0 0 0 0 . . 0 0 0 0 0 . 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+Note: There is a space after every zero (0) and every dot (.).
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing zeros (0) and dots (.) as the letter M is shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 3,
+• Print the dots ( . ) and zeros (0) on 3 rows as shown in the given image.
+
+https://res.cloudinary.com/da7qpgps9/image/upload/v1673255920/Screenshot_from_2023-01-09_14-48-20_umaxmr.png
+
+Note
+In the given image,
+• The Dot in the box indicates dot and a spaces (".").
+• The Zero in the box indicates zero and a space ("0").
+
+So, the output should be
+
+. . 0 . . . . 0 . . 
+. 0 0 0 . . 0 0 0 . 
+0 0 0 0 0 0 0 0 0 0 
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+. . 0 . . . . 0 . . 
+. 0 0 0 . . 0 0 0 . 
+0 0 0 0 0 0 0 0 0 0 
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+. . . . 0 . . . . . . . . 0 . . . . 
+. . . 0 0 0 . . . . . . 0 0 0 . . . 
+. . 0 0 0 0 0 . . . . 0 0 0 0 0 . . 
+. 0 0 0 0 0 0 0 . . 0 0 0 0 0 0 0 . 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
+Solution:
+
+rows = int(input())
+
+for row in range(1, rows + 1):
+    pyramid_dots = ". " * (rows - row)
+    pyramid_zeros = "0 " * (2 * row - 1)
+    each_row = pyramid_dots + pyramid_zeros + pyramid_dots
+    
+    print(each_row + each_row)
+
+----------------Another Method for Solution-----------------------------
+
+n=int(input())
+for i in range(1,n+1):
+    print('. '*(n-i)+'0 '*i+'0 '*(i-1)+'. '*(n-i)+'. '*(n-i)+'0 '*i+'0 '*(i-1)+'. '*(n-i))
+
+________________________________________________________________________________________________________________________________________________________________________
+
+09. Alphabets in Hollow M Shape
+
+Given a number N, write a program to print the letter M of N rows using alphabets.
+
+    A         A 
+   B B       B B
+  C   C     C   C
+ D     D   D     D
+E       E E       E
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing alphabets as letter M shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 3,
+• Print the alphabets on 3 rows as shown in the image.
+
+https://res.cloudinary.com/da7qpgps9/image/upload/v1672896953/Screenshot_from_2023-01-05_11-05-40_jydpdj.png
+
+Note: In the given image, the Empty box indicates a space ("")
+
+So, output should be
+
+  A     A 
+ B B   B B
+C   C C   C
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+
+  A     A 
+ B B   B B
+C   C C   C
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+   A       A 
+  B B     B B
+ C   C   C   C
+D     D D     D
+
+Solution:
+
+rows = int(input())
+
+for row in range(1, rows + 1):
+    spaces = " " * (rows - row)
+    
+    if row == 1:
+        each_row = spaces + (chr(row + 64 ) + " ") 
+    else:
+        hollow_spaces = "  " * (row - 2)
+        each_row = spaces + (chr(row + 64) + " ") + hollow_spaces + (chr(row + 64) + " ")
+
+    spaces_between_triangles = " " * (rows - row)
+    
+    print(each_row + spaces_between_triangles + each_row)
+
+----------------Another Method for Solution-----------------------------
+
+n=int(input())
+p=65
+for i in range(1,n+1):
+    if i==1:
+        print(' '*(n-i)+(chr(p)+' ')*i+' '*(n-i)+' '*(n-i)+(chr(p)+' ')*i)
+    else:
+        print(' '*(n-i)+chr(p)+' '*(2*i-3)+chr(p)+' '*(n-i+1)+' '*(n-i)+chr(p)+' '*(2*i-3)+chr(p))
+    p+=1
+
+________________________________________________________________________________________________________________________________________________________________________
+
+10. Hollow Diamond - 3
+
+Given an integer N, write a program to print the hollow diamond pattern in 2*N rows and 2*N columns, similar to the pattern shown below
+
+* * * * * * * * * * 
+* * * *     * * * * 
+* * *         * * * 
+* *             * * 
+*                 * 
+*                 * 
+* *             * * 
+* * *         * * * 
+* * * *     * * * * 
+* * * * * * * * * * 
+
+Input:
+The input will be a single line containing a positive integer (N).
+
+Output:
+The output should be 2*N rows and 2*N columns containing the asterisk(*) characters in the hollow diamond pattern.
+Note: There is a space after each asterisk(*) character.
+
+Explanation:
+
+For example, if the given number is 5, the pattern should contain 10 rows and 10 columns as shown below
+
+* * * * * * * * * * 
+* * * *     * * * * 
+* * *         * * * 
+* *             * * 
+*                 * 
+*                 * 
+* *             * * 
+* * *         * * * 
+* * * *     * * * * 
+* * * * * * * * * * 
+
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+* * * * * * * * * * 
+* * * *     * * * * 
+* * *         * * * 
+* *             * * 
+*                 * 
+*                 * 
+* *             * * 
+* * *         * * * 
+* * * *     * * * * 
+* * * * * * * * * * 
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+* * * * * * 
+* *     * * 
+*         * 
+*         * 
+* *     * * 
+* * * * * * 
+
+Solution:
+
+n = int(input())
+
+for row in range(0, n):
+    stars_count = n - row
+    left_stars = "* " * stars_count
+    hollow_spaces = "  " * (2 * row)
+    right_stars = "* " * stars_count
+    print(left_stars + hollow_spaces + right_stars)
+    
+for row in range(1, n + 1):
+    stars_count = n - row
+    stars = "* " * row
+    hollow_spaces = "  " * (2 * stars_count)
+    print(stars + hollow_spaces + stars)
+
+
+----------------Another Method for Solution-----------------------------
+
+
+"""n = int(input())
+for row in range(0, n):
+    stars_count=n-row
+    left_stars="* "*stars_count
+    hallow_spaces="  "*(2*row)
+    right_stars="* "*stars_count
+    print(left_stars+hallow_spaces+right_stars)
+for row in range(1,n+1):
+    stars_count=n-row
+    stars="* "*row
+    hallow_spaces="  "*(2*stars_count)
+    print(stars+hallow_spaces+stars)"""
+
+"""n=int(input())
+for i in range(n,0,-1):
+    for j in range(i,0,-1):
+        print("*",end=" ")
+    for j in range(2*(n-i)):
+        print(" ", end=" ")
+    for j in range(i,0,-1):
+        print("*",end=" ")
+    print()
+for i in range(n):
+    for j in range(i+1):
+        print("*",end=" ")
+    for j in range(2*(n-i-1)):
+        print(" ", end=" ")
+    for j in range(i+1):
+        print("*",end=" ")
+    print()"""
+
+n=int(input())
+for i in range(n):
+    for j in range(i,n):
+        print("*",end=" ")
+    for j in range(i):
+        print(" ",end=" ")
+    for j in range(i):
+        print(" ",end=" ")
+    for j in range(i,n):
+        print("*",end=" ")
+    print()
+
+for i in range(n):
+    for j in range(i+1):
+        print("*",end=" ")
+    for j in range(i,n-1):
+        print(" ",end=" ")
+    for j in range(i,n-1):
+        print(" ",end=" ")
+    for j in range(i+1):
+        print("*",end=" ")
+    print()
+    
+________________________________________________________________________________________________________________________________________________________________________
