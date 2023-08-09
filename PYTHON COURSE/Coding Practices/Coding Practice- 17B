@@ -1,0 +1,399 @@
+01. Next Characters
+
+Given a string S, write a program to print the next characters of all characters in S based on the Unicode value, each on a new line.
+
+Input
+The input will be a single line containing a string representing S.
+
+Output
+The output should contain the next characters of all characters in S based on the Unicode value, each on a new line.
+
+Explanation:
+
+For example, if the given string is S = "coding",
+The characters in the given string are c, o, d, i, n, and g.
+• The next characters of all characters in Sis,
+
+Character-Unicode   Next Character-Unicode
+
+      c-99                   d-100
+      o-111                  p-112
+      d-100                  e-101
+      i-105                  j-106
+      n-110                  o-111
+      g-103                  h-104
+
+The output should be,
+
+d
+p
+e
+j
+o
+h
+
+Sample Input 1:
+
+code
+
+Sample Output 1:
+
+d
+p
+e
+j
+o
+h
+
+Sample Input 2:
+
+India
+
+Sample Output 2:
+
+73
+110
+100
+105
+97
+
+Solution:
+
+string = input()
+
+for each_character in string:
+    unicode_value = ord(each_character) + 1
+    character = chr(unicode_value)
+    
+    print(character)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+02. Previous Characters
+
+Given a string S , write a program to print the previous characters of all characters in S based on the Unicode value except space, each on a new line.
+
+Note: Do not consider spaces.
+
+Input
+The input will be a single line containing a string representing S.
+
+Output
+The output should contain the previous characters of all characters in S based on the Unicode value except space, each on a new line.
+
+Explanation
+
+For example, if the given string is S = "big dog", Ignore the spaces.
+• The characters in the given string except space are b, i, g, d, o, and g.
+• The previous characters of all characters in S is,
+
+Character-Unicode   Next Character-Unicode
+
+      b-98                  a-97
+      i-105                 h-104
+      g-103                 f-102
+      d-100                 c-99
+      o-111                 n-110
+      g-103                 f-102
+
+The output should be,
+
+a
+h
+f
+c
+n
+f
+
+Sample Input 1:
+
+big dog
+
+Sample Output 1:
+
+a
+h
+f
+c
+n
+f
+
+Sample Input 2:
+
+Fly High
+
+Sample Output 2:
+
+E
+k
+x
+G
+h
+f
+g
+
+Solution:
+
+string = input()
+
+for each_character in string:
+    if each_character != " ":
+        unicode_value = ord(each_character) - 1
+        character = chr(unicode_value)
+    
+        print(character)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+03. First Word in Dictionary Order
+
+Given a sentence S contains space-separated words, write a program to print the word that comes first when the words are in dictionary order.
+
+Note
+• Consider both uppercase and lowercase alphabets as the same.
+• Dictionary order is a way of ordering words or sequences of characters based on their alphabetical order.
+
+Input
+The input will be a single line containing a string representing S.
+
+Output
+The output should be a single line containing a string that is a word in the given sentence that comes first when the words are in dictionary order.
+
+Explanation
+
+For example, if the given sentence is S = "He is bit slow"
+• The words in the given sentence are He, is, bit, and slow.
+• The words in the given sentence in dictionary order are bit, He, is and slow.
+• The word in the given sentence that comes first in the dictionary is bit
+The output should be bit.
+
+Sample Input 1:
+
+He is bit slow
+
+Sample Output 1:
+
+bit
+
+Sample Input 2:
+
+We Are of One Mind
+
+Sample Output 2:
+
+Are
+
+Solution:
+
+s = input()
+
+first_word = s
+word = ""
+
+for i in range(len(s)):
+    char = s[i]
+    word += char
+    
+    if char == " " or i == len(s)-1:
+        if word.lower() < first_word.lower():
+            first_word = word
+        word = ""
+
+print(first_word)
+
+----------------------------------------Another Method----------------------------------------
+
+s=input()
+list1=s.split(' ')
+list1=(sorted(list1,key=str.lower))
+print(list1[0])
+
+________________________________________________________________________________________________________________________________________________________________________
+
+04. Print Words in Dictionary Order
+
+Given a sentence S contains space-separated words, write a program to print the first and the last words of the sentence in dictionary order separated by a space.
+
+Note
+• Consider both uppercase and lowercase alphabets as the same.
+• Dictionary order is a way of ordering words or sequences of characters based on their alphabetical order.
+
+Input
+The input will be a single line containing a string representing S.
+
+Output
+The output should be a single line containing a string obtained by joining the first and last words of the sentence in dictionary order with a space.
+
+Explanation
+
+For example, if the given sentence is S = "to get the Ball rolling",
+• The words in the sentence are to, get, the, Ball, and rolling.
+• The words in dictionary order are Ball, get, rolling, the, and to.
+The first word is Ball.
+• The last word is to.
+The output should be Ball to
+
+Sample Input 1:
+
+to get the Ball rolling
+
+Sample Output 1:
+
+Ball to
+
+Sample Input 2:
+
+Got My Mojo Working
+
+Sample Output 2:
+
+Got Working
+
+Solution:
+
+s = input()
+
+first_word = "z"
+last_word = "a"
+word = ""
+for i in range(len(s)):
+    char = s[i]
+    if char != " ":
+        word += char
+    
+    if char == " " or i == len(s)-1:
+        if word.lower() < first_word.lower():
+            first_word = word
+        if word.lower() > last_word.lower():
+            last_word = word
+        word = ""
+
+first_and_last_word = first_word + " " + last_word
+print(first_and_last_word)
+
+string = input()
+
+for each_character in string:
+    if each_character == each_character.upper():
+        print(ord(each_character))
+        break
+
+----------------------------------------Another Method----------------------------------------
+
+s=input()
+lista=s.split(' ')
+lista=sorted(lista,key=str.lower)
+print(lista[0]+' '+lista[-1])
+
+________________________________________________________________________________________________________________________________________________________________________
+
+05. Valid Variable Name
+
+Given a variable name S check if S is a valid variable name. The variable name is valid if it contains only upper case letters, lower case letters, and digits.
+Print True if S is a valid variable name. Otherwise, print False.
+
+Note
+• The Unicode values of upper case letters (A - Z) are from 65 to 90.
+• The Unicode values of lower case letters (a - z ) are from 97 to 122.
+• The Unicode values of digits (0-9) are from 48 to 57
+
+Input
+The input will be a single line containing a string representing S.
+
+Output
+The output should be a single line containing a boolean. True should be printed if S is a valid variable name. Otherwise, print False.
+
+Explanation
+
+For example, if the given variable name is S = "eachNumber"
+• The characters in the variable name S are e, a, c, h, N, u, m, b, e, and r.
+• The variable name S contains only upper case and lower case letters.
+The output should be True.
+
+Sample Input 1:
+
+eachNumber
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+is even
+
+Sample Output 2:
+
+False
+
+Solution:
+
+variable_name = input()
+
+is_valid = True 
+
+for each_character in variable_name:
+    unicode_value = ord(each_character)
+    valid_character = (65<=unicode_value and 90>=unicode_value) or (97<=unicode_value and 122>=unicode_value) or (48<=unicode_value and 57>=unicode_value)
+    
+    if not valid_character:
+        is_valid = False
+        break 
+    
+print(is_valid)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+06. Valid Variable Name - 2
+
+Given a variable name S check if S is a valid variable name. The variable name is valid if it contains only upper case letters, lower case letters, and digits.
+Print True if S is a valid variable name. Otherwise, print False.
+
+Note
+• The Unicode values of upper case letters (A - Z) are from 65 to 90.
+• The Unicode values of lower case letters (a - z ) are from 97 to 122.
+• The Unicode values of digits (0-9) are from 48 to 57
+
+Input
+The input will be a single line containing a string representing S.
+
+Output
+The output should be a single line containing a boolean. True should be printed if S is a valid variable name. Otherwise, print False.
+
+Explanation
+
+For example, if the given variable name is S = "eachNumber"
+• The characters in the variable name S are e, a, c, h, N, u, m, b, e, and r.
+• The variable name S contains only upper case and lower case letters.
+The output should be True.
+
+Sample Input 1:
+
+eachNumber
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+is even
+
+Sample Output 2:
+
+False
+
+Solution:
+
+
+number = int(input())
+string = ""
+
+for i in range(number):
+    unicode_value = int(input())
+    each_character = chr(unicode_value)
+    string = string + each_character
+    
+print(string)
+
+________________________________________________________________________________________________________________________________________________________________________
