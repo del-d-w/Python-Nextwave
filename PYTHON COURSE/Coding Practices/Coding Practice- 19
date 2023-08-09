@@ -415,116 +415,176 @@ The output should be
 
 Sample Input 1:
 
-5
-20
-Tiger
-Cinema
-5.5
-93
+4
 
 Sample Output 1:
 
-['20', 'Tiger', 'Cinema', '5.5', '93']
+| 
+| \ 
+|  \ 
+|   \ 
+|   / 
+|  / 
+| / 
+| 
 
 Sample Input 2:
 
-3
-12
-17
-43.5
+7
 
 Sample Output 2:
 
-['12', '17', '43.5']
+| 
+| \ 
+|  \ 
+|   \ 
+|    \ 
+|     \ 
+|      \ 
+|      / 
+|     / 
+|    / 
+|   / 
+|  / 
+| / 
+| 
 
 Solution:
 
 n = int(input())
 
-list_a = []
-for i in range(n):
-    value = input()
-    list_a += [value]
+for row in range(n):
+    if row == 0:
+        each_row = "|"
+    else:
+        spaces = " " * row
+        each_row = "|" + spaces + "\\"
+    print(each_row)
+for row in range(n):
+    if row == n - 1:
+        each_row = "|"
+    else:
+        spaces = " " * (n - row - 1)
+        each_row = "|" + spaces + "/"
+    print(each_row)
 
-print(list_a)
+----------------Another Method for Solution-----------------------------
+
+n=int(input())
+for i in range(n):
+    for j in range(i+1):
+        if j==0:
+            print('|',end=' ')
+        elif i==j:
+            print('\\',end=' ')
+        else:
+            print('',end=' ')
+    print()
+for i in range(n):
+    for j in range(n-i):
+        if j==0:
+            print('|',end=' ')
+        elif i+j==n-1:
+            print('/',end=' ')
+        else:
+            print('',end=' ')
+    print()
 
 ________________________________________________________________________________________________________________________________________________________________________
 
-08. Create and Print List - 3
+08. subsequence
 
-You are given N numbers as input. Create a list and add the N numbers which are given as input and print the list.
-
-Input:
-The first line of input is an integer N. The next N lines each contain an integer.
-
-Explanation:
-
-In the given example, N=4 and the numbers are 1, 2, 3, 4.
-So, the output should be [1, 2, 3, 4]
-
-Sample Input 1:
-
-4
-1
-2
-3
-4
-
-Sample Output 1:
-
-[1, 2, 3, 4]
-
-Sample Input 2:
-
-3
-13
-21
-19
-
-Sample Output 2:
-
-[13, 21, 19]
-
-Solution:
-
-n = int(input())
-l = []
-
-for i in range(n):
-    number = int(input())
-    l += [number]
-
-print(l)
-
-________________________________________________________________________________________________________________________________________________________________________
-
-09. List Repetition
-
-A list L is given in the prefilled code.
-Given a number N, write a program that prints the list byrepeating the prefilled list N times.
+Given two strings, write a program to check if the second string is a subsequence of the first string.
+A string can be considered subsequence of other if it can be derived from the original string by ignoring or removing some
+characters without changing the order of the remaining characters.
 
 Input
-The input will be a single line containing an integer representing N.
+The first line of input will contain a string.
+The second line of input will contain a string.
 
 Output
-The output should be a single line containing a list obtained by repeating the prefilled list N times.
+The output should be a single line containing either "Yes" or "No".
 
 Explanation:
 
-For example, if the given number is N = 2,
-• The elements in the given prefilled list L are 1, "two", "3", and 4.0.
-• The prefilled list should be repeated 2 times.
-• After repeating the prefilled list, the elements in the list are 1,
-"two", "3", 4.0, 1, "two", "3", and 4.0.
-The output should be [1, 'two', '3', 4.0, 1, 'two', '3', 4.0]
+For example, if the first string is "abcde" and the second string is "ace", the output should be "Yes", as the second string is a subsequence of the first string.
+
+Whereas, if the first string is "Google", and the second string is "lg", the output should be "No", as the second string is not 
+obtained by ignoring some characters without changing the order in the first string.
 
 Sample Input 1:
 
-2
+abcde
+ace
 
 Sample Output 1:
 
-[1, 'two', '3', 4.0, 1, 'two', '3', 4.0]
+Yes
+
+Sample Input 2:
+
+Google
+lg
+
+Sample Output 2:
+
+No
+
+Solution:
+
+full_string = input()
+subsequence = input()
+subseq_index = 0
+subseq_len = len(subsequence)
+for char in full_string:
+    if char == subsequence[subseq_index]:
+        subseq_index += 1
+        if subseq_index == subseq_len:
+            break
+if subseq_index == subseq_len:
+    print("Yes")
+else:
+    print("No")
+
+________________________________________________________________________________________________________________________________________________________________________
+
+09. Identify the Mistake - Number Pyramid
+
+Given the number of rows N, write a program to print the number pyramid pattern similar to the pattern shown below
+
+    1
+   212
+  32123
+ 4321234
+543212345
+
+Input
+The input will be a single line containing a positive integer (N).
+
+Output
+The output should be N rows containing the numbers in the pyramid pattern.
+
+Explanation:
+
+For example, if the given number is 5, the pattern should contain 5 rows as shown below
+
+    1
+   212
+  32123
+ 4321234
+543212345
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+    1
+   212
+  32123
+ 4321234
+543212345
 
 Sample Input 2:
 
@@ -532,59 +592,88 @@ Sample Input 2:
 
 Sample Output 2:
 
-[1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0]
+  1
+ 212
+32123
 
 Solution:
 
-L = [1, "two", "3", 4.0]
-
-number_of_times = int(input())
-
-resultant_list = L * number_of_times
-
-print(resultant_list)
+n = int(input())
+for i in range(1, n+1):
+    spaces = " "*(n - i)
+    left_nums = ""
+    right_nums = ""
+    for j in range(1, i+1):
+        left_nums = str(j) + left_nums
+        right_nums = right_nums + str(j)
+    print(spaces + left_nums + right_nums[1:])
 
 ________________________________________________________________________________________________________________________________________________________________________
 
-10. List Repetition - 2
+10. Cumulative Sum
 
-Given two integers M and N, write a program to create a list with element M repeated by N times.
+Write a program to compute the cumulative sum of the given N numbers after each input.
+Cumulative sum is the sum of all the previous inputs and the current input.
 
 Input:
-The first line of input will be an integer.
-The second line of input will be a positive integer.
+The first line of input will contain a positive integer (N).
+The following N lines will contain an integer in each line.
 
 Output:
-The output should be a single line containing a list with element M repeated by N times.
+The output should be N lines printing the cumulative sum after each input in a new line.
 
 Explanation:
 
-For example, if the given M and N are 5 and 4, the output should contain a list with the number 5 repeated 4 times.
-[5, 5, 5, 5]
+For example, if the given number is 5, then read the inputs in the next 5 lines and print the cumulative sum after each input. 
+If the given numbers in the next five lines are 8, 11, -96, 49, and 85, 
+the cumulative sum after each input is
+
+8
+8 + 11 = 19
+8 + 11 + -96 = -77
+8 + 11 + -96 + 49 = -28
+8 + 11 + -96 + 49 + 85 = 57
 
 Sample Input 1:
 
 5
-4
+8
+11
+-96
+49
+85
 
 Sample Output 1:
 
-[5, 5, 5, 5]
+8
+19
+-77
+-28
+57
 
 Sample Input 2:
 
--2
+4
+240
+38
+93
+62
 
 Sample Output 2:
 
-[-2, -2, -2, -2, -2, -2, -2, -2]
+240
+278
+371
+433
 
 Solution:
 
-m = int(input())
 n = int(input())
 
-list_a = [m] * n  # repeat n times
-print(list_a)
+total = 0
+for i in range(n):
+    number = int(input())
+    total = total + number
+    print(total)
 
 ________________________________________________________________________________________________________________________________________________________________________
