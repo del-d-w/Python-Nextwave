@@ -1,0 +1,590 @@
+01. Division With 17
+
+Given a number N, write a program that reads N inputs and prints the number without decimals of the quotient of N inputs 
+when each input is divided by 17, each on a new line.
+
+Input
+The first line of input contains an integer representing N.
+The next N lines of input contain integers.
+
+Output
+The output should be N lines containing the number without decimals of the quotient of N inputs when each input is divided by 17, each on a new line.
+
+Explanation:
+
+For example, if the given number is N = 3,
+The three inputs are 5, 98, and 376.
+• The quotient when 5 is divided by 17 is 0.294. (5/17 = 0.294)
+The number without decimals of 0.294 is 0.
+• The quotient when 98 is divided by 17 is 5.764. ( 98/17 = 5.764)
+The number without decimals of 5.764 is 5.
+• The quotient when 376 is divided by 17 is 22.117. (376/17 = 22.117 )
+• The number without decimals of 22.117 is 22.
+The output should be
+0
+5
+22
+
+Sample Input 1:
+
+3
+5
+98
+376
+
+Sample Output 1:
+
+0
+5
+22
+
+Sample Input 2:
+
+5
+34
+57
+76
+23
+-38
+
+Sample Output 2:
+
+2
+3
+4
+1
+-3
+
+Solution:
+
+number = int(input())
+for each_number in range(number):
+    value = int(input())
+    quotient = value // 17
+    print(quotient)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+02. Double Char
+
+Given a string, write a program to double all the characters in the given string.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a new string with all the characters doubled in the given string.
+
+Explanation
+For example, if the given string is "The", the output should be "TThhee".
+
+Sample Input 1:
+
+The
+
+Sample Output 1:
+
+TThhee
+
+Sample Input 2:
+
+Hello
+
+Sample Output 2:
+
+HHeelllloo
+
+Solution:
+
+word = input()
+new_word = ""
+for character in word:
+    new_word = new_word + (character * 2)
+print(new_word)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+03. Seperate Characters With Comma
+
+Given a string S, write a program that prints a string obtained by adding a comma( , ) between the characters of the given string S.
+
+Input
+The input will be a single line containing a string representing S.
+
+Output
+The output should be a single line containing a string obtained by adding a comma ( , ) between the characters of the given string S
+
+Explanation:
+
+For example, if the given string is S = "wonder"
+Characters in the given string "wonder" are w, o, n, d, e and r.
+• The string after adding a comma(,) between the characters of the string "wonder" is "w,o,n,d,e,r".
+The output should be "w,o,n,d,e,r".
+
+Java
+C++
+
+Sample Input 1:
+
+wonder
+
+Sample Output 1:
+
+w,o,n,d,e,r
+
+Sample Input 2:
+
+sIng
+
+Sample Output 2:
+
+s,I,n,G
+
+Solution:
+
+string = input()
+resultant_string = ""
+for index in range(len(string)-1):
+    resultant_string += string[index] + ","
+resultant_string += string[len(string) - 1]
+
+print(resultant_string)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+04. Cumulative Sum
+
+Given a number N, write a program to read N numbers and print the cumulative sum after each input, each on a new line.
+Note: Cumulative sum is the sum of all the previous inputs and the current input.
+
+Input
+The first line of input contains an integer representing N.
+The next N lines of input contain integers.
+
+Output
+The output should be N lines containing an integer that is the cumulative sum after each input, each on a new line.
+
+Explanation
+For example, if the given number is N = 5
+• The 5 given inputs are 8, 11, -96, 49 and 85.
+• The cumulative sum after each input is.
+
+Input     Cumulative Sum
+8             8
+11            19 (8 + 11)
+-96          -77 (8 + 11 - 96)
+49           -28 (8 + 11 - 96 + 49)
+85            57 (8 + 11 -96 + 49 + 85)
+
+The output should be 
+
+8
+19
+-77
+-28
+57
+
+Sample Input 1:
+
+5
+8
+11
+-96
+49
+85
+
+Sample Output 1:
+
+8
+19
+-77
+-28
+57
+
+Sample Input 2:
+
+4
+240
+38
+93
+62
+
+Sample Output 2:
+
+240
+278
+371
+433
+
+Solution:
+
+n = int(input())
+
+total = 0
+for i in range(n):
+    number = int(input())
+    total = total + number
+    print(total)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+05. Cumulative Average
+
+Write a program to compute the cumulative average of the given N numbers after each input.
+Cumulative average is the average of all the inputs read so far.
+
+Input
+The first line of input will contain a positive integer (N).
+The following N lines will contain an integer in each line.
+
+Output
+The output should be N lines printing the cumulative average after each input in a new line.
+Note: Round the averages to three decimal places.
+
+Explanation:
+
+Explanation
+For example, if the given number is 5, then read the inputs in the next 5 lines and print the cumulative average after each input.
+If the given numbers in the next five lines are 8, 11, -96, 49, and 85, the cumulative averages after each input are
+8/1 = 8
+(8+11)/2 = 9.5
+(8 + 11+-96) / 3 = -25.667
+(8+11 +-96 +49) / 4 = -7.0
+(8+ 11+-96 +49 +85) / 5 = 11.4
+
+So the output should be
+
+8.0
+9.5
+-25.667
+-7.0
+11.4
+
+Sample Input 1:
+
+5
+8
+11
+-96
+49
+85
+
+Sample Output 1:
+
+8.0
+9.5
+-25.667
+-7.0
+11.4
+
+Sample Input 2:
+
+4
+240
+38
+93
+62
+
+Sample Output 2:
+
+240.0
+139.0
+123.667
+108.25
+
+Solution:
+
+n = int(input())
+
+total = 0
+for i in range(1, n+1):
+    number = int(input())
+    total = total + number
+    average = total / i
+    print(round(average, 3))
+
+________________________________________________________________________________________________________________________________________________________________________
+
+06. Smallest Among N Inputs
+
+Given a number N write a program that reads N inputs and prints the Smallest Number of them after each input, each on a new line.
+
+Input
+The first line of input contains an integer representing N
+The next N lines of input contain integers.
+
+Output
+The output should be N lines containing the Smallest Number of them after each input, each on a new line.
+
+Explanation:
+
+For example, if the given number is N = 3,
+• The 3 inputs are 32, 6 and 29.
+• The Smallest among the input 32 is 32.
+• The Smallest among the inputs 32 and 6 is 6.
+• The Smallest among the inputs 32, 6 and 29 is 6.
+The output should  be,
+
+32
+6
+6
+
+Sample Input 1:
+
+3
+32
+6
+29
+
+Sample Output 1:
+
+32
+6
+6
+
+Sample Input 2:
+
+5
+109
+156
+-129
+96
+210
+
+Sample Output 2:
+
+109
+109
+-129
+-129
+-129
+
+Solution:
+
+n = int(input())
+smallest_number = 999999999
+for num in range(n):
+    number = int(input())
+    if number < smallest_number:
+        smallest_number = number
+    print(smallest_number)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+07. Hollow Pyramid - 3
+
+Given a number N, write a program to print a Hollow Pyramid of2* N rows using pipes (), backward slashes ( \ ), and forward slashes ( / ).
+
+|
+| \
+|  \
+|   \
+|   /
+|  /
+| /
+|
+
+Note: There is a space after every pipe (|).
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be 2* N rows containing pipes (), backward slashes ( \ ), and forward slashes( / ) as a Hollow Pyramid shown in the sample output.
+
+Explanation
+For example, if the given number is N = 4,
+• Print pipes (), backward slashes ( \ ), and forward slashes(/) on 8 ( 2 * 4 ) rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-pyramid-3.png
+
+Note: In the Given image
+• The emptybox indicates a space("")
+• The Pipe in the box indicates the pipe and a space ("| ")
+
+The output should be 
+
+|
+| \
+|  \
+|   \
+|   /
+|  /
+| /
+|
+
+Sample Input 1:
+
+5
+20
+Tiger
+Cinema
+5.5
+93
+
+Sample Output 1:
+
+['20', 'Tiger', 'Cinema', '5.5', '93']
+
+Sample Input 2:
+
+3
+12
+17
+43.5
+
+Sample Output 2:
+
+['12', '17', '43.5']
+
+Solution:
+
+n = int(input())
+
+list_a = []
+for i in range(n):
+    value = input()
+    list_a += [value]
+
+print(list_a)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+08. Create and Print List - 3
+
+You are given N numbers as input. Create a list and add the N numbers which are given as input and print the list.
+
+Input:
+The first line of input is an integer N. The next N lines each contain an integer.
+
+Explanation:
+
+In the given example, N=4 and the numbers are 1, 2, 3, 4.
+So, the output should be [1, 2, 3, 4]
+
+Sample Input 1:
+
+4
+1
+2
+3
+4
+
+Sample Output 1:
+
+[1, 2, 3, 4]
+
+Sample Input 2:
+
+3
+13
+21
+19
+
+Sample Output 2:
+
+[13, 21, 19]
+
+Solution:
+
+n = int(input())
+l = []
+
+for i in range(n):
+    number = int(input())
+    l += [number]
+
+print(l)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+09. List Repetition
+
+A list L is given in the prefilled code.
+Given a number N, write a program that prints the list byrepeating the prefilled list N times.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be a single line containing a list obtained by repeating the prefilled list N times.
+
+Explanation:
+
+For example, if the given number is N = 2,
+• The elements in the given prefilled list L are 1, "two", "3", and 4.0.
+• The prefilled list should be repeated 2 times.
+• After repeating the prefilled list, the elements in the list are 1,
+"two", "3", 4.0, 1, "two", "3", and 4.0.
+The output should be [1, 'two', '3', 4.0, 1, 'two', '3', 4.0]
+
+Sample Input 1:
+
+2
+
+Sample Output 1:
+
+[1, 'two', '3', 4.0, 1, 'two', '3', 4.0]
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+[1, 'two', '3', 4.0, 1, 'two', '3', 4.0, 1, 'two', '3', 4.0]
+
+Solution:
+
+L = [1, "two", "3", 4.0]
+
+number_of_times = int(input())
+
+resultant_list = L * number_of_times
+
+print(resultant_list)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+10. List Repetition - 2
+
+Given two integers M and N, write a program to create a list with element M repeated by N times.
+
+Input:
+The first line of input will be an integer.
+The second line of input will be a positive integer.
+
+Output:
+The output should be a single line containing a list with element M repeated by N times.
+
+Explanation:
+
+For example, if the given M and N are 5 and 4, the output should contain a list with the number 5 repeated 4 times.
+[5, 5, 5, 5]
+
+Sample Input 1:
+
+5
+4
+
+Sample Output 1:
+
+[5, 5, 5, 5]
+
+Sample Input 2:
+
+-2
+
+Sample Output 2:
+
+[-2, -2, -2, -2, -2, -2, -2, -2]
+
+Solution:
+
+m = int(input())
+n = int(input())
+
+list_a = [m] * n  # repeat n times
+print(list_a)
+
+________________________________________________________________________________________________________________________________________________________________________
