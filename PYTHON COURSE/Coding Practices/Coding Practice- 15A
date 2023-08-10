@@ -462,4 +462,269 @@ for i in range(1,n+1):
         
 ________________________________________________________________________________________________________________________________________________________________________
 
-06. 
+06. Digit 2
+
+Given a Number N, write a program to print the digit 2 in 2 * N - 1 rows using stars (*)
+
+* * * 
+    * 
+* * * 
+*     
+* * *
+
+Note : There is space after every star (*)
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be 2* N-1
+rows containing stars (*) as the digit 2 shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 5,
+• Print the stars (*) on 9 ( 2 * 5-1 ) rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-digit-2.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The Ouput Should be
+
+* * * * * 
+        * 
+        * 
+        * 
+* * * * * 
+*         
+*         
+*         
+* * * * * 
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+* * * * * 
+        * 
+        * 
+        * 
+* * * * * 
+*         
+*         
+*         
+* * * * * 
+
+Sample Input 2:
+
+3
+
+Sample Output 1:
+
+* * * 
+    * 
+* * * 
+*     
+* * * 
+
+Solution
+
+n=int(input())
+for row in range(1,2*n):
+    if row==1 or row==n or row==(2*n-1):
+        ecah_row="* "*n 
+    elif row<n:
+        spaces=" "*(2*(n-1))
+        ecah_row=spaces+"*"
+    else:
+        ecah_row="*"
+    print(ecah_row)
+
+------------------------------------Another solution--------------------------------
+
+n=int(input())
+for i in range(1,n):
+    for j in range(1,n+1):
+        if i==1 or j==n:
+            print('*',end=' ')
+        else:
+            print(' ',end=' ')
+    print()
+for i in range(1,n+1):
+    for j in range(1,n+1):
+        if i==1 or i==n or j==1:
+            print('*',end=' ')
+        else:
+            print(' ',end=' ')
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+07. Alphabets in Square
+
+Given a Number N, write a program to print a Sqaure of N  rows using letters
+
+A B C 
+A B C 
+A B C
+
+Quick Tip:
+
+To print the letters in a Square,
+• Create a string that contains all capital letters. ("ABCDEFGHIJKLMNOPQRSTUVWXYZ").
+• Use String Indexing to access the letters in string "ABCDEFGHIJKLMNOPQRSTUVWXYZ".
+
+Note : There is space after every letter
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing letters as a Square shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 4,
+• Print the letters on 4 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-alphabets-in-square.png
+
+Note
+In the given image,
+• The letter in the box indicates the letter and space ("A ").
+
+The Ouput Should be
+
+A B C D 
+A B C D 
+A B C D 
+A B C D 
+
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+A B C D 
+A B C D 
+A B C D 
+A B C D 
+
+Sample Input 2:
+
+7
+
+Sample Output 1:
+
+A B C D E F G 
+A B C D E F G 
+A B C D E F G 
+A B C D E F G 
+A B C D E F G 
+A B C D E F G 
+A B C D E F G 
+
+Solution
+
+string="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+n=int(input())
+for i in range(n):
+    each_row=""
+    for row in range(n):
+        each_row=each_row+string[row]+" "
+    print(each_row)
+
+------------------------------------Another solution--------------------------------
+
+n=int(input())
+for i in range(n):
+    p=65
+    for j in range(n):
+        print(chr(p),end=' ')
+        p+=1
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+08. Alphabets in Inverted Right Angled Traingle
+
+Given a Number N, write a program to print an Inverted Right Angled Traingle of N  rows using letters
+
+A B C D 
+A B C 
+A B 
+A 
+
+Quick Tip:
+
+To print the letters in a Square,
+• Create a string that contains all capital letters. ("ABCDEFGHIJKLMNOPQRSTUVWXYZ").
+• Use String Indexing to access the letters in string "ABCDEFGHIJKLMNOPQRSTUVWXYZ".
+
+Note : There is space after every letter
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing letters as an Inverted Right Angled Traingle shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 5,
+• Print the letters on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-alphabets-in-inverted-right-angled-triangle.png
+
+Note
+In the given image,
+• The letter in the box indicates the letter and space ("A ").
+
+The Ouput Should be
+
+A B C D E 
+A B C D 
+A B C 
+A B 
+A 
+
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+A B C D E 
+A B C D 
+A B C 
+A B 
+A  
+
+Sample Input 2:
+
+8
+
+Sample Output 1:
+
+A B C D E F G H 
+A B C D E F G 
+A B C D E F 
+A B C D E 
+A B C D 
+A B C 
+A B 
+A 
+
+Solution
+
+
+------------------------------------Another solution--------------------------------
