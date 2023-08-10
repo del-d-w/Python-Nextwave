@@ -1,0 +1,616 @@
+01. First Uppercase Letter
+
+Given a string S, write a program to print the uppercase letter that appears first in the string S.
+
+Input
+The input will be a single line containing a string representing S.
+
+Output
+The output should be a single line containing a string representing uppercase letter that appears first in the string S.
+
+Explanation:
+
+For example, if the given string is S = superHeroes,
+• The uppercase letters in the string "superHeroes" are "H" and "S".
+• The first uppercase letter that appears first in the string "superHeroes" is "H".
+The output should be H.
+
+Sample Input 1:
+
+superHeroeS
+
+Sample Output 1:
+
+H
+
+Sample Input 2:
+
+100Meters
+
+Sample Output 2:
+
+M
+
+Solution:
+
+s=input()
+for character in s:
+    if character.isdigit():
+        continue
+    else:
+        if character.upper()==character:
+            print(character)
+            break
+
+---------------------------------------Anothet Solution-------------------------------------------
+
+n = input()
+for i in n:
+    if i.upper() == i:    
+        if not i.isdigit():
+            print(i)   
+            break 
+
+________________________________________________________________________________________________________________________________________________________________________
+
+02. First Word in Uppercase
+
+Given a sentence S write a program to print a new sentence by changing all letters of the first word in the sentence S to upper case.
+
+Input
+The input will be a single line containing a string representing the sentence S
+
+Output
+The output should be a single line containing a string, obtained by changing all letters of the first word in the sentence S to upper case.
+
+Explanation
+
+For example, if the given sentence is S = "Python is a programming language."
+• The words in the sentence "Python is a programming language" are "Python", "is", "a", "programming" and "language.".
+• The first word in the sentence "Python is a programming language" is "Python".
+• The new sentence after changing all letters of the first word "Python" in the given sentence to upper case is "PYTHON is a programming language.".
+
+The output should be PYTHON is a programming language.
+
+Sample Input 1:
+
+Python is a programming language.
+
+Sample Output 1:
+
+PYTHON is a programming language.
+
+Sample Input 2:
+
+Gita plays cricket.
+
+Sample Output 2:
+
+GITA plays cricket.
+
+Solution:
+
+sentence=input()
+first_space_index=0
+for char in sentence:
+    if char==" ":
+        break
+    else:
+        first_space_index=first_space_index + 1
+upper_case_word=sentence[:first_space_index].upper()
+new_sentence=upper_case_word+sentence[first_space_index:]
+print(new_sentence)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+03. First Negative Number
+
+Given a number N, write a program that reads write a program that reads N inputs and prints the first negative number among the N inputs.
+
+Input
+The first line of input contains an integer representing N
+The next N lines of input contain integers.
+
+Output
+The output should be a single line containing an integer that is the first negative number among the given N inputs.
+
+Explanation
+
+For example, if the given Number is N=5
+• The given numbers are
+
+5
+8
+11
+-96
+49
+-25
+
+• Negative numbers in the given numbers are -96 and -25.
+• The first negative number among the given numbers is -96.
+The output should be -96.
+
+Sample Input 1:
+
+5
+8
+11
+-96
+49
+-25
+
+Sample Output 1:
+
+-96
+
+Sample Input 2:
+
+8
+18
+11
+96
+49
+25
+1
+0
+-1
+
+Sample Output 2:
+
+-1
+
+Solution:
+
+n = int(input())
+for i in range(n):
+    number = int(input())
+    if number < 0:   
+        print(number) 
+        break 
+
+________________________________________________________________________________________________________________________________________________________________________
+
+04. First Even Number
+
+Given a number N, write a program that reads N inputs and prints the first Even number among the N inputs.
+
+Input
+The first line of input contains an integer representing N
+The next N lines of input contain integers.
+
+Output
+The output should be a single line containing an integer that is the first Even number among the given N inputs.
+
+Explanation
+
+For example, if the given Number is N=5
+• The given numbers 6 are
+
+3
+5
+4
+6
+1
+2
+
+Sample Input 1:
+
+6
+3
+5
+4
+6
+1
+2
+
+• Even numbers in the given numbers are 4, 6, and 2
+• The first even number among the given numbers is 4.
+The output should be 4.
+
+Sample Output 1:
+
+4
+
+Sample Input 2:
+
+3
+11111
+2
+-5
+
+Sample Output 2:
+
+2
+
+Solution:
+
+n=int(input())
+for i in range(1,n+1):
+    m=int(input())
+    if m%2==0:
+        print(m)
+        break
+
+________________________________________________________________________________________________________________________________________________________________________
+
+05. First Prime Number from M to N
+
+Given two Numbers M and N. Write a program to print the first prime number M to N. If no prime numbers are present 
+from M to N print No prime numbers in the given range.
+
+Note
+• A Prime Number is a positive number greater than 1 that has no factors other than 1 and itself.
+• Factors of N:
+  • If a number N is divisible by X, then X is a factor of N.
+    ■ Example:
+      ■ If N = 15 and X = 3, then 3 is a factor of 15 as 15 is divisible by 3.
+      ■ If N = 15 and X = 7 then 7 is not a factor of 15 as 15 is not divisible by 7.
+
+Input
+The first line of input contains an integer representing M. The second line of input contains an integer representing N
+
+Output
+The output should be a single line containing an integer representing the first prime number from M to N . 
+If no prime numbers are present from M to N, the string No prime numbers in the given range should be printed.
+
+Explanation:
+
+For example, if the given numbers are
+M = 25 and N = 50,
+• The numbers that have no factors other than 1 and itself from 25 to 50 are 29, 31, 37, 41, 43 and 47.
+• The first number that has no factors other than 1 and itself from 25 to 50 is 29.
+The output should be 29.
+For example, if the given numbers are M = 8 and N = 10,
+• There are no numbers that have no factors other than 1 and itself between 8 and 10.
+The output should be "No prime numbers in the given range".
+
+Sample Input 1:
+
+25
+50
+
+Sample Output 1:
+
+29
+
+Sample Input 2:
+
+8
+10
+
+Sample Output 2:
+
+No prime numbers in the given range
+
+Solution:
+
+m=int(input())
+n=int(input())
+if not (m>1):
+    m=2
+no_primes=True
+for i in range(m,n+1):
+    is_prime=True
+    for j in range(2,i):
+        if i%j==0:
+            is_prime=False
+            break
+    if is_prime:
+        print(i)
+        no_primes=False
+if no_primes:
+    print("No prime numbers in the given range")
+
+
+---------------------------------------Another Solution-----------------------------------------
+
+"""m = int(input())
+n = int(input())
+if not (m > 1):
+  m = 2
+no_primes = True
+for i in range(m, n+1):
+  is_prime = True
+  for j in range(2, i):
+    if i % j == 0:
+      is_prime = False
+      break
+  if is_prime:
+    print(i)
+    no_primes = False
+    break
+if no_primes:
+  print("No prime numbers in the given range")"""
+
+m=int(input())
+n=int(input())
+sum=0
+for i in range(m,n+1):
+    is_prime=False
+    for j in range(2,i):
+        if(i%j)==0:
+            is_prime=True
+    if is_prime==False and i>1:
+        print(i)
+        break
+if is_prime:
+    print("No prime numbers in the given range")
+________________________________________________________________________________________________________________________________________________________________________
+
+06. GCD
+
+Given two numbers M and N N, write a program to print the Greatest Common Divisor (G.C.D) of the numbers M and N.
+
+Note:
+
+• The greatest common divisor (G.C.D) of two numbers is the largest positive factor that perfectly divides the two given numbers.
+• Factors of N:
+   • If a number N is divisible by X, then X is a factor of N.
+      ■ Example:
+        ■ If N = 15 and X = 3, then 3 is a factor of 15 as 15 is divisible by 3.
+        ■ If N = 15 and X = 7, then 7 is not a factor of 15 as 15 is not divisible by 7.
+
+Quick Tip
+The greatest common divisor (G.C.D) will be between 1 and the minimum number of the given two numbers.
+
+Input
+The first line of input contains an integer representing M
+The second line of input contains an integer representing N
+
+Output
+The output should be a single line containing an integer that is the GCD of the numbers M and N.
+
+Explanation:
+
+For example, if the given numbers are M = 4 and N = 6,
+• The factors of 4 are 1, 2 and 4.
+• The factors of 6 are 1, 2, 3 and 6.
+• The common factors of 4 and 6 are 1 and 2.
+• The greatest common divisor of the two numbers 4 and 6 is 2( 2 >1).
+The output should be 2.
+
+Sample Input 1:
+
+4
+6
+
+Sample Output 1:
+
+2
+
+Sample Input 2:
+
+16
+9
+
+Sample Output 2:
+
+1
+
+Solution:
+
+a=int(input())
+b=int(input())
+if(a>b):
+    smaller=b
+else:
+    smaller=a
+gcd=smaller
+for i in range(1,smaller+1):
+    if (a%i==0)and(b%i==0):
+        gcd=i
+print(gcd)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+07. Identify the Mistake - Shape
+
+Given two numbers M and N, write a program to print the Least Common Multiple (L.C.M) of the numbers M and N.
+
+Note:
+
+• The least common multiple (L.C.M) of two numbers is the smallest positive factor that is perfectly divisible by the two given numbers.
+• A multiple of a number is a number that is the product of a given number and some other number.
+  • Example : 7 X 2 = 14, 14 is a multiple of 7.
+
+Quick Tip
+A least common multiple always starts from the maximum number of the given two numbers.
+
+Input
+The first line of input contains an integer representing M. 
+The second line of input contains an integer representing N.
+
+Output
+The output should be a single line containing an integer that is the LCM of the numbers M and N.
+
+Explanation
+
+For example, if the given numbers are M = 2 and N = 3,
+• The multiples of 2 are 2, 4, 6, 8, 10, 12, 18,....
+• The multiples of 3 are 3, 6, 9, 12, 15, 18,....
+• The common multiples of the two numbers 2 and 3 are 6, 12, 18, ....
+• The least common multiple of the two numbers 2 and 3 is 6 ( 6 < 12 < 18 < .. ).
+
+The output should be 6.
+
+Sample Input 1:
+
+2
+3
+
+Sample Output 1:
+
+6
+
+Sample Input 2:
+
+16
+9
+
+Sample Output 2:
+
+144
+
+Solution:
+
+m=int(input())
+n=int(input())
+if m>n:
+    greatest_number=m 
+else:
+    greatest_number=n 
+for number in range(greatest_number, (m*n+1)):
+    if((number%m)==0 and (number%n)==0):
+        lcm=number
+        break
+print(lcm)
+
+----------------------------------------------Another solution -----------------------------------
+
+a=int(input())
+b=int(input())
+for i in range(1,a*b+1):
+    if (i%a==0)and(i%b==0):
+        print(i)
+        break
+
+"""
+m=int(input())
+n=int(input())
+if m>n:
+    greatest=m
+else:
+    greatest=n
+lcm_found=False
+for i in range(greatest,(m*n)+1):
+    if not lcm_found:
+        if(i%m==0 and i%n==0):
+            lcm_found=True
+            lcm=i
+print(lcm)
+"""
+
+________________________________________________________________________________________________________________________________________________________________________
+
+08. Consonants Phrase
+
+Given a sentence S, write a program to print a new sentence by removing vowels from the given sentence S.
+
+Note
+• Vowels are A, E, I, O, U, a, e, i, o and u.
+• Consider both uppercase and lowercase vowels.
+
+Input
+The input will be a single line containing a string representing S.
+
+Output
+The output should be a single line containing a string obtained by removing vowels from the given sentence.
+
+Explanation
+
+For example, if the given sentence is Speak louder
+• The vowels in the given sentence are e, a, o, u, and e. (Speak louder).
+• After removing the vowels from the given sentence (Speak leuder), the new sentence is Spk Idr.
+The output should be Spk Idr.
+
+Sample Input 1:
+
+Speak louder
+
+Sample Output 1:
+
+Spk ldr
+
+Sample Input 2:
+
+Under the table
+
+Sample Output 1:
+
+ndr th tbl
+
+Solution
+
+s=input()
+result=""
+for each_character in s:
+    lowercase_character=each_character.lower()
+    is_vowel=(lowercase_character=='a') or (lowercase_character=='e') or (lowercase_character=='i') or (lowercase_character=='o') or (lowercase_character=='u')
+    if is_vowel:
+        continue
+    result=result+each_character
+print(result)
+
+----------------------------------------Another Solution------------------------------------------
+
+s=input()
+lista=['a','e','i','o','u','A','E','I','O','U']
+n=''
+for i in s:
+    if i not in lista:
+        n+=i 
+print(n)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+10. Identify the Mistake - Prime Number
+
+Given a number N. Write a program to check if the given number is a Prime Number. Print True if the given number is a Prime Number. Otherwise, print False.
+
+Note
+• A Prime Number is a positive integer greater than 1 that has no factors other than 1 and itself.
+• A factor of a number is a positive integer that divides the number exactly, leaving no remainder.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be a single line containing a boolean. True should be printed if N is a prime number. Otherwise False should be printed.
+
+Explanation
+
+For example, if the given number is N = 22,
+• The factors of the number 22 are 1, 2, 11 and 22.
+• The number 22 has factors other than 1 and 22( 2, 11 ).
+The output should be False.
+
+Sample Input 1:
+
+22
+
+Sample Output 1:
+
+False
+
+Sample Input 2:
+
+37
+
+Sample Output 1:
+
+True
+
+Solution
+
+n=int(input())
+if n>1:
+    is_prime=True
+else:
+    is_prime=False
+for i in range(2,n):
+    if (n%i)==0:
+        is_prime=False
+        break
+print(is_prime)
+
+---------------------------------------------Another Solution---------------------------------------------
+
+n = int(input())
+is_prime = True
+for i in range(2, n):
+    if (n % i) == 0:
+        is_prime = False
+        break
+print(is_prime)
+
+________________________________________________________________________________________________________________________________________________________________________
