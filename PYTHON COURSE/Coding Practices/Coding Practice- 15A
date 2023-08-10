@@ -1,0 +1,465 @@
+01. Solid Half Diamond
+
+Given an integer N, write a program to print the solid half diamond pattern in (2*N - 1) rows and N columns, similar to the pattern shown below
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+
+
+Input
+The input will be a single line containing a positive integer (N).
+
+Output
+The output should be (2*N - 1) rows and N columns containing the asterisk(*) characters in the solid half diamond pattern.
+Note: There is a space after each asterisk(*) character.
+
+Explanation
+
+For example, if the given number is 5, the pattern should contain 9 rows and 5 columns as shown below.
+
+Sample Input 1:
+
+5
+
+Sample Ouput 1:
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+
+Sample Input 2:
+
+3
+
+Sample Ouput 2:
+
+* 
+* * 
+* * * 
+* * 
+* 
+
+Solution:
+
+n=int(input())
+for i in range(1,n+1):
+    print("* "*i)
+for i in range(1,n+1):
+    print("* "*(n-i))
+
+"""n=int(input())
+for i in range(1,n):
+    for j in range(1,i+1):
+        print("*",end=" ")
+    print()
+for i in range(n,0,-1):
+    for j in range(1,i+1):
+        print("*",end=" ")
+    print()"""
+
+________________________________________________________________________________________________________________________________________________________________________
+
+02. Butterfly - 2
+
+Given a number N, write a program to print a Butterfly of 2*N rows using stars ( * ).
+
+*                 * 
+* *             * * 
+* * *         * * * 
+* * * *     * * * * 
+* * * * * * * * * * 
+* * * * * * * * * * 
+* * * *     * * * * 
+* * *         * * * 
+* *             * * 
+*                 * 
+
+Note: There is a space after start (*).
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be 2*N rows containing stars (*) as a Butterfly shown in the sample output.
+
+Explanation
+For example, if the given number is N = 5
+• Print the stars ( * ) on 10 (25) rows as shown in the given image.
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-butterfly-2.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("*").
+The output should be,
+
+*                 * 
+* *             * * 
+* * *         * * * 
+* * * *     * * * * 
+* * * * * * * * * * 
+* * * * * * * * * * 
+* * * *     * * * * 
+* * *         * * * 
+* *             * * 
+*                 * 
+
+Sample Input 1:
+
+5
+
+Sample Ouput 1:
+
+*                 * 
+* *             * * 
+* * *         * * * 
+* * * *     * * * * 
+* * * * * * * * * * 
+* * * * * * * * * * 
+* * * *     * * * * 
+* * *         * * * 
+* *             * * 
+*                 * 
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+*         * 
+* *     * * 
+* * * * * * 
+* * * * * * 
+* *     * * 
+*         * 
+
+Solution
+
+n=int(input())
+for i in range(1,n+1):
+    stars="* "*i 
+    middle_spaces="  "*(2*(n-i))
+    print(stars+middle_spaces+stars)
+
+for i in range(n):
+    stars="* "*(n-i)
+    middle_spaces="  "*(2*i)
+    print(stars+middle_spaces+stars)
+
+---------------------------------------------------------Another Solution------------------------------------------
+"""n=int(input())
+# Upper part
+for i in range(1,n+1):
+    for j in range(1, 2*n+1):
+        if j>i and j< 2*n+1-i:
+            print("  ", end="")
+        else:
+            print("* ", end="")
+    print()
+
+# Lower part
+for i in range(n,0,-1):
+    for j in range(2*n,0,-1):
+        if j>i and j< 2*n+1-i:
+            print("  ", end="")
+        else:
+            print("* ", end="")
+    print() """
+
+n=int(input())
+for i in range(n):
+    for j in range(i+1):
+        print("*",end=" ")
+    for j in range(i,n-1):
+        print(" ",end=" ")
+    for j in range(i,n-1):
+        print(" ",end=" ")
+    for j in range(i+1):
+        print("*",end=" ")
+    print()
+for i in range(n):
+    for j in range(i,n):
+        print("*",end=" ")
+    for j in range(i):
+        print(" ",end=" ")
+    for j in range(i):
+        print(" ",end=" ")
+    for j in range(i,n):
+        print("*",end=" ")
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+03. Numbers in Pyramid - 3
+
+Given a number N, write a program to print a Pyramid inside a rectangle of N rows using ones ( 1 ) to represent the pyramid and zeros (0)
+in the remaining places of the rectangle.
+
+0 0 0 0 1 0 0 0 0 
+0 0 0 1 1 1 0 0 0 
+0 0 1 1 1 1 1 0 0 
+0 1 1 1 1 1 1 1 0 
+1 1 1 1 1 1 1 1 1 
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing ones (1) as a Pyramid inside a rectangle of zeros (0) shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 5,
+• Print zeros( 0 ) and ones (1) on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-pyramid-3.png
+
+Note
+In the given image, the Number in the box indicates the number and a space ("1").
+The output should be,
+
+0 0 0 0 1 0 0 0 0 
+0 0 0 1 1 1 0 0 0 
+0 0 1 1 1 1 1 0 0 
+0 1 1 1 1 1 1 1 0 
+1 1 1 1 1 1 1 1 1 
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+0 0 0 0 1 0 0 0 0 
+0 0 0 1 1 1 0 0 0 
+0 0 1 1 1 1 1 0 0 
+0 1 1 1 1 1 1 1 0 
+1 1 1 1 1 1 1 1 1 
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+0 0 1 0 0 
+0 1 1 1 0 
+1 1 1 1 1 
+
+Solution
+
+n=int(input())
+for i in range(1,n+1):
+    zeroes="0 "*(n-i)
+    ones="1 "*((2*i)-1)
+    print(zeroes+ones+zeroes)
+
+-----------------------------------Another Solution-------------------------------
+
+rows = int(input())
+for i in range(rows):
+  j = i + 1
+  m = 1 + (2*i)
+  print('0 '*(rows-j)+ '1 ' * m+ '0 '*(rows-j))
+
+________________________________________________________________________________________________________________________________________________________________________
+
+04. Pyramid - 8
+
+Given a number N, write a program to print a Pyramid of N rows using stars ( * )
+
+    * * 
+  * * * * 
+* * * * * * 
+
+Note
+
+• Each row should contain even number of stars ( * ). Even numbers start 2
+• There is a space after every star ( * ) 
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars ( * )  as a Pyramid shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 4
+• Print the stars (*) on 4 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-pyramid-8.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The output should be,
+
+      * * 
+    * * * * 
+  * * * * * * 
+* * * * * * * * 
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+      * * 
+    * * * * 
+  * * * * * * 
+* * * * * * * * 
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+            * * 
+          * * * * 
+        * * * * * * 
+      * * * * * * * * 
+    * * * * * * * * * * 
+  * * * * * * * * * * * * 
+* * * * * * * * * * * * * * 
+
+solution
+
+n=int(input())
+for row in range(1,n+1):
+    spaces="  "*(n-row)
+    stars="* "*(2*row)
+    each_row=spaces+stars
+    print(each_row)
+
+-------------------------------------Another Solution------------------------------------
+
+n=int(input())
+for i in range(1,n+1):
+    print('  '*(n-i)+'* '*i+'* '*i)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+05. Digit - 6
+
+Given a Number N, write a program to print the digit 6 in 2 * N - 1 rows using stars (*)
+
+* * * 
+*     
+* * * 
+*   * 
+* * * 
+
+Note : There is space after every star (*)
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be 2* N-1
+rows containing stars (*) as the digit 6 shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 4,
+• Print the stars (*) on 7 ( 2 * 4-1 ) rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-digit-6.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The Ouput Should be
+
+* * * * 
+*       
+*       
+* * * * 
+*     * 
+*     * 
+* * * * 
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+* * * * 
+*       
+*       
+* * * * 
+*     * 
+*     * 
+* * * * 
+
+Sample Input 2:
+
+5
+
+Sample Output 1:
+
+* * * * * 
+*         
+*         
+*         
+* * * * * 
+*       * 
+*       * 
+*       * 
+* * * * * 
+
+Solution
+
+n=int(input())
+for row in range(1, 2 * n):
+    if row == 1 or row == n or row == ( 2 * n - 1):
+        each_row="* " * n 
+    elif row < n:
+        each_row = "* "
+    else:
+        spaces=" " * (2 * (n - 2))
+        each_row= "* " + spaces +"* "
+    print(each_row)
+
+--------------------------------------Another Solution----------------------------------------
+
+n=int(input())
+for i in range(1,n):
+    for j in range(1,n+1):
+        if i==1 or j==1 or i==n:
+            print('*',end=' ')
+        else:
+            print(' ',end=' ')
+    print()
+for i in range(1,n+1):
+    for j in range(1,n+1):
+        if i==1 or j==1 or i==n or j==n:
+            print('*',end=' ')
+        else:
+            print(' ',end=' ')
+    print()
+        
+________________________________________________________________________________________________________________________________________________________________________
+
+06. 
