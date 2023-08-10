@@ -346,30 +346,24 @@ ________________________________________________________________________________
 
 06. Valid Variable Name - 2
 
-Given a variable name S check if S is a valid variable name. The variable name is valid if it contains only upper case letters, lower case letters, and digits.
+Given a variable name S, check if S is a valid variable name. Variable name is valid if it starts with an alphabet or an underscore.
 Print True if S is a valid variable name. Otherwise, print False.
-
-Note
-• The Unicode values of upper case letters (A - Z) are from 65 to 90.
-• The Unicode values of lower case letters (a - z ) are from 97 to 122.
-• The Unicode values of digits (0-9) are from 48 to 57
 
 Input
 The input will be a single line containing a string representing S.
 
 Output
-The output should be a single line containing a boolean. True should be printed if S is a valid variable name. Otherwise, print False.
+The output should be a single line containing a boolean. Print True if S is a valid variable name. Otherwise, print False.
 
 Explanation
 
-For example, if the given variable name is S = "eachNumber"
-• The characters in the variable name S are e, a, c, h, N, u, m, b, e, and r.
-• The variable name S contains only upper case and lower case letters.
+For example, if the given variable name is S = "_number"
+• The first character in S is _.
 The output should be True.
 
 Sample Input 1:
 
-eachNumber
+_number
 
 Sample Output 1:
 
@@ -377,7 +371,7 @@ True
 
 Sample Input 2:
 
-is even
+1stnumber
 
 Sample Output 2:
 
@@ -385,15 +379,10 @@ False
 
 Solution:
 
-
-number = int(input())
-string = ""
-
-for i in range(number):
-    unicode_value = int(input())
-    each_character = chr(unicode_value)
-    string = string + each_character
-    
-print(string)
+n=input()
+if n[0]=='_' or n[0].islower() or n[0].isupper():
+    print(True)
+else:
+    print(False)
 
 ________________________________________________________________________________________________________________________________________________________________________
