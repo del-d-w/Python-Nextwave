@@ -553,7 +553,7 @@ print(n)
 
 ________________________________________________________________________________________________________________________________________________________________________
 
-10. Identify the Mistake - Prime Number
+09. Identify the Mistake - Prime Number
 
 Given a number N. Write a program to check if the given number is a Prime Number. Print True if the given number is a Prime Number. Otherwise, print False.
 
