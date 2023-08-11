@@ -1,0 +1,738 @@
+01. First Word
+
+Given a sentence S containing space-separated words, write a program to print the first word among the words in the sentence S.
+
+Input
+The input will be a single line containing a string representing S
+
+Output
+The output should be a single line containing a string that is the first word in the given sentence S
+
+Explanation
+For example, if the given sentence is S = "Chasing rainbows"
+• The given sentence "Chasing rainbows" has two words "Chasing" and "rainbows".
+• The first word in the sentence "Chasing rainbows" is "Chasing".
+The output should be Chasing.
+
+Sample Input 1:
+
+Chasing rainbows
+
+Sample Output 1:
+
+Chasing
+
+Sample Input 2:
+
+Once in a blue moon
+
+Sample Output 2:
+
+Once
+
+Solution
+
+string = input()
+
+first_word = ""
+for char in string:
+    if char == " ":
+        break
+    else:
+        first_word = first_word + char        
+print(first_word)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+02. Largest Factor of a Number
+
+Given a number N, write a program to print the largest factor of N that is less than the numberN.
+
+Note
+
+Factors of N:
+If a number N is divisible by X, then X is a factor of N
+Example:
+If N = 15 and X = 3 then 3 is a factor of 15 as 15 is divisible by 3.
+If N = 15 and X = 7 then 7 is not a factor of 15 as 15 is not divisible by 7.
+
+Input
+The input will be a single line containing an integer representing N
+
+Output
+The output should be a single line containing an integer that is the largest factor of N that is less than the number N.
+
+Explanation
+For example, if the given number is N = 8,
+• The factors of 8 are 1, 2, 4, and 8.
+• The largest factor of 8 that is less than 8 is 4.
+The Output should be 4.
+
+Sample Input 1:
+
+8
+
+Sample Output 1:
+
+4
+
+Sample Input 2:
+
+128
+
+Sample Output 2:
+
+64
+
+Solution
+
+number = int(input())
+
+for each_number in range(1, number):
+    if number % each_number == 0:
+        largest_factor = each_number
+        
+print(largest_factor)
+
+---------------------------------------------Another Solution---------------------------------
+
+n=int(input())
+lista=[]
+for i in range(1,n+1):
+    if n%i==0:
+        if i<n:
+            lista.append(i)
+print(lista[-1])
+
+________________________________________________________________________________________________________________________________________________________________________
+
+03. Kth largest Factor
+
+Given two numbers N and K, write a program to print the K th largest factor of the given number N.
+
+Note
+Factors of N:
+If a number N is divisible by X then X is a factor of N.
+Example:
+If N = 15 and X = 3, then 3 is a factor of 15 as 15 is divisible by 3.
+If N = 15 and X = 7 then 7 is not a factor of 15 as 15 is not divisible by 7.
+
+Input
+The first line of input contains an integer representing N. The second line of input contains an integer representing K
+
+Output
+The output should be a single line containing an integer representing the K th largest factor of the given number N.
+
+Explanation
+For example, if the given numbers are N = 12 and K = 2,
+• The factors of 12 are 1, 2, 3, 4, 6, and 12.
+• The second largest factor of 12 is 6.
+The Output should be 6.
+
+Sample Input 1:
+
+12
+2
+
+Sample Output 1:
+
+6
+
+Sample Input 2:
+
+18
+4
+
+Sample Output 2:
+
+3
+
+Solution
+
+number = int(input())
+k = int(input())
+
+for each_number in range(number):
+    if number % (number - each_number) == 0:
+        largest_factor = number - each_number
+        k = k - 1
+    if k == 0:
+        break
+    
+print(largest_factor)
+
+---------------------------------------------Another Solution---------------------------------
+
+n = int(input())
+k = int(input())
+factors = []
+for i in range(n):
+	if (n % (i+1)) == 0:
+		factors.append(i+1)
+if k > len(factors):
+	print(1)
+else:
+	print(factors[-k])
+
+________________________________________________________________________________________________________________________________________________________________________
+
+04. Digit 9
+
+Given a Number N, write a program to print the digit 9 in 2 * N - 1 rows using stars (*)
+
+* * * * 
+*     * 
+*     * 
+* * * * 
+      * 
+      * 
+* * * * 
+
+Note : There is space after every star (*)
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be 2* N-1 rows containing stars (*) as the digit 6 shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 4,
+• Print the stars (*) on 7 ( 2 * 4-1 ) rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-digit-9.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The Ouput Should be
+
+* * * * 
+*     * 
+*     * 
+* * * * 
+      * 
+      * 
+* * * *  
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+* * * * 
+*     * 
+*     * 
+* * * * 
+      * 
+      * 
+* * * * 
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+* * * * * 
+*       * 
+*       * 
+*       * 
+* * * * * 
+        * 
+        * 
+        * 
+* * * * * 
+
+Solution
+
+n = int(input())
+hollow_spaces = "  " * (n - 2)
+for row in range(n):
+    if row == 0 or row == n - 1:
+        each_row = "* " * n
+    else:
+        each_row = "* " + hollow_spaces + "*"
+    print(each_row)
+left_spaces = "  " * (n - 1)
+for row in range(1, n):
+    if row == n - 1:
+        each_row = "* " * n
+    else:
+        each_row = left_spaces + "*"
+    print(each_row)
+
+--------------------------------------Another Solution----------------------------------------
+
+"""N = int(input())
+first_line = '*' * N
+first_line = ' '.join(first_line)
+nine = first_line
+
+for i in range(N - 2):
+    nine += '\n' + '*' + (' ' * (2*N - 3)) + '*'
+nine += '\n' + first_line
+for i in range(N - 2):
+    nine += '\n' + (' ' * (2*N - 2)) + '*'
+nine += '\n' + first_line
+print(nine)"""
+"""n=int(input())
+for i in range(n-1):
+    if(i==0) or (i==(n-1)):
+        print("* "*(n))
+    else:
+        spaces="  "*(n-2)
+        print("* "+spaces+"* ")
+for i in range(n):
+    if(i==0) or (i==(n-1)):
+        print("* "*(n))
+    else:
+        spaces="  "*(n-1)
+        print(spaces+"* ")"""
+
+n=int(input())
+for i in range(n-1):
+    for j in range(n):
+        if i==0 or i==n-1 or j==0 or j==n-1:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+for i in range(n):
+    for j in range(n):
+        if i==0 or i==n-1 or j==n-1:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+05. Pyramid - 9
+
+Given a number N, write a program to print a Pyramid inside a rectangle of N rows using zeroes (0) to represent the pyramid and dots ( . ) 
+in the remaining places of the rectangle.
+
+. . . . 0 . . . . 
+. . . 0 0 0 . . . 
+. . 0 0 0 0 0 . . 
+. 0 0 0 0 0 0 0 . 
+0 0 0 0 0 0 0 0 0 
+
+Note: There is space after every zero (0) and dot (.).
+
+Input
+The Input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing zeroes (0) as a Pyramid inside a rectangle of dots (.) shown in the sample output.
+
+Explanation
+For example, if the given number is N = 5,
+• Print the zeroes ( 0 ) and dots ( ) on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-pyramid-9.png
+
+Note
+In the given Image
+• The Zero in the box indicates zero and a space ("0 ")
+• The dot in the box indicates dot and a space (". ")
+
+The Ouput should be
+
+. . . . 0 . . . . 
+. . . 0 0 0 . . . 
+. . 0 0 0 0 0 . . 
+. 0 0 0 0 0 0 0 . 
+0 0 0 0 0 0 0 0 0 
+
+Sample Input 1:
+
+5
+
+Sample Ouput 1:
+
+. . . . 0 . . . . 
+. . . 0 0 0 . . . 
+. . 0 0 0 0 0 . . 
+. 0 0 0 0 0 0 0 . 
+0 0 0 0 0 0 0 0 0 
+
+Sample Input 2:
+
+6
+
+Sample Ouput 2:
+
+. . . . . 0 . . . . . 
+. . . . 0 0 0 . . . . 
+. . . 0 0 0 0 0 . . . 
+. . 0 0 0 0 0 0 0 . . 
+. 0 0 0 0 0 0 0 0 0 . 
+0 0 0 0 0 0 0 0 0 0 0 
+
+Solution
+
+n = int(input())
+
+for row in range(0, n):
+    dots = ". " * (n - (row + 1))
+    zeroes = "0 " * (2 * row + 1)
+    each_row = dots + zeroes + dots 
+    print(each_row)
+
+------------------------------------Another Solution---------------------------------
+
+"""rows = int(input())
+for i in range(rows):
+  j = i + 1
+  m = 1 + (2*i)
+  print('. '*(rows-j)+ '0 ' * m+ '. '*(rows-j))"""
+
+n=int(input())
+for i in range(1,n+1):
+    dots=". "*(n-i)
+    zeros="0 "*((2*i)-1)
+    print(dots+zeros+dots)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+06. Digit 3
+
+Given a Number N, write a program to print the digit 3 in 2 * N - 1 rows using stars (*)
+
+* * * * 
+      * 
+      * 
+* * * * 
+      * 
+      * 
+* * * * 
+
+Note : There is space after every star (*)
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be 2* N-1 rows containing stars (*) as the digit 3 shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 5,
+• Print the stars (*) on 9 ( 2 * 5-1 ) rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-digit-3.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The Ouput Should be
+
+* * * * * 
+        * 
+        * 
+        * 
+* * * * * 
+        * 
+        * 
+        * 
+* * * * * 
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+* * * * * 
+        * 
+        * 
+        * 
+* * * * * 
+        * 
+        * 
+        * 
+* * * * *  
+
+Sample Input 2:
+
+8
+
+Sample Output 2:
+
+* * * * * * * * 
+              * 
+              * 
+              * 
+              * 
+              * 
+              * 
+* * * * * * * * 
+              * 
+              * 
+              * 
+              * 
+              * 
+              * 
+* * * * * * * *  
+
+Solution
+
+n = int(input())
+left_spaces = "  " * (n - 1)
+
+for row in range(2 * n - 1):
+    if row == 0 or row == n - 1 or row == 2 * n - 2:
+        each_row = "* " * n 
+    else:
+        each_row = left_spaces + "*"
+    print(each_row)
+
+--------------------------------------Another Solution----------------------------------------
+
+n=int(input())
+for i in range(1,n):
+    for j in range(1,n+1):
+        if i==1 or j==n or i==n:
+            print('*',end=' ')
+        else:
+            print(' ',end=' ')
+    print()
+for i in range(1,n+1):
+    for j in range(1,n+1):
+        if i==1 or i==n or j==n:
+            print('*',end=' ')
+        else:
+            print(' ',end=' ')
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+07. Digit 5
+
+Given a Number N, write a program to print the digit 5 in 2 * N - 1 rows using stars (*)
+
+* * * * 
+*       
+*       
+* * * * 
+      * 
+      * 
+* * * *  
+
+Note : There is space after every star (*)
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be 2* N-1 rows containing stars (*) as the digit 5 shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 4,
+• Print the stars (*) on 7 ( 2 * 4-1 ) rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-digit-5.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The Ouput Should be
+
+* * * * 
+*       
+*       
+* * * * 
+      * 
+      * 
+* * * * 
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+* * * * 
+*       
+*       
+* * * * 
+      * 
+      * 
+* * * * 
+
+Sample Input 2:
+
+10
+
+Sample Output 2:
+
+* * * * * * * * * * 
+*                   
+*                   
+*                   
+*                   
+*                   
+*                   
+*                   
+*                   
+* * * * * * * * * * 
+                  * 
+                  * 
+                  * 
+                  * 
+                  * 
+                  * 
+                  * 
+                  * 
+* * * * * * * * * *   
+
+Solution
+
+n = int(input())
+left_spaces = "  " * (n - 1)
+
+for row in range(2 * n - 1):
+    if row == 0 or row == n - 1 or row == 2 * n - 2:
+        each_row = "* " * n 
+    elif row < n:
+        each_row = "*"
+    else:
+        each_row = left_spaces + "*"
+    print(each_row)
+
+--------------------------------------Another Solution----------------------------------------
+
+n=int(input())
+for i in range(1,n):
+    for j in range(1,n+1):
+        if i==1 or j==1:
+            print('*',end=' ')
+        else:
+            print(' ',end=' ')
+    print()
+for i in range(1,n+1):
+    for j in range(1,n+1):
+        if i==1 or i==n or j==n:
+            print('*',end=' ')
+        else:
+            print(' ',end=' ')
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+08. Alphabets in Hollow Rectangle
+
+Given two Numbers M and N, write a Program to print a Hollow Rectangle of M  rows and N columns using letters.
+
+A B C D 
+E     H 
+I J K L 
+
+Quick Tip:
+
+To print the letters in a Square,
+• Create a string that contains all capital letters. ("ABCDEFGHIJKLMNOPQRSTUVWXYZ").
+• Use String Indexing to access the letters in string "ABCDEFGHIJKLMNOPQRSTUVWXYZ".
+
+Note : There is space after every letter
+
+Input
+The First line of input contain an inetger representing M.
+The Second line of input contain an inetger representing N.
+
+Output
+The output should be M rows and N columns containing letters as a Hollow Rectangle shown in sample output
+
+Explanation
+
+For example, if the given numbers are M = 4 and N = 6,
+• Print the letters on 4 rows and 6 Columns as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-alphabets-in-hollow-rectangle.png
+
+Note
+In the given image,
+• The empty box indicates two spaces (" ").
+• The letter in the box indicates the letter and space ("A ").
+
+The Output Should be
+
+A B C D E F 
+G         L 
+M         R 
+S T U V W X 
+
+Sample Input 1:
+
+4
+6
+
+Sample Output 1:
+
+A B C D E F 
+G         L 
+M         R 
+S T U V W X 
+
+Sample Input 2:
+
+5
+4
+
+Sample Output 2:
+
+A B C D 
+E     H 
+I     L 
+M     P 
+Q R S T 
+
+Solution
+
+rows = int(input())
+columns = int(input())
+
+spaces = 2 * columns - 3
+alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+current_index = 0
+
+for row in range(rows):
+    each_row = ""
+
+    for column in range(columns):
+        if row == 0 or row == rows - 1:
+            each_row = each_row + alphabets[current_index] + " "
+        elif column == 0:
+            each_row = each_row + alphabets[current_index] + " " * spaces + alphabets[columns + current_index - 1]
+
+        current_index = current_index + 1
+
+    print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+m=int(input())
+n=int(input())
+p=65
+for i in range(1,m+1):
+    for j in range(1,n+1):
+        if i==1 or j==1 or i==m or j==n:
+            print(chr(p),end=' ')
+        else:
+            print(' ',end=' ')
+        p+=1
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
