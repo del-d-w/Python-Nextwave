@@ -1,0 +1,802 @@
+01. Numbers is Inverted Hollow Right Angled Traingle
+
+Given a number N, write a program to print an Inverted Hollow Right Angled Triangle of N rows using numbers starting from 1.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-inverted-hollow-right-angled-triangle-description.png
+
+Note: There is a space after every number
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing numbers starting from 1 as an Inverted Hollow Right Angled Triangle
+shown in the sample output.
+
+Explanation
+
+For example, if the given number is N=4,
+
+• Print numbers on 4 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-inverted-hollow-right-angled-triangle-explanation.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces ("  ").
+• The Number in the box indicates the number and a space ("1 ").
+
+The output should be
+
+1 2 3 4 
+5   7 
+8 9 
+10 
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+1 2 3 4 
+5   7 
+8 9 
+10 
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+1 2 3 4 5 6 7 
+8         13 
+14       18 
+19     22 
+23   25 
+26 27 
+28 
+
+Solution:
+
+n = int(input())
+
+start_number = 1
+
+for row in range(1, n + 1):
+    if row == 1:
+        first_row = ""
+        for column in range(n):
+            first_row += str(start_number) + " "
+            start_number += 1
+        print(first_row)
+    elif row == n:
+        last_row = str(start_number)
+        print(last_row)
+    else:
+        each_row = str(start_number) + " "
+        hollow_spaces = "  " * (n - row - 1)
+        each_row += hollow_spaces
+        start_number += int(len(hollow_spaces) / 2) + 1
+        each_row += str(start_number) + " "
+        start_number += 1
+        print(each_row)
+
+-------------------------------------------Another Solution-----------------------------------------
+
+n=int(input())
+p=1
+for i in range(n):
+    for j in range(n-i):
+        if j==0 or i==0 or i+j==n-1:
+            print(p,end=' ')
+        else:
+            print(' ',end=' ')
+        p+=1
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+02. Numbers is Inverted Hollow Right Angled Traingle-
+
+Given two numbers S and N, write a program to print an Inverted Hollow Right Angled Triangle of N rows using 
+numbers starting from S.
+
+3 4 5 
+  6 7 
+    8 
+
+Note: There is a space after every number
+
+Input
+The first line of input contains an integer representing S.
+The second line of input contains an integer representing N.
+
+Output
+The output should be N rows containing numbers starting from S as an Inverted Hollow Right Angled Triangle
+shown in the sample output.
+
+Explanation
+
+For example, if the given number are S=2 and N=4,
+
+• Print numbers starting from 2 on 4 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-inverted-hollow-right-angled-triangle-2-v2.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces ("  ").
+• The Number in the box indicates the number and a space ("1 ").
+
+The output should be
+
+2 3 4 5 
+  6   7 
+    8 9 
+      10
+
+Sample Input 1:
+
+2
+4
+
+Sample Output 1:
+
+2 3 4 5 
+  6   7 
+    8 9 
+      10
+
+Sample Input 2:
+
+3
+5
+
+Sample Output 2:
+
+3 4 5 6 7 
+  8     9 
+    10   11 
+      12 13 
+        14 
+
+Solution:
+
+start_number = int(input())
+n = int(input())
+
+for row in range(1, n + 1):
+    initial_spaces = "  " * (row - 1)
+
+    if row == 1:
+        first_row = ""
+
+        for column in range(n):        
+            first_row += str(start_number)+ " "
+            start_number += 1
+        print(initial_spaces + first_row)
+    
+    elif row == n:
+        last_row = str(start_number) + " "
+        print(initial_spaces + last_row)
+    
+    else:
+        each_row = str(start_number) + " "
+        hollow_spaces = "  " * (n - row - 1)
+        each_row += hollow_spaces
+        start_number += 1
+        each_row += str(start_number) + " "
+        start_number += 1
+        print(initial_spaces + each_row)
+
+-------------------------------------------Another Solution-----------------------------------------
+
+m=int(input())
+n=int(input())
+p=m
+for i in range(n):
+    for j in range(i):
+        print(' ',end=' ')
+    for j in range(n-i):
+        if i==0 or i+j==n-1 or j==0:
+            print(p,end=' ')
+            p+=1
+        else:
+            print(' ',end=' ')
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+03. Numbers in Hollow Square - 3
+
+Given two numbers S and N, write a program to print an  Hollow Square of N rows and N columns using 
+numbers starting from S.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-description-numbers-in-hollow-square-2.png
+
+Note: There is a space after every number
+
+Input
+The first line of input contains an integer representing S.
+The second line of input contains an integer representing N.
+
+Output
+The output should be N rows and N columns containing numbers starting from S as an  Hollow Square
+shown in the sample output.
+
+Explanation
+
+For example, if the given number are S=2 and N=3,
+
+• Print numbers starting from 2 on 3 rows and 3 columns as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-explanation-numbers-in-hollow-square-2.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces ("  ").
+• The Number in the box indicates the number and a space ("2 ").
+
+The output should be
+
+2 3 4 
+5   7 
+8 9 10 
+
+Sample Input 1:
+
+2
+3
+
+Sample Output 1:
+
+2 3 4 
+5   7 
+8 9 10 
+
+Sample Input 2:
+
+7
+4
+
+Sample Output 2:
+
+7 8 9 10 
+11     14 
+15     18 
+19 20 21 22 
+
+Solution:
+
+S = int(input())
+N = int(input())
+
+spaces = 2 * N - 3
+
+for row in range(1, N + 1):
+    each_row = ""
+    for each_number in range(1, N + 1):
+        if row == 1 or row == N:
+            each_row += str(S) + " "
+        else:
+            each_row = str(S - N + 1) + " " * spaces + str(S)
+        S += 1
+    print(each_row)
+
+-------------------------------------------Another Solution-----------------------------------------
+
+m=int(input())
+n=int(input())
+p=m
+for i in range(1,n+1):
+    for j in range(1,n+1):
+        if i==1 or i==n or j==1 or j==n:
+            print(p,end=' ')
+        else:
+            print(' ',end=' ')
+        p+=1
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+04.  Numbers is Inverted Hollow Right Angled Traingle-
+
+Given a number N, write a program to print an Inverted Hollow Right Angled Triangle of N rows using numbers
+The numbers start from 1 on the Nth row and increase by 1 until the 1st row.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-description-numbers-in-inverted-hollow-right-angled-triangle-3.png
+
+Note: There is a space after every number
+
+Input
+The input will be single containing an integer representing N.
+
+Output
+The output should be N rows containing numbers as an Inverted Hollow Right Angled Triangle
+shown in the sample output.
+
+Explanation
+
+For example, if the given number is N=4,
+
+• Print numbers on 4  rows, where the numbers start from 1 on the 4th row and increase by 1 
+until the 1st row as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-explanation-numbers-in-inverted-hollow-right-angled-triangle-3.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces ("  ").
+• The Number in the box indicates the number and a space ("10 ").
+
+The output should be
+
+10 9 8 7 
+6   4 
+3 2 
+1 
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+10 9 8 7 
+6   4 
+3 2 
+1 
+
+Sample Input 2:
+
+8
+
+Sample Output 2:
+
+36 35 34 33 32 31 30 29 
+28           22 
+21         16 
+15       11 
+10     7 
+6   4 
+3 2 
+1 
+
+Solution:
+
+n = int(input())
+
+total_count = 0
+
+for nums in range(n):
+    each_row_count = n - nums
+    total_count += each_row_count
+
+for row in range(1, n + 1):
+    if row == 1:
+        first_row = ""
+        for column in range(n):
+            first_row += str(total_count)+ " "
+            total_count -= 1
+        print(first_row)
+    elif row == n:
+        last_row = str(1) + " "
+        print(last_row)
+    else:
+        each_row = str(total_count) + " "
+        hollow_spaces = "  " * (n - row - 1)
+        each_row += hollow_spaces
+        total_count -= int(len(hollow_spaces) / 2) + 1
+        each_row += str(total_count) + " "
+        total_count -= 1
+        print(each_row)
+
+-------------------------------------------Another Solution-----------------------------------------
+
+n=int(input())
+p=n*(n+1)//2
+for i in range(n):
+    for j in range(n-i):
+        if j==0 or i+j==n-1 or i==0:
+            print(p,end=' ')
+        else:
+            print(' ',end=' ')
+        p-=1
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+05. Numbers is Hollow Right Angled Traingle-
+
+Given two numbers S and N, write a program to print a Hollow Right Angled Triangle of N rows using numbers
+starting from S.
+
+1 
+2 3 
+4   5 
+6 7 8 9 
+
+Note: There is a space after every number
+
+Input
+The first line of input contains an integer representing S.
+The second line of input contains an integer representing N.
+
+Output
+The output should be N rows containing numbers as an Hollow Right Angled Triangle
+shown in the sample output.
+
+Explanation
+
+For example, if the given numbers are S=2 and N=4,
+
+• Print numbers strating from 2 on 4  rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-hollow-right-angled-triangle-3.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces ("  ").
+• The Number in the box indicates the number and a space ("2 ").
+
+The output should be
+
+2 
+3 4 
+5   6 
+7 8 9 10  
+
+Sample Input 1:
+
+2
+4
+
+Sample Output 1:
+
+2 
+3 4 
+5   6 
+7 8 9 10 
+
+Sample Input 2:
+
+7
+5
+
+Sample Output 2:
+
+7 
+8 9 
+10   11 
+12     13 
+14 15 16 17 18  
+
+Solution:
+
+start_number = int(input())
+n = int(input())
+
+for row in range(1, n + 1):
+    if row == n:
+        last_row = ""
+        for column in range(n):
+            start_number += 1
+            last_row += str(start_number)+ " "
+        print(last_row)
+    elif row == 1:
+        first_row = str(start_number) + " "
+        print(first_row)
+    else:
+        start_number += 1
+        each_row = str(start_number) + " "
+        hollow_spaces = "  " * (row - 2)
+        each_row += hollow_spaces
+        start_number += 1
+        each_row += str(start_number) + " "
+        
+        print(each_row)
+
+-------------------------------------------Another Solution-----------------------------------------
+
+m=int(input())
+n=int(input())
+p=m
+for i in range(n):
+    for j in range(i+1):
+        if j==0 or i==j or i==n-1:
+            print(p,end=' ')
+            p+=1
+        else:
+            print(' ',end=' ')
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+06. Numbers in Hollow Rectangle - 3
+
+Given two numbers M and N, write a program to print a Hollow Rectangle of M rows and N columns that contains numbers 
+starting from K in descending order. K is the count of numbers that can be printed in M rows and N columns of a Rectangle.
+
+For example, if the given number of rows and columns is M = 3 and N = 5,
+• The count of numbers that can be arranged in a Rectangle of 3 rows and 5 columns is K = 15 ( 3 * 5 = 15 ).
+So, the Hollow Rectangle should be printed with the numbers starting from 15( K ) in descending order as given below.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-description-numbers-in-hollow-rectangle-3.png
+
+Note : There is space after every number
+
+Input
+The first line of input contains an integer representing M.
+The second line of input contains an integer representing N.
+
+Output
+The output should be M rows N columns containing numbers starting from K in descending order as a Hollow Rectangle 
+shown in the sample output.
+
+Explanation
+and N = 6,
+For example, if the given numbers are M = 3 and
+• The count of numbers that can be arranged in a Rectangle of 3 rows and 6 columns is K = 18 ( 3* 6 = 18 ).
+• Print the numbers starting from 18 in descending order on 3 rows and 6 columns as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-explanation-numbers-in-hollow-rectangle-3-v2.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces ("  ").
+• The Number in the box indicates the number and a space ("18 ").
+
+The output should be
+
+18 17 16 15 14 13 
+12         7 
+6 5 4 3 2 1 
+
+Sample Input 1:
+
+3
+6
+
+Sample Output 1:
+
+18 17 16 15 14 13 
+12         7 
+6 5 4 3 2 1 
+
+Sample Input 2:
+
+5
+3
+
+Sample Output 2:
+
+15 14 13 
+12   10 
+9   7 
+6   4 
+3 2 1 
+
+Solution
+
+m = int(input())
+n = int(input())
+
+k = m * n
+hollow_spaces = n - 2
+
+for row in range(m):
+    each_row = ""
+    if row == 0 or row == m - 1:
+        for each_number in range(n):
+            each_row = each_row + str(k) + " "
+            k = k - 1
+    else:
+        each_row = str(k) + " "
+        k = k - hollow_spaces - 1
+        each_row = each_row + "  " * (hollow_spaces) + str(k)
+        k = k - 1
+    
+    print(each_row)
+
+---------------------------------Another Solution-----------------------------------
+
+m=int(input())
+n=int(input())
+p=m*n
+for i in range(m):
+    for j in range(n):
+        if i==0 or i==m-1 or j==0 or j==n-1:
+            print(p,end=' ')
+        else:
+            print(' ',end=' ')
+        p-=1
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+07. Amstrong Numbers in Inputs
+
+Given a number N, write a program that reads N inputs and prints the Armstrong
+Numbers in the given inputs each on a new line.
+
+Note
+A number N is an Armstrong Number, if the sum of each digit to the power of L is equal to N. 
+Where L is the count of digits in N
+
+For example if the given number N = 153,
+• There are 3 ( L = 3) digits in 153 are 1, 2, 3.
+• The sum of each digit in 153 to the power of 3 is, 
+    • Sum = (1 3 ) + (5 3 ) + ( 3 3 ) = 1 + 125 + 27 = 153
+The sum of each digit in 153 to the power of 3 is equal to 153. So, 153 is an Armstrong Number
+
+Input
+The first line of input contains an integer representing N.
+The next N lines of input contain integers.
+
+Output
+The output should contain all the Armstrong Numbers in the given N inputs, each on a new line.
+
+Explanation
+For example, if the given number is N = 4,
+• The 4 inputs are,
+
+8
+27
+153
+374
+
+• The Armstrong numbers among 8, 27, 153 and 374 are 8 and 153.
+    • There is only 1 digit in 8 is 8.
+    • The sum of each digit in 8 to the power of 1 is 8. (81)
+    • The sum of each digit in 8 to the power of 1 is equal to the number 8.
+    So, the number 8 is an Armstrong number.
+    • There are 3 digits in 153 are 1, 5 and 3.
+    • The sum of each digit in 153 to the power of 3 is 153. (13+53+33).
+    • The sum of each digit in 153 to the power of 3 is equal to the number 153.
+    So, the number 153 is an Armstrong number.
+
+The output should be
+
+8
+153
+
+Sample Input 1:
+
+4
+8
+27
+153
+374
+
+Sample Output 1:
+
+8
+153
+
+Sample Input 2:
+
+5
+1
+5
+370
+500
+1000
+
+Sample Output 2:
+
+1
+5
+370
+
+Solution
+
+n = int(input())
+
+for each_number in range(n):
+    value = int(input())
+    
+    string = str(value)
+    power = len(string)
+    sum_of_digits = 0
+    
+    for integer_char in string:
+        sum_of_digits = sum_of_digits + int(integer_char) ** power
+    
+    if sum_of_digits == value:
+        print(value)
+
+---------------------------------Another Solution-----------------------------------
+
+n = int(input())
+for i in range(1, n + 1):
+    m=int(input())
+    for num in range(1,m+1):
+        num_str = str(num)
+        order = len(num_str)
+        sum = 0
+        for digit in num_str:
+            sum += int(digit) ** order
+    if num == sum:
+        print(num)
+
+________________________________________________________________________________________________________________________________________________________________________
+
+08. Sum of Prime Numbers in Range
+
+Given two numbers M and N, write a program to print the sum of Prime Numbers from M to N.
+
+Note:
+A Prime Number is a positive integer greater than 1 that has no factors other than 1 and itself.
+
+Input
+The first line of input contains an integer representing M.
+The second line of input contains an integer representing N
+
+Output
+The output should be a single line containing an integer that is the sum of the Prime Numbers from M to N.
+
+Explanation
+
+For example, if the given numbers are
+M = 3 and N=7,
+• The numbers in the range 3 and 7 are 3, 4, 5, 6 and 7.
+• The numbers that has no factors other than 1 and itself from 3 to 7 are 3, 5 and 7.
+• The sum of the numbers that has no factors other than 1 and itself from 3 to 7 is 15. ( 3+5+7=15)
+The output should be 15
+
+Sample Input 1:
+
+3
+7
+
+Sample Output 1:
+
+15
+
+Sample Input 2:
+
+22
+50
+
+Sample Output 2:
+
+251
+
+Solution
+
+m = int(input())
+n = int(input())
+
+sum_of_prime_numbers = 0
+
+for i in range(m, n + 1):
+    factors = 0
+
+    for j in range(2, i):
+        if i % j == 0:
+            factors = factors + 1
+    
+    if factors == 0:
+        sum_of_prime_numbers = sum_of_prime_numbers + i
+
+print(sum_of_prime_numbers)
+
+---------------------------------------------Another Solution---------------------------------------------
+
+m=int(input())
+n=int(input())
+sum=0
+for i in range(m,n+1):
+    is_prime=True
+    for j in range(2,i):
+        if i%j==0:
+            is_prime=False
+            break
+    if i>1 and is_prime:
+        sum+=i
+print(sum)
+
+________________________________________________________________________________________________________________________________________________________________________
+
