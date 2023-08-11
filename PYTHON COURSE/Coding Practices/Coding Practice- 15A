@@ -726,5 +726,144 @@ A
 
 Solution
 
+string="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+n=int(input())
+for i in range(n):
+    each_row=""
+    for row in range(n-i):
+        each_row=each_row+string[row]+" "
+    print(each_row)  
 
 ------------------------------------Another solution--------------------------------
+
+n=int(input())
+for i in range(n):
+    p=65
+    for j in range(n-i):
+        print(chr(p),end=' ')
+        p+=1
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+09.  Digit 8
+
+Given a Number N, write a program to print the digit 8 in 2 * N + 1 rows using stars (*)
+
+* * * * 
+*     * 
+*     * 
+*     * 
+* * * * 
+*     * 
+*     * 
+*     * 
+* * * * 
+
+Note : There is space after every star (*)
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be 2* N+1
+rows containing stars (*) as the digit 8 shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 5,
+• Print the stars (*) on 11 ( 2 * 5+1 ) rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-digit-8.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The Ouput Should be
+
+* * * * * 
+*       * 
+*       * 
+*       * 
+*       * 
+* * * * * 
+*       * 
+*       * 
+*       * 
+*       * 
+* * * * * 
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+* * * * * 
+*       * 
+*       * 
+*       * 
+*       * 
+* * * * * 
+*       * 
+*       * 
+*       * 
+*       * 
+* * * * * 
+
+Sample Input 2:
+
+3
+
+Sample Output 1:
+
+* * * 
+*   * 
+*   * 
+* * * 
+*   * 
+*   * 
+* * *  
+
+Solution
+
+n=int(input())
+no_of_rows=(2*n)+1 
+for i in range(1,no_of_rows+1):
+    if (i==1) or (i==(n+1)) or (i==no_of_rows):
+        print("* "*n)
+    else:
+        spaces="  "*(n-2)
+        print("* "+spaces+"* ")
+
+------------------------------------Another solution--------------------------------
+
+"""n = int(input())
+no_of_rows = (2*n) + 1
+for i in range(1, no_of_rows+1):
+    if (i == 1) or (i == (n+1)) or (i == no_of_rows):
+        print("* " * n)
+    else:
+        spaces = "  " * (n-2)
+        print("* " + spaces + "* ")"""
+
+n=int(input())
+for i in range(n):
+    for j in range(n):
+        if j==n-1 or i==0 or i==n or j==0:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+for i in range(n+1):
+    for j in range(n):
+        if j==n-1 or i==0 or i==n or j==0:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
