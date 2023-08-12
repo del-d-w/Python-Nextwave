@@ -819,11 +819,179 @@ print(n[0].lower()+s)
 _________________________________________________________________________________________________________________
 
 13. Numbers in Sqaure Pattern - 2
+
+﻿Write a program to print numbers from 1 to N in each column forming a square pattern of N rows and N columns.
+
+Input
+The input will be a single line containing a positive integer (N).
+
+Output
+The output should be N rows containing a number N times in each row.
+Note: There is a space after each number.
+
+Explanation
+For example, if the given number is 5, your code should print the following pattern:
+
+1 1 1 1 1 
+2 2 2 2 2 
+3 3 3 3 3 
+4 4 4 4 4 
+5 5 5 5 5 
+
+Sample Input 1:
+
+5
+
+Sample output 1:
+
+1 1 1 1 1 
+2 2 2 2 2 
+3 3 3 3 3 
+4 4 4 4 4 
+5 5 5 5 5 
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+1 1 1 1 
+2 2 2 2 
+3 3 3 3 
+4 4 4 4 
+
+Solution
+
+n = int(input())
+for i in range(1, n+1):
+    pattern = (str(i) + " ") * n
+    print(pattern)
+
 _________________________________________________________________________________________________________________
 
-14.
+14. Numbers in Rectangular Pattern - 1
+
+﻿Write a program to print numbers from 1 to N in each row forming a rectangular pattern of M rows and N columns.
+
+Input
+The first line of input will contain a positive integer (M).
+The second line of input will contain a positive integer (N).
+
+Output
+The output should be M number of lines and N number of columns with the numbers from 1 to N in each row.
+
+Note: There is a space after each number.
+
+Explanation
+For example, if the given numbers of rows are 2 and the number of columns is 3, your code should print 
+the following pattern:
+
+1 2 3 
+1 2 3 
+
+Sample Input 1:
+
+2
+3
+
+Sample output 1:
+
+1 2 3 
+1 2 3 
+
+Sample Input 2:
+
+5
+4
+
+Sample Output 2:
+
+1 2 3 4 
+1 2 3 4 
+1 2 3 4 
+1 2 3 4 
+1 2 3 4
+
+
+Solution
+
+rows = int(input())
+column = int(input())
+
+number_pattern = ""
+for k in range(1, column+1):
+    number_pattern = number_pattern + (str(k) + " ")
+
+for i in range(rows):
+    print(number_pattern)
+
 _________________________________________________________________________________________________________________
 
-15.
+15. Identify the Mistake - Pyramid
+
+Given a Number N, write a Program to print a Pyramid of N  rows using stars (*).
+
+   *
+  * *
+ * * *
+* * * *
+
+﻿Input
+The input will be a single line containing an integer representing N
+
+Output
+The output should be N rows containing stars (*) as a Pyramid shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 3,
+• Print the stars (*) on 3 rows as shown in the given image.
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-identify-mistake-pyramid.png
+
+﻿Note
+In the given image,
+• The Empty box indicates a space (" ").
+• The Star in the box indicates a star ("*").
+
+The output should be,
+
+  *
+ * *
+* * *
+
+Sample Input 1:
+
+3
+
+Sample output 1:
+
+  *
+ * *
+* * *
+
+Sample Input 2:
+
+6
+
+Sample Output 2:
+
+     * 
+    * * 
+   * * * 
+  * * * * 
+ * * * * * 
+
+Solution
+
+n = int(input())
+
+k = n-1
+for i in range(1, n+1):
+    spaces = " " * k
+    stars = "* " * i
+    print(spaces+stars)
+    k = k - 1
+
 _________________________________________________________________________________________________________________
 
