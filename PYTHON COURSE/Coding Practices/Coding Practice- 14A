@@ -394,3 +394,893 @@ for i in range(n):
 ________________________________________________________________________________________________________________________________________________________________________
 
 05. Numbers in Hollow Sqaure - 2
+
+Given a Numbers N, write a Program to print a Hollow Sqaure of N  rows and N columns using numbers strating from N.
+in decreasing order.
+
+3 2 1 
+3   1 
+3 2 1
+
+Note : There is space after every number
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows and N columns containing numbers starting from N in deacreasing order as a
+Hollow Sqaure shown in sample output
+
+Explanation
+
+For example, if the given number is N=5
+• Print the numbers strating from 5 in deacreasing order on 5 rows and 5 Columns as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-hollow-square-2.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Number in the box indicates the number and space ("5 ").
+
+The Output Should be
+
+5 4 3 2 1 
+5       1 
+5       1 
+5       1 
+5 4 3 2 1 
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+5 4 3 2 1 
+5       1 
+5       1 
+5       1 
+5 4 3 2 1 
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+7 6 5 4 3 2 1 
+7           1 
+7           1 
+7           1 
+7           1 
+7           1 
+7 6 5 4 3 2 1 
+
+Solution
+
+rows = int(input())
+
+for row in range(1, rows + 1):
+    each_row = str(rows) + " "
+    
+    if row == 1  or row == rows:
+
+        for column in range(2, rows + 1):
+            each_row = each_row + str(rows - column + 1) + " "
+        
+        print(each_row)
+    else:
+        hollow_spaces = "  " * (rows - 2)
+        each_row = each_row + hollow_spaces + str(1)
+        
+        print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+n=int(input())
+for i in range(1,n+1):
+    p=n 
+    for j in range(1,n+1):
+        if i==1 or i==n or j==1 or j==n:
+            print(p,end=' ')
+        else:
+            print(' ',end=' ')
+        p-=1 
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+06. Numbers in Hollow Right Angled Traingle - 2
+
+Given a Numbers N, write a Program to print a Hollow Right Angled Triangle of N  rows using numbers strating from 1.
+
+      1
+    2 1
+  3   1
+4 3 2 1
+
+Note : There is space after every number
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing numbers starting from 1 as a Hollow Right Angled Traingle
+shown in sample output
+
+Explanation
+
+For example, if the given number is N=6
+• Print the numbers on 6 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-hollow-right-angled-triangle-2.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Number in the box indicates the number and space ("7 ").
+
+The Output Should be
+
+          1 
+        2 1 
+      3   1 
+    4     1 
+  5       1 
+6 5 4 3 2 1
+
+Sample Input 1:
+
+6
+
+Sample Output 1:
+
+          1 
+        2 1 
+      3   1 
+    4     1 
+  5       1 
+6 5 4 3 2 1 
+
+Sample Input 2:
+
+9
+
+Sample Output 2:
+
+                1 
+              2 1 
+            3   1 
+          4     1 
+        5       1 
+      6         1 
+    7           1 
+  8             1 
+9 8 7 6 5 4 3 2 1 
+
+Solution
+
+rows = int(input())
+
+for row in range(1, rows + 1):
+    if row == rows:
+        each_row = ""
+        for column in range(rows):
+            each_row = each_row + str(rows - column) + " "
+        print(each_row)
+    elif row == 1:
+        spaces = " " * (2 * rows - 2)
+        each_row = spaces + "1 "
+        print(each_row)
+    else:
+        spaces = " " * (2 * (rows - row))
+        hollow_spaces = "  " * (row - 2)
+        each_row = spaces + (str(row) + " ") + hollow_spaces + "1 "
+        print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+n=int(input())
+for i in range(1,n+1):
+    for j in range(n-i):
+        print(' ',end=' ')
+    for j in range(i,0,-1):
+        if j==1 or i==n or i==j:
+            print(j, end =' ')
+        else:
+            print(' ',end=' ')
+    print()
+
+______________________________________________________________________________________________________________________________________________________________________
+
+07. Numbers in Hollow Rectangle - 2
+
+Given two Numbers M and N, write a Program to print a Hollow Rectnagle of M  rows and 
+N Columns using numbers strating from 1.
+
+1 2 3 4 5
+6       10
+11       15
+16 17 18 19 20
+
+Note : There is space after every number
+
+Input
+The First line of input contain an inetger representing M.
+The Second line of input contain an inetger representing N.
+
+Output
+The output should be M rows and N columns containing numbers starting from 1 as a Hollow Rectangle shown in sample output
+
+Explanation
+
+For example, if the given number are M = 4 and N = 5
+• Print the numbers on 4 rows and 5 columns as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-explanation-numbers-in-hollow-rectangle-2.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Number in the box indicates the number and space ("1 ").
+
+The Output Should be
+
+1 2 3 4 5 
+6       10 
+11       15 
+16 17 18 19 20 
+
+Sample Input 1:
+
+4
+5
+
+Sample Output 1:
+
+1 2 3 4 5 
+6       10 
+11       15 
+16 17 18 19 20 
+
+Sample Input 2:
+
+8
+6
+
+Sample Output 2:
+
+1 2 3 4 5 6 
+7         12 
+13         18 
+19         24 
+25         30 
+31         36 
+37         42 
+43 44 45 46 47 48 
+
+Solution
+
+rows = int(input()) 
+columns = int(input())
+number = 1
+for row in range(1, rows+1):
+    if row == 1 or row == rows:
+        each_row = ""
+        for column in range(1, columns + 1):
+            each_row = each_row + (str(number) + " ")
+            number = number + 1
+        print(each_row)
+    else:
+        each_row = (str(number) + " ")
+        hollow_spaces = "  " * (columns - 2)
+        number = number + int(len(hollow_spaces) / 2) + 1
+        each_row = each_row + hollow_spaces + (str(number) + " ")
+        number = number + 1
+        print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+m=int(input())
+n=int(input())
+p=1
+for i in range(1,m+1):
+    for j in range(1,n+1):
+        if i==1 or i==m or j==1 or j==n:
+            print(p,end=' ')
+        else:
+            print(' ',end=' ')
+        p+=1
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+08. Numbers in Inverted Hollow Pyramid
+
+Given two Numbers N and S, write a Program to print a Inverted Hollow Pyramid of N  rows using numbers strating from S.
+
+6 7 8 9 10
+ 6     9
+  6   8
+   6 7
+    6
+
+Note : There is space after every number
+
+Input
+The First line of input contain an inetger representing N.
+The Second line of input contain an inetger representing S.
+
+Output
+The output should be N rows containing numbers starting from S an Inverted Hollow Pyramid shown in sample output
+
+Explanation
+
+For example, if the given number is N=5 and S=7
+• Print the numbers on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-inverted-hollow-pyramid.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Number in the box indicates the number and space ("7 ").
+
+The Output Should be
+
+7 8 9 10 11
+ 7     10
+  7   9
+   7 8
+    7
+
+Sample Input 1:
+
+5
+7
+
+Sample Output 1:
+
+7 8 9 10 11
+ 7     10
+  7   9
+   7 8
+    7 
+
+Sample Input 2:
+
+4
+6
+
+Sample Output 2:
+
+6 7 8 9 
+ 6   8 
+  6 7 
+   6 
+
+Solution
+
+rows = int(input())
+starting_number = int(input())
+second_number = starting_number
+for row in range(1, rows + 1):
+    if row == 1:
+        each_row = ""
+        
+        for column in range(1, rows + 1):
+            each_row = each_row + str(starting_number) + " "
+            starting_number += 1
+        
+        print(each_row)
+    elif row == rows:
+        each_row = " " * (row - 1)
+        
+        for column in range(rows - row + 1):
+            each_row = each_row + str(second_number) + " "
+
+        print(each_row)
+    else:
+        spaces = " " * (row - 1)
+        hollow_spaces = "  " * (rows - row - 1)
+        each_row = spaces + str(second_number) + " " + hollow_spaces + str(second_number + rows - row) + " "
+        
+        print(each_row)
+        starting_number += 1
+----------------------------------------------------Another Solution----------------------------------------------
+
+n=int(input())
+m=int(input())
+for i in range(n,0,-1):
+    for j in range(n-i):
+        print('',end=' ')
+    for j in range(i):
+        if j==i-1 or j==0 or i==n:
+            print(j+m,end=' ')
+        else:
+            print(' ',end=' ')
+
+    print()
+________________________________________________________________________________________________________________________________________________________________________
+
+09. Hollow Inverted Full Pyramid - 2
+
+Given the number of rows N, write a program to print the hallow inverted full pyramid pattern similar to 
+the pattern shown below.
+
+1 2 3 4 5 
+ 1     4 
+  1   3 
+   1 2 
+    1
+
+
+Input
+The input will be a single line containing a positive integer (N).
+
+Output
+The output should be N rows containing the numbers in the hollow inverted full pyramid pattern.
+Note : There is space after every number
+
+Explanation
+
+For example, if the given number is 5, the pattern should contain 5 rows as shown below
+
+The Output Should be
+
+1 2 3 4 5 
+ 1     4 
+  1   3 
+   1 2 
+    1
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+1 2 3 4 5 
+ 1     4 
+  1   3 
+   1 2 
+    1
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+1 2 3 
+ 1 2 
+  1
+
+Solution
+
+n = int(input())
+
+for row in range(1, n+1):
+    i = n - (row-1)
+    left_spaces = " " * (row-1)
+    if (i > 2) and (i < n):
+        hollow_spaces = "  " * (i-2)
+        numbers = "1 " + hollow_spaces + (str(i) + " ")
+        print(left_spaces + numbers)
+    else:
+        numbers = ""
+        for j in range(1, i+1):
+            numbers = numbers + (str(j) + " ")
+        print(left_spaces + numbers)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+"""n = int(input())
+
+for row in range(1, n+1):
+    i = n - (row -1)
+    left_spaces = (" " * (row - 1))
+    if (i > 2) and (i < n):
+        hollow = ("  " * (i - 2))
+        numbers = "1 " + hollow + (str(i) + " ")
+        print(left_spaces + numbers)
+    
+    else:
+        numbers = ""
+        for j in range(1, i+1):
+            numbers = numbers + (str(j) + " ")
+        print(left_spaces + numbers)"""
+
+"""n=int(input())
+for i in range(1,n+1):
+    p=1
+    for j in range(1,2*n):
+        if (i==1 and j%2!=0):
+            print(p,end="")
+            p=p+1
+        elif i==j:
+            print(p,end="")
+            p=p+1
+        elif i+j==2*n:
+            p=n-i+1
+            print(p,end="")            
+        else:
+            print(" ",end="")
+    print()"""
+
+n=int(input())
+for i in range(n-1,0,-1):
+    p=1
+    for j in range(n-i-1):
+        print(end=' ')
+    for j in range(i+1):
+        if i==n-1 or j==0 or i==j:
+            print(p,end=' ')
+        else:
+            print(" ",end=' ')
+        p=p+1
+    print()
+print(" "*(n-1)+"1")
+
+________________________________________________________________________________________________________________________________________________________________________
+
+10. Hollow Inverted Half Pyramid - 2
+
+Given the number of rows N, write a program to print the hallow inverted half pyramid pattern similar to 
+the pattern shown below.
+
+1 2 3 4 5 
+1     4 
+1   3 
+1 2 
+1 
+
+Input
+The input will be a single line containing a positive integer (N).
+
+Output
+The output should be N rows containing the numbers in the hollow inverted half pyramid pattern.
+Note: There is a space after each number.
+
+Explanation
+For example, if the given number is 5, the pattern should contain 5 rows as shown below
+
+1 2 3 4 5 
+1     4 
+1   3 
+1 2 
+1 
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+1 2 3 4 5 
+1     4 
+1   3 
+1 2 
+1 
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+1 2 3 
+1 2 
+1
+
+Solution
+
+n = int(input())
+for row in range(1, n+1):
+    i = n - (row-1)
+    if (i > 2) and (i < n):
+        hollow_spaces = "  " * (i - 2)
+        numbers = "1 " + hollow_spaces + (str(i) + " ")
+        print(numbers)
+    else:
+        numbers = ""
+        for j in range(1, i+1):
+            numbers = numbers + (str(j) + " ")
+        print(numbers)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+"""n = int(input())
+for row in range(1, n+1):
+    i = n - (row - 1)
+    if (i > 2) and (i < n):
+        hollow_spaces = "  " * (i - 2)
+        numbers = "1 " + hollow_spaces + (str(i) + " ")
+        print(numbers)
+    else:
+        numbers = ""
+        for j in range(1, i+1):
+            numbers = numbers + str(j) + " "
+        print(numbers)"""
+
+n=int(input())
+for i in range(n):
+    p=0
+    for j in range(i,n):
+        p=p+1
+        if i==0 or j==n-1 or j==i:
+            print(p,end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+11. Hollow Full Pyramid - 1
+
+Given the number of rows N, write a program to print the hallow full pyramid pattern similar to the pattern shown below.
+
+    * 
+   * * 
+  *   * 
+ *     * 
+* * * * * 
+
+Input
+The input will be a single line containing a positive integer (N).
+
+Output
+The output should be N rows containing the asterisk(*) characters in the hollow full pyramid pattern.
+
+Explanation
+For example, if the given number is 5, the pattern should contain 5 rows as shown below
+
+    * 
+   * * 
+  *   * 
+ *     * 
+* * * * * 
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+    * 
+   * * 
+  *   * 
+ *     * 
+* * * * *  
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+  * 
+ * * 
+* * * 
+
+Solution
+
+n = int(input())
+for i in range(1, n+1):
+    left_spaces = " " * (n - i)
+    if (i > 2) and (i < n):
+        hollow_spaces = "  " * (i-2)
+        stars = "* " + hollow_spaces + "* "
+        print(left_spaces + stars)
+    else:
+        stars = "* " * i
+        print(left_spaces + stars)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+"""n=int(input())
+k=2
+for row in range(1,n+1):
+    for col in range(1,2*n):
+        if row+col==n+1 or col-row==n-1:
+            print("*",end="")
+        elif row==n and col!=k:
+            print("*",end="")
+            k=k+2
+        else:
+            print(end=" ")
+    print()"""
+
+"""n=int(input())
+for i in range(1,n+1):
+    for j in range(1,2*n):
+        if (i==n and j%2!=0) or i+j==n+1 or j-i==n-1:
+            print("*",end="")
+        else:
+            print(" ",end="")
+    print()"""
+
+n=int(input())
+for i in range(n):
+    for j in range(n-i-1):
+        print(end=' ')
+    for j in range(i+1):
+        if i==n-1 or j==0 or i==j:
+            print("*",end=' ')
+        else:
+            print(" ",end=' ')
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
+
+12. Hollow Full Pyramid - 2
+
+Given the number of rows N, write a program to print the hallow full pyramid pattern similar to the pattern shown below.
+
+    1 
+   1 2 
+  1   3 
+ 1     4 
+1 2 3 4 5 
+
+Input
+The input will be a single line containing a positive integer (N).
+
+Output
+The output should be N rows containing the numbers in the hollow full pyramid pattern.
+Note: There is a space after each number.
+
+Explanation
+For example, if the given number is 5, the pattern should contain 5 rows as shown below
+
+    1    
+   1 2   
+  1   3  
+ 1     4 
+1 2 3 4 5
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+    1    
+   1 2   
+  1   3  
+ 1     4 
+1 2 3 4 5
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+  1  
+ 1 2 
+1 2 3
+
+Solution
+
+n = int(input())
+for i in range(1, n+1):
+    left_spaces = " " * (n-i)
+    if (i > 2) and (i < n):
+        hollow_spaces = " " * (2*(i-2))
+        numbers = "1 " + hollow_spaces + (str(i) + " ")
+        print(left_spaces + numbers)
+    else:
+        numbers = ""
+        for j in range(1, i+1):
+            numbers = numbers + (str(j) + " ")
+        print(left_spaces + numbers)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+"""n = int(input())
+k=2
+for i in range(1, n+1):
+    left_spaces = " " *(n-i)
+    if (i > 2) and (i < n):
+        hollow = " " *(2*(i - 2))
+        numbers = "1 " + hollow + (str(i) + " ")
+        print(left_spaces + numbers)
+    
+    else:
+        numbers = ""
+        for j in range(1,i+1):
+            numbers=numbers+(str(j)+" ")
+        print(left_spaces + numbers)
+    """
+
+n=int(input())
+for i in range(1,n+1):
+    p=1
+    for j in range(1,2*n):
+        if (i==n and j%2!=0):
+            print(p,end="")
+            p=p+1
+        elif i+j==n+1:
+            print(p,end="")
+            p=i
+        elif j-i==n-1:
+            print(p,end="")
+            p=p+1
+        else:
+            print(" ",end="")
+    print()
+________________________________________________________________________________________________________________________________________________________________________
+
+13. Full Pyramid - 2
+
+Given the number of rows N, write a program to print the full pyramid pattern similar to the pattern shown below.
+
+    1 
+   1 2 
+  1 2 3 
+ 1 2 3 4 
+1 2 3 4 5
+
+Input
+The input will be a single line containing a positive integer (N).
+
+Output
+The output should be N rows containing the numbers in the full pyramid pattern.
+Note: There is a space after each number.
+
+Explanation
+For example, if the given number is 5, the pattern should contain 5 rows as shown below
+
+    1 
+   1 2 
+  1 2 3 
+ 1 2 3 4 
+1 2 3 4 5 
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+    1 
+   1 2 
+  1 2 3 
+ 1 2 3 4 
+1 2 3 4 5 
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+  1 
+ 1 2 
+1 2 3
+
+Solution
+
+n = int(input())
+for i in range(1, n + 1):
+    left_spaces = " " * (n - i)
+    numbers = ""
+    for j in range(1, i + 1):
+        numbers = numbers + str(j) + " "
+    print(left_spaces + numbers)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+n=int(input())
+for i in range(n):
+    p=1
+    for j in range(n-i-1):
+        print(end=' ')
+    for j in range(i+1):
+        print(p,end=' ')
+        p=p+1
+    print()
+
+________________________________________________________________________________________________________________________________________________________________________
