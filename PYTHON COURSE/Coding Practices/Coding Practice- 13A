@@ -779,3 +779,343 @@ ________________________________________________________________________________
 
 10. Numbers in Rectangle - 2
 
+Given two numbers M and N, write a program to print Rectangle of M rows and N columns using numbers starting from 1
+
+1 2 3 4
+5 6 7 8
+
+Note: There is a space after every number
+
+Input
+The First line of input contain an inetger representing M.
+The Second line of input contain an inetger representing N.
+
+Output
+The output should be M rows and N columns containing numbers starting from 1 as Rectangle shown in the sample output.
+
+Explanation
+
+For example, if the given numbers are M = 2 and N = 3
+
+• Print the numbers on 2 rows and 3 Columns as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-rectangle-2.png
+
+Note:
+In the given image,
+• The Number in box indicates the number and a space ("1 ")
+
+The output should be,
+
+1 2 3 
+4 5 6 
+
+Sample Input 1:
+
+2
+3
+
+Sample Output 1:
+
+1 2 3 
+4 5 6 
+
+Sample Input 2:
+
+7
+5
+
+Sample Output 2:
+
+1 2 3 4 5 
+6 7 8 9 10 
+11 12 13 14 15 
+16 17 18 19 20 
+21 22 23 24 25 
+26 27 28 29 30 
+31 32 33 34 35 
+
+Solution
+
+m = int(input())
+n = int(input())
+number = 1
+for rows in range(m):
+    each_row = ""
+    for columns in range(n):
+        each_row = each_row + str(number) + " "
+        number = number + 1
+    print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+n = int(input())
+m=int(input())
+number = 1
+for i in range(n):
+    pattern = ""
+    for j in range(m):
+        pattern = pattern + (str(number) + " ")
+        number = number + 1
+    print(pattern)
+
+"""n=int(input())
+m=int(input())
+p=1
+for i in range(n):
+    for j in range(m):
+        print(p,end=" ")
+        p=p+1
+    print()"""
+
+_________________________________________________________________________________________________________________________
+
+11. Numbers in Inverted Right Angled Traingle
+
+Given a number N, write a program to print Inverted Right Angled Traingle of N rows using numbers starting from 1
+
+1 2 3 4 
+1 2 3 
+1 2 
+1 
+
+Note: There is a space after every number
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing numbers starting from 1 as Inverted Right Angled Traingle shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 5
+• Print the numbers on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-inverted-right-angled-triangle.png
+
+Note:
+In the given image,
+• The Empty box indicates two spaces (" ")
+• The Number in box indicates the number and a space ("1 ")
+
+The output should be,
+
+1 2 3 4 5 
+1 2 3 4 
+1 2 3 
+1 2 
+1  
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+1 2 3 4 5 
+1 2 3 4 
+1 2 3 
+1 2 
+1  
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+1 2 3 4 
+1 2 3 
+1 2 
+1 
+
+Solution
+
+n = int(input())
+
+for row in range(n):
+    each_row = ""
+    numbers_in_row = n - row
+    for number in range(1, numbers_in_row + 1):
+        each_row = each_row + (str(number) + " ")
+
+    print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+"""n = int(input())
+for i in range(n):
+    row_otput=""
+    k=n-i
+    for j in range(1,k+1):
+        row_otput=row_otput+str(j)+" "
+    print(row_otput)
+"""
+
+n=int(input())
+for i in range(n):
+    p=1
+    for j in range(i,n):
+        print(p,end=" ")
+        p=p+1
+    print()
+
+_________________________________________________________________________________________________________________________
+
+12. Half Pyramid - 2
+
+Write a program to print the numbers in the given N number of rows in the following half pyramid pattern.
+
+1 
+2 3 
+4 5 6 
+7 8 9 10 
+11 12 13 14 15
+
+Input
+The input will be a single line containing a positive integer (N).
+
+Output
+The output should be N rows containing numbers in the half pyramid pattern.
+Note: There is a space after each number.
+
+Explanation
+
+For example, if the given number is 5, your code should print the consecutive numbers in the five rows
+in the half pyramid pattern.
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+1 
+2 3 
+4 5 6 
+7 8 9 10 
+11 12 13 14 15 
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+1 
+2 3 
+4 5 6 
+7 8 9 10 
+
+Solution
+
+number = int(input())
+k = 1
+for i in range(1, number + 1):
+    pattern = ""
+    for j in range(1, i + 1):
+        pattern = pattern + (str(k) + " ")
+        k = k + 1
+    print(pattern)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+n = int(input())
+num=1
+for i in range(1,n+1):
+    pattern=""
+    for j in range(1,i+1):
+        pattern=pattern+(str(num)+" ")
+        num=num+1
+    print(pattern)
+    
+"""n=int(input())
+p=1
+for i in range(n):
+    for j in range(i+1):
+        print(p,end=" ")
+        p=p+1
+    print()"""
+
+_________________________________________________________________________________________________________________________
+
+13. Prime Numbers from M to N
+
+Given two integers M and N, write a program to print all the prime numbers from M to N.
+
+Input
+The first line of input will contain a positive integer (M).
+The second line of input will contain a positive integer (N).
+
+Output
+The output should be containing all the prime numbers from M to N, each in a new line.
+
+Explanation
+
+For example, if the given numbers are M is 5 and N is 11, as all the prime numbers from 5 to 11 are 5, 7, and 11. 
+So the output should be
+
+5
+7
+11
+
+Similarly, if the given numbers are M is 18 and N is 40, as all the prime numbers from 18 to 40 are 19, 23, 29, 31,and 37.
+So the output should be
+
+19
+23
+29
+31
+37
+
+Sample Input 1:
+
+5
+11
+
+Sample Output 1:
+
+5
+7
+11
+
+Sample Input 2:
+
+18
+40
+
+Sample Output 2:
+
+19
+23
+29
+31
+37
+
+Solution
+
+m = int(input())
+n = int(input())
+if (m > 1):
+    for number in range(m, n+1):
+        factors = 0
+        for i in range(2, number):
+            if (number % i) == 0:
+                factors = factors + 1
+        if factors==0:
+            print(number)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+num1 = int(input())
+num2=int(input())
+for i in range(num1,num2+1):
+    factors=0
+    for j in range(2,i):
+        if(i%j == 0):
+            factors=factors+1
+    if factors==0:
+        print(i)
+
+_________________________________________________________________________________________________________________________
