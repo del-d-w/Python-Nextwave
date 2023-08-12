@@ -1,0 +1,829 @@
+01. print Characters
+
+Given a string and N indices, where N is the length of the string. Write a program to print the character of the 
+string present at each index of the given N indices.
+
+Input
+The first line of input contains a string.
+The next N lines will contain an integer on each line.
+
+Output
+The output should be N lines containing character of the string present at the each index of the given 
+N indices as shown in the sample output.
+
+Explanation
+For example, if the given string is tarc,
+• The length of the string is 4.
+• The given 4 indices are 3, 1, 2, 0.
+• The character present at index 3 is c, at index 1 is a, at index 2 is r and at index O is t.
+The output should be
+c
+a
+r
+t
+
+Sample Input 1:
+
+tarc
+3
+1
+2
+0
+
+Sample Output 1:
+
+c
+a
+r
+t
+
+Sample Input 2:
+
+eesnv
+2
+0
+4
+1
+3
+
+Sample Output 2:
+
+s
+e
+v
+e
+n
+
+Solution
+
+s=input()
+len_of_s=len(s)
+for i in range(len_of_s):
+    index=int(input())
+    print(s[index])
+
+_________________________________________________________________________________________________________________
+
+02. Word Traingle
+
+Given a word, write a program that prints the letters of the word on N lines as shown in the sample output, 
+where N is the length of the word.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be N lines containing letters of the word as shown in the sample output.
+
+Explanation
+For example, if the given word is Rahul
+• The length of the word is 5.
+• The first line should contain the first letter R.
+• The second line should contain the first two letters Ra.
+• The third line will contain the first three letters Rah
+• The fourth line will contain the first four letters Rahu
+• The fifth line will contain all five letters Rahul
+The output should be
+
+R
+Ra
+Rah
+Rahu
+Rahul
+
+Sample Input 1:
+
+Rahul
+Sample Output 1:
+
+R
+Ra
+Rah
+Rahu
+Rahul
+
+Sample Input 2:
+
+Workbench
+
+Sample Output 2:
+
+W
+Wo
+Wor
+Work
+Workb
+Workbe
+Workben
+Workbenc
+Workbench
+
+Solution
+
+word=input()
+len_of_word=len(word)
+for index in range(1,len_of_word+1):
+    print(word[:index])
+
+_________________________________________________________________________________________________________________
+
+03. Sqaure - 4
+
+Given a number N write a program to print a Square of N rows and N columns using numbers starting from 0.
+
+0 0 0 0 0
+1 1 1 1 1
+2 2 2 2 2
+3 3 3 3 3
+4 4 4 4 4
+
+Note
+There is a space after every number ( 1 1).
+
+Input
+The input will be a single line containing an integer representing N
+
+Output
+The output should be N rows and N columns containing numbers starting from O as a Square shown in the sample output.
+
+Explanation
+For example, if the given number is N = 3,
+• Print the numbers in 3 rows and 3 columns starting from O as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-square-4.png
+
+Note
+In the given image, the Number in box indicates the number and a space ("1 ").
+The output should be,
+
+0 0 0
+1 1 1
+2 2 2
+
+Sample Input 1:
+
+3
+
+Sample output 1:
+
+0 0 0
+1 1 1
+2 2 2
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+0 0 0 0 
+1 1 1 1 
+2 2 2 2 
+3 3 3 3 
+
+Solution
+
+number_of_rows=int(input())
+for row in range(number_of_rows):
+    each_number=str(row)
+    each_row=(each_number+" ")*number_of_rows
+    print(each_row)
+
+"""n=int(input())
+for i in range(n):
+    print((str(i)+" ")*n)"""
+
+_________________________________________________________________________________________________________________
+
+04. Shuffle string
+
+Given a string and N indices, where N is the length of the string. Write a program to print the string 
+after shuffling the characters in the order of the given N indices.
+
+Input
+The first line of input will contain a string.
+The next N lines will contain an integer on each line.
+
+Output
+The output should be a single line containing the shuffled string.
+
+Explanation
+For example, if the given string is goindc,
+• The length of the string is 6.
+• The given 6 indices are 5, 1, 4, 2, 3 and 0.
+• The character present at index 5 is c, at index 1 is o, at index 4 is d, at index 2 is i, at
+index 3 is n and at index O is g.
+• The shuffled string is coding.
+The output should be coding
+
+Sample Input 1:
+
+goindc
+5
+1
+4
+2
+3
+0
+
+Sample output 1:
+
+coding
+
+Sample Input 2:
+
+eimag
+1
+2
+3
+4
+0
+
+Sample Output 2:
+
+image
+
+Solution
+
+word=input()
+len_of_word=len(word)
+Shuffled_word=""
+for i in range(len_of_word):
+    index=int(input())
+    Shuffled_word=Shuffled_word+word[index]
+print(Shuffled_word)
+_________________________________________________________________________________________________________________
+
+05. Square - 5
+
+Given a starting number S and a number N write a program to print a Square of N rows and N columns using numbers
+starting from S.
+
+5 6 7
+5 6 7
+5 6 7
+
+Note
+There is a space after every number( 3 ).
+
+Input
+The first line of input contains an integer representing the starting number S.
+The second line of input contains an integer representing N .
+
+Output
+The output should be N
+rows and N columns containing numbers starting from S as a Square shown in the sample output.
+
+Explanation
+For example, if the given numbers are S = 3 and N = 4,
+• Print the numbers in 4 rows and 4 columns starting from 3 as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-square-5.png
+
+Note
+In the given image, the Number in box indicates the number and a space ("3 ").
+The output should be,
+
+3 4 5 6 
+3 4 5 6 
+3 4 5 6 
+3 4 5 6
+
+Sample Input 1:
+
+3
+4
+
+Sample output 1:
+
+3 4 5 6 
+3 4 5 6 
+3 4 5 6 
+3 4 5 6
+
+Sample Input 2:
+
+8
+5
+
+Sample Output 2:
+
+8 9 10 11 12 
+8 9 10 11 12 
+8 9 10 11 12 
+8 9 10 11 12 
+8 9 10 11 12  
+
+Solution
+
+s=int(input())
+n=int(input())
+first_row=""
+for row in range(n):
+    first_row=first_row+str(s+row)+" "
+for row in range(n):
+    print(first_row)
+
+"""
+m=int(input())
+n=int(input())
+for i in range(n):
+    for j in range(m,m+n):
+        print(j,end=' ')
+    print()
+"""
+_________________________________________________________________________________________________________________
+
+06. Count of Zeros
+
+Given a number N, write a program to find the count of O's in N.
+
+Print Count of zeroes is greater than three if there are more than three O's in the given number. 
+Otherwise, print Count of zeroes is not greater than three.
+
+Input
+The input will be a single line containing an integer representing N
+
+Output
+The output should be a single line containing a string. Count of zeroes is greater than three should be printed 
+if there are more than three O's in the given number. Otherwise, Count of zeroes is not greater than three 
+should be printed.
+
+Explanation
+For example, if the given number is N = 1030800
+• The digits in the given number 1030800 are 1, 0, 3, 0, 8, 0 and 0.
+• Number of zeroes in the given number N are 4.
+• There are more than 3 zeros (0) in the given number N.( 4> 3 ).
+The output should be Count of zeroes is greater than three, as the given number has more than three O's
+
+Sample Input 1:
+
+1030800
+
+Sample output 1:
+
+Count of zeroes is greater than three
+
+Sample Input 2:
+
+84020
+
+Sample Output 2:
+
+Count of zeroes is not greater than three 
+
+Solution
+
+n=input()
+zeros_count=0
+for each_digit in n:
+    if each_digit=="0":
+        zeros_count+=1 
+if zeros_count>3:
+    print("Count of zeroes is greater than three")
+else:
+    print("Count of zeroes is not greater than three")
+
+_________________________________________________________________________________________________________________
+
+07. Number of Even digits
+
+Given a number N, write a program to find the count of even digits in N.
+
+Print Count of even digits is greater than two if there are more than two even digits in the given number.
+Otherwise, print Count of even digits is not greater than two.
+
+Input
+The input will be a single line containing an integer representing N
+
+Output
+The output should be a single line containing a string. Count of even digits is greater than two should be printed 
+if there are more than two even digits in the given number.
+Otherwise, Count of even digits is not greater than two should be printed.
+
+Explanation
+For example, if the given number is N = 2563408
+• The digits in the given number 2563408 are 2, 5, 6, 3, 4, 0 and 8.
+• The number of even digits in the given number is 5. (2563408).
+• There are more than 2 even digits in the given number. (5 > 2).
+The output should be Count of even digits is greater than two, as the given number has more than two even digits
+
+Sample Input 1:
+
+2563408
+
+Sample output 1:
+
+Count of even digits is greater than two
+
+Sample Input 2:
+
+32
+
+Sample Output 2:
+
+Count of even digits is not greater than two 
+
+Solution
+
+n=input()
+even_digits_count=0
+for each_digit in n:
+    if int(each_digit)%2==0:
+        even_digits_count+=1 
+if even_digits_count>2:
+    print("Count of even digits is greater than two")
+else:
+    print("Count of even digits is not greater than two")
+        
+_________________________________________________________________________________________________________________
+
+08. Prime Number
+
+Write a program to check whether the given number is a Prime number or not.
+
+Note
+A prime number is a number that has only two factors. The two factors of a prime number are 1 and itself.
+
+Input
+The input will be a single line containing an integer.
+
+Output
+The output should be a single line containing a string. Prime Number should be printed if the given number
+is a prime number. Otherwise Not a Prime Number should be printed.
+
+Explanation
+For example, if the given number is 5,
+• The output should be Prime Number as it is divisible only by itself and one.
+For example, if the given number is 6,
+• The output should be Not a Prime Number, as it is divisible by 1, 2, 3, and 6.
+
+Sample Input 1:
+
+5
+
+Sample output 1:
+
+Prime Number
+
+Sample Input 2:
+
+6
+
+Sample Output 2:
+
+Not a Prime Number
+
+Solution
+
+n = int(input())
+if n > 1:
+    factors = 0
+else:
+    factors = 1
+for i in range(2, n):
+    if (n % i) == 0:
+        factors = factors + 1
+if factors == 0:
+    print("Prime Number")
+else:
+    print("Not a Prime Number")
+
+"""
+n=int(input())
+factor=0
+for i in range(2,n):
+    if(n%i==0):
+        factor=factor+1
+if factor==0:
+    print("Prime Number")
+else:
+    print("Not a Prime Number")
+"""
+_________________________________________________________________________________________________________________
+
+09. Right Angled Traingle - 10
+
+Given a Numbers N, write a Program to print a Right Angled Traingle of M  rows and N columns using stars.
+
+*
+* * *
+* * * * *
+* * * * * * *
+
+Note:
+• Each row should contain odd number of stars (*) starting from 1.
+• There is a space after every star (*) 
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows, each row containing an odd number of stars (*) as a Right Angled Triangle 
+shown in the sample output.
+
+Explanation
+For example, if the given number is N = 3,
+• Print the starts on 3 rows as shown in the given image.
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-right-angled-triangle-10.png
+Note
+In the given image,
+• The Star in the box indicates the Star and space ("* ").
+
+The Output Should be
+
+*
+* * *
+* * * * *
+
+Sample Input 1:
+
+3
+
+Sample output 1:
+
+* 
+* * * 
+* * * * * 
+
+Sample Input 2:
+
+6
+
+Sample Output 2:
+
+* 
+* * * 
+* * * * * 
+* * * * * * * 
+* * * * * * * * * 
+* * * * * * * * * * *
+
+Solution
+
+number_of_rows=int(input())
+stars=1 
+for row in range(number_of_rows):
+    each_row="* "*stars
+    stars=stars+2
+    print(each_row)
+
+"""n=int(input())
+for i in range(1,2*n+1):
+    if i%2==1:
+        print('* '*i)"""
+
+_________________________________________________________________________________________________________________
+
+10. Inverted Right Angled Traingle - 7
+
+Given a Numbers N, write a Program to print a Inverted Right Angled Traingle of M  rows and N columns using stars.
+
+* * *
+* *
+*
+
+Note:
+• There is a space after every star (*) 
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows, containing stars (*) as an Inverted Right Angled Triangle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 4,
+• Print the stars (*) on 4 rows as shown in the given image.
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-inverted-right-angled-triangle-7.png
+Note
+In the given image,
+• The Star in the box indicates the Star and space ("* ").
+
+The Output Should be
+
+* * * *
+* * *
+* *
+*
+
+Sample Input 1:
+
+4
+
+Sample output 1:
+
+* * * *
+* * *
+* *
+*
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+* * * * * * * 
+* * * * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+
+Solution
+
+number_of_rows=int(input())
+for row in range(number_of_rows):
+    each_row="* "*(number_of_rows-row)
+    print(each_row)
+"""n=int(input())
+for i in range(1,n+1):
+    print('* '*(n-i+1))"""
+
+_________________________________________________________________________________________________________________
+
+11. Hollow Sqaure - 2
+
+Given a number N write a program that prints a Hollow Square of N + 2 rows using pluses (+), 
+hyphens (-), and pipes (|). The first and last row contain pluses(+) and hyphens(-) and 
+the middle rows contain pipes as shown below.
+
++ - - - +
+|       |
+|       |
+|       |
++ - - - +
+
+Note:
+• There is a space after every character
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N+2 lines containing pluses (+), hyphens (-) and pipes as a Hollow Square shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 5,
+• The Hollow Square should contain 7 lines. (5+2=7)
+• The first and last lines should contain 2 pluses (+) and 5 hyphens (-) and pipes (|) as shown below.
+
++ - - - - - +
+
+• The middle 5 lines should contain two pipes (|) with 10 spaces between them as shown below
+
+
+|           |
+|           |
+|           |
+|           |
+|           |
+
+• The Final Hollow Sqaure is as shown in the given image
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Plus in the box indicates a plus and a space ("+ ").
+• The Hyphen in the box indicates a hyphen and a space ("-").
+• The Pipe in the box indicates a pipe and a space ("| ").
+
+The output should be
+
++ - - - - - +
+|           |
+|           |
+|           |
+|           |
+|           |
++ - - - - - +
+
+Sample Input 1:
+
+5
+
+Sample output 1:
+
++ - - - - - + 
+|           |
+|           |
+|           |
+|           |
+|           |
++ - - - - - + 
+
+Sample Input 2:
+
+2
+
+Sample Output 2:
+
++ - - + 
+|     |
+|     |
++ - - + 
+
+Solution
+
+n=int(input())
+hypens="- "*n 
+first_row="+ "+hypens+"+"
+last_row="+ "+hypens+"+"
+print(first_row)
+for row in range(n):
+    spaces="  "*n 
+    each_row="| "+spaces+"|"
+    print(each_row)
+print(last_row)
+
+"""
+n=int(input())
+print('+ '+'- '*n+'+ ')
+for i in range(1,n+1):
+    print('|'+'  '*(n)+' |')
+print('+ '+'- '*n+'+ ')
+"""
+_________________________________________________________________________________________________________________
+
+12. Case Conversion - 3
+
+Given a title case string, write a program to modifiy the string as given below.
+• Add a hyphen (-) before each uppercase character excluding the first uppercase character.
+• Convert all uppercase characters into lowercase characters.
+Note
+Title case is a writing style where the first letter of every word in a
+sentence is capitalized, except for certain words like articles and prepositions.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a string, as shown in the sample output.
+
+Explanation
+
+For example, if the given string is "TitleCase",
+• The uppercase characters in the given string TitleCase are T and C.
+• The modified string after adding hyphen (-) before each uppercase character excluding the
+first uppercase character is Title-Case.
+• The modified string after converting the uppercase characters T, C to the lower case
+characters t, c is title-case.
+
+The output should be "title-case"
+
+Sample Input 1:
+
+TitleCase
+
+Sample output 1:
+
+title-case
+
+Sample Input 2:
+
+AToyStory
+
+Sample Output 2:
+
+a-toy-story
+
+Solution
+
+s=input()
+len_of_s=len(s)
+first_char_lowercase=s[0].lower()
+result_string=first_char_lowercase
+for index in range(1,len_of_s):
+    uppercase_char=s[index].upper()
+    if s[index]==uppercase_char:
+        lowercaser_char=s[index].lower()
+        result_string=result_string+"-"+lowercaser_char
+    else:
+        result_string=result_string+s[index]
+print(result_string)
+
+"""
+n=input()
+s=""
+for i in n[1:]:
+    if i.isupper():
+        s+="-"+i.lower()
+    else:
+        s+=i
+print(n[0].lower()+s)
+
+"""
+_________________________________________________________________________________________________________________
+
+13. Numbers in Sqaure Pattern - 2
+_________________________________________________________________________________________________________________
+
+14.
+_________________________________________________________________________________________________________________
+
+15.
+_________________________________________________________________________________________________________________
+
