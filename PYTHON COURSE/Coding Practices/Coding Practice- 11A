@@ -1,0 +1,218 @@
+01. Print Word
+
+Given a string, write a program to print only the alphabets in the given string.
+
+Note
+In the given string there are two special characters before and two special characters after each letter. 
+Ex: ##P##Y##T##H##O##N##.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a string that contains only alphabets.
+
+Explanation
+
+For example, if the given string is "--c--a--r--
+• The alphabets in the string with index values are,
+
+- - c - - a - - r - -
+0 1 2 3 4 5 6 7 8 9 10
+
+• The alphabets in the given string in order are c, a, r
+
+The output should be car
+
+Sample Input 1:
+
+--c--a--r--
+
+Sample Output 1:
+
+car
+
+Sample Input 2:
+
+--p@@y--t@@h--o@@n--
+
+Sample Output 2:
+
+python
+
+Sample Input 3:
+
+##c--o--d--e--r##
+
+Sample Output 3:
+
+coder
+
+Solution
+
+string=input()
+start_index=2
+step=3
+word=string[start_index::step]
+print(word)
+
+"""
+s=input()
+n=''
+for i in s:
+    if i.isalpha():
+        n+=i 
+print(n)
+"""
+_____________________________________________________________________________________________________________________
+
+02. Pin Number
+
+Given a string, write a program that checks if all the characters in the string are digits.
+Print True if all the characters in the string are digits. Otherwise, print False.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a boolean. True should be printed if all the characters 
+in the string are digits. Otherwise, False should be printed.
+
+Sample Input 1:
+
+5GNetwork
+
+Sample Output 1:
+
+False
+
+Sample Input 2:
+
+12345
+
+Sample Output 2:
+
+True
+
+Sample Input 3:
+
+nxtwave
+
+Sample Output 3:
+
+False
+
+Solution
+
+string=input()
+contains_digit=string.isdigit()
+print(contains_digit)
+
+"""
+s=input()
+count=0
+for i in s:
+    if i.isdigit():
+        count+=1 
+if count==len(s):
+    print("True")
+else:
+    print("False")
+"""
+_____________________________________________________________________________________________________________________
+
+03. Strip Spaces
+
+﻿Given a string S write a program that prints the modified string by removing the leading and trailing spaces
+from the string S.
+
+Note
+• Leading spaces are any whitespace characters that appear before the first non-whitespace character in a string.
+• Trailing spaces are any whitespace characters that appear after the last non-whitespace character in a string.
+For example, in the string hello world", there are two leading spaces before the h and two trailing spaces after the d.
+
+Input
+The input will be a single line containing a string representing S.
+Output
+The output should be a single line containing a string obtained by removing the leading and trailing spaces from the given string.
+
+Explanation
+
+For example, if the given string is S = "                   practice    "
+• S has trailing and leading spaces.
+• S after removing trailing and leading spaces is practice.
+
+The output should be practice.
+
+Sample Input 1:
+
+                   practice  
+
+Sample Output 1:
+
+practice
+
+Sample Input 2:
+
+  Tech Foundations  
+
+Sample Output 2:
+
+Tech Foundations
+
+Solution
+
+string=input()
+stripped_string=string.strip(" ")
+print(stripped_string)
+
+_____________________________________________________________________________________________________________________
+
+04. Strip Stars
+
+﻿Given a string S, write a program that prints the modified string by removing the leading and trailing stars (*)
+from the string S.
+
+Note
+• Leading stars that appear before the first non-whitespace character in a string.
+• Trailing stars that appear after the last non-whitespace character in a string.
+
+For example, in the string "****Hello, world****", there are four leading stars before the H 
+and four trailing stars after the d.
+
+Input
+The input will be a single line containing a string representing S
+
+Output
+The output should be a single line containing a string obtained by removing the leading and trailing stars 
+from the given string.
+
+Explanation
+For example, if the given string is S = "*******python*******
+•S has trailing and leading stars.
+• S after removing trailing and leading stars is python.
+The output should be python.
+
+Sample Input 1:
+
+****python****
+
+Sample Output 1:
+
+python
+
+Sample Input 2:
+
+**ccbp4.0*********************** 
+
+Sample Output 2:
+
+ccbp4.0
+
+Solution
+
+string=input()
+stripped_string=string.strip("*")
+print(stripped_string)
+
+_____________________________________________________________________________________________________________________
