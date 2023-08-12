@@ -1,0 +1,781 @@
+01. Numbers in Square
+
+Given a number N, write a program to print Square of N rows using numbers starting from 1
+
+1 2 3
+1 2 3
+1 2 3
+
+Note: There is a space after every number
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows and N columns containing numbers starting from 1 as Square shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 5
+• Print the numbers on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-square.png
+
+Note:
+In the given image,
+• The Number in box indicates the number and a space ("1 ")
+
+The output should be,
+
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+1 2 3 4 5
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+1 2 3
+1 2 3
+1 2 3 
+
+Solution
+
+n = int(input())
+
+for row in range(1, n + 1):
+    each_row = ""
+    for column in range(1 , n + 1):
+        each_row += str(column) + " "
+    print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+n=int(input())
+pattern=""
+for i in range(1,n+1):
+    pattern=pattern+(str(i)+" ")
+    
+for i in range(n):
+    print(pattern)
+
+"""n=int(input())
+for i in range(n):
+    p=1
+    for j in range(n):
+        print(p,end=" ")
+        p=p+1
+    print()"""
+
+_________________________________________________________________________________________________________________________
+
+02. Numbers in Right Angled Traingle
+
+Given a number N, write a program to print Right Angled Traingle of N rows using numbers starting from 1
+
+1 
+1 2 
+1 2 3
+
+Note: There is a space after every number
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows and N columns containing numbers starting from 1 as Right Angled Traingle
+shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 5
+• Print the numbers on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-right-angled-triangle.png
+
+Note:
+In the given image,
+• The Number in box indicates the number and a space ("1 ")
+
+The output should be,
+
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+
+Solution
+
+n = int(input())
+
+for row in range(1, n+1):
+    each_row = ""
+    for number in range(1, row+1):
+        each_row = each_row + (str(number) + " ")
+
+    print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+"""num = int(input())
+for i in range(1,num+1):
+    row_otput=""
+    for j in range(1,i+1):
+        row_otput=row_otput+str(j)+" "
+    print(row_otput)
+"""
+n=int(input())
+for i in range(n):
+    p=1
+    for j in range(i+1):
+        print(p,end=" ")
+        p=p+1
+    print()
+
+_________________________________________________________________________________________________________________________
+
+03. Numbers in Rectangle
+
+Given two numbers M and N, write a program to print Rectangle of M rows and N columns using numbers starting from 7
+
+7 8 9 10
+7 8 9 10
+7 8 9 10
+
+Note: There is a space after every number
+
+Input
+The First line of input contain an inetger representing M.
+The Second line of input contain an inetger representing N.
+
+Output
+The output should be M rows and N columns containing numbers starting from 7 as Rectangle shown in the sample output.
+
+Explanation
+
+For example, if the given numbers are M = 2 and N = 3
+
+• Print the numbers on 2 rows and 3 Columns as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-rectangle.png
+
+Note:
+In the given image,
+• The Number in box indicates the number and a space ("1 ")
+
+The output should be,
+
+7 8 9
+7 8 9
+
+Sample Input 1:
+
+2
+3
+
+Sample Output 1:
+
+7 8 9
+7 8 9
+
+Sample Input 2:
+
+5
+4
+
+Sample Output 2:
+
+7 8 9 10 
+7 8 9 10 
+7 8 9 10 
+7 8 9 10 
+7 8 9 10 
+
+Solution
+
+m=int(input())
+n=int(input())
+for row in range(1,m+1):
+    start_number=7
+    each_row=""
+    for column in range(1,n+1):
+        each_row=each_row+str(start_number)+" "
+        start_number=start_number+1 
+    print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+m=int(input())
+n=int(input())
+for i in range(m):
+    for j in range(7,7+n):
+        print(j,end=' ')
+    print()
+
+_________________________________________________________________________________________________________________________
+
+04. Numbers in Pyramid
+
+Given two numbers S and N, write a program to print Pyramid of N rows using numbers starting from S
+
+   6
+  6 7
+ 6 7 8
+6 7 8 9
+
+Note: There is a space after every number
+
+Input
+The First line of input contain an inetger representing S.
+The Second line of input contain an inetger representing N.
+
+Output
+The output should be N rows containing numbers starting from S as Rectangle shown in the sample output.
+
+Explanation
+
+For example, if the given numbers are S = 7 and N = 5
+
+• Print the numbers starting from 7 on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-pyramid.png
+
+Note:
+In the given image,
+• The Number in box indicates the number and a space ("7 ")
+
+The output should be,
+
+    7
+   7 8
+  7 8 9
+ 7 8 9 10
+7 8 9 10 11
+
+Sample Input 1:
+
+7
+5
+
+Sample Output 1:
+
+    7
+   7 8
+  7 8 9
+ 7 8 9 10
+7 8 9 10 11
+
+Sample Input 2:
+
+3
+7
+
+Sample Output 2:
+
+      3 
+     3 4 
+    3 4 5 
+   3 4 5 6 
+  3 4 5 6 7 
+ 3 4 5 6 7 8 
+3 4 5 6 7 8 9 
+
+Solution
+
+s=int(input())
+n=int(input())
+for row in range(1,n+1):
+    left_spaces=" "*(n-row)
+    each_row=""
+    for column in range(s,row+s):
+        each_row=each_row+str(column)+" "
+    each_row=left_spaces+each_row
+    print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+m=int(input())
+n=int(input())
+for i in range(n):
+    print(' '*(n-i-1),end='')
+    for j in range(i+1):
+        print(m+j,end=' ')
+    print()
+
+_________________________________________________________________________________________________________________________
+
+05. Numbers in Squares - 2
+
+Given a number N, write a program to print Square of N rows using numbers starting from N to 1
+
+4 3 2 1
+4 3 2 1
+4 3 2 1
+4 3 2 1
+
+Note: There is a space after every number
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows and N columns containing numbers starting from N to 1 as Square shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 3
+• Print the numbers on 3 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-square-2.png
+
+Note:
+In the given image,
+• The Number in box indicates the number and a space ("3 ")
+
+The output should be,
+
+3 2 1
+3 2 1
+3 2 1
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+3 2 1
+3 2 1
+3 2 1
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+5 4 3 2 1 
+5 4 3 2 1 
+5 4 3 2 1 
+5 4 3 2 1 
+5 4 3 2 1  
+
+Solution
+
+n=int(input())
+for row in range(n):
+    each_row=""
+    for column in range(n):
+        each_row=each_row+str(n-column)+" "
+    print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+n=int(input())
+for i in range(n):
+    for j in range(n,0,-1):
+        print(j,end=' ')
+    print()
+
+_________________________________________________________________________________________________________________________
+
+06. Numbers in Right Angled Traingle - 2
+
+Given a number N, write a program to print Right Angled Traingle of N rows using numbers starting from 1
+
+    1
+  2 1
+3 2 1
+
+Note: There is a space after every number
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing numbers starting from 1 as Right Angled Traingle shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 4
+• Print the numbers on 4 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-right-angled-triangle-2.png
+
+Note:
+In the given image,
+• The Empty box indicates two spaces (" ")
+• The Number in box indicates the number and a space ("1 ")
+
+The output should be,
+
+
+      1 
+    2 1 
+  3 2 1 
+4 3 2 1  
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+
+      1 
+    2 1 
+  3 2 1 
+4 3 2 1 
+
+Sample Input 2:
+
+10
+
+Sample Output 2:
+
+                  1 
+                2 1 
+              3 2 1 
+            4 3 2 1 
+          5 4 3 2 1 
+        6 5 4 3 2 1 
+      7 6 5 4 3 2 1 
+    8 7 6 5 4 3 2 1 
+  9 8 7 6 5 4 3 2 1 
+10 9 8 7 6 5 4 3 2 1 
+
+Solution
+
+n=int(input())
+for row in range(1,n+1):
+    spaces="  "*(n-row)
+    each_row=""
+    for column in range(1,row+1):
+        each_row=str(column)+" "+each_row
+    each_row=spaces+each_row
+    print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+n=int(input())
+for i in range(1,n+1):
+    print('  '*(n-i),end='')
+    for j in range(i,0,-1):
+        print(str(j),end=' ')
+    print()
+
+_________________________________________________________________________________________________________________________
+
+07. Amstrong Numbers from M to N
+
+Given a number N, write a program to print Armstrong numbers from 1 to N each on a new line.
+Note
+A number N is an Armstrong Number, if the sum of each digit to the power of Lis equal to N. Where 
+L is the count of digits in N.
+
+For example if the given number N = 153,
+• There are 3 ( L = 3 ) digits in 153 are 1, 2, 3.
+• The sum of each digit in 153 to the power of 3 is, 
+• Sum = (1 3 ) + (5 3 ) + ( 3 3 ) = 1 + 125 + 27 = 15
+
+The sum of each digit in 153 to the power of 3 is equal to 153. So, 153 is an Armstrong Number.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should contain the Armstrong numbers from 1 to N, each on a new line.
+
+Explanation
+
+For example, if the given number is N = 200
+• The Armstrong numbers from 1 to 200 are 1, 2, 3, 4, 5, 6, 7, 8, 9, 153.
+    。 There is only 1 digit in 1 is 1.
+    。 The sum of each digit in 1 to the power of 1 is 1. (11)
+    。 The sum of each digit in 1 to the power of 1 is equal to the number 1.
+    So, the number 1 is an Armstrong number
+
+    。 There are 3 digits in 153 are 1, 5 and 3.
+    。 The sum of each digit in 153 to the power of 3 is 153. (13+53+33).
+    。 The sum of each digit in 153 to the power of 3 is equal to the number 153.
+    So, the number 153 is an Armstrong number.
+
+The output should be
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+153
+
+Sample Input 1:
+
+200
+
+Sample Output 1:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+153
+
+Sample Input 2:
+
+10
+
+Sample Output 2:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+Solution:
+
+n=int(input())
+for number in range(1,n+1):
+    sum_of_power_of_digits=0
+    number=str(number)
+    power=len(number)
+    for each_digit in number:
+        each_digit=int(each_digit)
+        sum_of_power_of_digits=sum_of_power_of_digits+(each_digit**power)
+    number=int(number)
+    is_amstrong=sum_of_power_of_digits==number
+    if is_amstrong:
+        print(number)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+n=int(input())
+for i in range(1,n+1):
+    sum=0
+    for j in str(i):
+        sum+=int(j)**len(str(i))
+    if i==sum:
+        print(i)
+
+_________________________________________________________________________________________________________________________
+
+08. Prime Numbers from 1 to N
+
+Given a number N, write a program to print all the Prime Numbers from 1 to N.
+
+Note
+A Prime Number is a positive integer greater than 1 that has no factors other than 1 and itself.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should contain the Prime Numbers from 1 to N, each on anew line.
+
+Explanation
+For example, if the given number is N = 10,
+• The numbers from 1 to 10 are 1, 2, 3, 4, 5, 6, 7, 8, 9, and 10.
+• The numbers that has no factors other than 1 and itself from 1 to 10 are 2, 3, 5, and 7. 
+
+The output should be
+
+2
+3
+5
+7
+
+Sample Input 1:
+
+10
+
+Sample Output 1:
+
+2
+3
+5
+7
+
+Sample Input 2:
+
+25
+
+Sample Output 2:
+
+2
+3
+5
+7
+11
+13
+17
+19
+23
+
+Solution:
+
+n = int(input())
+
+for number in range(2, n+1):
+    no_of_factors = 0
+    for i in range(2, number):
+        if (number % i) == 0:
+            no_of_factors = no_of_factors + 1
+
+    if no_of_factors == 0:
+        print(number)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+num = int(input())
+for i in range(2,num+1):
+    factors=0
+    for j in range(2,i):
+        if(i%j == 0):
+            factors=factors+1
+    if factors==0:
+        print(i)
+
+_________________________________________________________________________________________________________________________
+
+09. Prime Numbers from M to N
+
+Given two numbers M and N. Write a program to print all the Prime Numbers in the range from M to N. 
+If no Prime Numbers present in the given range print No Prime Numbers Found.
+
+Note
+A Prime Number is a positive integer greater than 1 that has no factors other than 1 and itself.
+
+Input
+The first line of input contains an integer representing M. The second line of input contains an integer representing N
+
+Output
+The output should be a single line containing the Prime Numbers from M to N separated by a space.
+If no prime numbers are present in the given range then No Prime Numbers Found should be printed.
+
+Explanation
+
+For example, if the given numbers are M = 3 and N = 15,
+• The numbers from 3 to 15 are 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, and 15.
+• The numbers that has no factors other than 1 and itself from 3 to 15 are 3, 5, 7, 11, and 13.
+• There is a space after each prime number.
+The output should be 3 5 7 11 13
+
+For example, if the given numbers are M = 20 and N = 22,
+• The numbers from 20 to 22 are 20, 21, and 22.
+• There is no numbers that has no factors other than 1 and itself from 20 to 22.
+The output should be, No Prime Numbers Found.
+
+Sample Input 1:
+
+3
+15
+
+Sample Output 1:
+
+3 5 7 11 13 
+
+Sample Input 2:
+
+8
+10
+
+Sample Output 2:
+
+No Prime Numbers Found
+
+Solution:
+
+m=int(input())
+n=int(input())
+prime_numbers=""
+for number in range(m,n+1):
+    if number>1:
+        factors=0
+    else:
+        factors=1 
+    for i in range(2,number):
+        if (number%i)==0:
+            factors=factors+1 
+    if factors==0:
+        prime_numbers=prime_numbers+str(number)+" "
+if len(prime_numbers)>0:
+    print(prime_numbers)
+else:
+    print("No Prime Numbers Found")
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+m=int(input())
+n=int(input())
+s=''
+for i in range(m,n+1):
+    is_prime=True
+    for j in range(2,i):
+        if i%j==0:
+            is_prime=False
+            break
+    if is_prime and i>1:
+        s+=str(i)+" "
+if s=='':
+    print("No Prime Numbers Found")
+else:
+    print(s)
+
+_________________________________________________________________________________________________________________________
+
+10. Numbers in Rectangle - 2
+
