@@ -216,3 +216,241 @@ stripped_string=string.strip("*")
 print(stripped_string)
 
 _____________________________________________________________________________________________________________________
+
+05. Lowercase
+
+﻿Given a string, write a program to print the string by converting all the characters in the string to lowercase.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a string obtained by converting all the characters
+in the given string to lowercase.
+
+﻿Explanation
+
+For example, if the given string is NOVEMBER,
+• The characters in the string NOVEMBER are N, O, V, E, M, B, E, R.
+• After converting characters into lowercase.
+The output should be november.
+
+Sample Input 1:
+
+NOVEMBER
+
+Sample Output 1:
+
+november
+
+Sample Input 2:
+
+Amazing Journey
+
+Sample Output 2:
+
+amazing journey
+
+Solution
+
+string=input()
+lowercase_string=string.lower()
+print(lowercase_string)
+
+_____________________________________________________________________________________________________________________
+
+06. Uppercase
+
+﻿Given a string, write a program to check if all the characters in the string are in uppercase.
+Print True if the string contains all uppercase characters, otherwise print False.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a boolean. True should be printed if all the characters
+in the string are in uppercase. Otherwise, False should be printed.
+﻿
+Explanation
+For example, if the given string is IEEE, the output should be True as all the characters in
+the given string are in uppercase.
+
+Sample Input 1:
+
+IEEE
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+CommuNitY
+
+Sample Output 2:
+
+False
+
+Sample Input 3:
+
+MALALA YoUSaFZAI
+
+Sample Output 3:
+
+False
+
+Solution
+
+string=input()
+is_string_uppercase=string==string.upper()
+print(is_string_uppercase)
+
+"""
+n=input()
+if n.isupper():
+    print(True)
+else:
+    print(False)
+"""
+_____________________________________________________________________________________________________________________
+
+07. Date Format
+﻿
+Given a string in the format dd-mm-yy S, write a program to convert the string from dd-mm-yy format to dd/mm/yy format.
+
+Input
+The input will be a single line containing a string representing S.
+
+Output
+The output should be a single line containing a string after converting from dd-mm-yy format to dd/mm/yy.
+
+Explanation
+For example, if the given string is S = 07-11-2020
+• After replacing " - " with "/" in the date 07/11/2020.
+The output should be 07/11/2020
+
+Sample Input 1:
+
+07-11-2020
+
+Sample Output 1:
+
+07/11/2020
+
+Sample Input 2:
+
+12-10-2222
+
+Sample Output 2:
+
+12/10/2222
+
+Solution
+
+date=input()
+dateformat=date.replace("-","/")
+print(dateformat)
+
+_____________________________________________________________________________________________________________________
+
+08. Lowercase & Uppercase
+
+Given a string S, write a program that prints the given string after converting all the characters to lowercase and uppercase.
+
+Input
+The input will be a single line containing a string representing S
+
+Output
+The first line of output should be a string containing lowercase characters. The second line of output should 
+be a string containing uppercase characters.
+
+Explanation
+For example, if the given string is S = "Learning",
+• The characters in the string S are L, e, a, r, n, i, n and g.
+• After converting string S to lowercase, the string is learning.
+• After converting string S to uppercase, the string is LEARNING.
+The output should be,
+
+learning
+LEARNING
+
+Sample Input 1:
+
+Learning
+
+Sample Output 1:
+
+learning
+LEARNING
+
+Sample Input 2:
+
+Transportation
+
+Sample Output 2:
+
+transportation
+TRANSPORTATION
+
+Solution
+
+word=input()
+lower_case_word=word.lower()
+upper_case_word=word.upper()
+print(lower_case_word)
+print(upper_case_word)
+
+_____________________________________________________________________________________________________________________
+
+09. Upper case Letters
+
+﻿Given a string, write a program that prints all the uppercase letters of the given string.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a string obtained by joining the uppercase letters of the given string.
+
+Explanation
+
+For example, if the given string is SofTwArE.
+• The characters of the given string are S, o, f, T, w, A, r and E.
+• The uppercase letters in the given string are S, T, A and E.
+The output should be STAE.
+
+Sample Input 1:
+
+SofTwArE
+
+Sample Output 1:
+
+STAE
+
+Sample Input 2:
+
+HACKathons
+
+Sample Output 2:
+
+HACK
+
+Solution
+
+string=input()
+upper_case_letters=""
+for character in string:
+    is_upper=(character==character.upper())
+    if is_upper:
+        upper_case_letters=upper_case_letters+character
+print(upper_case_letters)
+
+"""
+s=input()
+n=''
+for i in s:
+    if i.isupper():
+        n+=i 
+print(n)
+"""
+_____________________________________________________________________________________________________________________
