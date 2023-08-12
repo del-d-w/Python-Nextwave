@@ -1,0 +1,529 @@
+01. Secured URL
+
+﻿Given an URL, write a program that checks if the given URL is a secured URL.
+Print True if the given URL is a secured URL. Otherwise, print False.
+
+Note
+The url that starts with https:// is a secured url
+
+Input
+The input will be a single line containing a string.
+﻿
+Output
+The output should be a single line containing a boolean. True should be printed if the URL is secured. 
+Otherwise, False should be printed.
+
+Explanation
+For example, if the given URL is https://docs.google.com,
+• The given URL https://docs.google.com starts with https://.
+The output should be True, as the URL is secured.
+
+Sample Input 1:
+
+https://docs.google.com
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+learning.ccbp.in
+
+Sample Output 2:
+
+False
+
+Solution:
+
+url = input()
+
+is_secure_url = url.startswith("https://")
+
+print(is_secure_url)
+
+______________________________________________________________________________________________________________________
+
+02. Python File
+﻿
+Given a file name with the file extension, write a program that checks if the given file is a Python file.
+Print True if the file is a Python file. Otherwise, print False.
+
+Note
+• A file extension is added to the end of a file name to identify the file's format.
+• A Python file has the extension .py.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the file is a Python file. 
+Otherwise, False should be printed.
+
+Explanation
+For example, if the given file name is add_numbers.py,
+• The given file name add_numbers.py ends with the extension .py.
+The output should be True, as the given file is a Python file.
+
+Sample Input 1:
+
+add_numbers.py
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+card.html
+
+Sample Output 2:
+
+False
+
+Solution:
+
+file_name = input()  
+is_python_file = file_name.endswith(".py") 
+print(is_python_file)
+
+______________________________________________________________________________________________________________________
+
+03. Palindrome
+﻿
+Given a string, check if the given string is a palindrome.
+A palindrome is a sequence of characters that can be read the same way whether you start from the beginning or the end.
+
+Note
+Consider uppercase characters and lowercase characters as different.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a boolean. True should
+be printed if the given string is a palindrome. Otherwise, False should be printed.
+ 
+Explanation
+
+For example, if the given string is madam,
+• The reverse of the string madam is madam.
+• As the reversed string and the given string are the same, the string is a palindrome.
+The output should be True, as the given string is a palindrome.
+
+For example, if the given string is Noon,
+• The reverse of the string Noon is nooN.
+• Lowercase n is not the same as upper case N.
+• As the reversed string and the given string are not the same, the string is not a palindrome.
+The output should be False, as the given string is not a palindrome.
+
+Sample Input 1:
+
+madam
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+Noon
+
+Sample Output 2:
+
+False
+
+Sample Input 3:
+
+batsman
+
+Sample Output 3:
+
+False
+
+Solution:
+
+string = input()
+reversed_string = ""
+for each_character in string:
+    reversed_string = each_character + reversed_string
+is_palindrome = (string == reversed_string)
+print(is_palindrome)
+
+______________________________________________________________________________________________________________________
+
+04. Palindrom - 2
+
+﻿You are given a string, write a program to find whether the string is palindrome or not.
+Note: Treat uppercase letters and lowercase letters as same when comparing letters.
+
+Input
+The first line of input is a string.
+
+Output
+The output should be the string True or False
+
+Explanation
+In the given example, the string Madam is a palindrome as we are treating M and m as equal. So, the output should be True.
+
+Sample Input 1:
+
+Madam
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+Treat
+
+Sample Output 2:
+
+False
+
+Solution
+
+string = input()
+string = string.lower()
+reverse_string = ""
+for char in string:
+    reverse_string = char + reverse_string
+if string == reverse_string:
+    print("True")
+else:
+    print("False")
+______________________________________________________________________________________________________________________
+
+05. Valid Password
+
+Given a password S, check if S is a valid password.
+The password is valid only if it contains at least one digit.
+Print Valid Password if S is a valid Password. Otherwise, print Invalid Password.
+
+Input
+The input will be a single line containing a string representing password S.
+
+Output
+The output should be a single line containing a string Valid Password if the password as at least one digit.
+Otherwise, Invalid Password.
+
+Explanation
+For example, if the given password is S = Qwerty00
+• The characters in the password S are Q, w, e, r, t, y, O and 0.
+• The password Qwerty00 contains 2 digits 0 and 0.
+The output should be Valid Password.
+
+Sample Input 1:
+
+Qwerty00
+
+Sample Output 1:
+
+Valid Password
+
+Sample Input 2:
+
+Dashboard
+
+Sample Output 2:
+
+Invalid Password
+
+Solution
+
+password = input()
+contains_digit = False
+for character in password:
+    is_digit = character.isdigit()
+    if is_digit:
+        contains_digit = True
+if contains_digit:
+    print("Valid Password")
+else:
+    print("Invalid Password")
+______________________________________________________________________________________________________________________
+
+06. Case Conversion
+
+Given a string, write a program to modifiy the string as given below.
+• Add a space before each uppercase character excluding the first uppercase character.
+Print the modified string.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a string obtained by adding space before the uppercase characters.
+
+Explanation
+
+For example, if the given string is TitleCase,
+• The uppercase characters in the given string TitleCase are T and C.
+• The modified string after adding space before each uppercase character excluding the first uppercase 
+character is Title Case.
+The output should be Title Case.
+
+Sample Input 1:
+
+TitleCase
+
+Sample Output 1:
+
+Title Case
+
+Sample Input 2:
+
+TheLionKing
+
+Sample Output 2:
+
+The Lion King
+
+Solution
+
+string = input()
+
+length = len(string)
+result_string = string[0]
+for each_number in range(1, length):
+    each_character = string[each_number]
+    upper_case = each_character.upper()
+    if each_character == upper_case:
+        result_string = result_string + " " + each_character
+    else:
+        result_string = result_string + each_character
+print(result_string)
+
+"""
+n=input()
+s=''
+for i in n[1:]:
+    if i.isupper():
+        s+=" "+i 
+    else:
+        s+=i 
+print(n[0]+s)
+
+"""
+______________________________________________________________________________________________________________________
+
+07. Case Conversion - 2
+
+Given a string, write a program to modify the string as given below.
+• Add a hyphen (-) before each upper-case character.
+• Convert upper-case characters into lower-case characters.
+Print the modified string.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a string obtained by adding a hyphen (-) before ea
+
+Explanation
+For example, if the given string is aChristmasStory,
+•The upper-case characters in the string aChristmasStory are C and S.
+• After adding a hyphen (-) before the upper case characters C and S the string is a-Christmas-Story.
+• After converting the upper case characters C and S to the lower case characters C and s the string is a-christmas-story.
+• The modified string after adding hyphen (-) before each uppercase character and convert uppercase 
+characters to lower-case characters.
+
+The output should be a-christmas-story.
+
+Sample Input 1:
+
+aChristmasStory
+
+Sample Output 1:
+
+a-christmas-story
+
+Sample Input 2:
+
+theFox
+
+Sample Output 2:
+
+the-fox
+
+Solution
+
+string = input()
+
+length = len(string)
+result_string = string[0]
+for each_number in range(1, length):
+    each_character = string[each_number]
+    upper_case_character = each_character.upper()
+    lower_case_character = each_character.lower()
+    if each_character == upper_case_character:
+        result_string = result_string + "-" + lower_case_character
+    else:
+        result_string = result_string + each_character
+print(result_string)
+
+"""
+n=input()
+s=''
+for i in n:
+    if i.isupper():
+        s+="-"+i.lower()
+    else:
+        s+=i 
+print(s)
+"""
+______________________________________________________________________________________________________________________
+
+08. Valid Password - 2
+
+Write a program to check whether the given password is valid or not. Consider the password to be valid if it 
+contains at least one uppercase letter.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing either "Valid Password" or "Invalid Password".
+﻿
+Explanation
+For example, if the given password is "Qwerty00", the output should be "Valid Password" as it contains an uppercase letter.
+Whereas, if the given password is "stadium", the output should be "Invalid Password" as it does not contain a 
+uppercase letter.
+
+Sample Input 1:
+
+Qwerty00
+
+Sample Output 1:
+
+Valid Password
+
+Sample Input 2:
+
+stadium
+
+Sample Output 2:
+
+Invalid Password
+
+Solution
+
+password = input()
+is_all_lower = (password.lower() == password)
+if is_all_lower:
+    print("Invalid Password")
+else:
+    print("Valid Password")
+
+"""
+p = input()
+contains_upper = False
+for character in p:
+  is_upper = character.isupper()
+  if is_upper:
+    contains_upper = True
+if contains_upper:
+  print("Valid Password")
+else:
+  print("Invalid Password")
+"""
+______________________________________________________________________________________________________________________
+
+09. Valid Password - 3
+﻿
+﻿Write a program to check whether the given password is valid or not.
+Consider the password to be valid if it contains at least one uppercase letter, one lowercase letter, and one digit.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing either "Valid Password" or "Invalid Password".
+
+Explanation
+For example, if the given password is "Qwerty00", the output should be "Valid Password" as it contains 
+an uppercase letter, a lowercase letter, and a digit.
+Whereas, if the given password is "Dashboard", the output should be "Invalid Password" as it does not contain a digit.
+
+Sample Input 1:
+
+Qwerty00
+
+Sample Output 1:
+
+Valid Password
+
+Sample Input 2:
+
+Dashboard
+
+Sample Output 2:
+
+Invalid Password
+
+Solution
+
+password = input()
+contains_digit = False
+for character in password:
+    is_digit = character.isdigit()
+    if is_digit:
+        contains_digit = True
+is_all_lower = password.lower() == password
+is_all_upper = password.upper() == password
+contains_lower_and_upper = (not is_all_lower) and (not is_all_upper)
+is_valid_password = contains_digit and contains_lower_and_upper
+if is_valid_password:
+    print("Valid Password")
+else:
+    print("Invalid Password")
+______________________________________________________________________________________________________________________
+
+10. Swapcase
+﻿
+Given a word, write a program to convert all the uppercase letters to lowercase letters and vice versa. 
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing the modified word.
+
+Explanation
+For example, if the given word is "Coding", your code should print the output by 
+swapping the case of all letters ("CODING").
+
+Sample Input 1:
+
+Coding
+
+Sample Output 1:
+
+cODING
+
+Sample Input 2:
+
+HUMANS
+
+Sample Output 2:
+
+humans
+
+Solution
+
+word = input()
+modified_word = ""
+for character in word:
+    uppercase_char = character.upper()
+    if uppercase_char == character:
+        modified_word = modified_word + character.lower()
+    else:
+        modified_word = modified_word + character.upper()
+print(modified_word)
+
+"""
+string = input()
+print(string.swapcase())
+"""
+______________________________________________________________________________________________________________________
