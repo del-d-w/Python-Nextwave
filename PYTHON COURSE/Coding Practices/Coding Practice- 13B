@@ -1,0 +1,839 @@
+01. Numbers in Sqaure - 3
+
+Given a Number N, write a program to print a sqaure of N rows using numbers starting from 1.
+
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+
+Input
+The input will be a single line containing an integer representing N.
+
+Ouput
+The output should be N rows containing numbers starting from 1 as a Sqaure shown in the sample output.
+
+Explanation
+For example, if the given number is N=3
+• Print the numbers on 3 rows shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-square-3.png
+
+Note:
+In the given image, the Number in the box indicates the number and a space ("1 ")
+
+The output should be,
+1 2 3 
+4 5 6 
+7 8 9 
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+1 2 3 
+4 5 6 
+7 8 9 
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+1 2 3 4 5 
+6 7 8 9 10 
+11 12 13 14 15 
+16 17 18 19 20 
+21 22 23 24 25 
+
+Solution:
+
+n = int(input())
+number = 1
+for row in range(n):
+    each_row = ""
+    for columns in range(n):
+        each_row = each_row + (str(number) + " ")
+        number = number + 1
+    print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+n=int(input())
+p=1
+for i in range(n):
+    for j in range(n):
+        print(p,end=" ")
+        p=p+1
+    print()
+
+__________________________________________________________________________________________________________________________
+
+02. Numbers in Right Angled Triangle - 3
+
+
+Given two Numbers S and N, write a program to print a Right Angled Triangle of N rows using numbers starting from S.
+
+6
+7 8
+9 10 11
+12 13 14 15
+
+Input
+The First line of input contain an inetger representing S.
+The Second line of input contain an inetger representing N.
+
+Ouput
+The output should be N rows containing numbers starting from S as a Right Angled Triangle shown in the sample output.
+
+Explanation
+For example, if the given numbers are s=10 and N=5
+• Print the numbers starting from 10 on 5 rows shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-right-angled-triangle-3.png
+
+Note:
+In the given image, the Number in the box indicates the number and a space ("10 ")
+
+The output should be,
+
+10  
+11 12  
+13 14 15  
+16 17 18 19  
+20 21 22 23 24  
+
+Sample Input 1:
+
+10
+5
+
+Sample Output 1:
+
+10  
+11 12  
+13 14 15  
+16 17 18 19  
+20 21 22 23 24  
+
+Sample Input 2:
+
+9
+3
+
+Sample Output 2:
+
+9  
+10 11  
+12 13 14 
+
+Solution:
+
+s = int(input())
+n = int(input())
+for row in range(1, n + 1):
+    each_row = ""
+    for column in range(row):
+        each_row = each_row + str(s) + " "
+        s=s+1
+    print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+N=int(input())
+K=int(input())
+for i in range(0, K):
+    for j in range(0, i + 1):
+        print(N, end=' ')
+        N += 1
+    print(" ")
+
+"""n=int(input())
+m=int(input())
+p=n
+for i in range(m):
+    for j in range(i+1):
+        print(p,end=" ")
+        p=p+1
+    print()"""
+
+__________________________________________________________________________________________________________________________
+
+03. Numbers in Right Angled Triangle - 4
+
+
+Given two Numbers S and N, write a program to print a Right Angled Triangle of N rows using numbers starting from S.
+
+6 7
+8 9 10 11
+12 13 14 15 16 17
+
+Input
+The First line of input contain an inetger representing S.
+The Second line of input contain an inetger representing N.
+
+Ouput
+The output should be N rows containing numbers starting from S as a Right Angled Triangle shown in the sample output.
+
+Explanation
+For example, if the given numbers are s=2 and N=4
+• Print the numbers starting from 2 on 4 rows shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-right-angled-triangle-4.png
+
+Note:
+In the given image, the Number in the box indicates the number and a space ("2 ")
+
+The output should be,
+
+2 3 
+4 5 6 7 
+8 9 10 11 12 13 
+14 15 16 17 18 19 20 21  
+
+Sample Input 1:
+
+2
+4
+
+Sample Output 1:
+
+2 3 
+4 5 6 7 
+8 9 10 11 12 13 
+14 15 16 17 18 19 20 21 
+
+Sample Input 2:
+
+6
+5
+
+Sample Output 2:
+
+6 7 
+8 9 10 11 
+12 13 14 15 16 17 
+18 19 20 21 22 23 24 25 
+26 27 28 29 30 31 32 33 34 35 
+
+Solution:
+
+s = int(input())
+n = int(input())
+for row in range(1, n + 1):
+    each_row = ""
+    for column in range(2*row):
+        each_row = each_row + str(s) + " "
+        s=s+1
+    print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+s=int(input())
+n=int(input())
+for i in range(2,n+2):
+    for j in range(2,i+1):
+        print(s,end=' ')
+        s+=1
+    for j in range(2,i+1):
+        print(s,end=' ')
+        s+=1 
+    print()
+
+__________________________________________________________________________________________________________________________
+
+04. Numbers in Rectagle - 3
+
+Given two numbers M and N write a program to print a Rectangle of M rows and N columns that contains numbers 
+starting from K in descending order. K is the count of numbers that can be printed in M rows and N columns 
+of a Rectangle.
+
+For example, if the given number of rows and columns is M = 3 and N = 4,
+• The count of numbers that can be arranged in a Rectangle of 3 rows and 4 is K = 12 ( 3 * 4 = 12 ).
+So, the Rectangle should be printed with the numbers starting from 12(K) in descending order as given below.
+
+12 11 10 9
+8 7 6 5
+4 3 2 1
+
+Note: There is a space after every number
+
+Input
+The First line of input contain an inetger representing M.
+The Second line of input contain an inetger representing N.
+
+Output
+The output should be M rows and N columns containing numbers Starting from K in descending order
+as a Rectangle shown in sample output
+
+Explanation
+
+For example, if the given number of rows and columns is M = 2 and N = 3,
+• The count of numbers that can be arranged in a Rectangle of 2 rows and 3 is K = 12 ( 2 * 3 = 6 ).
+• Print the numbers starting from 6 in descending order on 2 rows and 3 columns as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-rectangle-3.png
+
+Note:
+In the given image, the Number in the box indicates the number and a space ("6 ")
+
+The output should be,
+
+6 5 4
+3 2 1
+
+Sample Input 1:
+
+2
+3
+
+Sample Output 1:
+
+6 5 4
+3 2 1
+
+Sample Input 2:
+
+6
+5
+
+Sample Output 2:
+
+30 29 28 27 26 
+25 24 23 22 21 
+20 19 18 17 16 
+15 14 13 12 11 
+10 9 8 7 6 
+5 4 3 2 1 
+
+Solution:
+
+m = int(input())
+n = int(input())
+start_number = m*n
+for row in range(m):
+    each_row = ""
+    for column in range(n):
+        each_row = each_row + str(start_number) + " "
+        start_number=start_number-1
+    print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+m=int(input())
+n=int(input())
+k=m*n
+for i in range(1,m+1):
+    for j in range(1,n+1):
+        print(k,end=' ')
+        k-=1 
+    print()
+
+__________________________________________________________________________________________________________________________
+
+05. Numbers in Inverted Right Angled Triangle - 2
+
+Given a number N, write a program to print an Inverted Right Angled Triangle of N rows using numbers starting 
+from K in descending order.
+K is the count of numbers that can be printed in N rows of an Inverted Right Angled Triangle.
+
+For example, if the given number of rows is N = 5,
+• The count of numbers that can be arranged in an Inverted Right Angled Triangle of 5 rows is K = 15 (5+ 4 + 3 + 2 + 1 = 15 )
+
+So, the Inverted Right Angled Triangle should be printed with the numbers starting from 15(K) in 
+descending order as given below.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-description-numbers-in-inverted-right-angled-triangle-2.png
+
+Note: There is a space after every number
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing numbers starting from K in descending order as an 
+Inverted Right Angled Triangle shown in the sample output.
+
+Explanation
+
+Explanation
+For example, if the given number is N = 4,
+• The count of numbers that can be arranged in an Inverted Right Angled Triangle of 4 rows is K = 10 ( 4 + 3 + 2 + 1 = 10 )
+• Print the numbers starting from 10 in descending order on 4 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-explanation-numbers-in-inverted-right-angled-triangle-2.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Number in box indicates the number and a space ("10")
+
+The output should be,
+
+10 9 8 7 
+  6 5 4 
+    3 2 
+      1 
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+10 9 8 7 
+  6 5 4 
+    3 2 
+      1 
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+15 14 13 12 11 
+  10 9 8 7 
+    6 5 4 
+      3 2 
+        1 
+
+Solution:
+
+n = int(input())
+
+start_number = 0
+for num in range(1, n + 1):
+    start_number = start_number + num
+    
+for row in range(n):
+    each_row = ""
+    left_spaces = " " * (2 * row)
+
+    for column in range(n - row):
+        each_row = each_row + str(start_number) + " "
+        start_number = start_number - 1
+        
+    each_row = left_spaces + each_row
+    print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+n=int(input())
+p=n*(n+1)//2
+for i in range(n,0,-1):
+    print('  '*(n-i),end='')
+    for j in range(i):
+        print(p,end=' ')
+        p-=1
+    print()
+
+__________________________________________________________________________________________________________________________
+
+06. Numbers in Right Angled Triangle - 5
+
+Given two numbers S and N, write a program to print a Right Angled Triangle of N rows
+using numbers starting from K+ S-1 and ending with S.
+
+K is the count of numbers that can be printed in N rows of a Right Angled Triangle.
+
+For example, if the given number is S = 2 and number of rows is N = 5,
+• The count of numbers that can be arranged in a Right Angled Triangle of 5 rows is K = 15 ( 1 + 2+ 3+ 4+ 5 = 15 ).
+• The starting number from which the numbers should be printed is K+S-1 which is 16 (15+ 2-1).
+
+So, the Right Angled Triangle should be printed with the numbers starting from 16 (K + S-1) and ending with 2 (S) 
+in descending order as given below.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-description-numbers-in-right-angled-triangle-4.png
+
+Note: There is a space after every number
+
+Input
+The First line of input contain an inetger representing S.
+The Second line of input contain an inetger representing N.
+
+Output
+The output should be N rows containing numbers starting from K+S-1 in and ending with S as an 
+Right Angled Triangle shown in the sample output.
+
+Explanation
+
+Explanation
+
+For example, if the given numbers are S = 6 and N = 4,
+• The count of numbers that can be arranged in a Right Angled Triangle of 4 rows is K = 10 ( 1 + 2+3+4=10).
+• The starting number from which the numbers should be printed is K+S-1 which is 15 ( 10 + 6-1).
+• Print the numbers starting from 15 and ending with 6 (S) in descending order on 4 rows as shown in the given image
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-explanation-numbers-in-right-angled-triangle-4.png
+
+Note
+In the given image,
+• The Number in box indicates the number and a space ("15 ")
+
+The output should be,
+
+15 
+14 13 
+12 11 10 
+9 8 7 6 
+
+Sample Input 1:
+
+6
+4
+
+Sample Output 1:
+
+15 
+14 13 
+12 11 10 
+9 8 7 6 
+
+Sample Input 2:
+
+10
+5
+
+Sample Output 2:
+
+24 
+23 22 
+21 20 19 
+18 17 16 15 
+14 13 12 11 10 
+
+Solution:
+
+s = int(input())
+n = int(input())
+# Calculate the value of K
+k = sum(range(1, n+1))
+# Calculate the starting number
+start_number = k + s - 1
+# Print the right-angled triangle
+for row in range(1, n+1):
+    for column in range(row):
+        print(start_number, end=" ")
+        start_number -= 1
+    print()
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+s=int(input())
+n=int(input())
+k=0
+for i in range(1,n+1):
+    k+=i 
+num=k+s-1
+for i in range(1,n+1):
+    for j in range(i):
+        print(num,end=' ')
+        num-=1 
+    print()
+
+__________________________________________________________________________________________________________________________
+
+07. Numbers in Right Angled Triangle - 6
+
+Given a numbers N, write a program to print a Right Angled Triangle of N rows using numbers.
+
+1
+1 2 1
+1 2 3 1 2
+
+Note: There is a space after every number
+
+Input
+The input will be a sinle line containing an inetger representing N.
+
+Output
+The output should be N rows containing numbers as a Right Angled Triangle shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 4,
+• Consider M as row numbers.
+• In the first row (M = 1) print 1 number starting from 1 as given below.
+1
+• In the second row (M = 2 ) print 2 numbers starting from 1 followed by (M-1) numbers starting from 1 as given below
+1 2 1
+• In the third row (M = 3) print 3 numbers starting from 1 followed by (M-1) numbers starting from 1 as given below.
+1 2 3 1 2
+• In the fourth row (M = 4 ) print 4 numbers starting from 1 followed by (M-1) numbers starting from 1 as given below.
+1 2 3 4 1 2 3
+
+print the numbers on 4 rows as shown in the given image
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-numbers-in-right-angled-triangle-6.png
+
+Note
+In the given image,
+• The Number in box indicates the number and a space ("1 ")
+
+The output should be,
+
+1
+1 2 1
+1 2 3 1 2
+1 2 3 4 1 2 3
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+1
+1 2 1
+1 2 3 1 2
+1 2 3 4 1 2 3
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+1 
+1 2 1 
+1 2 3 1 2 
+1 2 3 4 1 2 3 
+1 2 3 4 5 1 2 3 4 
+1 2 3 4 5 6 1 2 3 4 5 
+1 2 3 4 5 6 7 1 2 3 4 5 6 
+
+Solution:
+
+n = int(input())
+
+for row in range(1, n + 1):
+    each_row = ""
+    
+    for column in range(1, row + 1):
+        each_row = each_row + str(column) + " " 
+        
+    for column in range(1, row):
+        each_row = each_row + str(column) + " " 
+        
+    print(each_row)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+n=int(input())
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print(j,end=' ')
+    for j in range(1,i):
+        print(j,end=' ')
+    print()
+
+__________________________________________________________________________________________________________________________
+
+08. Pair of Numbers
+
+Given a number N write a program to print the count of pairs containing numbers A B from 1 to N such that
+the sum of the numbers is equal to N where A < B
+
+A is the first number, B is the second number in a pair.
+
+Input
+The input will be a single line containing an integer representing N
+
+Output
+The output should be a single line containing an integer which is the count of pairs whose sum is equal to N.
+
+Explanation
+
+For example, if the given number is N = 7,
+• The Possible pairs from 1 to 7 where A < B are
+
+(1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7),
+(2, 3), (2, 4), (2, 5), (2, 6), (2, 7),
+(3, 4), (3, 5), (3, 6), (3, 7),
+(4, 5), (4, 6), (4, 7),
+(5, 6), (5, 7),
+(6, 7)
+
+• From the possible pairs, the pairs (A,B) whose sum (A+B) is equal to 7 (N) are
+
+(1, 6)
+(2, 5)
+(3, 4)
+
+• The count of pairs whose sum is equal to 7 is 3
+
+The output should be 3.
+
+Sample Input 1:
+
+7
+
+Sample Output 1:
+
+3
+
+Sample Input 2:
+
+10
+
+Sample Output 2:
+
+4
+
+Solution:
+
+n=int(input())
+number_of_pairs=0
+for num in range(1,n):
+    if n-num<n and num<n-num:
+        number_of_pairs=number_of_pairs+1 
+print(number_of_pairs)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+n=int(input())
+count=0
+for i in range(1,n+1):
+    for j in range(1,n+1):
+        if i+j==n:
+            count+=1 
+print(count//2)
+
+__________________________________________________________________________________________________________________________
+
+09. Triplets of Numbers
+
+Given a number N, write a program to print the count of triplets containing numbers A, B and C from 1 to N 
+such that the sum of the numbers is equal to N where A < B < C.
+
+A is the first number, B is the second number, and C is the third number in a triplet.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be a single line containing an integer which is the count of triplets whose sum is equal to N.
+
+Explanation
+
+For example, if the given number is N = 10,
+• The triplets from 1 to 10 where A + B + C = N where A < B < C are
+
+(1, 2, 7)
+(1, 3, 6)
+(1, 4, 5)
+(2, 3, 5)
+
+• The count of triplets whose sum is equal to 10 is 4.
+
+The output should be 3.
+
+Sample Input 1:
+
+10
+
+Sample Output 1:
+
+4
+
+Sample Input 2:
+
+12
+
+Sample Output 2:
+
+7
+
+Solution:
+
+n=int(input())
+number_of_pairs = 0
+for first_number in range(1,n):
+    for second_number in range(first_number+1,n):
+        if n-(first_number+second_number) <n and first_number<second_number<n-(first_number+second_number):
+            number_of_pairs=number_of_pairs+1 
+print(number_of_pairs)
+
+----------------------------------------------------Another Solution----------------------------------------------
+
+n=int(input())
+count=0
+for i in range(1,n+1):
+    for j in range(1,n+1):
+        for k in range(1,n+1):
+            if i+j+k==n and i<j<k:
+                count+=1 
+print(count)
+__________________________________________________________________________________________________________________________
+
+10. Indentify the Mistake - Inverted Half Pyramid - 2
+
+Given a number N, write a program to an Inverted Right Angled Triangle of N rows using numbers
+
+4321
+321
+21
+1
+
+Note: There is No space after every number
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing numbers as an Inverted Right Angled Triangle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 5,
+• Print the numbers on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-identify-mistake-numbers-in-inverted-right-angled-triangle-2.png
+
+The Output should be,
+
+54321
+4321
+321
+21
+1
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+54321
+4321
+321
+21
+1
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+4321
+321
+21
+1
+
+Solution:
+
+n = int(input())
+
+for row_num in range(0,n):
+    row_output = ""
+    seq_num = n-row_num
+    while seq_num > 0:
+        row_output = row_output + str(seq_num)
+        seq_num = seq_num - 1
+    print(row_output)
+
+________________________________________________________________________________________________________________________________________________________________________
