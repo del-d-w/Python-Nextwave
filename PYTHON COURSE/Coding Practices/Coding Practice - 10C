@@ -1,2 +1,874 @@
 01. Sum of N terms in Power Series
 
+Given two numbers X and N write a program to print the sum of N terms in the given series.
+
+Series:
+X1,X3,X5, ..... N terms
+
+Terms in the given series:
+
+Term Number       Term           Power
+First Term        X1               1
+second Term       X3               3
+Third Term        X5               5
+...               ...              ...
+Nth Term          X2N-1          2N - 1
+
+Input
+The First line of input contain an inetger representing X.
+The Second line of input contain an inetger representing N.
+
+Output
+The output should be a single line containing an integer that is the sum of the series from First Term to Nth Term.
+
+Explanation
+For example, if the given numbers are X = 2 and N = 6,
+• The number of terms is 6.
+• The terms from First term to Sixth term in the given series are 
+2 (21), 8 (23), and 32 (25), 128 (27), 512 (29), and 2048 (211).
+
+Terms in the given series:
+
+Term Number     Term               Number of 2's
+First Term        21 (2)                1
+second Term       23 (8)                3
+Third Term        25(32)                5
+Fourth Term       27 (128)              7
+Fifth Trem        29 (512)              9
+Sixth Term        211 (2048)            11
+
+• The sum of the terms from First term to Sixth term is 2730 (2 + 8 + 32 + 128 + 512 + 2048 = 199088)
+
+The Output Should be 2730
+
+Sample Input 1:
+
+2
+6
+
+Sample Output 1:
+
+2730
+
+Sample Input 2:
+
+5
+3
+
+Sample Output 2:
+
+3255
+
+Solution
+
+x=int(input())
+n=int(input())
+sum_of_terms=0
+power=1
+for each_number in range(1,n+1):
+    term=x**power
+    power=power+2
+    sum_of_terms=sum_of_terms+term
+print(sum_of_terms)
+
+"""
+m=int(input())
+n=int(input())
+sum=0
+for i in range(1,n*2+1):
+    if i%2==1:
+        sum+=pow(m,i)
+print(sum)
+"""
+_____________________________________________________________________________________________________________________
+
+02.Sum of N terms in Power Series - 2
+
+Given two numbers X and N write a program to print the sum of N terms in the given series.
+
+Series:
+X2,X4,X6, ..... N terms
+
+Terms in the given series:
+
+Term Number       Term           Power
+First Term        X2               2
+second Term       X4               4
+Third Term        X6               6
+...               ...              ...
+Nth Term          X2N              2N 
+
+Input
+The First line of input contain an inetger representing X.
+The Second line of input contain an inetger representing N.
+
+Output
+The output should be a single line containing an integer that is the sum of the series from First Term to Nth Term.
+
+Explanation
+For example, if the given numbers are X = 3 and N = 4,
+• The number of terms is 4.
+• The terms from First term to Sixth term in the given series are 
+9 (32), 81 (34), and 729 (36), 6561 (38).
+
+Terms in the given series:
+
+Term Number     Term                   Power
+First Term        32 (9)                 2
+second Term       34 (81)                4
+Third Term        36(729)                6
+Fourth Term       38 (6561)              8
+
+
+• The sum of the terms from First term to Fourth term is 7380 (9 + 81 + 729 + 6561 = 7380)
+
+The Output Should be 7380
+
+Sample Input 1:
+
+3
+4
+
+Sample Output 1:
+
+7380
+
+Sample Input 2:
+
+-2
+6
+
+Sample Output 2:
+
+5460
+
+Solution
+
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution
+
+x=int(input())
+n=int(input())
+sum_of_terms=0
+power=0
+for each_number in range(1,n+1):
+    power=power+2
+    term=x**power
+    sum_of_terms=sum_of_terms+term
+print(sum_of_terms)
+
+"""
+m=int(input())
+n=int(input())
+sum=0
+for i in range(1,n*2+1):
+    if i%2==0:
+        sum+=pow(m,i)
+print(sum)
+"""
+_____________________________________________________________________________________________________________________
+
+03.Sum of N terms in Power Series - 2
+
+Given two numbers X and N write a program to print the sum of N terms in the given series.
+
+Series:
+X2,-X4,X6,-X8 ..... N terms
+
+Terms in the given series:
+
+Term Number       Term            Power
+First Term        X2                2
+second Term       -X4               4
+Third Term        X6                6
+Fourth Term       -X8               8
+...               ...              ...
+
+Input
+The First line of input contain an inetger representing X.
+The Second line of input contain an inetger representing N.
+
+Output
+The output should be a single line containing an integer that is the sum of the series from First Term to Nth Term.
+
+Explanation
+For example, if the given numbers are X = 2 and N = 6,
+• Number of terms is 6.
+• The terms from the First Term to the Sixth Term in the given
+series are 4 (22), -16 (-(24)), 64 (26), -256 (-(2o)), 1024 (210) and -4096 (-(212)).
+
+Terms in the given series:
+
+Term Number       Term                 Power
+First Term        22 (4)                 2
+second Term       -(24) (-16)            4
+Third Term        26 (64)                6
+Fourth Term       -(28) (-256)           8
+Fifth Term        210 (1024)             10
+Sixth Term        -(212) (-4096)         12
+
+• Sum of the terms from the first term to the sixth term is
+-3276. (4+ (-16) + 64 + (-256) + 1024 + (-4096) = -3276
+
+The Output Should be -3276
+
+Sample Input 1:
+
+2
+6
+
+Sample Output 1:
+
+-3276
+
+Sample Input 2:
+
+-7
+3
+
+Sample Output 2:
+
+115297
+
+Solution
+
+x=int(input())
+n=int(input())
+sum_of_terms=0
+power=0
+for each_number in range(1,n+1):
+    power=power+2
+    term=x**power
+    is_term_negative=(each_number%2==0)
+    if is_term_negative:
+        term=term*(-1)
+    sum_of_terms=sum_of_terms+term
+print(sum_of_terms)
+
+"""
+m=int(input())
+n=int(input())
+lista=[]
+sum=0
+for i in range(1,n*2+1):
+    if i%2==0:
+        lista.append(i)
+for i in range(len(lista)):
+    if i%2==0:
+        sum+=pow(m,lista[i])
+    else:
+        sum-=pow(m,lista[i])
+print(sum)
+"""
+_____________________________________________________________________________________________________________________
+
+04. Right Angled Traingle - 5
+
+Given a Number N, write a program to print the Right Angled Traingle of N rows using stars (*)
+
+  *
+ **
+***
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars (*) as the Right Angled Traingle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 4,
+• Print the stars (*) on 4 rows as shown in the given image.
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-right-angled-triangle-5.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The Ouput Should be
+
+   *
+  **
+ ***
+****
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+   *
+  **
+ ***
+****
+
+Sample Input 2:
+
+9
+
+Sample Output 2:
+
+        *
+       **
+      ***
+     ****
+    *****
+   ******
+  *******
+ ********
+*********
+
+Solution
+
+rows=int(input())
+for each_number in range(1,rows+1):
+    spaces=" "*(rows-each_number)
+    stars="*"*(each_number)
+    print(spaces+stars)
+
+"""
+n=int(input())
+for i in range(1,n+1):
+    print(" "*(n-i)+"*"*i)
+"""
+
+_____________________________________________________________________________________________________________________
+
+05. Right Angled Traingle - 6
+
+Given a Number N, write a program to print the Right Angled Traingle of N rows using stars (*)
+
+      *
+    * *
+  * * *
+* * * *
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars (*) as the Right Angled Traingle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 6,
+• Print the stars (*) on 6 rows as shown in the given image.
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-right-angled-triangle-6.png
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The Ouput Should be
+
+      *
+    * *
+  * * *
+* * * *
+
+Sample Input 1:
+
+6
+
+Sample Output 1:
+
+      *
+    * *
+  * * *
+* * * *
+
+Sample Input 2:
+
+8
+
+Sample Output 2:
+
+              * 
+            * * 
+          * * * 
+        * * * * 
+      * * * * * 
+    * * * * * * 
+  * * * * * * * 
+* * * * * * * *
+
+Solution
+
+# Step 1: Read the input number
+rows = int(input())
+
+# Step 2: Building the Triangle Rows
+for each_number in range(1, rows + 1):
+    spaces = "  " * (rows - each_number)
+    stars = "* " * each_number
+    print(spaces + stars)
+
+"""
+n=int(input())
+for i in range(1,n+1):
+    print('  '*(n-i)+'* '*i)
+"""
+_____________________________________________________________________________________________________________________
+
+06. Right Angled Traingle - 7
+
+Given a Number N, write a program to print the Right Angled Traingle of N rows using stars (*) and Hashes (#).
+
+The last row contains hashes (#) and the remaining rows contain stars (*)
+   *
+  **
+ ***
+####
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars (*)  and Hashes (#) as the Right Angled Traingle shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 5,
+• Print the stars (*) and hashes (# ) on 5 rows as shown in the given image.
+  • The first 4 rows contain stars ( *).
+  • The 5th row contains hashes (# ).
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-right-angled-triangle-7.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+• The Hash in the box indicates the Hash and a space ("* ").
+
+The Ouput Should be
+
+    *
+   **
+  ***
+ ****
+#####
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+    *
+   **
+  ***
+ ****
+#####
+
+Sample Input 2:
+
+6
+
+Sample Output 2:
+
+     *
+    **
+   ***
+  ****
+ *****
+######
+
+Solution
+
+rows = int(input())
+for each_number in range(1, rows + 1):
+    spaces = " " * (rows - each_number)
+    is_last_row = (each_number == rows)
+    if is_last_row:
+        hashes = "#" * (each_number)
+        print(spaces + hashes)
+    else:
+        stars = "*" * (each_number)
+        print(spaces + stars)
+
+"""
+n=int(input())
+for i in range(1,n):
+    print(' '*(n-i)+'*'*i)
+for i in range(n,n+1):
+    print('#'*i)
+"""
+_____________________________________________________________________________________________________________________
+
+07. Pyramid
+
+Given a Number N, write a program to print the Pyramid of N rows using stars (*)
+
+    * 
+  * * * 
+* * * * *
+
+Note : There is a space after every star
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars (*) as the Pyramid shown in the sample output.
+
+Explanation
+For example, if the given number is N = 4,
+• Print the stars (*) on 4 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-pyramid.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The Ouput Should be
+
+      * 
+    * * * 
+  * * * * * 
+* * * * * * * 
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+      * 
+    * * * 
+  * * * * * 
+* * * * * * * 
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+            * 
+          * * * 
+        * * * * * 
+      * * * * * * * 
+    * * * * * * * * * 
+  * * * * * * * * * * * 
+* * * * * * * * * * * * * 
+
+Solution
+
+number_of_rows=int(input())
+for row in range(number_of_rows):
+    spaces="  "*(number_of_rows - row - 1)
+    stars="* "*((2*row)+1)
+    each_row=spaces+stars
+    print(each_row)
+
+"""
+n=int(input())
+for i in range(1,n*2+1):
+    if i%2==1:
+        print(' '*(n-i+(n-1))+'* '*i)
+"""
+_____________________________________________________________________________________________________________________
+
+08. Pyramid - 2
+
+Given a Number N, write a program to print the Pyramid of N rows using numbers
+
+    1 
+  2 2 2
+3 3 3 3 3
+
+Note : There is a space after every number
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing numbers as the Pyramid shown in the sample output.
+
+Explanation
+For example, if the given number is N = 5,
+• Print the numbers on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-pyramid-2.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("2 ").
+
+The Ouput Should be
+
+        1 
+      2 2 2 
+    3 3 3 3 3 
+  4 4 4 4 4 4 4 
+5 5 5 5 5 5 5 5 5
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+        1 
+      2 2 2 
+    3 3 3 3 3 
+  4 4 4 4 4 4 4 
+5 5 5 5 5 5 5 5 5
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+    1 
+  2 2 2 
+3 3 3 3 3 
+
+Solution
+
+number_of_rows = int(input())
+for row in range(number_of_rows):
+    spaces = "  " * (number_of_rows - row - 1)
+    string = (str(row + 1) + " ") * ((2 * row) + 1)
+    each_row = spaces + string
+    print(each_row)
+
+"""
+n=int(input())
+for i in range(1,n+1):
+    print(' '*(2*(n-i))+(str(i)+" ")*((2*i)-1))
+"""
+_____________________________________________________________________________________________________________________
+
+09. Inverted Right Angled Traingle - 4
+
+Given a Number N, write a program to print the Inverted Right Angled Traingle of N rows using numbers
+
+4444
+ 333
+  22
+   1
+
+Note : There is a space after every number
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing numbers as the Inverted Right Angled Traingle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 3,
+• Print the numbers on 3 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-inverted-right-angled-triangle-4.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("3 ").
+
+The Ouput Should be
+
+333
+ 22
+  1
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+333
+ 22
+  1
+
+Sample Input 2:
+
+6
+
+Sample Output 2:
+
+666666
+ 55555
+  4444
+   333
+    22
+     1
+
+Solution
+
+rows = int(input())
+for each_number in range(1, rows + 1):
+    number = (rows + 1) - each_number
+    spaces = " " * (each_number - 1)
+    numbers = str(number) * number
+    print(spaces + numbers)
+
+"""
+n=int(input())
+for i in range(n,0,-1):
+    print(' '*(n-i)+str(i)*i)
+"""
+_____________________________________________________________________________________________________________________
+
+10. Inverted Right Angled Traingle - 5
+
+Given a Number N, write a program to print the Inverted Right Angled Traingle of N rows using numbers
+
+3 3 3
+  2 2
+    1
+
+Note : There is a space after every number
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing numbers as the Inverted Right Angled Traingle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 4,
+• Print the numbers on 4 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-inverted-right-angled-triangle-5.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("4 ").
+
+The Ouput Should be
+
+4 4 4 4
+  3 3 3
+    2 2
+      1
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+4 4 4 4
+  3 3 3
+    2 2
+      1
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+7 7 7 7 7 7 7 
+  6 6 6 6 6 6 
+    5 5 5 5 5 
+      4 4 4 4 
+        3 3 3 
+          2 2 
+            1 
+Solution
+
+rows = int(input())
+for each_number in range(1, rows + 1):
+    number = (rows + 1) - each_number
+    spaces = "  " * (each_number - 1)
+    numbers = (str(number)+ " ") * number
+    print(spaces + numbers)
+
+"""
+n=int(input())
+for i in range(n,0,-1):
+    print('  '*(n-i)+(str(i)+" ")*i)
+"""
+_____________________________________________________________________________________________________________________
+
+11. Inverted Pyramid
+
+Given a Number N, write a program to print the  Inverted Pyramid of N rows using stars (*)
+
+*****
+ ***
+  *
+
+Note : There is a space after every star
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars as the Inverted Pyramid shown in the sample output.
+
+Explanation
+For example, if the given number is N = 4,
+• Print the numbers on 4 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-inverted-pyramid.png
+
+Note
+In the given image,
+• The Empty box indicates one spaces (" ").
+• The Star in the box indicates the star ("*").
+
+The Ouput Should be
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+*******
+ *****
+  ***
+   *
+
+Sample Input 2:
+
+9
+
+Sample Output 2:
+
+*****************
+ ***************
+  *************
+   ***********
+    *********
+     *******
+      *****
+       ***
+        *
+
+Solution
+
+number_of_rows = int(input())
+for row in range(number_of_rows):
+    spaces = " " * row
+    stars = "*" * (2 * (number_of_rows - row) - 1)
+    each_row = spaces + stars
+    print(each_row)
+
+"""
+n=int(input())
+for i in range(n,0,-1):
+    print(' '*(n-i)+'*'*(i-1)+'*'*i)
+"""
+_____________________________________________________________________________________________________________________
