@@ -1,0 +1,612 @@
+01. Sqaure - 3
+
+Given a number N, write a program to print a Square of N rows using stars (*) in the borders and zeros (0) inside the Square
+
+* * * * 
+* 0 0 *
+* 0 0 *
+* * * *
+
+Note: There is a space after every star (*) and every zero (0)
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars (*) in the borders and zeroes (0) inside as a  shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 5
+• Print stars (*) and Zeros (0) on 5 rows as shown in the given image.
+    • The borders of the square contain stars (*)
+    • Inside of the square contain zeros (0)
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-square-3.png
+
+Note:
+In the Given Image
+The Zero in the box indicates zero and a space ("0 ").
+The Star in the box indicates star and a space ("* ").
+
+The output should be,
+
+* * * * *
+* 0 0 0 *
+* 0 0 0 *
+* 0 0 0 *
+* * * * *
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+* * * * * 
+* 0 0 0 *
+* 0 0 0 *
+* 0 0 0 *
+* * * * * 
+
+Sample Input 2:
+
+6
+
+Sample Output 2:
+
+* * * * * * 
+* 0 0 0 0 *
+* 0 0 0 0 *
+* 0 0 0 0 *
+* 0 0 0 0 *
+* * * * * * 
+
+Solution
+
+n = int(input())
+print("* " * n)
+for i in range(1, n - 1):
+    middle_zeros = "0 " * (n - 2)
+    row = "* " + middle_zeros + "*"
+    print(row)
+print("* " * n)
+
+"""
+n=int(input())
+print("* "*n)
+for i in range(2,n):
+    print("* "+"0 "*(n-2)+"*")
+print("* "*n)
+"""
+____________________________________________________________________________________________________________________
+
+02. Rectangle - 4
+
+Given two numbers M and N, Write a program to print Rectangle of M rows and N columns using stars (*)
+in the borders and zeros (0) inside the Rectangle
+
+* * * * * 
+* 0 0 0 *
+* 0 0 0 *
+* * * * *
+
+Note: There is a space after every star (*) and every zero (0)
+
+Input
+The first line of input contains an integer representing M.
+The second line of input contains an integer representing N.
+
+Output
+The output should be M rows and N columns containing stars (*) in the borders and zeroes (0) 
+inside as a Rectangle as a shown in the sample output.
+
+Explanation
+
+For example, if the given numbers are M = 4 and N = 8
+• Print stars (*) and Zeros (0) on 4 rows and 8 Columns as shown in the given image.
+    • The borders of the square contain stars (*)
+    • Inside of the square contain zeros (0)
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-rectangle-4.png
+
+Note:
+In the Given Image
+The Zero in the box indicates zero and a space ("0 ").
+The Star in the box indicates star and a space ("* ").
+
+The output should be,
+
+* * * * * * * * 
+* 0 0 0 0 0 0 *
+* 0 0 0 0 0 0 *
+* * * * * * * * 
+
+Sample Input 1:
+
+4
+8
+
+Sample Output 1:
+
+* * * * * * * * 
+* 0 0 0 0 0 0 *
+* 0 0 0 0 0 0 *
+* * * * * * * * 
+
+Sample Input 2:
+
+7
+5
+
+Sample Output 2:
+
+* * * * * 
+* 0 0 0 *
+* 0 0 0 *
+* 0 0 0 *
+* 0 0 0 *
+* 0 0 0 *
+* * * * * 
+
+Solution
+
+m = int(input())
+n = int(input())
+print("* " * n)
+for i in range(1, m - 1):
+    middle_zeros = "0 " * (n - 2)
+    row = "* "+ middle_zeros + "*"
+    print(row) 
+print("* " * n)
+
+"""
+m=int(input())
+n=int(input())
+print("* "*n)
+for i in range(2,m):
+    print("* "+"0 "*(n-2)+"*")
+print("* "*n)
+"""
+_____________________________________________________________________________________________________________________
+
+03. Right Angled Traingle - 9
+
+Given a number N, write a program to print a Right Angled Triangle of N rows using dots ( . ) 
+in the borders and zeros (0) inside the right angled triangle.
+
+. 
+. .
+. 0 .
+. 0 0 .
+. . . . .
+
+Note
+There is a space after every dot (.) and every zero ( 0 ).
+
+Input
+The input will be a single line containing an integer representing N
+
+Output
+The output should be N rows containing dots ( .) in the borders and zeros( 0 ) inside as a 
+Right Angled Triangle shown in the sample output.
+
+Explanation
+
+For example, if the given number is N = 7,
+• Print dots ( . ) and zeros (0) on 7 rows as shown in the given image.
+  。 The borders of the right angled triangle contain dots ( . ).
+  。 Inside of the right angled triangle contain zeros ( 0 ).
+
+Note
+In the given image,
+• The Dot in the box indicates a dot and a space (".").
+• The Zero in the box indicates a zero and a space ("0").
+
+The Output should be
+
+. 
+. .
+. 0 .
+. 0 0 .
+. 0 0 0 .
+. 0 0 0 0 .
+. . . . . . .
+
+Sample Input 1:
+
+7
+
+Sample Output 1:
+
+. 
+. . 
+. 0 . 
+. 0 0 . 
+. 0 0 0 . 
+. 0 0 0 0 . 
+. . . . . . . 
+
+Sample Input 2:
+
+6
+
+Sample Output 2:
+
+. 
+. . 
+. 0 . 
+. 0 0 . 
+. 0 0 0 . 
+. . . . . . 
+
+Solution
+
+n = int(input())
+if n == 1:
+    print(". ")
+else:
+    print(". ")
+    for i in range(1, n - 1):
+        middle_zeros = "0 " * (i - 1)
+        row = ". " + middle_zeros + "."
+        print(row) 
+    print(". " * n)
+
+"""
+n=int(input())
+print('. ')
+for i in range(2,n):
+    print('. '+'0 '*(i-2)+'. ')
+if n>1:
+    print('. '*n)
+    
+"""
+_____________________________________________________________________________________________________________________
+
+04. Hollow Square
+
+Given a number N, Write a program to print a Sqaure of N rows using stars (*)
+
+* * * * * * 
+*         * 
+*         * 
+*         * 
+*         * 
+* * * * * *
+
+Note
+There is a space after every star (*).
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars (*)as a Square shown in the sample output.
+
+Explanation
+For example, if the given number is N = 4,
+• Print stars (*) on 4 rows as shown in the given image.
+    • The first row contains 4 stars ( * ).
+    • The middle 2 rows contain 2 stars ( * ).
+    • The last row contains 4 stars ( * ).
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-square.png
+
+Note:
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The Output should be
+
+* * * * 
+*     * 
+*     * 
+* * * * 
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+* * * * 
+*     * 
+*     * 
+* * * * 
+
+Sample Input 2:
+
+6
+
+Sample Output 2:
+
+* * * * * * 
+*         * 
+*         * 
+*         * 
+*         * 
+* * * * * * 
+
+Solution
+
+n = int(input())
+print("* " * n)
+for i in range(1, n - 1):
+    middle_spaces = "  " * (n - 2)
+    row = "* " + middle_spaces + "* "
+    print(row)    
+print("* " * n)
+
+"""
+number = int(input())
+for i in range(number):
+  if (i == 0) or (i == (number - 1)):
+    print("* " * number)
+  else:
+    number_of_spaces = ("  " * (number - 2))
+    print("* " + number_of_spaces + "* ")
+"""
+_____________________________________________________________________________________________________________________
+
+05. Hollow Rectangle
+
+Given two numbers M and N, Write a program to print a Rectangle of M rows and N columns using stars (*)
+
+* * * * 
+*     * 
+*     * 
+*     * 
+*     * 
+* * * *
+
+Note
+There is a space after every star (*).
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be M rows N columns containing stars (*) as a Rectangle shown in the sample output.
+
+Explanation
+For example, if the given numbers are M = 4  and N = 6,
+• Print stars (*) on 4 rows  and 6 columns as shown in the given image.
+    • The first row contains 6 stars ( * ).
+    • The middle 2 rows contain 2 stars ( * ).
+    • The last row contains 6 stars ( * ).
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-rectangle.png
+
+Note:
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The Output should be
+
+* * * * 
+*     * 
+*     * 
+* * * * 
+
+Sample Input 1:
+
+4
+6
+
+Sample Output 1:
+
+* * * * * * 
+*         * 
+*         * 
+* * * * * * 
+
+Sample Input 2:
+
+8
+5
+
+Sample Output 2:
+
+* * * * * 
+*       * 
+*       * 
+*       * 
+*       * 
+*       * 
+*       * 
+* * * * * 
+
+Solution
+
+m = int(input())
+n = int(input())
+print("* " * n)
+for i in range(1, m - 1):
+    middle_spaces = "  "*(n - 2)
+    row = "* " + middle_spaces + "* "
+    print(row)
+print("* " * n)
+
+"""
+rows = int(input()) 
+columns = int(input())
+for i in range(rows):
+    if (i == 0) or (i == (rows - 1)):
+        print("* " * columns)
+    else:
+        number_of_spaces = ("  " * (columns-2))
+        print("* " + number_of_spaces + "* ")
+"""
+_____________________________________________________________________________________________________________________
+
+06. Hollow Right Angled Traingle
+
+Given a number N, Write a program to print a Right Angled Traingle of N rows using stars (*)
+
+* 
+* * 
+*   * 
+* * * *
+
+Note
+There is a space after every star (*).
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars (*)as a Right Angled Traingle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 5,
+• Print stars (*) on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-right-angled-triangle.png
+
+Note:
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The Output should be
+
+* 
+* * 
+*   * 
+*     * 
+* * * * *
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+* 
+* * 
+*   * 
+*     * 
+* * * * *
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+* 
+* * 
+* * * 
+
+Solution
+
+n = int(input())
+print("* ")
+for i in range(1, n - 1):
+    middle_spaces = " " * (2 * (i - 1))
+    row = "* " + middle_spaces + "* "
+    print(row)
+print("* " * n)
+
+"""
+n=int(input())
+for i in range(n):
+    for j in range(i+1):
+        if i==n-1 or j==0 or j==i:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+"""
+
+"""n = int(input())
+for i in range(0,n):
+    for j in range(0,n):
+        if j==0 or i==n-1 or i==j:
+            print('*',end=" ")
+        else:
+            print(" ", end=" ")
+    print()"""
+
+_____________________________________________________________________________________________________________________
+
+07. Hollow Right Angled Traingle - 2
+
+Given a number N, write a program to print a Right Angled Triangle of N rows using underscore (_), 
+pipe(|), and forward slash ( / ).
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing underscore ( _ ), pipe ( | ), and forward slash ( / ) as a 
+Right Angled Triangle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 5,
+• Print underscore ( _ ), pipes ( | ), and forward slashes( / ) on 6 rows as shown in the given image.
+  • The first row contains 6 underscores.
+  • The next 5 rows contain pipe ( ) and forward slash ( / ).
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-right-angled-triangle-2-v2.png
+
+Note
+In the given image,
+• The Empty box indicates a space (" ").
+• The Underscore in the box indicates an underscore ("_").
+• The Pipe in the box indicates a pipe ("|").
+• The Forward slash in the box indicates a forward slash ("/").
+
+The Output should be
+______
+|    /
+|   /
+|  /
+| /
+|/
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+______
+|    /
+|   /
+|  /
+| /
+|/
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+________
+|      /
+|     /
+|    /
+|   /
+|  /
+| /
+|/
+
+Solution
+
+n=int(input())
+print("_"*(n+1))
+for i in range(1,n+1):
+    print('|'+' '*(n-i)+'/')
+
+"""n = int(input())
+n1 = n + 1
+print('_' * n1)
+for i in range(1,n1):
+    print('|'+' '*(n-i)+'/')"""
+
+_____________________________________________________________________________________________________________________
