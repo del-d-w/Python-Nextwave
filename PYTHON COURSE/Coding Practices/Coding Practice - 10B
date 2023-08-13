@@ -1,0 +1,273 @@
+01. Number of Digits from M to N
+
+Given two numbers M and N, write a program to print the count of the total number of digits from M to N.
+
+Input
+The first line of input contains an integer representing M.
+The second line of input contains an integer representing N
+
+Output
+The output should be a single line containing an integer that is the count of the total number of digits from M to N.
+
+Explanation
+For example, if the given numbers are
+M = 4 and N = 13,
+• Numbers from 4 to 13 are 4, 5, 6, 7, 8, 9, 10, 11, 12, and 13.
+• The number of digits in each number from 4 to 9 is 1. So, the total count of digits from 4 to 9 is 6.
+• The number of digits in each number from 10 to 13 is 2. So, the total count of digits from 10 to 13 is 8.
+• The total number of digits is 14. (6 +8 = 14 )
+The output should be 14.
+
+Sample Input 1:
+
+4
+13
+
+Sample Output 1:
+
+14
+
+Sample Input 2:
+
+5
+8
+
+Sample Output 2:
+
+4
+
+Solution
+
+m=int(input())
+n=int(input())
+total_digits_count=0
+for number in range(m,n+1):
+    total_digits_count=total_digits_count+len(str(number))
+print(total_digits_count)
+_____________________________________________________________________________________________________________________________
+
+02. Divisible by 6
+
+Given two numbers M and N write a program to find the count of numbers from M to N that are divisible by 6.
+
+Print No Numbers Found if the count of numbers from M to N that are divisible by 6 is 0. Otherwise, 
+print the numbers from M to N that are divisible by 6 separated by a space.
+
+Input
+The first line of input contains an integer representing M. The second line of input contains an integer representing N.
+
+Output
+The output should be a single line containing the string. No Numbers Found should be printed 
+if the count of numbers from M to N that are divisible by 6 is 0. Otherwise, space-separated 
+numbers from M to N that are divisible by 6 should be printed.
+
+Explanation
+For example, if the given numbers are M = 6 and N = 23,
+• The numbers from 6 to 23 that are divisible by 6 are 6, 12, and 18.
+• So, the count of numbers from 6 to 23 that are divisible by 6 is 3.
+• The string obtained after joining the numbers from 6 to 23 that are divisible by 6 with a space is 6 12 18.
+The output should be 6 12 18.
+
+Sample Input 1:
+
+6
+23
+
+Sample Output 1:
+
+6 12 18 
+
+Sample Input 2:
+
+2
+5
+
+Sample Output 2:
+
+No Numbers Found
+
+Solution
+
+m=int(input())
+n=int(input())
+count=0
+numbers_divisible_by_6=""
+for number in range(m,n+1):
+    if number%6==0:
+        count=count+1
+        numbers_divisible_by_6=numbers_divisible_by_6+str(number)+" "
+if count==0:
+    print("No Numbers Found")
+else:
+    print(numbers_divisible_by_6)
+
+_____________________________________________________________________________________________________________________________
+
+03. Vowles of a String - 2
+
+Given a string, write a program to find the count of Vowels in the string.
+Print String has more than two vowels if the count of Vowels is greater than 2. Otherwise, print String doesn't have more than two vowels.
+Note
+The vowels are a, e, i, o and u.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a string. String has more than two vowels should
+be printed if the count of Vowels in the string is greater than 2. Otherwise, String doesn't 
+have more than two vowels should be printed.
+
+Explanation
+For example, if the given string is indian,
+• The characters in the string indian are i, n, d, i, a, and n.
+• The Vowels in the string indian are i, i, and a.
+• So, the count of Vowels in string indian is 3. (3 is greater than 2)
+The output should be String has more than two vowels, as the number of Vowels in the string indian is greater than 2.
+
+Sample Input 1:
+
+indian
+
+Sample Output 1:
+
+String has more than two vowels
+
+Sample Input 2:
+
+code
+
+Sample Output 2:
+
+String doesn't have more than two vowels
+
+Solution
+
+string=input()
+vowels_count=0
+for character in string:
+    is_vowel=(character=="a") or (character=="e") or (character=="o") or (character=="i") or (character=="")
+    if is_vowel:
+        vowels_count=vowels_count+1 
+if vowels_count>2:
+    print("String has more than two vowels")
+else:
+    print("String doesn't have more than two vowels")
+    
+"""
+s=input()
+vowels=['a','e','i','o','u']
+count=0
+for i in s:
+    if i in vowels:
+        count+=1 
+if count>2:
+    print("String has more than two vowels")
+else:
+    print("String doesn't have more than two vowels")
+"""
+_____________________________________________________________________________________________________________________________
+
+04.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution
+_____________________________________________________________________________________________________________________________
+
+05.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution
+_____________________________________________________________________________________________________________________________
+
+06.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution
+_____________________________________________________________________________________________________________________________
+
+07.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution
+_____________________________________________________________________________________________________________________________
+
+08.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution
+_____________________________________________________________________________________________________________________________
+
+09.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution
+_____________________________________________________________________________________________________________________________
+
+10.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution
+_____________________________________________________________________________________________________________________________
+
+11.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Output 2:
+
+Solution
+_____________________________________________________________________________________________________________________________
