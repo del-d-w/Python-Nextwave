@@ -168,106 +168,511 @@ else:
 """
 _____________________________________________________________________________________________________________________________
 
-04.
+04. Indivisible Number
+
+Given a number N write a program that checks if N is not divisible by any number from 2 to 9.
+Print Divisible Number if the number N is divisible by any of the numbers from 2 to 9. 
+Print Indivisible Number if the number N is not divisible by any of the numbers from 2 to 9.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be a single line containing a string. Divisible Number should be printed 
+if the number N is divisible by any of the numbers from 2 to 9. Indivisible Number should 
+be printed if the number N is not divisible by any of the numbers from 2 to 9.
+
+Explanation
+For example, if the given number is N = 15
+• 15 is divisible by 3 and 5.
+• 15 is not divisible by 2, 4, 6, 7, 8, and 9.
+The output should be Divisible Number, as 15 is divisible by at least one of the numbers from 2 to 9.
+For example, if the given number is N = 103,
+• 103 is not divisible by any number from 2 to 9 (2, 3, 4, 5, 6, 7, 8, and 9).
+The output should be Indivisible Number, as 103 is not divisible by any number from 2 to 9.
 
 Sample Input 1:
 
+15
+
 Sample Output 1:
+
+Divisible Number
 
 Sample Input 2:
 
+103
+
 Sample Output 2:
 
+Indivisible Number
+
 Solution
+
+number=int(input())
+is_divisible=False
+for i in range(2,10):
+    if number % i == 0:
+        is_divisible=True
+if is_divisible:
+    print("Divisible Number")
+else:
+    print("Indivisible Number")
+    
+"""
+n=int(input())
+count=0
+for i in range(2,10):
+    if n%i==0 or n%i==0:
+        count+=1
+if count>0:
+    print("Divisible Number")
+else:
+    print("Indivisible Number")
+"""
 _____________________________________________________________________________________________________________________________
 
-05.
+05. Samllest Among N Numbers
+
+Write a program to print the smallest among the given N numbers.
+
+Input
+The first line of input will contain a positive integer (N).
+The following N lines will contain an integer in each line.
+
+Output
+The output should be a single line containing the smallest among the given numbers.
+
+Explanation
+For example, if the given number is 5, then read the inputs in the next 5 lines and print the smallest among
+the given five numbers. If the given input integers in the next five lines are 8, 11, 96, 49, and 25, 
+the output should be 8.
 
 Sample Input 1:
 
+5
+8
+11
+96
+49
+25
+
 Sample Output 1:
+
+8
 
 Sample Input 2:
 
+3
+10
+10
+10
+
 Sample Output 2:
 
+10
+
 Solution
+
+num_of_inputs=int(input())
+first_input=int(input())
+smallest_number=first_input
+for i in range(num_of_inputs-1):
+    number=int(input())
+    if number<smallest_number:
+        smallest_number=number
+print(smallest_number)
 _____________________________________________________________________________________________________________________________
 
-06.
+06. Divisible by 9 in a Range
+
+Given two numbers M and N write a program to find the count of numbers from M to N that are divisible by 9.
+Print No Numbers found if the count of numbers from M to N that are divisible by 9 is 0. 
+Otherwise, print the numbers from M to N separated by a space that are divisible by 9.
+
+Input
+The first line of input contains an integer representing M. 
+The second line of input contains an integer representing N.
 
 Sample Input 1:
 
+5
+25
+
 Sample Output 1:
+
+9 18 
 
 Sample Input 2:
 
+3
+8
+
 Sample Output 2:
 
+No Numbers found
+
 Solution
+
+m=int(input())
+n=int(input())
+count=0
+numbers_divisible_by_9=""
+for number in range(m,n+1):
+    if number%9==0:
+        count=count+1
+        numbers_divisible_by_9=numbers_divisible_by_9+str(number)+" "
+if count==0:
+    print("No Numbers found")
+else:
+    print(numbers_divisible_by_9)
+
 _____________________________________________________________________________________________________________________________
 
-07.
+07. 2 Series
+
+Given a number N write a program to print the N terms in the given series, each on a new line.
+
+Series:
+2, 22, 222, 2222, ..... N terms
+
+Terms in the given series:
+
+Term Number     Term         Number of 2's
+First Term        2                1
+second Term       22               2
+Third Term        222              3
+...               ...              ...
+Nth Term        222..(upto N)      N
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N lines containing the terms from First Term to Nth Term in the given series.
+
+Explanation
+For example, if the given number is N = 6
+• The number of terms is 6.
+• Print the terms from First Term to Sixth Term in the given series.
+Terms in the given series:
+
+Term Number     Term         Number of 2's
+First Term        2                1
+second Term       22               2
+Third Term        222              3
+Fourth Term       2222             4
+Fifth Term        22222            5
+Sixth Term        222222           6
+
+The Output Should be
+
+2
+22
+222
+2222
+22222
+222222
 
 Sample Input 1:
 
+6
+
 Sample Output 1:
+
+2
+22
+222
+2222
+22222
+222222
 
 Sample Input 2:
 
+3
+
 Sample Output 2:
 
+2
+22
+222
+
 Solution
+
+number=int(input())
+for each_number in range(1,number+1):
+    term="2"*each_number
+    term=int(term)
+    print(term)
 _____________________________________________________________________________________________________________________________
 
-08.
+08. Sum of N terms in 2 Series
+
+Given a integer N write a program to print the sum of N terms in the given series.
+
+Series:
+2, 22, 222, 2222, ..... N terms
+
+Terms in the given series:
+
+Term Number     Term         Number of 2's
+First Term        2                1
+second Term       22               2
+Third Term        222              3
+...               ...              ...
+Nth Term        222..(upto N)      N
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be a single line containing an integer that is the sum of the series from First Term to Nth Term.
+
+Explanation
+For example, if the given number is N = 3
+• The number of terms is 3.
+• Print the terms from First Term to Third Term in the given series.
+
+Terms in the given series:
+
+Term Number     Term         Number of 2's
+First Term        2                1
+second Term       22               2
+Third Term        222              3
+
+• The sum of the terms from First term to Third term is 246 (2 + 22 + 222 = 246)
+
+The Output Should be 246
 
 Sample Input 1:
 
+3
+
 Sample Output 1:
+
+246
 
 Sample Input 2:
 
+8
+
 Sample Output 2:
 
+24691356
+
 Solution
+
+n = int(input())
+term_number = "2"
+total = 0
+for i in range(1, n+1):
+    term = term_number * i
+    total = total + int(term)
+print(total)
 _____________________________________________________________________________________________________________________________
 
-09.
+09. Sum of N Terms 1 Series
+
+Given a integer N write a program to print the sum of N terms in the given series.
+
+Series:
+1, 11, 111, 1111, ..... N terms
+
+Terms in the given series:
+
+Term Number     Term         Number of 2's
+First Term        1                1
+second Term       11               2
+Third Term        111              3
+...               ...              ...
+Nth Term        111..(upto N)      N
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be a single line containing an integer that is the sum of the series from First Term to Nth Term.
+
+Explanation
+For example, if the given number is N = 4
+• The number of terms is 4.
+• Print the terms from First Term to Fourth Term in the given series.
+
+Terms in the given series:
+
+Term Number     Term         Number of 2's
+First Term        1                1
+second Term       11               2
+Third Term        111              3
+Fourth Term       1111             4
+
+• The sum of the terms from First term to Fourth term is 1234 (1 + 11 + 111 + 1111 = 1234)
+
+The Output Should be 1234
 
 Sample Input 1:
 
+4
+
 Sample Output 1:
+
+1234
 
 Sample Input 2:
 
+5
+
 Sample Output 2:
 
+12345
+
 Solution
+
+n = int(input())
+term_number = "1"
+sum_of_terms = 0
+for i in range(1, n+1):
+  term = term_number * i
+  sum_of_terms = sum_of_terms + int(term)
+print(sum_of_terms)
 _____________________________________________________________________________________________________________________________
 
-10.
+10. Sum of N terms in X Series
+
+Given two numbers X and N write a program to print the sum of N terms in the given series.
+
+Series:
+X, XX, XXX, XXXX, ..... N terms
+
+Terms in the given series:
+
+Term Number     Term         Number of 2's
+First Term        X                1
+second Term       XX               2
+Third Term        XXX              3
+...               ...              ...
+Nth Term        XXX..(upto N)      N
+
+Input
+The First line of input contain an inetger representing X.
+The Second line of input contain an inetger representing N.
+
+Output
+The output should be a single line containing an integer that is the sum of the series from First Term to Nth Term.
+
+Explanation
+For example, if the given numbers are X = 7 and N = 4
+• The number of terms is 4.
+• Print the terms from First Term to Fourth Term in the given 7 (X) series are 7, 77, 777, 7777.
+
+Terms in the given series:
+
+Term Number     Term         Number of 2's
+First Term        7                1
+second Term       77               2
+Third Term        777              3
+Fourth Term       7777             4
+
+• The sum of the terms from First term to Fourth term is 8638 (7 + 77 + 777 + 7777 = 8638)
+
+The Output Should be 8638
 
 Sample Input 1:
 
+7
+4
+
 Sample Output 1:
+
+8638
 
 Sample Input 2:
 
+6
+2
+
 Sample Output 2:
 
+72
+
 Solution
+
+x=int(input())
+n=int(input())
+sum_of_terms=0
+for each_number in range(1,n+1):
+    term=str(x)*each_number
+    sum_of_terms=sum_of_terms+int(term)
+print(sum_of_terms)
 _____________________________________________________________________________________________________________________________
 
-11.
+11. Sum of N Terms in Sqaure Series
+
+Given two numbers X and N write a program to print the sum of N terms in the given series.
+
+Series:
+(X)2, (XX)2, (XXX)2, (XXXX)2, ..... N terms
+
+Terms in the given series:
+
+Term Number       Term         Number of 2's
+First Term        (X)2                1
+second Term       (XX)2               2
+Third Term        (XXX)2              3
+...               ...                 ...
+Nth Term        (XXX..(upto N))2      N
+
+Input
+The First line of input contain an inetger representing X.
+The Second line of input contain an inetger representing N.
+
+Output
+The output should be a single line containing an integer that is the sum of the series from First Term to Nth Term.
+
+Explanation
+For example, if the given numbers are X = 4 and N = 3,
+• The number of terms is 3.
+• The terms from First term to Third term in the given series are 16 (42), 1936 (442), and 197136 (4442).
+
+Terms in the given series:
+
+Term Number     Term               Number of 2's
+First Term        42 (16)                1
+second Term       442 (1936)             2
+Third Term        4442(197136)           3
+
+• The sum of the terms from First term to Fourth term is 8638 (16 + 1936 + 197136 = 199088)
+
+The Output Should be 199088
 
 Sample Input 1:
 
+4
+3
+
 Sample Output 1:
+
+199088
 
 Sample Input 2:
 
+7
+4
+
 Sample Output 2:
 
+61091436
+
 Solution
+
+x=int(input())
+n=int(input())
+sum_of_terms=0
+for each_number in range(1,n+1):
+    number=str(x)*each_number
+    term=int(number)**2
+    sum_of_terms=sum_of_terms+term
+    # sum+=(pow(int(str(n)*i),2))
+print(sum_of_terms)
+
 _____________________________________________________________________________________________________________________________
