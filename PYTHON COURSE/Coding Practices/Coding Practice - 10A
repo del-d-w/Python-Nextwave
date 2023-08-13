@@ -1,0 +1,591 @@
+01 . Multiplication Table
+
+Write a program to print the multiplication table of the given number (N) up to ten multiples in the format "N x i = M".
+
+Input
+The first line of input will contain an integer.
+
+Output
+The output should be ten lines containing the multiples in the given format.
+
+Explanation
+For example, if the given number is 3, your code should print the multiplication table like
+
+3 x 1 = 3
+3 x 2 = 6
+3 x 3 = 9
+3 x 4 = 12
+3 x 5 = 15
+3 x 6 = 18
+3 x 7 = 21
+3 x 8 = 24
+3 x 9 = 27
+3 x 10 = 30
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+3 x 1 = 3
+3 x 2 = 6
+3 x 3 = 9
+3 x 4 = 12
+3 x 5 = 15
+3 x 6 = 18
+3 x 7 = 21
+3 x 8 = 24
+3 x 9 = 27
+3 x 10 = 30
+
+Sample Input 2:
+
+10
+
+Sample Output 2:
+
+10 x 1 = 10
+10 x 2 = 20
+10 x 3 = 30
+10 x 4 = 40
+10 x 5 = 50
+10 x 6 = 60
+10 x 7 = 70
+10 x 8 = 80
+10 x 9 = 90
+10 x 10 = 100
+
+Solution:
+
+n = int(input())
+
+for i in range(1, 11):
+    print(str(n) + " x " + str(i) + " = " + str(i*n))
+
+"""
+n=int(input())
+count=1
+for i in range(1,11):
+    count=n*i
+    print(str(n)+" x "+str(i)+" = "+str(count))
+"""
+_____________________________________________________________________________________________________________________
+
+02. Vowels in String
+
+Given a string S, write a program to find the vowels in the given string S
+Print the resultant string by joining all the vowels in the string S
+
+Note
+The Vowels are a, e, i, o, and u.
+
+Input
+The input will be a single line containing a string representing S.
+
+Output
+The output should be a single line containing a string obtained by joining the vowels in the string S
+
+Explanation
+For example, if the given string is S = "container"
+• The characters in the string container are c, o, n, t, a, i, n, e and r.
+• The vowels in the string container are o, a, i and e.
+• The string obtained by joining all the vowels (o, a, i and e) is oaie.
+The output should be oaie.
+
+Sample Input 1:
+
+container
+
+Sample Output 1:
+
+oaie
+
+Sample Input 2:
+
+queue
+
+Sample Output 2:
+
+ueue
+
+Solution:
+
+string=input()
+result=""
+for character in string:
+    if ((character=="a") or (character=="e") or (character=="i") or (character=="o") or (character=="u")):
+        result=result+character
+print(result)
+
+"""
+s=input()
+n=""
+vowels=['a','e','i','o','u']
+for i in s:
+    if i in vowels:
+        n+=i 
+print(n)
+"""
+_____________________________________________________________________________________________________________________
+
+03. Reverse the String
+
+Write a program to print the reverse of the given string.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing the reverse of the given string.
+
+Explanation
+
+For example, if the given string is "Hurray! We have won the match.", your code should print the reverse 
+of the string, which is ".hctam eht now evah eW !yarruH".
+
+Sample Input 1:
+
+Hurray! We have won the match.
+
+Sample Output 1:
+
+.hctam eht now evah eW !yarruH
+
+Sample Input 2:
+
+Competitive Programming
+
+Sample Output 2:
+
+gnimmargorP evititepmoC
+
+Solution:
+
+a = input()
+
+reverse_a = ""
+for char in a:
+    reverse_a = char + reverse_a
+
+print(reverse_a)
+
+_____________________________________________________________________________________________________________________
+
+04. Sum of K Powers - 2
+
+﻿Given a number N write a program to print the sum of the Kth power of all the digits in the given number.
+K indicates the number of digits of the number N.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be a single line containing an integer that is the sum of the Kth power of all the 
+digits of the number N
+
+Explanation
+For example, if the given number is N = 24753
+• The digits of 24753 are 2, 4, 7, 5, and 3.
+• The number of digits of 24753 is 5. So, the value of K is 5.
+• The 5 (K) power of all the digits of 24753 are 32, 1024, 16807, 3125, and 243.
+• The sum of the 5 (K) power of all the digits is 21231. (25 + 45 + 75 +55 + 35 = 21231)
+The output should be 21231.
+
+Sample Input 1:
+
+24753
+
+Sample Output 1:
+
+21231
+
+Sample Input 2:
+
+17
+
+Sample Output 2:
+
+50
+
+Solution:
+
+number=input()
+num_of_digits=len(number)
+sum_of_powers=0
+for each_digit in number:
+    each_digit_power=int(each_digit)**num_of_digits
+    sum_of_powers=sum_of_powers+each_digit_power
+print(sum_of_powers)
+
+"""
+n=input()
+p=len(n)
+sum=0
+for i in n:
+    sum+=pow(int(i),p)
+print(sum)
+"""
+_____________________________________________________________________________________________________________________
+
+05. Amstrong Number
+
+Write a program that reads a number N and checks if N is an Armstrong Number.
+Print Armstrong Number is the given number is an Armstrong Number. Otherwise, print Not an Armstrong Number.
+
+Note
+A number is said to be an Armstrong Number if the sum of powers of all the digits of the number is the number itself.
+A 4-digit number is an Armstrong Number if the sum of 4 power of its digits is equal to the number.
+For example, 1634 is an Armstrong Number as 14 +64 +34 + 44 = 1634.
+
+Input
+The input will be a single line containing an integer.
+
+Output
+The output should be a single line containing a string. Armstrong Number should
+be printed if the given number is an Armstrong Number. Otherwise, print Not an Armstrong Number.
+
+Explanation
+For example, if the given number is 153,
+• The digits in 153 are 1, 5 and 3.
+• Number of digits in 153 is 3.
+• Sum of digits to the power of 3 is 153. (13+53+33)
+• Sum of digits to the power of 3 (153) is equal to the number (153).
+The output should be Armstrong Number.
+
+Sample Input 1:
+
+153
+
+Sample Output 1:
+
+Armstrong Number
+
+Sample Input 2:
+
+24
+
+Sample Output 2:
+
+Not an Armstrong Number
+
+Solution:
+
+number = input()
+length = len(number)
+total = 0
+for digit in number:
+    total = total + (int(digit) ** length)
+if total == int(number):
+    print("Armstrong Number")
+else:
+    print("Not an Armstrong Number")
+
+"""
+Number = int(input())
+Sum = 0
+Times = 0
+Temp = Number
+while Temp > 0:
+    Times = Times + 1
+    Temp = Temp // 10
+Temp = Number
+while Temp > 0:
+    Reminder = Temp % 10
+    Sum = Sum + (Reminder ** Times)
+    Temp //= 10
+if Number == Sum:
+    print("Armstrong Number")
+else:
+    print("Not an Armstrong Number")
+"""
+_____________________________________________________________________________________________________________________
+
+06. Factors of a Number
+
+Given a number N, write a program to print the factors of the number N.
+
+Note
+Factors of N:
+If a number N is divisible by X, then X is a factor of N
+
+Example:
+If N = 15 and X = 3, then 3 is a factor of 15 as 15 is divisible by 3.
+If N = 15 and X = 7, then 7 is not a factor of 15 as 15 is not divisible by 7.
+
+Input
+The input will be a single line containing a positive integer.
+
+Output
+The output should contain all the factors of the given number, each on a new line.
+
+Explanation
+For example, if the given number is N = 6,
+• The number 6 is divisible by the numbers 1, 2, 3 and 6.
+• So, the factors of the number 6 are 1, 2, 3 and 6.
+The output should be,
+1
+2
+3
+6
+
+Sample Input 1:
+
+6
+
+Sample Output 1:
+
+1
+2
+3
+6
+
+Sample Input 2:
+
+18
+
+Sample Output 2:
+
+1
+2
+3
+6
+9
+18
+
+Solution:
+
+num_of_inputs=int(input())
+for i in range(1,num_of_inputs+1):
+    if num_of_inputs%i==0:
+        print(i) 
+_____________________________________________________________________________________________________________________
+
+07. Factors of a Number - 2
+
+Given a number N write a program to print all the factors of N separated by a space as shown in the sample output.
+
+Note
+Factors of N:
+If a number N is divisible by X then X is a factor of N
+Example:
+If N = 15 and X = 3, then 3 is a factor of 15 as 15 is divisible by 3.
+If N = 15 and X = 7, then 7 is not a factor of 15 as 15 is not divisible by 7.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be a single line containing a string that has space-separated factors of N as 
+shown in the sample output.
+
+Explanation
+For example, if the given number is N = 15
+• In the numbers from 1 to 15, 15 is divisible by the numbers 1, 3, 5 and 15.
+• So, the factors of the number 15 are 1, 3, 5 and 15.
+• The string obtained by joining all the factors of 15 with a space is 1 3 5 15.
+The output should be 1 3 5 15.
+
+Sample Input 1:
+
+15
+
+Sample Output 1:
+
+1 3 5 15 
+
+Sample Input 2:
+
+9
+
+Sample Output 2:
+
+1 3 9
+
+Solution:
+
+number=int(input())
+result=""
+for each_number in range(1,number+1):
+    is_factor = (number % each_number==0)
+    if is_factor:
+        result=result+str(each_number)+" "
+print(result)
+
+"""
+n=int(input())
+s=""
+for i in range(1,n+1):
+    if n%i==0:
+        s+=str(i)+" " 
+print(s)
+"""
+_____________________________________________________________________________________________________________________
+
+08. Sum of All Factors
+
+Given a number N
+write a program to print the sum of all the factors of the number N
+
+Note
+Factors of N:
+If a number N is divisible by X, then X is a factor of N
+Example:
+If N = 15 and X = 3, then 3 is a factor of 15 as 15 is divisible by 3.
+If N = 15 and X = 7
+then 7 is not a factor of 15 as 15 is not divisible by 7.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be a single line containing an integer that is the sum of the factors of N
+
+Explanation
+For example, if the given number is N = 12,
+• The number 12 is divisible by the numbers 1, 2, 3, 4, 6, and 12.
+• So, the factors of the number 12 are 1, 2, 3, 4, 6, and 12.
+• The sum of all the factors of 12 is 28 (1 + 2 + 3 + 4 + 6 + 12).
+The output should be 28.
+
+Sample Input 1:
+
+12
+
+Sample Output 1:
+
+28
+
+Sample Input 2:
+
+8
+
+Sample Output 2:
+
+15
+
+Solution:
+
+number = int(input())
+total = 1 + number
+for i in range(2, number):
+    if (number % i) == 0:
+        total = total + i
+print(total)
+
+"""
+a = int(input())
+sum=0
+for i in range(1,a+1):
+    if(a%i==0):
+        sum=sum+i
+print(sum)
+"""
+_____________________________________________________________________________________________________________________
+
+09. Greatest Among N Numbers
+
+Given a number N, write a program that reads N inputs and prints the greatest number among the given inputs.
+
+Input
+The first line of input contains an integer representing N.
+The next N lines of input contain integers.
+
+Output
+The output should be a single line containing an integer that is the greatest among the given numbers.
+
+Explanation
+For example, if the given number is N = 5,
+• The 5 inputs are 8, 11, 96, 49, and 25.
+• The maximum of the input 8 is 8.
+• The maximum of the inputs 8 and 11 is 11.
+• The maximum of the inputs 8, 11 and 96 is 96.
+• The maximum of the inputs 8, 11, 96 and 49 is 96.
+• The maximum of the inputs 8, 11, 96, 49 and 25 is 96.
+• The greatest among the given numbers is 96.
+The output should be 96.
+
+Sample Input 1:
+
+5
+8
+11
+96
+49
+25
+
+Sample Output 1:
+
+96
+
+Sample Input 2:
+
+3
+10
+10
+10
+
+Sample Output 2:
+
+10
+
+Solution:
+
+number_of_inputs = int(input())
+first_input = int(input())
+greatest_number = first_input
+for i in range(number_of_inputs - 1):
+    number = int(input())
+    if number > greatest_number:
+        greatest_number = number
+print(greatest_number)
+
+_____________________________________________________________________________________________________________________
+
+10. Perfect Number
+
+Write a program to check whether the given number is a perfect number or not.
+A number is considered as a Perfect number if sum of all factors excluding itself is equal to the number.
+
+Input
+The input will be a single line containing a positive integer.
+
+Output
+The output should be a single line containing either "Perfect Number" or "Not a Perfect Number".
+
+Explanation
+For example, if the given number is 6, the factors of 6 excluding it are 1, 2, and 3. The sum of these factors is 6, 
+which is equal to the given number. So the output should be "Perfect Number".
+
+Similarly, if the given number is 21, the factors of 21 excluding it are 1, 3, and 7. The sum of these factors is 11,
+Which is not equal to the given number. So the output should be "Not a Perfect Number".
+
+Sample Input 1:
+
+6
+
+Sample Output 1:
+
+Perfect Number
+
+Sample Input 2:
+
+21
+
+Sample Output 2:
+
+Not a Perfect Number
+
+Solution
+
+number = int(input())
+total = 0
+for i in range(1, number):
+    if (number % i) == 0:
+        total = total + i
+if total == number:
+    print("Perfect Number")
+else:
+    print("Not a Perfect Number")
+
+_____________________________________________________________________________________________________________________
