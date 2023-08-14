@@ -1,0 +1,650 @@
+01. Print the Digits of a Number
+
+Write a program that reads a number and prints all the digits of the given number separated by a space.
+
+Input
+The input will be a single line containing a positive integer.
+
+Output
+The output should be a single line containing a string that has all the digits of the given number separated by a space.
+
+Explanation
+For example, if the given number is 165
+• The digits of the number 165 are 1, 6 and 5.
+• Print all the digits of the number separated by a space.
+The output should be 1 6 5
+
+Sample Input 1:
+
+165
+
+Sample Output 1:
+
+1 6 5
+
+Sample Input 2:
+
+45866
+
+Sample Output 2:
+
+4 5 8 6 6 
+
+Solution
+
+number=input()
+result=""
+for digit in number:
+    result=result+digit+" "
+print(result)
+
+_____________________________________________________________________________________________________________________
+
+02. Sum of Digits
+
+Write a program to print the sum of all the digits in the given number.
+
+Input
+The input will be a single line containing a positive integer.
+
+Output
+The output should be a single line containing the sum of the digits in the given number.
+
+Explanation
+For example, if the given number is 151893, your code should print the sum of all the digits
+in the given number (1 + 5 + 1 + 8 + 9 + 3), which is 27.
+
+For example, if the given number is 692, your code should print the sum of all the digits 
+in the given number (6 + 9 + 2 ), which is 17.
+
+Sample Input 1:
+
+151893
+
+Sample Output 1:
+
+27
+
+Sample Input 2:
+
+692
+
+Sample Output 2:
+
+17
+
+Solution
+
+number = input()
+total = 0
+for digit in number:
+    total = total + int(digit)
+print(total)
+
+"""
+n=int(input())
+tot=0
+while(n>0):
+    dig=n%10
+    tot=tot+dig
+    n=n//10
+print(tot)
+"""
+_____________________________________________________________________________________________________________________
+
+03. Factorial
+
+Write a program to print the factorial of N.
+Factorial is the product of all positive integers less than or equal to N.
+
+Input
+The input will be a single line containing a positive integer.
+
+Output
+The output should be a single line containing the factorial of the given number.
+
+Explanation
+For example, if the given number is 4, the factorial of 4 is (4 × 3 × 2 × 1). So the output should be 24.
+For example, if the given number is 7, the factorial of 7 is (7 × 6 × 5 × 4 × 3 × 2 × 1). So the output should be 5040.
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+24
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+5040
+
+Solution
+
+number = int(input())
+factorial = 1
+for i in range(1, number + 1):
+    factorial = factorial * i
+print(factorial)
+_____________________________________________________________________________________________________________________
+
+04. Sum of Cubes
+
+﻿Write a program that reads a number N, and prints the sum of the cubes of numbers from 1 to N.
+
+Note
+The cube of a number X is X power 3.(X3)
+
+Input
+The input will be a single line containing an integer representing N
+
+Output
+The output should be a single line containing an integer that is the sum of the cubes of numbers from 1 to n.
+
+For example, if the given number is N = 3,
+• Numbers from 1 to 3 are 1, 2, and 3.
+• The cubes of numbers from 1 to 3 are 1, 8, and 27.
+• The sum of the cube of numbers from 1 to 3 is 36. (1 + 8 + 27 = 36)
+
+Number (X) Cube of Number (X3) Previous Sum   Previous Sum + (x3) = Current Sum
+  1              1                 0                0+1=1
+  2              8                 1                1+8=9
+  3              27                9                9+27=36
+
+The output should be 36.
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+36
+
+Sample Input 2:
+
+6
+
+Sample Output 2:
+
+441
+
+Solution
+
+n=int(input())
+total=0
+for i in range(1,n+1):
+    total=total+(i*i*i)
+print(total)
+_____________________________________________________________________________________________________________________
+
+05. Sum and Average of 10 Inputs
+
+Write a program that reads 10 inputs and prints the sum and average of the given 10 inputs.
+
+Note
+The average of N numbers can be calculated as,
+Average Sum of N numbers / N
+Example: If 3 numbers are 2, 3, and 7.
+The average of 3 numbers is,
+Average (2 + 3 + 7) / 3 = 4.0
+
+Input
+The 10 lines of input contain integers.
+
+Output
+The first line of output should be an integer that is the sum of the given 10 inputs. 
+The second line of output should be a float that is the average of the given 10 inputs.
+
+Explanation
+For example, if the given 10 inputs are 4, 7, 14, 25, 1, 8, 24, 38, 99, and 10,
+• The sum of 4, 7, 14, 25, 1, 8, 24, 38, 99, and 10 is 230. (4 +7 +14 + 25 + 1 + 8 + 24 + 38 +99 + 10 = 230 )
+• The average of 4, 7, 14, 25, 1, 8, 24, 38, 99, and 10 is 23.0. (230 / 10 = 23.0)
+
+Sample Input 1:
+
+4
+7
+14
+25
+1
+8
+24
+38
+99
+10
+
+Sample Output 1:
+
+230
+23.0
+
+Sample Input 2:
+
+20
+35
+99
+-84
+-93
+2
+7
+53
+23
+11
+
+Sample Output 2:
+
+73
+7.3
+
+Solution
+
+total=0
+for i in range(10):
+    number=int(input())
+    total=total+number
+average=total/10
+print(total)
+print(average)
+_____________________________________________________________________________________________________________________
+
+06. Sum of Squares M to N
+
+Write a program that reads two numbers M and N, and prints the sum of squares of numbers from M to N.
+
+Input
+The first line of input contains an integer representing M .
+The second line of input contains an integer representing N
+
+Output
+The output should be a single line containing an integer that is the sum of squares of numbers from M to N.
+
+Explanation
+
+For example, if the given numbers are M = 2 and N = 4,
+• Numbers from 2 to 4 are 2, 3, and 4.
+• The squares of numbers from 2 to 4 are 4, 9, and 16.
+• The sum of the squares of numbers from 2 to 4 is 29. (4 + 9 + 16 = 29)
+
+Number (X) Cube of Number (X2) Previous Sum   Previous Sum + (x2) = Current Sum
+  2              4                 0                0+4=4
+  3              9                 4                4+9=13
+  4              16                13               13+16=29
+
+The output should be 29.
+
+Sample Input 1:
+
+2
+4
+
+Sample Output 1:
+
+29
+
+Sample Input 2:
+
+3
+8
+
+Sample Output 2:
+
+199
+
+Solution
+
+start_number=int(input())
+end_number=int(input())
+sum_of_squares=0
+for number in range(start_number,end_number+1):
+    square=number**2 
+    sum_of_squares=sum_of_squares+square
+print(sum_of_squares)
+_________________________________________________________________________________________________________________
+
+07. Print Even Numbers up to N
+
+Write a program that reads a number N and prints even numbers from 1 to N.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should contain all the even numbers from 1 to N, each on a new line.
+
+Explanation
+
+For example, if the given number is N = 7
+• Numbers from 1 to 7 are 1, 2, 3, 4, 5, 6 and 7.
+• The even numbers among numbers from 2=1 to 7 are 2, 4, and 6.
+
+The output should be
+
+2
+4
+6
+
+Sample Input 1:
+
+7
+
+Sample Output 1:
+
+2
+4
+6
+
+Sample Input 2:
+
+10
+
+Sample Output 2:
+
+2
+4
+6
+8
+10
+
+Solution
+
+n=int(input())
+for number in range(1,n+1):
+    if number%2==0:
+        print(number)
+_____________________________________________________________________________________________________________________
+
+08. Print Odd Numbers from M to N
+
+Write a program that reads two numbers M and N and prints odd numbers from M to N seperated by a space.
+
+Input
+The first line of input contains an integer representing M.
+The second line of input contains an integer representing N.
+
+Output
+The output should be a single line containing a string that has odd numbers from M to N seperated by a space.
+
+Explanation
+
+For example, if the given numbers are M = 5 and N = 10
+• Numbers from 5 to 10 are 5, 6, 7, 8, 9 and 10.
+• The odd numbers among numbers from 5 to 10 are 5, 7, and 9.
+
+The output should be 5 7 9
+
+Sample Input 1:
+
+5
+10
+
+Sample Output 1:
+
+5 7 9
+
+Sample Input 2:
+
+9
+21
+
+Sample Output 2:
+
+9 11 13 15 17 19 21
+
+Solution
+
+start_number=int(input())
+end_number=int(input())
+result=""
+for number in range(start_number,end_number+1):
+    is_odd=(number%2==1)
+    if is_odd:
+       result=result+str(number)+" "
+print(result)
+_____________________________________________________________________________________________________________________
+
+09. Sum of Even Numbers up to N
+
+Write a program that reads a number N and prints the sum of the even numbers from 1 to N.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be a single line containing an integer that is the sum of the even numbers from 1 to N.
+
+Explanation
+
+For example, if the given number is N = 6
+• Numbers from 1 to 6 are 1, 2, 3, 4, 5 and 6.
+• The even numbers among numbers from 1 to 6 are 2, 4, and 6.
+• The sum of even numbers from 1 to 6 is 12 (2 + 4 + 6 = 12)
+
+The output should be 12
+
+Sample Input 1:
+
+6
+
+Sample Output 1:
+
+12
+
+Sample Input 2:
+
+10
+
+Sample Output 2:
+
+30
+
+Solution
+
+number = int(input())
+
+total = 0
+for i in range(1, number + 1):
+    if (i % 2) == 0:
+        total = total + i
+
+print(total)
+_____________________________________________________________________________________________________________________
+
+10. Sum of Odd Numbers up to N
+
+Write a program that reads a number N and prints the sum of the odd numbers from 1 to N.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be a single line containing an integer that is the sum of the odd numbers from 1 to N.
+
+Explanation
+
+For example, if the given number is N = 6
+• Numbers from 1 to 6 are 1, 2, 3, 4, 5 and 6.
+• The odd numbers among numbers from 1 to 6 are 1, 3, and 5.
+• The sum of odd numbers from 1 to 6 is 9 (1 + 3 + 5 = 9)
+
+The output should be 9
+
+Sample Input 1:
+
+6
+
+Sample Output 1:
+
+9
+
+Sample Input 2:
+
+15
+
+Sample Output 2:
+
+64
+
+Solution
+
+number = int(input())
+
+total = 0
+for i in range(1, number + 1):
+    if (i % 2) == 1:
+        total = total + i
+
+print(total)
+_____________________________________________________________________________________________________________________
+
+11. Sum of Even Numbers from M to N
+
+Write a program that reads two numbers M and N and prints the sum of even numbers from M to N.
+
+Input
+The first line of input contains an integer representing M.
+The second line of input contains an integer representing N.
+
+Output
+The output should be a single line containing an integer that is the sum of even numbers from M to N.
+
+Explanation
+
+For example, if the given numbers are M = 2 and N = 6
+• Numbers from 2 to 6 are 2, 3, 4, 5 and 6.
+• The even numbers among numbers from 2 to 6 are 2, 4, and 6.
+• The sum of even numbers from 1 to 6 is 12 (2 + 4 + 6 = 12)
+
+The output should be 12
+
+Sample Input 1:
+
+2
+6
+
+Sample Output 1:
+
+12
+
+Sample Input 2:
+
+10
+20
+
+Sample Output 2:
+
+90
+
+Solution
+
+m = int(input())
+n = int(input())
+total = 0
+for number in range(m, n+1):
+    if (number % 2) == 0:
+        total = total + number
+print(total)
+_____________________________________________________________________________________________________________________
+
+12. Product of Odd Numbers from M to N
+
+Write a program that reads two numbers M and N and prints the product of odd numbers from M to N.
+
+Input
+The first line of input contains an integer representing M.
+The second line of input contains an integer representing N.
+
+Output
+The output should be a single line containing an integer that is the product of odd numbers from M to N.
+
+Explanation
+
+For example, if the given numbers are M = 2 and N = 7
+• Numbers from 2 to 7 are 2, 3, 4, 5, 6 and 7.
+• The odd numbers among numbers from 2 to 7 are 3, 5, and 7.
+• The product of odd numbers from 2 to 7 is 12 (3 * 5 * 7 = 105)
+
+The output should be 105
+
+Sample Input 1:
+
+2
+7
+
+Sample Output 1:
+
+105
+
+Sample Input 2:
+
+4
+8
+
+Sample Output 2:
+
+35
+
+Solution
+
+start_number=int(input())
+end_number=int(input())
+product=1
+for number in range(start_number,end_number+1):
+    if number%2==1:
+       product=product*number 
+print(product)
+_____________________________________________________________________________________________________________________
+
+13. Sum of Odd Numbers from M to N
+
+Write a program that reads two numbers M and N and prints the sum of odd numbers from M to N.
+
+Input
+The first line of input contains an integer representing M.
+The second line of input contains an integer representing N.
+
+Output
+The output should be a single line containing an integer that is the sum of odd numbers from M to N.
+
+Explanation
+
+For example, if the given numbers are M = 5 and N = 13
+• Numbers from 5 to 13 are 5, 6, 7, 8, 9, 10, 11, 12 and 13.
+• The odd numbers among numbers from 5 to 13 are 3, 5, 7,9, 11 and 13.
+• The sum of odd numbers from 5 to 13 is 45 (3 + 5 + 7 + 9 + 11 +13 = 45)
+
+The output should be 105
+
+Sample Input 1:
+
+5
+13
+
+Sample Output 1:
+
+45
+
+Sample Input 2:
+
+10
+20
+
+Sample Output 2:
+
+75
+
+Solution
+
+m = int(input())
+n = int(input())
+total = 0
+for number in range(m, n+1):
+    if (number % 2) == 1:
+        total = total + number
+print(total)
+
+_____________________________________________________________________________________________________________________
