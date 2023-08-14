@@ -1,0 +1,701 @@
+01. Print the Length Times (For Loop)
+
+Write a program that reads a string and prints the first character (The character at index 0) of the given
+string on N lines, where N is the length of the given string.
+
+Note
+Use the For loop to iterate over the string.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be N lines containing a string that is the first character of the given string, each on a new line.
+
+Explanation
+For example, if the given string is query,
+• The first character in the string query is q.
+• The length of the string query is 5.
+• The character q should be printed on 5 lines.
+The output should be,
+q
+q
+q
+q
+q
+
+Sample Input 1:
+
+query
+
+Sample Output 1:
+
+q
+q
+q
+q
+q
+
+Sample Input 2:
+
+List
+
+Sample Output 2:
+
+L
+L
+L
+L 
+
+Solution
+
+string = input()
+length_of_string = len(string)
+
+for i in range(length_of_string):
+    print(string[0])
+
+_____________________________________________________________________________________________________________________
+
+02. Print the Characters (For Loop)
+
+Write a program that reads a string and prints each character of the given string on a new line.
+
+Note
+Use the For loop to iterate over the string.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should contain all the characters of the given string with each characte on a new line.
+
+Explanation
+For example, if the given string is python,
+• The characters in the string python are p, y, t, h, o, and n.
+The output should be,
+p
+y
+t
+h
+o
+n
+
+Sample Input 1:
+
+python
+
+Sample Output 1:
+
+p
+y
+t
+h
+o
+n
+
+Sample Input 2:
+
+Variable
+
+Sample Output 2:
+
+V
+a
+r
+i
+a
+b
+l
+e
+
+Solution
+
+string = input()
+
+for each_char in string:
+    print(each_char)
+_____________________________________________________________________________________________________________________
+
+03. Print N Integers (For Loop)
+
+Write a program that reads a number N and prints numbers from 1 to N.
+
+Note
+Use the For loop to iterate over the range og numbers.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should contain all numbers from 1 to N, each on a new line.
+
+Explanation
+For example, if the given number is N = 3,
+• The numbers from 1 to 3 are 1, 2, and 3.
+The output should be,
+1
+2
+3
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+1
+2
+3
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+1
+2
+3
+4
+5
+
+Solution
+
+number_of_inputs = int(input())
+for number in range(1, number_of_inputs + 1):
+    print(number)
+_____________________________________________________________________________________________________________________
+
+04. Fisrt N Natural Numbers (For Loop)
+
+Write a program that reads a number N and prints Natural Numbers from 1 to N.
+
+Note
+• All the positive numbers from 1 are called Natural Numbers.
+• Use the For loop to iterate over the range of numbers.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should contain all the Natural Numbers from 1 to N, each on a new line.
+
+Explanation
+For example, if the given number is N = 7,
+• The Natural Numbers from 1 to 7 are 1, 2, 3, 4, 5, 6 and 7.
+The output should be,
+1
+2
+3
+4
+5
+6
+7
+
+Sample Input 1:
+
+7
+
+Sample Output 1:
+
+1
+2
+3
+4
+5
+6
+7
+
+Sample Input 2:
+
+2
+
+Sample Output 2:
+
+1
+2
+
+Solution
+
+number = int(input())
+
+for each_num in range(1, number + 1):
+    print(each_num)
+_____________________________________________________________________________________________________________________
+
+05. Sum of N Natural Numbers (For Loop)
+
+Write a program that reads a number N and prints the sum of Natural Numbers from 1 to N.
+
+Note
+Use the For loop to iterate over the range of numbers.
+
+Input
+The input will be a single line containing an integer representing N
+
+Output
+The output should be a single line containing an integer that is the sum of Natural Numbers from 1 to N.
+
+Explanation
+For example, if the given number is N = 6,
+• The Natural Numbers from 1 to 6 are 1, 2, 3, 4, 5, and 6.
+• The sum of 6 Natural Numbers is 21. ( 1 + 2 + 3 + 4 + 5 + 6 = 21)
+The output should be 21.
+
+Sample Input 1:
+
+6
+
+Sample Output 1:
+
+21
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+6
+
+Solution
+
+number = int(input())
+
+total = 0
+for counter in range(1, number + 1):
+    total = total + counter
+
+print(total)
+
+_____________________________________________________________________________________________________________________
+
+06. Average of N Numbers (For Loop)
+
+Write a program that reads a number N and prints the average of numbers from 1 to N
+
+Note
+• The average of numbers from 1 to N can be calculated as,
+Average = Sum of numbers from 1 to N / Count of numbers (N)
+Example: If N = 3, the average of numbers from 1 to 3 is, Average = (1 + 2 + 3) / 3 = 2.0
+• Use the For loop to iterate over the range of numbers.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be a single line containing a float that is the average of numbers f
+
+Explanation
+For example, if the given number is N = 8,
+• The numbers from 1 to 8 are 1, 2, 3, 4, 5, 6, 7, 8.
+• The count of numbers from 1 to 8 is 8.
+• The sum of the numbers is 36. ( 1 + 2 + 3 + 4+ 5+ 6+ 7+ 8 = 36)
+• The average of the numbers is 4.5. (36 / 8 = 4.5)
+The output should be 4.5.
+
+Sample Input 1:
+
+8
+
+Sample Output 1:
+
+4.5
+
+Sample Input 2:
+
+15
+
+Sample Output 2:
+
+8.0
+
+Solution
+
+number = int(input())
+sum_of_numbers = 0
+
+for each_num in range(1, number + 1):
+    sum_of_numbers = sum_of_numbers + each_num
+
+average = sum_of_numbers / number
+print(average)
+_____________________________________________________________________________________________________________________
+
+07. Cubes of N Numbers (For Loop)
+
+Write a program that reads a number N and prints the cube of numbers from 1 to N.
+
+Note
+• The cube of a number X is X power 3.(X3)
+• Use the For loop to iterate over the range of numbers.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N lines containing integers that are the cubes of numbers from 1 to N.
+
+Explanation
+For example, if the given number is N = 3,
+• The numbers from 1 to 3 are 1, 2 and 3.
+• The cubes of numbers from 1 to 3 are 1, 8, and 27.
+The output should be,
+1
+8
+27
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+1
+8
+27
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+1
+8
+27
+64
+125
+
+Solution
+
+number = int(input())
+
+for each_num in range(1, number + 1):
+    print(each_num ** 3)
+_____________________________________________________________________________________________________________________
+
+08. Read N Inputs (For Loop)
+
+Given an integer N, write a program which reads N inputs and prints them. Note: Use For Loop
+
+Input
+The first line of input will contain a positive integer, N.
+The following N lines will contain an integer in each line.
+
+Output
+The output should be N lines, containing an integer per line.
+
+Explanation
+For example, if the given N is 3, then read the inputs in the next 3 lines and print them. 
+If the given input integers in the next three lines are 8, 11, and 25.
+The output should be,
+8
+11
+25
+
+Sample Input 1:
+
+3
+8
+11
+25
+
+Sample Output 1:
+
+8
+11
+25
+
+Sample Input 2:
+
+2
+7
+20
+
+Sample Output 2:
+
+7
+20
+
+Solution
+
+number_of_inputs = int(input())
+
+for counter in range(number_of_inputs):
+    number = int(input())
+    print(number)
+_____________________________________________________________________________________________________________________
+
+09. Product of N Inputs (For Loop)
+
+Given an integer N write a program that reads N inputs and prints the product of the giver inputs.
+
+Note
+Use the For loop to iterate over the range of numbers.
+
+Input
+The first line of input contains an integer representing N. 
+The next N lines of input contain integers.
+
+Output
+The output should be a single line containing an integer that is the product of the given inputs.
+
+Explanation
+For example, if the given number is N = 3,
+The 3 inputs are 2, 3, and 7.
+•The product of the given inputs is 42. ( 2 * 3 * 7 = 42 )
+The output should be 42.
+
+Sample Input 1:
+
+3
+2
+3
+7
+
+Sample Output 1:
+
+42
+
+Sample Input 2:
+
+4
+11
+2
+4
+9
+
+Sample Output 2:
+
+792
+
+Solution
+
+N = int(input())
+total = 1
+
+for i in range(N):
+    num = int(input())
+    total = total * num
+    
+print(total)
+_____________________________________________________________________________________________________________________
+
+10. Solid Rectangle
+
+Given two integers M and N, write a program to print a solid rectangle pattern of M rows and N columns 
+using the asterisk character (*).
+
+Note: Use For Loop
+
+Input
+The first line of input will contain a positive integer.
+The second line of input will contain a positive integer.
+
+Output
+The output should be the M number of lines and N number of columns with the asterisk character (*).
+Note: There is a space after each asterisk character(*).
+
+Explanation
+Given two integers M and N, write a program to print a solid rectangle pattern of M rows and N columns using 
+the asterisk character (*).
+
+* * *
+* * *
+
+Given two integers M and N, write a program to print a solid rectangle pattern of M rows and N columns using
+the asterisk character (*).
+
+* * * * * * 
+* * * * * * 
+* * * * * * 
+* * * * * *
+
+Sample Input 1:
+
+2
+3
+
+Sample Output 1:
+
+* * * 
+* * * 
+
+Sample Input 2:
+
+4
+6
+
+Sample Output 2:
+
+* * * * * * 
+* * * * * * 
+* * * * * * 
+* * * * * *
+
+Solution
+
+rows = int(input())
+columns = int(input())
+for counter in range(rows):
+    print("* " * columns)
+_____________________________________________________________________________________________________________________
+
+11. Solid Right Angled Traingle
+
+Given an integer number (N) as input. Write a program to print the right-angled triangular pattern of N lines 
+using an asterisk(*) character.
+
+Note: Use For Loop
+
+Input
+The input will be a single line containing a positive integer (N).
+
+Output
+The output should be N lines with an asterisk(*) character printing in a right-angled triangular pattern.
+Note: There is a space after each asterisk(*) character.
+
+Explanation
+For example, if the given number is 4,
+the output should be
+
+* 
+* * 
+* * * 
+* * * * 
+
+For example, if the given number is 2,
+the output should be
+
+* 
+* * 
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+*
+* * 
+* * * 
+* * * *
+
+Sample Input 2:
+
+2
+
+Sample Output 2:
+
+* 
+* * 
+
+Solution
+
+n=int(input())
+for i in range(n):
+    print("* "*(i+1))
+
+"""
+number = int(input())
+counter = 1
+while counter <= number:
+    print("* " * counter)
+    counter = (counter + 1)
+"""
+_____________________________________________________________________________________________________________________
+
+12. Sum of the given Numbers
+
+Given an integer N, write a program which reads N inputs and prints the sum of the given input integers.
+Note: Use For Loop
+
+Input
+The first line of input will contain a positive integer, N.
+The next N lines will contain the integers, each in a line.
+
+Output
+The output should be the sum of the given input integers.
+
+Explanation
+For example, if the given N is 3, then read the inputs in the next 3 lines and print the sum of the 
+three input integers. If the given input integers in the next three lines are 8, 11, and 25.
+The output should be 44.
+
+Sample Input 1:
+
+3
+8
+11
+25
+
+Sample Output 1:
+
+44
+
+Sample Input 2:
+
+2
+7
+20
+
+Sample Output 2:
+
+27
+
+Solution
+
+number_of_inputs = int(input())
+
+total = 0
+for counter in range(number_of_inputs):
+    number = int(input())
+    total = total + number
+
+print(total)
+
+_____________________________________________________________________________________________________________________
+
+13. Identify the Mistake Style Word
+
+Write a program that prints the individual characters of the given word separated with hyphens ("-").
+
+Input
+The input will be a single line containing a word.
+
+Output
+The output should be a single line containing characters separated with hyphens ("-").
+
+Explanation
+For example, if the given word is "Python", your code should print the individual characters in it 
+separated with hyphens ("-"). 
+So the output should be "P-y-t-h-o-n".
+
+Sample Input 1:
+
+Python
+
+Sample Output 1:
+
+P-y-t-h-o-n
+
+Sample Input 2:
+
+Loops
+
+Sample Output 2:
+
+L-o-o-p-s
+
+Solution
+
+a = input()
+len_of_a = len(a)
+b = a[0]
+for i in range(1, len_of_a):
+    b = b + "-" + a[i]
+print(b)
+
+_____________________________________________________________________________________________________________________
