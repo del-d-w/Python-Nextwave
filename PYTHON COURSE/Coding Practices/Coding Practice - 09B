@@ -1,0 +1,786 @@
+01. Print Numbers Divisible by T
+
+﻿Write a program that reads two numbers N and T, and prints all the numbers from 1 to N that are divisible by T.
+
+Input
+The first line of input contains an integer representing N.
+The second line of input contains an integer representing T
+
+Output
+The output should contain all the numbers from 1 to N that are divisible by T, each on a new line.
+﻿
+Explanation
+For example, if the given numbers are N = 10 and T = 3
+• Numbers from 1 to 10 are 1, 2, 3, 4, 5, 6, 7, 8, 9, and 10.
+• Numbers from 1 to 10 that are divisible by 3 are 3, 6 and 9.
+The output should be,
+
+ 3
+ 6
+ 9
+
+Sample Input 1:
+
+10
+3
+
+Sample Output 1:
+
+ 3
+ 6
+ 9
+
+Sample Input 2:
+
+21
+5
+
+Sample Output 2:
+
+5
+10
+15
+20
+
+Solution
+
+n = int(input())
+t = int(input())
+for each_number in range(1, n + 1):
+    if(each_number % t == 0):
+        print(each_number)
+_____________________________________________________________________________________________________________________
+
+02. Sum of Numbers Divisible by T
+
+Given three integers, write a program to print the sum of the numbers divisible by the given number T from M to N.
+
+Input
+The first line of input will contain an integer (T).
+The second line of input will contain an integer (M).
+The third line of input will contain an integer (N).
+
+Output
+The output should be a single line containing the sum of the numbers divisible by the given number T.
+
+Explanation
+For example, if the given number T is 2, M is 5, and N is 9.
+The numbers which are in the range from 5 to 9 and divisible by 2 are 6 and 8.
+So the output should be the sum of these numbers, which is 14.
+
+Sample Input 1:
+
+2
+5
+9
+
+Sample Output 1:
+
+14
+
+Sample Input 2:
+
+10
+20
+200
+
+Sample Output 2:
+
+2090
+
+Solution
+
+t = int(input())
+m = int(input())
+n = int(input())
+total = 0
+for number in range(m, n+1):
+    if (number % t) == 0:
+        total = total + number
+print(total)
+_____________________________________________________________________________________________________________________
+
+03. Count of Numbers Divisible by T
+
+﻿Write a program that reads two numbers N and T and prints the count of numbers from 1 to N that are divisible by T.
+
+Input
+The first line of input contains an integer representing N. The second line of input contains an integer representing T
+
+Output
+The output should be a single line containing an integer that is the count of numbers from 1 to N that are divisible by T.
+
+Explanation
+For example, if the given numbers are N = 12 and T = 3,
+• Numbers from 1 to 12 are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, and 12.
+• Numbers from 1 to 12 that are divisible by 3 are 3, 6, 9, and 12.
+• The count of numbers from 1 to 12 that are divisible by 3 is 4.
+The output should be 4.
+
+Sample Input 1:
+
+12
+3
+
+Sample Output 1:
+
+4
+
+Sample Input 2:
+
+25
+5
+
+Sample Output 2:
+
+5
+
+Solution
+
+n = int(input())
+t = int(input())
+count = 0
+
+for each_number in range(1, n + 1):
+    if each_number % t == 0:
+        count = count + 1
+    
+print(count)
+_____________________________________________________________________________________________________________________
+
+04. Print Numbers Divisible by 2 and 3
+
+﻿Write a program that reads a number N and prints all the numbers from 1 to N that are divisible by both 2 and 3.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should contain all the integers from 1 to N that are divisible by both 2 and 3, each on a new line.
+
+﻿Explanation
+For example, if the given number is N = 15
+• Numbers from 1 to 15 are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, and 15.
+• Numbers from 1 to 15 that are divisible by both 2 and 3 are 6 and 12.
+The output should be,
+ 6
+ 12
+
+Sample Input 1:
+
+15
+
+Sample Output 1:
+
+6
+12
+
+Sample Input 2:
+
+9
+
+Sample Output 2:
+
+6
+
+Solution
+
+n = int(input())
+for number in range(1, n + 1):
+    if number % 2 == 0 and number % 3 == 0:
+    print(number)
+_____________________________________________________________________________________________________________________
+
+05. Count of Numbers Divisible by 2 and 3
+
+Write a program that reads a number N and prints the count of numbers from 1 to N that are divisible by both 2 and 3.
+
+Input
+The input will be a single line containing an integer representing N
+
+Output
+The output should be a single line containing an integer that is the count of numbers from 1 to
+N that are divisible by both 2 and 3.
+
+Explanation
+For example, if the given number is N = 12,
+• Numbers from 1 to 12 are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 and 12.
+• Numbers from 1 to 12 that are divisible by both 2 and 3 are 6 and 12.
+• The count of numbers from 1 to 12 that are divisible by both 2 and 3 is 2.
+The output should be 2.
+
+Sample Input 1:
+
+12
+
+Sample Output 1:
+
+2
+
+Sample Input 2:
+
+21
+
+Sample Output 2:
+
+3
+
+Solution
+
+n = int(input())
+count = 0
+
+for number in range(1, n + 1):
+    if number % 2 == 0 and number % 3 == 0:
+        count = count + 1
+
+print(count)
+_____________________________________________________________________________________________________________________
+
+06. Print Required Characters
+
+Write a program that reads a string and prints the a and z characters in the string.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should contain all the a and z characters in the string, each on a new line.
+
+Explanation
+For example, if the given string is zigzag
+• The characters in the string zigzag are z, i, g, z, a and g.
+• The a and z in characters in the string are zza.
+
+The output should be 
+z
+z
+a
+
+Sample Input 1:
+
+zigzag
+
+Sample Output 1:
+
+z
+z
+a
+
+Sample Input 2:
+
+zap
+
+Sample Output 2:
+
+z
+a
+
+Solution
+
+string = input()
+
+for each_character in string:
+    if (each_character == "a") or (each_character == "z"):
+        print(each_character)
+_____________________________________________________________________________________________________________________
+
+07. Print Vowels
+
+Write a program that reads a string and prints the vowels in the string.
+
+Note: Vowels are a, e, i, o, and u.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should contain all the vowels in the string, each on a new line.
+
+Explanation
+For example, if the given string is indian,
+• The vowels in the string indian are i, i, and a.
+The output should be,
+i
+i
+a
+
+Sample Input 1:
+
+indian
+
+Sample Output 1:
+
+i
+i
+a
+
+Sample Input 2:
+
+nxtwave
+
+Sample Output 2:
+
+a
+e
+
+Solution
+
+string=input()
+for each_character in string:
+    is_vowel=(each_character=='a') or (each_character=='e') or (each_character=='i') or (each_character=='o') or (each_character=='u')
+    if is_vowel:
+        print(each_character)
+"""
+s=input()
+vowles=['a','e','i','o','u','A','E','I','O','U']
+for i in s:
+    if i in vowles:
+        print(i)
+"""
+_____________________________________________________________________________________________________________________
+
+08. Count of Vowels
+
+Write a Program reads a string and prints the count vowels in the string.
+
+Note: Vowels are a, e, i, o, and u.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing an integer that is the count of vowels in the string.
+
+Explanation
+For example, if the given string is code,
+• The characters of the string code are c, o, d and e.
+• The vowels in the string code are o and e.
+• The count of vowels in the string code is 2.
+The output should be 2.
+
+Sample Input 1:
+
+code
+
+Sample Output 1:
+
+2
+
+Sample Input 2:
+
+developer
+
+Sample Output 2:
+
+4
+
+Solution
+
+string=input()
+count=0
+for each_character in string:
+    is_vowel=(each_character=="a") or (each_character=="e") or (each_character=="i") or (each_character=="o") or (each_character=="u")
+    if is_vowel:
+        count=count+1 
+print(count)
+
+"""
+s=input()
+count=0
+vowels=['a','e','i','o','u']
+for i in s:
+    if i in vowels:
+        count+=1 
+print(count)
+"""
+_____________________________________________________________________________________________________________________
+
+09. Print N Numbers in Reverse
+
+Write a program that reads a number N and prints the numbers from N to 1.
+
+Input
+The Input will be single line containing an integer representing N.
+
+Output
+The output should be N lines containing integers from N to 1, each on a new line.
+
+Explanation
+For example, if the given number is N = 5,
+• Numbers from 5 to 1 are 5, 4, 3, 2, and 1.
+The output should be,
+5
+4
+3
+2
+1
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+5
+4
+3
+2
+1
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+3
+2
+1
+
+Solution
+
+number=int(input())
+for i in range(number):
+    print(number-i)
+_____________________________________________________________________________________________________________________
+
+10. Print M to N in Reverse
+
+Write a program that reads two numbers M and N, and prints the numbers from N to M
+
+Input
+The first line of input contains an integer representing M. 
+The second line of input contains an integer representing N.
+
+Output
+The output should contain all the integers from N to M, each on a new line.
+
+Constraints
+N should be greater than or equal to M.
+Explanation
+For example, if the given numbers are M = 2 and N = 5,
+• The numbers from 5 to 2 are 5, 4, 3 and 2.
+The output should be,
+5
+4
+3
+2
+
+Sample Input 1:
+
+2
+5
+
+Sample Output 1:
+
+5
+4
+3
+2
+
+Sample Input 2:
+
+3
+10
+
+Sample Output 2:
+
+10
+9
+8
+7
+6
+5
+4
+3
+
+Solution
+
+first_number=int(input())
+last_number=int(input())
+total_numbers=last_number-first_number
+for i in range(total_numbers+1):
+    number=last_number-i 
+    print(number)
+
+"""
+m=int(input())
+n=int(input())
+for i in range(n,m-1,-1):
+    print(i)
+"""
+_____________________________________________________________________________________________________________________
+
+11. Print Characters in Reverse
+
+Write a program that reads a string and prints the characters of a string in reverse order.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should contain all the characters of the string in reverse order, each on a new line.
+
+Explanation
+For example, if the given string is scale
+• The characters in the string scale are s, c, a, l and e.
+• The characters in the Reverse Order are e, l, a, c and s
+
+The output should be
+e
+l
+a
+c
+s
+
+Sample Input 1:
+
+scale
+
+Sample Output 1:
+
+e
+l
+a
+c
+s
+
+Sample Input 2:
+
+Metrics
+
+Sample Output 2:
+
+s
+c
+i
+r
+t
+e
+M
+
+Solution
+
+string=input()
+length=len(string)
+for i in range(1,length+1):
+    index=length-i
+    print(string[index])
+
+"""
+s=input()
+s=s[::-1]
+for i in s:
+    print(i)
+"""
+_____________________________________________________________________________________________________________________
+
+12. Print Odd Numbers from N to M
+
+Write a program that reads two numbers M and N N, and prints the odd numbers from N to M separated by a space.
+
+Input
+The first line of input contains an integer representing M.
+The second line of input contains an integer representing N.
+
+Output
+The output should be a single line containing a string that has space-separated odd numbers from N to M, 
+as shown in the sample output.
+
+Explanation
+For example, if the given numbers are M = 1 and N = 10,
+• Numbers from 10 to 1 are 10, 9, 8, 7, 6, 5, 4, 3, 2, and 1.
+• The odd numbers from 10 to 1 are 9, 7, 5, 3, and 1.
+The output should be 9 7 5 3 1 .
+
+Sample Input 1:
+
+1
+10
+
+Sample Output 1:
+
+9 7 5 3 1 
+
+Sample Input 2:
+
+5
+15
+
+Sample Output 2:
+
+15 13 11 9 7 5 
+
+Solution
+
+first_number=int(input())
+last_number=int(input())
+total_numbers=last_number - first_number
+odd_numbers=""
+for i in range(total_numbers+1):
+    number=last_number - i 
+    is_odd=(number%2!=0)
+    if is_odd:
+        odd_numbers=odd_numbers+str(number)+" "
+print(odd_numbers)
+
+"""
+m=int(input())
+n=int(input())
+s=""
+for i in range(n,m-1,-1):
+    if i%2==1:
+        s+=str(i)+" "
+print(s)
+"""
+_____________________________________________________________________________________________________________________
+
+13. Inverted Right Angled Traingle
+
+Given a Number N, write a program to print the Inverted Right Angled Traingle of N rows using stars (*).
+
+* * * * * 
+* * * *
+* * *
+* *
+*
+
+Note : There is a space after every star
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars as the Inverted Right Angled Traingle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 5,
+• Print the stars on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-inverted-right-angled-triangle.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star ("* ").
+
+The Ouput Should be
+
+* * * * * 
+* * * * 
+* * * 
+* * 
+*
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+* * * * * 
+* * * * 
+* * * 
+* * 
+*
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+* * * 
+* * 
+*
+
+Solution
+
+n=int(input())
+for i in range(n):
+    no_of_stars=n-i
+    row="* "*no_of_stars
+    print(row)
+
+"""
+n=int(input())
+for i in range(n):
+    for j in range(i,n):
+        print('*',end=' ')
+    print()
+"""
+_____________________________________________________________________________________________________________________
+
+14. Inverted Right Angled Traingle
+
+Given a Number N, write a program to print the Inverted Right Angled Traingle of N rows using numbers.
+
+4 4 4 4
+3 3 3
+2 2
+1
+
+Note : There is a space after every number
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing numbers as the Inverted Right Angled Traingle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 4,
+• Print the numbers on 4 rows as shown in the given image.
+
+https://res.cloudinary.com/dyj0c9t31/image/upload/v1671096956/Image_Pasted_at_2022-12-15_15-05_y8rf5c.jpg
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Number in the box indicates the number.
+
+The Ouput Should be
+
+4 4 4 4
+3 3 3
+2 2
+1
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+4 4 4 4
+3 3 3
+2 2
+1
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+5 5 5 5 5 
+4 4 4 4 
+3 3 3 
+2 2 
+1 
+
+Solution
+
+n=int(input())
+for i in range(n):
+    number=n-i
+    row=(str(number)+" ")*number
+    print(row)
+
+"""
+n=int(input())
+for i in range(n,0,-1):
+    print((str(i)+" ")*i)
+"""
+_____________________________________________________________________________________________________________________
