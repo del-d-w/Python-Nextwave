@@ -1,0 +1,848 @@
+01. Hollow Pyramid
+
+Given a number N, write a program to print a Hollow Pyramid of N rows using stars (*)
+
+   *
+  * *
+ *   *
+* * * *
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars as the Hollow Pyramid shown in the sample output.
+
+Explanation
+For example, if the given number is N = 5,
+• Print the numbers on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-pyramid.png
+
+• The Empty box indicates a space (" ").
+• The Star in the box indicates the star ("*").
+
+The Output should be
+
+    *
+   * *
+  *   *
+ *     *
+* * * * *
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+    *
+   * *
+  *   *
+ *     *
+* * * * *
+
+Sample Input 2:
+
+6
+
+Sample Output 2:
+
+     *
+    * * 
+   *   * 
+  *     * 
+ *       * 
+* * * * * * 
+
+Solution
+
+n = int(input())
+
+for row in range(1, n + 1):
+    left_spaces_count = n - row
+    left_spaces = " " * left_spaces_count
+    row_output = left_spaces + "* " * row
+    
+    if(row == 1 or row == n):
+        print(row_output)
+    else:
+        hollow_spaces_count = row - 2
+        hollow_spaces = "  " * hollow_spaces_count
+        row_output = left_spaces + "* " + hollow_spaces + "* "
+        print(row_output)
+
+"""
+n=int(input())
+print(' '*(n-1)+"*")
+for i in range(2,n):
+    print(' '*(n-i)+'* '+'  '*(i-2)+'* ')
+if n>1:
+    print("* "*n)
+"""
+
+_____________________________________________________________________________________________________________________
+
+02. Hollow Right Angled Traingle - 4
+
+Given a number N, write a program to print a Hollow Right Angled Traingle of N rows using pluses (+) and hashes (#).
+
+The first line contain Hashes (#) and the next N-1 lines contain Pluses (+).
+
+# # # # # #
++       +
++     +
++   +
++ +
++
+
+Note : There is a space after every plus and every hash
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing Pluses and Hashes as the Hollow Right Angled Traingle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 6,
+• Print Hashes (#) and Pluses (+) on 6 rows as shown in the given image.
+    。 The first row contains Hashes (# ).
+    。 The next 5 (6-1) rows contain Pluses (+).
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-right-angled-triangle-4.png
+
+Note
+In the given image,
+• The Empty box indicates two spaces (" ").
+• The Hash in the box indicates hash and a space ("#").
+• The Plus in the box indicates a plus and a space ("+").
+
+The Output should be
+
+# # # # # #
++       +
++     +
++   +
++ +
++
+
+Sample Input 1:
+
+6
+
+Sample Output 1:
+
+# # # # # #
++       +
++     +
++   +
++ +
++
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+# # # # # # # 
++         + 
++       + 
++     + 
++   + 
++ + 
++
+
+Solution
+
+n = int(input())
+
+first_row = "# " * n 
+print(first_row)
+
+for i in range(1, n - 1):
+    middle_spaces_count = (2 * n) - (2 * (i + 1)) - 2
+    middle_spaces = " " * middle_spaces_count
+    row = "+ " + middle_spaces + "+ "
+    print(row)
+
+if(n > 1):
+    last_row = "+"
+    print(last_row)
+
+"""
+n=int(input())
+print('# '*n)
+for i in range(n-1,1,-1):
+    print('+ '+'  '*(i-2)+'+ ')
+if n>1:
+    print('+')
+    
+"""
+_____________________________________________________________________________________________________________________
+
+03. Hollow Pyramid - 2
+
+Given a number N, write a program to print a Hollow Pyramid of 2*N-1 rows numbers
+
+ 1
+2 2
+3   3
+4     4
+3   3
+2 2
+1
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be 2*N-1 rows containing numbers as the Hollow Pyramid shown in the sample output.
+
+Explanation
+For example, if the given number is N = 4,
+• Print the numbers on 7 rows (2*4-1) as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-pyramid-2.png
+
+Note
+• The Empty box indicates two spaces (" ").
+• The Number in the box indicates the Number and a space ("1 ").
+
+The Output should be
+
+1
+2 2
+3   3
+4     4
+3   3
+2 2
+1
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+1
+2 2
+3   3
+4     4
+3   3
+2 2
+1
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+1
+2 2 
+3   3 
+4     4 
+5       5 
+6         6 
+7           7 
+6         6 
+5       5 
+4     4 
+3   3 
+2 2 
+1
+
+Solution
+
+number=int(input())
+for each_number in range(1,number+1):
+    if each_number==1:
+        each_row=str(each_number)
+        print(each_row)
+    else:
+        hollow_spaces="  "*(each_number-2)
+        each_row=str(each_number)+" "+hollow_spaces+str(each_number)
+        print(each_row)
+for each_number in range(1,number):
+    if each_number==(number-1):
+        each_row=str(1)
+        print(each_row)
+    else:
+        hollow_spaces=" "*((2*number)-(2*each_number)-3)
+        each_row=str(number-each_number)+hollow_spaces+str(number-each_number)
+        print(each_row)
+
+"""
+n=int(input())
+print("1")
+for i in range(2,n+1):
+    print((str(i)+" ")+"  "*(i-2)+(str(i)+" "))
+for i in range(n-1,1,-1):
+    print((str(i)+" ")+"  "*(i-2)+(str(i)+" "))
+if n>1:
+    print("1")
+"""
+_____________________________________________________________________________________________________________________
+
+04. Hollow Right Angled Traingle - 3
+
+Given a number N, write a program to print a Hollow Right Angled Traingle of N rows using stars (*).
+
+* * * * *
+*     *
+*   *
+* *
+*
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars as the Hollow Right Angled Traingle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 5,
+• Print the stars on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-right-angled-triangle-3.png
+
+Note
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The Output should be
+
+
+* * * * *
+*     *
+*   *
+* *
+*
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+
+* * * * *
+*     *
+*   *
+* *
+*
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+* * * 
+* * 
+* 
+
+Solution
+
+n = int(input())
+first_row = "* " * n 
+print(first_row)
+for i in range(1, n - 1):
+    middle_spaces = "  " * (n - i - 2)
+    row = "* " + middle_spaces + "* "
+    print(row)   
+last_row = "* "
+print(last_row)
+
+"""
+n = int(input())
+for i in range(0,n):
+    for j in range(0,n):
+        if i==0 or j==0 or i+j==n-1:
+            print('*',end=" ")
+        else:
+            print(" ", end=" ")
+    print()
+"""
+"""
+n=int(input())
+for i in range(n):
+    for j in range(i,n):
+        if i==0 or j==n-1 or j==i:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+"""
+_____________________________________________________________________________________________________________________
+
+05. Hollow Right Angled Traingle - 5
+
+Given a number N, write a program to print a Hollow Right Angled Traingle of N rows using stars (*).
+
+      *
+    * *
+  *   *
+* * * *
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars as the Hollow Right Angled Traingle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 5,
+• Print the stars on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-right-angled-triangle-5.png
+
+Note
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The Output should be
+
+        *
+      * *
+    *   *
+  *     *
+* * * * *
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+        *
+      * *
+    *   *
+  *     *
+* * * * *
+
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+      * 
+    * * 
+  *   * 
+* * * * 
+
+Solution
+
+n = int(input())
+
+left_spaces = " " * 2 * (n - 1)
+first_row = left_spaces + "*"
+print(first_row)
+
+for i in range(1, n - 1):
+    left_spaces = " " * 2 * (n - i - 1)
+    middle_spaces = " " * (2 * (i) - 1)
+    row = left_spaces + "*" + middle_spaces + "*"
+    print(row)
+    
+last_row = "* " * n
+print(last_row)
+
+"""
+n = int(input()) 
+for i in range(0,n):
+    if i == n-1: 
+        print("* " * n)
+    elif i==0:
+        left_spaces="  "*(n-1)
+        print(left_spaces+"* ")
+    else:
+        left_spaces="  "*(n-i-1)
+        hallowspaces="  "*(i-1)
+        print(left_spaces+"* "+hallowspaces+"* ")
+"""
+
+"""
+n = int(input())
+for i in range(n):
+    for j in range(n):
+        if i==n-1 or j==n-1 or (i+j)==n-1:
+            print('*',end=" ")
+        else:
+            print(" ", end=" ")
+    print()
+"""
+_____________________________________________________________________________________________________________________
+
+06. Hollow Right Angled Traingle - 6
+
+Given a number N, write a program to print a Hollow Right Angled Traingle of N rows using stars (*).
+
+* * * * *
+  *     *
+    *   *
+      * *
+        *
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars as the Hollow Right Angled Traingle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 4,
+• Print the stars on 4 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-right-angled-triangle-6.png
+Note
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The Output should be
+
+* * * *
+  *   *
+    * *
+      *
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+* * * *
+  *   *
+    * *
+      *
+
+
+Sample Input 2:
+
+6
+
+Sample Output 2:
+
+* * * * * * 
+  *       * 
+    *     * 
+      *   * 
+        * * 
+          *
+
+Solution
+
+n=int(input())
+first_row="* "*n 
+print(first_row)
+for i in range(1,n-1):
+    left_spaces=" "*2*i
+    middle_spaces=" "*(2*(n-i)-3)
+    row=left_spaces+"*"+middle_spaces+"*"
+    print(row)
+left_spaces=" "*2*(n-1)
+last_row=left_spaces+"*"
+print(last_row)
+
+"""
+n = int(input()) 
+for i in range(0,n):
+    if i == 0: #first row
+        print("* " * n)
+    elif (i== n-1): #last row
+        left_spaces = "  " * (n-1)
+        print(left_spaces + "*")    
+    else:
+        left_spaces = "  " * (i)          
+        hollow_spaces = "  " * (n-i-2)
+        print(left_spaces+"* " +hollow_spaces + "* " )
+"""
+
+"""
+n = int(input())
+for i in range(n):
+    for j in range(n):
+        if i==0 or j==n-1 or i==j:
+            print('*',end=" ")
+        else:
+            print(" ", end=" ")
+    print()
+"""
+_____________________________________________________________________________________________________________________
+
+07. Inverted Hollow Pyramid
+
+Given a number N, write a program to print a Hollow Inverted Full Pyramid of N rows using stars (*).
+
+* * * *
+ *   *
+  * *
+   *
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars as the Hollow Inverted Full Pyramid shown in the sample output.
+
+Explanation
+For example, if the given number is N = 5,
+• Print the stars on 5 rows as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-inverted-hollow-pyramid.png
+
+Note
+• The Empty box indicates two spaces (" ").
+• The Star in the box indicates the star and a space ("* ").
+
+The Output should be
+
+* * * *
+  *   *
+    * *
+      *
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+* * * * *
+ *     *
+  *   *
+   * *
+    *
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+* * * 
+ * * 
+  *
+
+Solution
+
+n = int(input())
+for row in range(1, n+1):
+    i = n - (row-1)
+    left_spaces = " " * (n - i)
+    if (i > 2) and (i < n):
+        hollow_spaces = "  " * (i-2)
+        stars = "* " + hollow_spaces + "* "
+        print(left_spaces + stars)
+    else:
+        stars = "* " * i
+        print(left_spaces + stars)
+
+"""
+n=int(input())
+for row in range(1,n+1):
+    for col in range(1,2*n):
+        if (row==1 and col%2!=0) or row==col or col+row==n*2:
+            print("*",end="")
+        else:
+            print(end=" ")
+    print()
+"""
+
+"""
+n=int(input())
+for i in range(n-1,0,-1):
+    for j in range(n-i-1):
+        print(end=' ')
+    for j in range(i+1):
+        if i==n-1 or j==0 or i==j:
+            print("*",end=' ')
+        else:
+            print(" ",end=' ')
+    print()
+print(" "*(n-1)+"*")
+"""
+_____________________________________________________________________________________________________________________
+
+08. Hollow Diamond
+
+Given a number N, write a program to print a Hollow Diamond of 2*N-1 rows using stars (*).
+
+   *
+  * *
+ *   *
+*     *
+ *   *
+  * *
+   *
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be 2*N-1 rows containing stars as the Hollow Diamond shown in the sample output.
+
+Explanation
+For example, if the given number is N = 5,
+• Print the stars on 9 rows (2*5-1) as shown in the given image.
+
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-hollow-diamond.png
+
+Note
+• The Empty box indicates a space (" ").
+• The Star in the box indicates the star ("*").
+
+The Output should be
+
+    *
+   * *
+  *   *
+ *     *
+*       *
+ *     *
+  *   *
+   * *
+    *
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+    *
+   * *
+  *   *
+ *     *
+*       *
+ *     *
+  *   *
+   * *
+    *
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+  * 
+ * * 
+*   * 
+ * * 
+  *
+
+Solution
+
+n = int(input())
+left_spaces_count = n - 1
+left_spaces = " " * left_spaces_count
+first_row = left_spaces + "*"
+print(first_row)
+
+middle_spaces_count = -1
+for i in range(2, n + 1):  
+    left_spaces_count = n - i
+    left_spaces = " " * left_spaces_count
+
+    middle_spaces_count = middle_spaces_count + 2
+    middle_spaces = " " * middle_spaces_count
+
+    row = left_spaces + "*" + middle_spaces + "*"
+    print(row)
+
+for i in range(1, n - 1):  
+    left_spaces_count = i
+    left_spaces = " " * left_spaces_count
+
+    middle_spaces_count = middle_spaces_count - 2
+    middle_spaces = " " * middle_spaces_count
+
+    row = left_spaces + "*" + middle_spaces + "*"
+    print(row)
+
+left_spaces_count = n - 1
+left_spaces = " " * left_spaces_count
+last_row = left_spaces + "*"
+print(last_row)
+
+"""
+n = int(input())
+left_spaces_count=n-1
+left_spaces=" "*left_spaces_count
+row_output=left_spaces+"*"
+print(row_output)
+
+hallow_spaces_count=-1
+for row in range(2,n+1):
+    left_spaces_count=n-row
+    left_spaces=" "*left_spaces_count
+    hallow_spaces_count=hallow_spaces_count+2
+    hallow_spaces=" "*hallow_spaces_count
+    row_output=left_spaces+"*"+hallow_spaces+"*"
+    print(row_output)
+
+for row in range(1, n-1):
+    left_spaces_count=row
+    left_spaces=" "*left_spaces_count
+    hallow_spaces_count=hallow_spaces_count-2
+    hallow_spaces=" "*hallow_spaces_count
+    row_output=left_spaces+"*"+hallow_spaces+"*"
+    print(row_output)
+    
+left_spaces_count=n-1
+left_spaces=" "*left_spaces_count
+row_output=left_spaces+"*"
+print(row_output)
+"""
+
+"""n=int(input())
+for i in range(1,n+1):
+    for j in range(1,n-i+1):
+        print(" ",end="")
+    for j in range(1,2*i):
+        if j==1 or j==2*i-1:
+            print("*", end="")
+        else:
+            print(" ",end="")
+    print()
+for i in range(n-1,0,-1):
+    for j in range(1,n-i+1):
+        print(" ",end="")
+    for j in range(1,2*i):
+        if j==1 or j==2*i-1:
+            print("*", end="")
+        else:
+            print(" ",end="")
+    print()
+"""
+
+"""
+n=int(input())
+for i in range(n-1):
+    for j in range(n-i-1):
+        print(end=" ")
+    for j in range(i+1):
+        if j==0 or i==j:
+            print("*",end=" ")
+        else:
+            print(" ",end=' ')
+    print()
+for i in range(n-1,0,-1):
+    for j in range(n-i-1):
+        print(end=" ")
+    for j in range(i+1):
+        if j==0 or i==j:
+            print("*",end=" ")
+        else:
+            print(" ",end=' ')
+    print()
+print(" "*(n-1)+"*")
+
+"""
+_____________________________________________________________________________________________________________________
