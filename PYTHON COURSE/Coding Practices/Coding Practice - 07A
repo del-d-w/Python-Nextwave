@@ -1,0 +1,900 @@
+01. Print N Times (While Loop)
+
+Write a program that reads a number N and prints the number 0 N times on N lines.
+
+Input﻿
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N lines containing an integer O on each line.
+
+Explanation
+For example, if the given number is N = 4,
+• The number 0 should be printed 4 times.
+The output should be,
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+0
+0
+0
+0
+
+Sample Input 2:
+
+2
+
+Sample Output 2:
+
+0
+0
+
+Solution
+
+number=int(input())
+counter=0
+while counter<number:
+    print(0)
+    counter=counter+1
+_____________________________________________________________________________________________________________________
+
+02. Print N Integers (While Loop)
+
+Write a program to print integers from 1 to the given integer (N).
+
+Input
+The first line of input will contain a positive integer.
+
+Output
+The output should be of N lines, printing an integer in each line.
+
+Explanation
+For example, if the given number is 3, your code should print the 
+
+1
+2
+3
+
+Similarly, if the given number is 5, your code should print the  
+
+1
+2
+3
+4
+5
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+1
+2
+3
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+1
+2
+3
+4
+5
+
+Solution
+
+n = int(input())
+counter = 1
+while counter <= n:
+    print(counter)
+    counter = counter + 1
+_____________________________________________________________________________________________________________________
+
+03. First N Natural Numbers (While Loop)
+
+Write a program that reads a number N and prints N Natural Numbers from 1.
+Note: All the positive numbers from 1 are called Natural Numbers.
+
+Input
+The input will be a single line containing an integer representing N N.
+
+Output
+The output should contain N Natural Numbers from 1, each on a new line.
+
+Explanation
+For example, if the given number is N = 3,
+• The 3 numbers from 1 are 1, 2 and 3.
+The output should be,
+
+1
+2
+3
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+1
+2
+3
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+1
+2
+3
+4
+5
+
+Solution
+
+number = int(input())
+counter = 0
+while counter < number:
+    counter = counter + 1
+    print(counter)
+_____________________________________________________________________________________________________________________
+
+04. Print Integers (While Loop)
+
+Given two integer numbers M and N, write a program to print the integers from M to N.
+
+Input
+The first line of input will contain an integer.
+The second line of input will contain an integer.
+
+Output
+The output should be printing an integer in each line, starting from M to N.
+
+Explanation
+For example, if the given numbers are 2 and 6, the output should be
+
+2
+3
+4
+5
+6
+
+Similarly, if the given numbers are -2 and 2, the output should be
+
+-2
+-1
+0
+1
+2
+
+Sample Input 1:
+
+2
+6
+
+Sample Output 1:
+
+2
+3
+4
+5
+6
+
+Sample Input 2:
+
+-2
+2
+
+Sample Output 2:
+
+-2
+-1
+0
+1
+2
+
+Solution
+
+m = int(input())
+n = int(input())
+while m <= n:
+    print(m)
+    m = m + 1
+_____________________________________________________________________________________________________________________
+
+05. Average of N Numbers (While Loop)
+
+﻿Write a program that reads a number N and prints the average of N numbers from 1.
+
+Note
+The average of N numbers from 1 can be calculated as,
+Average = Sum of N numbers from 1 / Count of numbers (N)
+Example: If N = 3, the average of 3 numbers from 1
+Average = (1 + 2 + 3 ) / 3 = 2.0
+
+Input
+The input will be a single line containing an integer representing N .
+
+Output
+The output should be a single line containing a float that is the average of N numbers from 1.
+
+Explanation
+For example, if the given number is N = 4
+• The 4 numbers from 1 are 1, 2, 3 and 4.
+• The sum of the numbers is 10. ( 1 + 2 + 3 + 4 = 10 )
+• The average of the numbers is 2.5. (10/4 = 2.5)
+The output should be 2.5.
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+2.5
+
+Sample Input 2:
+
+7
+
+Sample Output 2:
+
+4.0
+
+Solution
+
+number = int(input())
+sum_of_numbers = 0
+counter = 0
+while counter < number:
+    counter = counter + 1
+    sum_of_numbers = sum_of_numbers + counter
+average = sum_of_numbers / number
+print(average)
+
+_____________________________________________________________________________________________________________________
+
+06. Cube of N Numbers (While Loop)
+
+Write a program that reads a number N and prints the average of numbers from 1 to N
+
+Note
+• The average of numbers from 1 to N can be calculated as,
+Average = Sum of numbers from 1 to N / Count of numbers (N)
+Example: If N = 3, the average of numbers from 1 to 3 is, Average = (1 + 2 + 3) / 3 = 2.0
+• Use the For loop to iterate over the range of numbers.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should contain cubes of N numbers from 1, each on a new line.
+
+Explanation
+For example, if the given number is N = 4 4,
+• The 4 numbers from 1 are 1, 2, 3 and 4.
+The cube of the numbers is 1, 8, 27 and 64.
+The output should be 4.5.
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+1
+8
+27
+64
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+1
+8
+27
+64
+125
+
+Solution
+
+number = int(input())
+counter = 0
+while counter < number:
+    counter = counter + 1
+    print(counter ** 3)
+_____________________________________________________________________________________________________________________
+
+07. Solid Rectangle (While Loop)
+
+Given two integers M and N, write a program to print a solid rectangle pattern of M rows and N columns
+using the asterisk character (*).
+
+Input
+The first line of input will contain a positive integer.
+The second line of input will contain a positive integer.
+
+Output
+The output should be the M number of lines and N number of columns with the asterisk character (*).
+Note: There is a space after each asterisk character(*).
+
+Explanation
+For example, if the given numbers of rows are 2 and the number of columns is 3, the output should be 
+2 lines and 3 columns with the asterisk character(*).
+
+* * * 
+* * *
+
+For example, if the given numbers of rows are 4 and the number of columns is 6, the output should be 
+4 lines and 6 columns with the asterisk character(*).
+The output should be,
+
+* * * * * * 
+* * * * * * 
+* * * * * * 
+* * * * * * 
+
+Sample Input 1:
+
+2
+3
+
+Sample Output 1:
+
+* * * 
+* * *
+
+Sample Input 2:
+
+4
+6
+
+Sample Output 2:
+
+* * * * * * 
+* * * * * * 
+* * * * * * 
+* * * * * * 
+
+Solution
+
+rows = int(input())
+columns = int(input())
+counter = 0
+while counter < rows:
+    print("* " * columns)
+    counter = counter + 1
+_____________________________________________________________________________________________________________________
+
+08. 10 Numbers after N.
+
+Write a program that reads a number N and prints 10 numbers after N.
+
+Input
+The input will be a single line containing an integer representing N
+
+Output
+The output should contain 10 numbers after N, each on a new line.
+
+Explanation
+For example, if the given number is N = 2,
+• The 10 numbers after 2 are 3, 4, 5, 6, 7, 8, 9, 10, 11 and 12.
+The output should be,
+
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+
+Sample Input 1:
+
+2
+
+Sample Output 1:
+
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+
+Sample Input 2:
+
+11
+
+Sample Output 2:
+
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+
+Solution
+
+number = int(input())
+counter = 0
+while counter < 10:  
+    counter = counter + 1
+    number = number + 1  
+    print(number)
+_____________________________________________________________________________________________________________________
+
+09. N numbers after M
+
+﻿Write a program that reads two numbers M and M and N and prints N numbers after M
+
+Input
+The first line of input contains an integer representing M.
+The second line of input contains an integer representing N
+
+Output
+The output should contain N numbers after M, each on a new line.
+
+Explanation
+For example, if the given numbers are M = 3 and N = 5
+• The 5 numbers after 3 are 4, 5, 6, 7 and 8.
+The output should be,
+
+4
+5
+6
+7
+8
+
+Sample Input 1:
+
+3
+5
+
+Sample Output 1:
+
+4
+5
+6
+7
+8
+
+Sample Input 2:
+
+11
+2
+
+Sample Output 2:
+
+12
+13
+
+Solution
+
+m = int(input())
+n = int(input())
+counter = 0
+while counter < n:
+    m = m + 1
+    print(m)
+    counter = counter + 1
+_____________________________________________________________________________________________________________________
+
+10. Sum of N numbers from M
+
+Write a program that reads two numbers M and N and prints the sum of N numbers from M.
+
+Input
+The first line of input contains an integer representing M
+The second line of input contains an integer representing N.
+
+Output
+The output should be a single line containing an integer that is the sum of N numbers from M.
+
+Explanation
+For example, if the given numbers are M = 7 and N = 3
+• The 3 numbers from 7 are 7, 8 and 9.
+• The sum of 3 numbers from 7 is 24. ( 7+ 8+ 9 = 24)
+
+Number    Previous Sum    Previous Sum + Number = Current Sum
+7            0                      0+7=7
+8            7                      7+8=15
+9            15                     15+9=24
+
+The output should be 24.
+
+Sample Input 1:
+
+7
+3
+
+Sample Output 1:
+
+24
+
+Sample Input 2:
+
+2
+10
+
+Sample Output 2:
+
+65
+
+Solution
+
+m=int(input())
+n=int(input())
+counter=0
+sum_of_numbers=0
+while counter<n:
+    number=counter+m 
+    sum_of_numbers=sum_of_numbers+number
+    counter=counter+1 
+print(sum_of_numbers)
+_____________________________________________________________________________________________________________________
+
+11. Solid Right Angled Traingle
+
+Given an integer number (N) as input. Write a program to print the right-angled triangular pattern of N lines 
+using an asterisk(*) character.
+
+Input
+The input will be a single line containing a positive integer (N).
+
+Output
+The output should be N lines with an asterisk(*) character printing in a right-angled triangular pattern.
+Note: There is a space after each asterisk(*) character.
+
+Explanation
+For example, if the given number is 4,
+the output should be
+
+* 
+* * 
+* * * 
+* * * * 
+
+For example, if the given number is 2,
+the output should be
+
+* 
+* * 
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+*
+* * 
+* * * 
+* * * *
+
+Sample Input 2:
+
+2
+
+Sample Output 2:
+
+* 
+* * 
+
+Solution
+
+number = int(input())
+counter = 1
+while counter <= number:
+    print("* " * counter)
+    counter = (counter + 1)
+_____________________________________________________________________________________________________________________
+
+12. Sum of N Natural Numbers
+
+Write a program that reads a number N and prints the sum of N Natural Numbers.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be a single line containing an integer that is the sum of N Natural Numbers.
+
+Explanation
+For example, if the given numbers is N = 6
+• The numbers from 1 to 6 are 1, 2, 3, 4, 5 and 6.
+• The sum of the numbers is 21. ( 1 + 2 + 3 + 4 + 5 + 6 = 21)
+
+Number    Previous Sum    Previous Sum + Number = Current Sum
+1            0                      0+1=1
+2            1                      1+2=3
+3            3                      3+3=6
+4            6                      6+4=10
+5            10                     10+5=15
+6            15                     15+6=21
+
+Sample Input 1:
+
+6
+
+Sample Output 1:
+
+21
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+6
+
+Solution
+
+number = int(input())
+counter = 0
+sum_of_numbers = 0
+while counter < number:
+    counter = counter + 1
+    sum_of_numbers = sum_of_numbers + counter
+print(sum_of_numbers)
+
+_____________________________________________________________________________________________________________________
+
+13. Read N Inputs
+
+Given an integer N, write a program which reads N inputs and prints them.
+
+Input
+The first line of input will contain a positive integer, N.
+The following N lines will contain an integer in each line.
+
+Output
+The output should be N lines, containing an integer per line.
+
+Explanation
+For example, if the given N is 3, then read the inputs in the next 3 lines and print them. 
+If the given input integers in the next three lines are 8, 11, and 25, 
+the output should be
+
+8
+11
+25
+
+Sample Input 1:
+
+3
+8
+11
+25
+
+Sample Output 1:
+
+8
+11
+25
+
+Sample Input 2:
+
+2
+7
+20
+
+Sample Output 2:
+
+7
+20
+
+Solution
+
+number_of_inputs = int(input())
+counter = 0
+while counter < number_of_inputs:
+    number = int(input())
+    print(number)
+    counter = (counter + 1)
+
+_____________________________________________________________________________________________________________________
+
+14. Product N Inputs
+
+Given a number N, write a program that reads N numbers as input and prints the product of the given N numbers.
+
+Input
+The first line of input contains an integer representing N.
+The next N lines of input contain integers.
+
+Output
+The output should be the product of the given N inputs.
+
+Explanation
+For example, if the given numbers is N = 3
+• The 3 Inputs are 2, 3 and 7.
+• The Product of 2, 3 and 7 is 42. ( 2 * 3 * 7 = 42 )
+
+Number    Previous Product    Previous Product + Number = Current Product
+2              1                            1*2=2
+3              2                            2*3=6
+7              6                            6*7=42
+
+The Output should be 42.
+
+For example, if the given numbers is N = 4
+• The 4 Inputs are 11, 2, 4 and 9.
+• The Product of 11, 2, 4 and 9 is 792. ( 11* 2 * 4 * 9 = 792 )
+
+Number    Previous Product    Previous Product + Number = Current Product
+11             1                           1*11=11
+2              11                          11*2=22
+4              22                          22*4=88
+9              88                          88*9=792
+
+The Output should be 792.
+
+Sample Input 1:
+
+3
+2
+3
+7
+
+Sample Output 1:
+
+42
+
+Sample Input 2:
+
+4
+11
+2
+4
+9
+
+Sample Output 2:
+
+792
+
+Solution
+
+number_of_inputs = int(input())
+counter = 0
+product=1
+while counter <number_of_inputs:
+  number = int(input())
+  counter = (counter + 1)
+  product=product*number
+print(product)
+
+_____________________________________________________________________________________________________________________
+
+15. Sum of the Given Numbers
+
+Given an integer N, write a program which reads N inputs and prints the sum of the given input integers.
+
+Input
+The first line of input will contain a positive integer, N.
+The next N lines will contain the integers, each in a line.
+
+Output
+The output should be the sum of the given input integers.
+
+Explanation
+For example, if the given N is 3, then read the inputs in the next 3 lines and print the sum of the three input integers.
+If the given input integers in the next three lines are 8, 11, and 25.
+The output should be 44.
+
+Sample Input 1:
+
+3
+8
+11
+25
+
+Sample Output 1:
+
+44
+
+Sample Input 2:
+
+2
+7
+20
+
+Sample Output 2:
+
+27
+
+Solution
+
+number_of_inputs = int(input())
+counter = 0
+sum = 0
+while counter < number_of_inputs:
+    number = int(input())
+    sum = (sum + number)
+    counter = (counter + 1)
+print(sum)
+_____________________________________________________________________________________________________________________
+
+16. Identify the Mistake - Print Characters
+
+Write a program that reads a word and prints each character of the word in a new line.
+
+Input
+The first line of input will contain a word.
+
+Output
+The output should contain N lines, equal to the length of the word. Each of the N lines 
+should contain a character of the word.
+
+Explanation
+For example, if the given word is "Python".
+Your code should print each character of the word in a line.
+So the output should be
+
+P
+y
+t
+h
+o
+n
+
+Sample Input 1:
+
+Python
+
+Sample Output 1:
+
+P
+y
+t
+h
+o
+n
+
+Sample Input 2:
+
+Loops
+
+Sample Output 2:
+
+L
+o
+o
+p
+s
+
+Solution
+
+a = input()
+length_of_a = len(a)
+counter = 0
+while counter <= (length_of_a - 1):
+    print(a[counter])
+    counter = (counter + 1)
+_____________________________________________________________________________________________________________________
