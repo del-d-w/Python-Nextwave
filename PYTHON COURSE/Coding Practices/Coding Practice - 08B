@@ -132,213 +132,238 @@ for number in range(start, end + 1):
     print(number)
 _____________________________________________________________________________________________________________________
 
-03. Print N Integers (For Loop)
+03. Sum of Numbers M to N (For Loop)
 
-Write a program that reads a number N and prints numbers from 1 to N.
+Given two integers M and N, write a program to print the sum of the numbers from M to N.
 
-Note
-Use the For loop to iterate over the range og numbers.
+Note: Use the For loop to iterate over the range og numbers.
 
 Input
-The input will be a single line containing an integer representing N.
+The first line of input will contain an integer.
+The second line of input will contain an integer.
 
 Output
-The output should contain all numbers from 1 to N, each on a new line.
+The output should be a single line containing the sum of the numbers from M to N.
 
 Explanation
-For example, if the given number is N = 3,
-• The numbers from 1 to 3 are 1, 2, and 3.
-The output should be,
-1
-2
-3
+For example, if the given numbers are 2 and 6, the output should be the sum of the numbers from 
+2 to 6 (2 + 3 + 4 + 5 + 6), which is 20.
 
 Sample Input 1:
 
-3
-
-Sample Output 1:
-
-1
 2
-3
-
-Sample Input 2:
-
-5
-
-Sample Output 2:
-
-1
-2
-3
-4
-5
-
-Solution
-
-number_of_inputs = int(input())
-for number in range(1, number_of_inputs + 1):
-    print(number)
-_____________________________________________________________________________________________________________________
-
-04. Fisrt N Natural Numbers (For Loop)
-
-Write a program that reads a number N and prints Natural Numbers from 1 to N.
-
-Note
-• All the positive numbers from 1 are called Natural Numbers.
-• Use the For loop to iterate over the range of numbers.
-
-Input
-The input will be a single line containing an integer representing N.
-
-Output
-The output should contain all the Natural Numbers from 1 to N, each on a new line.
-
-Explanation
-For example, if the given number is N = 7,
-• The Natural Numbers from 1 to 7 are 1, 2, 3, 4, 5, 6 and 7.
-The output should be,
-1
-2
-3
-4
-5
-6
-7
-
-Sample Input 1:
-
-7
-
-Sample Output 1:
-
-1
-2
-3
-4
-5
-6
-7
-
-Sample Input 2:
-
-2
-
-Sample Output 2:
-
-1
-2
-
-Solution
-
-number = int(input())
-
-for each_num in range(1, number + 1):
-    print(each_num)
-_____________________________________________________________________________________________________________________
-
-05. Sum of N Natural Numbers (For Loop)
-
-Write a program that reads a number N and prints the sum of Natural Numbers from 1 to N.
-
-Note
-Use the For loop to iterate over the range of numbers.
-
-Input
-The input will be a single line containing an integer representing N
-
-Output
-The output should be a single line containing an integer that is the sum of Natural Numbers from 1 to N.
-
-Explanation
-For example, if the given number is N = 6,
-• The Natural Numbers from 1 to 6 are 1, 2, 3, 4, 5, and 6.
-• The sum of 6 Natural Numbers is 21. ( 1 + 2 + 3 + 4 + 5 + 6 = 21)
-The output should be 21.
-
-Sample Input 1:
-
 6
 
 Sample Output 1:
 
-21
+20
 
 Sample Input 2:
 
-3
+10
+20
 
 Sample Output 2:
 
-6
+165
 
 Solution
 
-number = int(input())
+m = int(input())
+n = int(input())
 
 total = 0
-for counter in range(1, number + 1):
-    total = total + counter
+for i in range(m, n+1):
+    total = total + i
 
 print(total)
-
 _____________________________________________________________________________________________________________________
 
-06. Average of N Numbers (For Loop)
+04. Square (For Loop)
 
-Write a program that reads a number N and prints the average of numbers from 1 to N
+Write a program that reads a number M and prints a Square of M rows and M Columns using stars (*).
+
+* * *
+* * *
+* * *
 
 Note
-• The average of numbers from 1 to N can be calculated as,
-Average = Sum of numbers from 1 to N / Count of numbers (N)
-Example: If N = 3, the average of numbers from 1 to 3 is, Average = (1 + 2 + 3) / 3 = 2.0
-• Use the For loop to iterate over the range of numbers.
+• There is a space after every star
+• Use For loop.
 
 Input
-The input will be a single line containing an integer representing N.
+The input will be a single line containing an integer representing M.
 
 Output
-The output should be a single line containing a float that is the average of numbers f
+The output should be M rows and M columns containing stars (*) as a Square shown in the sample output.
 
 Explanation
-For example, if the given number is N = 8,
-• The numbers from 1 to 8 are 1, 2, 3, 4, 5, 6, 7, 8.
-• The count of numbers from 1 to 8 is 8.
-• The sum of the numbers is 36. ( 1 + 2 + 3 + 4+ 5+ 6+ 7+ 8 = 36)
-• The average of the numbers is 4.5. (36 / 8 = 4.5)
-The output should be 4.5.
+For example, if the given number is M = 4
+• Print the stars (*) on 4 rows and 4 columns as shown in the given image.
+https://assets.ccbp.in/frontend/content/programming-foundations/square.png
+Note:In the given image, there is a space after every star(*)
+The output should be,
+
+* * * *
+* * * *
+* * * *
+* * * *
 
 Sample Input 1:
 
-8
+4
 
 Sample Output 1:
 
-4.5
+* * * *
+* * * *
+* * * *
+* * * *
 
 Sample Input 2:
 
-15
+2
 
 Sample Output 2:
 
-8.0
+* * 
+* * 
+
+Solution
+
+number_of_rows=int(input())
+for i in range(number_of_rows):
+    print("* "*number_of_rows)
+     
+_____________________________________________________________________________________________________________________
+
+05. Square - 2 (For Loop)
+
+Write a program that reads a number M and prints a Square of M rows and M Columns using numbers.
+
+1111
+2222
+3333
+4444
+
+Note
+• Use For loop.
+
+Input
+The input will be a single line containing an integer representing M.
+
+Output
+The output should be M rows and M columns containing Numbers as a Square shown in the sample output.
+
+Explanation
+For example, if the given number is M = 4
+• Print the numbers on 4 rows and 4 columns as shown in the given image.
+https://assets.ccbp.in/frontend/content/programming-foundations/square-2.png
+The output should be,
+
+1111
+2222
+3333
+4444
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+1111
+2222
+3333
+4444
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+11111
+22222
+33333
+44444
+55555
 
 Solution
 
 number = int(input())
-sum_of_numbers = 0
 
-for each_num in range(1, number + 1):
-    sum_of_numbers = sum_of_numbers + each_num
+number_of_rows = int(input())
 
-average = sum_of_numbers / number
-print(average)
+for each_number in range(1, number_of_rows + 1):
+    row = str(each_number)
+    print(row * number_of_rows)
+
 _____________________________________________________________________________________________________________________
 
-07. Cubes of N Numbers (For Loop)
+06. Rectangle (For Loop)
+
+Write a program that reads two a numberw M and N, and prints a Rectangle of M rows and N Columns using stars (*).
+
+*****
+*****
+*****
+*****
+
+Note
+• Use For loop.
+
+Input
+The first line of input contains an integer representing M.
+The second line of input contains an integer representing N.
+
+Output
+The output should be M rows and N columns containing stars (*) as a Rectangle shown in the sample output.
+
+Explanation
+For example, if the given number are M = 3 and N = 4
+• Print the stars (*) on 3 rows and 4 columns as shown in the given image.
+https://assets.ccbp.in/frontend/content/programming-foundations/cx-rectangle-for-loop.png
+The output should be,
+
+****
+****
+****
+
+Sample Input 1:
+
+3
+4
+
+Sample Output 1:
+
+****
+****
+****
+
+Sample Input 2:
+
+5
+7
+
+Sample Output 2:
+
+*******
+*******
+*******
+*******
+*******
+
+Solution
+
+rows = int(input())
+columns = int(input())
+
+for each_number in range(rows):
+    print("*" * columns)
+_____________________________________________________________________________________________________________________
+
+07. Right Angled Traingle (For Loop)
 
 Write a program that reads a number N and prints the cube of numbers from 1 to N.
 
