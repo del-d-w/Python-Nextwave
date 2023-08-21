@@ -1,0 +1,620 @@
+01. Print Length Times
+
+﻿Write a program that reads a string and prints the first character of the given string on N lines, 
+where N is the length of the given string.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be the given string. Here, N lines, with each line containing a string that is the first character 
+of N is the length of the given string.
+
+Explanation
+For example, if the given string is Cool,
+The first character in the string is C.
+• The length of the given string is 4
+• C should be printed 4 times.
+The output should be,
+
+C
+C
+C
+C
+
+Sample Input 1:
+
+Cool
+
+Sample Output 1:
+
+C
+C
+C
+C
+
+Sample Input 2:
+
+Program
+
+Sample Output 2:
+
+P
+P
+P
+P
+P
+P
+P
+
+Solution
+
+string = input()
+counter = 0
+length = len(string)
+first_character = string[0]
+while counter < length:
+    print(first_character)
+    counter = counter + 1
+
+_____________________________________________________________________________________________________________________
+
+02. Print The Characters
+
+Write a program that reads a string and prints each character of the given string on a new line.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be N lines, with each line containing a string that is one of the characters of the 
+given string. Here, N is the length of the given string.
+
+Explanation
+For example, if the given string is shine,
+• The length of the given string is 5.
+• Each character of the string should be printed on a new line.
+The output should be,
+
+s
+h
+i
+n
+e
+
+Sample Input 1:
+
+shine
+
+Sample Output 1:
+
+s
+h
+i
+n
+e
+
+Sample Input 2:
+
+Morning
+
+Sample Output 2:
+
+M
+o
+r
+n
+i
+n
+g
+
+Solution
+
+string = input()
+index = 0
+length = len(string)
+while index < length:
+    character = string[index]
+    print(character)
+    index = index + 1
+_____________________________________________________________________________________________________________________
+
+03. Square - 2
+
+Write a program that reads a number N and prints a Square of N rows and N Columns using numbers starting from 1.
+
+111
+222
+333
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be M rows and M columns containing numbers as a Square shown in the sample output.
+
+Explanation
+For example, if the given number is N = 4
+• Print the stars (*) on 4 rows and 4 columns as shown in the given image.
+https://assets.ccbp.in/frontend/content/programming-foundations/square-2.png
+Note:In the given image, there is a space after every star(*)
+The output should be,
+
+1111
+2222
+3333
+4444
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+1111
+2222
+3333
+4444
+
+Sample Input 2:
+
+6
+
+Sample Output 2:
+
+111111
+222222
+333333
+444444
+555555
+666666
+
+Solution
+
+number = int(input())
+counter = 1
+while counter <= number:
+    row = str(counter) * number
+    print(row)
+    counter = counter + 1
+_____________________________________________________________________________________________________________________
+
+04. Rectangle
+
+Write a program that reads two a numberw M and N, and prints a Rectangle of M rows and N Columns using stars (*).
+
+*****
+*****
+*****
+*****
+
+Input
+The first line of input contains an integer representing M.
+The second line of input contains an integer representing N.
+
+Output
+The output should be M rows and N columns containing stars (*) as a Rectangle shown in the sample output.
+
+Explanation
+For example, if the given number are M = 4 and N = 5
+• Print the stars (*) on 4 rows and 5 columns as shown in the given image.
+https://assets.ccbp.in/frontend/content/programming-foundations/rectangle.png
+The output should be,
+
+*****
+*****
+*****
+*****
+
+Sample Input 1:
+
+4
+5
+
+Sample Output 1:
+
+*****
+*****
+*****
+*****
+
+Sample Input 2:
+
+6
+2
+
+Sample Output 2:
+
+**
+**
+**
+**
+**
+**
+
+Solution
+
+rows = int(input())
+columns = int(input())
+counter = 0
+while counter < rows:
+    print("*" * columns)
+    counter = counter + 1
+_____________________________________________________________________________________________________________________
+
+05. Right Angled Traingle
+
+Write a program that reads a numberw N, and prints a Right Angled Traingle of N rows using stars (*).
+
+*
+**
+***
+****
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars (*) as a Right Angled Traingle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 3
+• Print the stars (*) on 4 rows as shown in the given image.
+https://assets.ccbp.in/frontend/content/programming-foundations/right-angled-triangle.png
+The output should be,
+
+*
+**
+***
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+*
+**
+***
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+*
+**
+***
+****
+*****
+
+Solution
+
+number = int(input())
+counter = 1
+while counter <= number:
+    print("*" * counter)
+    counter = counter + 1
+_____________________________________________________________________________________________________________________
+
+06. Right Angled Traingle - 2
+
+Write a program that reads a numberw N, and prints a Right Angled Traingle of N rows using numbers.
+
+1
+2 2
+3 3 3
+4 4 4 4
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing numbers as a Right Angled Traingle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 5
+• Print the numbers on 5 rows as shown in the given image.
+https://assets.ccbp.in/frontend/content/programming-foundations/right-angled-triangle-2.png
+The output should be,
+
+1 
+2 2 
+3 3 3 
+4 4 4 4 
+5 5 5 5 5 
+
+Sample Input 1:
+
+5
+
+Sample Output 1:
+
+1 
+2 2 
+3 3 3 
+4 4 4 4 
+5 5 5 5 5 
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+1 
+2 2 
+3 3 3 
+4 4 4 4  
+
+Solution
+
+number=int(input())
+counter=1 
+while counter<=number:
+    row=(str(counter)+" ")*counter
+    print(row)
+    counter=counter+1
+_____________________________________________________________________________________________________________________
+
+07. Right Angled Traingle - 3 
+
+Write a program that reads a number N and prints a Right Angled Traingle of N rows using stars (*) and pluses (+).
+
+The First N - 1 rows contain stars (*) and Nth row conatins pluses (+).
+
+*
+* *
++ + +
+
+Note
+There is a space after every star (*) and every plus (+).
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be N rows containing stars (*) and pluses (+) as a Right Angled Traingle shown in the sample output.
+
+Explanation
+For example, if the given number is N = 4
+• Print the stars (*) and pluses (+) on 4 rows as shown in the given image.
+    • The first 3 rows should contain stars (*)
+    • The 4th row should conatin N pluses (+).
+https://assets.ccbp.in/frontend/content/programming-foundations/right-angled-triangle-3.png
+The output should be,
+
+*
+* *
+* * *
++ + + +
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+*
+* *
+* * *
++ + + +
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+* 
+* * 
++ + + 
+
+Solution
+
+number=int(input())
+counter=1 
+while counter<=number:
+    if counter==number:
+        row="+ "*counter
+        print(row)
+    else:
+        row="* "*counter
+        print(row)
+    counter=counter+1
+_____________________________________________________________________________________________________________________
+
+8. Two Right Angled Traingles
+
+Write a program that reads a number N and prints Two Right Angled Traingles of N rows, using numbers starting from 1.
+
+1
+22
+333
+1
+22
+333
+
+Note: Use For Loop
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be 2*N rows containing numbers as a Two Right Angled Traingles shown in the sample output.
+
+Explanation
+For example, if the given number is N = 3
+• Print the numbers on 6 rows as shown in the given image (2*3=6).
+https://assets.ccbp.in/frontend/content/programming-foundations/two-right-angled-triangles.png
+The output should be,
+
+1
+22
+333
+1
+22
+333
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+1
+22
+333
+1
+22
+333
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+1
+22
+333
+4444
+1
+22
+333
+4444
+
+Solution
+
+number=int(input())
+counter=1 
+while counter<=number:
+    row=(str(counter)*counter)
+    print(row)
+    counter=counter+1
+counter=1 
+while counter<=number:
+    row=str(counter)*counter
+    print(row)
+    counter=counter+1
+_____________________________________________________________________________________________________________________
+
+09. Square
+
+Write a program that reads a number M and prints a Square of M rows and M Columns using stars (*).
+
+* * *
+* * *
+* * *
+
+Note
+• There is a space after every star
+
+Input
+The input will be a single line containing an integer representing M.
+
+Output
+The output should be M rows and M columns containing stars (*) as a Square shown in the sample output.
+
+Explanation
+For example, if the given number is M = 4
+• Print the stars (*) on 4 rows and 4 columns as shown in the given image.
+https://assets.ccbp.in/frontend/content/programming-foundations/square.png
+Note:In the given image, there is a space after every star(*)
+The output should be,
+
+* * * *
+* * * *
+* * * *
+* * * *
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+* * * *
+* * * *
+* * * *
+* * * *
+
+Sample Input 2:
+
+2
+
+Sample Output 2:
+
+* * 
+* * 
+
+Solution
+
+m=int(input())
+counter=0
+while(counter<m):
+    print("* "*m)
+    counter=counter+1
+     
+_____________________________________________________________________________________________________________________
+
+10. Rectangle - 2
+
+Write a program that reads two a numberw M and N, and prints a Rectangle of M rows and N Columns using pluses (+).
+
++ + + + + +  
++ + + + + +  
++ + + + + +  
++ + + + + +
+
+Input
+The first line of input contains an integer representing M.
+The second line of input contains an integer representing N.
+
+Output
+The output should be M rows and N columns containing pluses (+) as a Rectangle shown in the sample output.
+
+Explanation
+For example, if the given number are M = 3 and N = 5
+• Print the stars (*) on 3 rows and 5 columns as shown in the given image.
+https://assets.ccbp.in/frontend/content/programming-foundations/rectangle.png
+The output should be,
+
++ + + + + 
++ + + + + 
++ + + + + 
+
+Sample Input 1:
+
+3
+5
+
+Sample Output 1:
+
++ + + + + 
++ + + + + 
++ + + + + 
+
+Sample Input 2:
+
+4
+4
+
+Sample Output 2:
+
++ + + + 
++ + + + 
++ + + + 
++ + + + 
+
+Solution
+
+m=int(input())
+n=int(input())
+counter=0
+while(counter<m):
+    print("+ "*n)
+    counter=counter+1
+
+_____________________________________________________________________________________________________________________
