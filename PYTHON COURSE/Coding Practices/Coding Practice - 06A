@@ -1,0 +1,724 @@
+01. Day Name
+
+Write a program that reads a day number and prints the corresponding day name.
+
+Day Number      Day Name
+1                Monday
+2                Tuesday
+3                Wednesday
+4                Thursday
+5                Friday
+6                Saturday
+7                Sunday
+
+For Example
+If the given day number is 1, the day name is Monday
+If the given day number is 1, the day name is Tuesday, etc.
+
+Input﻿
+The input will be a single line containing an integer representing the day number.
+
+Output
+The output should be a single line containing a string that is the day name. 
+
+Constraints
+The day number is always greater than or equal to 1 and less than or equal to 7
+
+Explanation
+For example, if the given day number is 3, the output should be Wednesday as the day number of Wednesday is 3.
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+Wednesday
+
+Sample Input 2:
+
+2
+
+Sample Output 2:
+
+Tuesday
+
+Solution
+
+day_number = int(input())
+
+if day_number == 1:
+    print("Monday")
+elif day_number == 2:
+    print("Tuesday")
+elif day_number == 3:
+    print("Wednesday")
+elif day_number == 4:
+    print("Thursday")
+elif day_number == 5:
+    print("Friday")
+elif day_number == 6:
+    print("Saturday")
+elif day_number == 7:
+    print("Sunday")
+_____________________________________________________________________________________________________________________
+
+02. Permission to Attempt Exam
+
+﻿Write a program that reads the attendance percentage A and status of having medical report M of a student and 
+checks if any of the below conditions is satisfied.
+
+• A is greater than or equal to 75.
+• M is equal to "Y".
+Print Allowed to write exam if any of the given conditions is satisfied. Otherwise, print Cannot write exam.
+
+Note
+• The last character of the attendance percentage A contains %
+• The remaining characters contain a Number.
+
+﻿Input
+The first line of input contains a string representing A
+The second line of input contains a string representing M
+
+Output
+The output should be a single line containing a string. Allowed to write exam should be printed if
+A is greater than or equal to 75 or M is equal to "Y". Otherwise, Cannot write exam should be printed.
+
+Explanation
+
+For example, if the given attendance percentage A = "80%" and the status of having a medical report is M = "Y"
+✔ A is greater than or equal to 75. ( 80 >= 75 )
+X M is equal to "Y".
+
+The output should be Allowed to write exam as the attendance percentage is greater than or equal to 75.
+
+For example, if the given attendance percentage is A = "70%" and the status of having a medical report is M = "Y"
+X A is greater than or equal to 75. (70 < 75 ) 
+✓ M is equal to "Y".
+
+The output should be Allowed to write exam as the attendance percentage is not greater than or equal to 75 
+but the medical report status is equal to "Y".
+
+For example, if the given attendance percentage is A = "72%" and the status of having a medical report is M = "N"
+X A is greater than or equal to 75. ( 72 < 75 )
+X M is equal to "Y".
+
+The output should be Cannot write exam as the attendance percentage is not greater than or equal to 75 and 
+the medical report status is not equal to "Y".
+
+
+Sample Input 1:
+
+80%
+Y
+
+Sample Output 1:
+
+Allowed to write exam
+
+Sample Input 2:
+
+70%
+Y
+
+Sample Output 2:
+
+Allowed to write exam
+
+Sample Input 3:
+
+72%
+N
+
+Sample Output 3:
+
+Cannot write exam
+
+Solution
+
+attendance = input()
+medical_reason = input()
+length = len(attendance)
+attendance = attendance[:(length-1)]
+attendance = int(attendance)
+if attendance >= 75:
+    print("Allowed to write exam")
+elif attendance < 75 and medical_reason == "Y":
+    print("Allowed to write exam")
+else:
+    print("Cannot write exam")
+_____________________________________________________________________________________________________________________
+
+03. Sum of the Digits - 2
+
+Given an integer between 0 and 10000, write a program to print the sum of its digits.
+
+Input
+The first line of input will contain an integer.
+
+Output
+The first line of output should be the sum of the digits.
+
+Explanation
+For example, if the given number is 25, your code should print the sum of the digits (2 + 5), which is 7.
+Similarly, if the given number is 692, your code should print the sum of the digits (6 + 9 + 2), which is 17.
+Similarly, if the given number is 9999, your code should print the sum of the digits (9 + 9 + 9 + 9), which is 36.
+
+Sample Input 1:
+
+25
+
+Sample Output 1:
+
+7
+
+Sample Input 2:
+
+692
+
+Sample Output 2:
+
+17
+
+Sample Input 3:
+
+9999
+
+Sample Output 3:
+
+36
+
+Solution
+
+number = input()
+
+is_one_digit = (len(number) == 1)
+is_two_digit = (len(number) == 2)
+is_three_digit = (len(number) == 3)
+
+if is_one_digit:
+    print(number)
+elif is_two_digit:
+    first_digit = int(number[0])
+    second_digit = int(number[1])
+    sum_of_digits = first_digit + second_digit
+    print(sum_of_digits)
+elif is_three_digit:
+    first_digit = int(number[0])
+    second_digit = int(number[1])
+    third_digit = int(number[2])
+    sum_of_digits = first_digit + second_digit + third_digit
+    print(sum_of_digits)
+else:
+    first_digit = int(number[0])
+    second_digit = int(number[1])
+    third_digit = int(number[2])
+    fourth_digit = int(number[3])
+    sum_of_digits = first_digit + second_digit + third_digit + fourth_digit
+    print(sum_of_digits)
+
+"""
+print(sum([int(d) for d in input()]))
+"""
+_____________________________________________________________________________________________________________________
+
+04. Simple Calculator
+
+﻿Write a program that reads an operator O, and two numbers A and B.
+Print the result by doing arithmetic operations on A and B based on the operator O
+
+Operator        Arithmetic Operation      Represents
+
++                A + B                    Addition of A and B
+-                A - B                    Subtraction of B from A
+*                A * B                    Multiplication of A and B
+/                A / B                    Division of A and B
+%                A % B                    Remainder when A is divided by B
+
+
+Input
+The first line of input contains a string representing O. (+, -, *, /, %).
+The second line of input contains an integer representing A.
+The third line of input contains an integer representing B.
+
+Output
+The output should be a single line containing an integer, that is the result obtained by doing arithmetic operations on O
+is equal to +, -, *, / or %.
+
+The output should be a single line containing a float, that is the result obtained by doing arithmetic operations on A and B
+ if an operator O  is equal to /.
+
+Constraints
+The operator O is always equal to one of the +, -, *, / or %.
+
+Explanation
+For example, if the given operator is O = "+"  and the two numbers are A = 3 and B = 5
+• As O is equal to +, A should be added to B.
+• The Addition of A and B is equal to 8. (3 + 5 = 8)
+The output should be 8.
+
+For example, if the given operator is O = "*"  and the two numbers are A = 2 and B = 5
+• As O is equal to +, A should be miltiplied to B.
+• The Addition of A and B is equal to 10. (2 * 5 = 10)
+The output should be 10.
+
+For example, if the given operator is O = "-"  and the two numbers are A = 10 and B = 9
+• As O is equal to +, B should be subtracted from A.
+• The Addition of B from A is equal to 1. (10 - 9 = 1)
+The output should be 1.
+
+Sample Input 1:
+
++
+3
+5
+
+Sample Output 1:
+
+8
+
+Sample Input 2:
+
+*
+2
+5
+
+Sample Output 2:
+
+10
+
+Sample Input 3:
+
+-
+10
+9
+
+Sample Output 3:
+
+1
+
+Solution
+
+operator = input()
+first_number = int(input())
+second_number = int(input())
+
+if operator == "+":
+    print(first_number + second_number)
+elif operator == "-":
+    print(first_number - second_number)
+elif operator == "*":
+    print(first_number * second_number)
+elif operator == "/":
+    print(first_number / second_number)
+else:
+    print(first_number % second_number)
+_____________________________________________________________________________________________________________________
+
+05. Print The Value
+
+﻿Write a program that reads a string S. The string S contains a number except the last character. 
+The last character of the string contains T or H or K.
+
+Print the Value by multiplying the number in S with 10 or 100 or 1000 based on the last character.
+
+Last Character        Represents      Value
+T                      Tens             Multiply the number in string with 10
+H                      Hundreds         Multiply the number in string with 100
+K                      Thousands        Multiply the number in string with 1000
+
+Quick Tip
+Make sure the number is converted to an integer before doing any operations like Multiplication ( * ), etc.
+Example: S = 34T
+• The number in 34T is 34.
+• 34 should be converted to an integer before doing any operations.
+
+Input
+The input will be a single line containing a string representing S
+
+Output
+The output should be a single line containing an integer that is the value obtained by multiplying the number in S 
+with 10 or 100 or 1000 based on the last character.
+
+Explanation
+For example, if the given string is S = 34T,
+• The number in S is 34.
+• The last character of S is T
+• As T represents Tens, multiply the number in S with 10. So, the value is 340 (3410 = 340 ).
+The output should be 340.
+
+For example, if the given string is S = 6H
+• The number in S is 6.
+• The last character of S is H
+• As H represents Hundreds, multiply the number in S with 100. So, the value is 600 (6100 = 600 ).
+The output should be 600.
+
+Sample Input 1:
+
+34T
+
+Sample Output 1:
+
+340
+
+Sample Input 2:
+
+6H
+
+Sample Output 2:
+
+600
+
+Sample Input 3:
+
+700K
+
+Sample Output 3:
+
+700000
+
+Solution
+
+string = input()
+
+string_length = len(string)
+last_index = string_length - 1
+
+number = string[:last_index]
+number = int(number)
+
+last_character = string[last_index]
+
+if last_character == "T":
+    value = number * 10
+elif last_character == "H":
+    value = number * 100
+elif last_character == "K":
+    value = number * 1000
+
+print(value)
+
+_____________________________________________________________________________________________________________________
+
+06. Print the Score - 2
+
+﻿Write a program that reads a distance D in km and calculates the total score.
+• For the first 50 km (0 - 50 km ), the score for each km is 3.
+• For the distance above 50 km, the score for each km is 5.
+
+Input
+The input will be a single line containing an integer representing D.
+
+Output
+The output should be a single line containing an integer that is the score.
+
+Explanation
+For example, if the given distance in km is D = 75
+As D is greater than 50 km, the total score is the sum of the score of first 50 km and the score of the 
+remaining distance after 50 km.
+Score is 3 for each km for 0 to 50 km  ⇒ 50 × 3 = 150
+Score is 5 for each km for above 50 km ⇒ 25 x 5 = 125
+--------------------------------------------------------
+Total                                  ⇒          275
+
+▼ Detailed Explanation to calculate the score
+• The score for each km for the first 50 km is 3.
+• If the score is 3 for each km, then the score for 50 km is the product of 50 and 3 that is 150. (503 150 )
+• The score for each km for the above 50 km is 5.
+• The remaining distance after 50 km is 25. (75 - 50 = 25)
+• If the score is 5 for each km, then the score for 25 km is the product of 25 and 5 that is 125. ( 255 = 125 )
+• The total score is sum of the scores that is 275. ( 150+ 125 = 275 )
+The output should be 275.
+
+For example, if the given distance in km is D = 30
+As D is less than or equla to 50 km, the total score is for 30 km.
+• The score for each km for the first 50 km is 3.
+
+Score is 3 for each km for 0 to 50 km  ⇒ 30 × 3 = 90
+Score is 5 for each km for above 50 km ⇒ 0 x 5 = 0
+--------------------------------------------------------
+Total                                  ⇒          90
+
+The output should be 90.
+
+Sample Input 1:
+
+75
+
+Sample Output 1:
+
+275
+
+Sample Input 2:
+
+30
+
+Sample Output 2:
+
+90
+
+Solution
+
+distance = int(input())
+
+first_50_score = 50 * 3
+
+if distance <= 50:
+    score = distance * 3
+else:
+    remaining_distance = distance - 50
+    remaining_distance_score = remaining_distance * 5
+    score = first_50_score + remaining_distance_score
+
+print(score)
+
+"""
+a=int(input())
+if a>50:
+    b=(a-50)*5 
+    c=50*3
+    print(b+c)
+else:
+    print(a*3)
+"""
+_____________________________________________________________________________________________________________________
+
+07. Print the Score - 3
+
+﻿Write a program that reads a distance D in km and calculates the total score.
+• For the first 20 km ( 0 - 20 km ), the score for each km is 2.
+• For the next 40 km (21-60 km ), the score for each km is 4.
+• For the distance above 60 km, the score for each km is 6.
+• Apart from the above scores, there is a bonus score of 30.
+
+Input
+The input will be a single line containing an integer representing D
+
+Output
+
+The output should be a single line containing an integer that is the score.
+
+Explanation
+For example, if the given distance in km is D = 125
+As D is greater than 60 km, the total score is the sum of the score of first 20 km, score of the next 40 km, 
+score of the remaining distance after 60 km and the bonus score.
+
+Score is 2 for each km for 0 to 20 km     ⇒ 20 × 2 = 40
+Score is 4 for each km for 21 to 60 km    ⇒ 40 × 4 = 160
+Score is 6 for each km for above 60 km    ⇒ 65 × 6 = 390
+-----------------------------------------------------------
+Total                                     ⇒           590
+Bonus Score                               ⇒           30
+-----------------------------------------------------------
+Total Score                               ⇒           620
+-----------------------------------------------------------
+
+▼ Detailed Explanation to calculate the score
+• The score for each km for the first 20 km is 2. Then the score for 20 km is 40. ( 20 * 2 = 40 )
+• The score for each km for the next 40 km is 4. Then the score for 40 km is 160. (40 * 4 = 160 )
+• The score for each km for the above 60 km is 6. The remaining distance after 60 km is 65 (125 - 60 = 65 ).
+Then the score for 65 km is 390. (65 * 6 = 390)
+• Sum of the above scores is 590 ( 40 + 160 + 390 = 590 ). Then the total score is the sum of above scores and
+bonus score that is 620. (590 + 30 = 620 )
+
+The output should be 620.
+
+For example, if the given distance in km is D = 15,
+As D is less than or equal to 20 km, the total score is the sum of the score for 15 km and the bonus score.
+• The score for each km for the first 20 km is 2. Then the score for 15 km is 30. ( 15 * 2 = 30)
+• The total score is the sum of the score for 15 km and the bonus score that is 60. ( 30 + 30 = 60 )
+
+Score is 2 for each km for 0 to 20 km    ⇒  15 x 2 = 30
+Score is 4 for each km for 21 to 60 km   ⇒    0 × 4 = 0
+Score is 6 for each km for above 60 km   ⇒    0 × 6 = 0
+-----------------------------------------------------------
+Total                                    ⇒           30
+Bonus Score                              ⇒           30
+-----------------------------------------------------------
+Total Score                               ⇒           60
+-----------------------------------------------------------
+
+The output should be 60.
+
+Sample Input 1:
+
+125
+
+Sample Output 1:
+
+620
+
+Sample Input 2:
+
+15
+
+Sample Output 2:
+
+60
+
+Sample Input 3:
+
+50
+
+Sample Output 3:
+
+190
+
+Solution
+
+distance = int(input())
+
+bonus_score = 30
+
+first_20_score = 20 * 2
+next_40_score = 40 * 4
+
+if distance <= 20:
+    score = distance * 2
+elif distance <= 60:
+    remaining_distance = distance - 20
+    remaining_distance_score = remaining_distance * 4
+    score = first_20_score + remaining_distance_score
+else:
+    remaining_distance = distance - 60
+    remaining_distance_score = remaining_distance * 6
+    score = first_20_score + next_40_score + remaining_distance_score
+
+score = score + bonus_score
+print(score)
+
+"""
+a=int(input())
+if a<=20:
+    print((a*2)+30)
+elif a>20 and a<=60:
+    b=(a-20)*4
+    c=20*2
+    print(b+c+30)
+elif a>60:
+    b=(a-60)*6 
+    c=40*4 
+    d=20*2 
+    print(b+c+d+30)
+"""
+_____________________________________________________________________________________________________________________
+
+08. Print the Score - 3
+
+﻿Write a program that reads a distance D in km and calculates the total score.
+
+• For the first 40 km ( 0 - 40 km ), the score for each km is 2.
+• For the next 20 km (41 - 60 km ), the score for each km is 4. 
+• For the next 60 km (61 - 120 km ), the score for each km is 6.
+• For the distance above 120 km, the score for each km is 8.
+Apart from the above scores, there is a bonus score of 50.
+
+Input
+The input will be a single line containing an integer representing D
+
+Output
+The output should be a single line containing an integer that is the score.
+
+Explanation
+
+For example, if the given distance in km is  D = 70,
+As D is greater than 60 km, the total score is the sum of the score of first 40 km, score of the next 20 km, 
+score of the remaining distance after 60 km and the bonus score.
+
+Score is 2 for each km for 0 to 40 km     ⇒  49 x 2 = 30
+Score is 4 for each km for 41 to 60 km    ⇒   20 × 4 = 0
+Score is 6 for each km for 61 to 120 km   ⇒   10 × 6 = 0
+Score is 8 for each km for above 120 km   ⇒    0 × 8 = 0
+-----------------------------------------------------------
+Total                                     ⇒           220
+Bonus Score                               ⇒           50
+-----------------------------------------------------------
+Total Score                               ⇒           270
+-----------------------------------------------------------
+
+▼ Detailed Explanation to calculate the score
+• The score for each km for the first 40 km is 2. Then the score for 40 km is 80. ( 40 * 2 = 80)
+• The score for each km for the next 20 km is 4. Then the score for 20 km is 80. ( 20 * 4 = 80)
+• The score for each km for the above 60 km is 6. The remaining distance after 60 km is 10 (70 - 60 = 10). 
+Then the score for 10 km is 60. (10 * 6 = 60 )
+• Sum of the above scores is 220 (80+80+ 60 = 220 ). Then the total score is the sum of above scores and
+bonus score that is 270. (220 + 50 = 270)
+
+The output should be 270.
+
+Sample Input 1:
+
+70
+
+Sample Output 1:
+
+270
+
+Sample Input 2:
+
+4
+
+Sample Output 2:
+
+58
+
+Sample Input 3:
+
+135
+
+Sample Output 3:
+
+690
+
+Solution
+
+distance = int(input())
+
+bonus_score = 50
+
+first_40_score = 40 * 2
+next_20_score = 20 * 4
+next_60_score = 60 * 6
+
+if distance <= 40:
+    score = distance * 2
+elif distance <= 60:
+    remaining_distance = distance - 40
+    remaining_distance_score = remaining_distance * 4
+    score = first_40_score + remaining_distance_score
+elif distance <= 120:
+    remaining_distance = distance - 60
+    remaining_distance_score = remaining_distance * 6
+    score = first_40_score + next_20_score + remaining_distance_score
+else:
+    remaining_distance = distance - 120
+    remaining_distance_score = remaining_distance * 8
+    score = first_40_score + next_20_score + next_60_score + remaining_distance_score
+
+score = score + bonus_score
+print(score)
+
+
+"""
+a=int(input())
+if a<=40:
+    print((a*2)+50)
+elif a>40 and a<=60:
+    b=(a-40)*4 
+    c=40*2
+    print(b+c+50)
+elif a>60 and a<=120:
+    b=(a-60)*6 
+    c=40*2 
+    d=20*4 
+    print(b+c+d+50)
+elif a>120:
+    b=(a-120)*8 
+    c=40*2 
+    d=20*4 
+    e=60*6 
+    print(b+c+d+e+50)
+  
+"""
+_____________________________________________________________________________________________________________________
+
