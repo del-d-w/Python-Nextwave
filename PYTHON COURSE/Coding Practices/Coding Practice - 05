@@ -142,10 +142,116 @@ Print Box is Heavier if W is greater than or equal to 100.
 Print Box is Heavy if W is not greater than or equal to 100 but greater than or equal to 30.
 
 Input
-The input will be a single line containing an integer representing W
+The input will be a single line containing an integer representing W.
+
+﻿Output
+The output should be a single line containing a string. Box is Heavier should be printed if W is greater
+than or equal to 100. Box is Heavy should be printed if W is not greater than or equal to 100 but greater 
+than or equal to 30.
+
+Explanation
+For example, if the given weight of the box is W = 60,
+x W is greater than or equal to 100. (60 is not greater than or equal to 100)
+✓ W is greater than or equal to 30. (60 is greater than or equal to 30)
+The output should be Box is Heavy as 60 is not greater than or equal to 100 but greater than or equal to 30.
+
+Sample Input 1:
+
+60
+
+Sample Output 1:
+
+Box is Heavy
+
+Sample Input 2:
+
+150
+
+Sample Output 2:
+
+Box is Heavier
+
+Solution
+
+weight = int(input())
+
+is_heavy = weight >= 30
+is_heavier = weight >= 100
+
+if is_heavier:
+    print("Box is Heavier")
+else:
+    if is_heavy:
+        print("Box is Heavy")
+
+"""
+a=int(input())
+if a>=100:
+    print("Box is Heavier")
+elif a>=30:
+    print("Box is Heavy")
+"""
 ______________________________________________________________________________________________________________
 
+04. Allowed to Exam
+
+Write a program that reads two strings H and I and checks,
+• If H is equal to "Y".
+• If H is not equal to "Y", check if I is equal to "Y".
+Print Allowed to Exam - Has Hall ticket if H is equal to "Y".
+Print Allowed to Exam - Has Identification Card if H is not equal to "Y" and I is equal to "Y".
+
+Input
+The first line of input contains a string representing H
+The second line of input contains a string representing I.
+
+Output
+The output should be a single line containing a string. Allowed to Exam - Has Hall ticket should 
+be printed if H is equal to "Y". 
+Allowed to Exam - Has Identification Card should be printed if H is not equal to "Y" and I is equal to "Y".
+
+Explanation
+For example, if the given strings are H = Y and |=N,
+✓ His equal to "Y". ("Y" is equal to "Y")
+X H is not equal to "Y" and I is equal to "Y".
+The output should be Allowed to Exam - Has Hall ticket as H is equal to "Y".
+
+Sample Input 1:
+
+Y
+N
+
+Sample Output 1:
+
+Allowed to Exam - Has Hall ticket
+
+Solution
+
+hall_ticket = input()
+identification = input()
+
+has_hall_ticket = (hall_ticket == "Y")
+has_identification = (identification == "Y")
+
+if has_hall_ticket:
+    print("Allowed to Exam - Has Hall ticket")
+else:
+    if has_identification:
+        print("Allowed to Exam - Has Identification Card")
+
+"""
+h=input()
+i=input()
+if h=="Y":
+    print("Allowed to Exam - Has Hall ticket")
+elif i=="Y":
+    print("Allowed to Exam - Has Identification Card")
+
+"""
 ______________________________________________________________________________________________________________
+
+05. Divisible by 10 or 5
+
 
 
 ______________________________________________________________________________________________________________
