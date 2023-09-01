@@ -1,0 +1,157 @@
+01. Greater than 30 and 50
+
+Write a program that reads a number X and checks,
+• If X is greater than 30.
+• If X is greater than 30, check if X is also greater than 50.
+Print X is greater than 30 if X is greater than 30.
+Print X is greater than 30 and X is greater than 50 on each line if X is greater than 50.
+
+Input
+The input will be a single line containing an integer representing X.
+
+﻿Output
+If X is greater than 30,
+
+The output should be a single line containing the string X is Greater than 30.
+
+If X is greater than 30 and if X is also greater than 50,
+
+The first line of output should be a string containing X is Greater than 30. 
+The second line of output should be a string containing X is Greater than 50.
+
+Explanation
+For example, if the given number is X = 45,
+✓ X is greater than 30. (45 is greater than 30) 
+X  X is greater than 50. (45 is not greater than 50)
+The output should be X is Greater than 30.
+
+For example, if the given number is X = 99
+✓ X is greater than 30. (99 is greater than 30)
+✓ X is greater than 50. (99 is greater than 50)
+The output should be,
+
+X is Greater than 30
+X is Greater than 50
+
+Sample Input 1:
+
+45
+
+Sample Output 1:
+
+X is Greater than 30
+
+Sample Input 2:
+
+99
+
+Sample Output 2:
+
+X is Greater than 30
+X is Greater than 50
+
+Solution
+
+number  = int(input())
+
+is_number_greater_than_30 = number > 30
+is_number_greater_than_50 = number > 50
+
+if is_number_greater_than_30:
+    print("X is Greater than 30")
+
+    if is_number_greater_than_50:
+        print("X is Greater than 50")
+
+"""
+x=int(input())
+if x>30 and x>50:
+    print("X is Greater than 30")
+    print("X is Greater than 50")
+elif x>30:
+    print("X is Greater than 30")
+"""
+______________________________________________________________________________________________________________
+
+02. Rankers
+
+Write a program that reads the rank R of a student and checks,
+• If R is less than or equal to 3.
+• If R is not less than or equal to 3, check if R is less than or equal to 10.
+Print One of Top 3 if the R is less than or equal to 3.
+Print Not Top 3 but One of Top 10 if R is less than or equal to 10 but not less than or equal to 3.
+
+Input
+The input will be a single line containing an integer representing R.
+
+Output
+The output should be a single line containing a string. One of Top 3 should be printed if R is
+less than or equal to 3. Not Top 3 but One of Top 10 should be printed if R is less than or equal
+to 10 but not less than or equal to 3.
+
+Explanation﻿
+For example, if the given rank is R = 7,
+X R is less than or equal to 3. (7 is not less than or equal to 3)
+✓ R is less than or equal to 10. (7 is less than or equal to 10)
+The output should be Not Top 3 but One of Top 10 as 7 is less than or equal to 10 but not less than or equal to 3.
+
+Sample Input 1:
+
+7
+
+Sample Output 1:
+
+Not Top 3 but One of Top 10
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+One of Top 3
+
+Solution
+
+rank = int(input())
+
+is_less_than_or_equal_10 = rank <= 10
+is_less_than_or_equal_3 = rank <= 3
+
+if is_less_than_or_equal_10:
+    if is_less_than_or_equal_3:
+        print("One of Top 3")
+    else:
+        print("Not Top 3 but One of Top 10")
+
+"""
+a=int(input())
+if a<=3:
+    print("One of Top 3")
+elif a<=10:
+    print("Not Top 3 but One of Top 10")
+"""
+______________________________________________________________________________________________________________
+
+03. Weight
+
+Write a program that reads the weight W of a box in kg and checks,
+• If W is greater than or equal to 100.
+• If W is not greater than or equal to 100, check if W is greater than or equal to 30.
+Print Box is Heavier if W is greater than or equal to 100.
+Print Box is Heavy if W is not greater than or equal to 100 but greater than or equal to 30.
+
+Input
+The input will be a single line containing an integer representing W
+______________________________________________________________________________________________________________
+
+______________________________________________________________________________________________________________
+
+
+______________________________________________________________________________________________________________
+
+______________________________________________________________________________________________________________
+
+______________________________________________________________________________________________________________
+
+______________________________________________________________________________________________________________
