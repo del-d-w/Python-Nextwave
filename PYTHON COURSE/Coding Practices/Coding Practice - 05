@@ -252,12 +252,664 @@ ________________________________________________________________________________
 
 05. Divisible by 10 or 5
 
+Write a program that reads a number N and checks if N is divisible by 5 and 10.
+Print Divisible by 10 if N is divisible by 10.
+Print Divisible by 5 if N is divisible by 5 but not divisible by 10.
+Print Not Divisible by 10 or 5 if N is not divisible by 10 and N is not divisible by 5.
 
+Input
+The input will be a single line containing an integer representing N.
 
+Output
+The output should be a single line containing a string. Divisible by 10 should be printed if
+N is divisible by 10. Divisible by 5 should be printed if N is divisible by 5 but not divisible by 10. 
+Not Divisible by 10 or 5 should be printed if N is not divisible by 10 and 5.
+
+Explanation
+For example, if the given number is N = 15,
+X N is divisible by 10. (15 is not divisible by 10)
+✔ N is divisible by 5 but not divisible by 10. (15 is divisible by 5. 15 is not divisible by 10)
+The output should be Divisible by 5 as N is divisible by 5 but not divisible by 10.
+
+For example, if the given number is N = 11,
+X N is divisible by 10. (11 is not divisible by 10)
+X N is divisible by 5 but not divisible by 10. (11 is not divisible by 5 and 10)
+The output should be Not Divisible by 10 or 5 as N is not divisible by 10 and 5.
+
+Sample Input 1:
+
+15
+
+Sample Output 1:
+
+Divisible by 5
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+Divisible by 5
+
+Solution
+
+number  = int(input())
+
+is_divisible_by_10 = (number % 10 == 0)
+is_divisible_by_5 = (number % 5 == 0)
+
+if is_divisible_by_10:
+    print("Divisible by 10")
+elif is_divisible_by_5:
+    print("Divisible by 5")
+else:
+    print("Not Divisible by 10 or 5")
+
+"""
+a=int(input())
+if a%10!=0 and a%5!=0:
+    print("Not Divisible by 10 or 5")
+elif a%10==0:
+    print("Divisible by 10")
+elif a%5==0:
+    print("Divisible by 5")
+"""
 ______________________________________________________________________________________________________________
 
+06. Greatest Among Three Numbers - 2
+
+Write a program that reads three numbers A, B, and C, and prints the greatest number among the three given numbers.
+
+Input
+The first line of input contains an integer representing A. 
+The second line of input contains an integer representing B.
+The third line of input contains an integer representing C.
+
+Output
+The output should be a single line containing an integer that the greatest number among the three given numbers.
+
+For example, if the given numbers are A = 10, B = 15, and C = 20
+• B is greater than A. (15 is greater than 10)
+• B is less than C. (15 is less than 20)
+• So, C is greater than A and B.
+The output should be 20.
+
+For example, if the given numbers are A = -10, B = 59, and C 34
+• B is greater than A. (59 is greater than -10)
+• B is greater than C. (59 is greater than 34)
+• So, B is greater than A and C .
+The output should be 59.
+
+Sample Input 1:
+
+10
+15
+20
+
+Sample Output 1:
+
+20
+
+Sample Input 2:
+
+-10
+59
+34
+
+Sample Output 2:
+
+59
+
+Solution
+
+first_number = int(input())
+second_number = int(input())
+third_number = int(input())
+
+is_first_greatest = (first_number > second_number) and (first_number > third_number)
+
+if is_first_greatest:
+    print(first_number)
+else:
+    is_second_greatest = (second_number > third_number)
+
+    if is_second_greatest:
+        print(second_number)
+    else:
+        print(third_number)
+
+"""
+a=int(input())
+b=int(input())
+c=int(input())
+print(max(a,b,c))
+"""
 ______________________________________________________________________________________________________________
 
+07. Course Fee
+
+Write a program that reads the marks M of a student and checks,
+• If M is greater than or equal to 90.
+• If M is greater than or equal to 50 but not greater than or equal to 90
+Print Discount is 200 if M is greater than or equal to 90.
+Print Discount is 100 if M is greater than or equal to 50 but not greater than or equal to 90.
+Print No Discount if M is not greater than or equal to 50.
+
+Input
+The input will be a single line containing an integer representing M.
+
+Output
+The output should be a single line containing a string. Discount is 200 should be printed if M is greater 
+than or equal to 90. Discount is 100 should be printed if Mis greater than or equal to 50 but not greater 
+than or equal to 90.No discount should be printed if M is not greater than or equal to 50.
+
+Explanation
+For example, if the given marks M = 93
+✓ M is greater than or equal to 90. (93 is greater than or equal to 90)
+The output should be Discount is 200.
+
+For example, if the given marks M = 35,
+X M is greater than or equal to 90. (35 is not greater than or equal to 90)
+X M is greater than or equal to 50 but not greater than or equal to 90. (35 is not greater than or equal to 50)
+The output should be No Discount as M is not greater than or equal to 50.
+
+For example, if the given marks M = 75
+X M is greater than or equal to 90. (75 is not greater than or equal to 90)
+✓ M is greater than or equal to 50 but not greater than or equal to 90. (75 is greater than or equal to 50)
+The output should be Discount is 100.
+
+Sample Input 1:
+
+93
+
+Sample Output 1:
+
+Discount is 200
+
+Sample Input 2:
+
+35
+
+Sample Output 2:
+
+No Discount
+
+Solution
+
+marks=int(input())
+is_greater_than_or_equal_90=marks>=90 
+is_greater_than_or_equal_50=marks>=50 
+if is_greater_than_or_equal_90:
+    print("Discount is 200")
+elif is_greater_than_or_equal_50:
+    print("Discount is 100")
+else:
+    print("No Discount")
+
+"""
+a=int(input())
+if a>=90:
+    print("Discount is 200")
+elif a>=50:
+    print("Discount is 100")
+elif not a>=50:
+    print("No Discount")
+"""
 ______________________________________________________________________________________________________________
 
+08. Win or Lose or Draw
+
+Write a program that reads the two scores A and B and compares A with the B.
+
+Print Win if A is greater than B.
+Print Draw if A is equal to B.
+Print Lose if A is less than B.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output
+The output should be a single line containing a string. Win should be printed if A is greater than B. 
+Draw should be printed if A is equal to B. Lose should be printed if A is less than B.
+
+Explanation
+For example, if the given scores are A = 26 and B = 47,
+X A is greater than B. (26 is not greater than 47)
+X A is equal to B (26 is not equal to 47)
+✓ A is less than B. (26 is less than 47)
+The output should be Lose.
+
+Sample Input 1:
+
+26
+47
+
+Sample Output 1:
+
+Lose
+
+Sample Input 2:
+
+24
+15
+
+Sample Output 2:
+
+Win
+
+Solution
+
+my_points=int(input())
+opponent_points=int(input())
+is_win=(my_points>opponent_points)
+is_draw=(my_points==opponent_points)
+if is_win:
+    print("Win")
+elif is_draw:
+    print("Draw")
+else:
+    print("Lose")
+    
+"""
+a=int(input())
+b=int(input())
+if a>b:
+    print("Win")
+elif a==b:
+    print("Draw")
+elif a<b:
+    print("Lose")
+"""
+______________________________________________________________________________________________________________
+
+09. Get Grades
+
+Write a program to calculate the grade of the student based on the marks he/she scored.
+
+Input
+The input will be a single line containing a float value representing N.
+
+Output
+The output should be a single line containing a string representing the grade of the student.
+• A should be printed if the given marks are greater than 85.
+• B should be printed if the given marks are greater than 70 and less than or equal to 85.
+• C should be printed if the given marks are greater than or equal to 60 and less than or equal to 70.
+• F should be printed if the given marks are less than 60.
+
+Explanation
+If the given input N = 70.5,
+X N is greater than 85. (70.5 is not greater than 85)
+✓ N is greater than 70 and less than or equal to 85. (70.5 is greater than 70 and less than or equal to 85)
+X N is greater than or equal to 60 and less than or equal to 70. (70.5 is greater than or equal to 60 and
+not less than or equal to 70)
+X N is less than 60. (70.5 is not less than 60)
+The output should be B as N is greater than 70 and less than or equal to 85.
+
+If the given input N = 90
+✓ N is greater than 85. (90 is greater than 85)
+X N is greater than 70 and less than or equal to 85. (90 is greater than 70 and not less than or equal to 85)
+X N is greater than or equal to 60 and less than or equal to 70. (90 is greater than or equal to 60 and not
+less than or equal to 70)
+X N is less than 60. (90 is not less than 60)
+The output should be A as N is greater than 85.
+
+Sample Input 1:
+
+70.5
+
+Sample Output 1:
+
+B
+
+Sample Input 2:
+
+90
+
+Sample Output 2:
+
+A
+
+Solution
+
+marks = float(input())
+
+if marks > 85:
+    print("A")
+elif marks > 70:
+    print("B")
+elif marks >= 60:
+    print("C")
+else:
+    print("F")
+
+"""
+a=float(input())
+if(a>85):
+    print("A")
+elif (70<a<=85):
+    print("B")
+elif(60<=a<=70):
+    print("C")
+else:
+    print("F")
+"""
+______________________________________________________________________________________________________________
+
+10. Greeting Message
+
+Write a program to print a greeting message based on the given time.
+
+Input
+The first line of input will be an integer.
+
+Output
+If the time is greater than or equal to 4 and less than 12, print "Good Morning".
+If the time is greater than or equal to 12 and less than 16, print "Good Afternoon".
+If the time is greater than or equal to 16 and less than 20, print "Good Evening".
+If the time is greater than or equal to 20 or less than 4, print "Good Night".
+
+Explanation
+For example, if the given time is 9, your code should print "Good Morning".
+For example, if the given time is 14, your code should print "Good Afternoon".
+
+Sample Input 1:
+
+9
+
+Sample Output 1:
+
+Good Morning
+
+Sample Input 2:
+
+14
+
+Sample Output 2:
+
+Good Afternoon
+
+Solution
+
+time = int(input())
+
+is_morning = ((time >= 4) and (time < 12))
+is_afternoon = ((time >= 12) and (time < 16))
+is_evening = ((time >= 16) and (time < 20))
+
+if is_morning:
+    print("Good Morning")
+elif is_afternoon:
+    print("Good Afternoon")
+elif is_evening:
+    print("Good Evening")
+else:
+    print("Good Night")
+
+"""
+a=int(input())
+if(a>=4 and a<12):
+    print("Good Morning")
+elif(a>=12 and a<16):
+    print("Good Afternoon")
+elif(a>=16 and a<20):
+    print("Good Evening")
+else:
+    (a>=20 and a<4)
+    print("Good Night")
+
+"""
+______________________________________________________________________________________________________________
+
+11. Name of the Polygon
+
+Write a program that reads the number N and prints the name of the polygon based on the N number of sides.
+
+Note
+A polygon is a closed shape made of straight lines that has three or more sides and angles.
+
+The below images are examples of a Polygon which contains three or more sides.
+
+https://new-assets.ccbp.in/frontend/content/programming-foundations/Name_of_the_Polygon.png
+
+Input
+The input will be a single line containing an integer N representing the number of sides.
+
+Output
+The output should be a single line containing a string representing the name of the polygon.
+Not Polygon should be printed if the given number of sides is less than 3.
+Traingle  should be printed if the given number of sides is equal to 3.
+Quadrilateral should be printed if the given number of sides is equal to 4.
+Pentagon should be printed if the given number of sides is equal to 5.
+Big Polygon should be printed if the given number of sides is greater than 5.
+
+Explanation
+For example, if the given number of sides N = 4,
+X N is less than 3. (4 is not less than 3)
+X N is equal to 3. (4 is not equal to 3)
+✓ N is equal to 4. (4 is equal to 4)
+X N is equal to 5. (4 is not equal to 5)
+X N is greater than 5. (4 is not greater than 5)
+The output should be Quadrilateral as the number of sides is equal to 4.
+
+For example, if the given number of sides N = 2,
+✓ N is less than 3. (2 is less than 3)
+X N is equal to 3. (2 is not equal to 3) 
+X N is equal to 4. (2 is not equal to 4)
+X N is equal to 5. (2 is not equal to 5)
+X N is greater than 5. (2 is not greater than 5)
+The output should be Not Polygon as the number of sides is less than 3.
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+Quadrilateral
+
+Sample Input 2:
+
+2
+
+Sample Output 2:
+
+Not Polygon
+
+Solution
+
+number_of_sides = int(input())
+
+if number_of_sides < 3:
+    print("Not Polygon")
+elif number_of_sides == 3:
+    print("Triangle")
+elif number_of_sides == 4:
+    print("Quadrilateral")
+elif number_of_sides == 5:
+    print("Pentagon")
+else:
+    print("Big Polygon")
+
+"""
+a=int(input())
+if(a<3):
+    print("Not Polygon")
+elif(a==3):
+    print("Triangle")
+elif(a==4):
+    print("Quadrilateral")
+elif(a==5):
+    print("Pentagon")
+else:
+    (a>5)
+    print("Big Polygon")
+"""
+______________________________________________________________________________________________________________
+
+12. Relation Between Two Numbers
+
+Write a program that reads two numbers A, and B, and prints the relation between A and B by checking 
+if any of the given conditions is satisfied.
+• A is equal to B. (A == B)
+• A is greater than B. (A > B)
+• A is less than B. (A < B)
+Note
+Relational Operators are ==, Λ, <
+
+Input
+The first line of input contains an integer representing A
+The second line of input contains an integer representing B
+
+Output
+The output should be a single line containing a string representing the relation between the two numbers.
+A == B should be printed if A is equal to B
+A > B should be printed if A is greater than B.
+A < B should be printed if A is less than B.
+
+For Example, if the given integers are A = 3 and B = 4
+X A is equal to B. (3 is not equal to 4)
+X A is greater than B. (3 is not greater than 4)
+✓ A is less than B. (3 is less than 4)
+The output should be A < B as A is less than B.
+
+For Example, if the given integers are A = 4 and B = 4
+✓ A is equal to B. (4 is equal to 4)
+X A is greater than B. (4 is not greater than 4)
+X A is less than B. (4 is not less than 4)
+The output should be A == B as A is equal to B.
+
+Sample Input 1:
+
+3
+4
+
+Sample Output 1:
+
+A < B
+
+Sample Input 2:
+
+4
+4
+
+Sample Output 2:
+
+A == B
+
+Solution
+
+a = int(input())
+b = int(input())
+if a == b:
+    print("A == B")
+elif a > b:
+    print("A > B")
+else:
+    print("A < B")
+______________________________________________________________________________________________________________
+
+13. Electricity Bill
+
+In this problem, you need to write a program to calculate the electricity bill for a household, based
+on the units of electricity the household consumed. The price for unit varies based on the slab. 
+The charges per unit for different slabs are as mentioned below:
+
+For the first 50 units (0-50), the charge is 2/unit
+For the next 100 units (51-150), the charge is 3/unit
+For the next 100 units (151-250), the charge is 5/unit
+For above 250 units (251 and above), the charge is 8/unit
+
+Apart from these charges, there is also an additional surcharge of 20% on the total amount is added to the bill.
+
+Input
+The input will be a single line containing an integer. 
+
+Output
+The output should be a single line containing the calculated bill amount. 
+
+Explanation
+For example, if the given number of units is 50.
+
+Charges 2/unit for 0 to 50 units   =>  50 x 2   = 100
+Charges 3/unit for 51 to 150 units =>   0 x 3   =   0
+Charges 5/unit for 151 to 250      =>   0 x 5   =   0
+Charges 8/unit for 251 and above   =>   0 x 8   =   0
+-----------------------------------------------------
+Total                              =>             100 
+Surcharge (20 % of Bill)           => 100 x 0.2 =  20
+-----------------------------------------------------
+Bill                               =>             120
+-----------------------------------------------------
+
+So the total bill should be 120.0
+
+For example, if the given number of units is 200.
+
+Charges 2/unit for 0 to 50 units   =>  50 x 2   = 100
+Charges 3/unit for 51 to 150 units => 100 x 3   = 300
+Charges 5/unit for 151 to 250      =>  50 x 5   = 250 
+Charges 8/unit for 251 and above   =>   0 x 8   =   0
+-----------------------------------------------------
+Total                              =>             650 
+Surcharge (20 % of Bill)           => 650 x 0.2 = 130
+-----------------------------------------------------
+Bill                               =>             780
+-----------------------------------------------------
+
+So the total bill should be 780.0
+
+Sample Input 1:
+
+50
+
+Sample Output 1:
+
+120.0
+
+Sample Input 2:
+
+200
+
+Sample Output 2:
+
+780.0
+
+Solution
+
+units = int(input())
+
+bill = 0
+
+if units < 50:
+    bill = 2 * units
+elif units < 150:
+    bill = (2 * 50) + (3 * (units - 50))
+elif units < 250:
+    bill = (2 * 50) + (3 * 100) + (5 * (units - 150))
+elif units >= 250:
+    bill = (2 * 50) + (3 * 100) + (5 * 100) + (8 * (units - 250))
+
+surcharge = (0.2 * bill)
+
+total_bill = (bill + surcharge)
+
+print(total_bill)
+
+"""
+units=int(input())
+charge=0
+if units < 50:
+  charge=units*2
+elif units<150:
+  charge=(2*50)+(3*(units-50))
+elif units<250:
+  charge = (2*50)+(3*100)+(5*(units-150))
+elif units>=250:
+  charge = (2*50)+(3*100)+(5*100)+(8*(units-250))
+surcharge= (charge * 0.2)
+bill = charge + surcharge
+print(bill)
+"""
 ______________________________________________________________________________________________________________
