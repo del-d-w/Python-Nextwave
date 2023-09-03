@@ -1,0 +1,866 @@
+01. Increment the Number
+
+Write a program that reads a number N and checks if N is greater than 10.
+Print the result of N+5 if N is greater than 10. Otherwise, print the result of N + 1.
+
+Input
+The input will be a single line containing an integer representing N.
+
+Output
+The output should be a single line containing an integer. The result of N +5 should be printed if
+N is greater than 10. Otherwise, the result of N + 1 should be printed.
+
+Explanation
+For example, if the given number is N = 3,
+• 3 is not greater than 10.
+• The result of N + 1 is 4 ( 3 + 1 = 4 ).
+The output should be 4 as N is not greater than 10.
+
+For example, if the given number is N = 63
+• 63 is greater than 10.
+• The result of N + 5 is 68 ( 63 + 5 = 68 ).
+The output should be 68 as N is greater than 10.
+
+Sample Input 1:
+
+3
+
+Sample Output 1:
+
+4
+
+Sample Input 2:
+
+63
+
+Sample Output 2:
+
+68
+
+Solution
+
+number = int(input())
+if number > 10:
+    number = number + 5
+else:
+    number = number + 1
+print(number)
+______________________________________________________________________________________________________________
+
+02. Valid Traingle - 2
+
+Write a program that reads the three angles A, B and C of a Triangle and checks if the sum of the three angles
+of the Triangle is equal to 180.
+
+Print the Triangle as given below if the sum of the three angles of the Triangle is equal to 180. 
+Otherwise, print Not a Valid Triangle.
+
+*
+**
+***
+
+Input
+The first line of input contains an integer representing angle A.
+The second line of input contains an integer representing angle B.
+The third line of input contains an integer representing angle C
+
+Output
+The output should be three lines containing a Triangle as shown in the sample output if the sum of A, B and C is
+equal to 180. Otherwise, the output should be a single line containing the string Not a Valid Triangle.
+
+Explanation
+For example, if the given three angles of the Triangle are A = 60, B = 45, and C = 75
+• The sum of the three angles of the Triangle is equal to 180. (60 + 45+ 75 = 180 )
+• The output should be the Triangle as given below,
+
+*
+**
+***
+
+To print the Triangle, print a star on the first line, two stars on the second line and three stars on the third line.
+
+For example, if the given three angles of the Triangle are A = 80 B = 90 and C = 100
+• The sum of the three angles of the Triangle is not equal to 180. ( 80 + 90 + 100 = 270 )
+• The output should be Not a Valid Triangle.
+
+Sample Input 1:
+
+60
+45
+75
+
+Sample Output 1:
+
+*
+**
+***
+
+Sample Input 2:
+
+80
+90
+100
+
+Sample Output 2:
+
+Not a Valid Triangle
+
+Solution
+
+first_angle = int(input())
+second_angle = int(input())
+third_angle = int(input())
+sum_of_three_angles = first_angle + second_angle + third_angle
+if sum_of_three_angles == 180:
+    print("*")
+    print("*" * 2)
+    print("*" * 3)
+else:
+    print("Not a Valid Triangle")
+
+"""
+a=int(input())
+b=int(input())
+c=int(input())
+if a+b+c==180:
+    print("*")
+    print("**")
+    print("***")
+else:
+    print("Not a Valid Triangle")
+"""
+______________________________________________________________________________________________________________
+
+03. Greater than 100
+
+Write a program that reads three numbers A, A, B, and C, and checks if each number is greater than 100.
+Print All are greater than 100 if each number is greater than 100. Otherwise, print Not all are greater than 100.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+The third line of input contains an integer representing C.
+
+Output
+The output should be a single line containing a string. All are greater than 100 should be
+printed if each number is greater than 100. Otherwise, Not all are greater than 100 should be printed.
+
+Explanation
+For example, if the given numbers are A = 110, B = 256, and C = 6350,
+✓ A is greater than 100. (110 is greater than 100)
+✓ B is greater than 100. (256 is greater than 100)
+✓ C is greater than 100. (6350 is greater than 100)
+The output should be All are greater than 100 as each number is greater than 100.
+
+Sample Input 1:
+
+110
+256
+6350
+
+Sample Output 1:
+
+All are greater than 100
+
+Sample Input 2:
+
+120
+50
+1
+
+Sample Output 2:
+
+Not all are greater than 100
+
+Solution
+
+first_number = int(input())
+second_number = int(input())
+third_number = int(input())
+if (first_number > 100 and second_number > 100 and third_number > 100):
+    print("All are greater than 100")
+else:
+    print("Not all are greater than 100")
+______________________________________________________________________________________________________________
+
+04. Floor
+
+Write a program that reads a Room Number and checks if the Number in the given Room Number is less than 30.
+The Room Numbers are in the format of R1, R35, etc.
+Print Ground Floor if the Number is less than 30. Otherwise, print Not Ground Floor.
+
+Note
+In the Room Number,
+• The first character contains the character "R".
+• The remaining characters contain a Number.
+Example: R1, R35 etc.
+• If the Room Number is R35, the Number in Room Number is 35.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a string. Ground Floor should be printed if the Number
+in Room Number is less than 30. Otherwise, Not Ground Floor should be printed.
+
+Explanation
+For example, if the given Room Number is R27,
+
+R 2 7
+0 1 2
+
+• The first character of the Room Number is R
+• The remaining characters of the Room Number is 27. So, the Number in Room Number is 27.
+• 27 is less than 30
+
+The output should be Ground Floor as the room number is less than 30.
+
+Sample Input 1:
+
+R27
+
+Sample Output 1:
+
+Ground Floor
+
+Sample Input 2:
+
+R401
+
+Sample Output 2:
+
+Not Ground Floor
+
+Solution
+
+room_number = input()
+number = room_number[1:]
+number = int(number)
+if (number < 30):
+    print("Ground Floor")
+else:
+    print("Not Ground Floor")
+
+"""
+a=input()
+if int(a[1:])<30:
+    print("Ground Floor")
+else:
+    print("Not Ground Floor")
+"""
+______________________________________________________________________________________________________________
+
+05. Difference of Two Numbers
+
+Write a program that reads three numbers A, B, and C, and checks if the difference between any two numbers
+(A - B, B - C and C - A) is always less than 25.
+
+Print Difference is less than 25 if the difference between any two numbers
+(A-B, B - C and C-A) is always less than 25. Otherwise, print Difference is not less than 25.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+The third line of input contains an integer representing C.
+
+Output
+The output should be a single line containing a string. Difference is less than 25 should be printed if
+the difference between any two numbers is always less than 25. Otherwise, Difference is not less than 25 should be printed.
+
+Explanation
+For example, if the given numbers are A = 65, B = 60, and C = 52,
+The difference between A, B (A - B) the difference between B, C (B-C) 
+and the difference betweenand A, C (C - A) should be less than 25.
+
+✓ The difference A-B is less than 25. (65 - 60 = 5, 5 is less than 25)
+✓ The difference B-C is less than 25. (60 - 52 = 8, 8 is less than 25) 
+✓ The difference C-A is less than 25. (52 - 65 = -13, -13 is less than 25)
+
+The output should be Difference is less than 25 as the difference between any two numbers (A - B B - C and C - A)
+is always less than 25.
+
+Sample Input 1:
+
+65
+60
+52
+
+Sample Output 1:
+
+Difference is less than 25
+
+Sample Input 2:
+
+100
+70
+35
+
+Sample Output 2:
+
+Difference is not less than 25
+
+Solution
+
+first_number = int(input())
+second_number = int(input())
+third_number = int(input())
+
+is_first_second_difference_less = (first_number - second_number) < 25
+is_second_third_difference_less = (second_number - third_number) < 25
+is_third_first_difference_less = (third_number - first_number) < 25
+
+if is_first_second_difference_less and is_second_third_difference_less and is_third_first_difference_less:
+    print("Difference is less than 25")
+else:
+    print("Difference is not less than 25")
+
+"""
+a=int(input())
+b=int(input())
+c=int(input())
+if a-b<25 and b-c<25 and c-a<25:
+    print("Difference is less than 25")
+else:
+    print("Difference is not less than 25")
+"""
+______________________________________________________________________________________________________________
+
+06. Valid Traingle - 3
+
+Write a program that reads three sides A, B, and C of a triangle and checks if the sum of any two sides of 
+the triangle is always greater than the third side.
+
+Print It's a Triangle if the sum of any two sides of the triangle is always greater than the third side. 
+Otherwise, print It's not a Triangle.
+
+Input
+The first line of input contains an integer representing side A.
+The second line of input contains an integer representing side B.
+The third line of input contains an integer representing side C
+
+Output
+The output should be a single line containing a string. It's a Triangle should be printed if the sum of any two sides
+of the triangle is always greater than the third side. Otherwise, It's not a Triangle should be printed.
+
+Explanation
+For example, if the given sides of the triangle are A = 4, B = 5 and C = 3
+The sum of sides A, B should be greater than C and the sum of sides B, C should be greater than A
+ and the sum of sides C, A should be greater than B
+✓ A + B is greater than C.(4 + 5 = 9, 9 is greater than 3)
+✓ B + C is greater than A.( 5 + 3 = 8, 8 is greater than 4)
+✓ C + A is greater than B. ( 3 + 4 = 7, 7 is greater than 5)
+The output should be It's a Triangle as the sum of any two sides of the triangle is always greater than the third side.
+
+Sample Input 1:
+
+4
+5
+3
+
+Sample Output 1:
+
+It's a Triangle
+
+Sample Input 2:
+
+6
+3
+2
+
+Sample Output 2:
+
+It's not a Triangle
+
+Solution
+
+first_side = int(input())
+second_side = int(input())
+third_side = int(input())
+
+is_greater_than_third_side = (first_side + second_side) > third_side
+is_greater_than_first_side = (second_side + third_side) > first_side
+is_greater_than_second_side = (third_side + first_side) > second_side
+
+if is_greater_than_first_side and is_greater_than_second_side and is_greater_than_third_side:
+    print("It's a Triangle")
+else:
+    print("It's not a Triangle")
+
+"""
+a=int(input())
+b=int(input())
+c=int(input())
+d=((a+b)>c)and((b+c)>a)and((c+a)>b)
+if d:
+    print("It's a Triangle")
+else:
+    print("It's not a Triangle")
+"""
+______________________________________________________________________________________________________________
+
+07. Valid String
+
+Write a program that reads a string S and checks if the length of S is between 2 and 7 or the first character 
+of S is not equal to "a". Sis
+
+Print Valid String if the length of S is between 2 and 7 or the first character of S is not equal to "a". 
+Otherwise, print Not a Valid String.
+
+Input
+The input will be a single line containing a string representing S.
+
+Output
+The output should be a single line containing a string. Valid String should be printed if the length of S 
+is between 2 and 7 or the first character of S is not equal to "a". Otherwise, Not a Valid String should be printed.
+
+Explanation
+For example, if the given string S = "apple",
+✓ The length of S is between 2 and 7. (The length of apple is 5. 5 is between 2 and 7)
+X The first character of S is not equal to "a". (The first character of apple is equal to a)
+The output should be Valid String as the length of S is between 2 and 7.
+
+Sample Input 1:
+
+apple
+
+Sample Output 1:
+
+Valid String
+
+Sample Input 2:
+
+atlantic
+
+Sample Output 2:
+
+Not a Valid String
+
+Sample Input 3:
+
+out
+
+Sample Output 3:
+
+Valid String
+
+Solution
+
+string = input()
+string_length = len(string)
+is_between = (string_length > 2) and (string_length < 7)
+is_not_equal = string[0] != "a"
+if (is_between or is_not_equal):
+    print("Valid String")
+else:
+    print("Not a Valid String")
+
+"""
+s=input()
+if 2<len(s)<7 or (not s[0]=="a"):
+    print("Valid String")
+else:
+    print("Not a Valid String")
+"""
+______________________________________________________________________________________________________________
+
+08. Between 40 and 140
+
+Write a program that reads two numbers A and B and checks if any of the given numbers is between 40 and 140.
+Print Between 40 and 140: Yes if any of the given numbers is between 40 and 140. Otherwise, print Between 40 and 140: No.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output
+The output should be a single line containing a string. Between 40 and 140: Yes should be
+printed if any of the given numbers is between 40 and 140. Otherwise, Between 40 and 140: No should be printed.
+
+Explanation
+For example, if the given numbers are A = 12 and B = 100,
+X A is between 40 and 140. (12 is not between 40 and 140)
+✓ B is between 40 and 140. (100 is between 40 and 140)
+The output should be Between 40 and 140: Yes as B is between 40 and 140.
+
+Sample Input 1:
+
+12
+100
+
+Sample Output 1:
+
+Between 40 and 140: Yes
+
+Sample Input 2:
+
+33
+4
+
+Sample Output 2:
+
+Between 40 and 140: No
+
+Solution
+
+first_number = int(input())
+second_number = int(input())
+is_first_number_between = (first_number > 40) and (first_number < 140)
+is_second_number_between = (second_number > 40) and (second_number < 140)
+if (is_first_number_between or is_second_number_between):
+    print("Between 40 and 140: Yes")
+else:
+    print("Between 40 and 140: No")
+
+"""
+a=int(input())
+b=int(input())
+if 40<a<140 or 40<b<140:
+    print("Between 40 and 140: Yes")
+else:
+    print("Between 40 and 140: No")
+"""
+______________________________________________________________________________________________________________
+
+09. Sum or Numbers
+
+Write a program that reads two numbers A and B, and checks if one of the below conditions is satisfied.
+• One of A and B is less than 20.
+• The sum of A and B is between 30 and 50.
+Print the sum of A and B if one of the given conditions is satisfied. Otherwise, print A and B on each line.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output
+If one of the given conditions is satisfied,
+The output should be a single line containing an integer that is the sum of A and B.
+Otherwise,
+The first line of output should be an integer containing A
+The second line of output should be an integer containing B
+
+Explanation
+For example, if the given numbers are A = 45 and B = 7,
+✓ One of A and B is less than 20. (7 is less than 20)
+X The sum of A and B is between 30 and 50. (45+ 7 = 52, 52 is not between 30 and 50)
+The output should be 52 (sum of A and B) as one of the given conditions is satisfied.
+
+For example, if the given numbers are A = 30 and B = 100,
+X One of A and B is less than 20. (30 and 100 are not less than 20)
+X The sum of A and B is between 30 and 50. ( 30+ 100 = 130, 130 is not between 30 and 50)
+The output should be,
+
+30
+100
+
+Sample Input 1:
+
+45
+7
+
+Sample Output 1:
+
+52
+
+Sample Input 2:
+
+30
+100
+
+Sample Output 2:
+
+30
+100
+
+Solution
+
+first_number = int(input())
+second_number = int(input())
+is_less_than = (first_number < 20) or (second_number < 20)
+sum_of_numbers = first_number + second_number
+is_sum_between = (sum_of_numbers > 30) and (sum_of_numbers < 50)
+if (is_less_than or is_sum_between):
+    print(sum_of_numbers)
+else:
+    print(first_number)
+    print(second_number)
+
+"""
+a=int(input())
+b=int(input())
+if (a<20 or b<20) or 30<(a+b)<50:
+    print(a+b)
+else:
+    print(a)
+    print(b)
+"""
+______________________________________________________________________________________________________________
+
+10. Lucky Number
+
+Write a program that reads two numbers A and B and checks if one of the below conditions is satisfied.
+• One of A and B is equal to 6.
+• The sum of A and B is equal to 6.
+• The difference between A and B is equal to 6.
+Print Lucky if one of the given conditions is satisfied. Otherwise, print Not Lucky.
+
+Note
+Both A-B and B-A is used to calculate the difference between A and B.
+
+Input
+The first line of input contains an integer representing A. 
+The second line of input contains an integer representing B
+
+Output
+The output should be a single line containing a string. Lucky should be printed if one of the given 
+conditions is satisfied. Otherwise, Not Lucky should be printed.
+
+Explanation
+For example, if the given numbers are A = 4 and B = 10,
+
+▼ X One of A and B is equal to 6.
+    A is equal to 6 or B is equal to 6.
+    X A is equal to 6. (4 is not equal to 6)
+    x B is equal to 6. (10 is not equal to 6)
+
+▼ X The sum of A and B is equal to 6.
+    The sum of A and B is 14 ( 10 + 6 = 14).
+    X The sum of A and B is equal to 6. (14 is not equal to 6)
+
+▼ ✓ The difference between A and B is equal to 6.
+    The result of A - B is equal to 6 or B - A is equal to 6.
+    X The result of A - B is equal to 6. (4 - 10 = -6, -6 is not equal to 6)
+    ✓ The result of B - A is equal to 6. ( 10 - 4 = 6, 6 is equal to 6)
+
+The output should be Lucky as one of the given conditions is satisfied.
+
+Sample Input 1:
+
+4
+10
+
+Sample Output 1:
+
+Lucky
+
+Sample Input 2:
+
+3
+2
+
+Sample Output 2:
+
+Not Lucky
+
+Sample Input 3:
+
+15
+9
+
+Sample Output 2:
+
+Lucky
+
+Solution
+
+a = int(input())
+b = int(input())
+is_any_number_has = ((a == 6) or (b == 6))
+is_sum_equal_to_6 = ((a + b) == 6)
+is_diff_equal_to_6 = ((a - b) == 6) or ((b - a) == 6)
+if is_any_number_has or is_sum_equal_to_6 or is_diff_equal_to_6:
+    print("Lucky")
+else:
+    print("Not Lucky")
+
+"""
+a=int(input())
+b=int(input())
+c=(a==6)or(b==6)or((a+b)==6)or((a-b)==6)or((b-a)==6)
+if(c):
+    print("Lucky")
+else:
+    print("Not Lucky")
+"""
+______________________________________________________________________________________________________________
+
+11. Greatest Among Three Numbers
+
+Write a program that reads three numbers A, B and C and prints the greatest among the three numbers.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B. 
+The third line of input contains an integer representing C.
+
+Output
+The output should be a single line containing an integer that is the greatest among the three numbers.
+
+Explanation
+For example, if the given numbers are A = 2, B = 5 and C = 7
+• The greatest among A and B is B. (5 is greater than 2)
+• The greatest among B and and C is C. (7 is greater than 5)
+The output should be 7 as it is the greatest among the three numbers.
+
+Sample Input 1:
+
+2
+5
+7
+
+Sample Output 1:
+
+7
+
+Sample Input 2:
+
+3
+5
+2
+
+Sample Output 2:
+
+5
+
+Solution
+
+a = int(input())
+b = int(input())
+c = int(input())
+if a > b:
+    greatest_number = a
+else:
+    greatest_number = b
+if c > greatest_number:
+    greatest_number = c
+print(greatest_number)
+
+"""
+a=int(input())
+b=int(input())
+c=int(input())
+print(max(a,b,c))
+"""
+______________________________________________________________________________________________________________
+
+12. Bonus Salary
+
+A company decided to give a bonus of 5% to an employee if his/her years of service is more than five years.
+Write a program that reads an employee's salary and years of service and decides whether the employee gets the bonus or not.
+
+Input
+The first line of input will contain the salary of an employee.
+The second line of input will contain years of service.
+
+Output
+If the employee gets a bonus, print the net bonus amount.
+If the employee doesn't get the bonus, print "No Bonus",.
+
+Explanation
+For example, if the employee's salary is 25000 and years of experience is 3. As the years of experience is 
+less than 5, the output should be "No Bonus".
+
+Similarly, if the employee's salary is 50000 and years of experience is 6. As the years of experience is more
+than 5, the employee is eligible for the bonus. By computing the 5% of his salary, the net bonus amount should be 2500.0
+
+Sample Input 1:
+
+25000
+3
+
+Sample Output 1:
+
+No Bonus
+
+Sample Input 2:
+
+50000
+6
+
+Sample Output 2:
+
+2500.0
+
+Solution
+
+salary = int(input())
+experience = int(input())
+if experience > 5:
+    bonus = salary * 0.05
+    print(bonus)
+else:
+    print("No Bonus")
+
+"""
+a=int(input())
+b=int(input())
+if(b>5):
+    print(float(a*5/100))
+else:
+    print("No Bonus")
+"""
+______________________________________________________________________________________________________________
+
+13. Valid Traingle
+
+Given three angles of a triangle, write a program to check whether the triangle is valid or not. 
+A triangle is valid if the sum of its three angles is equal to 180 degrees.
+
+Input
+The first line of input will contain the first angle of the triangle.
+The second line of input will contain the second angle of the triangle.
+The third line of input will contain the third angle of the triangle.
+
+Output
+If the sum of the three angles is equal to 180, print "It's a Triangle". In all other cases, print "It's not a Triangle".
+
+Explanation
+For example, if the first angle is 80, the second angle is 90, and the third angle is 100.
+Therefore the sum of the three angles(80 + 90 + 100) is 270, which is not equal to 180. 
+So the output should be "It's not a Triangle".
+
+Similarly, if the first angle is 60, the second angle is 60, and the third angle is 60. 
+Therefore the sum of the three angles(60 + 60 + 60) is 180, which is equal to 180.
+So the output should be "It's a Triangle".
+
+Sample Input 1:
+
+80
+90
+100
+
+Sample Output 1:
+
+It's not a Triangle
+
+Sample Input 2:
+
+60
+60
+60
+
+Sample Output 2:
+
+It's a Triangle
+
+Solution
+
+first_angle = int(input())
+second_angle = int(input())
+third_angle = int(input())
+sum_of_three_angles = first_angle + second_angle + third_angle
+if sum_of_three_angles == 180:
+    print("It's a Triangle")
+else:
+    print("It's not a Triangle")
+
+"""
+a=int(input())
+b=int(input())
+c=int(input())
+if((a+b+c)==180):
+    print("It's a Triangle")
+else:
+    print("It's not a Triangle")
+"""
+______________________________________________________________________________________________________________
