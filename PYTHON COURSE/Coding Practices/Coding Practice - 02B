@@ -1,0 +1,400 @@
+01. Greater than - 2
+
+﻿Write a program that reads two numbers A and B and checks if the A is greater than B. 
+Print the result as shown in the sample output.
+
+Input
+The first line of input contains an integer.
+The second line of input contains an integer.
+
+Output
+The output should be a single line containing a string as shown in the sample output.
+
+Explanation
+For example, if the given numbers are A = 8 and B = 5
+• A is greater than B: True. (8 is greater than 5)
+• Add the string "A > B is " before True.
+The output should be A > B is True.
+
+Sample Input 1:
+
+8
+5
+
+Sample Output 1:
+
+A > B is True
+
+Sample Input 2:
+
+12
+32
+
+Sample Output 2:
+
+A > B is False
+
+Solution
+
+a = int(a)
+b = int(b)
+result = a > b
+result = str(result)
+print("A > B is " + result)
+______________________________________________________________________________________________________________
+
+02. Check one Greater
+
+Write a program that reads two numbers A and B, and checks if B is greater than A by one.
+
+Input
+The first line of input contains an integer representing A
+The second line of input contains an integer representing B
+
+Output
+The output should be a single line containing a boolean. True should be printed if B is greater than A by one,
+otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = 2 and B = 3
+The B is greater than A by only one.
+The output should be True as B is greater than A by one.
+
+Sample Input 1:
+
+2
+3
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+2
+5
+
+Sample Output 2:
+
+False
+
+Sample Input 3:
+
+7
+6
+
+Sample Output 3:
+
+False
+
+Solution
+
+first_number = input()
+first_number = int(first_number)
+second_number = input()
+second_number = int(second_number)
+
+difference = second_number - first_number
+result = difference == 1
+
+print(result)
+______________________________________________________________________________________________________________
+
+03. Comapre First & Last Letters
+
+Write a program that reads a word and checks if the first letter and last letter of the word are not the same.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the first letter and last
+letter of the word are not the same, otherwise  False should be printed.
+
+Explanation
+For example, if the given word is Python
+
+P y t h o n
+0 1 2 3 4 5
+
+The output should be True as the first letter P and the last letter n of the word are not the same.
+
+Sample Input 1:
+
+Python
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+label
+
+Sample Output 2:
+
+False
+
+Solution
+
+word = input()
+word_length = len(word)
+first_letter = word[0]
+last_letter = word[word_length - 1]
+result = first_letter != last_letter
+print(result)
+______________________________________________________________________________________________________________
+
+04. Compare Sum of the Digits
+
+Write a program that reads a two digit number N. The N consists of only two digits. Check if the 
+sum of the digits of N is greater than 7.
+
+Input
+The input will be a single line containing a two digit integer.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the
+sum of the digits of the two digit number N is greater than 7, otherwise False should be printed.
+
+Explanation
+For example, if the given two digit number N is 45
+• The digits in N (45) are 4 and 5.
+• Sum of digits of 45 is 9. (4+5=9)
+The output should be True as the sum of digits 9 is greater than 7.
+
+Sample Input 1:
+
+45
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+12
+
+Sample Output 2:
+
+False
+
+Solution
+
+number = input()
+
+first_digit = number[0]
+first_digit = int(first_digit)
+second_digit = number[1]
+second_digit = int(second_digit)
+sum_of_digits = first_digit + second_digit
+result = sum_of_digits > 7
+print(result)
+______________________________________________________________________________________________________________
+
+05. Validate Password
+
+Write a program to check if the given string is a valid password or not. A string is considered as a valid 
+password if the number of characters present is greater than 7.
+
+Input
+The input will be a single line containing a word.
+
+Output
+The output should be True or False.
+
+Explanation
+For example, if the given input is "passwd", it has only 6 characters (less than 7). So the output should be False.
+
+Sample Input 1:
+
+passwd
+
+Sample Output 1:
+
+False
+
+Sample Input 2:
+
+1q2w3e4r
+
+Sample Output 2:
+
+True
+
+Solution
+
+password = input()
+length_of_the_password = len(password)
+is_valid_password = length_of_the_password > 7
+print(is_valid_password)
+______________________________________________________________________________________________________________
+
+06. Check Last Part of a String
+
+Write a program that reads two words A and B and checks if the second word B is the last part of the first word A.
+
+Input
+The first line of input contains a string representing A.
+The second line of input contains a string representing B.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the second word B 
+is the last part of the first word A, otherwise False should be printed.
+
+Explanation
+For example, if the given words are _A = Blackhole and B = hole,
+The output should be True as hole is the last part of the word Blackhole.
+
+Sample Input 1:
+
+Blackhole
+hole
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+boomerang
+boom
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_word = input()
+second_word = input()
+first_word_length = len(first_word)
+second_word_length = len(second_word)
+start_index = first_word_length - second_word_length
+part = first_word[start_index:]
+result = part == second_word
+print(result)
+______________________________________________________________________________________________________________
+
+07. Check Part of a String
+
+Write a program that reads two words A, B, and an index I Check if B starts at index I in A.
+
+Input
+The first line of input contains a string representing A.
+The second line of input contains a string representing B.
+The third line of input contains an integer representing I.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the word B starts 
+at index I of the word A, otherwise False should be printed.
+
+Constraints
+Length of B is less than or equal to the length of A.
+
+Explanation
+For example, if the given words are A = "Repeat" and B = "Pea", and the index is I = 2,
+
+R e p e a t
+0 1 2 3 4 5
+
+• The word Pea is a part of the word Repeat
+• The word Pea starts at the 2nd index of the word Repeat.
+The output should be True as the string starts pea starts from the index 2 of the string Repeat.
+
+Sample Input 1:
+
+Repeat
+pea
+2
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+Banana
+Ball
+0
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_string = input()
+second_string = input()
+start_index = input()
+start_index = int(start_index)
+second_string_length = len(second_string)
+end_index = start_index + second_string_length
+part = first_string[start_index:end_index]
+result = part == second_string
+print(result)
+
+"""
+a=input()
+b=input()
+c=int(input())
+if b in a and b[0]==a[c]:
+    print("True")
+else:
+    print("False")
+"""
+______________________________________________________________________________________________________________
+
+08. Compare First Three Characters
+
+Write a program to check if the first three characters in the two given strings are the same.
+
+Input
+The first line of input will be a string.
+The second line of input will be a string.
+
+Output
+Print "True" if the the first three characters in the two given strings are the same.
+In all other cases print "False".
+
+Explanation
+When the given words are "Apple" and "Application", first three characters in both the strings are the same ("App")
+
+When the given words are "Android" and "Application", the first three characters in both the strings are
+different ("And" != "App")
+
+Sample Input 1:
+
+Apple
+Application
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+Android
+Application
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_str = input()
+second_str = input()
+first_str_part = first_str[:3]
+second_str_part = second_str[:3]
+are_both_same = first_str_part == second_str_part
+print(are_both_same)
+
+"""
+a=input()
+b=input()
+c=a[0:3]
+d=b[0:3]
+print(c == d)
+"""
+______________________________________________________________________________________________________________
