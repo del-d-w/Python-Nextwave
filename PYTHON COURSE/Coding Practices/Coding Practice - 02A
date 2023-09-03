@@ -1,0 +1,344 @@
+01. Greater than 70
+
+Write a program that reads a number and checks if the given number is greater than 70.
+
+Input
+The input will be a single line containing an integer.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the given number 
+is greater than 70, otherwise False should be printed.
+
+Explanation
+For example, if the given number is 86, the output should be True as 86 is greater than 70.
+
+Sample Input 1:
+
+86
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+45
+
+Sample Output 2:
+
+False
+
+Solution
+
+number = input()
+number = int(number)
+result = number > 70
+print(result)
+______________________________________________________________________________________________________________
+
+02. Greatest among two numbers
+
+Write a program that reads two numbers and checks if the first number is greater than the second number.
+
+Input
+The first line of input contains an integer.
+The second line of input contains an integer.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the first number is greater 
+than the second number, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are 6 and 4, the output should be True as 6 is greater than 4.
+
+Sample Input 1:
+
+6
+4
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+13
+17
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_number = input()
+first_number = int(first_number)
+second_number = input()
+second_number = int(second_number)
+
+result = first_number > second_number
+print(result)
+______________________________________________________________________________________________________________
+
+03. Negative Number
+
+Write a program that reads a number and checks if the given number is a negative number.
+
+Note: Negative numbers are numbers that are less than zero.
+
+Input
+The input will be a single line containing an integer.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the given number is a 
+negative number, otherwise False should be printed.
+
+Explanation
+For example, if the given number is -25, the output should be True as -25 is less than zero.
+
+Sample Input 1:
+
+-25
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+3
+
+Sample Output 2:
+
+False
+
+Solution
+
+number = input()
+number = int(number)
+result = number < 0
+print(result)
+______________________________________________________________________________________________________________
+
+04. Equal To
+
+Write a program that reads two words and checks if the given two words are the same.
+
+Input
+The first line of input contains a string.
+The second line of input contains a string.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the given two words are 
+the same, otherwise False should be printed.
+
+Explanation
+For example, if the given words are Jam and Jam,
+The output should be True as both the words Jam and Jam are the same.
+
+Sample Input 1:
+
+Jam
+Jam
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+Dog
+Cow
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_word = input()
+second_word = input()
+result = first_word == second_word
+print(result)
+______________________________________________________________________________________________________________
+
+05. Sunday
+
+Write a program that reads a day number and checks if the given day is a Sunday.
+
+Day           Day Number
+
+Monday            1
+Tuesday           2
+Wednesday         3
+Thursday          4
+Friday            5
+Saturday          6
+Sunday            7
+
+Input
+The input will be a single line containing an integer.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the given day is Sunday, 
+otherwise False should be printed.
+
+Explanation
+For example,
+• if the given day number is 7, the output should be True as 7 is equal to the day number of Sunday which is 7.
+• if the given day number is 4, the output should be False as 4 is not equal to the day number of Sunday which is 7.
+
+Sample Input 1:
+
+7
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+1
+
+Sample Output 2:
+
+False
+
+Solution
+
+day_number = input()
+day_number = int(day_number)
+result = day_number == 7
+print(result)
+______________________________________________________________________________________________________________
+
+06. Not Equal To
+
+Write a program that reads two numbers and checks if the given two numbers are not the same.
+
+Input
+The first line of input contains an integer.
+The second line of input contains an integer.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the given two numbers are
+not the same, otherwise False should be printed. 
+
+Explanation
+For example, if the given numbers are 2 and 3, the output should be True as 2 is not equal to 3.
+
+Sample Input 1:
+
+2
+3
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+10
+10
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_number = int(input())
+second_number = int(input())
+result = first_number != second_number
+print(result)
+______________________________________________________________________________________________________________
+
+07. Greater than or Equal to
+
+Write a program that reads two numbers A and B and checks if A is greater than or equal to B. 
+Print the result as shown in the sample output.
+
+Input
+The first line of input contains a float.
+The second line of input contains a float.
+
+Output
+The output should be a single line containing a string as shown in the sample output.
+
+Explanation
+For example, if the given numbers are A = 4.3 and B = 3.2,
+• A is greater than or equal to B: True. (4.3 is greater than or equal to 3.2)
+• Add the string "A >= B is " before True.
+The output should be A >= B is True.
+
+Sample Input 1:
+
+4.3
+3.2
+
+Sample Output 1:
+
+A >= B is True
+
+Sample Input 2:
+
+9.9
+10.0
+
+Sample Output 2:
+
+A >= B is False
+
+Solution
+
+a = input()
+a = float(a)
+b = input()
+b = float(b)
+result = a >= b
+result = str(result)
+print("A >= B is " + result)
+______________________________________________________________________________________________________________
+
+08. Less than or Equal to
+
+Write a program that reads two numbers and checks if the first number is less than or equal to the second number.
+
+Input
+The first line of input contains an integer.
+The second line of input contains a float.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the first number is less 
+than or equal to the second number, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are 2 and 5.3, the output should be True as 2 is less than 5.3
+
+Sample Input 1:
+
+2
+5.3
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+13
+10.3
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_number = input()
+first_number = int(first_number)
+second_number = input()
+second_number = float(second_number)
+result = first_number <= second_number
+print(result)
+______________________________________________________________________________________________________________
