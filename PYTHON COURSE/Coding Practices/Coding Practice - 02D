@@ -1,0 +1,555 @@
+01. Between 25 and 75
+
+Write a program that reads a number, and checks if the given number is between 25 and 75.
+
+Input
+The input will be a single line containing an integer.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the given number
+is between 25 and 75, otherwise False should be printed.
+
+Explanation
+For example, if the given number is 35,
+• The number 35 is greater than 25.
+• The number 35 is less than 75.
+• So, the number 35 is between 25 and 75.
+The output should be True.
+
+Sample Input 1:
+
+35
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+20
+
+Sample Output 2:
+
+False
+
+Sample Input 3:
+
+75
+
+Sample Output 3:
+
+False
+
+Solution
+
+n=int(input())
+is_between=((n>25) and (n<75))
+print(is_between)
+______________________________________________________________________________________________________________
+
+02. Women
+
+Write a program that reads three strings A, B, and C, and checks if one of the given strings is equal to woman.
+
+Input
+The first line of input contains a string A.
+The second line of input contains a string B.
+The third line of input contains a string C.
+
+Output
+The output should be a single line containing a boolean. True should be printed if one of
+the given strings is equal to woman, otherwise False should be printed.
+
+Explanation
+For example, if the given strings are _A = "man", B = "woman", and C = "man"
+X A is equal to woman. (man is not equal to woman)
+✓ B is equal to woman. (woman is equal to woman)
+X C is equal to woman. (man is not equal to woman)
+The output should be True as one of the given strings is equal to woman.
+
+Sample Input 1:
+
+man
+woman
+man
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+man
+man
+man
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_person=input()
+second_person=input()
+third_person=input()
+result=(first_person=="woman" or second_person=="woman" or third_person=="woman")
+print(result)
+______________________________________________________________________________________________________________
+
+03. Less Than 15
+
+Write a program that reads three numbers A, B, and C, and checks if any of the given numbers is less than 15.
+
+Input
+The first line of input contains an integer A.
+The second line of input contains an integer B.
+The third line of input contains an integer C.
+
+Output
+The output should be a single line containing a boolean. True should be printed if any of
+the given numbers is less than 15, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = 18, B = 2, and C = 20
+X A is less than 15. (18 is not less than 15)
+✓ B is less than 15. (2 is less than 15)
+X C is less than 15. (20 is not less than 15)
+The output should be True as one of the given numbers is less than 15.
+
+Sample Input 1:
+
+18
+2
+20
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+65
+25
+451
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_number=int(input())
+second_number=int(input())
+third_number=int(input())
+result=(first_number<15 or second_number<15 or third_number<15)
+print(result)
+______________________________________________________________________________________________________________
+
+04. Not Negative
+
+Write a program that reads two numbers A and B, and checks if both the given numbers are not negative.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output
+The output should be a single line containing a boolean. True should be printed if both the
+given numbers are not negative, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = 5 and B = 10 .
+✓ A is not a negative number. (5 is not a negative number)
+✓ B is not a negative number. (10 is not a negative number)
+The output should be True as both the given numbers are not negative.
+
+Sample Input 1:
+
+5
+10
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+-30
+421
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_number=int(input())
+second_number=int(input())
+is_first_number_negative=first_number<0
+is_second_number_negative=second_number<0
+is_first_number_not_negative=not(is_first_number_negative)
+is_second_number_not_negative=not(is_second_number_negative)
+result=is_first_number_not_negative and is_second_number_not_negative
+print(result)
+
+"""
+a=int(input())
+b=int(input())
+if a>0 and b>0:
+    print("True")
+else:
+    print("False")
+"""
+______________________________________________________________________________________________________________
+
+05. Not Less than 15
+
+Write a program that reads two numbers A and B and, checks if any of the given numbers is not less than 15.
+
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B
+
+Output
+The output should be a single line containing a boolean. True should be printed if any of the given numbers is 
+not less than 15, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = 921 and B = 6,
+✓ A is not less than 15. (921 is not less than 15)
+X B is not less than 15. (6 is less than 15)
+The output should be True as one of the given numbers is not less than 15.
+
+Sample Input 1:
+
+921
+6
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+1
+10
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_number=int(input())
+second_number=int(input())
+is_first_number_less_than=first_number<15
+is_second_number_less_than=second_number<15
+is_first_number_not_less_than=not(is_first_number_less_than)
+is_second_number_not_less_than=not(is_second_number_less_than)
+result=is_first_number_not_less_than or is_second_number_not_less_than
+print(result)
+
+"""
+a=int(input())
+b=int(input())
+if not a<15 or not b<15:
+    print("True")
+else:
+    print("False")
+"""
+______________________________________________________________________________________________________________
+
+06. Entrance
+
+Write a program that reads an age A and guardian status S, and checks if the age A is between 12 and 60 
+or if the guardian status S is equal to yes.
+
+Note: The guardian status will be either yes or no
+
+Input
+The first line of input contains an integer representing the age A
+The second line of input contains a string representing the guardian status S.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the age is 
+between 12 and 60 or if the guardian status S is equal to yes, otherwise False should be printed.
+
+Explanation
+For example, if the given age A = 15 and guardian status and guardian status S = "no"
+✓ A is between 12 and 60. (15 is between 12 and 60)
+X S is equal to yes.
+The output should be True as the age is between 12 and 60.
+
+Sample Input 1:
+
+15
+no
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+61
+no
+
+Sample Output 2:
+
+False
+
+Solution
+
+age=int(input())
+guardian_status=input()
+is_valid_age=(age>12) and (age<60)
+has_guardian=(guardian_status=="yes")
+result=is_valid_age or has_guardian
+print(result)
+
+"""
+a=int(input())
+b=input()
+if (12<=a<60) or b=="yes":
+    print("True")
+else:
+    print("False")
+"""
+______________________________________________________________________________________________________________
+
+07. Compare Numbers - 5
+
+Write a program that reads two numbers A and B and checks if one of the given numbers is negative and product
+of the numbers is greater than or equal to -46.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output
+The output should be a single line containing a boolean. True should be printed if one of the given numbers
+is negative and product of the numbers is greater than or equal to -46, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = -10 and B = 1
+✓ One of the given numbers is negative. (-10 is negative)
+✓ Product of the numbers is greater than or equal to -46. (-101 = -10, -10 is greater than or equal to -46)
+The output should be True as one of the given numbers is negative and product of the numbers is greater than or equal to -46.
+
+Sample Input 1:
+
+-10
+1
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+5
+2
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_number=int(input())
+second_number=int(input())
+is_first_number_negative=first_number<0
+is_second_number_negative=second_number<0
+product=first_number*second_number
+is_negative=is_first_number_negative or is_second_number_negative
+is_greater_than_or_equal=product>=-46
+result=is_negative and is_greater_than_or_equal
+print(result)
+
+"""
+a=int(input())
+b=int(input())
+if a<0 or b<0 and a*b>=-46:
+    print("True")
+else:
+    print("False")
+"""
+______________________________________________________________________________________________________________
+
+08. Greater than 5
+
+Write a program to check if both of the given numbers are positive and if atleast one of them is greater than 5
+Note: Zero is not a positive number.
+
+Input
+First line of the input will be an integer
+Second line of the input will be an integer
+
+Output
+Print "True" if both the numbers are positive and if atleast one of the numbers is greater than 5.
+In all other cases print "False"
+
+Explanation
+When the given numbers are -10 and 6: 
+✔ At least one number is greater than 5 (6 is greater than 5)
+✖ Both the numbers are positive (-10 is a negative number.)
+
+When the given numbers are 10 and 1:
+✔ At least one number is greater than 5 (6 is greater than 5),
+✔ Both the numbers are positive.
+
+Sample Input 1:
+
+-10
+6
+
+Sample Output 1:
+
+False
+
+Sample Input 2:
+
+10
+1
+
+Sample Output 2:
+
+True
+
+Solution
+
+a=input()
+b=input()
+positive=(int(a)>0 and int(b)>0)
+greater=int(a)>5 or int(b)>5         
+print(positive and greater)     
+______________________________________________________________________________________________________________
+
+09. Eligibility Criteria
+
+Write a program that reads the marks in Maths M, Physics P, and Chemistry C
+and checks if any of the below conditions is satisfied.
+
+• M >= 70 and P >= 60 and C >= 60
+• M+P+C>= 180
+
+Input
+The first line of input contains an integer representing M.
+The second line of input contains an integer representing P.
+The third line of input contains an integer representing C.
+
+Output
+The output should be a single line containing a boolean. True should be printed if any of the given 
+conditions is satisfied, otherwise False should be printed.
+
+Explanation
+For example, if the given marks are M = 0, P = 100, and C = 100
+X M >= 70 and P >= 60 and C >= 60 (0 is less than 70)
+✓ M+P+C>= 180 (0 + 100 + 100 = 200, 200 is greater than 180)
+The output should be True as one of the given conditions is satisfied.
+
+Sample Input 1:
+
+0
+100
+100
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+30
+40
+65
+
+Sample Output 2:
+
+False
+
+Solution
+
+maths=int(input())
+physics=int(input())
+chemistry=int(input())
+age_marks_greater=maths>=70 and physics>=60 and chemistry>=60
+marks_sum=maths+physics+chemistry
+is_sum_greater_or_equal=marks_sum>=180
+result=age_marks_greater or is_sum_greater_or_equal
+print(result)
+
+"""
+M=int(input())
+P=int(input())
+C=int(input())
+if (M>=70 and P>=60 and C>=60) or ((M+P+C)>=180):
+    print("True")
+else:
+    print("False")
+"""
+
+______________________________________________________________________________________________________________
+
+10. Compare With Ten
+
+Write a program that reads two numbers A and B and check if any one of the below conditions is satisfied.
+• The sum of A and B is less than 10.
+• The difference between A and B is less than 10.
+• A is between 5 and 30.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output
+The output should be a single line containing a boolean. True should be printed if any one of the 
+conditions is satisfied, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = 12 and B = 8,
+X The sum of A and B is less than 10. ( 12+ 8 = 20, 20 is not less than 10)
+✓ The difference between A and B is less than 10. (12 - 8 = 4, 4 is less than 10)
+✔A is between 5 and 30. (12 is between 5 and 30)
+The output should be True as one of the conditions is satisfied.
+
+Sample Input 1:
+
+12
+8
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+50
+15
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_number=int(input())
+second_number=int(input())
+sum=first_number+second_number
+difference=first_number - second_number
+first_condition=sum<10
+second_condition=difference<10
+third_condition=(first_number>5) and(first_number<30)
+result=first_condition or second_condition or third_condition
+print(result)
+
+"""
+a=int(input())
+b=int(input())
+if a+b<10 or (a-b<10 and b-a<10) or 5<=a<30:
+    print("True")
+else:
+    print("False")
+"""
+______________________________________________________________________________________________________________
