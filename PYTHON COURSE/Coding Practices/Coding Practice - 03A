@@ -1,0 +1,647 @@
+01. Positive Integer
+
+Write a program that reads a number and converts it to a positive number.
+If the given number is negative, convert it to a positive number and print it. Otherwise, print the given number.
+
+Input
+The input will be a single line containing an integer.
+
+Output
+The output should be a single line containing a positive integer.
+
+Explanation
+For example, if the given number is -5
+• -5 is a negative number.
+• -5  should be converted to a positive number which is 5
+The output should be 5
+
+For example, if the given number is 39
+• 39 is a positive number.
+The output should be 39
+
+Sample Input 1:
+
+-5
+
+Sample Output 1:
+
+5
+
+Sample Input 2:
+
+39
+
+Sample Output 2:
+
+39
+
+Solution
+
+number = int(input())
+if number < 0:
+    number = number * (-1)
+print(number)
+
+"""
+a=int(input())
+if a<0:
+    print(-a)
+else:
+    print(a)
+"""
+______________________________________________________________________________________________________________
+
+02. Exam Result
+
+Write a program that reads the student's marks as input and prints PASS or FAIL.If the student 
+has scored more than 50, print PASS.
+
+Input
+The input will be a single line containing a number.
+
+Output
+The output should be a single line containing PASS or FAIL.
+
+Explanation
+In the given example, the student's marks are 85, which is more than 50, so the result should be PASS.
+Similarly, if the marks are 45, the result should be FAIL.
+
+Sample Input 1:
+
+85
+
+Sample Output 1:
+
+PASS
+
+Sample Input 2:
+
+45
+
+Sample Output 2:
+
+FAIL
+
+Sample Input 3:
+
+50
+
+Sample Output 3:
+
+FAIL
+
+Solution
+
+marks = int(input())
+if marks > 50:
+    print("PASS")
+else:
+    print("FAIL")
+______________________________________________________________________________________________________________
+
+03. Greatest Among Two Numbers - 3
+
+Write a program that reads two numbers A and B and prints the greatest among the two numbers.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output
+The output should be a single line containing an integer that is the greatest among the two numbers.
+
+Explanation
+For example, if the given numbers are A = 4 and B = 3, the output should be 4 as 4 is greater than 3.
+
+Sample Input 1:
+
+4
+3
+
+Sample Output 1:
+
+4
+
+Sample Input 2:
+
+15
+7
+
+Sample Output 2:
+
+15
+
+Solution
+
+first_number = int(input())
+second_number = int(input())
+if first_number > second_number:
+    greater_number = first_number 
+else:
+    greater_number = second_number
+print(greater_number)
+
+"""
+a=int(input())
+b=int(input())
+print(max(a,b))
+"""
+______________________________________________________________________________________________________________
+
+04. Vote Eligibility
+
+Write a program that reads the age of a person and checks if the age of the person is greater than or equal
+to 18 for eligibility to vote.
+
+Print Eligible if the age of the person is greater than or equal to 18, otherwise print Not Eligible.
+
+Input
+The input will be a single line containing an integer.
+
+Output
+The output should be a single line containing a string. Eligible should be printed if the age of the 
+person is greater than or equal to 18, otherwise Not Eligible should be printed.
+
+Explanation
+For example,
+If the given age of a person is 15, the output should be Not Eligible as 15 is not greater than or equal to 18.
+If the given age of a person is 21, the output should be Eligible as 21 is greater than 18.
+
+Sample Input 1:
+
+15
+
+Sample Output 1:
+
+Not Eligible
+
+Sample Input 2:
+
+21
+
+Sample Output 2:
+
+Eligible
+
+Solution
+
+age = int(input())
+if age >= 18:
+    print("Eligible")
+else:
+    print("Not Eligible")
+______________________________________________________________________________________________________________
+
+05. Relation b/w Numbers
+
+Write a program to print the relation between two numbers, X and Y.
+
+Input
+The first line is integer X.
+The second line is integer Y.
+
+Output
+Print X < Y if X is less than Y, otherwise, print X >= Y.
+
+Explanation
+Given X = 2 and Y = 5
+As 2 < 5 (X < Y)
+So the Output is X < Y.
+
+Sample Input 1:
+
+2
+5
+
+Sample Output 1:
+
+X < Y
+
+Sample Input 2:
+
+5
+2
+
+Sample Output 2:
+
+X >= Y
+
+Solution
+
+x = int(input())
+y = int(input())
+if x < y:
+    print("X < Y")
+else:
+    print("X >= Y")
+______________________________________________________________________________________________________________
+
+06. Equal Numbers
+
+Write a program to check if the given two numbers are equal.
+
+Input
+The first line of input contains a number.
+The second line of input contains a number.
+
+Output
+If the given numbers are equal, print "Equal". In all other cases, print "Not Equal".
+
+Explanation
+For example, if the first number is 5 and the second number is 5. Since both the given numbers are equal. 
+So the output should be "Equal".
+
+Sample Input 1:
+
+5
+5
+
+Sample Output 1:
+
+Equal
+
+Sample Input 2:
+
+10
+5
+
+Sample Output 2:
+
+Not Equal
+
+Solution
+
+first_number = int(input())
+second_number = int(input())
+if first_number == second_number:
+    print("Equal")
+else:
+    print("Not Equal")
+______________________________________________________________________________________________________________
+
+07. Square or Rectangle
+
+Given the length and breadth of a box, check if it is a Rectangle or Square.
+
+Input
+The first line of input will contain the length of the box.
+The second line of input will contain the breadth of the box.
+
+Output
+If the given length and breadth are equal, print "Square". In all other cases, print "Rectangle".
+
+Explanation
+For example, if the given length is 6, and the given breadth is 6, the length and breadth are equal. 
+So the output should be "Square".
+
+Sample Input 1:
+
+6
+6
+
+Sample Output 1:
+
+Square
+
+Sample Input 2:
+
+5
+10
+
+Sample Output 2:
+
+Rectangle
+
+Solution
+
+length = int(input())
+breadth = int(input())
+if length == breadth:
+    print("Square")
+else:
+    print("Rectangle")
+______________________________________________________________________________________________________________
+
+08. Go for a Walk
+
+Write a program that reads a temperature and checks if the given temperature is between 15 and 40.
+Print Can go for a walk if the given temperature is between 15 and 40, otherwise print Cannot go for a walk.
+
+Input
+The input will be a single line containing an integer.
+
+Output
+The output should be a single line containing a string. Can go for a walk should be printed if the
+temperature is between 15 and 40, otherwise Cannot go for a walk should be printed.
+
+Explanation
+For example, if the given temperature is 26,
+• 26 is greater than 15.
+• 26 is less than 40.
+• So, 26 is between 15 and 40.
+The output should be Can go for a walk as 26 is between 15 and 40.
+
+Sample Input 1:
+
+26
+
+Sample Output 1:
+
+Can go for a walk
+
+Sample Input 2:
+
+5
+
+Sample Output 2:
+
+Cannot go for a walk
+
+Solution
+
+temperature = int(input())
+if temperature > 15 and temperature < 40: # (15 < temperature < 40)
+    print("Can go for a walk")
+else:
+    print("Cannot go for a walk")
+______________________________________________________________________________________________________________
+
+09. Buy a Walk
+
+Write a program that reads the size S and page count C of a book and checks if S is equal to large 
+or C is greater than or equal to 300.
+
+Print Buy a Book if S is equal to large or C is greater than or equal to 300. Otherwise, print Do Not Buy a Book.
+
+Input
+The first line of input contains a string representing S
+The second line of input contains an integer representing C
+
+Output
+The output should be a single line containing a string. Buy a Book should be printed if S is equal 
+to large or C is greater than or equal to 300. Otherwise, Do Not Buy a Book should be printed.
+
+Explanation
+For example, if the given size is S = "large" and the page count is C = 80
+✓ S is equal to large. (large is equal to large)
+X C is greater than or equal to 300. (80 is not greater than or equal to 300)
+The output should be Buy a Book as the size of the book S is equal to large.
+
+Sample Input 1:
+
+large
+80
+
+Sample Output 1:
+
+Buy a Book
+
+Sample Input 2:
+
+small
+200
+
+Sample Output 2:
+
+Do Not Buy a Book
+
+Solution
+
+size = input()
+pages = int(input())
+can_buy_book = (size == "large") or (pages >= 300)
+if can_buy_book:
+    print("Buy a Book")
+else:
+    print("Do Not Buy a Book")
+
+"""
+s=input()
+c=int(input())
+if s=="large" or c>=300:
+    print("Buy a Book")
+else:
+    print("Do Not Buy a Book")
+"""
+______________________________________________________________________________________________________________
+
+10. Pair of Numbers
+
+Write a program that reads two numbers A and B and checks if both A and B are less than or equal to 1000
+or B is greater than 500.
+
+Print Pair if both A and B are less than or equal to 1000 or B is greater than 500. Otherwise, print Not a Pair.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output
+The output should be a single line containing a string. Pair should be printed if both A and B are 
+less than or equal to 1000 or B is greater than 500. Otherwise, Not a Pair should be printed.
+
+Explanation
+For example, if the given numbers are A = 300 and B = 200,
+✓ Both A and B are less than or equal to 1000. (300 and 200 are less than or equal to 1000)
+X B is greater than 500. (200 is not greater than 500)
+The output should be Pair as both 300 and 200 are less than or equal to 1000.
+
+Sample Input 1:
+
+300
+200
+
+Sample Output 1:
+
+Pair
+
+Sample Input 2:
+
+1464
+20
+
+Sample Output 2:
+
+Not a Pair
+
+Solution
+
+first_number = int(input())
+second_number = int(input())
+is_less_than_or_equal_to = first_number <= 1000 and second_number <= 1000
+is_greater_than = second_number > 500
+is_pair = is_less_than_or_equal_to or is_greater_than
+if is_pair:
+    print("Pair")
+else:
+    print("Not a Pair")
+
+"""
+a=int(input())
+b=int(input())
+if a<=1000 and b<=1000 or b>500:
+    print("Pair")
+else:
+    print("Not a Pair")
+"""
+______________________________________________________________________________________________________________
+
+11. Team Up
+
+Write a program that reads the scores A and B of two players and checks if one of the scores is greater than
+300 and the sum of the scores is less than 500.
+
+Print Can team up if one of the scores is greater than 300 and the sum of the scores is less than 500, 
+otherwise print Cannot team up.
+
+Input
+The first line of input contains an integer representing the score A.
+The second line of input contains an integer representing the score B.
+
+Output
+The output should be a single line containing a string. Can team up should be printed if one of the scores 
+is greater than 300 and the sum of the scores is less than 500, otherwise Cannot team up should be printed.
+
+Explanation
+For example, if the given scores are A = 350 and B = 134
+✓ One of the scores is greater than 300 (350 is greater than 300).
+✓ The sum of scores is less than 500 ( 350 + 134 = 484, 484 is less than 500).
+The output should be Can team up as one of the scores is greater than 300 and the sum of the scores is less than 500.
+
+Sample Input 1:
+
+350
+134
+
+Sample Output 1:
+
+Can team up
+
+Sample Input 2:
+
+450
+82
+
+Sample Output 2:
+
+Cannot team up
+
+Solution
+
+score_1 = int(input())
+score_2 = int(input())
+sum_of_scores = score_1 + score_2
+if (score_1 > 300 or score_2 > 300) and (sum_of_scores < 500):
+    print("Can team up")
+else:
+    print("Cannot team up")
+
+"""
+a=int(input())
+b=int(input())
+if (a>300 or b>300) and a+b<500:
+    print("Can team up")
+else:
+    print("Cannot team up")
+"""
+______________________________________________________________________________________________________________
+
+12. Zero or Positive
+
+Write a program that reads a number and checks if the given number is equal to O or positive.
+Print Zero if the given number is equal to 0.
+Print Positive if the given number is a positive number.
+
+Note
+Positive numbers are numbers that are greater than 0.
+
+Input
+The input will be a single line containing an integer.
+
+Output
+The output should be a single line containing a string. Zero should be printed if the given number
+is equal to 0. Positive should be printed if the given number is greater than 0.
+
+Explanation
+For example, if the given number is 56, the output should be Positive as 56 is greater than 0.
+
+Sample Input 1:
+
+56
+
+Sample Output 1:
+
+Positive
+
+Sample Input 2:
+
+0
+
+Sample Output 2:
+
+Zero
+
+Solution
+
+number = int(input())
+if number == 0:
+    print("Zero")
+if number > 0:
+    print("Positive")
+______________________________________________________________________________________________________________
+
+13. Zero or Positive or Negative
+
+Write a program that reads a number and checks if the given number is zero, positive or negative.
+Print Zero if the given number is equal to 0.
+Print Positive if the given number is greater than 0.
+Print Negative if the given number is less than 0.
+
+Input
+The input will be a single line containing an integer.
+
+Output
+The output should be a single line containing a string. Zero should be printed if the given number is equal
+to 0. Positive should be printed if the given number is greater than O. Negative should be printed if the
+given number is less than 0.
+
+Explanation
+For example,
+• If the given number is -12, the output should be Negative as -12 is less than 0.
+• If the given number is 15, the output should be Positive as 15 is greater than 0.
+
+Sample Input 1:
+
+-12
+
+Sample Output 1:
+
+Negative
+
+Sample Input 2:
+
+15
+
+Sample Output 2:
+
+Positive
+
+Sample Input 3:
+
+0
+
+Sample Output 3:
+
+Zero
+
+Solution
+
+number = int(input())
+if number > 0:
+    print("Positive")
+if number < 0:
+    print("Negative")
+if number == 0:
+    print("Zero")
+
+______________________________________________________________________________________________________________
