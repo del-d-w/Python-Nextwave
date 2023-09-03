@@ -1,0 +1,393 @@
+01. Greater than Nine
+
+Write a program that reads two numbers A and B and checks if both the given numbers are greater than 9.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output
+The output should be a single line containing a boolean. True should be printed if 
+both the given numbers are greater than 9, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = 11 and B = 20,
+✔ A is greater than 9. (11 is greater than 9)
+✓ B is greater than 9. (20 is greater than 9)
+The output should be True as both the given numbers are greater than 9.
+
+Sample Input 1:
+
+11
+20
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+9
+43
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_number = input()
+first_number = int(first_number)
+second_number = input()
+second_number = int(second_number)
+result = (first_number > 9) and (second_number > 9)
+print(result)
+______________________________________________________________________________________________________________
+
+02. Negative Numbers
+
+Write a program that reads two numbers A and B, and checks if both the given numbers are negative numbers.
+Note: Negative numbers are numbers that are less than zero.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output
+The output should be a single line containing a boolean. True should be printed
+if both the given numbers are negative, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = -1 and B = -2,
+✔ A is a negative number. (-1 is less than 0)
+✓ B is a negative number. (-2 is less than 0)
+The output should be True as both the given numbers are negative.
+
+Sample Input 1:
+
+-1
+-2
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+3
+-1
+
+Sample Output 2:
+
+False
+
+Sample Input 3:
+
+7
+6
+
+Sample Output 3:
+
+False
+
+Solution
+
+first_number = input()
+second_number = input()
+first_number = int(first_number)
+second_number = int(second_number)
+result = (first_number < 0) and (second_number < 0)
+print(result)
+______________________________________________________________________________________________________________
+
+03. Positive Number
+
+Write a program that reads two numbers A and B, and checks if one of the given numbers is a positive number.
+Note: Positive numbers are numbers that are greater than zero.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output
+The output should be a single line containing a boolean. True should be
+printed if one of the given numbers is a positive number, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = 4 and B = -6,
+✓ A is a positive number. (4 is greater than 0)
+X B is a positive number. (-6 is greater than 0)
+The output should be True as one of the given numbers is a positive number.
+
+Sample Input 1:
+
+4
+-6
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+-12
+-22
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_number = input()
+second_number = input()
+first_number = int(first_number)
+second_number = int(second_number)
+result = (first_number > 0) or (second_number > 0)
+print(result)
+______________________________________________________________________________________________________________
+
+04. Not Greater than 100
+
+Write a program that reads two numbers A and B, and checks if the sum of A and B is not greater than 100.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output
+The output should be a single line containing a boolean. True should be printed if the sum of A and B is not 
+greater than 100, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = 30 and B = 20,
+• The sum of A and B is 50 (30 + 20 = 50 ).
+The output should be True as the sum of A and B is not greater than 100.
+
+Sample Input 1:
+
+30
+20
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+60
+70
+
+Sample Output 2:
+
+False
+
+Solution
+
+number = input()
+
+first_number = input()
+first_number = int(first_number)
+second_number = input()
+second_number = int(second_number)
+sum_of_numbers = first_number + second_number
+is_greater_than = sum_of_numbers > 100
+result = not(is_greater_than)
+print(result)
+______________________________________________________________________________________________________________
+
+05. Compare Numbers
+
+Write a program that reads two numbers A and B, and checks if both A and B are greater than 35 or A is greater than B.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output
+The output should be a single line containing a boolean. True should be printed if both
+A and B are greater than 35 or A is greater than B, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = 45 and B = 25,
+X A and B are greater than 35. (45 is greater than 35 but 25 is less than 35)
+✓ A is greater than B. (45 is greater than 25)
+The output should be True as A is greater than B.
+
+Sample Input 1:
+
+45
+25
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+35
+90
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_number = input()
+first_number = int(first_number)
+second_number = input()
+second_number = int(second_number)
+are_greater_than = (first_number > 35) and (second_number > 35)
+is_first_number_greater = first_number > second_number
+result = are_greater_than or is_first_number_greater
+print(result)
+______________________________________________________________________________________________________________
+
+06. Compare Numbers - 2
+
+Write a program that reads two numbers A and B , and checks if one of the given numbers is a negative number 
+and the sum of the given numbers is greater than 7.
+
+Input
+The first line of input contains an integer representing A .
+The second line of input contains an integer representing B.
+
+Output
+The output should be a single line containing a boolean. True should be printed if one of the given 
+numbers is a negative number and the sum of numbers is greater than 7, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = 13 and B = -3
+✓ One of the given numbers is a negative number. (-3 is a negative number)
+✓ Sum of the given numbers is greater than 7. ( 13+ (-3) = 10, 10 is greater than 7)
+The output should be True.
+
+Sample Input 1:
+
+13
+-3
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+14
+-7
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_number = input()
+first_number = int(first_number)
+second_number = input()
+second_number = int(second_number)
+sum_of_numbers = first_number + second_number
+is_negative = (first_number < 0) or (second_number < 0)
+is_greater_than = sum_of_numbers > 7
+result = is_negative and is_greater_than
+print(result)
+______________________________________________________________________________________________________________
+
+07. Compare Numbers - 3
+
+Write a program that reads two numbers A and B, and checks if both A and B are positive numbers
+or both A and and B are less than 70.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output
+The output should be a single line containing a boolean. True should be printed if both A
+and B are positive numbers or both A and B are less than 70, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = 200 and B = 50,
+✓ A and B are positive numbers. (200 and 50 are positive numbers) 
+X A and B are less than 70. (200 is not less than 70)
+The output should be True as both A and B are positive numbers.
+
+Sample Input 1:
+
+200
+50
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+-7
+70
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_number = input()
+first_number = int(first_number)
+second_number = input()
+second_number = int(second_number)
+are_positive = (first_number > 0) and (second_number > 0)
+are_less_than = (first_number < 70) and (second_number < 70)
+result = are_positive or are_less_than
+print(result)
+______________________________________________________________________________________________________________
+
+08. Compare Numbers - 4
+
+Write a program that reads two numbers A and B, and checks if one of A and B is less than 60 and one of
+A and B is greater than 80.
+
+Input
+The first line of input contains an integer representing A.
+The second line of input contains an integer representing B.
+
+Output
+The output should be a single line containing a boolean. True should be printed if one of
+A and B is less than 60 and one of A and B is greater than 80, otherwise False should be printed.
+
+Explanation
+For example, if the given numbers are A = 50 and B = 90
+✓ One of A and B is less than 60. (50 is less than 60) 
+✓ One of A and B is greater than 80. (90 is greater than 80)
+The output should be True.
+
+Sample Input 1:
+
+50
+90
+
+Sample Output 1:
+
+True
+
+Sample Input 2:
+
+230
+70
+
+Sample Output 2:
+
+False
+
+Solution
+
+first_number = input()
+first_number = int(first_number)
+second_number = input()
+second_number = int(second_number)
+is_less_than = (first_number < 60) or (second_number < 60)
+is_greater_than = (first_number > 80) or (second_number > 80)
+result = is_less_than and is_greater_than
+print(result)
+______________________________________________________________________________________________________________
