@@ -1,0 +1,379 @@
+01. Half String
+
+Write a program that reads a string and prints the first half part of the string.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing the sum of the three digits of the given number.
+
+Explanation
+For example, if the given string is Amazon,
+
+A m a z o n
+1 2 3 4 5 6
+
+• The first half part of the string contains Ama.
+• The second half part of the string contains zon.
+The output should be Ama.
+
+Sample Input 1:
+
+Amazon
+
+Sample Output 1:
+
+Ama
+
+Sample Input 2:
+
+Bottle
+
+Sample Ouput 2:
+
+Bot
+
+Solution:
+
+word = input()
+length_of_the_word = len(word)
+half_length = length_of_the_word/2
+half_length = int(half_length)
+half_word = word[:half_length]
+print(half_word)
+
+"""
+a=input()
+a1=a[:len(a)//2]
+a2=a[len(a)//2:]
+print(a1)
+"""
+_______________________________________________________________________________________________________________
+
+02. String Repetition - 3
+
+Given a word and a number (N), write a program to print the last three characters of the word N times
+in a single line.
+
+Input
+The first line of input contains a word.
+The second line of input contains the integer N which denotes the number of times the last three characters 
+of word has to be repeated.
+
+Output
+The first line of output contains the last three characters of the given word repeated N times.
+Note: There should not be any spaces between the repetitions.
+
+Explanation
+For example, if the given input is "Transport" and the given number is 2.
+The last three characters of the given word are "ort", which have to be repeated 2 times, 
+so the output should be "ortort"
+
+Sample Input 1:
+
+Transport
+2
+
+Sample Ouput 1:
+
+ortort
+
+Sample Input 2:
+
+Python
+4
+
+Sample Ouput 2:
+
+honhonhonhon
+
+Solution:
+
+word = input()
+n = int(input())
+length_of_the_word = len(word)
+start_index = length_of_the_word - 3
+sliced_word = word[start_index:]
+message = sliced_word * n
+print(message)
+
+"""
+a=input()
+b=int(input())
+c=a[-3:(len(a))]
+print(c*b)
+"""
+_______________________________________________________________________________________________________________
+
+03. String Repetition - 4
+
+You are given a string. Repeat the same string N times separated by space.
+
+Explanation
+In the given example the string is messages N = 3. So we have to repeat the string three times. Then we get 
+messages messages messages as output.
+
+Sample Input 1:
+
+messages
+3
+
+Sample Ouput 1:
+
+messages messages messages 
+
+Sample Input 2:
+
+pop
+4
+
+Sample Ouput 2:
+
+pop pop pop pop
+
+Solution:
+
+word = input()
+n = int(input())
+new_string = word + (" " + word) * (n - 1)
+print(new_string)
+
+"""
+a=input()
+b=input()
+b=int(b)
+print((a+" ")*b)
+"""
+_______________________________________________________________________________________________________________
+
+04. Star Repetition - 4
+
+Write a program that reads a word and prints the first two and the last two letters of the word and prints the 
+stars (*) instead of the remaining letters.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a string that has the first two and the last two letters of the 
+word and stars (*) instead of the remaining letters.
+
+Explanation
+For example, if the given word is message,
+• The number of letters in the word message is 7.
+• The first two and the last two letters are me, ge.
+• The number of letters excluding the first two and last two letters in a word is 3.
+• 3 stars should be printed between the first two and the last two letters.
+The output should be me***ge.
+
+Sample Input 1:
+
+message
+
+Sample Ouput 1:
+
+me***ge
+
+Sample Input 2:
+
+12345
+
+Sample Ouput 2:
+
+12*45
+
+Solution
+
+word = input()
+word_length = len(word)
+number_of_stars = word_length - 4
+first_two_characters = word[:2]
+last_two_characters = word[word_length - 2:]
+result = first_two_characters + "*" * number_of_stars + last_two_characters
+print(result)
+
+"""
+a=input()
+length=len(a)
+first_two_letter=a[0:2]
+last_two_letters=(a[length - 2:])
+stars=( length - ( len (first_two_letter) + len (last_two_letters)))
+print(str(first_two_letter)+str(stars*"*")+str(last_two_letters))
+"""
+_______________________________________________________________________________________________________________
+
+05. Skip the Fourth Character
+
+Write a program that reads a word and prints the word excluding the fourth letter of the word.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a string excluding the fourth letter of the word.
+
+Explanation
+For example, if the given word is Equality,
+
+ E q u a l i t y
+ 0 1 2 3 4 5 6 7
+
+• The letters before the fourth letter are Equ.
+• The fourth letter is a.
+• The letters after the fourth letter are lity
+The output should be Equlity as the fourth letter is excluded.
+
+Sample Input 1:
+
+Equality
+
+Sample Ouput 1:
+
+Equlity
+
+Sample Input 2:
+
+Listen
+
+Sample Ouput 2:
+
+Lisen
+
+Solution:
+
+word = input()
+first_part = word[:3]
+second_part = word[4:]
+result = first_part + second_part
+print(result)
+_______________________________________________________________________________________________________________
+
+06. Skipping Letters
+
+You're given a word and an index position of a character. You need to write a program that prints the given
+word without the character at the given index.
+
+Input
+The first line of input contains a word.
+The second line of input contains the index location.
+
+Output
+The output should be a single line containing the word skipping the character at the given index location.
+
+Explanation
+For example, if the given word is "Combine", the character at the index location 4, is "i", 
+so the output without the character at the given index location is "Combne"﻿
+
+Sample Input 1:
+
+Combine
+4
+
+Sample Output 1:
+
+Combne
+
+Sample Input 2:
+
+Globe
+2
+
+Sample Ouput 2:
+
+Glbe
+
+Solution:
+
+word = input()
+n = int(input())
+before = word[:n]
+after = word[n+1:]
+result = before + after
+print(result)
+_______________________________________________________________________________________________________________
+
+07. Simple square - 4
+
+Write a program that prints a simple square using the hashes (#)
+
+Explanation
+﻿Print three hashes on the first line, three hashes on the second line and three hashes on the third line.
+
+Sample Output:
+
+###
+###
+###
+
+Solution:
+
+print("#" * 3)
+print("#" * 3)
+print("#" * 3)
+_______________________________________________________________________________________________________________
+
+08. Simple Traingle - 4
+
+Write a program that prints a simple triangle using the plus (+).
+
+Explanation
+Print one plus on the first line, two pluses on the second line and three pluses on the third line.
+
+Sample Output 1:
+
++
+++
++++
+
+Solution:
+
+print("+" * 1)
+print("+" * 2)
+print("+" * 3)
+_______________________________________________________________________________________________________________
+
+09. Stars - 3
+
+Write a program that reads a number N and prints three lines with each line containing N stars (*)
+
+Note: There is a space after each star
+
+Input
+The input will be a single line containing an integer.
+
+Output
+The output should be three lines containing N number of space-separated stars (*) in each line.
+
+Explanation
+For example, if the given number is 4, the output should be three lines containing four space-separated 
+stars (*) in each line.
+
+Sample Input 1:
+
+4
+
+Sample Output 1:
+
+* * * * 
+* * * * 
+* * * * 
+
+Sample Input 2:
+
+3
+
+Sample Ouput 2:
+
+* * * 
+* * * 
+* * *
+
+Solution
+
+count = input()
+count = int(count)
+print("* " * count)
+print("* " * count)
+print("* " * count)
+_______________________________________________________________________________________________________________
