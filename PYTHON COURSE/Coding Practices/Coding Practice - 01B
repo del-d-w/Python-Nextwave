@@ -133,83 +133,152 @@ result = ("* " * 3) + word + (" *" * 3)
 print(result)
 _______________________________________________________________________________________________________________
 
-07.
+07. Fisrt Character
+
+Write a program that reads a word and prints the first character of the word.
+
+input
+The input will be a single line containing a string.
+
+output
+The output should be a single line containing a string that is the first character of the word.
+
+Explanation
+For example, if the given word is Python. The output should be P as it is the first character of the given word.
 
 Sample Input 1:
 
-Sample Output 1:
-
-Sample Input 2:
-
-Sample Ouput 2:
-
-Solution:
-
-_______________________________________________________________________________________________________________
-
-08.
-Sample Input 1:
+Python
 
 Sample Output 1:
 
-Sample Input 2:
-
-Sample Ouput 2:
-
-Solution:
-
-_______________________________________________________________________________________________________________
-09.
-
-Sample Input 1:
-
-Sample Output 1:
+P
 
 Sample Input 2:
 
+empower
+
 Sample Ouput 2:
+
+e
 
 Solution:
 
+word = input()
+first_character = word[0]
+print(first_character)
 _______________________________________________________________________________________________________________
 
-10
+08. Third Character
+
+Write a program that reads a word and prints the third character of the word.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a string that is the third character of the word.
+
+Explanation
+For example, if the given word is Programming. The output should be O as it is the third character of the word.
 
 Sample Input 1:
 
+Debugging
+
 Sample Output 1:
+
+b
 
 Sample Input 2:
 
+Workout
+
 Sample Ouput 2:
+
+r
 
 Solution:
 
+word = input()
+third_character = word[2]
+print(third_character)
 _______________________________________________________________________________________________________________
 
-11. 
+09. First & Last Digits
+
+Given a four-digit number N as input. Write a program to print first and last digit of the number.
+
+Input
+The input is a four-digit number N.
+
+Output
+Print the first digit in the first line and the last digit in the second line.
+
 Sample Input 1:
 
+1456
+
 Sample Output 1:
+
+1
+6
 
 Sample Input 2:
 
+9821
+
 Sample Ouput 2:
+
+9
+1
 
 Solution:
 
+number = input()
+
+first_digit = number[0]
+last_digit = number[3]
+
+print(first_digit)
+print(last_digit)
 _______________________________________________________________________________________________________________
 
-12.
+10. Reverse the digits
+
+Write a program to reverse the digits of a given two-digit number.
+
+Input
+The input will be a single line containing a integer.
+
+Output
+The output should be a single line containing the reverse of the given two-digit number.
+
+Explanation
+For example, if the given two-digit number is 21, the reverse of 21 is 12.
 
 Sample Input 1:
 
+21
+
 Sample Output 1:
+
+12
 
 Sample Input 2:
 
+69
+
 Sample Ouput 2:
+
+96
 
 Solution:
 
+word = input()
+first_digit = word[0]
+second_digit = word[1]
+reversed_number = second_digit + first_digit
+print(reversed_number)
 _______________________________________________________________________________________________________________
+
