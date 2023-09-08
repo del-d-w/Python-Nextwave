@@ -1,0 +1,215 @@
+01. String Repetition
+
+Write a program to print the given input word three times in a single line separated by spaces
+
+Sample Input 1:
+
+Apple
+
+Sample Output 1:
+
+Apple Apple Apple 
+
+Sample Input 2:
+
+children
+
+Sample Ouput 2:
+
+children children children
+
+Solution:
+
+word = input()
+message = (word + ' ') * 3
+print(message)
+_______________________________________________________________________________________________________________
+
+02. Simple Square
+
+Write a program that prints a simple square using star (*).
+
+Explanation
+Print two stars on the first line and two stars on the second line.
+
+Sample Ouput:
+
+**
+**
+
+Solution:
+
+print("*" * 2)
+print("*" * 2)
+_______________________________________________________________________________________________________________
+
+03. Simple square - 2
+
+Print two stars on the first line and two stars on the second line.
+Note: There is Space after every Star
+
+Sample Ouput:
+
+* * 
+* * 
+
+Solution:
+
+print("* " * 2)
+print("* " * 2)
+
+_______________________________________________________________________________________________________________
+
+04. Simple Traingle
+
+Write a program that prints a simple triangle using star (*).
+
+Explanation
+Print a star on the first line and two stars on the second line.
+
+Sample Output:
+
+*
+**
+
+Solution:
+
+print("*"*1)
+print("*"*2)
+_______________________________________________________________________________________________________________
+
+05. Simple Traingle - 2
+
+Write a program that prints a simple triangle using star (*).
+
+Explanation
+Print a star on the first line and two stars on the second line.
+
+Sample Output:
+
+* 
+* *
+
+Solution:
+
+print("* "*1)
+print("* "*2)
+
+_______________________________________________________________________________________________________________
+
+06. Stars
+
+Write a program that reads a word and prints the word in "* * * word * * *" format.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a string in the format shown in the sample output.
+
+Explanation
+For example, if the given word is Magician, the output should be "* * * Magician * * *".
+
+Sample Input 1:
+
+Magician
+
+Sample Output 1:
+
+* * * Magician * * *
+
+Sample Input 2:
+
+Congratulations
+
+Sample Ouput 2:
+
+* * * Congratulations * * *
+
+Solution:
+
+word = input()
+result = ("* " * 3) + word + (" *" * 3)
+print(result)
+_______________________________________________________________________________________________________________
+
+07.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
+
+08.
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
+09.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
+
+10
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
+
+11. 
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
+
+12.
+
+Sample Input 1:
+
+Sample Output 1:
+
+Sample Input 2:
+
+Sample Ouput 2:
+
+Solution:
+
+_______________________________________________________________________________________________________________
