@@ -27,86 +27,217 @@ ________________________________________________________________________________
 
 02. Print the Input - 2
 
+Write a program that reads a word and prints the word and "###" on two lines.
+Note:The characters used in "###" are three hash symbols.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The first line of output should be a string containing the given word.
+The second line of output should be a string containing "###".
+
+Explanation
+For example, if the given word is Algebra, the output should be
+
 Sample Input 1:
+
+Algebra
 
 Sample Output 1:
 
+Algebra
+###
+
 Sample Input 2:
+
+1a2b3c
 
 Sample Ouput 2:
 
+1a2b3c
+###
+
 Solution:
 
+word = input()
+print(word)
+print("###")
 _______________________________________________________________________________________________________________
 
-03.
+03. Print the Input - 3
+
+Write a program that reads the two words and prints the two words on two lines.
+
+Input
+The first line of input contains a string.
+The second line of input contains a string.
+
+Output
+The first line of output should be a string containing the first word.
+The second line of output should be a string containing the second word.
+
+Explanation
+For example, if the given words are Apple and Banana, the output should be
+
+Apple
+Banana
 
 Sample Input 1:
 
+Apple
+Banana
+
 Sample Output 1:
+
+Apple
+Banana
 
 Sample Input 2:
 
+Hi
+Hello
+
 Sample Ouput 2:
+
+Hi
+Hello
 
 Solution:
 
+first_word = input()
+second_word = input()
+
+print(first_word)
+print(second_word)
 _______________________________________________________________________________________________________________
 
-04.
+04. Second Line
+
+For this problem, you need to write code to read two lines of input and print the second line of input.
+
+Output
+Print the second line of input.
 
 Sample Input 1:
 
+Fundamentals
+Python
+
 Sample Output 1:
+
+Python
 
 Sample Input 2:
 
+Tom
+Jerry
+
 Sample Ouput 2:
+
+Jerry
 
 Solution:
 
+a = input()
+b = input()
+
+print(b)
 _______________________________________________________________________________________________________________
 
-05.
+05. Print in Reverse Order
+
+Write a program that reads two lines of input and prints those two lines in the reverse order. 
+(Print the message given in the second line of input before the first line of input)
+
+Explanation
+In the given example, the first line of input is "Book" and the second line of input is "Pen",
+so the output should be 
+
+Pen
+Book
 
 Sample Input 1:
 
+Book
+Pen
+
 Sample Output 1:
+
+Pen
+Book
 
 Sample Input 2:
 
+4
+5
+
 Sample Ouput 2:
+
+5
+4
 
 Solution:
 
+a = input()
+b = input()
+
+print(b)
+print(a)
 _______________________________________________________________________________________________________________
 
-06.
+06. Hello World
+
+Write a program that takes a word W as input and prints "Hello" followed by the given word W.
+There should be a space after Hello
 
 Sample Input 1:
 
+World
+
 Sample Output 1:
+
+Hello World
 
 Sample Input 2:
 
+Anjali
+
 Sample Ouput 2:
+
+Hello Anjali
 
 Solution:
 
+word=input()
+print("Hello "+word)
 _______________________________________________________________________________________________________________
 
-07.
+07. Print the Input - 4
+
+For this problem, you need to write code to read a single line of input and print the line after 
+the message "Given input: ".
 
 Sample Input 1:
 
+Happy Coding
+
 Sample Output 1:
+
+Given input: Happy Coding
 
 Sample Input 2:
 
+Tech Foundations
+
 Sample Ouput 2:
+
+Given input: Tech Foundations
 
 Solution:
 
+word=input()
+print("Given input:"+" " +word)
 _______________________________________________________________________________________________________________
 
 08.
