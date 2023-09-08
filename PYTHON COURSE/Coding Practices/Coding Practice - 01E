@@ -1,0 +1,362 @@
+01. Sum of the Digits
+
+Write a program that prints the sum of the digits of a given three-digit number.
+
+Input
+The input will be a single line containing a three-digit number.
+
+Output
+The output should be a single line containing the sum of the three digits of the given number.
+
+Explanation
+For example, if the given number is 326, the sum of its digits, 3 + 2 + 6 is 11.
+
+Sample Input 1:
+
+326
+
+Sample Output 1:
+
+11
+
+Sample Input 2:
+
+222
+
+Sample Ouput 2:
+
+6
+
+Solution:
+
+word = input()
+first_digit = int(word[0])
+second_digit = int(word[1])
+third_digit = int(word[2])
+sum_of_digits = first_digit + second_digit + third_digit
+print(sum_of_digits)
+_______________________________________________________________________________________________________________
+
+02. Indexing
+
+Given a word W and an integer N, write a program to print the character present at the index N in the word W. 
+
+Input
+The first line contains the word W 
+The second line contains the integer N 
+
+Explanation
+For example, when the given word W is Chocolate and the integer N is 2. Since the index starts from zero. 
+The character present at index 2 is o.
+
+C h o c o l a t e
+0 1 2 3 4 5 6 7 8
+
+Similarly for Table the character at index 1 is a.
+
+T a b l e
+0 1 2 3 4
+
+Constraints
+0 <= N < len(W)
+
+Sample Input 1:
+
+Chocolate
+2
+
+Sample Ouput 1:
+
+o
+
+Sample Input 2:
+
+Table
+1
+
+Sample Ouput 2:
+
+a
+
+Solution:
+
+word = input()
+n = input()
+n = int(n)
+print(word[n])
+_______________________________________________________________________________________________________________
+
+03. String Repetition - 2
+
+Given a word and a number N, write a program to print the given word, N number of times in a single line.
+
+Input
+The first line of input contains a word.
+The second line of input contains the integer N which denotes the number of times the word has to be repeated.
+
+Output
+The output should contain the given string repeated N times in a single line.
+Note: There should not be any spaces between the repetitions.
+
+Explanation
+For example, if the given word is "Maths", and the N is 2,the word has to be repeated 2 times, 
+so the output should be "MathsMaths"
+
+Sample Input 1:
+
+Maths
+2
+
+Sample Ouput 1:
+
+MathsMaths
+
+Sample Input 2:
+
+Hand
+6
+
+Sample Ouput 2:
+
+HandHandHandHandHandHand
+
+Solution:
+
+word = input()
+n = int(input())
+message = word * n
+print(message)
+_______________________________________________________________________________________________________________
+
+04. First Three Characters
+
+Write a program to read a single line of input and print the first three characters in it.
+
+Explanation
+For example, if the given input is "Four" the first three characters are "Fou"
+Similarly, the first three characters of "Strawberry" are "Str"
+
+Sample Input 1:
+
+Four
+
+Sample Ouput 1:
+
+Fou
+
+Sample Input 2:
+
+Strawberry
+
+Sample Ouput 2:
+
+Str
+
+Solution
+
+message = input()
+part = message[:3]
+print(part)
+_______________________________________________________________________________________________________________
+
+05. Part of a String
+
+Write a program that reads a word and an index and prints a part of the word from the given index to the end of the word.
+
+Input
+The first line of input contains a string.
+The second line of input contains an integer.
+
+Output
+The output should be a single line containing a string that is the part of the word.
+
+Explanation
+For example, if the given word is Unhappy and the index is 2.
+
+U n h a p p y
+0 1 2 3 4 5 6
+
+The output should be happy as the slicing starts from the 2nd index and stops at the end of the word.
+
+Sample Input 1:
+
+Unhappy
+2
+
+Sample Ouput 1:
+
+happy
+
+Sample Input 2:
+
+goodnight
+4
+
+Sample Ouput 2:
+
+night
+
+Solution:
+
+word = input()
+start_index = input()
+start_index = int(start_index)
+
+part = word[start_index:]
+print(part)
+_______________________________________________________________________________________________________________
+
+06. Part of a String - 2
+
+Write a program that reads a word and two indices (X, Y) and prints a part of the word from the index X to the index Y.
+
+Input
+The first line of input contains a string.
+The second line of input contains an integer X.
+The third line of input contains an integer Y.
+
+Output
+The output should be a single line containing a string that is part of the word.
+
+Explanation
+﻿
+
+For example, if the given word is Growing, index X is 3 and index Y is 6,
+
+G r o w i n g
+0 1 2 3 4 5 6
+
+The output should be wing as the slicing starts from the 3rd index and stops at the 6th index.
+
+Sample Input 1:
+
+Growing
+3
+6
+
+Sample Output 1:
+
+wing
+
+Sample Input 2:
+
+Scrabble
+1
+5
+
+Sample Ouput 2:
+
+crabb
+
+Solution:
+
+word = input()
+start_index = input()
+start_index = int(start_index)
+
+end_index = input()
+end_index = int(end_index)
+
+part = word[start_index:end_index + 1]
+print(part)
+_______________________________________________________________________________________________________________
+
+07. First N Characters
+
+Write a program that reads a word and a number N and prints the first N characters of the word.
+
+Input
+The first line of input contains a string.
+The second line of input contains an integer.
+
+output
+The output should be a single line containing a string that is the part of the word.
+
+Explanation
+﻿
+
+For example, if the given word is Superman and the number N is 5,
+
+S u p e r m a n
+0 1 2 3 4 5 6 7
+
+The output should be Super as the first 5 characters of the word are Super.
+
+Sample Input 1:
+
+Superman
+5
+
+Sample Output 1:
+
+Super
+
+Sample Input 2:
+
+impossible
+2
+
+Sample Ouput 2:
+
+im
+
+Solution:
+
+word = input()
+no_of_characters = input()
+no_of_characters = int(no_of_characters)
+
+end_index = no_of_characters
+part = word[:end_index]
+print(part)
+_______________________________________________________________________________________________________________
+
+08. Last N Characters
+
+Write a program that reads a word and a number N and prints the last N characters of the word.
+
+Input
+The first line of input contains a string.
+The second line of input contains an integer.
+
+Output
+The output should be a single line containing a string that is the part of the word.
+
+Explanation
+﻿For example, if the given word is Forgive and the number N is 4,
+
+F o r g i v e
+0 1 2 3 4 5 6
+
+The output should be give as the last 4 characters of Forgive is give.
+
+Sample Input 1:
+
+Forgive
+4
+
+Sample Output 1:
+
+give
+
+Sample Input 2:
+
+hamburger
+6
+
+Sample Ouput 2:
+
+burger
+
+Solution:
+
+word = input()
+no_of_characters = input()
+no_of_characters = int(no_of_characters)
+
+word_length = len(word)
+start_index = word_length - no_of_characters
+
+part = word[start_index:]
+print(part)
+_______________________________________________________________________________________________________________
