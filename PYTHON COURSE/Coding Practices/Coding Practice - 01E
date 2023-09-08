@@ -360,3 +360,103 @@ start_index = word_length - no_of_characters
 part = word[start_index:]
 print(part)
 _______________________________________________________________________________________________________________
+
+09. Second Part of a String
+
+﻿Write a program that reads a string and prints the second part of the string that has digits.
+Note
+The given string contains 2 parts
+• The first part contains only two characters.
+• The second part contains only digits.
+
+Example: OF63, ab395
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing an integer that is the second part of the string that has digits.
+
+Explanation
+For example, if the given string is OF63,
+• The first part of the string contains OF.
+• The second part of the string contains 63.
+The output should be 63.
+
+Sample Input 1:
+
+OF63
+
+Sample Output 1:
+
+63
+
+Sample Input 2:
+
+ab395
+
+Sample Ouput 2:
+
+395
+
+Solution
+
+string = input()
+
+start_index = 2
+number = string[start_index:]
+number = int(number)
+
+print(number)
+
+_______________________________________________________________________________________________________________
+
+10. First Part of a String
+
+Write a program that reads a string and prints the first part of the string that has numbers.
+Note
+The given string contains 2 parts
+• The first part contains only digits.
+• The second part contains only one character.
+Example: 10y, 1a
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing an integer that is the first part of the string that has digits.
+
+Explanation
+For example, if the given string is 10y,
+• The first part of the string contains 10.
+• The second part of the string contains y.
+The output should be 10.
+
+Sample Input 1:
+
+10y
+
+Sample Output 1:
+
+10
+
+Sample Input 2:
+
+2B
+
+Sample Ouput 2:
+
+2
+
+Solution
+
+string = input()
+
+no_of_characters = len(string)
+end_index = no_of_characters - 1
+
+number = string[:end_index]
+number = int(number)
+
+print(number)
+_______________________________________________________________________________________________________________
