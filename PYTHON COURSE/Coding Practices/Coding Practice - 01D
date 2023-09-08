@@ -1,0 +1,507 @@
+01. Sum of two Numbers
+
+Write a program to print the sum of two integer inputs A and B.
+
+Input
+The first line contains the integer A
+The second line contains the integer B
+
+Sample Input 1:
+
+2
+3
+
+Sample Output 1:
+
+5
+
+Sample Input 2:
+
+20
+1
+
+Sample Ouput 2:
+
+21
+
+Solution:
+
+a = input()
+b = input()
+a = int(a)
+b = int(b)
+result = a + b
+print(result)
+_______________________________________________________________________________________________________________
+
+02. Division of two Numbers
+
+Write a program that reads two numbers A and B and prints the division of two numbers (A / B).
+
+Input
+The first line of input contains an integer.
+The second line of input contains an integer.
+
+Output
+The output should be a single line containing a float obtained by the division of two numbers.
+
+Explanation
+For example, if the given numbers are 15 and 3, the output should be 5.0
+ as the division of 15 and 3 (15/3) is 5.0
+
+Sample Input 1:
+
+15
+3
+
+Sample Ouput 1:
+
+5.0
+
+Sample Input 2:
+
+5
+2
+
+Sample Ouput 2:
+
+2.5
+
+Solution:
+
+first_number = input()
+second_number = input()
+
+first_number = int(first_number)
+second_number = int(second_number)
+
+result = first_number / second_number
+print(result)
+_______________________________________________________________________________________________________________
+
+03. Area of Rectangle
+
+﻿Write a program to calculate the area of the Rectangle.
+Note: Area of Rectangle = Length of Rectangle x Breadth of Rectangle
+
+Input
+The first line of input contains the length of the rectangle, which is an integer.
+The second line of input contains the breadth of the rectangle, which is an integer.
+
+Output
+Print the Area of Rectangle
+
+Explanation
+For example, when the length is 4 and breadth is 3, then A = 3 x 4, therefore A = 12
+
+Sample Input 1:
+
+3
+4
+
+Sample Ouput 1:
+
+12
+
+Sample Input 2:
+
+5
+3
+
+Sample Ouput 2:
+
+15
+
+Solution:
+
+length = input()
+breadth = input()
+
+length = int(length)
+breadth = int(breadth)
+
+area = length * breadth
+print(area)
+
+_______________________________________________________________________________________________________________
+
+04. Perimeter of Rectangle
+
+Write a program to calculate the perimeter of a rectangle.
+Note: Perimeter of Rectangle = 2(Length of Rectangle + Breadth of Rectangle)
+
+Input
+The first line of input contains the length of the rectangle, which is an integer.
+The second line of input contains the breadth of the rectangle, which is an integer.
+
+Output
+Print the Perimeter of the Rectangle.
+
+Explanation
+For example, when the length of the rectangle is 3 and breadth is 4, then
+Perimeter = 2 x ( 3 + 4 ) = 2 x 7 = 14
+
+Sample Input 1:
+
+3
+4
+
+Sample Ouput 1:
+
+14
+
+Sample Input 2:
+
+5
+3
+
+Sample Ouput 2:
+
+16
+
+length = input()
+breadth = input()
+length = int(length)
+breadth = int(breadth)
+sum_of_two_sides = length + breadth
+perimeter_of_rectangle = sum_of_two_sides * 2
+print(perimeter_of_rectangle)
+_______________________________________________________________________________________________________________
+
+05. Divison of two Nunbers - 2 
+
+Write a program that reads two numbers A and B and prints the division of two numbers (A / B) as an integer.
+
+Input
+The first line of input contains an integer.
+The second line of input contains an integer.
+
+Output
+The output should be a single line containing an integer that is the integer value of the result obtained 
+from the division of two numbers.
+
+Explanation
+For example, if the given numbers are 21 and 4,
+• The division of 21 and 4 ( 21/4) is 5.25
+• The integer of 5.25 is 5
+The output should be 5.
+
+Sample Input 1:
+
+21
+4
+
+Sample Ouput 1:
+
+5
+
+Sample Input 2:
+
+8
+4
+
+Sample Ouput 2:
+
+2
+
+Solution:
+
+first_number = input()
+second_number = input()
+
+first_number = int(first_number)
+second_number = int(second_number)
+
+result = first_number / second_number
+result = int(result)
+
+print(result)
+_______________________________________________________________________________________________________________
+
+06. Substraction of Two Numbers
+
+Write a program that reads two numbers A and B and prints the subtraction of two numbers (A - B).
+
+Input
+The first line of input contains a float.
+The second line of input contains a float.
+
+Output
+The output should be a single line containing a float obtained by the subtraction of two numbers.
+
+Explanation
+For example, if the given numbers are 15.55 and 6.23, the output should be 9.32 as the subtraction 15.55 - 6.23 is 9.32
+
+Sample Input 1:
+
+15.55
+6.23
+
+Sample Output 1:
+
+9.32
+
+Sample Input 2:
+
+1.4
+2.5
+
+Sample Ouput 2:
+
+-1.1
+
+Solution:
+
+first_num = input()
+second_num = input()
+
+first_num = float(first_num)
+second_num = float(second_num)
+
+diff = first_num - second_num
+print(diff)
+_______________________________________________________________________________________________________________
+
+07. Percentage of Boys
+
+Write a program that reads the percentage of girls in a class and prints the percentage of boys in the class.
+
+Note: Total Percentage of Boys and Girls in a class is 100
+
+Input
+The input will be a single line containing an integer.
+
+output
+The output should be a single line containing an integer that is the percentage of boys in the class.
+
+Explanation
+For example, if the given percentage of girls in the class is 30,
+• The total percentage is 100.
+• The percentage of girls 30 should be removed from the total percentage 100 to get the percentage of boys in the class.
+The output should be 70.
+
+Sample Input 1:
+
+30
+
+Sample Output 1:
+
+70
+
+Sample Input 2:
+
+80
+
+Sample Ouput 2:
+
+20
+
+Solution:
+
+girls_percentage = input()
+girls_percentage = int(girls_percentage)
+
+boys_percentage = 100 - girls_percentage
+print(boys_percentage)
+_______________________________________________________________________________________________________________
+
+08. Sum of two Numbers - 2
+
+Write a program that reads two numbers and prints the sum of two numbers in the given format.
+
+Input
+The first line of input contains a float.
+The second line of input contains a float.
+
+Output
+The output should be a single line containing a string in the format shown in the sample output.
+
+Explanation
+For example, if the given word is Airplane,
+• Length of the word is 8
+• Half of the length of the word is 8/2 = 4.0
+So, the output should be 4.0.
+
+Sample Input 1:
+
+3.0
+4.0
+
+Sample Output 1:
+
+Sum: 7.0
+
+Sample Input 2:
+
+2.1
+10.5
+
+Sample Ouput 2:
+
+Sum: 12.6
+
+Solution:
+
+first_number = input()
+second_number = input()
+
+first_number = float(first_number)
+second_number = float(second_number)
+
+result = first_number + second_number
+
+print("Sum: " + str(result))
+_______________________________________________________________________________________________________________
+
+09. kilometers to Meters
+
+Write a program to take the number of kilometers as input and convert into meters and print the number of meters.
+Note: 1 Kilometer = 1000 Meters
+
+Input
+The first line of input contains the number of kilometers.
+The input will have a decimal part.
+
+Output
+The first line of output contains the number of meters.
+The output should be an integer.
+
+Explanation
+For example, 1.2 kilometers is equals to 1200 meters
+
+Sample Input 1:
+
+1.2
+
+Sample Output 1:
+
+1200
+
+Sample Input 2:
+
+3.5
+
+Sample Ouput 2:
+
+3500
+
+Solution:
+
+kilometers = input()
+kilometers = float(kilometers)
+meters = kilometers * 1000
+meters = int(meters)
+print(meters)
+_______________________________________________________________________________________________________________
+
+10. Percentage
+
+Write a program that reads a percentage P and prints the percentage P of the number 200.
+
+Note:
+The Percentage (P) of Number (N) can be calculated as: value = (percentage / 100) * number
+
+Input
+The input will be a single line containing an integer.
+
+Output
+The output should be a single line containing a float that is the P percentage of 200.
+
+Explanation
+For example, if the given percentage is P = 50, the 50 percent of number 200 is,
+value = (percentage / 100) * number
+value = (50 / 100) * 200
+value = 0.5 * 200
+value = 100.0
+
+The output should be 100.0
+
+Sample Input 1:
+
+50
+
+Sample Output 1:
+
+100.0
+
+Sample Input 2:
+
+30
+
+Sample Ouput 2:
+
+60.0
+
+Solution:
+
+percentage = input()
+percentage = int(percentage)
+
+value = (percentage / 100) * 200
+print(value)
+_______________________________________________________________________________________________________________
+
+11. Remainder
+
+Write a program that reads a dividend and a divisor and prints the remainder.
+
+Note
+For Example, if 7 is divided by 2 (7/2),
+Dividend: 7
+Divisor ←2)7 (3→ Quotient
+           6
+----------------------
+          1 → Remainder
+
+Formula to Calculate Remainder:
+Quotient should be an integer to calculate the remainder.
+remainder = dividend - (divisor * quotient)
+
+Input
+The first line of input contains an integer.
+The second line of input contains an integer.
+
+Output
+The output should be a single line containing an integer that is the remainder.
+
+Explanation
+For example, if the given dividend is 7 and the divisor is 2,
+• The quotient is 3.5 (7/2).
+• The integer of 3.5 is 3.
+• The remainder is 1 as shown below.
+
+remainder = dividend - (divisor * quotient)
+remainder = 7 - (2 * 3)
+remainder = 7 - 6
+remainder = 1
+The output should be 1.
+
+Sample Input 1:
+
+7
+2
+
+Sample Output 1:
+
+1
+
+Sample Input 2:
+
+10
+2
+
+Sample Ouput 2:
+
+0
+
+Solution:
+
+dividend = int(input())
+divisor = int(input())
+
+quotient = dividend // divisor
+remainder = dividend % divisor
+
+print(remainder)
+
+_______________________________________________________________________________________________________________
