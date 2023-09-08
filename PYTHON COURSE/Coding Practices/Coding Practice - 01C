@@ -1,0 +1,311 @@
+01. Length of the String
+
+Write a program that reads a word and prints the length of the word.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing an integer that is the number of characters in the word.
+
+Explanation
+For example, if the given word is Software, the number of characters in the word is 8
+The output should be 8
+
+Sample Input 1:
+
+Software
+
+Sample Output 1:
+
+8
+
+Sample Input 2:
+
+Champion
+
+Sample Ouput 2:
+
+8
+
+Solution:
+
+message = input()
+length = len(message)
+print(length)
+_______________________________________________________________________________________________________________
+
+02. Star Repetition
+
+Write a program that reads a word and prints stars (*) equal to the length of the word.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing stars (*) equal to the length of the word.
+
+Explanation
+Print two stars on the first line and two stars on the second line.
+
+Sample Input 1:
+
+qwerty
+
+Sample Ouput 1:
+
+******
+
+Sample Input 2:
+
+John1234
+
+Sample Ouput 2:
+
+********
+
+Solution:
+
+word = input()
+word_length = len(word)
+result = "*" * word_length
+print(result)
+_______________________________________________________________________________________________________________
+
+03. Subtract 1 from String Length
+
+Write a program that reads a word and prints L - 1 where L is the length of the word.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing an integer obtained after subtracting 1 from the length of the word.
+
+Explanation
+For example, if the given word is Ice, the output should be 2 as the length of the word is 3.
+
+Sample Input 1:
+
+Ice
+
+Sample Ouput 1:
+
+2
+
+Sample Input 2:
+
+Area
+
+Sample Ouput 2:
+
+3
+
+Solution:
+
+word = input()
+word_length = len(word)
+result = word_length - 1
+print(result)
+_______________________________________________________________________________________________________________
+
+04. Index of Last Character
+
+Write a program that reads a word and prints the index of the last character of the word.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing an integer which is the index of the last character of the word.
+
+Explanation
+For example, if the given word is Python, the output should be 5 as the index starts from 0 and the index 
+of the last character is 5.
+
+P y t h o n
+0 1 2 3 4 5
+
+
+Sample Input 1:
+
+Python
+
+Sample Ouput 1:
+
+5
+
+Sample Input 2:
+
+John123
+
+Sample Ouput 2:
+
+6
+
+word = input()
+word_length = len(word)
+last_index = word_length - 1
+print(last_index)
+_______________________________________________________________________________________________________________
+
+05. Last Character
+
+Write a program which prints the last character of a given word.
+
+Input
+The input will be a single line containing a word.
+
+Output
+The output should be a single line containing the last character of the given word.
+
+Explanation
+For example, if the given input word is "January", your code should print the last character "y".
+
+Sample Input 1:
+
+January
+
+Sample Ouput 1:
+
+y
+
+Sample Input 2:
+
+Classroom
+
+Sample Ouput 2:
+
+m
+
+Solution:
+
+word = input()
+length_of_the_word = len(word)
+last_index = length_of_the_word - 1
+character_at_last_index = word[last_index]
+print(character_at_last_index)
+
+_______________________________________________________________________________________________________________
+
+06. Length Excluding Characters
+
+Write a program that reads a word and prints the length of the word excluding the first and last character.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing an integer that is the length of the word excluding the first and last character.
+
+Explanation
+For example, if the given word is Blockchain,
+• The number of characters in the word is 10
+• The first and the last characters should be removed, i.e. two characters should be removed from the word
+The output should be 8, as 10 - 2 is 8.
+
+Sample Input 1:
+
+Blockchain
+
+Sample Output 1:
+
+8
+
+Sample Input 2:
+
+Cyber Security
+
+Sample Ouput 2:
+
+12
+
+Solution:
+
+word = input()
+word_length = len(word)
+word_length_excluding_chars = word_length - 2
+print(word_length_excluding_chars)
+_______________________________________________________________________________________________________________
+
+07. Star Repetition - 2
+
+Write a program that reads a word and prints the first letter of the given word and stars (*) instead of the other letters.
+
+Input
+The input will be a single line containing a string.
+
+output
+The output should be a single line containing the first letter of the given word and stars (*) instead of the other letters.
+
+Explanation
+For example, if the given word is Queue,
+• The number of letters in the word Queue is 5. We have to print the first letter Q.
+• Now, without the first letter, there are 4 letters. So, we have to print 4 stars (*)
+The output should be Q****.
+
+Sample Input 1:
+
+Queue
+
+Sample Output 1:
+
+Q****
+
+Sample Input 2:
+
+Password
+
+Sample Ouput 2:
+
+P*******
+
+Solution:
+
+word = input()
+word_length = len(word)
+first_character = word[0]
+number_of_stars = word_length - 1
+result = first_character + ("*" * number_of_stars)
+print(result)
+_______________________________________________________________________________________________________________
+
+08. Half Length of String
+
+Write a program that reads a word and prints half the length of the word.
+
+Input
+The input will be a single line containing a string.
+
+Output
+The output should be a single line containing a float that is half the length of the word.
+
+Explanation
+For example, if the given word is Airplane,
+• Length of the word is 8
+• Half of the length of the word is 8/2 = 4.0
+So, the output should be 4.0.
+
+Sample Input 1:
+
+Airplane
+
+Sample Output 1:
+
+4.0
+
+Sample Input 2:
+
+Zebra
+
+Sample Ouput 2:
+
+2.5
+
+Solution:
+
+word = input()
+word_length = len(word)
+half_word_length = word_length/2
+print(half_word_length)
+_______________________________________________________________________________________________________________
