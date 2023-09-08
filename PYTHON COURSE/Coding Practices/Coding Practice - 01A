@@ -240,69 +240,123 @@ word=input()
 print("Given input:"+" " +word)
 _______________________________________________________________________________________________________________
 
-08.
-Sample Input 1:
+08. Join Words
 
-Sample Output 1:
+Write a program that reads two words and prints the resultant word by joining the two words.
 
-Sample Input 2:
+Input
+The first line of input contains a string.
+The second line of input contains a string.
 
-Sample Ouput 2:
+Output
+The output should be a single line containing a string obtained by joining the two words.
 
-Solution:
-
-_______________________________________________________________________________________________________________
-09.
-
-Sample Input 1:
-
-Sample Output 1:
-
-Sample Input 2:
-
-Sample Ouput 2:
-
-Solution:
-
-_______________________________________________________________________________________________________________
-
-10
+Explanation
+For example, if the given words are Milk and shake. The output should be Milkshake
 
 Sample Input 1:
 
+Milk
+shake
+
 Sample Output 1:
+
+Milkshake
 
 Sample Input 2:
 
+Cater
+pillar
+
 Sample Ouput 2:
+
+Caterpillar
 
 Solution:
 
+first_word = input()
+second_word = input()
+print(first_word + second_word)
 _______________________________________________________________________________________________________________
 
-11. 
+09. Full Name
+
+A job applicant is filling out an application form. He entered his first name and last name. 
+Your task is to print his full name by joining his first name and last name with a space.
+
+Input
+The first line of input contains a string (first name).
+The second line of input contains a string (last name).
+
+Output
+The output should be a single line containing a string obtained by joining the first name and the last name with 
+a space.
+
+Explanation
+For example, if the given first name is Harry and the given last name is Potter, the output should be HarryPotter
+as the first name and last name are joined with a space.
+
 Sample Input 1:
 
+Harry
+Potter
+
 Sample Output 1:
+
+Harry Potter
 
 Sample Input 2:
 
+Hugo
+Clive
+
 Sample Ouput 2:
+
+Hugo Clive
 
 Solution:
 
+first_name = input()
+last_name = input()
+print(first_name + " " + last_name)
 _______________________________________________________________________________________________________________
 
-12.
+10. Print Name and Age
+
+Write a program that reads the name and age of a person and prints them in the given format.
+
+Input
+The first line of input contains a string.
+The second line of input contains an integer.
+
+Output
+The output should be a single line containing a string in the format shown in the sample output.
+
+Explanation
+For example, if the given inputs are Robert and 21, the output should be Robert is 21 years old.
 
 Sample Input 1:
 
+Robert
+21
+
 Sample Output 1:
+
+Robert is 21 years old
 
 Sample Input 2:
 
+Lucy
+18
+
 Sample Ouput 2:
+
+Lucy is 18 years old
 
 Solution:
 
+name = input()
+age = input()
+print(name + " is " + age + " years old")
 _______________________________________________________________________________________________________________
+
